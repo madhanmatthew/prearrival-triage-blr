@@ -35,9 +35,12 @@ Each owner must be able to explain their component's code and results in the viv
 | D6 | Vitals input features | Exactly `07` §4.1: T=6, F=12 (7 vitals/flags + 5 deltas) + mask. No missing-value indicator features in the main model (optional ablation only). | `18` |
 | D7 | Fusion input | 19-d text vector from `07` §3 (includes 4 text-severity probabilities). Fusion is one joint network (`07` §4.2); trend probability is an output, not a fusion input. | `17` ("5 probs + trend prob") |
 | D8 | RL baselines | Required: (a) SUMO fixed-time, (b) always-green-for-ambulance. Optional third if time: SUMO actuated. | `17` ("fixed-time + actuated") |
-| D9 | Coordinator | Target = 6-row conflict table in `12` §05. The MVP `coordinator.py` implements only some of these; the rest are new work. Code wins on details of already-implemented conflicts. | `17` ("two conflict types") |
-| D10 | Hospital scoring | Target formula `08` §7.2. First step when the MVP code is imported: document what `hospital_agent.py` currently does (weights, load factor, hard penalties), then reconcile, and update `08` §7.2 to match the final code. | — |
-| D11 | Hospital/ambulance data | Reuse the MVP's hospital and ambulance-base lists (reported: 20 hospitals, 16 bases, verify on import). Extend columns to `08` §7.1. | `08` "15–30" range |
+| D9 | Coordinator | Built fresh against the 6-row conflict table in `12` §05 (all six conflicts). Rule-based. | `17` ("two conflict types"), all "code wins" notes |
+| D10 | Hospital scoring | `08` §7.2 formula and `08` §7.3 RF surrogate **are the spec** (no existing code to reconcile). | `08` §7.2 "reconcile" note |
+| D11 | Hospital/ambulance data | Build fresh: `data/hospitals.csv` with 15–30 real Bengaluru hospitals (`08` §7.1 columns) and `data/ambulance_bases.csv`, from public sources recorded in `PROVENANCE.md`. | `17` "20 hospitals, 16 bases" |
+| D14 | **Fresh build, no MVP code** | This repo starts from zero. The 6th-sem MVP is **not** imported. Every "exists / in MVP / reuse" statement in `00`–`12` (e.g. `vitals_model.py` NEWS2 code, text classifier, traffic/ETA RFs, `benchmark.py` 8 scenarios, SUMO scaffold, coordinator) means **build new** here. The MVP may be cited in the report only as prior 6th-sem work; its old benchmark numbers (3/8 faster) are **not** results of this project. | All "exists"/"MVP" wording in `00`–`14`, `16`–`18` |
+| D15 | System benchmark | Recreate the benchmark fresh: 8 Bengaluru scenarios + 2 blood-match scenarios (`08` §7.4) with a **fair** naive baseline (same speed model and dispatch overhead as the AI pipeline). | `05` §6.2 "extend, don't rebuild" |
+| D16 | ETA and traffic RF models | Optional (tier 5). ORS route durations are the primary ETA. Only build a traffic/ETA ML model if time allows and a real target exists. | `03` §9, `00` §6 |
 | D12 | Trend horizon | "Next 6 readings (≈6 h in MIMIC)". Never claim 10–15 minutes. | `02` §1 |
 | D13 | XAI | SHAP TreeExplainer on RF/GB only; Integrated Gradients (Captum) on BiGRU. | `00` §7 |
 
@@ -54,10 +57,23 @@ Each owner must be able to explain their component's code and results in the viv
   `[TODO-VERIFY]`.
 - Add DeepTriage-CN (Sci Rep 2026) and the prehospital AI review (Cureus 2025) to related work.
 
-## 4. Engineering rules for the MVP import
+## 4. Engineering rules
 
-- The ORS API key was hard-coded in two MVP files: **rotate the key**, read it from `.env`
-  (`ORS_API_KEY`), never commit `.env`.
-- The trained ETA model is not used by the ambulance agent in the MVP: wire it in or state it.
+- All keys come from `.env` (`ORS_API_KEY`, `LLM_API_KEY`); never hard-code or commit them.
+  The old MVP ORS key was hard-coded in the 6th-sem repo, so rotate it before using ORS here.
 - Never commit MIMIC data or model binaries. Models go to the shared Drive folder;
   `experiments/log.csv` and `reports/` figures are committed.
+
+## 5. Build order (fresh build)
+
+| Week | Build (Madhan + Claude Code) | Teammates run |
+|---|---|---|
+| 0 | Repo, docs, schemas (done) | Data collection tasks in `docs/progress/` |
+| 1 | NEWS2 module + MIMIC windowing/labels | Chetan: class balance |
+| 2 | Tabular baselines + nested CV · SUMO network + routes | Chetan: baselines |
+| 3 | BiGRU two-head · RL env wrapper + baselines | Chetan: BiGRU · Madhan: DQN seeds |
+| 4 | Whisper + WER · dialogue state machine + text classifier | Sankalp: WER, text set |
+| 5 | Hospital agent + blood factor · RAG pipeline + eval | Ragavendra, Sankalp |
+| 6 | Fusion + ablation · coordinator (6 conflicts) · FastAPI | Chetan: ablation |
+| 7 | Frontend, benchmark (8+2), demo scenario | Ragavendra: benchmark |
+| 8 | XAI figures, model card, report, slides | Everyone |

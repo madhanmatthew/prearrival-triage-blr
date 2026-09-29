@@ -54,32 +54,34 @@ All docs live in `docs/`. Read only what the task needs.
 
 ## 4. Current status (update as work progresses)
 
-The repo was created fresh on 2026-09-29. **The 6th-sem MVP code has not been imported yet**; it
-lives on Madhan's laptop and must be copied in (see `docs/progress/madhan.md`).
+This is a **fresh build** (`15` D14). The 6th-sem MVP is not imported; anything the older docs
+call "existing" or "in MVP" must be built new here.
 
 | Item | State | Path |
 |---|---|---|
 | Docs, decisions, agent rules | Done | `docs/`, `AGENTS.md`, `CLAUDE.md` |
 | Pydantic schemas (`07` contract) | Done, with tests | `backend/schemas.py`, `tests/test_schemas.py` |
 | Repo skeleton, Makefile stubs, env template, experiment log | Done | root |
-| MVP import (agents, ML models, benchmark, frontend, SUMO scaffold) | **Not started** | to be copied into `backend/`, `frontend/`, `sumo/` |
-| Report parser (regex) | In MVP, to be replaced | `backend/agents/report_parser.py` |
-| Text severity classifier (TF-IDF+LR) | In MVP, synthetic data | `backend/ml/text_severity.py` |
-| Vitals NEWS2 + tabular RF/GB | In MVP (scaffold) | `backend/ml/vitals_model.py` |
-| MIMIC windowing + labels | **Not started** | `backend/data/mimic_windows.py` |
-| BiGRU two-head model | **Not started** | `backend/ml/seq_model.py` |
-| Fusion model | **Not started** | `backend/ml/fusion_model.py` |
-| Traffic RF delay/congestion | In MVP, synthetic data | `backend/agents/traffic_agent.py` |
-| SUMO corridor | In MVP (nodes/edges) | `sumo/` |
-| RL env wrapper + DQN | **Not started** | `backend/rl/` |
-| Hospital agent | In MVP, synthetic inputs | `backend/agents/hospital_agent.py` |
-| Blood-stock factor | **Not started** | `backend/agents/hospital_agent.py` |
-| ETA model | In MVP, synthetic data, not wired in | `backend/ml/eta_model.py` |
-| Coordinator | In MVP, rule-based (partial conflict table) | `backend/agents/coordinator.py` |
-| Benchmark (8 scenarios) | In MVP | `backend/benchmarks/benchmark.py` |
-| Whisper intake | **Not started** | `backend/asr/` |
-| Dialogue state machine | **Not started** | `backend/dialogue/` |
-| RAG pipeline | **Not started** | `backend/rag/` |
+| NEWS2 scoring (`02` §3 bands) | Not started | `backend/ml/news2.py` |
+| MIMIC windowing + outcome labels | Not started | `backend/data/mimic_windows.py` |
+| Tabular baselines (majority, LR, RF, GB) + nested grouped CV | Not started | `backend/ml/baselines.py` |
+| BiGRU two-head model | Not started | `backend/ml/seq_model.py` |
+| Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
+| XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
+| SUMO corridor (nodes, edges, routes, cfg) | Not started | `sumo/` |
+| RL env wrapper, DQN train/eval, baselines | Not started | `backend/rl/` |
+| Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
+| Whisper intake + WER eval | Not started | `backend/asr/` |
+| Dialogue state machine (6 questions) | Not started | `backend/dialogue/` |
+| Text severity classifier (TF-IDF char n-gram + LR) | Not started | `backend/ml/text_severity.py` |
+| RAG pipeline + groundedness eval | Not started | `backend/rag/` |
+| Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
+| Hospital agent + blood factor + RF surrogate | Not started | `backend/agents/hospital_agent.py` |
+| Coordinator (6 conflicts, rule-based) | Not started | `backend/agents/coordinator.py` |
+| FastAPI app + WebSockets | Not started | `backend/main.py` |
+| Frontend (Leaflet map, police + hospital views) | Not started | `frontend/` |
+| Benchmark (8 + 2 scenarios, fair baseline) | Not started | `backend/benchmarks/benchmark.py` |
+| Traffic/ETA ML models | Optional (`15` D16) | `backend/ml/eta_model.py` |
 
 ## 5. Working conventions
 

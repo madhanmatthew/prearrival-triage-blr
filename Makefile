@@ -48,6 +48,6 @@ rl-eval:
 
 # ---- Component 4 + integration (Ragavendra) ----
 benchmark:
-	$(PY) -m backend.benchmarks.benchmark
+	@echo "[TODO] 8 + 2 scenarios with a fair naive baseline (docs/15 D15)"
 demo:
 	@echo "[TODO] start API + frontend + demo scenario (docs/09 §6)"
