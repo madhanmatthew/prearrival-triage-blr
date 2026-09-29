@@ -1,0 +1,43 @@
+# Unpinned for now. After the first working install on every teammate's machine,
+# run `pip freeze > requirements.lock.txt` and commit it (docs/09 §2: record versions that
+# actually worked, do not guess).
+
+# Backend
+fastapi
+uvicorn[standard]
+websockets
+pydantic>=2
+python-dotenv
+
+# Data / classical ML
+numpy
+pandas
+scikit-learn
+joblib
+matplotlib
+shap
+
+# Deep learning
+torch
+captum
+
+# Reporting agent (Component 1) — heavy; install when Sankalp's work starts
+# openai-whisper
+# langchain
+# langchain-community
+# langchain-huggingface
+# langchain-text-splitters
+# sentence-transformers
+# faiss-cpu
+
+# Traffic RL (Component 3) — install when Madhan's work starts
+# eclipse-sumo
+# sumo-rl
+# stable-baselines3
+# gymnasium
+
+# Routing
+openrouteservice
+
+# Dev
+pytest

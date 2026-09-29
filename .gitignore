@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# Data (licence-restricted: MIMIC must never be committed)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Model artifacts (shared via Drive, not git)
+models/*
+!models/.gitkeep
+checkpoints/
+logs/
+*.pt
+*.joblib
+*.zip
+*.pkl
+faiss_index/
+
+# SUMO outputs
+sumo/*.out.xml
+sumo/*tripinfo*.xml
+
+# Audio recordings (consented WER set stays local/Drive)
+*.wav
+*.mp3
+*.m4a
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

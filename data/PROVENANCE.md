@@ -1,0 +1,13 @@
+# Dataset Provenance Log
+
+One entry per dataset (docs/08 §8). Never commit restricted data; record where it came from.
+
+| Dataset | Source URL | Access date | Licence / terms | Preprocessing | Real/Sim | Used by |
+|---|---|---|---|---|---|---|
+| MIMIC-III Clinical Database Demo v1.4 | https://physionet.org/content/mimiciii-demo/1.4/ | [TODO] | PhysioNet terms `[TODO-VERIFY]`; do not redistribute | Hourly windows + outcome labels (docs/08 §2) | REAL (ICU) | Chetan |
+| First-aid corpus | IFRC / Red Cross public guidelines `[TODO: exact URLs]` | [TODO] | [TODO] | Converted to .txt, chunked | REAL docs | Sankalp |
+| Text severity reports (EN/HI/KN) | Team-built | [TODO] | Team-owned | LLM-drafted, hand-reviewed, rubric-labelled | SIM | Sankalp |
+| Whisper WER recordings | Team-recorded, consented | [TODO] | Team-owned; not committed | Reference transcripts | REAL | Sankalp |
+| Hospitals + ambulance bases | From MVP `[TODO: original sources]` | [TODO] | [TODO] | Extended to docs/08 §7.1 columns | REAL attrs + SIM beds/blood | Ragavendra |
+| Blood stock | Simulated (eRaktKosh has no open API found) `[TODO-VERIFY]` | [TODO] | — | Per hospital × 8 groups | SIM | Ragavendra |
+| SUMO ORR corridor | Real inter-junction distances, generated demand | [TODO] | — | docs/08 §6 demand spec | SIM | Madhan |
