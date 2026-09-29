@@ -18,7 +18,7 @@ run-api:
 
 # ---- Component 2: vitals (Chetan) ----
 data-mimic:
-	@echo "[TODO] build hourly windows + labels from MIMIC demo (docs/08 §2) -> backend/data/mimic_windows.py"
+	$(PY) -m backend.data.mimic_windows
 train-baselines:
 	@echo "[TODO] majority, NEWS2, LR, RF, GB with nested grouped CV (docs/15 D5)"
 train-seq:

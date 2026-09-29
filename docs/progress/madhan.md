@@ -37,9 +37,21 @@
   - Ambulance has no SUMO bluelight device (it cannot run reds or force a rescue lane), so
     signal control is what changes its transit time. State this in the report.
 
+- 2026-09-30: `backend/data/mimic_windows.py` + `make data-mimic` on MIMIC-IV Demo v2.2 (`15` D4):
+  hourly bins, <=2-bin ffill, labels per docs/08 §2, `make_windows()` [N,6,7]+mask,
+  `add_deltas()` -> [N,6,12] (call after train-fold median fill). Item IDs looked up in the
+  demo's `icu/d_items` (in `ITEMS`). `tests/test_mimic_windows.py`; 180/180 tests pass.
+  Output: 12,299 windows, 140 stays, 100 patients. Severity balance 0/1/2/3 =
+  22.7 / 18.1 / 10.3 / 48.9 %. Trend: 6,403 eligible windows, 2.8 % positive.
+  NEWS2 complete in 55.9 % of windows (GCS/temp gaps).
+  - [ASSUMPTION]s are listed in the module docstring (NIBP preferred, O2 not charted = room
+    air, intubated verbal = 1, vasopressor list, interval-overlap definition of intervention).
+  - Class 3 is large because `intervention_6h` counts ongoing vasopressor/ventilation, not
+    only new starts (MIMIC-IV splits infusions into rate-change rows). Team to confirm.
+  - Trend positives 2.8 % (< 5 %): expect unstable trend metrics; report PR-AUC, not accuracy.
+
 ## Next (in order)
-1. **Week 1, second session:** `backend/data/mimic_windows.py` + `make data-mimic` (docs/08 §2),
-   using MIMIC-IV (`15` D4 updated 2026-09-30). Needs: MIMIC-IV version + folder path.
+1. **Week 2:** tabular baselines (majority, NEWS2, LR, RF, GB) + nested grouped CV (`15` D5).
 2. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
    `experiments/log.csv`; then RL env wrapper (docs/09 §4: 16 actions, 24-d obs, custom reward).
 

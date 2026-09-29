@@ -63,7 +63,7 @@ call "existing" or "in MVP" must be built new here.
 | Pydantic schemas (`07` contract) | Done, with tests | `backend/schemas.py`, `tests/test_schemas.py` |
 | Repo skeleton, Makefile stubs, env template, experiment log | Done | root |
 | NEWS2 scoring (`02` §3 bands) | Done, with tests | `backend/ml/news2.py`, `tests/test_news2.py` |
-| MIMIC windowing + outcome labels | Not started | `backend/data/mimic_windows.py` |
+| MIMIC windowing + outcome labels | Done, with tests (MIMIC-IV Demo) | `backend/data/mimic_windows.py`, `tests/test_mimic_windows.py` |
 | Tabular baselines (majority, LR, RF, GB) + nested grouped CV | Not started | `backend/ml/baselines.py` |
 | BiGRU two-head model | Not started | `backend/ml/seq_model.py` |
 | Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
@@ -96,6 +96,6 @@ call "existing" or "in MVP" must be built new here.
 
 - Fusion training pairs are **synthetic** (MIMIC has no bystander text). Ablation result measures the pairing generator's assumptions as well as the model.
 - MIMIC is ICU data (in-hospital), not pre-hospital. Domain gap = stated limitation.
-- Vitals data is MIMIC-IV (`15` D4): ICU patients, not pre-hospital; report mean ± std over grouped CV folds.
+- MIMIC-IV Demo has 100 patients (`15` D4): small; expect high CV variance.
 - RL results are from simulation on an approximated corridor.
 - Blood stock and bed occupancy are simulated unless real data is obtained.

@@ -4,7 +4,7 @@ One entry per dataset (docs/08 §8). Never commit restricted data; record where 
 
 | Dataset | Source URL | Access date | Licence / terms | Preprocessing | Real/Sim | Used by |
 |---|---|---|---|---|---|---|
-| MIMIC-IV `[TODO: version]` | https://physionet.org/content/mimiciv/ | [TODO] | PhysioNet terms `[TODO-VERIFY]`; do not redistribute | Hourly windows + outcome labels (docs/08 §2) | REAL (ICU) | Chetan |
+| MIMIC-IV Clinical Database Demo v2.2 | https://physionet.org/content/mimic-iv-demo/2.2/ | [TODO] | PhysioNet terms `[TODO-VERIFY]`; do not redistribute | Hourly windows + outcome labels (docs/08 §2) | REAL (ICU) | Chetan |
 | First-aid corpus | IFRC / Red Cross public guidelines `[TODO: exact URLs]` | [TODO] | [TODO] | Converted to .txt, chunked | REAL docs | Sankalp |
 | Text severity reports (EN/HI/KN) | Team-built | [TODO] | Team-owned | LLM-drafted, hand-reviewed, rubric-labelled | SIM | Sankalp |
 | Whisper WER recordings | Team-recorded, consented | [TODO] | Team-owned; not committed | Reference transcripts | REAL | Sankalp |

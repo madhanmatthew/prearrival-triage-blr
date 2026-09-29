@@ -59,5 +59,5 @@ Windows users: run `make` from Git Bash or WSL.
 
 ## Data
 
-MIMIC-IV (PhysioNet, credentialed access) is used under its terms and is **never committed**.
+MIMIC-IV Clinical Database Demo v2.2 (PhysioNet) is used under its terms and is **never committed**.
 Each teammate downloads it separately. See [`data/PROVENANCE.md`](data/PROVENANCE.md).
