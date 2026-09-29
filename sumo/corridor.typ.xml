@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Road types (docs/03 §5): ORR main line 3 lanes, cross streets 2 lanes per direction.
+     [ASSUMPTION] Speed limits: ORR 60 km/h (16.67 m/s), cross streets 40 km/h (11.11 m/s). -->
+<types>
+    <type id="orr"   numLanes="3" speed="16.67" priority="3"/>
+    <type id="cross" numLanes="2" speed="11.11" priority="2"/>
+</types>

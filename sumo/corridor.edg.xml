@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lane counts and speeds come from corridor.typ.xml. Edge ids: <from>_<to>. -->
+<edges>
+    <!-- eastbound -->
+    <edge id="entry_west_silkboard"   from="entry_west"   to="silkboard"    type="orr"/>
+    <edge id="silkboard_bellandur"    from="silkboard"    to="bellandur"    type="orr"/>
+    <edge id="bellandur_marathahalli" from="bellandur"    to="marathahalli" type="orr"/>
+    <edge id="marathahalli_krpuram"   from="marathahalli" to="krpuram"      type="orr"/>
+    <edge id="krpuram_exit_east"      from="krpuram"      to="exit_east"    type="orr"/>
+
+    <!-- westbound -->
+    <edge id="exit_east_krpuram"      from="exit_east"    to="krpuram"      type="orr"/>
+    <edge id="krpuram_marathahalli"   from="krpuram"      to="marathahalli" type="orr"/>
+    <edge id="marathahalli_bellandur" from="marathahalli" to="bellandur"    type="orr"/>
+    <edge id="bellandur_silkboard"    from="bellandur"    to="silkboard"    type="orr"/>
+    <edge id="silkboard_entry_west"   from="silkboard"    to="entry_west"   type="orr"/>
+
+    <!-- cross streets (in and out on both sides of each junction) -->
+    <edge id="silkboard_n_silkboard" from="silkboard_n" to="silkboard"   type="cross"/>
+    <edge id="silkboard_silkboard_n" from="silkboard"   to="silkboard_n" type="cross"/>
+    <edge id="silkboard_s_silkboard" from="silkboard_s" to="silkboard"   type="cross"/>
+    <edge id="silkboard_silkboard_s" from="silkboard"   to="silkboard_s" type="cross"/>
+
+    <edge id="bellandur_n_bellandur" from="bellandur_n" to="bellandur"   type="cross"/>
+    <edge id="bellandur_bellandur_n" from="bellandur"   to="bellandur_n" type="cross"/>
+    <edge id="bellandur_s_bellandur" from="bellandur_s" to="bellandur"   type="cross"/>
+    <edge id="bellandur_bellandur_s" from="bellandur"   to="bellandur_s" type="cross"/>
+
+    <edge id="marathahalli_n_marathahalli" from="marathahalli_n" to="marathahalli"   type="cross"/>
+    <edge id="marathahalli_marathahalli_n" from="marathahalli"   to="marathahalli_n" type="cross"/>
+    <edge id="marathahalli_s_marathahalli" from="marathahalli_s" to="marathahalli"   type="cross"/>
+    <edge id="marathahalli_marathahalli_s" from="marathahalli"   to="marathahalli_s" type="cross"/>
+
+    <edge id="krpuram_n_krpuram" from="krpuram_n" to="krpuram"   type="cross"/>
+    <edge id="krpuram_krpuram_n" from="krpuram"   to="krpuram_n" type="cross"/>
+    <edge id="krpuram_s_krpuram" from="krpuram_s" to="krpuram"   type="cross"/>
+    <edge id="krpuram_krpuram_s" from="krpuram"   to="krpuram_s" type="cross"/>
+</edges>

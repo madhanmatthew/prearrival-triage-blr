@@ -22,16 +22,31 @@
   - Non-integer values use the band's upper edge (RR 24.5 → 3, temp 35.05 → 1).
   - Negative values, SpO2 > 100, unknown AVPU, GCS outside 3–15 raise `ValueError`.
   - Not implemented: SpO2 Scale 2, "new confusion", official single-parameter red escalation.
+- 2026-09-30: SUMO corridor. `eclipse-sumo==1.27.1` installed via pip (pinned in requirements).
+  `sumo/corridor.{nod,edg,typ}.xml` → `corridor.net.xml` (4 TL junctions at 0/6000/11000/16000 m,
+  ORR 3+3 lanes, cross 2+2 lanes). `sumo/gen_routes.py` → `routes_{low,medium,peak}.rou.xml`
+  (main 900/1200/1500, cross 300/450/600 veh/h, Poisson, 60/30/10 mix, 1 ambulance).
+  `corridor.sumocfg` = fixed-time baseline (a). Make targets `sumo-build`, `sumo-routes`,
+  `sumo-run DEMAND=… SEED=…`. `tests/test_sumo_corridor.py` (incl. a real SUMO run). 156/156 pass.
+  - TL phases (netconvert default, 90 s cycle): 0 = ORR main green 41 s, 1 = yellow 4 s,
+    2 = cross green 41 s, 3 = yellow 4 s. RL `main_green`/`cross_green` map to phases 0/2.
+  - Smoke run, seed 42, ambulance depart 300 s, fixed-time: transit 910 / 1183 / 1001 s
+    (low / medium / peak). Single seed, smoke check only — not a result.
+  - [ASSUMPTION] Straight corridor; 300 m entry/cross stubs; ORR 60 km/h, cross 40 km/h;
+    background traffic goes straight; ambulance speedFactor 1.3, impatience 1.0.
+  - Ambulance has no SUMO bluelight device (it cannot run reds or force a rescue lane), so
+    signal control is what changes its transit time. State this in the report.
 
 ## Next (in order)
 1. **Week 1, second session:** `backend/data/mimic_windows.py` + `make data-mimic` (docs/08 §2),
    once Chetan has the MIMIC demo downloaded and the item-ID list checked.
-2. **Week 2:** pin SUMO / sumo-rl / SB3 versions that actually install; write
-   `sumo/corridor.nod.xml` + `.edg.xml` (junctions at 0 / 6000 / 11000 / 16000 m, cross
-   streets, 3+3 main lanes, 2+2 cross lanes), routes with 3 demand levels (docs/08 §6),
-   fixed-time + always-green baselines.
+2. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
+   `experiments/log.csv`; then RL env wrapper (docs/09 §4: 16 actions, 24-d obs, custom reward).
 
 ## Blockers
+- Madhan downloaded **MIMIC-IV**, but docs/15 D4 fixes the MIMIC-III Demo. Decide which to
+  use before `mimic_windows.py`: D4 must be updated if MIMIC-IV is used (table/column names
+  and item IDs differ).
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
   `make test`). Install make (`choco install make`) before targets with real recipes are needed.

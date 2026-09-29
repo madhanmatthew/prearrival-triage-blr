@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ORR corridor: Silk Board -> Bellandur -> Marathahalli -> KR Puram (docs/03 §4-5).
+     Junction x-positions use the approximate real spacing (0 / 6000 / 11000 / 16000 m).
+     [ASSUMPTION] Corridor is a straight line; entry/exit and cross-street approach
+     stubs are 300 m long. Geometry is approximated, not surveyed (docs/08 §1). -->
+<nodes>
+    <node id="entry_west"   x="-300"  y="0" type="priority"/>
+    <node id="silkboard"    x="0"     y="0" type="traffic_light"/>
+    <node id="bellandur"    x="6000"  y="0" type="traffic_light"/>
+    <node id="marathahalli" x="11000" y="0" type="traffic_light"/>
+    <node id="krpuram"      x="16000" y="0" type="traffic_light"/>
+    <node id="exit_east"    x="16300" y="0" type="priority"/>
+
+    <node id="silkboard_n"    x="0"     y="300"  type="priority"/>
+    <node id="silkboard_s"    x="0"     y="-300" type="priority"/>
+    <node id="bellandur_n"    x="6000"  y="300"  type="priority"/>
+    <node id="bellandur_s"    x="6000"  y="-300" type="priority"/>
+    <node id="marathahalli_n" x="11000" y="300"  type="priority"/>
+    <node id="marathahalli_s" x="11000" y="-300" type="priority"/>
+    <node id="krpuram_n"      x="16000" y="300"  type="priority"/>
+    <node id="krpuram_s"      x="16000" y="-300" type="priority"/>
+</nodes>
