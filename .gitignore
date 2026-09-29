@@ -42,3 +42,6 @@ sumo/*tripinfo*.xml
 Thumbs.db
 .vscode/
 .idea/
+
+# Smoke-test outputs (not results)
+reports/*_quick.csv

@@ -50,9 +50,18 @@
     only new starts (MIMIC-IV splits infusions into rate-change rows). Team to confirm.
   - Trend positives 2.8 % (< 5 %): expect unstable trend metrics; report PR-AUC, not accuracy.
 
+- 2026-09-30: `backend/ml/baselines.py` + `make train-baselines`: majority, NEWS2, LR, RF, GB;
+  nested grouped CV (outer 5 / inner 3, seed 42; same patient folds for every model and
+  both tasks); severity scored by macro-F1 + summed confusion matrix, trend by AUROC +
+  PR-AUC (tuned on PR-AUC). Features = last reading's 12 features, train-fold median impute.
+  NEWS2 scored from the same imputed inputs. Appends to `experiments/log.csv`, writes
+  `reports/baselines_results.csv` + `baselines_confusion.csv`. `tests/test_baselines.py`;
+  185/185 tests pass. `--quick` smoke run worked (~2 min); full-grid run not done yet.
+
 ## Next (in order)
-1. **Week 2:** tabular baselines (majority, NEWS2, LR, RF, GB) + nested grouped CV (`15` D5).
-2. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
+1. **Run** `python -m backend.ml.baselines` (full grids) and commit the log rows + reports.
+2. **Week 3:** BiGRU two-head (`backend/ml/seq_model.py`, docs/07 §4).
+3. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
    `experiments/log.csv`; then RL env wrapper (docs/09 §4: 16 actions, 24-d obs, custom reward).
 
 ## Blockers
