@@ -20,7 +20,7 @@ run-api:
 data-mimic:
 	$(PY) -m backend.data.mimic_windows
 train-baselines:
-	@echo "[TODO] majority, NEWS2, LR, RF, GB with nested grouped CV (docs/15 D5)"
+	$(PY) -m backend.ml.baselines
 train-seq:
 	@echo "[TODO] BiGRU two-head (docs/07 §4) -> backend/ml/seq_model.py"
 train-fusion:
