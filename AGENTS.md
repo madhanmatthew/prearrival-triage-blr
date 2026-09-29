@@ -68,7 +68,7 @@ call "existing" or "in MVP" must be built new here.
 | BiGRU two-head model | Not started | `backend/ml/seq_model.py` |
 | Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
 | XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
-| SUMO corridor (nodes, edges, routes, cfg) | Not started | `sumo/` |
+| SUMO corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs) | `sumo/`, `tests/test_sumo_corridor.py` |
 | RL env wrapper, DQN train/eval, baselines | Not started | `backend/rl/` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval | Not started | `backend/asr/` |
