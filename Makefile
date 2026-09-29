@@ -5,7 +5,7 @@ PY ?= python
 SEED ?= 1
 
 .PHONY: help test run-api data-mimic train-baselines train-seq train-fusion train-text \
-        build-rag eval-rag eval-asr sumo-build rl-baseline rl-train rl-eval benchmark demo
+        build-rag eval-rag eval-asr sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval benchmark demo
 
 help:
 	@grep -E '^[a-z-]+:' Makefile | cut -d: -f1
@@ -37,8 +37,13 @@ eval-asr:
 	@echo "[TODO] Whisper WER per language (backend/asr/)"
 
 # ---- Component 3: traffic RL (Madhan) ----
+DEMAND ?= medium
 sumo-build:
-	netconvert --node-files sumo/corridor.nod.xml --edge-files sumo/corridor.edg.xml -o sumo/corridor.net.xml
+	netconvert --node-files sumo/corridor.nod.xml --edge-files sumo/corridor.edg.xml --type-files sumo/corridor.typ.xml -o sumo/corridor.net.xml
+sumo-routes:
+	for d in low medium peak; do $(PY) sumo/gen_routes.py --demand $$d; done
+sumo-run:
+	sumo -c sumo/corridor.sumocfg -r sumo/routes_$(DEMAND).rou.xml --seed $(SEED) --tripinfo-output sumo/tripinfo_$(DEMAND)_seed$(SEED).xml
 rl-baseline:
 	@echo "[TODO] fixed-time + always-green runs, log transit + general delay (docs/09 §4)"
 rl-train:
