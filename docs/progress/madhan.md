@@ -39,14 +39,11 @@
 
 ## Next (in order)
 1. **Week 1, second session:** `backend/data/mimic_windows.py` + `make data-mimic` (docs/08 §2),
-   once Chetan has the MIMIC demo downloaded and the item-ID list checked.
+   using MIMIC-IV (`15` D4 updated 2026-09-30). Needs: MIMIC-IV version + folder path.
 2. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
    `experiments/log.csv`; then RL env wrapper (docs/09 §4: 16 actions, 24-d obs, custom reward).
 
 ## Blockers
-- Madhan downloaded **MIMIC-IV**, but docs/15 D4 fixes the MIMIC-III Demo. Decide which to
-  use before `mimic_windows.py`: D4 must be updated if MIMIC-IV is used (table/column names
-  and item IDs differ).
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
   `make test`). Install make (`choco install make`) before targets with real recipes are needed.
