@@ -62,7 +62,7 @@ call "existing" or "in MVP" must be built new here.
 | Docs, decisions, agent rules | Done | `docs/`, `AGENTS.md`, `CLAUDE.md` |
 | Pydantic schemas (`07` contract) | Done, with tests | `backend/schemas.py`, `tests/test_schemas.py` |
 | Repo skeleton, Makefile stubs, env template, experiment log | Done | root |
-| NEWS2 scoring (`02` §3 bands) | Not started | `backend/ml/news2.py` |
+| NEWS2 scoring (`02` §3 bands) | Done, with tests | `backend/ml/news2.py`, `tests/test_news2.py` |
 | MIMIC windowing + outcome labels | Not started | `backend/data/mimic_windows.py` |
 | Tabular baselines (majority, LR, RF, GB) + nested grouped CV | Not started | `backend/ml/baselines.py` |
 | BiGRU two-head model | Not started | `backend/ml/seq_model.py` |
