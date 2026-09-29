@@ -96,6 +96,6 @@ call "existing" or "in MVP" must be built new here.
 
 - Fusion training pairs are **synthetic** (MIMIC has no bystander text). Ablation result measures the pairing generator's assumptions as well as the model.
 - MIMIC is ICU data (in-hospital), not pre-hospital. Domain gap = stated limitation.
-- MIMIC-III Demo has ~100 patients: small; expect high CV variance.
+- Vitals data is MIMIC-IV (`15` D4): ICU patients, not pre-hospital; report mean ± std over grouped CV folds.
 - RL results are from simulation on an approximated corridor.
 - Blood stock and bed occupancy are simulated unless real data is obtained.
