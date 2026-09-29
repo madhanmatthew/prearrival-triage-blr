@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Default run: medium demand, SUMO default fixed-time signals (baseline a, docs/15 D8).
+     Other demand levels: pass -r sumo/routes_peak.rou.xml to sumo
+     TL phases per junction (netconvert default, 90 s cycle):
+       0 = ORR main green (41 s), 1 = yellow (4 s), 2 = cross-street green (41 s), 3 = yellow (4 s). -->
+<configuration>
+    <input>
+        <net-file value="corridor.net.xml"/>
+        <route-files value="routes_medium.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+    <random_number>
+        <seed value="42"/>
+    </random_number>
+    <processing>
+        <time-to-teleport value="-1"/>
+    </processing>
+    <report>
+        <no-step-log value="true"/>
+    </report>
+</configuration>

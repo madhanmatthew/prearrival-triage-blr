@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-09-30T00:25:22.976336+05:30 by Eclipse SUMO netconvert 1.27.1
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="sumo/corridor.nod.xml"/>
+        <edge-files value="sumo/corridor.edg.xml"/>
+        <type-files value="sumo/corridor.typ.xml"/>
+    </input>
+
+    <output>
+        <output-file value="sumo/corridor.net.xml"/>
+    </output>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="300.00,300.00" convBoundary="0.00,0.00,16600.00,600.00" origBoundary="-300.00,-300.00,16300.00,300.00" projParameter="!"/>
+
+    <type id="cross" priority="2" numLanes="2" speed="11.11"/>
+    <type id="orr" priority="3" numLanes="3" speed="16.67"/>
+
+    <edge id=":bellandur_0" function="internal">
+        <lane id=":bellandur_0_0" index="0" speed="6.51" length="9.03" shape="6295.20,313.60 6294.85,311.15 6293.80,309.40 6292.05,308.35 6289.60,308.00"/>
+    </edge>
+    <edge id=":bellandur_1" function="internal">
+        <lane id=":bellandur_1_0" index="0" speed="11.11" length="27.20" shape="6295.20,313.60 6295.20,286.40"/>
+        <lane id=":bellandur_1_1" index="1" speed="11.11" length="27.20" shape="6298.40,313.60 6298.40,286.40"/>
+    </edge>
+    <edge id=":bellandur_3" function="internal">
+        <lane id=":bellandur_3_0" index="0" speed="9.84" length="6.30" shape="6298.40,313.60 6299.11,307.34"/>
+    </edge>
+    <edge id=":bellandur_4" function="internal">
+        <lane id=":bellandur_4_0" index="0" speed="3.65" length="1.44" shape="6298.40,313.60 6299.20,312.40"/>
+    </edge>
+    <edge id=":bellandur_22" function="internal">
+        <lane id=":bellandur_22_0" index="0" speed="9.84" length="15.70" shape="6299.11,307.34 6299.15,306.95 6301.40,302.20 6305.15,299.35 6310.40,298.40"/>
+    </edge>
+    <edge id=":bellandur_23" function="internal">
+        <lane id=":bellandur_23_0" index="0" speed="3.65" length="3.23" shape="6299.20,312.40 6300.00,312.00 6300.80,312.40 6301.60,313.60"/>
+    </edge>
+    <edge id=":bellandur_5" function="internal">
+        <lane id=":bellandur_5_0" index="0" speed="6.51" length="9.03" shape="6310.40,308.00 6307.95,308.35 6306.20,309.40 6305.15,311.15 6304.80,313.60"/>
+    </edge>
+    <edge id=":bellandur_6" function="internal">
+        <lane id=":bellandur_6_0" index="0" speed="16.67" length="20.80" shape="6310.40,308.00 6289.60,308.00"/>
+        <lane id=":bellandur_6_1" index="1" speed="16.67" length="20.80" shape="6310.40,304.80 6289.60,304.80"/>
+        <lane id=":bellandur_6_2" index="2" speed="16.67" length="20.80" shape="6310.40,301.60 6289.60,301.60"/>
+    </edge>
+    <edge id=":bellandur_9" function="internal">
+        <lane id=":bellandur_9_0" index="0" speed="9.84" length="4.01" shape="6310.40,301.60 6306.45,300.89"/>
+    </edge>
+    <edge id=":bellandur_10" function="internal">
+        <lane id=":bellandur_10_0" index="0" speed="3.65" length="1.44" shape="6310.40,301.60 6309.20,300.80"/>
+    </edge>
+    <edge id=":bellandur_24" function="internal">
+        <lane id=":bellandur_24_0" index="0" speed="9.84" length="17.98" shape="6306.45,300.89 6305.15,300.65 6301.40,297.80 6299.15,293.05 6298.40,286.40"/>
+    </edge>
+    <edge id=":bellandur_25" function="internal">
+        <lane id=":bellandur_25_0" index="0" speed="3.65" length="3.23" shape="6309.20,300.80 6308.80,300.00 6309.20,299.20 6310.40,298.40"/>
+    </edge>
+    <edge id=":bellandur_11" function="internal">
+        <lane id=":bellandur_11_0" index="0" speed="6.51" length="9.03" shape="6304.80,286.40 6305.15,288.85 6306.20,290.60 6307.95,291.65 6310.40,292.00"/>
+    </edge>
+    <edge id=":bellandur_12" function="internal">
+        <lane id=":bellandur_12_0" index="0" speed="11.11" length="27.20" shape="6304.80,286.40 6304.80,313.60"/>
+        <lane id=":bellandur_12_1" index="1" speed="11.11" length="27.20" shape="6301.60,286.40 6301.60,313.60"/>
+    </edge>
+    <edge id=":bellandur_14" function="internal">
+        <lane id=":bellandur_14_0" index="0" speed="9.84" length="6.30" shape="6301.60,286.40 6300.89,292.66"/>
+    </edge>
+    <edge id=":bellandur_15" function="internal">
+        <lane id=":bellandur_15_0" index="0" speed="3.65" length="1.44" shape="6301.60,286.40 6300.80,287.60"/>
+    </edge>
+    <edge id=":bellandur_26" function="internal">
+        <lane id=":bellandur_26_0" index="0" speed="9.84" length="15.70" shape="6300.89,292.66 6300.85,293.05 6298.60,297.80 6294.85,300.65 6289.60,301.60"/>
+    </edge>
+    <edge id=":bellandur_27" function="internal">
+        <lane id=":bellandur_27_0" index="0" speed="3.65" length="3.23" shape="6300.80,287.60 6300.00,288.00 6299.20,287.60 6298.40,286.40"/>
+    </edge>
+    <edge id=":bellandur_16" function="internal">
+        <lane id=":bellandur_16_0" index="0" speed="6.51" length="9.03" shape="6289.60,292.00 6292.05,291.65 6293.80,290.60 6294.85,288.85 6295.20,286.40"/>
+    </edge>
+    <edge id=":bellandur_17" function="internal">
+        <lane id=":bellandur_17_0" index="0" speed="16.67" length="20.80" shape="6289.60,292.00 6310.40,292.00"/>
+        <lane id=":bellandur_17_1" index="1" speed="16.67" length="20.80" shape="6289.60,295.20 6310.40,295.20"/>
+        <lane id=":bellandur_17_2" index="2" speed="16.67" length="20.80" shape="6289.60,298.40 6310.40,298.40"/>
+    </edge>
+    <edge id=":bellandur_20" function="internal">
+        <lane id=":bellandur_20_0" index="0" speed="9.84" length="4.01" shape="6289.60,298.40 6293.55,299.11"/>
+    </edge>
+    <edge id=":bellandur_21" function="internal">
+        <lane id=":bellandur_21_0" index="0" speed="3.65" length="1.44" shape="6289.60,298.40 6290.80,299.20"/>
+    </edge>
+    <edge id=":bellandur_28" function="internal">
+        <lane id=":bellandur_28_0" index="0" speed="9.84" length="17.98" shape="6293.55,299.11 6294.85,299.35 6298.60,302.20 6300.85,306.95 6301.60,313.60"/>
+    </edge>
+    <edge id=":bellandur_29" function="internal">
+        <lane id=":bellandur_29_0" index="0" speed="3.65" length="3.23" shape="6290.80,299.20 6291.20,300.00 6290.80,300.80 6289.60,301.60"/>
+    </edge>
+    <edge id=":bellandur_n_0" function="internal">
+        <lane id=":bellandur_n_0_0" index="0" speed="3.65" length="4.67" shape="6301.60,600.00 6300.80,601.20 6300.00,601.60 6299.20,601.20 6298.40,600.00"/>
+    </edge>
+    <edge id=":bellandur_s_0" function="internal">
+        <lane id=":bellandur_s_0_0" index="0" speed="3.65" length="4.67" shape="6298.40,0.00 6299.20,-1.20 6300.00,-1.60 6300.80,-1.20 6301.60,0.00"/>
+    </edge>
+    <edge id=":entry_west_0" function="internal">
+        <lane id=":entry_west_0_0" index="0" speed="3.65" length="4.67" shape="0.00,301.60 -1.20,300.80 -1.60,300.00 -1.20,299.20 0.00,298.40"/>
+    </edge>
+    <edge id=":exit_east_0" function="internal">
+        <lane id=":exit_east_0_0" index="0" speed="3.65" length="4.67" shape="16600.00,298.40 16601.20,299.20 16601.60,300.00 16601.20,300.80 16600.00,301.60"/>
+    </edge>
+    <edge id=":krpuram_0" function="internal">
+        <lane id=":krpuram_0_0" index="0" speed="6.51" length="9.03" shape="16295.20,313.60 16294.85,311.15 16293.80,309.40 16292.05,308.35 16289.60,308.00"/>
+    </edge>
+    <edge id=":krpuram_1" function="internal">
+        <lane id=":krpuram_1_0" index="0" speed="11.11" length="27.20" shape="16295.20,313.60 16295.20,286.40"/>
+        <lane id=":krpuram_1_1" index="1" speed="11.11" length="27.20" shape="16298.40,313.60 16298.40,286.40"/>
+    </edge>
+    <edge id=":krpuram_3" function="internal">
+        <lane id=":krpuram_3_0" index="0" speed="9.84" length="6.30" shape="16298.40,313.60 16299.11,307.34"/>
+    </edge>
+    <edge id=":krpuram_4" function="internal">
+        <lane id=":krpuram_4_0" index="0" speed="3.65" length="1.44" shape="16298.40,313.60 16299.20,312.40"/>
+    </edge>
+    <edge id=":krpuram_22" function="internal">
+        <lane id=":krpuram_22_0" index="0" speed="9.84" length="15.70" shape="16299.11,307.34 16299.15,306.95 16301.40,302.20 16305.15,299.35 16310.40,298.40"/>
+    </edge>
+    <edge id=":krpuram_23" function="internal">
+        <lane id=":krpuram_23_0" index="0" speed="3.65" length="3.23" shape="16299.20,312.40 16300.00,312.00 16300.80,312.40 16301.60,313.60"/>
+    </edge>
+    <edge id=":krpuram_5" function="internal">
+        <lane id=":krpuram_5_0" index="0" speed="6.51" length="9.03" shape="16310.40,308.00 16307.95,308.35 16306.20,309.40 16305.15,311.15 16304.80,313.60"/>
+    </edge>
+    <edge id=":krpuram_6" function="internal">
+        <lane id=":krpuram_6_0" index="0" speed="16.67" length="20.80" shape="16310.40,308.00 16289.60,308.00"/>
+        <lane id=":krpuram_6_1" index="1" speed="16.67" length="20.80" shape="16310.40,304.80 16289.60,304.80"/>
+        <lane id=":krpuram_6_2" index="2" speed="16.67" length="20.80" shape="16310.40,301.60 16289.60,301.60"/>
+    </edge>
+    <edge id=":krpuram_9" function="internal">
+        <lane id=":krpuram_9_0" index="0" speed="9.84" length="4.01" shape="16310.40,301.60 16306.45,300.89"/>
+    </edge>
+    <edge id=":krpuram_10" function="internal">
+        <lane id=":krpuram_10_0" index="0" speed="3.65" length="1.44" shape="16310.40,301.60 16309.20,300.80"/>
+    </edge>
+    <edge id=":krpuram_24" function="internal">
+        <lane id=":krpuram_24_0" index="0" speed="9.84" length="17.98" shape="16306.45,300.89 16305.15,300.65 16301.40,297.80 16299.15,293.05 16298.40,286.40"/>
+    </edge>
+    <edge id=":krpuram_25" function="internal">
+        <lane id=":krpuram_25_0" index="0" speed="3.65" length="3.23" shape="16309.20,300.80 16308.80,300.00 16309.20,299.20 16310.40,298.40"/>
+    </edge>
+    <edge id=":krpuram_11" function="internal">
+        <lane id=":krpuram_11_0" index="0" speed="6.51" length="9.03" shape="16304.80,286.40 16305.15,288.85 16306.20,290.60 16307.95,291.65 16310.40,292.00"/>
+    </edge>
+    <edge id=":krpuram_12" function="internal">
+        <lane id=":krpuram_12_0" index="0" speed="11.11" length="27.20" shape="16304.80,286.40 16304.80,313.60"/>
+        <lane id=":krpuram_12_1" index="1" speed="11.11" length="27.20" shape="16301.60,286.40 16301.60,313.60"/>
+    </edge>
+    <edge id=":krpuram_14" function="internal">
+        <lane id=":krpuram_14_0" index="0" speed="9.84" length="6.30" shape="16301.60,286.40 16300.89,292.66"/>
+    </edge>
+    <edge id=":krpuram_15" function="internal">
+        <lane id=":krpuram_15_0" index="0" speed="3.65" length="1.44" shape="16301.60,286.40 16300.80,287.60"/>
+    </edge>
+    <edge id=":krpuram_26" function="internal">
+        <lane id=":krpuram_26_0" index="0" speed="9.84" length="15.70" shape="16300.89,292.66 16300.85,293.05 16298.60,297.80 16294.85,300.65 16289.60,301.60"/>
+    </edge>
+    <edge id=":krpuram_27" function="internal">
+        <lane id=":krpuram_27_0" index="0" speed="3.65" length="3.23" shape="16300.80,287.60 16300.00,288.00 16299.20,287.60 16298.40,286.40"/>
+    </edge>
+    <edge id=":krpuram_16" function="internal">
+        <lane id=":krpuram_16_0" index="0" speed="6.51" length="9.03" shape="16289.60,292.00 16292.05,291.65 16293.80,290.60 16294.85,288.85 16295.20,286.40"/>
+    </edge>
+    <edge id=":krpuram_17" function="internal">
+        <lane id=":krpuram_17_0" index="0" speed="16.67" length="20.80" shape="16289.60,292.00 16310.40,292.00"/>
+        <lane id=":krpuram_17_1" index="1" speed="16.67" length="20.80" shape="16289.60,295.20 16310.40,295.20"/>
+        <lane id=":krpuram_17_2" index="2" speed="16.67" length="20.80" shape="16289.60,298.40 16310.40,298.40"/>
+    </edge>
+    <edge id=":krpuram_20" function="internal">
+        <lane id=":krpuram_20_0" index="0" speed="9.84" length="4.01" shape="16289.60,298.40 16293.55,299.11"/>
+    </edge>
+    <edge id=":krpuram_21" function="internal">
+        <lane id=":krpuram_21_0" index="0" speed="3.65" length="1.44" shape="16289.60,298.40 16290.80,299.20"/>
+    </edge>
+    <edge id=":krpuram_28" function="internal">
+        <lane id=":krpuram_28_0" index="0" speed="9.84" length="17.98" shape="16293.55,299.11 16294.85,299.35 16298.60,302.20 16300.85,306.95 16301.60,313.60"/>
+    </edge>
+    <edge id=":krpuram_29" function="internal">
+        <lane id=":krpuram_29_0" index="0" speed="3.65" length="3.23" shape="16290.80,299.20 16291.20,300.00 16290.80,300.80 16289.60,301.60"/>
+    </edge>
+    <edge id=":krpuram_n_0" function="internal">
+        <lane id=":krpuram_n_0_0" index="0" speed="3.65" length="4.67" shape="16301.60,600.00 16300.80,601.20 16300.00,601.60 16299.20,601.20 16298.40,600.00"/>
+    </edge>
+    <edge id=":krpuram_s_0" function="internal">
+        <lane id=":krpuram_s_0_0" index="0" speed="3.65" length="4.67" shape="16298.40,0.00 16299.20,-1.20 16300.00,-1.60 16300.80,-1.20 16301.60,0.00"/>
+    </edge>
+    <edge id=":marathahalli_0" function="internal">
+        <lane id=":marathahalli_0_0" index="0" speed="6.51" length="9.03" shape="11295.20,313.60 11294.85,311.15 11293.80,309.40 11292.05,308.35 11289.60,308.00"/>
+    </edge>
+    <edge id=":marathahalli_1" function="internal">
+        <lane id=":marathahalli_1_0" index="0" speed="11.11" length="27.20" shape="11295.20,313.60 11295.20,286.40"/>
+        <lane id=":marathahalli_1_1" index="1" speed="11.11" length="27.20" shape="11298.40,313.60 11298.40,286.40"/>
+    </edge>
+    <edge id=":marathahalli_3" function="internal">
+        <lane id=":marathahalli_3_0" index="0" speed="9.84" length="6.30" shape="11298.40,313.60 11299.11,307.34"/>
+    </edge>
+    <edge id=":marathahalli_4" function="internal">
+        <lane id=":marathahalli_4_0" index="0" speed="3.65" length="1.44" shape="11298.40,313.60 11299.20,312.40"/>
+    </edge>
+    <edge id=":marathahalli_22" function="internal">
+        <lane id=":marathahalli_22_0" index="0" speed="9.84" length="15.70" shape="11299.11,307.34 11299.15,306.95 11301.40,302.20 11305.15,299.35 11310.40,298.40"/>
+    </edge>
+    <edge id=":marathahalli_23" function="internal">
+        <lane id=":marathahalli_23_0" index="0" speed="3.65" length="3.23" shape="11299.20,312.40 11300.00,312.00 11300.80,312.40 11301.60,313.60"/>
+    </edge>
+    <edge id=":marathahalli_5" function="internal">
+        <lane id=":marathahalli_5_0" index="0" speed="6.51" length="9.03" shape="11310.40,308.00 11307.95,308.35 11306.20,309.40 11305.15,311.15 11304.80,313.60"/>
+    </edge>
+    <edge id=":marathahalli_6" function="internal">
+        <lane id=":marathahalli_6_0" index="0" speed="16.67" length="20.80" shape="11310.40,308.00 11289.60,308.00"/>
+        <lane id=":marathahalli_6_1" index="1" speed="16.67" length="20.80" shape="11310.40,304.80 11289.60,304.80"/>
+        <lane id=":marathahalli_6_2" index="2" speed="16.67" length="20.80" shape="11310.40,301.60 11289.60,301.60"/>
+    </edge>
+    <edge id=":marathahalli_9" function="internal">
+        <lane id=":marathahalli_9_0" index="0" speed="9.84" length="4.01" shape="11310.40,301.60 11306.45,300.89"/>
+    </edge>
+    <edge id=":marathahalli_10" function="internal">
+        <lane id=":marathahalli_10_0" index="0" speed="3.65" length="1.44" shape="11310.40,301.60 11309.20,300.80"/>
+    </edge>
+    <edge id=":marathahalli_24" function="internal">
+        <lane id=":marathahalli_24_0" index="0" speed="9.84" length="17.98" shape="11306.45,300.89 11305.15,300.65 11301.40,297.80 11299.15,293.05 11298.40,286.40"/>
+    </edge>
+    <edge id=":marathahalli_25" function="internal">
+        <lane id=":marathahalli_25_0" index="0" speed="3.65" length="3.23" shape="11309.20,300.80 11308.80,300.00 11309.20,299.20 11310.40,298.40"/>
+    </edge>
+    <edge id=":marathahalli_11" function="internal">
+        <lane id=":marathahalli_11_0" index="0" speed="6.51" length="9.03" shape="11304.80,286.40 11305.15,288.85 11306.20,290.60 11307.95,291.65 11310.40,292.00"/>
+    </edge>
+    <edge id=":marathahalli_12" function="internal">
+        <lane id=":marathahalli_12_0" index="0" speed="11.11" length="27.20" shape="11304.80,286.40 11304.80,313.60"/>
+        <lane id=":marathahalli_12_1" index="1" speed="11.11" length="27.20" shape="11301.60,286.40 11301.60,313.60"/>
+    </edge>
+    <edge id=":marathahalli_14" function="internal">
+        <lane id=":marathahalli_14_0" index="0" speed="9.84" length="6.30" shape="11301.60,286.40 11300.89,292.66"/>
+    </edge>
+    <edge id=":marathahalli_15" function="internal">
+        <lane id=":marathahalli_15_0" index="0" speed="3.65" length="1.44" shape="11301.60,286.40 11300.80,287.60"/>
+    </edge>
+    <edge id=":marathahalli_26" function="internal">
+        <lane id=":marathahalli_26_0" index="0" speed="9.84" length="15.70" shape="11300.89,292.66 11300.85,293.05 11298.60,297.80 11294.85,300.65 11289.60,301.60"/>
+    </edge>
+    <edge id=":marathahalli_27" function="internal">
+        <lane id=":marathahalli_27_0" index="0" speed="3.65" length="3.23" shape="11300.80,287.60 11300.00,288.00 11299.20,287.60 11298.40,286.40"/>
+    </edge>
+    <edge id=":marathahalli_16" function="internal">
+        <lane id=":marathahalli_16_0" index="0" speed="6.51" length="9.03" shape="11289.60,292.00 11292.05,291.65 11293.80,290.60 11294.85,288.85 11295.20,286.40"/>
+    </edge>
+    <edge id=":marathahalli_17" function="internal">
+        <lane id=":marathahalli_17_0" index="0" speed="16.67" length="20.80" shape="11289.60,292.00 11310.40,292.00"/>
+        <lane id=":marathahalli_17_1" index="1" speed="16.67" length="20.80" shape="11289.60,295.20 11310.40,295.20"/>
+        <lane id=":marathahalli_17_2" index="2" speed="16.67" length="20.80" shape="11289.60,298.40 11310.40,298.40"/>
+    </edge>
+    <edge id=":marathahalli_20" function="internal">
+        <lane id=":marathahalli_20_0" index="0" speed="9.84" length="4.01" shape="11289.60,298.40 11293.55,299.11"/>
+    </edge>
+    <edge id=":marathahalli_21" function="internal">
+        <lane id=":marathahalli_21_0" index="0" speed="3.65" length="1.44" shape="11289.60,298.40 11290.80,299.20"/>
+    </edge>
+    <edge id=":marathahalli_28" function="internal">
+        <lane id=":marathahalli_28_0" index="0" speed="9.84" length="17.98" shape="11293.55,299.11 11294.85,299.35 11298.60,302.20 11300.85,306.95 11301.60,313.60"/>
+    </edge>
+    <edge id=":marathahalli_29" function="internal">
+        <lane id=":marathahalli_29_0" index="0" speed="3.65" length="3.23" shape="11290.80,299.20 11291.20,300.00 11290.80,300.80 11289.60,301.60"/>
+    </edge>
+    <edge id=":marathahalli_n_0" function="internal">
+        <lane id=":marathahalli_n_0_0" index="0" speed="3.65" length="4.67" shape="11301.60,600.00 11300.80,601.20 11300.00,601.60 11299.20,601.20 11298.40,600.00"/>
+    </edge>
+    <edge id=":marathahalli_s_0" function="internal">
+        <lane id=":marathahalli_s_0_0" index="0" speed="3.65" length="4.67" shape="11298.40,0.00 11299.20,-1.20 11300.00,-1.60 11300.80,-1.20 11301.60,0.00"/>
+    </edge>
+    <edge id=":silkboard_0" function="internal">
+        <lane id=":silkboard_0_0" index="0" speed="6.51" length="9.03" shape="295.20,313.60 294.85,311.15 293.80,309.40 292.05,308.35 289.60,308.00"/>
+    </edge>
+    <edge id=":silkboard_1" function="internal">
+        <lane id=":silkboard_1_0" index="0" speed="11.11" length="27.20" shape="295.20,313.60 295.20,286.40"/>
+        <lane id=":silkboard_1_1" index="1" speed="11.11" length="27.20" shape="298.40,313.60 298.40,286.40"/>
+    </edge>
+    <edge id=":silkboard_3" function="internal">
+        <lane id=":silkboard_3_0" index="0" speed="9.84" length="6.30" shape="298.40,313.60 299.11,307.34"/>
+    </edge>
+    <edge id=":silkboard_4" function="internal">
+        <lane id=":silkboard_4_0" index="0" speed="3.65" length="1.44" shape="298.40,313.60 299.20,312.40"/>
+    </edge>
+    <edge id=":silkboard_22" function="internal">
+        <lane id=":silkboard_22_0" index="0" speed="9.84" length="15.70" shape="299.11,307.34 299.15,306.95 301.40,302.20 305.15,299.35 310.40,298.40"/>
+    </edge>
+    <edge id=":silkboard_23" function="internal">
+        <lane id=":silkboard_23_0" index="0" speed="3.65" length="3.23" shape="299.20,312.40 300.00,312.00 300.80,312.40 301.60,313.60"/>
+    </edge>
+    <edge id=":silkboard_5" function="internal">
+        <lane id=":silkboard_5_0" index="0" speed="6.51" length="9.03" shape="310.40,308.00 307.95,308.35 306.20,309.40 305.15,311.15 304.80,313.60"/>
+    </edge>
+    <edge id=":silkboard_6" function="internal">
+        <lane id=":silkboard_6_0" index="0" speed="16.67" length="20.80" shape="310.40,308.00 289.60,308.00"/>
+        <lane id=":silkboard_6_1" index="1" speed="16.67" length="20.80" shape="310.40,304.80 289.60,304.80"/>
+        <lane id=":silkboard_6_2" index="2" speed="16.67" length="20.80" shape="310.40,301.60 289.60,301.60"/>
+    </edge>
+    <edge id=":silkboard_9" function="internal">
+        <lane id=":silkboard_9_0" index="0" speed="9.84" length="4.01" shape="310.40,301.60 306.45,300.89"/>
+    </edge>
+    <edge id=":silkboard_10" function="internal">
+        <lane id=":silkboard_10_0" index="0" speed="3.65" length="1.44" shape="310.40,301.60 309.20,300.80"/>
+    </edge>
+    <edge id=":silkboard_24" function="internal">
+        <lane id=":silkboard_24_0" index="0" speed="9.84" length="17.98" shape="306.45,300.89 305.15,300.65 301.40,297.80 299.15,293.05 298.40,286.40"/>
+    </edge>
+    <edge id=":silkboard_25" function="internal">
+        <lane id=":silkboard_25_0" index="0" speed="3.65" length="3.23" shape="309.20,300.80 308.80,300.00 309.20,299.20 310.40,298.40"/>
+    </edge>
+    <edge id=":silkboard_11" function="internal">
+        <lane id=":silkboard_11_0" index="0" speed="6.51" length="9.03" shape="304.80,286.40 305.15,288.85 306.20,290.60 307.95,291.65 310.40,292.00"/>
+    </edge>
+    <edge id=":silkboard_12" function="internal">
+        <lane id=":silkboard_12_0" index="0" speed="11.11" length="27.20" shape="304.80,286.40 304.80,313.60"/>
+        <lane id=":silkboard_12_1" index="1" speed="11.11" length="27.20" shape="301.60,286.40 301.60,313.60"/>
+    </edge>
+    <edge id=":silkboard_14" function="internal">
+        <lane id=":silkboard_14_0" index="0" speed="9.84" length="6.30" shape="301.60,286.40 300.89,292.66"/>
+    </edge>
+    <edge id=":silkboard_15" function="internal">
+        <lane id=":silkboard_15_0" index="0" speed="3.65" length="1.44" shape="301.60,286.40 300.80,287.60"/>
+    </edge>
+    <edge id=":silkboard_26" function="internal">
+        <lane id=":silkboard_26_0" index="0" speed="9.84" length="15.70" shape="300.89,292.66 300.85,293.05 298.60,297.80 294.85,300.65 289.60,301.60"/>
+    </edge>
+    <edge id=":silkboard_27" function="internal">
+        <lane id=":silkboard_27_0" index="0" speed="3.65" length="3.23" shape="300.80,287.60 300.00,288.00 299.20,287.60 298.40,286.40"/>
+    </edge>
+    <edge id=":silkboard_16" function="internal">
+        <lane id=":silkboard_16_0" index="0" speed="6.51" length="9.03" shape="289.60,292.00 292.05,291.65 293.80,290.60 294.85,288.85 295.20,286.40"/>
+    </edge>
+    <edge id=":silkboard_17" function="internal">
+        <lane id=":silkboard_17_0" index="0" speed="16.67" length="20.80" shape="289.60,292.00 310.40,292.00"/>
+        <lane id=":silkboard_17_1" index="1" speed="16.67" length="20.80" shape="289.60,295.20 310.40,295.20"/>
+        <lane id=":silkboard_17_2" index="2" speed="16.67" length="20.80" shape="289.60,298.40 310.40,298.40"/>
+    </edge>
+    <edge id=":silkboard_20" function="internal">
+        <lane id=":silkboard_20_0" index="0" speed="9.84" length="4.01" shape="289.60,298.40 293.55,299.11"/>
+    </edge>
+    <edge id=":silkboard_21" function="internal">
+        <lane id=":silkboard_21_0" index="0" speed="3.65" length="1.44" shape="289.60,298.40 290.80,299.20"/>
+    </edge>
+    <edge id=":silkboard_28" function="internal">
+        <lane id=":silkboard_28_0" index="0" speed="9.84" length="17.98" shape="293.55,299.11 294.85,299.35 298.60,302.20 300.85,306.95 301.60,313.60"/>
+    </edge>
+    <edge id=":silkboard_29" function="internal">
+        <lane id=":silkboard_29_0" index="0" speed="3.65" length="3.23" shape="290.80,299.20 291.20,300.00 290.80,300.80 289.60,301.60"/>
+    </edge>
+    <edge id=":silkboard_n_0" function="internal">
+        <lane id=":silkboard_n_0_0" index="0" speed="3.65" length="4.67" shape="301.60,600.00 300.80,601.20 300.00,601.60 299.20,601.20 298.40,600.00"/>
+    </edge>
+    <edge id=":silkboard_s_0" function="internal">
+        <lane id=":silkboard_s_0_0" index="0" speed="3.65" length="4.67" shape="298.40,0.00 299.20,-1.20 300.00,-1.60 300.80,-1.20 301.60,0.00"/>
+    </edge>
+
+    <edge id="bellandur_bellandur_n" from="bellandur" to="bellandur_n" priority="2" type="cross">
+        <lane id="bellandur_bellandur_n_0" index="0" speed="11.11" length="286.40" shape="6304.80,313.60 6304.80,600.00"/>
+        <lane id="bellandur_bellandur_n_1" index="1" speed="11.11" length="286.40" shape="6301.60,313.60 6301.60,600.00"/>
+    </edge>
+    <edge id="bellandur_bellandur_s" from="bellandur" to="bellandur_s" priority="2" type="cross">
+        <lane id="bellandur_bellandur_s_0" index="0" speed="11.11" length="286.40" shape="6295.20,286.40 6295.20,0.00"/>
+        <lane id="bellandur_bellandur_s_1" index="1" speed="11.11" length="286.40" shape="6298.40,286.40 6298.40,0.00"/>
+    </edge>
+    <edge id="bellandur_marathahalli" from="bellandur" to="marathahalli" priority="3" type="orr">
+        <lane id="bellandur_marathahalli_0" index="0" speed="16.67" length="4979.20" shape="6310.40,292.00 11289.60,292.00"/>
+        <lane id="bellandur_marathahalli_1" index="1" speed="16.67" length="4979.20" shape="6310.40,295.20 11289.60,295.20"/>
+        <lane id="bellandur_marathahalli_2" index="2" speed="16.67" length="4979.20" shape="6310.40,298.40 11289.60,298.40"/>
+    </edge>
+    <edge id="bellandur_n_bellandur" from="bellandur_n" to="bellandur" priority="2" type="cross">
+        <lane id="bellandur_n_bellandur_0" index="0" speed="11.11" length="286.40" shape="6295.20,600.00 6295.20,313.60"/>
+        <lane id="bellandur_n_bellandur_1" index="1" speed="11.11" length="286.40" shape="6298.40,600.00 6298.40,313.60"/>
+    </edge>
+    <edge id="bellandur_s_bellandur" from="bellandur_s" to="bellandur" priority="2" type="cross">
+        <lane id="bellandur_s_bellandur_0" index="0" speed="11.11" length="286.40" shape="6304.80,0.00 6304.80,286.40"/>
+        <lane id="bellandur_s_bellandur_1" index="1" speed="11.11" length="286.40" shape="6301.60,0.00 6301.60,286.40"/>
+    </edge>
+    <edge id="bellandur_silkboard" from="bellandur" to="silkboard" priority="3" type="orr">
+        <lane id="bellandur_silkboard_0" index="0" speed="16.67" length="5979.20" shape="6289.60,308.00 310.40,308.00"/>
+        <lane id="bellandur_silkboard_1" index="1" speed="16.67" length="5979.20" shape="6289.60,304.80 310.40,304.80"/>
+        <lane id="bellandur_silkboard_2" index="2" speed="16.67" length="5979.20" shape="6289.60,301.60 310.40,301.60"/>
+    </edge>
+    <edge id="entry_west_silkboard" from="entry_west" to="silkboard" priority="3" type="orr">
+        <lane id="entry_west_silkboard_0" index="0" speed="16.67" length="289.60" shape="0.00,292.00 289.60,292.00"/>
+        <lane id="entry_west_silkboard_1" index="1" speed="16.67" length="289.60" shape="0.00,295.20 289.60,295.20"/>
+        <lane id="entry_west_silkboard_2" index="2" speed="16.67" length="289.60" shape="0.00,298.40 289.60,298.40"/>
+    </edge>
+    <edge id="exit_east_krpuram" from="exit_east" to="krpuram" priority="3" type="orr">
+        <lane id="exit_east_krpuram_0" index="0" speed="16.67" length="289.60" shape="16600.00,308.00 16310.40,308.00"/>
+        <lane id="exit_east_krpuram_1" index="1" speed="16.67" length="289.60" shape="16600.00,304.80 16310.40,304.80"/>
+        <lane id="exit_east_krpuram_2" index="2" speed="16.67" length="289.60" shape="16600.00,301.60 16310.40,301.60"/>
+    </edge>
+    <edge id="krpuram_exit_east" from="krpuram" to="exit_east" priority="3" type="orr">
+        <lane id="krpuram_exit_east_0" index="0" speed="16.67" length="289.60" shape="16310.40,292.00 16600.00,292.00"/>
+        <lane id="krpuram_exit_east_1" index="1" speed="16.67" length="289.60" shape="16310.40,295.20 16600.00,295.20"/>
+        <lane id="krpuram_exit_east_2" index="2" speed="16.67" length="289.60" shape="16310.40,298.40 16600.00,298.40"/>
+    </edge>
+    <edge id="krpuram_krpuram_n" from="krpuram" to="krpuram_n" priority="2" type="cross">
+        <lane id="krpuram_krpuram_n_0" index="0" speed="11.11" length="286.40" shape="16304.80,313.60 16304.80,600.00"/>
+        <lane id="krpuram_krpuram_n_1" index="1" speed="11.11" length="286.40" shape="16301.60,313.60 16301.60,600.00"/>
+    </edge>
+    <edge id="krpuram_krpuram_s" from="krpuram" to="krpuram_s" priority="2" type="cross">
+        <lane id="krpuram_krpuram_s_0" index="0" speed="11.11" length="286.40" shape="16295.20,286.40 16295.20,0.00"/>
+        <lane id="krpuram_krpuram_s_1" index="1" speed="11.11" length="286.40" shape="16298.40,286.40 16298.40,0.00"/>
+    </edge>
+    <edge id="krpuram_marathahalli" from="krpuram" to="marathahalli" priority="3" type="orr">
+        <lane id="krpuram_marathahalli_0" index="0" speed="16.67" length="4979.20" shape="16289.60,308.00 11310.40,308.00"/>
+        <lane id="krpuram_marathahalli_1" index="1" speed="16.67" length="4979.20" shape="16289.60,304.80 11310.40,304.80"/>
+        <lane id="krpuram_marathahalli_2" index="2" speed="16.67" length="4979.20" shape="16289.60,301.60 11310.40,301.60"/>
+    </edge>
+    <edge id="krpuram_n_krpuram" from="krpuram_n" to="krpuram" priority="2" type="cross">
+        <lane id="krpuram_n_krpuram_0" index="0" speed="11.11" length="286.40" shape="16295.20,600.00 16295.20,313.60"/>
+        <lane id="krpuram_n_krpuram_1" index="1" speed="11.11" length="286.40" shape="16298.40,600.00 16298.40,313.60"/>
+    </edge>
+    <edge id="krpuram_s_krpuram" from="krpuram_s" to="krpuram" priority="2" type="cross">
+        <lane id="krpuram_s_krpuram_0" index="0" speed="11.11" length="286.40" shape="16304.80,0.00 16304.80,286.40"/>
+        <lane id="krpuram_s_krpuram_1" index="1" speed="11.11" length="286.40" shape="16301.60,0.00 16301.60,286.40"/>
+    </edge>
+    <edge id="marathahalli_bellandur" from="marathahalli" to="bellandur" priority="3" type="orr">
+        <lane id="marathahalli_bellandur_0" index="0" speed="16.67" length="4979.20" shape="11289.60,308.00 6310.40,308.00"/>
+        <lane id="marathahalli_bellandur_1" index="1" speed="16.67" length="4979.20" shape="11289.60,304.80 6310.40,304.80"/>
+        <lane id="marathahalli_bellandur_2" index="2" speed="16.67" length="4979.20" shape="11289.60,301.60 6310.40,301.60"/>
+    </edge>
+    <edge id="marathahalli_krpuram" from="marathahalli" to="krpuram" priority="3" type="orr">
+        <lane id="marathahalli_krpuram_0" index="0" speed="16.67" length="4979.20" shape="11310.40,292.00 16289.60,292.00"/>
+        <lane id="marathahalli_krpuram_1" index="1" speed="16.67" length="4979.20" shape="11310.40,295.20 16289.60,295.20"/>
+        <lane id="marathahalli_krpuram_2" index="2" speed="16.67" length="4979.20" shape="11310.40,298.40 16289.60,298.40"/>
+    </edge>
+    <edge id="marathahalli_marathahalli_n" from="marathahalli" to="marathahalli_n" priority="2" type="cross">
+        <lane id="marathahalli_marathahalli_n_0" index="0" speed="11.11" length="286.40" shape="11304.80,313.60 11304.80,600.00"/>
+        <lane id="marathahalli_marathahalli_n_1" index="1" speed="11.11" length="286.40" shape="11301.60,313.60 11301.60,600.00"/>
+    </edge>
+    <edge id="marathahalli_marathahalli_s" from="marathahalli" to="marathahalli_s" priority="2" type="cross">
+        <lane id="marathahalli_marathahalli_s_0" index="0" speed="11.11" length="286.40" shape="11295.20,286.40 11295.20,0.00"/>
+        <lane id="marathahalli_marathahalli_s_1" index="1" speed="11.11" length="286.40" shape="11298.40,286.40 11298.40,0.00"/>
+    </edge>
+    <edge id="marathahalli_n_marathahalli" from="marathahalli_n" to="marathahalli" priority="2" type="cross">
+        <lane id="marathahalli_n_marathahalli_0" index="0" speed="11.11" length="286.40" shape="11295.20,600.00 11295.20,313.60"/>
+        <lane id="marathahalli_n_marathahalli_1" index="1" speed="11.11" length="286.40" shape="11298.40,600.00 11298.40,313.60"/>
+    </edge>
+    <edge id="marathahalli_s_marathahalli" from="marathahalli_s" to="marathahalli" priority="2" type="cross">
+        <lane id="marathahalli_s_marathahalli_0" index="0" speed="11.11" length="286.40" shape="11304.80,0.00 11304.80,286.40"/>
+        <lane id="marathahalli_s_marathahalli_1" index="1" speed="11.11" length="286.40" shape="11301.60,0.00 11301.60,286.40"/>
+    </edge>
+    <edge id="silkboard_bellandur" from="silkboard" to="bellandur" priority="3" type="orr">
+        <lane id="silkboard_bellandur_0" index="0" speed="16.67" length="5979.20" shape="310.40,292.00 6289.60,292.00"/>
+        <lane id="silkboard_bellandur_1" index="1" speed="16.67" length="5979.20" shape="310.40,295.20 6289.60,295.20"/>
+        <lane id="silkboard_bellandur_2" index="2" speed="16.67" length="5979.20" shape="310.40,298.40 6289.60,298.40"/>
+    </edge>
+    <edge id="silkboard_entry_west" from="silkboard" to="entry_west" priority="3" type="orr">
+        <lane id="silkboard_entry_west_0" index="0" speed="16.67" length="289.60" shape="289.60,308.00 0.00,308.00"/>
+        <lane id="silkboard_entry_west_1" index="1" speed="16.67" length="289.60" shape="289.60,304.80 0.00,304.80"/>
+        <lane id="silkboard_entry_west_2" index="2" speed="16.67" length="289.60" shape="289.60,301.60 0.00,301.60"/>
+    </edge>
+    <edge id="silkboard_n_silkboard" from="silkboard_n" to="silkboard" priority="2" type="cross">
+        <lane id="silkboard_n_silkboard_0" index="0" speed="11.11" length="286.40" shape="295.20,600.00 295.20,313.60"/>
+        <lane id="silkboard_n_silkboard_1" index="1" speed="11.11" length="286.40" shape="298.40,600.00 298.40,313.60"/>
+    </edge>
+    <edge id="silkboard_s_silkboard" from="silkboard_s" to="silkboard" priority="2" type="cross">
+        <lane id="silkboard_s_silkboard_0" index="0" speed="11.11" length="286.40" shape="304.80,0.00 304.80,286.40"/>
+        <lane id="silkboard_s_silkboard_1" index="1" speed="11.11" length="286.40" shape="301.60,0.00 301.60,286.40"/>
+    </edge>
+    <edge id="silkboard_silkboard_n" from="silkboard" to="silkboard_n" priority="2" type="cross">
+        <lane id="silkboard_silkboard_n_0" index="0" speed="11.11" length="286.40" shape="304.80,313.60 304.80,600.00"/>
+        <lane id="silkboard_silkboard_n_1" index="1" speed="11.11" length="286.40" shape="301.60,313.60 301.60,600.00"/>
+    </edge>
+    <edge id="silkboard_silkboard_s" from="silkboard" to="silkboard_s" priority="2" type="cross">
+        <lane id="silkboard_silkboard_s_0" index="0" speed="11.11" length="286.40" shape="295.20,286.40 295.20,0.00"/>
+        <lane id="silkboard_silkboard_s_1" index="1" speed="11.11" length="286.40" shape="298.40,286.40 298.40,0.00"/>
+    </edge>
+
+    <tlLogic id="bellandur" type="static" programID="0" offset="0">
+        <phase duration="41" state="rrrrrGGGGggrrrrrGGGGgg"/>
+        <phase duration="4"  state="rrrrryyyyyyrrrrryyyyyy"/>
+        <phase duration="41" state="GGGggrrrrrrGGGggrrrrrr"/>
+        <phase duration="4"  state="yyyyyrrrrrryyyyyrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="krpuram" type="static" programID="0" offset="0">
+        <phase duration="41" state="rrrrrGGGGggrrrrrGGGGgg"/>
+        <phase duration="4"  state="rrrrryyyyyyrrrrryyyyyy"/>
+        <phase duration="41" state="GGGggrrrrrrGGGggrrrrrr"/>
+        <phase duration="4"  state="yyyyyrrrrrryyyyyrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="marathahalli" type="static" programID="0" offset="0">
+        <phase duration="41" state="rrrrrGGGGggrrrrrGGGGgg"/>
+        <phase duration="4"  state="rrrrryyyyyyrrrrryyyyyy"/>
+        <phase duration="41" state="GGGggrrrrrrGGGggrrrrrr"/>
+        <phase duration="4"  state="yyyyyrrrrrryyyyyrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="silkboard" type="static" programID="0" offset="0">
+        <phase duration="41" state="rrrrrGGGGggrrrrrGGGGgg"/>
+        <phase duration="4"  state="rrrrryyyyyyrrrrryyyyyy"/>
+        <phase duration="41" state="GGGggrrrrrrGGGggrrrrrr"/>
+        <phase duration="4"  state="yyyyyrrrrrryyyyyrrrrrr"/>
+    </tlLogic>
+
+    <junction id="bellandur" type="traffic_light" x="6300.00" y="300.00" incLanes="bellandur_n_bellandur_0 bellandur_n_bellandur_1 marathahalli_bellandur_0 marathahalli_bellandur_1 marathahalli_bellandur_2 bellandur_s_bellandur_0 bellandur_s_bellandur_1 silkboard_bellandur_0 silkboard_bellandur_1 silkboard_bellandur_2" intLanes=":bellandur_0_0 :bellandur_1_0 :bellandur_1_1 :bellandur_22_0 :bellandur_23_0 :bellandur_5_0 :bellandur_6_0 :bellandur_6_1 :bellandur_6_2 :bellandur_24_0 :bellandur_25_0 :bellandur_11_0 :bellandur_12_0 :bellandur_12_1 :bellandur_26_0 :bellandur_27_0 :bellandur_16_0 :bellandur_17_0 :bellandur_17_1 :bellandur_17_2 :bellandur_28_0 :bellandur_29_0" shape="6293.60,313.60 6306.40,313.60 6306.84,311.38 6307.40,310.60 6308.18,310.04 6309.18,309.71 6310.40,309.60 6310.40,290.40 6308.18,289.96 6307.40,289.40 6306.84,288.62 6306.51,287.62 6306.40,286.40 6293.60,286.40 6293.16,288.62 6292.60,289.40 6291.82,289.96 6290.82,290.29 6289.60,290.40 6289.60,309.60 6291.82,310.04 6292.60,310.60 6293.16,311.38 6293.49,312.38">
+        <request index="0"  response="0000000000000111000000" foes="0000000000000111000000" cont="0"/>
+        <request index="1"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="2"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="3"  response="0111100011001111000000" foes="0111100011011111000000" cont="1"/>
+        <request index="4"  response="0100000011000000000000" foes="0100000011000000000000" cont="1"/>
+        <request index="5"  response="0000000000000000000000" foes="0000000011000000000000" cont="0"/>
+        <request index="6"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="7"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="8"  response="0000000100000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="9"  response="0011100100000000001000" foes="0011101111000000001110" cont="1"/>
+        <request index="10" response="0011100000000000001000" foes="0011100000000000001000" cont="1"/>
+        <request index="11" response="0011100000000000000000" foes="0011100000000000000000" cont="0"/>
+        <request index="12" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="13" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="14" response="0111100000001111000110" foes="1111100000001111000110" cont="1"/>
+        <request index="15" response="0000000000001000000110" foes="0000000000001000000110" cont="1"/>
+        <request index="16" response="0000000000000000000000" foes="0000000000000000000110" cont="0"/>
+        <request index="17" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="18" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="19" response="0000000100000000001000" foes="0000000111111000001110" cont="0"/>
+        <request index="20" response="0000000100000111001000" foes="0000000111000111011110" cont="1"/>
+        <request index="21" response="0000000100000111000000" foes="0000000100000111000000" cont="1"/>
+    </junction>
+    <junction id="bellandur_n" type="priority" x="6300.00" y="600.00" incLanes="bellandur_bellandur_n_0 bellandur_bellandur_n_1" intLanes=":bellandur_n_0_0" shape="6300.00,600.00 6306.40,600.00 6300.00,600.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="bellandur_s" type="priority" x="6300.00" y="0.00" incLanes="bellandur_bellandur_s_0 bellandur_bellandur_s_1" intLanes=":bellandur_s_0_0" shape="6300.00,0.00 6293.60,0.00 6300.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="entry_west" type="priority" x="0.00" y="300.00" incLanes="silkboard_entry_west_0 silkboard_entry_west_1 silkboard_entry_west_2" intLanes=":entry_west_0_0" shape="0.00,300.00 0.00,309.60 0.00,300.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="exit_east" type="priority" x="16600.00" y="300.00" incLanes="krpuram_exit_east_0 krpuram_exit_east_1 krpuram_exit_east_2" intLanes=":exit_east_0_0" shape="16600.00,300.00 16600.00,290.40 16600.00,300.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="krpuram" type="traffic_light" x="16300.00" y="300.00" incLanes="krpuram_n_krpuram_0 krpuram_n_krpuram_1 exit_east_krpuram_0 exit_east_krpuram_1 exit_east_krpuram_2 krpuram_s_krpuram_0 krpuram_s_krpuram_1 marathahalli_krpuram_0 marathahalli_krpuram_1 marathahalli_krpuram_2" intLanes=":krpuram_0_0 :krpuram_1_0 :krpuram_1_1 :krpuram_22_0 :krpuram_23_0 :krpuram_5_0 :krpuram_6_0 :krpuram_6_1 :krpuram_6_2 :krpuram_24_0 :krpuram_25_0 :krpuram_11_0 :krpuram_12_0 :krpuram_12_1 :krpuram_26_0 :krpuram_27_0 :krpuram_16_0 :krpuram_17_0 :krpuram_17_1 :krpuram_17_2 :krpuram_28_0 :krpuram_29_0" shape="16293.60,313.60 16306.40,313.60 16306.84,311.38 16307.40,310.60 16308.18,310.04 16309.18,309.71 16310.40,309.60 16310.40,290.40 16308.18,289.96 16307.40,289.40 16306.84,288.62 16306.51,287.62 16306.40,286.40 16293.60,286.40 16293.16,288.62 16292.60,289.40 16291.82,289.96 16290.82,290.29 16289.60,290.40 16289.60,309.60 16291.82,310.04 16292.60,310.60 16293.16,311.38 16293.49,312.38">
+        <request index="0"  response="0000000000000111000000" foes="0000000000000111000000" cont="0"/>
+        <request index="1"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="2"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="3"  response="0111100011001111000000" foes="0111100011011111000000" cont="1"/>
+        <request index="4"  response="0100000011000000000000" foes="0100000011000000000000" cont="1"/>
+        <request index="5"  response="0000000000000000000000" foes="0000000011000000000000" cont="0"/>
+        <request index="6"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="7"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="8"  response="0000000100000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="9"  response="0011100100000000001000" foes="0011101111000000001110" cont="1"/>
+        <request index="10" response="0011100000000000001000" foes="0011100000000000001000" cont="1"/>
+        <request index="11" response="0011100000000000000000" foes="0011100000000000000000" cont="0"/>
+        <request index="12" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="13" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="14" response="0111100000001111000110" foes="1111100000001111000110" cont="1"/>
+        <request index="15" response="0000000000001000000110" foes="0000000000001000000110" cont="1"/>
+        <request index="16" response="0000000000000000000000" foes="0000000000000000000110" cont="0"/>
+        <request index="17" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="18" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="19" response="0000000100000000001000" foes="0000000111111000001110" cont="0"/>
+        <request index="20" response="0000000100000111001000" foes="0000000111000111011110" cont="1"/>
+        <request index="21" response="0000000100000111000000" foes="0000000100000111000000" cont="1"/>
+    </junction>
+    <junction id="krpuram_n" type="priority" x="16300.00" y="600.00" incLanes="krpuram_krpuram_n_0 krpuram_krpuram_n_1" intLanes=":krpuram_n_0_0" shape="16300.00,600.00 16306.40,600.00 16300.00,600.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="krpuram_s" type="priority" x="16300.00" y="0.00" incLanes="krpuram_krpuram_s_0 krpuram_krpuram_s_1" intLanes=":krpuram_s_0_0" shape="16300.00,0.00 16293.60,0.00 16300.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="marathahalli" type="traffic_light" x="11300.00" y="300.00" incLanes="marathahalli_n_marathahalli_0 marathahalli_n_marathahalli_1 krpuram_marathahalli_0 krpuram_marathahalli_1 krpuram_marathahalli_2 marathahalli_s_marathahalli_0 marathahalli_s_marathahalli_1 bellandur_marathahalli_0 bellandur_marathahalli_1 bellandur_marathahalli_2" intLanes=":marathahalli_0_0 :marathahalli_1_0 :marathahalli_1_1 :marathahalli_22_0 :marathahalli_23_0 :marathahalli_5_0 :marathahalli_6_0 :marathahalli_6_1 :marathahalli_6_2 :marathahalli_24_0 :marathahalli_25_0 :marathahalli_11_0 :marathahalli_12_0 :marathahalli_12_1 :marathahalli_26_0 :marathahalli_27_0 :marathahalli_16_0 :marathahalli_17_0 :marathahalli_17_1 :marathahalli_17_2 :marathahalli_28_0 :marathahalli_29_0" shape="11293.60,313.60 11306.40,313.60 11306.84,311.38 11307.40,310.60 11308.18,310.04 11309.18,309.71 11310.40,309.60 11310.40,290.40 11308.18,289.96 11307.40,289.40 11306.84,288.62 11306.51,287.62 11306.40,286.40 11293.60,286.40 11293.16,288.62 11292.60,289.40 11291.82,289.96 11290.82,290.29 11289.60,290.40 11289.60,309.60 11291.82,310.04 11292.60,310.60 11293.16,311.38 11293.49,312.38">
+        <request index="0"  response="0000000000000111000000" foes="0000000000000111000000" cont="0"/>
+        <request index="1"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="2"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="3"  response="0111100011001111000000" foes="0111100011011111000000" cont="1"/>
+        <request index="4"  response="0100000011000000000000" foes="0100000011000000000000" cont="1"/>
+        <request index="5"  response="0000000000000000000000" foes="0000000011000000000000" cont="0"/>
+        <request index="6"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="7"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="8"  response="0000000100000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="9"  response="0011100100000000001000" foes="0011101111000000001110" cont="1"/>
+        <request index="10" response="0011100000000000001000" foes="0011100000000000001000" cont="1"/>
+        <request index="11" response="0011100000000000000000" foes="0011100000000000000000" cont="0"/>
+        <request index="12" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="13" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="14" response="0111100000001111000110" foes="1111100000001111000110" cont="1"/>
+        <request index="15" response="0000000000001000000110" foes="0000000000001000000110" cont="1"/>
+        <request index="16" response="0000000000000000000000" foes="0000000000000000000110" cont="0"/>
+        <request index="17" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="18" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="19" response="0000000100000000001000" foes="0000000111111000001110" cont="0"/>
+        <request index="20" response="0000000100000111001000" foes="0000000111000111011110" cont="1"/>
+        <request index="21" response="0000000100000111000000" foes="0000000100000111000000" cont="1"/>
+    </junction>
+    <junction id="marathahalli_n" type="priority" x="11300.00" y="600.00" incLanes="marathahalli_marathahalli_n_0 marathahalli_marathahalli_n_1" intLanes=":marathahalli_n_0_0" shape="11300.00,600.00 11306.40,600.00 11300.00,600.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="marathahalli_s" type="priority" x="11300.00" y="0.00" incLanes="marathahalli_marathahalli_s_0 marathahalli_marathahalli_s_1" intLanes=":marathahalli_s_0_0" shape="11300.00,0.00 11293.60,0.00 11300.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="silkboard" type="traffic_light" x="300.00" y="300.00" incLanes="silkboard_n_silkboard_0 silkboard_n_silkboard_1 bellandur_silkboard_0 bellandur_silkboard_1 bellandur_silkboard_2 silkboard_s_silkboard_0 silkboard_s_silkboard_1 entry_west_silkboard_0 entry_west_silkboard_1 entry_west_silkboard_2" intLanes=":silkboard_0_0 :silkboard_1_0 :silkboard_1_1 :silkboard_22_0 :silkboard_23_0 :silkboard_5_0 :silkboard_6_0 :silkboard_6_1 :silkboard_6_2 :silkboard_24_0 :silkboard_25_0 :silkboard_11_0 :silkboard_12_0 :silkboard_12_1 :silkboard_26_0 :silkboard_27_0 :silkboard_16_0 :silkboard_17_0 :silkboard_17_1 :silkboard_17_2 :silkboard_28_0 :silkboard_29_0" shape="293.60,313.60 306.40,313.60 306.84,311.38 307.40,310.60 308.18,310.04 309.18,309.71 310.40,309.60 310.40,290.40 308.18,289.96 307.40,289.40 306.84,288.62 306.51,287.62 306.40,286.40 293.60,286.40 293.16,288.62 292.60,289.40 291.82,289.96 290.82,290.29 289.60,290.40 289.60,309.60 291.82,310.04 292.60,310.60 293.16,311.38 293.49,312.38">
+        <request index="0"  response="0000000000000111000000" foes="0000000000000111000000" cont="0"/>
+        <request index="1"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="2"  response="0111110000001111000000" foes="0111111100001111000000" cont="0"/>
+        <request index="3"  response="0111100011001111000000" foes="0111100011011111000000" cont="1"/>
+        <request index="4"  response="0100000011000000000000" foes="0100000011000000000000" cont="1"/>
+        <request index="5"  response="0000000000000000000000" foes="0000000011000000000000" cont="0"/>
+        <request index="6"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="7"  response="0000000000000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="8"  response="0000000100000000001000" foes="1100000111000000001111" cont="0"/>
+        <request index="9"  response="0011100100000000001000" foes="0011101111000000001110" cont="1"/>
+        <request index="10" response="0011100000000000001000" foes="0011100000000000001000" cont="1"/>
+        <request index="11" response="0011100000000000000000" foes="0011100000000000000000" cont="0"/>
+        <request index="12" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="13" response="0111100000001111100000" foes="0111100000001111111000" cont="0"/>
+        <request index="14" response="0111100000001111000110" foes="1111100000001111000110" cont="1"/>
+        <request index="15" response="0000000000001000000110" foes="0000000000001000000110" cont="1"/>
+        <request index="16" response="0000000000000000000000" foes="0000000000000000000110" cont="0"/>
+        <request index="17" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="18" response="0000000100000000000000" foes="0000000111111000001110" cont="0"/>
+        <request index="19" response="0000000100000000001000" foes="0000000111111000001110" cont="0"/>
+        <request index="20" response="0000000100000111001000" foes="0000000111000111011110" cont="1"/>
+        <request index="21" response="0000000100000111000000" foes="0000000100000111000000" cont="1"/>
+    </junction>
+    <junction id="silkboard_n" type="priority" x="300.00" y="600.00" incLanes="silkboard_silkboard_n_0 silkboard_silkboard_n_1" intLanes=":silkboard_n_0_0" shape="300.00,600.00 306.40,600.00 300.00,600.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="silkboard_s" type="priority" x="300.00" y="0.00" incLanes="silkboard_silkboard_s_0 silkboard_silkboard_s_1" intLanes=":silkboard_s_0_0" shape="300.00,0.00 293.60,0.00 300.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <junction id=":bellandur_22_0" type="internal" x="6299.11" y="307.34" incLanes=":bellandur_3_0 bellandur_s_bellandur_0 bellandur_s_bellandur_1" intLanes=":bellandur_6_0 :bellandur_6_1 :bellandur_6_2 :bellandur_9_0 :bellandur_10_0 :bellandur_11_0 :bellandur_12_0 :bellandur_12_1 :bellandur_17_0 :bellandur_17_1 :bellandur_17_2 :bellandur_20_0"/>
+    <junction id=":bellandur_23_0" type="internal" x="6299.20" y="312.40" incLanes=":bellandur_4_0 bellandur_s_bellandur_0 bellandur_s_bellandur_1 marathahalli_bellandur_0 silkboard_bellandur_2" intLanes=":bellandur_5_0 :bellandur_12_0 :bellandur_12_1 :bellandur_20_0"/>
+    <junction id=":bellandur_24_0" type="internal" x="6306.45" y="300.89" incLanes=":bellandur_9_0 silkboard_bellandur_0 silkboard_bellandur_1 silkboard_bellandur_2" intLanes=":bellandur_1_0 :bellandur_1_1 :bellandur_3_0 :bellandur_12_0 :bellandur_12_1 :bellandur_14_0 :bellandur_15_0 :bellandur_16_0 :bellandur_17_0 :bellandur_17_1 :bellandur_17_2"/>
+    <junction id=":bellandur_25_0" type="internal" x="6309.20" y="300.80" incLanes=":bellandur_10_0 bellandur_n_bellandur_1 bellandur_s_bellandur_0 silkboard_bellandur_0 silkboard_bellandur_1 silkboard_bellandur_2" intLanes=":bellandur_3_0 :bellandur_11_0 :bellandur_17_0 :bellandur_17_1 :bellandur_17_2"/>
+    <junction id=":bellandur_26_0" type="internal" x="6300.89" y="292.66" incLanes=":bellandur_14_0 bellandur_n_bellandur_0 bellandur_n_bellandur_1" intLanes=":bellandur_0_0 :bellandur_1_0 :bellandur_1_1 :bellandur_6_0 :bellandur_6_1 :bellandur_6_2 :bellandur_9_0 :bellandur_17_0 :bellandur_17_1 :bellandur_17_2 :bellandur_20_0 :bellandur_21_0"/>
+    <junction id=":bellandur_27_0" type="internal" x="6300.80" y="287.60" incLanes=":bellandur_15_0 bellandur_n_bellandur_0 bellandur_n_bellandur_1 marathahalli_bellandur_2 silkboard_bellandur_0" intLanes=":bellandur_1_0 :bellandur_1_1 :bellandur_9_0 :bellandur_16_0"/>
+    <junction id=":bellandur_28_0" type="internal" x="6293.55" y="299.11" incLanes=":bellandur_20_0 marathahalli_bellandur_0 marathahalli_bellandur_1 marathahalli_bellandur_2" intLanes=":bellandur_1_0 :bellandur_1_1 :bellandur_3_0 :bellandur_4_0 :bellandur_5_0 :bellandur_6_0 :bellandur_6_1 :bellandur_6_2 :bellandur_12_0 :bellandur_12_1 :bellandur_14_0"/>
+    <junction id=":bellandur_29_0" type="internal" x="6290.80" y="299.20" incLanes=":bellandur_21_0 bellandur_n_bellandur_0 bellandur_s_bellandur_1 marathahalli_bellandur_0 marathahalli_bellandur_1 marathahalli_bellandur_2" intLanes=":bellandur_0_0 :bellandur_6_0 :bellandur_6_1 :bellandur_6_2 :bellandur_14_0"/>
+    <junction id=":krpuram_22_0" type="internal" x="16299.11" y="307.34" incLanes=":krpuram_3_0 krpuram_s_krpuram_0 krpuram_s_krpuram_1" intLanes=":krpuram_6_0 :krpuram_6_1 :krpuram_6_2 :krpuram_9_0 :krpuram_10_0 :krpuram_11_0 :krpuram_12_0 :krpuram_12_1 :krpuram_17_0 :krpuram_17_1 :krpuram_17_2 :krpuram_20_0"/>
+    <junction id=":krpuram_23_0" type="internal" x="16299.20" y="312.40" incLanes=":krpuram_4_0 exit_east_krpuram_0 krpuram_s_krpuram_0 krpuram_s_krpuram_1 marathahalli_krpuram_2" intLanes=":krpuram_5_0 :krpuram_12_0 :krpuram_12_1 :krpuram_20_0"/>
+    <junction id=":krpuram_24_0" type="internal" x="16306.45" y="300.89" incLanes=":krpuram_9_0 marathahalli_krpuram_0 marathahalli_krpuram_1 marathahalli_krpuram_2" intLanes=":krpuram_1_0 :krpuram_1_1 :krpuram_3_0 :krpuram_12_0 :krpuram_12_1 :krpuram_14_0 :krpuram_15_0 :krpuram_16_0 :krpuram_17_0 :krpuram_17_1 :krpuram_17_2"/>
+    <junction id=":krpuram_25_0" type="internal" x="16309.20" y="300.80" incLanes=":krpuram_10_0 krpuram_n_krpuram_1 krpuram_s_krpuram_0 marathahalli_krpuram_0 marathahalli_krpuram_1 marathahalli_krpuram_2" intLanes=":krpuram_3_0 :krpuram_11_0 :krpuram_17_0 :krpuram_17_1 :krpuram_17_2"/>
+    <junction id=":krpuram_26_0" type="internal" x="16300.89" y="292.66" incLanes=":krpuram_14_0 krpuram_n_krpuram_0 krpuram_n_krpuram_1" intLanes=":krpuram_0_0 :krpuram_1_0 :krpuram_1_1 :krpuram_6_0 :krpuram_6_1 :krpuram_6_2 :krpuram_9_0 :krpuram_17_0 :krpuram_17_1 :krpuram_17_2 :krpuram_20_0 :krpuram_21_0"/>
+    <junction id=":krpuram_27_0" type="internal" x="16300.80" y="287.60" incLanes=":krpuram_15_0 exit_east_krpuram_2 krpuram_n_krpuram_0 krpuram_n_krpuram_1 marathahalli_krpuram_0" intLanes=":krpuram_1_0 :krpuram_1_1 :krpuram_9_0 :krpuram_16_0"/>
+    <junction id=":krpuram_28_0" type="internal" x="16293.55" y="299.11" incLanes=":krpuram_20_0 exit_east_krpuram_0 exit_east_krpuram_1 exit_east_krpuram_2" intLanes=":krpuram_1_0 :krpuram_1_1 :krpuram_3_0 :krpuram_4_0 :krpuram_5_0 :krpuram_6_0 :krpuram_6_1 :krpuram_6_2 :krpuram_12_0 :krpuram_12_1 :krpuram_14_0"/>
+    <junction id=":krpuram_29_0" type="internal" x="16290.80" y="299.20" incLanes=":krpuram_21_0 exit_east_krpuram_0 exit_east_krpuram_1 exit_east_krpuram_2 krpuram_n_krpuram_0 krpuram_s_krpuram_1" intLanes=":krpuram_0_0 :krpuram_6_0 :krpuram_6_1 :krpuram_6_2 :krpuram_14_0"/>
+    <junction id=":marathahalli_22_0" type="internal" x="11299.11" y="307.34" incLanes=":marathahalli_3_0 marathahalli_s_marathahalli_0 marathahalli_s_marathahalli_1" intLanes=":marathahalli_6_0 :marathahalli_6_1 :marathahalli_6_2 :marathahalli_9_0 :marathahalli_10_0 :marathahalli_11_0 :marathahalli_12_0 :marathahalli_12_1 :marathahalli_17_0 :marathahalli_17_1 :marathahalli_17_2 :marathahalli_20_0"/>
+    <junction id=":marathahalli_23_0" type="internal" x="11299.20" y="312.40" incLanes=":marathahalli_4_0 bellandur_marathahalli_2 krpuram_marathahalli_0 marathahalli_s_marathahalli_0 marathahalli_s_marathahalli_1" intLanes=":marathahalli_5_0 :marathahalli_12_0 :marathahalli_12_1 :marathahalli_20_0"/>
+    <junction id=":marathahalli_24_0" type="internal" x="11306.45" y="300.89" incLanes=":marathahalli_9_0 bellandur_marathahalli_0 bellandur_marathahalli_1 bellandur_marathahalli_2" intLanes=":marathahalli_1_0 :marathahalli_1_1 :marathahalli_3_0 :marathahalli_12_0 :marathahalli_12_1 :marathahalli_14_0 :marathahalli_15_0 :marathahalli_16_0 :marathahalli_17_0 :marathahalli_17_1 :marathahalli_17_2"/>
+    <junction id=":marathahalli_25_0" type="internal" x="11309.20" y="300.80" incLanes=":marathahalli_10_0 bellandur_marathahalli_0 bellandur_marathahalli_1 bellandur_marathahalli_2 marathahalli_n_marathahalli_1 marathahalli_s_marathahalli_0" intLanes=":marathahalli_3_0 :marathahalli_11_0 :marathahalli_17_0 :marathahalli_17_1 :marathahalli_17_2"/>
+    <junction id=":marathahalli_26_0" type="internal" x="11300.89" y="292.66" incLanes=":marathahalli_14_0 marathahalli_n_marathahalli_0 marathahalli_n_marathahalli_1" intLanes=":marathahalli_0_0 :marathahalli_1_0 :marathahalli_1_1 :marathahalli_6_0 :marathahalli_6_1 :marathahalli_6_2 :marathahalli_9_0 :marathahalli_17_0 :marathahalli_17_1 :marathahalli_17_2 :marathahalli_20_0 :marathahalli_21_0"/>
+    <junction id=":marathahalli_27_0" type="internal" x="11300.80" y="287.60" incLanes=":marathahalli_15_0 bellandur_marathahalli_0 krpuram_marathahalli_2 marathahalli_n_marathahalli_0 marathahalli_n_marathahalli_1" intLanes=":marathahalli_1_0 :marathahalli_1_1 :marathahalli_9_0 :marathahalli_16_0"/>
+    <junction id=":marathahalli_28_0" type="internal" x="11293.55" y="299.11" incLanes=":marathahalli_20_0 krpuram_marathahalli_0 krpuram_marathahalli_1 krpuram_marathahalli_2" intLanes=":marathahalli_1_0 :marathahalli_1_1 :marathahalli_3_0 :marathahalli_4_0 :marathahalli_5_0 :marathahalli_6_0 :marathahalli_6_1 :marathahalli_6_2 :marathahalli_12_0 :marathahalli_12_1 :marathahalli_14_0"/>
+    <junction id=":marathahalli_29_0" type="internal" x="11290.80" y="299.20" incLanes=":marathahalli_21_0 krpuram_marathahalli_0 krpuram_marathahalli_1 krpuram_marathahalli_2 marathahalli_n_marathahalli_0 marathahalli_s_marathahalli_1" intLanes=":marathahalli_0_0 :marathahalli_6_0 :marathahalli_6_1 :marathahalli_6_2 :marathahalli_14_0"/>
+    <junction id=":silkboard_22_0" type="internal" x="299.11" y="307.34" incLanes=":silkboard_3_0 silkboard_s_silkboard_0 silkboard_s_silkboard_1" intLanes=":silkboard_6_0 :silkboard_6_1 :silkboard_6_2 :silkboard_9_0 :silkboard_10_0 :silkboard_11_0 :silkboard_12_0 :silkboard_12_1 :silkboard_17_0 :silkboard_17_1 :silkboard_17_2 :silkboard_20_0"/>
+    <junction id=":silkboard_23_0" type="internal" x="299.20" y="312.40" incLanes=":silkboard_4_0 bellandur_silkboard_0 entry_west_silkboard_2 silkboard_s_silkboard_0 silkboard_s_silkboard_1" intLanes=":silkboard_5_0 :silkboard_12_0 :silkboard_12_1 :silkboard_20_0"/>
+    <junction id=":silkboard_24_0" type="internal" x="306.45" y="300.89" incLanes=":silkboard_9_0 entry_west_silkboard_0 entry_west_silkboard_1 entry_west_silkboard_2" intLanes=":silkboard_1_0 :silkboard_1_1 :silkboard_3_0 :silkboard_12_0 :silkboard_12_1 :silkboard_14_0 :silkboard_15_0 :silkboard_16_0 :silkboard_17_0 :silkboard_17_1 :silkboard_17_2"/>
+    <junction id=":silkboard_25_0" type="internal" x="309.20" y="300.80" incLanes=":silkboard_10_0 entry_west_silkboard_0 entry_west_silkboard_1 entry_west_silkboard_2 silkboard_n_silkboard_1 silkboard_s_silkboard_0" intLanes=":silkboard_3_0 :silkboard_11_0 :silkboard_17_0 :silkboard_17_1 :silkboard_17_2"/>
+    <junction id=":silkboard_26_0" type="internal" x="300.89" y="292.66" incLanes=":silkboard_14_0 silkboard_n_silkboard_0 silkboard_n_silkboard_1" intLanes=":silkboard_0_0 :silkboard_1_0 :silkboard_1_1 :silkboard_6_0 :silkboard_6_1 :silkboard_6_2 :silkboard_9_0 :silkboard_17_0 :silkboard_17_1 :silkboard_17_2 :silkboard_20_0 :silkboard_21_0"/>
+    <junction id=":silkboard_27_0" type="internal" x="300.80" y="287.60" incLanes=":silkboard_15_0 bellandur_silkboard_2 entry_west_silkboard_0 silkboard_n_silkboard_0 silkboard_n_silkboard_1" intLanes=":silkboard_1_0 :silkboard_1_1 :silkboard_9_0 :silkboard_16_0"/>
+    <junction id=":silkboard_28_0" type="internal" x="293.55" y="299.11" incLanes=":silkboard_20_0 bellandur_silkboard_0 bellandur_silkboard_1 bellandur_silkboard_2" intLanes=":silkboard_1_0 :silkboard_1_1 :silkboard_3_0 :silkboard_4_0 :silkboard_5_0 :silkboard_6_0 :silkboard_6_1 :silkboard_6_2 :silkboard_12_0 :silkboard_12_1 :silkboard_14_0"/>
+    <junction id=":silkboard_29_0" type="internal" x="290.80" y="299.20" incLanes=":silkboard_21_0 bellandur_silkboard_0 bellandur_silkboard_1 bellandur_silkboard_2 silkboard_n_silkboard_0 silkboard_s_silkboard_1" intLanes=":silkboard_0_0 :silkboard_6_0 :silkboard_6_1 :silkboard_6_2 :silkboard_14_0"/>
+
+    <connection from="bellandur_bellandur_n" to="bellandur_n_bellandur" fromLane="1" toLane="1" via=":bellandur_n_0_0" dir="t" state="M"/>
+    <connection from="bellandur_bellandur_s" to="bellandur_s_bellandur" fromLane="1" toLane="1" via=":bellandur_s_0_0" dir="t" state="M"/>
+    <connection from="bellandur_marathahalli" to="marathahalli_marathahalli_s" fromLane="0" toLane="0" via=":marathahalli_16_0" tl="marathahalli" linkIndex="16" dir="r" state="O"/>
+    <connection from="bellandur_marathahalli" to="marathahalli_krpuram" fromLane="0" toLane="0" via=":marathahalli_17_0" tl="marathahalli" linkIndex="17" dir="s" state="O"/>
+    <connection from="bellandur_marathahalli" to="marathahalli_krpuram" fromLane="1" toLane="1" via=":marathahalli_17_1" tl="marathahalli" linkIndex="18" dir="s" state="O"/>
+    <connection from="bellandur_marathahalli" to="marathahalli_krpuram" fromLane="2" toLane="2" via=":marathahalli_17_2" tl="marathahalli" linkIndex="19" dir="s" state="O"/>
+    <connection from="bellandur_marathahalli" to="marathahalli_marathahalli_n" fromLane="2" toLane="1" via=":marathahalli_20_0" tl="marathahalli" linkIndex="20" dir="l" state="o"/>
+    <connection from="bellandur_marathahalli" to="marathahalli_bellandur" fromLane="2" toLane="2" via=":marathahalli_21_0" tl="marathahalli" linkIndex="21" dir="t" state="o"/>
+    <connection from="bellandur_n_bellandur" to="bellandur_silkboard" fromLane="0" toLane="0" via=":bellandur_0_0" tl="bellandur" linkIndex="0" dir="r" state="o"/>
+    <connection from="bellandur_n_bellandur" to="bellandur_bellandur_s" fromLane="0" toLane="0" via=":bellandur_1_0" tl="bellandur" linkIndex="1" dir="s" state="o"/>
+    <connection from="bellandur_n_bellandur" to="bellandur_bellandur_s" fromLane="1" toLane="1" via=":bellandur_1_1" tl="bellandur" linkIndex="2" dir="s" state="o"/>
+    <connection from="bellandur_n_bellandur" to="bellandur_marathahalli" fromLane="1" toLane="2" via=":bellandur_3_0" tl="bellandur" linkIndex="3" dir="l" state="o"/>
+    <connection from="bellandur_n_bellandur" to="bellandur_bellandur_n" fromLane="1" toLane="1" via=":bellandur_4_0" tl="bellandur" linkIndex="4" dir="t" state="o"/>
+    <connection from="bellandur_s_bellandur" to="bellandur_marathahalli" fromLane="0" toLane="0" via=":bellandur_11_0" tl="bellandur" linkIndex="11" dir="r" state="o"/>
+    <connection from="bellandur_s_bellandur" to="bellandur_bellandur_n" fromLane="0" toLane="0" via=":bellandur_12_0" tl="bellandur" linkIndex="12" dir="s" state="o"/>
+    <connection from="bellandur_s_bellandur" to="bellandur_bellandur_n" fromLane="1" toLane="1" via=":bellandur_12_1" tl="bellandur" linkIndex="13" dir="s" state="o"/>
+    <connection from="bellandur_s_bellandur" to="bellandur_silkboard" fromLane="1" toLane="2" via=":bellandur_14_0" tl="bellandur" linkIndex="14" dir="l" state="o"/>
+    <connection from="bellandur_s_bellandur" to="bellandur_bellandur_s" fromLane="1" toLane="1" via=":bellandur_15_0" tl="bellandur" linkIndex="15" dir="t" state="o"/>
+    <connection from="bellandur_silkboard" to="silkboard_silkboard_n" fromLane="0" toLane="0" via=":silkboard_5_0" tl="silkboard" linkIndex="5" dir="r" state="O"/>
+    <connection from="bellandur_silkboard" to="silkboard_entry_west" fromLane="0" toLane="0" via=":silkboard_6_0" tl="silkboard" linkIndex="6" dir="s" state="O"/>
+    <connection from="bellandur_silkboard" to="silkboard_entry_west" fromLane="1" toLane="1" via=":silkboard_6_1" tl="silkboard" linkIndex="7" dir="s" state="O"/>
+    <connection from="bellandur_silkboard" to="silkboard_entry_west" fromLane="2" toLane="2" via=":silkboard_6_2" tl="silkboard" linkIndex="8" dir="s" state="O"/>
+    <connection from="bellandur_silkboard" to="silkboard_silkboard_s" fromLane="2" toLane="1" via=":silkboard_9_0" tl="silkboard" linkIndex="9" dir="l" state="o"/>
+    <connection from="bellandur_silkboard" to="silkboard_bellandur" fromLane="2" toLane="2" via=":silkboard_10_0" tl="silkboard" linkIndex="10" dir="t" state="o"/>
+    <connection from="entry_west_silkboard" to="silkboard_silkboard_s" fromLane="0" toLane="0" via=":silkboard_16_0" tl="silkboard" linkIndex="16" dir="r" state="O"/>
+    <connection from="entry_west_silkboard" to="silkboard_bellandur" fromLane="0" toLane="0" via=":silkboard_17_0" tl="silkboard" linkIndex="17" dir="s" state="O"/>
+    <connection from="entry_west_silkboard" to="silkboard_bellandur" fromLane="1" toLane="1" via=":silkboard_17_1" tl="silkboard" linkIndex="18" dir="s" state="O"/>
+    <connection from="entry_west_silkboard" to="silkboard_bellandur" fromLane="2" toLane="2" via=":silkboard_17_2" tl="silkboard" linkIndex="19" dir="s" state="O"/>
+    <connection from="entry_west_silkboard" to="silkboard_silkboard_n" fromLane="2" toLane="1" via=":silkboard_20_0" tl="silkboard" linkIndex="20" dir="l" state="o"/>
+    <connection from="entry_west_silkboard" to="silkboard_entry_west" fromLane="2" toLane="2" via=":silkboard_21_0" tl="silkboard" linkIndex="21" dir="t" state="o"/>
+    <connection from="exit_east_krpuram" to="krpuram_krpuram_n" fromLane="0" toLane="0" via=":krpuram_5_0" tl="krpuram" linkIndex="5" dir="r" state="O"/>
+    <connection from="exit_east_krpuram" to="krpuram_marathahalli" fromLane="0" toLane="0" via=":krpuram_6_0" tl="krpuram" linkIndex="6" dir="s" state="O"/>
+    <connection from="exit_east_krpuram" to="krpuram_marathahalli" fromLane="1" toLane="1" via=":krpuram_6_1" tl="krpuram" linkIndex="7" dir="s" state="O"/>
+    <connection from="exit_east_krpuram" to="krpuram_marathahalli" fromLane="2" toLane="2" via=":krpuram_6_2" tl="krpuram" linkIndex="8" dir="s" state="O"/>
+    <connection from="exit_east_krpuram" to="krpuram_krpuram_s" fromLane="2" toLane="1" via=":krpuram_9_0" tl="krpuram" linkIndex="9" dir="l" state="o"/>
+    <connection from="exit_east_krpuram" to="krpuram_exit_east" fromLane="2" toLane="2" via=":krpuram_10_0" tl="krpuram" linkIndex="10" dir="t" state="o"/>
+    <connection from="krpuram_exit_east" to="exit_east_krpuram" fromLane="2" toLane="2" via=":exit_east_0_0" dir="t" state="M"/>
+    <connection from="krpuram_krpuram_n" to="krpuram_n_krpuram" fromLane="1" toLane="1" via=":krpuram_n_0_0" dir="t" state="M"/>
+    <connection from="krpuram_krpuram_s" to="krpuram_s_krpuram" fromLane="1" toLane="1" via=":krpuram_s_0_0" dir="t" state="M"/>
+    <connection from="krpuram_marathahalli" to="marathahalli_marathahalli_n" fromLane="0" toLane="0" via=":marathahalli_5_0" tl="marathahalli" linkIndex="5" dir="r" state="O"/>
+    <connection from="krpuram_marathahalli" to="marathahalli_bellandur" fromLane="0" toLane="0" via=":marathahalli_6_0" tl="marathahalli" linkIndex="6" dir="s" state="O"/>
+    <connection from="krpuram_marathahalli" to="marathahalli_bellandur" fromLane="1" toLane="1" via=":marathahalli_6_1" tl="marathahalli" linkIndex="7" dir="s" state="O"/>
+    <connection from="krpuram_marathahalli" to="marathahalli_bellandur" fromLane="2" toLane="2" via=":marathahalli_6_2" tl="marathahalli" linkIndex="8" dir="s" state="O"/>
+    <connection from="krpuram_marathahalli" to="marathahalli_marathahalli_s" fromLane="2" toLane="1" via=":marathahalli_9_0" tl="marathahalli" linkIndex="9" dir="l" state="o"/>
+    <connection from="krpuram_marathahalli" to="marathahalli_krpuram" fromLane="2" toLane="2" via=":marathahalli_10_0" tl="marathahalli" linkIndex="10" dir="t" state="o"/>
+    <connection from="krpuram_n_krpuram" to="krpuram_marathahalli" fromLane="0" toLane="0" via=":krpuram_0_0" tl="krpuram" linkIndex="0" dir="r" state="o"/>
+    <connection from="krpuram_n_krpuram" to="krpuram_krpuram_s" fromLane="0" toLane="0" via=":krpuram_1_0" tl="krpuram" linkIndex="1" dir="s" state="o"/>
+    <connection from="krpuram_n_krpuram" to="krpuram_krpuram_s" fromLane="1" toLane="1" via=":krpuram_1_1" tl="krpuram" linkIndex="2" dir="s" state="o"/>
+    <connection from="krpuram_n_krpuram" to="krpuram_exit_east" fromLane="1" toLane="2" via=":krpuram_3_0" tl="krpuram" linkIndex="3" dir="l" state="o"/>
+    <connection from="krpuram_n_krpuram" to="krpuram_krpuram_n" fromLane="1" toLane="1" via=":krpuram_4_0" tl="krpuram" linkIndex="4" dir="t" state="o"/>
+    <connection from="krpuram_s_krpuram" to="krpuram_exit_east" fromLane="0" toLane="0" via=":krpuram_11_0" tl="krpuram" linkIndex="11" dir="r" state="o"/>
+    <connection from="krpuram_s_krpuram" to="krpuram_krpuram_n" fromLane="0" toLane="0" via=":krpuram_12_0" tl="krpuram" linkIndex="12" dir="s" state="o"/>
+    <connection from="krpuram_s_krpuram" to="krpuram_krpuram_n" fromLane="1" toLane="1" via=":krpuram_12_1" tl="krpuram" linkIndex="13" dir="s" state="o"/>
+    <connection from="krpuram_s_krpuram" to="krpuram_marathahalli" fromLane="1" toLane="2" via=":krpuram_14_0" tl="krpuram" linkIndex="14" dir="l" state="o"/>
+    <connection from="krpuram_s_krpuram" to="krpuram_krpuram_s" fromLane="1" toLane="1" via=":krpuram_15_0" tl="krpuram" linkIndex="15" dir="t" state="o"/>
+    <connection from="marathahalli_bellandur" to="bellandur_bellandur_n" fromLane="0" toLane="0" via=":bellandur_5_0" tl="bellandur" linkIndex="5" dir="r" state="O"/>
+    <connection from="marathahalli_bellandur" to="bellandur_silkboard" fromLane="0" toLane="0" via=":bellandur_6_0" tl="bellandur" linkIndex="6" dir="s" state="O"/>
+    <connection from="marathahalli_bellandur" to="bellandur_silkboard" fromLane="1" toLane="1" via=":bellandur_6_1" tl="bellandur" linkIndex="7" dir="s" state="O"/>
+    <connection from="marathahalli_bellandur" to="bellandur_silkboard" fromLane="2" toLane="2" via=":bellandur_6_2" tl="bellandur" linkIndex="8" dir="s" state="O"/>
+    <connection from="marathahalli_bellandur" to="bellandur_bellandur_s" fromLane="2" toLane="1" via=":bellandur_9_0" tl="bellandur" linkIndex="9" dir="l" state="o"/>
+    <connection from="marathahalli_bellandur" to="bellandur_marathahalli" fromLane="2" toLane="2" via=":bellandur_10_0" tl="bellandur" linkIndex="10" dir="t" state="o"/>
+    <connection from="marathahalli_krpuram" to="krpuram_krpuram_s" fromLane="0" toLane="0" via=":krpuram_16_0" tl="krpuram" linkIndex="16" dir="r" state="O"/>
+    <connection from="marathahalli_krpuram" to="krpuram_exit_east" fromLane="0" toLane="0" via=":krpuram_17_0" tl="krpuram" linkIndex="17" dir="s" state="O"/>
+    <connection from="marathahalli_krpuram" to="krpuram_exit_east" fromLane="1" toLane="1" via=":krpuram_17_1" tl="krpuram" linkIndex="18" dir="s" state="O"/>
+    <connection from="marathahalli_krpuram" to="krpuram_exit_east" fromLane="2" toLane="2" via=":krpuram_17_2" tl="krpuram" linkIndex="19" dir="s" state="O"/>
+    <connection from="marathahalli_krpuram" to="krpuram_krpuram_n" fromLane="2" toLane="1" via=":krpuram_20_0" tl="krpuram" linkIndex="20" dir="l" state="o"/>
+    <connection from="marathahalli_krpuram" to="krpuram_marathahalli" fromLane="2" toLane="2" via=":krpuram_21_0" tl="krpuram" linkIndex="21" dir="t" state="o"/>
+    <connection from="marathahalli_marathahalli_n" to="marathahalli_n_marathahalli" fromLane="1" toLane="1" via=":marathahalli_n_0_0" dir="t" state="M"/>
+    <connection from="marathahalli_marathahalli_s" to="marathahalli_s_marathahalli" fromLane="1" toLane="1" via=":marathahalli_s_0_0" dir="t" state="M"/>
+    <connection from="marathahalli_n_marathahalli" to="marathahalli_bellandur" fromLane="0" toLane="0" via=":marathahalli_0_0" tl="marathahalli" linkIndex="0" dir="r" state="o"/>
+    <connection from="marathahalli_n_marathahalli" to="marathahalli_marathahalli_s" fromLane="0" toLane="0" via=":marathahalli_1_0" tl="marathahalli" linkIndex="1" dir="s" state="o"/>
+    <connection from="marathahalli_n_marathahalli" to="marathahalli_marathahalli_s" fromLane="1" toLane="1" via=":marathahalli_1_1" tl="marathahalli" linkIndex="2" dir="s" state="o"/>
+    <connection from="marathahalli_n_marathahalli" to="marathahalli_krpuram" fromLane="1" toLane="2" via=":marathahalli_3_0" tl="marathahalli" linkIndex="3" dir="l" state="o"/>
+    <connection from="marathahalli_n_marathahalli" to="marathahalli_marathahalli_n" fromLane="1" toLane="1" via=":marathahalli_4_0" tl="marathahalli" linkIndex="4" dir="t" state="o"/>
+    <connection from="marathahalli_s_marathahalli" to="marathahalli_krpuram" fromLane="0" toLane="0" via=":marathahalli_11_0" tl="marathahalli" linkIndex="11" dir="r" state="o"/>
+    <connection from="marathahalli_s_marathahalli" to="marathahalli_marathahalli_n" fromLane="0" toLane="0" via=":marathahalli_12_0" tl="marathahalli" linkIndex="12" dir="s" state="o"/>
+    <connection from="marathahalli_s_marathahalli" to="marathahalli_marathahalli_n" fromLane="1" toLane="1" via=":marathahalli_12_1" tl="marathahalli" linkIndex="13" dir="s" state="o"/>
+    <connection from="marathahalli_s_marathahalli" to="marathahalli_bellandur" fromLane="1" toLane="2" via=":marathahalli_14_0" tl="marathahalli" linkIndex="14" dir="l" state="o"/>
+    <connection from="marathahalli_s_marathahalli" to="marathahalli_marathahalli_s" fromLane="1" toLane="1" via=":marathahalli_15_0" tl="marathahalli" linkIndex="15" dir="t" state="o"/>
+    <connection from="silkboard_bellandur" to="bellandur_bellandur_s" fromLane="0" toLane="0" via=":bellandur_16_0" tl="bellandur" linkIndex="16" dir="r" state="O"/>
+    <connection from="silkboard_bellandur" to="bellandur_marathahalli" fromLane="0" toLane="0" via=":bellandur_17_0" tl="bellandur" linkIndex="17" dir="s" state="O"/>
+    <connection from="silkboard_bellandur" to="bellandur_marathahalli" fromLane="1" toLane="1" via=":bellandur_17_1" tl="bellandur" linkIndex="18" dir="s" state="O"/>
+    <connection from="silkboard_bellandur" to="bellandur_marathahalli" fromLane="2" toLane="2" via=":bellandur_17_2" tl="bellandur" linkIndex="19" dir="s" state="O"/>
+    <connection from="silkboard_bellandur" to="bellandur_bellandur_n" fromLane="2" toLane="1" via=":bellandur_20_0" tl="bellandur" linkIndex="20" dir="l" state="o"/>
+    <connection from="silkboard_bellandur" to="bellandur_silkboard" fromLane="2" toLane="2" via=":bellandur_21_0" tl="bellandur" linkIndex="21" dir="t" state="o"/>
+    <connection from="silkboard_entry_west" to="entry_west_silkboard" fromLane="2" toLane="2" via=":entry_west_0_0" dir="t" state="M"/>
+    <connection from="silkboard_n_silkboard" to="silkboard_entry_west" fromLane="0" toLane="0" via=":silkboard_0_0" tl="silkboard" linkIndex="0" dir="r" state="o"/>
+    <connection from="silkboard_n_silkboard" to="silkboard_silkboard_s" fromLane="0" toLane="0" via=":silkboard_1_0" tl="silkboard" linkIndex="1" dir="s" state="o"/>
+    <connection from="silkboard_n_silkboard" to="silkboard_silkboard_s" fromLane="1" toLane="1" via=":silkboard_1_1" tl="silkboard" linkIndex="2" dir="s" state="o"/>
+    <connection from="silkboard_n_silkboard" to="silkboard_bellandur" fromLane="1" toLane="2" via=":silkboard_3_0" tl="silkboard" linkIndex="3" dir="l" state="o"/>
+    <connection from="silkboard_n_silkboard" to="silkboard_silkboard_n" fromLane="1" toLane="1" via=":silkboard_4_0" tl="silkboard" linkIndex="4" dir="t" state="o"/>
+    <connection from="silkboard_s_silkboard" to="silkboard_bellandur" fromLane="0" toLane="0" via=":silkboard_11_0" tl="silkboard" linkIndex="11" dir="r" state="o"/>
+    <connection from="silkboard_s_silkboard" to="silkboard_silkboard_n" fromLane="0" toLane="0" via=":silkboard_12_0" tl="silkboard" linkIndex="12" dir="s" state="o"/>
+    <connection from="silkboard_s_silkboard" to="silkboard_silkboard_n" fromLane="1" toLane="1" via=":silkboard_12_1" tl="silkboard" linkIndex="13" dir="s" state="o"/>
+    <connection from="silkboard_s_silkboard" to="silkboard_entry_west" fromLane="1" toLane="2" via=":silkboard_14_0" tl="silkboard" linkIndex="14" dir="l" state="o"/>
+    <connection from="silkboard_s_silkboard" to="silkboard_silkboard_s" fromLane="1" toLane="1" via=":silkboard_15_0" tl="silkboard" linkIndex="15" dir="t" state="o"/>
+    <connection from="silkboard_silkboard_n" to="silkboard_n_silkboard" fromLane="1" toLane="1" via=":silkboard_n_0_0" dir="t" state="M"/>
+    <connection from="silkboard_silkboard_s" to="silkboard_s_silkboard" fromLane="1" toLane="1" via=":silkboard_s_0_0" dir="t" state="M"/>
+
+    <connection from=":bellandur_0" to="bellandur_silkboard" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":bellandur_1" to="bellandur_bellandur_s" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":bellandur_1" to="bellandur_bellandur_s" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":bellandur_3" to="bellandur_marathahalli" fromLane="0" toLane="2" via=":bellandur_22_0" dir="l" state="m"/>
+    <connection from=":bellandur_22" to="bellandur_marathahalli" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":bellandur_4" to="bellandur_bellandur_n" fromLane="0" toLane="1" via=":bellandur_23_0" dir="t" state="m"/>
+    <connection from=":bellandur_23" to="bellandur_bellandur_n" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":bellandur_5" to="bellandur_bellandur_n" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":bellandur_6" to="bellandur_silkboard" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":bellandur_6" to="bellandur_silkboard" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":bellandur_6" to="bellandur_silkboard" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":bellandur_9" to="bellandur_bellandur_s" fromLane="0" toLane="1" via=":bellandur_24_0" dir="l" state="m"/>
+    <connection from=":bellandur_24" to="bellandur_bellandur_s" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":bellandur_10" to="bellandur_marathahalli" fromLane="0" toLane="2" via=":bellandur_25_0" dir="t" state="m"/>
+    <connection from=":bellandur_25" to="bellandur_marathahalli" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":bellandur_11" to="bellandur_marathahalli" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":bellandur_12" to="bellandur_bellandur_n" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":bellandur_12" to="bellandur_bellandur_n" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":bellandur_14" to="bellandur_silkboard" fromLane="0" toLane="2" via=":bellandur_26_0" dir="l" state="m"/>
+    <connection from=":bellandur_26" to="bellandur_silkboard" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":bellandur_15" to="bellandur_bellandur_s" fromLane="0" toLane="1" via=":bellandur_27_0" dir="t" state="m"/>
+    <connection from=":bellandur_27" to="bellandur_bellandur_s" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":bellandur_16" to="bellandur_bellandur_s" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":bellandur_17" to="bellandur_marathahalli" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":bellandur_17" to="bellandur_marathahalli" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":bellandur_17" to="bellandur_marathahalli" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":bellandur_20" to="bellandur_bellandur_n" fromLane="0" toLane="1" via=":bellandur_28_0" dir="l" state="m"/>
+    <connection from=":bellandur_28" to="bellandur_bellandur_n" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":bellandur_21" to="bellandur_silkboard" fromLane="0" toLane="2" via=":bellandur_29_0" dir="t" state="m"/>
+    <connection from=":bellandur_29" to="bellandur_silkboard" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":bellandur_n_0" to="bellandur_n_bellandur" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":bellandur_s_0" to="bellandur_s_bellandur" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":entry_west_0" to="entry_west_silkboard" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":exit_east_0" to="exit_east_krpuram" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":krpuram_0" to="krpuram_marathahalli" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":krpuram_1" to="krpuram_krpuram_s" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":krpuram_1" to="krpuram_krpuram_s" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":krpuram_3" to="krpuram_exit_east" fromLane="0" toLane="2" via=":krpuram_22_0" dir="l" state="m"/>
+    <connection from=":krpuram_22" to="krpuram_exit_east" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":krpuram_4" to="krpuram_krpuram_n" fromLane="0" toLane="1" via=":krpuram_23_0" dir="t" state="m"/>
+    <connection from=":krpuram_23" to="krpuram_krpuram_n" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":krpuram_5" to="krpuram_krpuram_n" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":krpuram_6" to="krpuram_marathahalli" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":krpuram_6" to="krpuram_marathahalli" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":krpuram_6" to="krpuram_marathahalli" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":krpuram_9" to="krpuram_krpuram_s" fromLane="0" toLane="1" via=":krpuram_24_0" dir="l" state="m"/>
+    <connection from=":krpuram_24" to="krpuram_krpuram_s" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":krpuram_10" to="krpuram_exit_east" fromLane="0" toLane="2" via=":krpuram_25_0" dir="t" state="m"/>
+    <connection from=":krpuram_25" to="krpuram_exit_east" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":krpuram_11" to="krpuram_exit_east" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":krpuram_12" to="krpuram_krpuram_n" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":krpuram_12" to="krpuram_krpuram_n" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":krpuram_14" to="krpuram_marathahalli" fromLane="0" toLane="2" via=":krpuram_26_0" dir="l" state="m"/>
+    <connection from=":krpuram_26" to="krpuram_marathahalli" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":krpuram_15" to="krpuram_krpuram_s" fromLane="0" toLane="1" via=":krpuram_27_0" dir="t" state="m"/>
+    <connection from=":krpuram_27" to="krpuram_krpuram_s" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":krpuram_16" to="krpuram_krpuram_s" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":krpuram_17" to="krpuram_exit_east" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":krpuram_17" to="krpuram_exit_east" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":krpuram_17" to="krpuram_exit_east" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":krpuram_20" to="krpuram_krpuram_n" fromLane="0" toLane="1" via=":krpuram_28_0" dir="l" state="m"/>
+    <connection from=":krpuram_28" to="krpuram_krpuram_n" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":krpuram_21" to="krpuram_marathahalli" fromLane="0" toLane="2" via=":krpuram_29_0" dir="t" state="m"/>
+    <connection from=":krpuram_29" to="krpuram_marathahalli" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":krpuram_n_0" to="krpuram_n_krpuram" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":krpuram_s_0" to="krpuram_s_krpuram" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":marathahalli_0" to="marathahalli_bellandur" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":marathahalli_1" to="marathahalli_marathahalli_s" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":marathahalli_1" to="marathahalli_marathahalli_s" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":marathahalli_3" to="marathahalli_krpuram" fromLane="0" toLane="2" via=":marathahalli_22_0" dir="l" state="m"/>
+    <connection from=":marathahalli_22" to="marathahalli_krpuram" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":marathahalli_4" to="marathahalli_marathahalli_n" fromLane="0" toLane="1" via=":marathahalli_23_0" dir="t" state="m"/>
+    <connection from=":marathahalli_23" to="marathahalli_marathahalli_n" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":marathahalli_5" to="marathahalli_marathahalli_n" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":marathahalli_6" to="marathahalli_bellandur" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":marathahalli_6" to="marathahalli_bellandur" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":marathahalli_6" to="marathahalli_bellandur" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":marathahalli_9" to="marathahalli_marathahalli_s" fromLane="0" toLane="1" via=":marathahalli_24_0" dir="l" state="m"/>
+    <connection from=":marathahalli_24" to="marathahalli_marathahalli_s" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":marathahalli_10" to="marathahalli_krpuram" fromLane="0" toLane="2" via=":marathahalli_25_0" dir="t" state="m"/>
+    <connection from=":marathahalli_25" to="marathahalli_krpuram" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":marathahalli_11" to="marathahalli_krpuram" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":marathahalli_12" to="marathahalli_marathahalli_n" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":marathahalli_12" to="marathahalli_marathahalli_n" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":marathahalli_14" to="marathahalli_bellandur" fromLane="0" toLane="2" via=":marathahalli_26_0" dir="l" state="m"/>
+    <connection from=":marathahalli_26" to="marathahalli_bellandur" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":marathahalli_15" to="marathahalli_marathahalli_s" fromLane="0" toLane="1" via=":marathahalli_27_0" dir="t" state="m"/>
+    <connection from=":marathahalli_27" to="marathahalli_marathahalli_s" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":marathahalli_16" to="marathahalli_marathahalli_s" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":marathahalli_17" to="marathahalli_krpuram" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":marathahalli_17" to="marathahalli_krpuram" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":marathahalli_17" to="marathahalli_krpuram" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":marathahalli_20" to="marathahalli_marathahalli_n" fromLane="0" toLane="1" via=":marathahalli_28_0" dir="l" state="m"/>
+    <connection from=":marathahalli_28" to="marathahalli_marathahalli_n" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":marathahalli_21" to="marathahalli_bellandur" fromLane="0" toLane="2" via=":marathahalli_29_0" dir="t" state="m"/>
+    <connection from=":marathahalli_29" to="marathahalli_bellandur" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":marathahalli_n_0" to="marathahalli_n_marathahalli" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":marathahalli_s_0" to="marathahalli_s_marathahalli" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":silkboard_0" to="silkboard_entry_west" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":silkboard_1" to="silkboard_silkboard_s" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":silkboard_1" to="silkboard_silkboard_s" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":silkboard_3" to="silkboard_bellandur" fromLane="0" toLane="2" via=":silkboard_22_0" dir="l" state="m"/>
+    <connection from=":silkboard_22" to="silkboard_bellandur" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":silkboard_4" to="silkboard_silkboard_n" fromLane="0" toLane="1" via=":silkboard_23_0" dir="t" state="m"/>
+    <connection from=":silkboard_23" to="silkboard_silkboard_n" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":silkboard_5" to="silkboard_silkboard_n" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":silkboard_6" to="silkboard_entry_west" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":silkboard_6" to="silkboard_entry_west" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":silkboard_6" to="silkboard_entry_west" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":silkboard_9" to="silkboard_silkboard_s" fromLane="0" toLane="1" via=":silkboard_24_0" dir="l" state="m"/>
+    <connection from=":silkboard_24" to="silkboard_silkboard_s" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":silkboard_10" to="silkboard_bellandur" fromLane="0" toLane="2" via=":silkboard_25_0" dir="t" state="m"/>
+    <connection from=":silkboard_25" to="silkboard_bellandur" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":silkboard_11" to="silkboard_bellandur" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":silkboard_12" to="silkboard_silkboard_n" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":silkboard_12" to="silkboard_silkboard_n" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":silkboard_14" to="silkboard_entry_west" fromLane="0" toLane="2" via=":silkboard_26_0" dir="l" state="m"/>
+    <connection from=":silkboard_26" to="silkboard_entry_west" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":silkboard_15" to="silkboard_silkboard_s" fromLane="0" toLane="1" via=":silkboard_27_0" dir="t" state="m"/>
+    <connection from=":silkboard_27" to="silkboard_silkboard_s" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":silkboard_16" to="silkboard_silkboard_s" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":silkboard_17" to="silkboard_bellandur" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":silkboard_17" to="silkboard_bellandur" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":silkboard_17" to="silkboard_bellandur" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":silkboard_20" to="silkboard_silkboard_n" fromLane="0" toLane="1" via=":silkboard_28_0" dir="l" state="m"/>
+    <connection from=":silkboard_28" to="silkboard_silkboard_n" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":silkboard_21" to="silkboard_entry_west" fromLane="0" toLane="2" via=":silkboard_29_0" dir="t" state="m"/>
+    <connection from=":silkboard_29" to="silkboard_entry_west" fromLane="0" toLane="2" dir="t" state="M"/>
+    <connection from=":silkboard_n_0" to="silkboard_n_silkboard" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":silkboard_s_0" to="silkboard_s_silkboard" fromLane="0" toLane="1" dir="t" state="M"/>
+
+</net>
