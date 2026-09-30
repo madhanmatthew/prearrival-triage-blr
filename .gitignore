@@ -36,6 +36,8 @@ sumo/*tripinfo*.xml
 *.wav
 *.mp3
 *.m4a
+*.mp4
+*.mov
 
 # OS / editor
 .DS_Store
