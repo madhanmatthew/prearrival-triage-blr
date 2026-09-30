@@ -16,5 +16,14 @@
   "via_points": {
     "_note": "Optional intermediate waypoints (lat/lon) per segment to keep the route on the ORR. Empty = the router picks its own route; check length_m in the output against ~6/5/5 km.",
     "silkboard_bellandur": [], "bellandur_marathahalli": [], "marathahalli_krpuram": [], "silkboard_krpuram": []
+  },
+  "via_points_reverse": {
+    "_note": "Waypoints for the reverse (east->west) direction, in travel order, lat/lon on the westbound ORR carriageway. If a segment is missing or empty here, the forward via_points are reused reversed.",
+    "silkboard_bellandur": [], "bellandur_marathahalli": [], "marathahalli_krpuram": [], "silkboard_krpuram": []
+  },
+  "expected_length_m": {
+    "_note": "[ASSUMPTION] from docs/19 nominal spacing (~6/5/5 km). A route whose length is off by more than length_tolerance is rejected (not cached) because it left the ORR.",
+    "silkboard_bellandur": 6000, "bellandur_marathahalli": 5000, "marathahalli_krpuram": 5000, "silkboard_krpuram": 16000,
+    "length_tolerance": 0.3
   }
 }
