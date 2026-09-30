@@ -59,9 +59,9 @@ sumo-validate:
 rl-baseline:
 	$(PY) -m backend.rl.baselines --episodes $(or $(EPISODES),20) --seed $(or $(SEED),42)
 rl-train:
-	@echo "[TODO] DQN seed=$(SEED) with checkpoints + eval callback (backend/rl/train.py)"
+	$(PY) -m backend.rl.train --seed $(or $(SEED),1) --timesteps $(or $(STEPS),100000)
 rl-eval:
-	@echo "[TODO] deterministic eval of best checkpoint per seed"
+	$(PY) -m backend.rl.train --eval-only --seed $(or $(SEED),1) --model $(MODEL)
 
 # ---- Component 4 + integration (Ragavendra) ----
 benchmark:

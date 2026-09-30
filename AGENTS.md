@@ -75,7 +75,8 @@ call "existing" or "in MVP" must be built new here.
 | YOLO vehicle counts (`19` §4) | Not started | `backend/vision/count_vehicles.py` |
 | Demand fitting + calibration table (`19` §5–6) | Not started | `sumo/demand/`, `reports/rl_calibration.md` |
 | RL env wrapper + fixed-time / always-green baselines (schematic corridor) | Done, with tests; full baseline run pending | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
-| RL randomized demand, DQN train/eval | Not started | `backend/rl/demand.py`, `backend/rl/train.py` |
+| RL DQN train/eval (schematic corridor, 3 demand levels) | Code done, smoke test; full seeds pending | `backend/rl/train.py` |
+| RL randomized demand (docs/19 �7 jitter, OSM) | Not started | `backend/rl/demand.py` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval | Not started | `backend/asr/` |
 | Dialogue state machine (6 questions) | Not started | `backend/dialogue/` |
