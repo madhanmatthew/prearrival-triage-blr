@@ -70,3 +70,13 @@ def test_summarise_columns():
                         "throughput_veh": 10, "max_cross_queue_veh": 2.0} for t in (100, 110)])
     s = summarise(df)
     assert s.loc[0, "amb_transit_s_mean"] == 105 and s.loc[0, "completed"] == 2
+
+
+def test_dqn_train_and_eval_smoke(tmp_path, monkeypatch):
+    pytest.importorskip("stable_baselines3")
+    from backend.rl import train as T
+    monkeypatch.setattr(T, "MODEL_DIR", tmp_path)
+    path = T.train(seed=1, timesteps=300, learning_starts=50, eval_freq=200, eval_episodes=1)
+    assert path.exists()
+    df = T.evaluate(path, seed=1, episodes=1, demands=["low"])
+    assert list(df.policy) == ["dqn_s1"] and df.demand.iloc[0] == "low"
