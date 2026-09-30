@@ -78,3 +78,25 @@
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
   `make test`). Install make (`choco install make`) before targets with real recipes are needed.
+
+- 2026-09-30: BiGRU full nested-CV run (Chetan's component, run here). Severity macro-F1
+  0.385 ± 0.037 vs best tabular 0.368 (RF/GB); trend AUROC 0.708 ± 0.105 (LR 0.750), PR-AUC
+  0.162 ± 0.074 (LR 0.158); NEWS2 0.278 / 0.622 / 0.061. All differences to tabular are within
+  fold spread: a tie. Tuning runs early-stopped at 3-6 epochs. Claim: "BiGRU matches but does
+  not significantly outperform tabular baselines on the 100-patient MIMIC-IV Demo; learned
+  models clearly beat NEWS2." Full MIMIC-IV = future work; do not tune further on 100 patients.
+- 2026-09-30: RL env + baselines. `backend/rl/env.py` (`CorridorEnv`, Gymnasium over traci,
+  custom, not sumo-rl): 16 actions, 24-d obs, reward per docs/09 §4, 5 s steps, min_green 10,
+  yellow 3. `control=` "rl" | "fixed" (SUMO program untouched = baseline a) | "preempt"
+  (baseline b: default 41/4 cycle, ORR green while ambulance <=1 km upstream). Ambulance is
+  added via traci at a random second in [200, 600]. `backend/rl/baselines.py` +
+  `make rl-baseline [EPISODES=20 SEED=42]` -> `reports/rl_baselines_{episodes,summary}.csv`
+  + log rows; every policy sees the same seeds (paired). `tests/test_rl_env.py` 5 pass.
+  - Smoke (2 episodes, medium, NOT a result): fixed 996 s vs always-green 914 s transit;
+    general wait about the same (1.13 vs 1.04 s). ~25 s wall-clock per episode.
+  - [ASSUMPTION]s in env.py docstring (queue cap 40, depart range, 2400 s cap, halting queues).
+  - Mean general wait is small because junctions are 5-6 km apart; expect modest RL gains.
+
+## Next / blockers
+- Run `make rl-baseline` (120 episodes, ~50 min) and commit the reports + log rows.
+- Then DQN: `backend/rl/train.py` (SB3 DQN, 100k steps, >=3 seeds, eval callback).

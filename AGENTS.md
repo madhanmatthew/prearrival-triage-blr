@@ -69,7 +69,8 @@ call "existing" or "in MVP" must be built new here.
 | Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
 | XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
 | SUMO corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs) | `sumo/`, `tests/test_sumo_corridor.py` |
-| RL env wrapper, DQN train/eval, baselines | Not started | `backend/rl/` |
+| RL env wrapper + fixed-time / always-green baselines | Done, with tests; full baseline run pending | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
+| DQN train/eval | Not started | `backend/rl/train.py` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval | Not started | `backend/asr/` |
 | Dialogue state machine (6 questions) | Not started | `backend/dialogue/` |
