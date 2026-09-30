@@ -83,7 +83,7 @@ call "existing" or "in MVP" must be built new here.
 | Text severity classifier (TF-IDF char n-gram + LR) | Not started | `backend/ml/text_severity.py` |
 | RAG pipeline + groundedness eval | Not started | `backend/rag/` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
-| Hospital agent + blood factor + RF surrogate | Not started | `backend/agents/hospital_agent.py` |
+| Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
 | Coordinator (6 conflicts, rule-based) | Not started | `backend/agents/coordinator.py` |
 | FastAPI app + WebSockets | Not started | `backend/main.py` |
 | Frontend (Leaflet map, police + hospital views) | Not started | `frontend/` |

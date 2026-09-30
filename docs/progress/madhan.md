@@ -138,6 +138,13 @@
   Language is forced to the true language during WER so it measures recognition only.
   TODO (Sankalp): record >= 30 utterances/language + `reference.csv`; run `make eval-asr`.
 
+- 2026-09-30: Hospital agent (`backend/agents/hospital_agent.py`, 10 tests pass, fixture hospitals only).
+  docs/08 §7.2 formula, blood weight redistributes to proximity when no transfusion risk, unknown
+  group -> O- proxy, RF surrogate on simulated episodes (`simulate_episodes`, reward per §7.3),
+  `use_rf=False` for the rule-only ablation. ETA is supplied by caller (ORS). [ASSUMPTION]
+  trauma_level 0-3 higher=better, required level = severity_class; injury->specialty map
+  [TODO-VERIFY] against real `data/hospitals.csv` vocabulary. No real hospital data built yet (D11).
+
 ## Next (in order)
 0. Run `make rl-train SEED=1` (100k steps, roughly 1-2 h on this env), then seeds 2 and 3.
 1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).
