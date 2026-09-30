@@ -64,8 +64,8 @@ call "existing" or "in MVP" must be built new here.
 | Repo skeleton, Makefile stubs, env template, experiment log | Done | root |
 | NEWS2 scoring (`02` §3 bands) | Done, with tests | `backend/ml/news2.py`, `tests/test_news2.py` |
 | MIMIC windowing + outcome labels | Done, with tests (MIMIC-IV Demo) | `backend/data/mimic_windows.py`, `tests/test_mimic_windows.py` |
-| Tabular baselines (majority, NEWS2, LR, RF, GB) + nested grouped CV | Done, with tests; full run pending | `backend/ml/baselines.py`, `tests/test_baselines.py` |
-| BiGRU two-head model | Not started | `backend/ml/seq_model.py` |
+| Tabular baselines (majority, NEWS2, LR, RF, GB) + nested grouped CV | Done, full run logged | `backend/ml/baselines.py`, `tests/test_baselines.py` |
+| BiGRU two-head model | Done, with tests; full run pending | `backend/ml/seq_model.py`, `tests/test_seq_model.py` |
 | Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
 | XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
 | SUMO corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs) | `sumo/`, `tests/test_sumo_corridor.py` |

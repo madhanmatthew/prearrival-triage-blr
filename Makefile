@@ -22,7 +22,7 @@ data-mimic:
 train-baselines:
 	$(PY) -m backend.ml.baselines
 train-seq:
-	@echo "[TODO] BiGRU two-head (docs/07 §4) -> backend/ml/seq_model.py"
+	$(PY) -m backend.ml.seq_model
 train-fusion:
 	@echo "[TODO] fusion + 3-way ablation + sensitivity table -> backend/ml/fusion_model.py"
 
