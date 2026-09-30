@@ -34,7 +34,7 @@ build-rag:
 eval-rag:
 	@echo "[TODO] retrieval hit@k + groundedness %"
 eval-asr:
-	@echo "[TODO] Whisper WER per language (backend/asr/)"
+	$(PY) -m backend.asr.eval_wer $(ARGS)
 
 # ---- Component 3: traffic RL (Madhan) ----
 DEMAND ?= medium

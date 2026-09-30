@@ -129,6 +129,15 @@
   unconscious -> can't speak). [TODO-VERIFY] hi/kn wording + lexicons need native review (Sankalp).
   Text-severity slots 15-18 are a uniform placeholder until the text classifier exists.
 
+- 2026-09-30: Whisper intake (`docs/01` §10 decided: **faster-whisper, local**, CPU int8, no API).
+  `backend/asr/transcribe.py` (`Transcriber`, lazy model load into `models/whisper/`, config from
+  `WHISPER_MODEL`/`WHISPER_MODE`), `intake.py` (audio -> `DialogueManager`), `eval_wer.py`
+  (corpus WER + CER per language, own edit-distance, NFC/punctuation normalisation [ASSUMPTION]),
+  `make eval-asr`, `data/asr_test/README.md` (format). `tests/test_asr.py` 10 pass with a fake model;
+  no real audio or model download done yet. `faster-whisper==1.2.1` pinned in requirements.
+  Language is forced to the true language during WER so it measures recognition only.
+  TODO (Sankalp): record >= 30 utterances/language + `reference.csv`; run `make eval-asr`.
+
 ## Next (in order)
 0. Run `make rl-train SEED=1` (100k steps, roughly 1-2 h on this env), then seeds 2 and 3.
 1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).

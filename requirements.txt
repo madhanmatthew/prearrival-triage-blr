@@ -22,7 +22,7 @@ torch
 captum
 
 # Reporting agent (Component 1) — heavy; install when Sankalp's work starts
-# openai-whisper
+faster-whisper==1.2.1   # installed 2026-09-30; local Whisper (docs/01 §4), no API key
 # langchain
 # langchain-community
 # langchain-huggingface

@@ -78,7 +78,7 @@ call "existing" or "in MVP" must be built new here.
 | RL DQN train/eval (schematic corridor, 3 demand levels) | Code done, smoke test; full seeds pending | `backend/rl/train.py` |
 | RL randomized demand (docs/19 §7 jitter, OSM) | Not started | `backend/rl/demand.py` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
-| Whisper intake + WER eval | Not started | `backend/asr/` |
+| Whisper intake + WER eval (faster-whisper, local) | Code done, tests with fake model; needs recorded test set + model download | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; hi/kn wording needs native review | `backend/dialogue/`, `tests/test_dialogue.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Not started | `backend/ml/text_severity.py` |
 | RAG pipeline + groundedness eval | Not started | `backend/rag/` |
