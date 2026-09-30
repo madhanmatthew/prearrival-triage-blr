@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import os
 import sys
 import time
 import urllib.parse
@@ -26,6 +27,7 @@ from scripts.traffic_common import (OUT_DIR, append_rows, get_json, load_points,
                                     require_key, segment_jobs)
 
 OUT_PATH = OUT_DIR / "tomtom_typical.csv"
+LOCK_PATH = OUT_DIR / ".typical.lock"
 URL = "https://api.tomtom.com/routing/1/calculateRoute/{locations}/json?{query}"
 COLUMNS = ["collected_at", "segment", "direction", "dow", "hour", "historic_s", "no_traffic_s",
            "travel_time_s", "length_m"]
@@ -46,6 +48,15 @@ def parse_route(payload: dict) -> dict:
     return {"historic_s": s["historicTrafficTravelTimeInSeconds"],
             "no_traffic_s": s["noTrafficTravelTimeInSeconds"],
             "travel_time_s": s["travelTimeInSeconds"], "length_m": s["lengthInMeters"]}
+
+
+def length_ok(cfg: dict, segment: str, length_m: float) -> bool:
+    """False if the route length is far from the nominal segment length (left the ORR)."""
+    exp = cfg.get("expected_length_m", {})
+    if segment not in exp:
+        return True
+    tol = exp.get("length_tolerance", 0.3)
+    return abs(length_m - exp[segment]) <= tol * exp[segment]
 
 
 def done_keys(path: Path = OUT_PATH) -> set[tuple]:
@@ -76,7 +87,19 @@ def main() -> None:
     if a.dry_run or not todo:
         return
     key = require_key("TOMTOM_API_KEY")
-    ok = 0
+    try:  # one run at a time: two writers corrupt/duplicate the CSV
+        lock_fd = os.open(LOCK_PATH, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        raise SystemExit(f"another run is active (or crashed): delete {LOCK_PATH} if not") from None
+    try:
+        run(cfg, todo, key, a.min_gap_s)
+    finally:
+        os.close(lock_fd)
+        os.remove(LOCK_PATH)
+
+
+def run(cfg: dict, todo: list[dict], key: str, min_gap_s: float) -> None:
+    ok, rejected, streak = 0, 0, 0
     for j in todo:
         url = build_url(j["origin"], j["dest"], j["via"], next_departure(j["dow"], j["hour"]), key)
         try:
@@ -85,12 +108,24 @@ def main() -> None:
             print(f"{j['segment']} {j['direction']} dow={j['dow']} h={j['hour']}: {e}",
                   file=sys.stderr, flush=True)
             continue
+        if not length_ok(cfg, j["segment"], route["length_m"]):
+            rejected += 1
+            streak += 1
+            print(f"REJECTED {j['segment']} {j['direction']} dow={j['dow']} h={j['hour']}: "
+                  f"length {route['length_m']} m is off the nominal route; add via points",
+                  file=sys.stderr, flush=True)
+            if streak >= 5:
+                raise SystemExit("5 wrong-length routes in a row: fix via points in "
+                                 "scripts/traffic_points.json before spending more quota")
+            continue
+        streak = 0
         append_rows(OUT_PATH, COLUMNS, [{
             "collected_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
             **{k: j[k] for k in ("segment", "direction", "dow", "hour")}, **route}])
         ok += 1
-        time.sleep(a.min_gap_s)
-    print(f"done: {ok}/{len(todo)} rows written; re-run later for the remaining slots", flush=True)
+        time.sleep(min_gap_s)
+    print(f"done: {ok}/{len(todo)} rows written, {rejected} rejected; re-run later for the rest",
+          flush=True)
 
 
 if __name__ == "__main__":

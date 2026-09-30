@@ -103,7 +103,25 @@
   pass. [TODO-VERIFY] request/response field names are from memory of TomTom's docs: smoke-test
   with `--max-requests 2` and check `length_m` (~6/5/5 km) before the full run.
 
+- 2026-09-30: First `collect_tomtom_typical` batches. APIs smoke-tested OK (Flow 4/4 rows;
+  Routing Silk Board->Bellandur 6,308 m). Two runs overlapped and duplicated rows: deduped, and
+  a lock file now blocks concurrent runs. Reverse (east->west) routes came back 8.9 km and
+  9.6 km vs ~6 / ~5 km nominal, i.e. TomTom left the ORR: reverse rows deleted, forward kept
+  (336 rows). Added `via_points_reverse` and a length guard (`expected_length_m`, tol 30 %,
+  [ASSUMPTION] nominal lengths from docs/19; aborts after 5 rejects in a row). Flow poller running
+  since 2026-09-30 (check snapped coords: bellandur point snapped to a local FRC4 road).
+  TODO: add reverse via points, then re-collect reverse slots on later days.
+
+- 2026-09-30: `backend/rl/train.py` (SB3 DQN, MlpPolicy 64x64, eval callback every 1000 steps,
+  best-by-eval checkpoint) + `make rl-train SEED=1 STEPS=100000` / `make rl-eval MODEL=...`.
+  Trains on randomized demand (episode samples low/medium/peak + random ambulance time), then
+  evaluates deterministically on each level with the baselines' episode seeds (paired).
+  Writes `reports/rl_dqn_{episodes,summary}_s<seed>.csv` + log rows (model `dqn_s<seed>`).
+  Smoke test added to `tests/test_rl_env.py`. Not run for real yet. [ASSUMPTION] hyper-parameters
+  untuned. Docs/19 §7 jitter (demand x U(0.8,1.2), mix, incidents) waits for the OSM network.
+
 ## Next (in order)
+0. Run `make rl-train SEED=1` (100k steps, roughly 1-2 h on this env), then seeds 2 and 3.
 1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).
 2. Smoke-test `collect-typical ARGS="--max-requests 2"`, then run it on 3 separate days.
 3. Run `make rl-baseline` (120 episodes, ~50 min) and commit reports + log rows.

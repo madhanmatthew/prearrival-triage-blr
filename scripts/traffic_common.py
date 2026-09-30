@@ -90,8 +90,9 @@ def segment_jobs(cfg: dict) -> list[dict]:
     for seg in cfg["segments"]:
         a, b = cfg["junctions"][seg["from"]], cfg["junctions"][seg["to"]]
         via = cfg.get("via_points", {}).get(seg["name"], [])
+        via_rev = cfg.get("via_points_reverse", {}).get(seg["name"]) or via[::-1]
         for d in DIRECTIONS:
-            o, t, v = (a, b, via) if d == "forward" else (b, a, via[::-1])
+            o, t, v = (a, b, via) if d == "forward" else (b, a, via_rev)
             for dow in range(7):
                 for hour in range(24):
                     out.append({"segment": seg["name"], "direction": d, "dow": dow,

@@ -12,10 +12,12 @@ from scripts.traffic_common import POINTS_PATH, append_rows, load_points
 CFG = json.loads(POINTS_PATH.read_text())
 
 
-def test_unverified_config_is_refused():
+def test_unverified_config_is_refused(tmp_path):
+    p = tmp_path / "points.json"
+    p.write_text(json.dumps({**CFG, "verified": False}))
     with pytest.raises(SystemExit):
-        load_points()  # shipped config is unverified until the user checks it
-    assert load_points(allow_unverified=True)["junctions"]
+        load_points(p)
+    assert load_points(p, allow_unverified=True)["junctions"]
 
 
 def test_tomtom_points_cover_each_junction_once():
@@ -69,7 +71,8 @@ def test_build_url_shape():
     j = tc.segment_jobs(CFG)[0]
     url = g.build_url(j["origin"], j["dest"], [{"lat": 1.0, "lon": 2.0}],
                       dt.datetime(2026, 10, 5, 8, tzinfo=tc.IST), "KEY")
-    assert "/calculateRoute/12.9177,77.6238:1.0,2.0:12.926,77.6762/json?" in url
+    o, d = j["origin"], j["dest"]
+    assert f"/calculateRoute/{o['lat']},{o['lon']}:1.0,2.0:{d['lat']},{d['lon']}/json?" in url
     assert "departAt=2026-10-05T08%3A00%3A00%2B05%3A30" in url
     assert "traffic=true" in url and "computeTravelTimeFor=all" in url and "travelMode=car" in url
 
@@ -90,3 +93,23 @@ def test_append_and_resume_keys(tmp_path):
     append_rows(p, g.COLUMNS, [{**row, "hour": 8}])
     assert p.read_text().count("collected_at") == 1  # header once
     assert g.done_keys(p) == {("s", "forward", 2, 7), ("s", "forward", 2, 8)}
+
+
+def test_reverse_via_uses_own_list_else_reversed_forward():
+    cfg = json.loads(json.dumps(CFG))
+    cfg["via_points"]["silkboard_bellandur"] = [{"lat": 1.0, "lon": 1.0}, {"lat": 2.0, "lon": 2.0}]
+    rev = next(j for j in tc.segment_jobs(cfg)
+               if j["segment"] == "silkboard_bellandur" and j["direction"] == "reverse")
+    assert rev["via"] == [{"lat": 2.0, "lon": 2.0}, {"lat": 1.0, "lon": 1.0}]
+    cfg["via_points_reverse"]["silkboard_bellandur"] = [{"lat": 9.0, "lon": 9.0}]
+    rev = next(j for j in tc.segment_jobs(cfg)
+               if j["segment"] == "silkboard_bellandur" and j["direction"] == "reverse")
+    assert rev["via"] == [{"lat": 9.0, "lon": 9.0}]
+
+
+def test_length_guard_rejects_off_route_lengths():
+    assert g.length_ok(CFG, "silkboard_bellandur", 6308)
+    assert g.length_ok(CFG, "bellandur_marathahalli", 4618)
+    assert not g.length_ok(CFG, "silkboard_bellandur", 8940)
+    assert not g.length_ok(CFG, "bellandur_marathahalli", 9572)
+    assert g.length_ok(CFG, "unknown_segment", 1)
