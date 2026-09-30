@@ -91,8 +91,10 @@ def segment_jobs(cfg: dict) -> list[dict]:
         a, b = cfg["junctions"][seg["from"]], cfg["junctions"][seg["to"]]
         via = cfg.get("via_points", {}).get(seg["name"], [])
         via_rev = cfg.get("via_points_reverse", {}).get(seg["name"]) or via[::-1]
+        # the junction coordinate can snap to the wrong carriageway for the reverse trip
+        b_rev = cfg.get("reverse_origin", {}).get(seg["name"], b)
         for d in DIRECTIONS:
-            o, t, v = (a, b, via) if d == "forward" else (b, a, via_rev)
+            o, t, v = (a, b, via) if d == "forward" else (b_rev, a, via_rev)
             for dow in range(7):
                 for hour in range(24):
                     out.append({"segment": seg["name"], "direction": d, "dow": dow,

@@ -60,7 +60,7 @@ def test_next_departure_is_future_right_weekday_ist():
 
 
 def test_jobs_count_and_reverse_swaps_endpoints():
-    js = tc.segment_jobs(CFG)
+    js = tc.segment_jobs({**CFG, "reverse_origin": {}})   # no override -> plain swap
     assert len(js) == 4 * 2 * 168
     f = next(j for j in js if j["segment"] == "silkboard_bellandur" and j["direction"] == "forward")
     r = next(j for j in js if j["segment"] == "silkboard_bellandur" and j["direction"] == "reverse")
@@ -113,3 +113,25 @@ def test_length_guard_rejects_off_route_lengths():
     assert not g.length_ok(CFG, "silkboard_bellandur", 8940)
     assert not g.length_ok(CFG, "bellandur_marathahalli", 9572)
     assert g.length_ok(CFG, "unknown_segment", 1)
+
+
+def test_done_keys_accepts_float_formatted_csv(tmp_path):
+    """A pandas/Excel re-save turns 0 into 0.0; resuming must still work."""
+    g = __import__("scripts.collect_tomtom_typical", fromlist=["x"])
+    p = tmp_path / "t.csv"
+    p.write_text("collected_at,segment,direction,dow,hour,historic_s,no_traffic_s,travel_time_s,length_m\n"
+                 "x,s,forward,0.0,7.0,1.0,1.0,1.0,1.0\n")
+    assert g.done_keys(p) == {("s", "forward", 0, 7)}
+
+
+def test_reverse_origin_override_and_direction_filter():
+    from scripts.traffic_common import segment_jobs
+    g = __import__("scripts.collect_tomtom_typical", fromlist=["x"])
+    cfg = json.loads(json.dumps(CFG))
+    seg = cfg["segments"][0]["name"]
+    cfg["reverse_origin"] = {seg: {"lat": 1.0, "lon": 2.0}}
+    rev = next(j for j in segment_jobs(cfg) if j["segment"] == seg and j["direction"] == "reverse")
+    fwd = next(j for j in segment_jobs(cfg) if j["segment"] == seg and j["direction"] == "forward")
+    assert rev["origin"] == {"lat": 1.0, "lon": 2.0}
+    assert fwd["dest"] == cfg["junctions"][cfg["segments"][0]["to"]]     # forward untouched
+    assert {j["direction"] for j in g.pending(cfg, set(), directions=("forward",))} == {"forward"}

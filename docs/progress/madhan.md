@@ -145,7 +145,23 @@
   trauma_level 0-3 higher=better, required level = severity_class; injury->specialty map
   [TODO-VERIFY] against real `data/hospitals.csv` vocabulary. No real hospital data built yet (D11).
 
+- 2026-09-30: Fusion (`backend/ml/fusion_model.py`, `make train-fusion`, 10 tests pass). One `FusionNet`
+  with `variant` = vitals_only | text_only | fused (docs/07 §4.2, modality dropout 0.2 text / 0.1 vitals,
+  never both). Synthetic text from `data/text_feature_generator.yaml` (label-only, all probabilities
+  [ASSUMPTION] fixed before results). `evaluate()` runs the 3-way ablation at agreement 0.5/0.65/0.8 on the
+  shared outer folds and writes `reports/fusion_sensitivity.csv` (paired per-fold gain mean/std), confusion CSVs, and log rows
+  tagged text=SYNTHETIC. vitals_only is the same net + seed as the BiGRU (test-verified), so it
+  must reproduce 0.385; if not, something is wrong. Full run not done yet. Mandatory caveat is printed and must go on every table.
+
+- 2026-09-30: Text severity classifier (`backend/ml/text_severity.py`, `make train-text`, 10 tests pass on a toy
+  fixture). TF-IDF char_wb 2-5 + LR (balanced), C tuned by 5-fold stratified CV on train split only; fixed 20%
+  held-out split stored in the CSV (`--assign-split`, stratified language x label, seed 42, never reassigned).
+  Reports macro-F1 overall + per language, confusion CSV, log row tagged SIM. `predict_proba` -> dialogue slots
+  15-18 via `compose_text(transcript, answers)`. [ASSUMPTION] trained on single reports, answers appended only
+  at inference (input gap). Dataset format/rubric in `data/text_reports/README.md`; no data yet (Sankalp).
+
 ## Next (in order)
+0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.
 0. Run `make rl-train SEED=1` (100k steps, roughly 1-2 h on this env), then seeds 2 and 3.
 1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).
 2. Smoke-test `collect-typical ARGS="--max-requests 2"`, then run it on 3 separate days.
