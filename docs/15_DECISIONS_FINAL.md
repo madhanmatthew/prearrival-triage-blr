@@ -41,7 +41,7 @@ Each owner must be able to explain their component's code and results in the viv
 | D14 | **Fresh build, no MVP code** | This repo starts from zero. The 6th-sem MVP is **not** imported. Every "exists / in MVP / reuse" statement in `00`–`12` (e.g. `vitals_model.py` NEWS2 code, text classifier, traffic/ETA RFs, `benchmark.py` 8 scenarios, SUMO scaffold, coordinator) means **build new** here. The MVP may be cited in the report only as prior 6th-sem work; its old benchmark numbers (3/8 faster) are **not** results of this project. | All "exists"/"MVP" wording in `00`–`14`, `16`–`18` |
 | D15 | System benchmark | Recreate the benchmark fresh: 8 Bengaluru scenarios + 2 blood-match scenarios (`08` §7.4) with a **fair** naive baseline (same speed model and dispatch overhead as the AI pipeline). | `05` §6.2 "extend, don't rebuild" |
 | D16 | ETA and traffic RF models | Optional (tier 5). ORS route durations are the primary ETA. Only build a traffic/ETA ML model if time allows and a real target exists. | `03` §9, `00` §6 |
-| D17 | RL corridor realism | Follow `19_RL_DATA_CALIBRATION.md`: real **OSM** network; travel-time targets from **Google Routes** (typical, 24h×7) + **TomTom Flow** (live, ≥7 days); vehicle counts + mix from **YOLOv8 + ByteTrack** on own video; demand fitted with **routeSampler**; validated ≤15% travel-time error per slot; RL trained on **randomized demand**, evaluated on calibrated low/medium/peak slots. RL agent spec (`09` §4) unchanged. | `03` §5 schematic net, `08` §6 fixed demand |
+| D17 | RL corridor realism | Follow `19_RL_DATA_CALIBRATION.md`: real **OSM** network; travel-time targets from **TomTom Routing** (historic typical, future `departAt`, 24h×7) + **TomTom Flow** (live, ≥7 days); vehicle counts + mix from **YOLOv8 + ByteTrack** on own video; demand fitted with **routeSampler**; validated ≤15% travel-time error per slot; RL trained on **randomized demand**, evaluated on calibrated low/medium/peak slots. RL agent spec (`09` §4) unchanged. *Changed 2026-09-30: Google Routes dropped (Google Cloud India billing requires a ₹1,000 prepayment; project needs free-tier only). Typical and live now share one provider → stated limit in `19` §9.* | `03` §5 schematic net, `08` §6 fixed demand, earlier D17 (Google Routes) |
 | D12 | Trend horizon | "Next 6 readings (≈6 h in MIMIC)". Never claim 10–15 minutes. | `02` §1 |
 | D13 | XAI | SHAP TreeExplainer on RF/GB only; Integrated Gradients (Captum) on BiGRU. | `00` §7 |
 
@@ -60,8 +60,10 @@ Each owner must be able to explain their component's code and results in the viv
 
 ## 4. Engineering rules
 
-- All keys come from `.env` (`ORS_API_KEY`, `LLM_API_KEY`); never hard-code or commit them.
-  The old MVP ORS key was hard-coded in the 6th-sem repo, so rotate it before using ORS here.
+- All keys come from `.env` (`ORS_API_KEY`, `LLM_API_KEY`, `TOMTOM_API_KEY`); never hard-code
+  or commit them. The old MVP ORS key was hard-coded in the 6th-sem repo, so rotate it before
+  using ORS here.
+- Free-tier APIs only. No service that needs a paid billing account or prepayment.
 - Never commit MIMIC data or model binaries. Models go to the shared Drive folder;
   `experiments/log.csv` and `reports/` figures are committed.
 

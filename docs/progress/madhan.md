@@ -68,16 +68,53 @@
   preprocessing. `--save-model` fits on all data for XAI/demo. [ASSUMPTION] trend BCE
   pos_weight = neg/pos. `tests/test_seq_model.py`; 192/192 pass. `--quick` smoke worked.
 
+- 2026-09-30: **Decision change (`15` D17, `19` §2):** Google Routes dropped. Google Cloud India
+  billing required a ₹1,000 prepayment; project is free-tier only. Typical travel times now
+  from TomTom Routing (`historicTrafficTravelTimeInSeconds`, future `departAt`, 24h×7),
+  `scripts/collect_tomtom_typical.py` → `tomtom_typical.csv`, Make target `collect-typical`.
+  Limit recorded: typical + live are same provider; YOLO counts are the independent check.
+  `TOMTOM_API_KEY` placed in `.env`. No Google key needed.
+
+- 2026-09-30: BiGRU full nested-CV run. Severity macro-F1 0.385 ± 0.037 vs best tabular 0.368
+  (RF/GB); trend AUROC 0.708 ± 0.105 (LR 0.750), PR-AUC 0.162 ± 0.074 (LR 0.158); NEWS2
+  0.278 / 0.622 / 0.061. Differences to tabular are within fold spread: a tie. Tuning runs
+  early-stopped at 3-6 epochs. Claim: "BiGRU matches but does not significantly outperform
+  tabular baselines on the 100-patient MIMIC-IV Demo; learned models clearly beat NEWS2."
+  Full MIMIC-IV = future work; do not tune further on 100 patients.
+- 2026-09-30: RL env + baselines (schematic corridor). `backend/rl/env.py` (`CorridorEnv`,
+  Gymnasium over traci, custom, not sumo-rl): 16 actions, 24-d obs, reward per docs/09 §4,
+  5 s steps, min_green 10, yellow 3. `control=` "rl" | "fixed" (SUMO program untouched =
+  baseline a) | "preempt" (baseline b: default 41/4 cycle, ORR green while ambulance <= 1 km
+  upstream). Ambulance added via traci at a random second in [200, 600].
+  `backend/rl/baselines.py` + `make rl-baseline [EPISODES=20 SEED=42]` ->
+  `reports/rl_baselines_{episodes,summary}.csv` + log rows; all policies share seeds.
+  `tests/test_rl_env.py` 5 pass. Smoke (2 episodes, medium, NOT a result): fixed 996 s vs
+  always-green 914 s transit; general wait ~1.1 s both. ~25 s per episode.
+  [ASSUMPTION]s in the env.py docstring (queue cap 40, depart range, 2400 s cap).
+- 2026-09-30: `scripts/collect_tomtom.py` (Flow polling, 30 min, `--once` for a test round),
+  `scripts/traffic_common.py`, config `scripts/traffic_points.json`,
+  `tests/test_collect_traffic.py`. No real API call made yet.
+  [TODO-VERIFY] junction coordinates in `traffic_points.json` are approximate; collectors
+  refuse to run until `"verified": true`.
+- 2026-09-30: `scripts/collect_tomtom_typical.py` (TomTom Routing `calculateRoute`, historic
+  typical times, 1,344 slots, resumable, `--max-requests 600` per run, `--dry-run`) ->
+  `data/raw/traffic/tomtom_typical.csv`; `make collect-typical`. `collect_google.py` deleted.
+  Shared `next_departure` / `segment_jobs` live in `scripts/traffic_common.py`. 9 offline tests
+  pass. [TODO-VERIFY] request/response field names are from memory of TomTom's docs: smoke-test
+  with `--max-requests 2` and check `length_m` (~6/5/5 km) before the full run.
+
 ## Next (in order)
-1. **Run** `python -m backend.ml.seq_model --save-model` and commit log rows + `reports/bigru_confusion.csv`.
-2. **Week 3:** RL env wrapper + always-green baseline (`backend/rl/`).
-3. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
-   `experiments/log.csv`; then RL env wrapper (docs/09 §4: 16 actions, 24-d obs, custom reward).
+1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).
+2. Smoke-test `collect-typical ARGS="--max-requests 2"`, then run it on 3 separate days.
+3. Run `make rl-baseline` (120 episodes, ~50 min) and commit reports + log rows.
+4. `python -m backend.ml.seq_model --save-model` (Chetan's XAI/demo model).
+5. DQN: `backend/rl/train.py`, after the OSM network / randomized demand (`19` §1, §7).
 
 ## RL data plan (docs/19, decision D17) — start collection early, it needs days
-- [ ] Get API keys: Google Maps Platform (Routes API, billing on) + TomTom (Freemium) → `.env`
+- [x] TomTom key (Freemium) → `.env` as `TOMTOM_API_KEY` (Google dropped, see 2026-09-30 entry)
+- [ ] Smoke-test key: Flow Segment Data + Routing `calculateRoute` (both return 200)
 - [ ] `scripts/collect_tomtom.py` and start it running ≥ 7 days in background
-- [ ] `scripts/collect_google.py` (one-shot 24h × 7 typical times)
+- [ ] `scripts/collect_tomtom_typical.py` (24h × 7 × 8 = 1,344 calls, resumable, spread ≥ 2 days)
 - [ ] Record 10–15 min video at 2–3 ORR junction approaches (peak + off-peak)
 - [ ] OSM network + `tls_map.json` → YOLO counts → routeSampler → validation table ≤ 15%
 - [ ] Then RL env wrapper with randomized demand, baselines, DQN seeds
@@ -86,25 +123,3 @@
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
   `make test`). Install make (`choco install make`) before targets with real recipes are needed.
-
-- 2026-09-30: BiGRU full nested-CV run (Chetan's component, run here). Severity macro-F1
-  0.385 ± 0.037 vs best tabular 0.368 (RF/GB); trend AUROC 0.708 ± 0.105 (LR 0.750), PR-AUC
-  0.162 ± 0.074 (LR 0.158); NEWS2 0.278 / 0.622 / 0.061. All differences to tabular are within
-  fold spread: a tie. Tuning runs early-stopped at 3-6 epochs. Claim: "BiGRU matches but does
-  not significantly outperform tabular baselines on the 100-patient MIMIC-IV Demo; learned
-  models clearly beat NEWS2." Full MIMIC-IV = future work; do not tune further on 100 patients.
-- 2026-09-30: RL env + baselines. `backend/rl/env.py` (`CorridorEnv`, Gymnasium over traci,
-  custom, not sumo-rl): 16 actions, 24-d obs, reward per docs/09 §4, 5 s steps, min_green 10,
-  yellow 3. `control=` "rl" | "fixed" (SUMO program untouched = baseline a) | "preempt"
-  (baseline b: default 41/4 cycle, ORR green while ambulance <=1 km upstream). Ambulance is
-  added via traci at a random second in [200, 600]. `backend/rl/baselines.py` +
-  `make rl-baseline [EPISODES=20 SEED=42]` -> `reports/rl_baselines_{episodes,summary}.csv`
-  + log rows; every policy sees the same seeds (paired). `tests/test_rl_env.py` 5 pass.
-  - Smoke (2 episodes, medium, NOT a result): fixed 996 s vs always-green 914 s transit;
-    general wait about the same (1.13 vs 1.04 s). ~25 s wall-clock per episode.
-  - [ASSUMPTION]s in env.py docstring (queue cap 40, depart range, 2400 s cap, halting queues).
-  - Mean general wait is small because junctions are 5-6 km apart; expect modest RL gains.
-
-## Next / blockers
-- Run `make rl-baseline` (120 episodes, ~50 min) and commit the reports + log rows.
-- Then DQN: `backend/rl/train.py` (SB3 DQN, 100k steps, >=3 seeds, eval callback).

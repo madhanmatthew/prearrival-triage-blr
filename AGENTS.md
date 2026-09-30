@@ -51,6 +51,7 @@ All docs live in `docs/`. Read only what the task needs.
 13. **Do not invent facts, citations, numbers, MIMIC item IDs or dataset columns.** If something is unknown, mark it `[ASSUMPTION]` or `[TODO-VERIFY]` and continue.
 14. **This is a research prototype, not a medical device.** No claim of clinical validity anywhere in UI, code comments, or reports.
 15. **Never commit secrets, MIMIC data or model binaries.** Keys go in `.env` (gitignored).
+16. **Free-tier APIs only** (`15` §4). No service that needs a paid billing account or prepayment.
 
 ## 4. Current status (update as work progresses)
 
@@ -68,18 +69,13 @@ call "existing" or "in MVP" must be built new here.
 | BiGRU two-head model | Done, with tests; full run pending | `backend/ml/seq_model.py`, `tests/test_seq_model.py` |
 | Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
 | XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
-<<<<<<< HEAD
-| SUMO corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs) | `sumo/`, `tests/test_sumo_corridor.py` |
-| RL env wrapper + fixed-time / always-green baselines | Done, with tests; full baseline run pending | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
-| DQN train/eval | Not started | `backend/rl/train.py` |
-=======
 | SUMO schematic corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs); kept as `19` fallback / compressed-spacing base | `sumo/`, `tests/test_sumo_corridor.py` |
 | SUMO corridor from OSM (`19` §1) | Not started | `sumo/osm/` |
-| Traffic data collection: Google typical + TomTom live (`19` §2–3) | Not started | `scripts/collect_google.py`, `scripts/collect_tomtom.py` |
+| Traffic data collection: TomTom typical (Routing, historic) + TomTom live (Flow) (`19` §2–3) | Code done, with tests; collection not started (verify coords in `scripts/traffic_points.json`, key in `.env`) | `scripts/collect_tomtom_typical.py`, `scripts/collect_tomtom.py` |
 | YOLO vehicle counts (`19` §4) | Not started | `backend/vision/count_vehicles.py` |
 | Demand fitting + calibration table (`19` §5–6) | Not started | `sumo/demand/`, `reports/rl_calibration.md` |
-| RL env wrapper, randomized demand, DQN train/eval, baselines | Not started | `backend/rl/` |
->>>>>>> 3b753dfb3d348afec96afead8010a2254ab536df
+| RL env wrapper + fixed-time / always-green baselines (schematic corridor) | Done, with tests; full baseline run pending | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
+| RL randomized demand, DQN train/eval | Not started | `backend/rl/demand.py`, `backend/rl/train.py` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval | Not started | `backend/asr/` |
 | Dialogue state machine (6 questions) | Not started | `backend/dialogue/` |
@@ -108,4 +104,5 @@ call "existing" or "in MVP" must be built new here.
 - MIMIC is ICU data (in-hospital), not pre-hospital. Domain gap = stated limitation.
 - MIMIC-IV Demo has 100 patients (`15` D4): small; expect high CV variance.
 - RL results are from simulation on an approximated corridor.
+- RL calibration targets (typical + live travel times) both come from TomTom; YOLO counts are the only independent check (`19` §9).
 - Blood stock and bed occupancy are simulated unless real data is obtained.

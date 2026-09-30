@@ -44,10 +44,10 @@ sumo-routes:
 	for d in low medium peak; do $(PY) sumo/gen_routes.py --demand $$d; done
 sumo-run:
 	sumo -c sumo/corridor.sumocfg -r sumo/routes_$(DEMAND).rou.xml --seed $(SEED) --tripinfo-output sumo/tripinfo_$(DEMAND)_seed$(SEED).xml
-collect-google:
-	@echo "[TODO] Google Routes typical travel times, 24h x 7 (docs/19 section 2)"
+collect-typical:
+	$(PY) -m scripts.collect_tomtom_typical $(ARGS)
 collect-traffic:
-	@echo "[TODO] TomTom Flow polling every 30 min, run >= 7 days (docs/19 section 3)"
+	$(PY) -m scripts.collect_tomtom $(ARGS)
 count-vehicles:
 	@echo "[TODO] YOLOv8 + ByteTrack counts from VIDEO=$(VIDEO) (docs/19 section 4)"
 sumo-osm:
@@ -55,9 +55,9 @@ sumo-osm:
 sumo-demand:
 	@echo "[TODO] routeSampler fit per slot -> sumo/demand/<slot>.rou.xml (docs/19 section 5)"
 sumo-validate:
-	@echo "[TODO] sim vs Google/TomTom travel time per slot -> reports/rl_calibration.md (docs/19 section 6)"
+	@echo "[TODO] sim vs TomTom typical/live travel time per slot -> reports/rl_calibration.md (docs/19 section 6)"
 rl-baseline:
-	@echo "[TODO] fixed-time + always-green runs, log transit + general delay (docs/09 §4)"
+	$(PY) -m backend.rl.baselines --episodes $(or $(EPISODES),20) --seed $(or $(SEED),42)
 rl-train:
 	@echo "[TODO] DQN seed=$(SEED) with checkpoints + eval callback (backend/rl/train.py)"
 rl-eval:
