@@ -32,11 +32,19 @@ captum
 
 # Traffic RL (Component 3) â€” install when Madhan's work starts
 eclipse-sumo==1.27.1   # verified install 2026-09-30
+<<<<<<< HEAD
 stable-baselines3==2.9.0   # installed 2026-09-30 (with sumo-rl 1.4.5)
 gymnasium==1.3.0
 traci==1.27.1
 sumolib==1.27.1
 # sumo-rl==1.4.5 installed but unused: custom env in backend/rl/env.py (docs/09 §4 needs ambulance-aware obs)
+=======
+# sumo-rl
+# stable-baselines3
+# gymnasium
+# ultralytics      # YOLOv8 + ByteTrack vehicle counting (docs/19 section 4)
+# requests
+>>>>>>> 3b753dfb3d348afec96afead8010a2254ab536df
 
 # Routing
 openrouteservice

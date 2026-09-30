@@ -44,6 +44,18 @@ sumo-routes:
 	for d in low medium peak; do $(PY) sumo/gen_routes.py --demand $$d; done
 sumo-run:
 	sumo -c sumo/corridor.sumocfg -r sumo/routes_$(DEMAND).rou.xml --seed $(SEED) --tripinfo-output sumo/tripinfo_$(DEMAND)_seed$(SEED).xml
+collect-google:
+	@echo "[TODO] Google Routes typical travel times, 24h x 7 (docs/19 section 2)"
+collect-traffic:
+	@echo "[TODO] TomTom Flow polling every 30 min, run >= 7 days (docs/19 section 3)"
+count-vehicles:
+	@echo "[TODO] YOLOv8 + ByteTrack counts from VIDEO=$(VIDEO) (docs/19 section 4)"
+sumo-osm:
+	@echo "[TODO] OSM -> netconvert -> sumo/osm/corridor.net.xml + tls_map.json (docs/19 section 1)"
+sumo-demand:
+	@echo "[TODO] routeSampler fit per slot -> sumo/demand/<slot>.rou.xml (docs/19 section 5)"
+sumo-validate:
+	@echo "[TODO] sim vs Google/TomTom travel time per slot -> reports/rl_calibration.md (docs/19 section 6)"
 rl-baseline:
 	@echo "[TODO] fixed-time + always-green runs, log transit + general delay (docs/09 §4)"
 rl-train:
