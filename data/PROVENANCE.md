@@ -11,3 +11,7 @@ One entry per dataset (docs/08 §8). Never commit restricted data; record where 
 | Hospitals + ambulance bases | From MVP `[TODO: original sources]` | [TODO] | [TODO] | Extended to docs/08 §7.1 columns | REAL attrs + SIM beds/blood | Ragavendra |
 | Blood stock | Simulated (eRaktKosh has no open API found) `[TODO-VERIFY]` | [TODO] | — | Per hospital × 8 groups | SIM | Ragavendra |
 | SUMO ORR corridor | Real inter-junction distances, generated demand | [TODO] | — | docs/08 §6 demand spec | SIM | Madhan |
+| OSM ORR extract | https://www.openstreetmap.org (Overpass export) | [TODO] | ODbL, attribution required | netconvert -> sumo/osm/ | REAL geometry | Madhan |
+| Google typical travel times | Google Maps Routes API | [TODO] | Google Maps Platform terms (store only derived stats as allowed `[TODO-VERIFY]`) | per segment × hour × weekday | REAL (predicted typical) | Madhan |
+| TomTom live flow | TomTom Traffic Flow API | [TODO] | TomTom terms `[TODO-VERIFY]` | polled every 30 min ≥ 7 days | REAL (observed) | Madhan |
+| Junction video counts | Own recordings | [TODO] | Own; raw video not committed, no faces/plates in outputs | YOLOv8 + ByteTrack counts per 5 min | REAL | Madhan |

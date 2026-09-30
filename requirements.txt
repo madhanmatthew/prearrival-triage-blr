@@ -35,6 +35,8 @@ eclipse-sumo==1.27.1   # verified install 2026-09-30
 # sumo-rl
 # stable-baselines3
 # gymnasium
+# ultralytics      # YOLOv8 + ByteTrack vehicle counting (docs/19 section 4)
+# requests
 
 # Routing
 openrouteservice

@@ -21,7 +21,7 @@ All docs live in `docs/`. Read only what the task needs.
 | Context, novelty, status | `docs/00_MASTER_OVERVIEW.md` |
 | Voice intake, dialogue, RAG first-aid | `docs/01_reporting_agent.md` + `docs/07_interfaces_and_schemas.md` |
 | Vitals model, NEWS2, sequence model | `docs/02_ambulance_vitals_agent.md` + `docs/08_data_and_labels.md` |
-| RL traffic, SUMO, police alerts | `docs/03_traffic_police_agent.md` + `docs/09_setup_and_runbook.md` §4 |
+| RL traffic, SUMO, police alerts | `docs/03_traffic_police_agent.md` + `docs/09_setup_and_runbook.md` §4 + **`docs/19_RL_DATA_CALIBRATION.md`** (network + demand + calibration, overrides `03` §5 / `08` §6) |
 | Hospital scoring, blood stock | `docs/04_hospital_agent.md` + `docs/08_data_and_labels.md` §7 |
 | Fusion, coordinator, ablation, benchmark | `docs/05_coordinator_fusion_evaluation.md` + `docs/07_interfaces_and_schemas.md` |
 | Training methodology, CV, seeds, tuning | `docs/06_ml_engineering_practices.md` (CV protocol overridden by `15` D5) |
@@ -68,8 +68,12 @@ call "existing" or "in MVP" must be built new here.
 | BiGRU two-head model | Done, with tests; full run pending | `backend/ml/seq_model.py`, `tests/test_seq_model.py` |
 | Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
 | XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
-| SUMO corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs) | `sumo/`, `tests/test_sumo_corridor.py` |
-| RL env wrapper, DQN train/eval, baselines | Not started | `backend/rl/` |
+| SUMO schematic corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs); kept as `19` fallback / compressed-spacing base | `sumo/`, `tests/test_sumo_corridor.py` |
+| SUMO corridor from OSM (`19` §1) | Not started | `sumo/osm/` |
+| Traffic data collection: Google typical + TomTom live (`19` §2–3) | Not started | `scripts/collect_google.py`, `scripts/collect_tomtom.py` |
+| YOLO vehicle counts (`19` §4) | Not started | `backend/vision/count_vehicles.py` |
+| Demand fitting + calibration table (`19` §5–6) | Not started | `sumo/demand/`, `reports/rl_calibration.md` |
+| RL env wrapper, randomized demand, DQN train/eval, baselines | Not started | `backend/rl/` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval | Not started | `backend/asr/` |
 | Dialogue state machine (6 questions) | Not started | `backend/dialogue/` |
