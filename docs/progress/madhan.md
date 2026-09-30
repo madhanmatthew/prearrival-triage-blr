@@ -74,6 +74,14 @@
 3. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
    `experiments/log.csv`; then RL env wrapper (docs/09 §4: 16 actions, 24-d obs, custom reward).
 
+## RL data plan (docs/19, decision D17) — start collection early, it needs days
+- [ ] Get API keys: Google Maps Platform (Routes API, billing on) + TomTom (Freemium) → `.env`
+- [ ] `scripts/collect_tomtom.py` and start it running ≥ 7 days in background
+- [ ] `scripts/collect_google.py` (one-shot 24h × 7 typical times)
+- [ ] Record 10–15 min video at 2–3 ORR junction approaches (peak + off-peak)
+- [ ] OSM network + `tls_map.json` → YOLO counts → routeSampler → validation table ≤ 15%
+- [ ] Then RL env wrapper with randomized demand, baselines, DQN seeds
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
