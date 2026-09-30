@@ -58,9 +58,19 @@
   `reports/baselines_results.csv` + `baselines_confusion.csv`. `tests/test_baselines.py`;
   185/185 tests pass. `--quick` smoke run worked (~2 min); full-grid run not done yet.
 
+- 2026-09-30: Baselines full run logged (`experiments/log.csv`). Severity macro-F1:
+  majority 0.164, NEWS2 0.278, LR 0.352, RF 0.368, GB 0.368. Trend AUROC / PR-AUC:
+  NEWS2 0.622 / 0.061, LR 0.750 / 0.158, RF 0.712 / 0.112, GB 0.694 / 0.094 (prevalence 0.028).
+  ML > NEWS2 clearly; ML models tied within fold std.
+- 2026-09-30: `backend/ml/seq_model.py` + `make train-seq`: BiGRU two-head (docs/07 §4.2
+  vitals-only), loss CE + lambda*BCE (docs/07 §4.4), lambda in {0.25, 0.5, 1.0} and epoch
+  count tuned by inner grouped 3-fold CV, same outer folds as baselines, train-fold-only
+  preprocessing. `--save-model` fits on all data for XAI/demo. [ASSUMPTION] trend BCE
+  pos_weight = neg/pos. `tests/test_seq_model.py`; 192/192 pass. `--quick` smoke worked.
+
 ## Next (in order)
-1. **Run** `python -m backend.ml.baselines` (full grids) and commit the log rows + reports.
-2. **Week 3:** BiGRU two-head (`backend/ml/seq_model.py`, docs/07 §4).
+1. **Run** `python -m backend.ml.seq_model --save-model` and commit log rows + `reports/bigru_confusion.csv`.
+2. **Week 3:** RL env wrapper + always-green baseline (`backend/rl/`).
 3. **Week 2:** always-green-for-ambulance baseline (TraCI) + `make rl-baseline` logging to
    `experiments/log.csv`; then RL env wrapper (docs/09 §4: 16 actions, 24-d obs, custom reward).
 
