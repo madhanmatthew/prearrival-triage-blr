@@ -8,6 +8,7 @@ uvicorn[standard]
 websockets
 pydantic>=2
 python-dotenv
+pyyaml==6.0.2   # fusion text generator config
 
 # Data / classical ML
 numpy

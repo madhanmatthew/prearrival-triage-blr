@@ -63,13 +63,15 @@ def done_keys(path: Path = OUT_PATH) -> set[tuple]:
     if not path.exists():
         return set()
     with path.open(newline="", encoding="utf-8") as f:
-        return {(r["segment"], r["direction"], int(r["dow"]), int(r["hour"]))
+        # int(float(..)): the CSV may have been re-saved by pandas/Excel with "0.0" style values
+        return {(r["segment"], r["direction"], int(float(r["dow"])), int(float(r["hour"])))
                 for r in csv.DictReader(f)}
 
 
-def pending(cfg: dict, done: set[tuple], limit: int | None = None) -> list[dict]:
-    todo = [j for j in segment_jobs(cfg)
-            if (j["segment"], j["direction"], j["dow"], j["hour"]) not in done]
+def pending(cfg: dict, done: set[tuple], limit: int | None = None,
+            directions: tuple[str, ...] = ("forward", "reverse")) -> list[dict]:
+    todo = [j for j in segment_jobs(cfg) if j["direction"] in directions
+            and (j["segment"], j["direction"], j["dow"], j["hour"]) not in done]
     return todo[:limit] if limit else todo
 
 
@@ -77,12 +79,14 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="TomTom Routing typical travel times")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-requests", type=int, default=600, help="cap for this run")
+    ap.add_argument("--directions", nargs="+", default=["forward", "reverse"],
+                    choices=["forward", "reverse"], help="e.g. --directions forward")
     ap.add_argument("--min-gap-s", type=float, default=0.3)
     ap.add_argument("--allow-unverified", action="store_true")
     a = ap.parse_args()
     cfg = load_points(allow_unverified=a.allow_unverified)
     done = done_keys()
-    todo = pending(cfg, done, a.max_requests)
+    todo = pending(cfg, done, a.max_requests, tuple(a.directions))
     print(f"{len(done)} cached, {len(todo)} requests this run -> {OUT_PATH}", flush=True)
     if a.dry_run or not todo:
         return

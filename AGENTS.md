@@ -66,8 +66,8 @@ call "existing" or "in MVP" must be built new here.
 | NEWS2 scoring (`02` §3 bands) | Done, with tests | `backend/ml/news2.py`, `tests/test_news2.py` |
 | MIMIC windowing + outcome labels | Done, with tests (MIMIC-IV Demo) | `backend/data/mimic_windows.py`, `tests/test_mimic_windows.py` |
 | Tabular baselines (majority, NEWS2, LR, RF, GB) + nested grouped CV | Done, full run logged | `backend/ml/baselines.py`, `tests/test_baselines.py` |
-| BiGRU two-head model | Done, with tests; full run pending | `backend/ml/seq_model.py`, `tests/test_seq_model.py` |
-| Fusion model + ablation | Not started | `backend/ml/fusion_model.py` |
+| BiGRU two-head model | Done, with tests; full nested-CV run logged | `backend/ml/seq_model.py`, `tests/test_seq_model.py` |
+| Fusion model + 3-way ablation + agreement sensitivity (synthetic text) | Code done, with tests; full run pending | `backend/ml/fusion_model.py`, `data/text_feature_generator.yaml`, `tests/test_fusion_model.py` |
 | XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
 | SUMO schematic corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs); kept as `19` fallback / compressed-spacing base | `sumo/`, `tests/test_sumo_corridor.py` |
 | SUMO corridor from OSM (`19` §1) | Not started | `sumo/osm/` |
@@ -80,7 +80,7 @@ call "existing" or "in MVP" must be built new here.
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval (faster-whisper, local) | Code done, tests with fake model; needs recorded test set + model download | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; hi/kn wording needs native review | `backend/dialogue/`, `tests/test_dialogue.py` |
-| Text severity classifier (TF-IDF char n-gram + LR) | Not started | `backend/ml/text_severity.py` |
+| Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` (Sankalp) | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
 | RAG pipeline + groundedness eval | Not started | `backend/rag/` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |

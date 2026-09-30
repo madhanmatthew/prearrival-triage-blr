@@ -24,11 +24,11 @@ train-baselines:
 train-seq:
 	$(PY) -m backend.ml.seq_model
 train-fusion:
-	@echo "[TODO] fusion + 3-way ablation + sensitivity table -> backend/ml/fusion_model.py"
+	$(PY) -m backend.ml.fusion_model
 
 # ---- Component 1: reporting (Sankalp) ----
 train-text:
-	@echo "[TODO] TF-IDF char n-gram + LR text severity (docs/15 D2)"
+	$(PY) -m backend.ml.text_severity --save-model $(ARGS)
 build-rag:
 	@echo "[TODO] corpus -> chunk -> embed -> FAISS (backend/rag/)"
 eval-rag:

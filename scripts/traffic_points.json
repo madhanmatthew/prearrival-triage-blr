@@ -21,6 +21,10 @@
     "_note": "Waypoints for the reverse (east->west) direction, in travel order, lat/lon on the westbound ORR carriageway. If a segment is missing or empty here, the forward via_points are reused reversed.",
     "silkboard_bellandur": [], "bellandur_marathahalli": [], "marathahalli_krpuram": [], "silkboard_krpuram": []
   },
+  "reverse_origin": {
+    "_note": "Optional per-segment start point for the REVERSE trip (the junction coordinate can snap to the eastbound carriageway and force a U-turn). silkboard_bellandur: junction moved 20 m south (12.9256), probed 2026-09-30 with TomTom Routing: reverse length 8940 m -> 6737 m, heads SW immediately. Other segments' reverse routes are still wrong (8-17 km): need map-verified via points.",
+    "silkboard_bellandur": {"lat": 12.9256, "lon": 77.6761}
+  },
   "expected_length_m": {
     "_note": "[ASSUMPTION] from docs/19 nominal spacing (~6/5/5 km). A route whose length is off by more than length_tolerance is rejected (not cached) because it left the ORR.",
     "silkboard_bellandur": 6000, "bellandur_marathahalli": 5000, "marathahalli_krpuram": 5000, "silkboard_krpuram": 16000,

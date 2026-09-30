@@ -1,0 +1,35 @@
+# Class-conditional generator for SYNTHETIC text features (docs/08 §5, docs/07 §3).
+# Every number below is an [ASSUMPTION] fixed BEFORE looking at any fusion result and never
+# tuned to make fusion win (docs/08 §5.4). Text is generated from the severity label only,
+# never from the vitals values (independence rule, docs/08 §5.3).
+# Classes: 0 stable, 1 moderate, 2 severe, 3 critical.
+
+# P(text is typical of the true class / an adjacent class / a random other class).
+# `agreement` is the first weight; the remainder splits 0.25 : 0.10 (default 0.65 / 0.25 / 0.10).
+# The sensitivity table sweeps agreement over 0.5, 0.65, 0.8.
+agreement: 0.65
+agreement_sweep: [0.5, 0.65, 0.8]
+adjacent_share: 0.714   # (0.25 / 0.35) of the non-agreeing mass goes to an adjacent class
+
+# P(answer is known); an unknown answer gives value 0 and known-flag 0.
+p_known: 0.9
+
+# Concentration boost for the 4 text_severity_probs (Dirichlet alpha = 1 + strength * onehot(c)).
+prob_strength: 6.0
+
+# Per effective class c = 0..3
+conscious:            [0.98, 0.92, 0.70, 0.35]   # P(conscious = 1)
+breathing_difficulty: [0.03, 0.15, 0.50, 0.80]
+can_speak:            [0.97, 0.88, 0.60, 0.25]
+high_energy:          [0.05, 0.25, 0.55, 0.75]
+bleeding:             # P(none, minor, heavy) -> values 0, 0.5, 1.0
+  - [0.85, 0.13, 0.02]
+  - [0.55, 0.35, 0.10]
+  - [0.30, 0.35, 0.35]
+  - [0.15, 0.25, 0.60]
+num_injured_extra:    [0.1, 0.2, 0.4, 0.6]       # n = 1 + Poisson(lambda), then min(n, 5) / 5
+injury_type:          # P(road_accident, fall, burn, cardiac_medical, other)
+  - [0.25, 0.20, 0.05, 0.05, 0.45]
+  - [0.35, 0.25, 0.08, 0.10, 0.22]
+  - [0.35, 0.20, 0.12, 0.20, 0.13]
+  - [0.30, 0.10, 0.12, 0.35, 0.13]
