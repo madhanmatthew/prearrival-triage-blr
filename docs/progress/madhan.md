@@ -120,6 +120,15 @@
   Smoke test added to `tests/test_rl_env.py`. Not run for real yet. [ASSUMPTION] hyper-parameters
   untuned. Docs/19 §7 jitter (demand x U(0.8,1.2), mix, incidents) waits for the OSM network.
 
+- 2026-09-30: RL work paused by choice. Dialogue state machine (`backend/dialogue/state_machine.py`,
+  `lexicon.py`, `tests/test_dialogue.py`, 37 pass): 6 bounded questions, one per turn, fixed
+  order, skips questions the initial report clearly answered (plain "bleeding" still asks the
+  severity follow-up), outputs the 19-d vector (docs/07 §3) and a validated `IncidentReport`.
+  LLM is only an optional `phraser` hook; templates are the fallback. GPS passed in, never parsed.
+  [ASSUMPTION]s in the module docstring (order, bleeding level from raw wording, unknown count = 1,
+  unconscious -> can't speak). [TODO-VERIFY] hi/kn wording + lexicons need native review (Sankalp).
+  Text-severity slots 15-18 are a uniform placeholder until the text classifier exists.
+
 ## Next (in order)
 0. Run `make rl-train SEED=1` (100k steps, roughly 1-2 h on this env), then seeds 2 and 3.
 1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).
