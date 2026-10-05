@@ -16,7 +16,7 @@ pandas
 scikit-learn
 joblib
 matplotlib
-shap
+shap==0.52.0   # installed 2026-09-30 (adds numba, llvmlite)
 
 # Deep learning
 torch

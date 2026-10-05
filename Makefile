@@ -5,7 +5,7 @@ PY ?= python
 SEED ?= 1
 
 .PHONY: help test run-api data-mimic train-baselines train-seq train-fusion train-text \
-        build-rag eval-rag eval-asr sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval benchmark demo
+        explain build-rag eval-rag eval-asr sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval benchmark demo
 
 help:
 	@grep -E '^[a-z-]+:' Makefile | cut -d: -f1
@@ -25,6 +25,8 @@ train-seq:
 	$(PY) -m backend.ml.seq_model
 train-fusion:
 	$(PY) -m backend.ml.fusion_model
+explain:
+	$(PY) -m backend.ml.explain $(ARGS)
 
 # ---- Component 1: reporting (Sankalp) ----
 train-text:

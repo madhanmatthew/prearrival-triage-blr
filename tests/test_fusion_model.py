@@ -53,8 +53,9 @@ def test_gain_table_is_paired_per_fold():
     mk = lambda v, a, f: {"variant": v, "agreement": a, "fold_f1": f, "severity": (np.mean(f), 0, len(f))}
     g = gain_table([mk("vitals_only", None, [0.3, 0.5]), mk("text_only", 0.65, [0.2, 0.2]),
                     mk("fused", 0.65, [0.4, 0.5])])
-    assert np.isclose(g.fusion_gain_mean[0], 0.05) and np.isclose(g.fusion_gain_std[0], 0.05)
-    assert g.folds_fused_better[0] == 1
+    assert np.isclose(g.gain_vs_vitals_mean[0], 0.05) and np.isclose(g.gain_vs_vitals_std[0], 0.05)
+    assert g.folds_fused_beat_vitals[0] == 1
+    assert np.isclose(g.gain_vs_text_mean[0], 0.25) and g.folds_fused_beat_text[0] == 2
 
 
 def test_agreement_controls_informativeness():

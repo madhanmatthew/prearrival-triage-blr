@@ -245,19 +245,32 @@ def evaluate_variant(X, mask, y_sev, y_trend, groups, T, variant, quick=False):
 
 
 def gain_table(results: list[dict]) -> pd.DataFrame:
-    """Sensitivity table. Gain is paired per outer fold (all variants share the folds)."""
+    """Sensitivity table. Gains are paired per outer fold (all variants share the folds).
+
+    Fusion is judged against the best single modality, so the gain over text_only is reported
+    next to the gain over vitals_only.
+    """
     by = {(r["variant"], r["agreement"]): r for r in results}
     base = by[("vitals_only", None)]
     rows = []
     for (v, a), r in by.items():
         if v != "fused":
             continue
-        d = np.asarray(r["fold_f1"]) - np.asarray(base["fold_f1"])
+        fused, text = np.asarray(r["fold_f1"]), np.asarray(by[("text_only", a)]["fold_f1"])
+        dv, dt = fused - np.asarray(base["fold_f1"]), fused - text
         rows.append({"agreement": a, "text_only_f1": by[("text_only", a)]["severity"][0],
                      "vitals_only_f1": base["severity"][0], "fused_f1": r["severity"][0],
-                     "fusion_gain_mean": float(d.mean()), "fusion_gain_std": float(d.std()),
-                     "folds_fused_better": int((d > 0).sum())})
+                     "gain_vs_vitals_mean": float(dv.mean()), "gain_vs_vitals_std": float(dv.std()),
+                     "folds_fused_beat_vitals": int((dv > 0).sum()),
+                     "gain_vs_text_mean": float(dt.mean()), "gain_vs_text_std": float(dt.std()),
+                     "folds_fused_beat_text": int((dt > 0).sum())})
     return pd.DataFrame(rows)
+
+
+def fold_table(results: list[dict]) -> pd.DataFrame:
+    """Per-outer-fold severity macro-F1 of every variant (traceability for the paired gains)."""
+    return pd.DataFrame([{"variant": r["variant"], "agreement": r["agreement"], "fold": k, "f1_macro": f}
+                         for r in results for k, f in enumerate(r["fold_f1"])])
 
 
 def evaluate(path: Path = OUT_PATH, quick: bool = False, agreements: list[float] | None = None,
@@ -361,6 +374,7 @@ def main() -> None:
     if not a.quick:
         REPORT_DIR.mkdir(exist_ok=True)
         gain.to_csv(REPORT_DIR / "fusion_sensitivity.csv", index=False)
+        fold_table(results).to_csv(REPORT_DIR / "fusion_fold_f1.csv", index=False)
         for name, conf in confs.items():
             conf.to_csv(REPORT_DIR / f"fusion_confusion_{name}.csv")
         log_results(results)

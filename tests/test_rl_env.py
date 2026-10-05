@@ -67,9 +67,11 @@ def test_summarise_columns():
     import pandas as pd
     df = pd.DataFrame([{"policy": "fixed_time", "demand": "low", "amb_completed": True,
                         "amb_transit_s": t, "amb_wait_s": 1, "mean_general_wait_s": 1.0,
-                        "throughput_veh": 10, "max_cross_queue_veh": 2.0} for t in (100, 110)])
+                        "throughput_veh": 10, "max_cross_queue_veh": 2.0, "episode_s": e}
+                       for t, e in ((100, 1800), (110, 3600))])
     s = summarise(df)
     assert s.loc[0, "amb_transit_s_mean"] == 105 and s.loc[0, "completed"] == 2
+    assert s.loc[0, "throughput_veh_per_h_mean"] == 15      # (20 + 10) / 2, length-normalised
 
 
 def test_dqn_train_and_eval_smoke(tmp_path, monkeypatch):

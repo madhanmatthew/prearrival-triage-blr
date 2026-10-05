@@ -1,4 +1,4 @@
-# Text severity dataset (docs/08 §4, docs/15 D2) — owner: Sankalp
+# Text severity dataset (docs/08 §4, docs/15 D2) 
 
 Tag: **SIM** (LLM-drafted, team-reviewed, not clinician-labelled).
 

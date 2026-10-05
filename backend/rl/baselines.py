@@ -31,7 +31,9 @@ LOG_PATH = Path("experiments/log.csv")
 REPORT_DIR = Path("reports")
 DATA_VERSION = "sumo-corridor-v1"
 METRIC_COLS = ["amb_transit_s", "amb_wait_s", "mean_general_wait_s", "throughput_veh",
-               "max_cross_queue_veh"]
+               "throughput_veh_per_h", "max_cross_queue_veh"]
+# Episodes end when the ambulance arrives, so raw throughput_veh depends on episode length
+# (a faster ambulance -> shorter episode -> fewer arrivals). Compare policies on veh/h.
 
 
 def run_episode(env: CorridorEnv, seed: int, policy=None) -> dict:
@@ -58,6 +60,8 @@ def evaluate_policy(name: str, demand: str, episodes: int, seed: int = SEED) -> 
 
 
 def summarise(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.assign(throughput_veh_per_h=df.throughput_veh / df.episode_s * 3600
+                   if "episode_s" in df else float("nan"))
     out = []
     for (policy, demand), g in df.groupby(["policy", "demand"], sort=False):
         row = {"policy": policy, "demand": demand, "episodes": len(g),

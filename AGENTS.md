@@ -67,20 +67,20 @@ call "existing" or "in MVP" must be built new here.
 | MIMIC windowing + outcome labels | Done, with tests (MIMIC-IV Demo) | `backend/data/mimic_windows.py`, `tests/test_mimic_windows.py` |
 | Tabular baselines (majority, NEWS2, LR, RF, GB) + nested grouped CV | Done, full run logged | `backend/ml/baselines.py`, `tests/test_baselines.py` |
 | BiGRU two-head model | Done, with tests; full nested-CV run logged | `backend/ml/seq_model.py`, `tests/test_seq_model.py` |
-| Fusion model + 3-way ablation + agreement sensitivity (synthetic text) | Code done, with tests; full run pending | `backend/ml/fusion_model.py`, `data/text_feature_generator.yaml`, `tests/test_fusion_model.py` |
-| XAI (SHAP trees, IG BiGRU) | Not started | `backend/ml/explain.py` |
+| Fusion model + 3-way ablation + agreement sensitivity (synthetic text) | Done, full run logged (fused < text_only at 0.65/0.8); re-run for gain-vs-text table | `backend/ml/fusion_model.py`, `data/text_feature_generator.yaml`, `tests/test_fusion_model.py` |
+| XAI (SHAP trees, IG BiGRU) | Code done, with tests; IG run on saved BiGRU (figures in `reports/`); tree SHAP run pending | `backend/ml/explain.py`, `tests/test_explain.py` |
 | SUMO schematic corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs); kept as `19` fallback / compressed-spacing base | `sumo/`, `tests/test_sumo_corridor.py` |
 | SUMO corridor from OSM (`19` §1) | Not started | `sumo/osm/` |
 | Traffic data collection: TomTom typical (Routing, historic) + TomTom live (Flow) (`19` §2–3) | Code done, with tests; collection not started (verify coords in `scripts/traffic_points.json`, key in `.env`) | `scripts/collect_tomtom_typical.py`, `scripts/collect_tomtom.py` |
 | YOLO vehicle counts (`19` §4) | Not started | `backend/vision/count_vehicles.py` |
 | Demand fitting + calibration table (`19` §5–6) | Not started | `sumo/demand/`, `reports/rl_calibration.md` |
-| RL env wrapper + fixed-time / always-green baselines (schematic corridor) | Done, with tests; full baseline run pending | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
-| RL DQN train/eval (schematic corridor, 3 demand levels) | Code done, smoke test; full seeds pending | `backend/rl/train.py` |
+| RL env wrapper + fixed-time / always-green baselines (schematic corridor) | Done, with tests; full baseline run logged | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
+| RL DQN train/eval (schematic corridor, 3 demand levels) | Done, 3 seeds logged; `reports/rl_comparison.csv` | `backend/rl/train.py` |
 | RL randomized demand (docs/19 §7 jitter, OSM) | Not started | `backend/rl/demand.py` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval (faster-whisper, local) | Code done, tests with fake model; needs recorded test set + model download | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; hi/kn wording needs native review | `backend/dialogue/`, `tests/test_dialogue.py` |
-| Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` (Sankalp) | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
+| Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
 | RAG pipeline + groundedness eval | Not started | `backend/rag/` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |

@@ -158,7 +158,29 @@
   held-out split stored in the CSV (`--assign-split`, stratified language x label, seed 42, never reassigned).
   Reports macro-F1 overall + per language, confusion CSV, log row tagged SIM. `predict_proba` -> dialogue slots
   15-18 via `compose_text(transcript, answers)`. [ASSUMPTION] trained on single reports, answers appended only
-  at inference (input gap). Dataset format/rubric in `data/text_reports/README.md`; no data yet (Sankalp).
+  at inference (input gap). Dataset format/rubric in `data/text_reports/README.md`; no data yet.
+
+- 2026-09-30: XAI (`backend/ml/explain.py`, `make explain`, 8 tests pass). SHAP TreeExplainer on RF/GB
+  pipelines (imputed 12 tabular features); multiclass sklearn GB is unsupported by shap, so per-tree TreeSHAP
+  is summed (exact, raw log-odds space, test-verified vs decision_function). Integrated Gradients (Captum)
+  on the BiGRU per head, baseline = zero z-scored input [ASSUMPTION], padded steps get 0; convergence delta
+  saved. `shap==0.52.0` installed + pinned. IG run done on `bigru_v1_20260930.pt` (2000 windows, 64 steps,
+  |delta| mean 0.005 sev / 0.009 trend): severity top = avpu_bin, temp, supplemental_o2, sbp, hr; t0
+  dominates. Outputs `reports/xai_ig_*`, `reports/figures/xai_ig_*`. Tree SHAP not run yet (needs RF/GB
+  grid search on all windows). Explanations of fit-on-all models, not results.
+
+- 2026-10-05: Results in. **Fusion** full run (log rows 2026-10-01, commit 953d88e): vitals_only 0.385 (reproduces
+  BiGRU), text_only 0.472/0.600/0.753, fused 0.473/0.575/0.721 at agreement 0.5/0.65/0.8. **Fused does NOT beat
+  text_only** (from console per-fold F1: gain vs text approx +0.002, -0.024, -0.032; 3/5, 2/5, 2/5 folds better).
+  `gain_table` now reports gain vs vitals AND vs text (was vs vitals only, which overstated fusion);
+  `fusion_fold_f1.csv` added for traceability. Re-run `make train-fusion` for the traceable table (seeded,
+  should reproduce). Do NOT change architecture/generator to make fusion win (outer folds already seen).
+  **RL** DQN seeds 1-3 done: ambulance transit 809/830/872 s (low/med/peak) vs always-green 843/871/932 vs
+  fixed 947/962/1018; general wait 0.10-0.14 s vs ~1.1 s; seed spread small (803-814 s at low).
+  Found: episodes end at ambulance arrival, so raw throughput_veh depends on episode length -> added
+  `throughput_veh_per_h` (DQN 2516/3717/4968 veh/h, between always-green and fixed). Summaries regenerated
+  from episode CSVs; combined table `reports/rl_comparison.csv`. veh/h still mildly favours longer episodes
+  (more steady-state); a fixed-horizon eval would remove that. Schematic corridor, not calibrated (docs/19).
 
 ## Next (in order)
 0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.
