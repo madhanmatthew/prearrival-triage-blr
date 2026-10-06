@@ -81,12 +81,12 @@ call "existing" or "in MVP" must be built new here.
 | Whisper intake + WER eval (faster-whisper, local) | Code done, tests with fake model; needs recorded test set + model download | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; hi/kn wording needs native review | `backend/dialogue/`, `tests/test_dialogue.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
-| RAG pipeline + groundedness eval | Code done, with tests (toy corpus); needs `data/first_aid_corpus/` + `data/rag_eval/queries.csv` | `backend/rag/`, `tests/test_rag.py` |
+| RAG pipeline + groundedness eval | Code done, with tests; corpus extracted from IFRC 2020 (18 topics, index built), hand review pending; needs `data/rag_eval/queries.csv` | `backend/rag/`, `scripts/extract_ifrc_corpus.py`, `data/first_aid_corpus/` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
 | Coordinator (6 conflicts, rule-based) | Not started | `backend/agents/coordinator.py` |
 | FastAPI app + WebSockets | Not started | `backend/main.py` |
-| Frontend (Leaflet map, police + hospital views) | Not started | `frontend/` |
+| Frontend (Leaflet map, police + hospital views, bystander guidance text + browser speech `01` §10) | Not started | `frontend/` |
 | Benchmark (8 + 2 scenarios, fair baseline) | Not started | `backend/benchmarks/benchmark.py` |
 | Traffic/ETA ML models | Optional (`15` D16) | `backend/ml/eta_model.py` |
 

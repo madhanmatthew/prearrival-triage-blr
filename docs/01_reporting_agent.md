@@ -272,3 +272,9 @@ type, initial severity estimate, timestamp.
 - [ ] Final language list for the demo (recommended: Kannada, Hindi, English).
 - [ ] Exact interface format handed to Component 2 (raw text vs. structured
   vector).
+- [x] **Guidance delivery to the bystander** `[DECISION 2026-10-06]`: text on screen **plus**
+  spoken output via the browser's Web Speech API (`speechSynthesis`), on-device, free, no key.
+  The frontend reads the same grounded `Guidance.sentences` one step at a time (next / repeat
+  controls), so spoken text = displayed text = retrieved corpus text (rule 6). No backend TTS.
+  English only while the corpus is English; hi/kn speech needs reviewed translated guidance
+  (future work). Voice availability depends on the device (Kannada voices may be missing).

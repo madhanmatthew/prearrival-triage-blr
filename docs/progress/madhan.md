@@ -199,8 +199,16 @@
   NLI smoke-checked (entail 0.995 / contradiction 0.0). English guidance only. Deps pinned.
   No corpus or query set yet (must come from real public guidelines; formats in the two READMEs).
 
+- 2026-10-06: First-aid corpus. Downloaded IFRC International first aid, resuscitation, and education guidelines
+  2020 (official PDF, non-commercial reuse with acknowledgement; `PROVENANCE.md`). WHO-ICRC BEC rejected
+  (clinician-level, drug steps). `scripts/extract_ifrc_corpus.py` -> 18 topic files in `data/first_aid_corpus/`
+  (Key action / Early recognition / First aid steps / NOTE, verbatim; medication sentences, dispatcher/trainer
+  text and repeated layout blocks dropped). `make build-rag`: 136 chunks. Retrieval sanity check OK (bleeding,
+  burns, fracture, chest pain -> right file; snake bite 0.25 < 0.35). "what tablet should I give" scores 0.39
+  (fractures): threshold must be tuned on dev; medication filter still blocks drug text. Hand review pending.
+
 ## Next (in order)
-0b. Curate `data/first_aid_corpus/` (real WHO/IFRC/Red Cross text) + `data/rag_eval/queries.csv`, then `make build-rag`, `eval-rag --sweep`, `eval-rag --min-sim <t>`.
+0b. Hand-review `data/first_aid_corpus/*_ifrc.md`; write `data/rag_eval/queries.csv`, then `make build-rag`, `eval-rag --sweep`, `eval-rag --min-sim <t>`.
 0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.
 0. Run `make rl-train SEED=1` (100k steps, roughly 1-2 h on this env), then seeds 2 and 3.
 1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).
