@@ -124,3 +124,60 @@ def test_reference_validation(tmp_path):
     pd.DataFrame({"file": ["a"]}).to_csv(p, index=False)
     with pytest.raises(ValueError, match="missing"):
         E.load_reference(tmp_path)
+
+
+# ---- noise robustness (backend/asr/noise.py, eval_noise.py) ----
+import numpy as np  # noqa: E402
+
+from backend.asr import eval_noise as EN  # noqa: E402
+from backend.asr import noise as NZ  # noqa: E402
+
+
+def _tone(n=16000):
+    return (0.3 * np.sin(2 * np.pi * 220 * np.arange(n) / 16000)).astype(np.float32)
+
+
+@pytest.mark.parametrize("snr", [20, 10, 0])
+def test_mix_hits_target_snr(snr):
+    rng = np.random.default_rng(0)
+    s = _tone()
+    m = NZ.mix_at_snr(s, NZ.pink_noise(5000, rng), snr, rng)   # shorter noise is tiled
+    assert len(m) == len(s)
+    assert NZ.measured_snr_db(s, m) == pytest.approx(snr, abs=0.3)
+
+
+def test_mix_is_seeded_and_rejects_silence():
+    s, n = _tone(), NZ.pink_noise(32000, np.random.default_rng(1))
+    a = NZ.mix_at_snr(s, n, 5, np.random.default_rng(7))
+    b = NZ.mix_at_snr(s, n, 5, np.random.default_rng(7))
+    assert np.array_equal(a, b)
+    with pytest.raises(ValueError):
+        NZ.mix_at_snr(np.zeros(100, np.float32), n, 5, np.random.default_rng(0))
+
+
+def test_transcriber_vad_flag_is_passed(tmp_path):
+    for flag in (True, False):
+        fake = FakeModel()
+        t = Transcriber(model_size="tiny", mode="local", vad_filter=flag, model_factory=lambda *a: fake)
+        wav = tmp_path / "a.wav"
+        wav.write_bytes(b"x")
+        t.transcribe(wav, language="en")
+        assert fake.calls[0]["vad_filter"] is flag
+
+
+def test_eval_noise_end_to_end_with_fake_model(tmp_path, monkeypatch):
+    data = tmp_path / "d"
+    data.mkdir()
+    NZ.write_wav(data / "a.wav", _tone())
+    pd.DataFrame({"file": ["a.wav"], "language": ["en"], "reference": ["hello there"]}) \
+        .to_csv(data / "reference.csv", index=False)
+    monkeypatch.setattr(NZ, "load_audio", lambda p: _tone())
+    fake = FakeModel()
+    ts = {c: Transcriber(model_size="tiny", mode="local", vad_filter=(c == "vad_on"),
+                         model_factory=lambda *a: fake) for c in ("vad_on", "vad_off")}
+    noises, src = EN.load_noises(tmp_path / "none", np.random.default_rng(0))
+    assert src == "generated-pink"
+    utt = EN.evaluate(data, [10, 0], noises, src, ts)
+    assert set(utt.snr_db) == {"clean", "10", "0"} and set(utt.condition) == {"vad_on", "vad_off"}
+    s = EN.summarize(utt)
+    assert len(s) == 6 and (s.wer == 0).all() and (s.noise_source == "generated-pink").all()

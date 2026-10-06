@@ -62,7 +62,7 @@ class Transcriber:
     """
 
     def __init__(self, model_size: Optional[str] = None, mode: Optional[str] = None,
-                 device: str = "cpu", compute_type: str = "int8",
+                 device: str = "cpu", compute_type: str = "int8", vad_filter: bool = True,
                  model_factory: Optional[Callable[[str, str, str], Any]] = None):
         _load_env()
         self.model_size = model_size or os.environ.get("WHISPER_MODEL", "small")
@@ -71,7 +71,7 @@ class Transcriber:
             raise NotImplementedError("only WHISPER_MODE=local is implemented (free-tier, docs/15 §4)")
         if self.model_size not in MODEL_SIZES:
             raise ValueError(f"WHISPER_MODEL must be one of {MODEL_SIZES}, got {self.model_size!r}")
-        self.device, self.compute_type = device, compute_type
+        self.device, self.compute_type, self.vad_filter = device, compute_type, vad_filter
         self._factory = model_factory or _default_factory
         self._model: Any = None
 
@@ -89,7 +89,7 @@ class Transcriber:
             raise FileNotFoundError(audio_path)
         segments, info = self.model.transcribe(
             str(audio_path), language=language, beam_size=5, temperature=0.0,
-            vad_filter=True, condition_on_previous_text=False)
+            vad_filter=self.vad_filter, condition_on_previous_text=False)
         text = " ".join(s.text.strip() for s in segments).strip()
         return TranscriptResult(text=text, language=info.language,
                                 language_probability=float(info.language_probability),

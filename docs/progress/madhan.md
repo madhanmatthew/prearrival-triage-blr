@@ -207,6 +207,16 @@
   burns, fracture, chest pain -> right file; snake bite 0.25 < 0.35). "what tablet should I give" scores 0.39
   (fractures): threshold must be tuned on dev; medication filter still blocks drug text. Hand review pending.
 
+- 2026-10-06: RAG threshold sweep on dev rows (15 in-scope, 6 out-of-scope, `data/rag_eval/queries.csv`, 61 queries
+  drafted by Claude, user-reviewed): 0.30 -> answer 1.00 / refuse 0.67; 0.35 -> 0.93 / 0.83; **0.40 -> 0.87 / 1.00
+  (balanced 0.93, best)**; 0.45 -> 0.53 / 1.00. Chosen `MIN_SIMILARITY = 0.40` (pipeline default). Only 6 dev
+  out-of-scope rows, so the estimate is coarse. Test split not run yet.
+- 2026-10-06: RAG test split, scored once (log row, extractive, min_sim 0.40, 30 in / 10 out): hit@4 0.90, answer
+  rate 0.93, refusal 0.60, % fully grounded 1.00 (extractive = verbatim by construction; NLI not exercised).
+  Failures: "not breathing and not responding" -> breathing_difficulty + recovery_position (CPR missed: safety-
+  relevant); glass in thigh -> chest_abdomen; amputation + seizure refused (0.37/0.38); answered out-of-scope:
+  diabetic, fever, painkiller injection, ambulance ETA. These test queries are now seen: any v2 fix needs a
+  fresh test set.
 ## Next (in order)
 0b. Hand-review `data/first_aid_corpus/*_ifrc.md`; write `data/rag_eval/queries.csv`, then `make build-rag`, `eval-rag --sweep`, `eval-rag --min-sim <t>`.
 0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.
@@ -225,6 +235,8 @@
 - [ ] Record 10–15 min video at 2–3 ORR junction approaches (peak + off-peak)
 - [ ] OSM network + `tls_map.json` → YOLO counts → routeSampler → validation table ≤ 15%
 - [ ] Then RL env wrapper with randomized demand, baselines, DQN seeds
+
+- 2026-10-06: ASR noise robustness: `backend/asr/noise.py` (SNR mixing), `eval_noise.py` (WER vs SNR, VAD on/off, optional denoise), `make eval-asr-noise`, tests pass (16). TODO (Sankalp): street-noise wavs in `data/asr_test/noise/`, ~10 noisy clips/language.
 
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.

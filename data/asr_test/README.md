@@ -14,3 +14,13 @@ Commit only `reference.csv`.
 
 Run: `make eval-asr` (or `python -m backend.asr.eval_wer`). First run downloads the Whisper model
 (size from `WHISPER_MODEL`) into `models/whisper/`.
+
+## Noise robustness (`make eval-asr-noise`)
+
+Put 2-5 min of real Bengaluru street noise (traffic, crowd, wind; phone held at arm's length)
+as `*.wav` in `data/asr_test/noise/` (gitignored, share via Drive). The eval mixes it into the
+clean clips at 20/10/5/0 dB SNR (seeded) and reports WER per language x SNR, VAD on vs off, to
+`reports/asr_wer_snr.csv`. Also record ~10 clips per language in real noise and add them to
+`reference.csv` as normal rows. Mixed clips are synthetic noise: label them so. With no noise
+wav the eval falls back to generated pink noise (weak stand-in). Nothing is trained.
+Optional: `pip install noisereduce`, then `make eval-asr-noise ARGS=--denoise`.
