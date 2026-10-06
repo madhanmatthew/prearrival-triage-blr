@@ -4,6 +4,7 @@ publisher: IFRC
 url: https://www.ifrc.org/sites/default/files/2022-02/EN_GFARC_GUIDELINES_2020.pdf
 license: (c) IFRC 2020; non-commercial copies allowed with source acknowledged (PDF p.2)
 topic: chest_abdomen_injury
+keywords: chest injury, abdominal injury, stomach wound, organs coming out, rib injury, chest wound
 pages: 195-198
 accessed: 2026-10-06
 ---

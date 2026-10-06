@@ -99,9 +99,9 @@ def test_extractive_guidance_grounded_traceable_no_medication(store):
 
 
 def test_not_covered_below_threshold(store):
-    g = rp.FirstAidRAG(store, min_similarity=0.9).guide("snake bite on the ankle")
+    g = rp.FirstAidRAG(store, min_similarity=0.9).guide("person feels unwell near the bus stop")
     assert g.status == "not_covered" and g.message == rp.NOT_COVERED_MSG
-    assert g.sentences == [] and g.retrieved  # retrieval still logged
+    assert g.sentences == [] and g.retrieved and g.refusal_reason == "below_threshold"
 
 
 def test_llm_ungrounded_sentence_dropped_and_scored(store):
@@ -165,14 +165,70 @@ def test_generator_from_env(monkeypatch):
         rp.generator_from_env()
 
 
-def test_queries_from_report_priority():
-    turns = [DialogueTurn(q_id="Q_CONSCIOUS", question="q", answer_raw="no", answer_value="no"),
-             DialogueTurn(q_id="Q_BLEEDING", question="q", answer_raw="yes", answer_value="yes")]
-    rep = IncidentReport(incident_id="i", timestamp="2026-10-05T00:00:00Z", gps=GPS(lat=12.9, lon=77.6),
-                         language="en", transcript="t", dialogue=turns,
-                         text_features=[0.0] * 19, text_severity_probs=[0.25] * 4,
-                         injury_type="road_accident", num_injured=1)
-    assert [p for p, _ in rp.queries_from_report(rep)] == ["unconscious", "bleeding", "road_accident"]
+def _report(answers: dict, injury="road_accident"):
+    turns = [DialogueTurn(q_id=q, question="q", answer_raw=a, answer_value=a) for q, a in answers.items()]
+    return IncidentReport(incident_id="i", timestamp="2026-10-05T00:00:00Z", gps=GPS(lat=12.9, lon=77.6),
+                          language="en", transcript="t", dialogue=turns,
+                          text_features=[0.0] * 19, text_severity_probs=[0.25] * 4,
+                          injury_type=injury, num_injured=1)
+
+
+def test_queries_from_report_routing():
+    q = rp.queries_from_report
+    # unresponsive, breathing unknown -> CPR (corpus: if in doubt, assume breathing is not normal)
+    out = q(_report({"Q_CONSCIOUS": "no", "Q_BLEEDING": "yes"}))
+    assert [(p, f) for p, _, f in out] == [("cpr", "cpr_adult_ifrc.md"),
+                                           ("bleeding", "severe_bleeding_ifrc.md"),
+                                           ("road_accident", None)]
+    assert q(_report({"Q_CONSCIOUS": "no", "Q_BREATHING": "yes"}))[0][2] == "cpr_adult_ifrc.md"
+    assert q(_report({"Q_CONSCIOUS": "no", "Q_BREATHING": "no"}))[0][2] == "recovery_position_ifrc.md"
+    assert q(_report({"Q_CONSCIOUS": "yes", "Q_BREATHING": "yes"}))[0][2] == "breathing_difficulty_ifrc.md"
+    # unresponsive cardiac case: CPR replaces the chest-pain item
+    out = q(_report({"Q_CONSCIOUS": "no"}, injury="cardiac_medical"))
+    assert [p for p, _, _ in out] == ["cpr"]
+    assert q(_report({"Q_CONSCIOUS": "yes"}, injury="burn"))[-1][2] == "burns_ifrc.md"
+    # every routed file exists in the real corpus
+    real = {p.name for p in rp.CORPUS_DIR.glob("*_ifrc.md")}
+    routed = {f for _, f in rp.INJURY_QUERY.values() if f} | {
+        "cpr_adult_ifrc.md", "recovery_position_ifrc.md", "breathing_difficulty_ifrc.md",
+        "severe_bleeding_ifrc.md"}
+    if real:
+        assert routed <= real
+
+
+def test_routed_guide_stays_in_file_and_skips_threshold(store):
+    rag = rp.FirstAidRAG(store, min_similarity=0.99)
+    assert rag.guide("burn water").status == "not_covered"            # free text: threshold applies
+    g = rag.guide("burn water", topic_file="bleeding.md")              # routed: file filter only
+    assert g.status == "ok" and {r["file"] for r in g.retrieved} == {"bleeding.md"}
+    assert g.topic_file == "bleeding.md" and g.refusal_reason is None
+
+
+@pytest.mark.parametrize("query,reason", [
+    ("what tablet should I give for the pain", "medication"),
+    ("can I give him a painkiller injection", "medication"),
+    ("how long will the ambulance take", "non_medical"),
+    ("which hospital has free beds", "non_medical"),
+    ("a snake bit my brother", "excluded_topic"),
+    ("my diabetic father is sweating", "excluded_topic"),
+    ("child has high fever", "excluded_topic"),
+    ("his leg is bleeding a bit after the fall", None),
+    ("pregnant woman fell and hurt her ankle", None),
+    ("he is having a fit and clenching his teeth", None),
+])
+def test_query_guard(query, reason):
+    assert rp.query_refusal_reason(query) == reason
+
+
+def test_guard_refuses_before_retrieval(store):
+    g = rp.FirstAidRAG(store, min_similarity=0.0).guide("how many mg of aspirin for bleeding wound")
+    assert g.status == "not_covered" and g.refusal_reason == "medication" and g.retrieved == []
+
+
+def test_embed_text_uses_topic_and_keywords():
+    from langchain_core.documents import Document
+    d = Document("Cool the burn.", metadata={"title": "Guidelines 2020 - Burns", "keywords": "scald"})
+    assert rp.embed_text(d) == "Burns. scald\nCool the burn."
 
 
 def test_eval_metrics_and_sweep(store, tmp_path):

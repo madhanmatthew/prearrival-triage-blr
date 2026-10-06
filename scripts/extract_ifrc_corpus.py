@@ -48,6 +48,28 @@ TOPICS = {
     "shock": ("Shock", 288, 290),
     "seizure": ("Seizure", 295, 298),
 }
+# Plain-language search keywords per topic (embedded with the chunks, never shown as guidance).
+# [ASSUMPTION] written by hand on 2026-10-06 after the v1 test run; v2 uses a fresh test set.
+KEYWORDS = {
+    "recovery_position": "unconscious but breathing, unresponsive and breathing normally, fainted, passed out, recovery position",
+    "cpr_adult": "CPR, cardiac arrest, not breathing, unresponsive adult, collapsed, no pulse, chest compressions",
+    "cpr_child": "CPR for a child or baby, infant not breathing, unresponsive child, kid not breathing",
+    "cpr_defibrillator": "AED, defibrillator, shock the heart, cardiac arrest, not breathing",
+    "choking": "choking, something stuck in the throat, food stuck, airway blocked, cannot speak or cough",
+    "breathing_difficulty": "difficulty breathing, shortness of breath, breathless, gasping, hyperventilation, panic breathing",
+    "severe_bleeding": "severe bleeding, heavy blood loss, bleeding wound, object stuck in wound, glass or knife in wound, tourniquet",
+    "chest_abdomen_injury": "chest injury, abdominal injury, stomach wound, organs coming out, rib injury, chest wound",
+    "amputation": "amputation, finger cut off, hand or limb cut off, severed body part",
+    "cuts_grazes": "small cut, scrape, graze, minor wound, abrasion, light bleeding",
+    "burns": "burn, scald, hot oil, fire, hot water, hot metal, chemical burn",
+    "fractures": "broken bone, fracture, sprain, strain, bent arm or leg, swollen ankle, cannot walk",
+    "spinal_injury": "spinal injury, neck injury, back injury, cannot feel legs, fall from height, do not move the person",
+    "head_injury": "head injury, hit head, head wound, concussion, confused or vomiting after a head blow",
+    "chest_pain": "chest pain, heart attack, pain spreading to the arm or jaw, sweating with chest pain",
+    "stroke": "stroke, face drooping, slurred speech, arm weakness, sudden numbness, sudden confusion",
+    "shock": "shock, pale cold clammy skin, weak and dizzy after blood loss, rapid pulse",
+    "seizure": "seizure, fit, convulsion, epilepsy, jerking or shaking uncontrollably",
+}
 KEEP = {"Key action", "Early recognition", "First aid steps", "NOTE"}
 STOP = {"Introduction", "Guidelines", "Good practice points", "Chain of survival behaviours",
         "Prevent and prepare", "Access help", "Education considerations", "Special case",
@@ -148,7 +170,8 @@ def main() -> None:
                 body.append("\n".join(kept))
         header = (f"---\ntitle: International first aid, resuscitation, and education guidelines "
                   f"2020 - {title}\npublisher: IFRC\nurl: {URL}\nlicense: {LICENSE}\n"
-                  f"topic: {stem}\npages: {a}-{b}\naccessed: {ACCESSED}\n---\n")
+                  f"topic: {stem}\nkeywords: {KEYWORDS[stem]}\npages: {a}-{b}\n"
+                  f"accessed: {ACCESSED}\n---\n")
         (OUT / f"{stem}_ifrc.md").write_text(header + "\n\n".join(body) + "\n", encoding="utf-8")
         n = sum(len(x.splitlines()) for x in body)
         print(f"{stem:22s} pages {a}-{b}: {n:3d} lines, {dropped} medication sentences dropped")

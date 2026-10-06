@@ -217,6 +217,26 @@
   relevant); glass in thigh -> chest_abdomen; amputation + seizure refused (0.37/0.38); answered out-of-scope:
   diabetic, fever, painkiller injection, ambulance ETA. These test queries are now seen: any v2 fix needs a
   fresh test set.
+- 2026-10-06: RAG v2 (after v1 test failures). (1) Query guard `query_refusal_reason`: medication, non-medical,
+  and IFRC topics excluded from the corpus (list from the IFRC ToC) -> "not covered" before retrieval.
+  (2) Dialogue routing: `queries_from_report` -> (problem, query, topic_file); unresponsive + breathing
+  difficulty/unknown -> CPR (corpus rule "if in doubt, assume breathing is not normal"), unresponsive + no
+  difficulty -> recovery position; routed retrieval filters to that file, no threshold; `guide_report()`.
+  (3) Chunks embedded with topic name + header `keywords` (hand-written, extractor KEYWORDS); embed model
+  configurable, index records it. Dev comparison (61 queries = v1 dev + v1 test, now seen): hit@4 MiniLM 0.956,
+  bge-small-en-v1.5 1.000 -> bge chosen. Threshold 0.55: dev in-scope min top score 0.559, only one unguarded
+  out-of-scope dev query (0.557), so no data-driven cut exists; chose safety-first (no in-scope dev refusal,
+  e.g. "collapsed, no breathing" 0.600). Guard catches 15/16 dev out-of-scope. Fresh v2 test set: 28 in /
+  12 out (7 without any guard keyword), written before any v2 run, not yet scored. 27 RAG tests, 329 total.
+  Limits: guard + keywords are hand rules written after seeing v1 failures; test queries also by Claude.
+- 2026-10-06: RAG v2 test split scored once (log row, bge-small, min_sim 0.55, 28 in / 12 out): hit@4 0.964,
+  answer rate 1.00, refusal 0.67, % fully grounded 1.00 (extractive), guard refusals of in-scope 0. Guard caught
+  all 4 medication/excluded-topic queries; threshold refused floor cleaner + all 3 non-medical. Failures:
+  uncovered medical complaints answered with nearby topics (headache -> stroke, hiccups -> breathing, earache ->
+  cpr_child, grief -> shock; scores 0.57-0.64 > in-scope minimum), and free-text "dropped down, not breathing" ->
+  breathing_difficulty (CPR missed in free text; dialogue routing sends this case to CPR). Conclusion: cosine
+  threshold cannot separate "uncovered medical" from "covered"; use dialogue-routed guidance in the API and
+  free-text retrieval only as fallback. No further tuning on this test set.
 ## Next (in order)
 0b. Hand-review `data/first_aid_corpus/*_ifrc.md`; write `data/rag_eval/queries.csv`, then `make build-rag`, `eval-rag --sweep`, `eval-rag --min-sim <t>`.
 0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.

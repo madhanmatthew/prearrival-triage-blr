@@ -4,6 +4,7 @@ publisher: IFRC
 url: https://www.ifrc.org/sites/default/files/2022-02/EN_GFARC_GUIDELINES_2020.pdf
 license: (c) IFRC 2020; non-commercial copies allowed with source acknowledged (PDF p.2)
 topic: cpr_adult
+keywords: CPR, cardiac arrest, not breathing, unresponsive adult, collapsed, no pulse, chest compressions
 pages: 134-145
 accessed: 2026-10-06
 ---

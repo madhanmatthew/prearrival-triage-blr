@@ -1,0 +1,102 @@
+query_id,query,expected_file,split,notes
+q001,my friend fell off his bike and his leg is bleeding very badly,severe_bleeding_ifrc.md,dev,
+q002,"blood is gushing from his arm after the auto accident, it won't stop",severe_bleeding_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q003,there is a piece of glass stuck in her thigh and lot of blood,severe_bleeding_ifrc.md,dev,"v1 test, seen 2026-10-06; embedded object"
+q004,person is bleeding from a wound,severe_bleeding_ifrc.md,dev,dialogue query (queries_from_report); could also match cuts_grazes
+q005,"he is not breathing and not responding, what do I do",cpr_adult_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q006,"old man collapsed on the road, no breathing, he is not waking up",cpr_adult_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q007,how do I do chest compressions on an adult,cpr_adult_ifrc.md,dev,
+q008,my 5 year old son is not breathing and won't respond,cpr_child_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q009,baby is limp and not breathing,cpr_child_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q010,"someone brought an AED machine, how do I use it",cpr_defibrillator_ifrc.md,dev,
+q011,"there is a defibrillator in the mall, the man is not breathing",cpr_defibrillator_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q012,"she fainted but she is breathing normally, what position to keep her",recovery_position_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q013,he is unconscious but breathing after the crash,recovery_position_ifrc.md,dev,
+q014,person is unconscious and not responding,recovery_position_ifrc.md,dev,"v1 test, seen 2026-10-06; dialogue query; breathing unknown, could also match cpr_adult"
+q015,my father is choking on food and can't speak,choking_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q016,baby swallowed something and is choking,choking_ifrc.md,dev,
+q017,"he is coughing hard, something stuck in his throat",choking_ifrc.md,dev,"v1 test, seen 2026-10-06; mild choking"
+q018,she is struggling to breathe after the accident,breathing_difficulty_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q019,person has difficulty breathing,breathing_difficulty_ifrc.md,dev,dialogue query
+q020,"he is breathing very fast and panicking, hands tingling",breathing_difficulty_ifrc.md,dev,"v1 test, seen 2026-10-06; hyperventilation"
+q021,"steering wheel hit his chest, there is a wound on the chest",chest_abdomen_injury_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q022,his stomach is cut open after the accident and something is coming out,chest_abdomen_injury_ifrc.md,dev,
+q023,his finger got cut off in the machine,amputation_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q024,lorry ran over her foot and part of it is severed,amputation_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q025,small scrape on knee from falling off scooter,cuts_grazes_ifrc.md,dev,
+q026,"kid has a minor cut on his hand, bleeding a little",cuts_grazes_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q027,she got burned by hot oil while cooking,burns_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q028,bike silencer burned his leg,burns_ifrc.md,dev,
+q029,burn injury,burns_ifrc.md,dev,"v1 test, seen 2026-10-06; dialogue query"
+q030,his arm looks bent after he fell from the ladder,fractures_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q031,"i think her ankle is broken, it is swollen and she can't walk",fractures_ifrc.md,dev,
+q032,"fall injury, possible broken bone",fractures_ifrc.md,dev,"v1 test, seen 2026-10-06; dialogue query"
+q033,he fell from the building and can't feel his legs,spinal_injury_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q034,"bike rider thrown off, neck pain, should we move him",spinal_injury_ifrc.md,dev,
+q035,she hit her head on the road and is confused and vomiting,head_injury_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q036,helmet broke in the crash and he has a head wound,head_injury_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q037,man clutching his chest and sweating,chest_pain_ifrc.md,dev,
+q038,my uncle has severe chest pain going to his left arm,chest_pain_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q039,sudden collapse or chest pain,chest_pain_ifrc.md,dev,"v1 test, seen 2026-10-06; dialogue query"
+q040,her face is drooping on one side and speech is slurred,stroke_ifrc.md,dev,
+q041,he suddenly can't move his right arm and can't talk properly,stroke_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q042,"after losing a lot of blood he is pale, cold and sweaty",shock_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q043,"she looks pale, clammy and very weak after the accident",shock_ifrc.md,dev,
+q044,"he is having a fit, shaking all over on the ground",seizure_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q045,"my daughter is having a seizure, should I put something in her mouth",seizure_ifrc.md,dev,"v1 test, seen 2026-10-06"
+q046,a snake bit my brother on the leg,,dev,not in corpus (snakebites)
+q047,street dog bit a child,,dev,"v1 test, seen 2026-10-06; not in corpus (mammal bites)"
+q048,bee stung him and his face is swelling,,dev,"v1 test, seen 2026-10-06; not in corpus (insect stings / allergy)"
+q049,child drank kerosene by mistake,,dev,not in corpus (poisoning)
+q050,she is having an allergic reaction to peanuts,,dev,"v1 test, seen 2026-10-06; not in corpus (anaphylaxis)"
+q051,"my diabetic father is shaking and sweating, sugar low",,dev,"v1 test, seen 2026-10-06; not in corpus (diabetic emergency)"
+q052,the woman is in labour on the roadside,,dev,not in corpus (childbirth)
+q053,he has been in the sun all day and is very hot and dizzy,,dev,"v1 test, seen 2026-10-06; not in corpus (hyperthermia)"
+q054,child has high fever,,dev,"v1 test, seen 2026-10-06; not in corpus (fever)"
+q055,what tablet should I give for the pain,,dev,medication question
+q056,how many mg of aspirin should he take,,dev,"v1 test, seen 2026-10-06; medication question"
+q057,can I give him painkiller injection,,dev,"v1 test, seen 2026-10-06; medication question"
+q058,which hospital has free beds near Marathahalli,,dev,non-medical
+q059,how long will the ambulance take,,dev,"v1 test, seen 2026-10-06; non-medical"
+q060,traffic jam on outer ring road,,dev,"v1 test, seen 2026-10-06; non-medical"
+q061,what is the weather in Bengaluru today,,dev,non-medical
+q062,"two-wheeler crash, blood pouring from his forearm",severe_bleeding_ifrc.md,test,v2 test
+q063,"a rod went into his leg and it is bleeding, should I pull it out",severe_bleeding_ifrc.md,test,v2 test; embedded object
+q064,"deep cut on her neck from broken glass, lots of blood",severe_bleeding_ifrc.md,test,v2 test
+q065,my colleague dropped down at the office and is not breathing,cpr_adult_ifrc.md,test,v2 test
+q066,"he is only gasping, eyes closed, not answering me",cpr_adult_ifrc.md,test,v2 test; agonal breathing
+q067,"my 2 year old is not breathing, what should I do",cpr_child_ifrc.md,test,v2 test
+q068,"there is an automated external defibrillator here, how to use it on him",cpr_defibrillator_ifrc.md,test,v2 test
+q069,he passed out but his chest is moving normally,recovery_position_ifrc.md,test,v2 test
+q070,"lady fainted at the bus stop, she is breathing, how should I lay her",recovery_position_ifrc.md,test,v2 test
+q071,a piece of meat is stuck in his throat and he can't talk,choking_ifrc.md,test,v2 test
+q072,my infant is choking on a small toy,choking_ifrc.md,test,v2 test
+q073,she can't catch her breath and is wheezing after the smoke,breathing_difficulty_ifrc.md,test,v2 test
+q074,"handlebar hit his belly, it's swollen and painful",chest_abdomen_injury_ifrc.md,test,v2 test
+q075,his ribs got crushed and there is an open wound on the chest,chest_abdomen_injury_ifrc.md,test,v2 test
+q076,his toe was sliced off by the door,amputation_ifrc.md,test,v2 test
+q077,"small scratch on the elbow after a fall, bleeding a bit",cuts_grazes_ifrc.md,test,v2 test; guard-adjacent wording ('a bit')
+q078,boiling water spilled on the child's arm,burns_ifrc.md,test,v2 test
+q079,his clothes caught fire and his back is burnt,burns_ifrc.md,test,v2 test
+q080,wrist is swollen and bent after falling off the cycle,fractures_ifrc.md,test,v2 test
+q081,pregnant woman slipped and her ankle is badly swollen,fractures_ifrc.md,test,v2 test; guard-adjacent wording ('pregnant')
+q082,he fell off the scaffolding and says his back hurts and legs are numb,spinal_injury_ifrc.md,test,v2 test
+q083,"car rolled over, the driver says his neck hurts, should we pull him out",spinal_injury_ifrc.md,test,v2 test
+q084,he banged his head on the pole and is drowsy and confused,head_injury_ifrc.md,test,v2 test
+q085,"pressure in his chest spreading to his jaw, he is sweating",chest_pain_ifrc.md,test,v2 test
+q086,my mother suddenly can't lift her left arm and her mouth is crooked,stroke_ifrc.md,test,v2 test
+q087,"after the crash he is cold, pale and breathing very fast",shock_ifrc.md,test,v2 test
+q088,man on the footpath is jerking violently and foaming at the mouth,seizure_ifrc.md,test,v2 test
+q089,child had a convulsion and is now sleepy,seizure_ifrc.md,test,v2 test
+q090,a cobra bit the farmer,,test,v2 test; excluded topic (snakebite)
+q091,my son drank some floor cleaner,,test,"v2 test; excluded topic (poisoning), no guard keyword"
+q092,"she is in labour pains, baby coming",,test,v2 test; excluded topic (childbirth)
+q093,grandmother has a bad headache since morning,,test,"v2 test; not in corpus (headache), no guard keyword"
+q094,he has had hiccups for an hour,,test,"v2 test; not in corpus (hiccups), no guard keyword"
+q095,my kid has pain in his ear,,test,"v2 test; not in corpus (earache), no guard keyword"
+q096,she is crying a lot after her husband died,,test,"v2 test; not in corpus (acute grief), no guard keyword"
+q097,can I give him some paracetamol,,test,v2 test; medication
+q098,how much ointment should I apply on the wound,,test,v2 test; medication
+q099,what is the police helpline number,,test,"v2 test; non-medical, no guard keyword"
+q100,how do I reach Manipal hospital from Indiranagar,,test,"v2 test; non-medical, no guard keyword"
+q101,is the ORR road blocked right now,,test,"v2 test; non-medical, no guard keyword"

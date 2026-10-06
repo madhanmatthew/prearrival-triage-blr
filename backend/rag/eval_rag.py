@@ -50,8 +50,12 @@ def load_queries(path: Path = QUERIES_PATH) -> pd.DataFrame:
 
 def sweep_threshold(rag: rp.FirstAidRAG, dev: pd.DataFrame, grid=SWEEP_GRID) -> pd.DataFrame:
     """Retrieval-only sweep on dev rows: balanced accuracy of answer vs refuse per threshold."""
-    top = {r.query_id: max((s for _, s in rag.retrieve(r.query)), default=-1.0)
+    top = {r.query_id: (-1.0 if rp.query_refusal_reason(r.query)       # guard refuses first
+                        else max((s for _, s in rag.retrieve(r.query)), default=-1.0))
            for r in dev.itertuples()}
+    ins_hit = [r.expected_file in {d.metadata["file"] for d, _ in rag.retrieve(r.query)}
+               for r in dev[dev.in_scope].itertuples()]
+    print(f"dev hit@{rag.k} (in-scope, threshold-free): {np.mean(ins_hit):.3f}")
     rows = []
     for t in grid:
         ins = [top[q] >= t for q in dev.loc[dev.in_scope, "query_id"]]
@@ -71,6 +75,7 @@ def evaluate(rag: rp.FirstAidRAG, df: pd.DataFrame) -> tuple[pd.DataFrame, dict]
         rows.append({
             "query_id": r.query_id, "split": r.split, "in_scope": r.in_scope,
             "expected_file": r.expected_file, "status": g.status,
+            "refusal_reason": g.refusal_reason,
             "hit_at_k": (r.expected_file in files) if r.in_scope else np.nan,
             "top_score": g.retrieved[0]["score"] if g.retrieved else np.nan,
             "groundedness": g.groundedness, "fully_grounded": g.fully_grounded,
@@ -93,13 +98,15 @@ def evaluate(rag: rp.FirstAidRAG, df: pd.DataFrame) -> tuple[pd.DataFrame, dict]
         if len(answered) else np.nan,
         "medication_removed": int(out.n_medication_removed.sum()),
         "llm_unavailable": int((out.status == "llm_unavailable").sum()),
+        "guard_refusals_in_scope": int(ins.refusal_reason.isin(
+            ["medication", "non_medical", "excluded_topic"]).sum()),
     }
     return out, summary
 
 
 def _log(rag: rp.FirstAidRAG, summary: dict, n_queries: int) -> None:
     params = {"mode": rag.mode, "k": rag.k, "min_similarity": rag.min_similarity,
-              "embed": rp.EMBED_MODEL, "nli": rp.NLI_MODEL if rag.entail else None,
+              "embed": rag.embed_model, "version": "v2", "nli": rp.NLI_MODEL if rag.entail else None,
               "entail_threshold": rp.ENTAIL_THRESHOLD}
     notes = (f"task=rag_groundedness split=test queries={n_queries} "
              + " ".join(f"{k}={v:.3f}" if isinstance(v, float) else f"{k}={v}"

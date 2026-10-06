@@ -4,6 +4,7 @@ publisher: IFRC
 url: https://www.ifrc.org/sites/default/files/2022-02/EN_GFARC_GUIDELINES_2020.pdf
 license: (c) IFRC 2020; non-commercial copies allowed with source acknowledged (PDF p.2)
 topic: chest_pain
+keywords: chest pain, heart attack, pain spreading to the arm or jaw, sweating with chest pain
 pages: 264-270
 accessed: 2026-10-06
 ---

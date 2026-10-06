@@ -81,7 +81,7 @@ call "existing" or "in MVP" must be built new here.
 | Whisper intake + WER eval + WER-vs-SNR noise eval (faster-whisper, local) | Code done, tests with fake model; needs recorded test set + model download | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; hi/kn wording needs native review | `backend/dialogue/`, `tests/test_dialogue.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
-| RAG pipeline + groundedness eval | Code done, with tests; corpus extracted from IFRC 2020 (18 topics, index built), hand review pending; needs `data/rag_eval/queries.csv` | `backend/rag/`, `scripts/extract_ifrc_corpus.py`, `data/first_aid_corpus/` |
+| RAG pipeline + groundedness eval | v2 done, with tests (guard, dialogue routing, bge-small, keywords); IFRC 2020 corpus (18 topics); v1 + v2 test runs logged (v2: hit@4 0.96, answer 1.00, refusal 0.67) | `backend/rag/`, `scripts/extract_ifrc_corpus.py`, `data/first_aid_corpus/` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
 | Coordinator (6 conflicts, rule-based) | Not started | `backend/agents/coordinator.py` |
