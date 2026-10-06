@@ -84,7 +84,7 @@ call "existing" or "in MVP" must be built new here.
 | RAG pipeline + groundedness eval | v2 done, with tests (guard, dialogue routing, bge-small, keywords); IFRC 2020 corpus (18 topics); v1 + v2 test runs logged (v2: hit@4 0.96, answer 1.00, refusal 0.67) | `backend/rag/`, `scripts/extract_ifrc_corpus.py`, `data/first_aid_corpus/` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
-| Coordinator (6 conflicts, rule-based) | Not started | `backend/agents/coordinator.py` |
+| Coordinator (6 conflicts, rule-based) | Done, with tests (fake router, fixture hospitals); not yet wired to API | `backend/agents/coordinator.py`, `tests/test_coordinator.py` |
 | FastAPI app + WebSockets | Not started | `backend/main.py` |
 | Frontend (Leaflet map, police + hospital views, bystander guidance text + browser speech `01` §10) | Not started | `frontend/` |
 | Benchmark (8 + 2 scenarios, fair baseline) | Not started | `backend/benchmarks/benchmark.py` |

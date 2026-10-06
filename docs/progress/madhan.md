@@ -237,6 +237,15 @@
   breathing_difficulty (CPR missed in free text; dialogue routing sends this case to CPR). Conclusion: cosine
   threshold cannot separate "uncovered medical" from "covered"; use dialogue-routed guidance in the API and
   free-text retrieval only as fallback. No further tuning on this test set.
+- 2026-10-06: Coordinator (`backend/agents/coordinator.py`, `tests/test_coordinator.py` 21 pass; 350 total). Rule-based
+  (rule 8), all six docs/12 §05 conflicts: cordon_on_route (own segment/polygon geometry, re-route via injected
+  `Router`, dispatcher flag if detour > 5 min), hospital_bed_shortfall (next-ranked with beds, notify original),
+  blood_shortage (non-short hospital within +10 min, else keep + request transfer), ambulance_contention (greedy by
+  bid 0.6 risk + 0.25 ETA + 0.15 age; loser takes next ambulance or is queued), police_units_short (severity
+  priority, partial allocation, remainder escalated), junction_preemption (ETAs within 30 s -> higher risk keeps
+  preemption). `coordinate()` -> DispatchDecisions with conflicts_resolved + plain-language explanation and a
+  `needs_dispatcher` list. All thresholds/weights [ASSUMPTION], fixed before any benchmark. Deterministic
+  (tie-breaks by report time, incident_id). Junction rule ignores approach direction (SignalState has none).
 ## Next (in order)
 0b. Hand-review `data/first_aid_corpus/*_ifrc.md`; write `data/rag_eval/queries.csv`, then `make build-rag`, `eval-rag --sweep`, `eval-rag --min-sim <t>`.
 0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.
