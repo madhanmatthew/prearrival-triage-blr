@@ -51,7 +51,8 @@ DATA_VERSION = "text-reports-SIM"
 
 def load_reports(path: Path = DATA_PATH) -> pd.DataFrame:
     """Load and validate the report CSV; keep reviewed rows only."""
-    df = pd.read_csv(path, dtype={"report_id": str, "text": str, "language": str})
+    df = pd.read_csv(path, dtype={"report_id": str, "text": str, "language": str},
+                     encoding="utf-8-sig")
     missing = [c for c in REQUIRED_COLS if c not in df.columns]
     if missing:
         raise ValueError(f"{path}: missing columns {missing}")
@@ -187,11 +188,11 @@ def main() -> None:
     a = p.parse_args()
 
     if a.assign_split:
-        raw = pd.read_csv(a.data, dtype={"report_id": str})
+        raw = pd.read_csv(a.data, dtype={"report_id": str}, encoding="utf-8-sig")
         load_reports(a.data)                                   # validate first
         out = assign_split(raw[raw["reviewed"] == 1]).set_index("report_id")["split"]
         raw["split"] = raw["report_id"].map(out).combine_first(raw.get("split", pd.Series(dtype=str)))
-        raw.to_csv(a.data, index=False)
+        raw.to_csv(a.data, index=False, encoding="utf-8-sig")
         print(raw["split"].value_counts(dropna=False).to_string())
         return
 

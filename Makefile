@@ -32,9 +32,9 @@ explain:
 train-text:
 	$(PY) -m backend.ml.text_severity --save-model $(ARGS)
 build-rag:
-	@echo "[TODO] corpus -> chunk -> embed -> FAISS (backend/rag/)"
+	$(PY) -m backend.rag.pipeline build $(ARGS)
 eval-rag:
-	@echo "[TODO] retrieval hit@k + groundedness %"
+	$(PY) -m backend.rag.eval_rag $(ARGS)
 eval-asr:
 	$(PY) -m backend.asr.eval_wer $(ARGS)
 

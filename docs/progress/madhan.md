@@ -182,7 +182,25 @@
   from episode CSVs; combined table `reports/rl_comparison.csv`. veh/h still mildly favours longer episodes
   (more steady-state); a fixed-horizon eval would remove that. Schematic corridor, not calibrated (docs/19).
 
+- 2026-10-05: Draft text reports generated: `scripts/draft_text_reports.py` -> `data/text_reports/reports.csv`
+  (450 rows, 150/lang, 20 type x label cells, hi/kn 40 romanised each, all reviewed=0, seed 42; test added,
+  11 pass). TODO (you): review every row in Excel, set reviewed=1, then `--assign-split` and `make train-text`.
+  Templated -> high score expected; add own-words rows. Do not re-run the generator with --force after reviewing.
+
+- 2026-10-05: RAG first-aid guidance (`backend/rag/pipeline.py`, `eval_rag.py`, `make build-rag` / `eval-rag`,
+  `tests/test_rag.py` 14 pass; 310 total). LangChain splitter + MiniLM (normalised) + FAISS inner product;
+  top-4 with `min_similarity` 0.35 [ASSUMPTION] -> "not covered" below it (docs/07 §6). Modes: extractive
+  (default, no LLM, sentences copied verbatim) or `LLM_PROVIDER=openai_compat` (free tier, LCEL chain;
+  failure -> "Wait for professional help; call 108."). Medication/dosage keyword filter (rule 6).
+  Groundedness per sentence (docs/12 §01): verbatim match, else NLI `cross-encoder/nli-deberta-v3-small`
+  P(entail) >= 0.5 [ASSUMPTION]; float ratio + fully_grounded; ungrounded sentences dropped at serve time,
+  every kept sentence carries chunk ids. `queries_from_report()` maps dialogue answers -> ordered queries.
+  Eval: hit@k, answer/refusal rate, % fully grounded; threshold swept on dev split only. Real embedder +
+  NLI smoke-checked (entail 0.995 / contradiction 0.0). English guidance only. Deps pinned.
+  No corpus or query set yet (must come from real public guidelines; formats in the two READMEs).
+
 ## Next (in order)
+0b. Curate `data/first_aid_corpus/` (real WHO/IFRC/Red Cross text) + `data/rag_eval/queries.csv`, then `make build-rag`, `eval-rag --sweep`, `eval-rag --min-sim <t>`.
 0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.
 0. Run `make rl-train SEED=1` (100k steps, roughly 1-2 h on this env), then seeds 2 and 3.
 1. Verify coordinates, smoke-test the TomTom key, start `collect-traffic` (>= 7 days).

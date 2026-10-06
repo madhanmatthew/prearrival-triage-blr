@@ -24,12 +24,12 @@ captum
 
 # Reporting agent (Component 1) — heavy; install when Sankalp's work starts
 faster-whisper==1.2.1   # installed 2026-09-30; local Whisper (docs/01 §4), no API key
-# langchain
-# langchain-community
-# langchain-huggingface
-# langchain-text-splitters
-# sentence-transformers
-# faiss-cpu
+langchain-core==1.6.6   # RAG only (docs/01 section 6); installed 2026-10-05
+langchain-text-splitters==1.1.3
+langchain-huggingface==1.2.2
+langchain-community==0.4.2   # FAISS wrapper
+sentence-transformers==6.1.0   # MiniLM embeddings + NLI cross-encoder
+faiss-cpu==1.15.1
 
 # Traffic RL (Component 3) — install when Madhan's work starts
 eclipse-sumo==1.27.1   # verified install 2026-09-30

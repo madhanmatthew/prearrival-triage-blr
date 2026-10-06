@@ -81,7 +81,7 @@ call "existing" or "in MVP" must be built new here.
 | Whisper intake + WER eval (faster-whisper, local) | Code done, tests with fake model; needs recorded test set + model download | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; hi/kn wording needs native review | `backend/dialogue/`, `tests/test_dialogue.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
-| RAG pipeline + groundedness eval | Not started | `backend/rag/` |
+| RAG pipeline + groundedness eval | Code done, with tests (toy corpus); needs `data/first_aid_corpus/` + `data/rag_eval/queries.csv` | `backend/rag/`, `tests/test_rag.py` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
 | Coordinator (6 conflicts, rule-based) | Not started | `backend/agents/coordinator.py` |

@@ -123,3 +123,16 @@ def test_compose_text_and_dialogue_slots():
     probs = ts.predict_proba(model, ts.compose_text(dm.transcript)).tolist()
     f = dm.text_features(probs)
     assert f[15:19] == pytest.approx(probs)
+
+
+def test_draft_generator_output_is_valid_balanced_and_unreviewed(tmp_path):
+    from scripts.draft_text_reports import build
+    df = build(40)
+    assert len(df) == 120 and df["text"].is_unique and (df["reviewed"] == 0).all()
+    assert df.groupby(["language", "label"]).size().between(8, 12).all()
+    assert df.groupby(["language", "label"]).ngroups == 12
+    assert not df["text"].str.contains(r"\d").any()          # no numbers/locations leak into text
+    p = tmp_path / "r.csv"
+    df.assign(reviewed=1).to_csv(p, index=False, encoding="utf-8-sig")
+    assert len(ts.load_reports(p)) == 120                    # BOM-safe, schema-valid
+    assert (build(40)["text"] == df["text"]).all()            # deterministic

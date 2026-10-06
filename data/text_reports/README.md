@@ -26,3 +26,12 @@ Tag: **SIM** (LLM-drafted, team-reviewed, not clinician-labelled).
 3. `python -m backend.ml.text_severity --assign-split` (once; fixes the 20% held-out test set).
 4. `make train-text` (or `python -m backend.ml.text_severity --save-model`).
    Do not change prompts or the rubric after looking at test results.
+
+## Draft file (generated)
+`reports.csv` is first produced by `python -m scripts.draft_text_reports` (450 rows, 150 per language,
+balanced over 5 injury types x 4 labels; hi/kn include 40 romanised "typing style" rows each; seed 42).
+All rows are `reviewed=0` drafts: Hindi/Kannada wording is machine-drafted [TODO-VERIFY native review].
+Re-running needs `--force` and **destroys review work**, so generate once. The file has a UTF-8 BOM so
+Excel shows Devanagari/Kannada; the loader accepts it. Openers/suffixes are shared across labels, so
+the label signal is in the core phrase: reviewers should also rewrite ~30% of rows in their own words
+and add 20-30 hand-typed reports, otherwise the test score mostly measures template recovery.
