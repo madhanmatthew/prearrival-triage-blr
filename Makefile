@@ -5,7 +5,7 @@ PY ?= python
 SEED ?= 1
 
 .PHONY: help test run-api data-mimic train-baselines train-seq train-fusion train-text \
-        explain build-rag eval-rag eval-asr eval-asr-noise sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval benchmark demo
+        explain build-rag eval-rag eval-asr eval-asr-noise asr-latency asr-gpu-day sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval benchmark demo
 
 help:
 	@grep -E '^[a-z-]+:' Makefile | cut -d: -f1
@@ -39,6 +39,10 @@ eval-asr:
 	$(PY) -m backend.asr.eval_wer $(ARGS)
 eval-asr-noise:
 	$(PY) -m backend.asr.eval_noise $(ARGS)
+asr-latency:
+	$(PY) -m backend.asr.latency $(ARGS)
+asr-gpu-day:
+	$(PY) scripts/asr_gpu_day.py $(ARGS)
 
 # ---- Component 3: traffic RL (Madhan) ----
 DEMAND ?= medium

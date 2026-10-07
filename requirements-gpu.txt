@@ -1,0 +1,6 @@
+# Optional: NVIDIA GPU for faster-whisper (CTranslate2 4.x needs CUDA 12 cuBLAS + cuDNN 9).
+# Install on top of requirements.txt on a machine with an NVIDIA driver: pip install -r requirements-gpu.txt
+# backend/asr/transcribe.py adds these wheels' DLL folders to the search path on Windows.
+# [TODO-VERIFY] exact versions on Harish's RTX 3050 laptop; record what worked here.
+nvidia-cublas-cu12>=12,<13
+nvidia-cudnn-cu12>=9,<10

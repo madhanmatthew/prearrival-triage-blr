@@ -278,3 +278,6 @@ type, initial severity estimate, timestamp.
   controls), so spoken text = displayed text = retrieved corpus text (rule 6). No backend TTS.
   English only while the corpus is English; hi/kn speech needs reviewed translated guidance
   (future work). Voice availability depends on the device (Kannada voices may be missing).
+  **Superseded in part by `15` D18 (2026-10-07):** fixed prompts (questions, dispatch status) are
+  native-speaker recordings in en/hi/kn; hi/kn guidance = human-reviewed translations keyed by
+  chunk id; ASR = faster-whisper large-v3-turbo on a local NVIDIA GPU.

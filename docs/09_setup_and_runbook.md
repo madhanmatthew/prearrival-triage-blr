@@ -71,8 +71,11 @@ SUMO_HOME=/path/to/site-packages/sumo
 ORS_API_KEY=
 LLM_PROVIDER=          # e.g. anthropic|openai|local
 LLM_API_KEY=
-WHISPER_MODEL=small    # tiny|base|small
+WHISPER_MODEL=small    # tiny|base|small|medium|large-v3|large-v3-turbo
 WHISPER_MODE=local     # local|api
+WHISPER_DEVICE=cpu     # cpu|cuda (cuda: pip install -r requirements-gpu.txt)
+WHISPER_COMPUTE=       # empty = int8 on cpu, float16 on cuda; int8_float16 for large-v3 on a 4 GB GPU
+WHISPER_REPETITION_PENALTY=1.1
 RANDOM_SEED=42
 ```
 
@@ -95,6 +98,17 @@ RANDOM_SEED=42
 | `make benchmark` | Run 8(+2) scenarios, before/after table |
 | `make run-api` | `uvicorn backend.main:app --reload` |
 | `make demo` | Start API + frontend and load the demo scenario |
+
+### 3.1 GPU laptop session (ASR, `15` D18)
+
+On the NVIDIA laptop, after `pip install -r requirements.txt`:
+
+1. Free ~30 GB disk; update the NVIDIA driver; `nvidia-smi` must list the GPU.
+2. `pip install -r requirements-gpu.txt` (cuBLAS 12 + cuDNN 9 wheels).
+3. Copy the recordings into `data/asr_test/` (`eng rec/`, `hin rec/`, `kan rec/`, `noise/`).
+4. `python scripts/asr_gpu_day.py` (= `make asr-gpu-day`): latency, clean WER, noise WER.
+   Resume after a failure with `--from N`. Downloads ~5 GB of Whisper models on first run.
+5. Commit `experiments/log.csv` and `reports/asr_*_cuda*.csv` only.
 
 ## 4. RL specification (Component 3) `[DECISION]`
 

@@ -24,6 +24,7 @@ captum
 
 # Reporting agent (Component 1) — heavy; install when Sankalp's work starts
 faster-whisper==1.2.1   # installed 2026-09-30; local Whisper (docs/01 §4), no API key
+av>=14,<17   # faster-whisper 1.2.1 decode_audio breaks on av 19 (metadata_errors); 16.1.0 verified
 langchain-core==1.6.6   # RAG only (docs/01 section 6); installed 2026-10-05
 langchain-text-splitters==1.1.3
 langchain-huggingface==1.2.2

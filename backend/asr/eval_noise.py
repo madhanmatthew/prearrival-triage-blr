@@ -78,14 +78,17 @@ def summarize(utt: pd.DataFrame) -> pd.DataFrame:
     return pd.concat(out, ignore_index=True)
 
 
-def log_results(rates: pd.DataFrame, model_size: str, denoised: bool) -> None:
+def log_results(rates: pd.DataFrame, t: Transcriber, denoised: bool) -> None:
     today, commit = dt.date.today().isoformat(), _git_commit()
     with LOG_PATH.open("a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         for r in rates.itertuples():
-            w.writerow([today, commit, "asr", f"faster-whisper-{model_size}",
+            w.writerow([today, commit, "asr", f"faster-whisper-{t.model_size}",
                         json.dumps({"language": r.language, "snr_db": r.snr_db,
-                                    "condition": r.condition, "denoise": denoised}),
+                                    "condition": r.condition, "denoise": denoised,
+                                    "device": t.device, "compute": t.compute_type,
+                                    "repetition_penalty": t.repetition_penalty,
+                                    "no_repeat_ngram_size": t.no_repeat_ngram_size}),
                         "", "", f"{r.wer:.4f}", f"team-recorded+synthetic-noise({r.noise_source})",
                         SEED, f"task=asr_noise metric=WER cer={r.cer:.4f} utterances={r.utterances} "
                         "noise mixed into real speech, synthetic; no training"])
@@ -97,23 +100,27 @@ def main() -> None:
     p.add_argument("--noise-dir", type=Path, default=Path("data/asr_test/noise"))
     p.add_argument("--snr", type=float, nargs="+", default=[20, 10, 5, 0])
     p.add_argument("--model", default=None)
+    p.add_argument("--repetition-penalty", type=float, default=None)
+    p.add_argument("--no-repeat-ngram", type=int, default=None)
     p.add_argument("--denoise", action="store_true", help="spectral gating before ASR (noisereduce)")
     p.add_argument("--quick", action="store_true", help="3 utterances per language; not logged")
+    p.add_argument("--out-tag", default="", help="suffix for report files, e.g. _large-v3-turbo")
     a = p.parse_args()
     noises, src = load_noises(a.noise_dir, np.random.default_rng(SEED))
     if src != "recorded":
         print(f"WARNING: no wav in {a.noise_dir}; using generated pink noise (weak stand-in)")
-    ts = {"vad_on": Transcriber(model_size=a.model, vad_filter=True),
-          "vad_off": Transcriber(model_size=a.model, vad_filter=False)}
+    guard = dict(repetition_penalty=a.repetition_penalty, no_repeat_ngram_size=a.no_repeat_ngram)
+    ts = {"vad_on": Transcriber(model_size=a.model, vad_filter=True, **guard),
+          "vad_off": Transcriber(model_size=a.model, vad_filter=False, **guard)}
     utt = evaluate(a.data, a.snr, noises, src, ts, a.denoise, limit=3 if a.quick else None)
     rates = summarize(utt)
     print(rates.round(4).to_string(index=False))
     REPORT_DIR.mkdir(exist_ok=True)
-    suffix = "_quick" if a.quick else ""
+    suffix = a.out_tag + ("_quick" if a.quick else "")
     utt.to_csv(REPORT_DIR / f"asr_wer_snr_utterances{suffix}.csv", index=False, encoding="utf-8")
     rates.to_csv(REPORT_DIR / f"asr_wer_snr{suffix}.csv", index=False)
     if not a.quick:
-        log_results(rates, ts["vad_on"].model_size, a.denoise)
+        log_results(rates, ts["vad_on"], a.denoise)
         print(f"appended {len(rates)} rows to {LOG_PATH}")
 
 

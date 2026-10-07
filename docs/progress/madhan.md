@@ -266,6 +266,27 @@
 - [ ] Then RL env wrapper with randomized demand, baselines, DQN seeds
 
 - 2026-10-06: ASR noise robustness: `backend/asr/noise.py` (SNR mixing), `eval_noise.py` (WER vs SNR, VAD on/off, optional denoise), `make eval-asr-noise`, tests pass (16). TODO (Sankalp): street-noise wavs in `data/asr_test/noise/`, ~10 noisy clips/language.
+- 2026-10-07: First real WER run (90 team clips, 30/lang, read from scripts; logged). Added
+  `medium`/`large-v3` + repetition guard (`repetition_penalty`, `no_repeat_ngram_size`; env
+  `WHISPER_REPETITION_PENALTY`/`WHISPER_NO_REPEAT_NGRAM`; 1.1 set a priori, not tuned). Pinned
+  `av>=14,<17` (av 19 breaks faster-whisper decode). Clean WER / CER:
+  small no-guard en .036/.019 hi .517/.316 kn 1.059/1.306 (15 kn loops, 19/30 kn in Devanagari);
+  small rp1.1 en .049/.030 hi .501/.231 kn 1.118/1.180; medium rp1.1 en .041/.018 hi .405/.201
+  kn 1.031/1.331 (23 kn loops); large-v3 rp1.1 en .036/.017 hi .308/.161 kn .792/.237 (no loops,
+  all Kannada script). Remaining kn WER = colloquial/loanword spelling (CER is the fairer metric).
+  CPU int8 time for 90 clips: small 14 min, medium 55 min, large-v3 85 min (~57 s per ~9 s clip:
+  too slow for live intake on CPU). Noise eval not run yet (large-v3 x 900 runs ~= 14 h CPU).
+- 2026-10-07: large-v3-turbo rp1.1: en .036/.018 hi .332/.168 kn .842/.262 (no loops, all
+  Kannada script); 65 min for 90 clips on CPU (~44 s/clip, incl. model download) vs large-v3
+  85 min: only ~1.3x faster on CPU (encoder dominates). Live intake needs a GPU either way.
+
+- 2026-10-07: GPU support for ASR: `WHISPER_DEVICE`/`WHISPER_COMPUTE` (env, empty = default),
+  Windows DLL path for pip CUDA wheels (`requirements-gpu.txt`), `backend/asr/latency.py`
+  (median RTF per language, logged), `scripts/asr_gpu_day.py` (latency + clean WER + noise WER,
+  resumable). Smoke-tested on CPU with `tiny` (not logged); GPU path untested (no NVIDIA here).
+  Decision D18 recorded (en+hi+kn live on local GPU; English-live fallback).
+  NEXT: dialogue keyword matching per language (hi/kn spellings from the Whisper output) +
+  tap buttons; ASR->triage robustness eval; recorded prompts list for native speakers.
 
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.

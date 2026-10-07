@@ -104,13 +104,15 @@ def _git_commit() -> str:
         return "unknown"
 
 
-def log_results(rates: pd.DataFrame, model_size: str) -> None:
+def log_results(rates: pd.DataFrame, t: Transcriber) -> None:
     today, commit = dt.date.today().isoformat(), _git_commit()
     with LOG_PATH.open("a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         for r in rates.itertuples():
-            w.writerow([today, commit, "asr", f"faster-whisper-{model_size}",
-                        json.dumps({"language": r.language, "beam_size": 5, "compute": "int8"}),
+            w.writerow([today, commit, "asr", f"faster-whisper-{t.model_size}",
+                        json.dumps({"language": r.language, "beam_size": 5, "device": t.device, "compute": t.compute_type,
+                                    "repetition_penalty": t.repetition_penalty,
+                                    "no_repeat_ngram_size": t.no_repeat_ngram_size}),
                         "", "", f"{r.wer:.4f}", "team-recorded", 42,
                         f"task=asr metric=WER cer={r.cer:.4f} utterances={r.utterances} "
                         "language forced to true language, real recordings"])
@@ -119,19 +121,23 @@ def log_results(rates: pd.DataFrame, model_size: str) -> None:
 def main() -> None:
     p = argparse.ArgumentParser(description="Whisper WER per language")
     p.add_argument("--data", type=Path, default=Path("data/asr_test"))
-    p.add_argument("--model", default=None, help="tiny|base|small (default: WHISPER_MODEL)")
+    p.add_argument("--model", default=None, help="tiny|base|small|medium|large-v3|large-v3-turbo (default: WHISPER_MODEL)")
+    p.add_argument("--repetition-penalty", type=float, default=None, help="default: WHISPER_REPETITION_PENALTY or 1.0")
+    p.add_argument("--no-repeat-ngram", type=int, default=None, help="default: WHISPER_NO_REPEAT_NGRAM or 0")
+    p.add_argument("--out-tag", default="", help="suffix for report files, e.g. _medium")
     p.add_argument("--quick", action="store_true", help="3 utterances per language; not logged")
     a = p.parse_args()
-    t = Transcriber(model_size=a.model)
+    t = Transcriber(model_size=a.model, repetition_penalty=a.repetition_penalty,
+                    no_repeat_ngram_size=a.no_repeat_ngram)
     utt = evaluate(a.data, t, limit=3 if a.quick else None)
     rates = corpus_rates(utt)
     print(rates.round(4).to_string(index=False))
     REPORT_DIR.mkdir(exist_ok=True)
-    suffix = "_quick" if a.quick else ""
+    suffix = a.out_tag + ("_quick" if a.quick else "")
     utt.to_csv(REPORT_DIR / f"asr_wer_utterances{suffix}.csv", index=False, encoding="utf-8")
     rates.to_csv(REPORT_DIR / f"asr_wer{suffix}.csv", index=False)
     if not a.quick:
-        log_results(rates, t.model_size)
+        log_results(rates, t)
         print(f"appended {len(rates)} rows to {LOG_PATH}")
         if (rates.utterances < 30).any():
             print("WARNING: fewer than 30 utterances for some language (docs/08 §1 asks for >= 30)")

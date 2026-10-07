@@ -181,3 +181,70 @@ def test_eval_noise_end_to_end_with_fake_model(tmp_path, monkeypatch):
     assert set(utt.snr_db) == {"clean", "10", "0"} and set(utt.condition) == {"vad_on", "vad_off"}
     s = EN.summarize(utt)
     assert len(s) == 6 and (s.wer == 0).all() and (s.noise_source == "generated-pink").all()
+
+
+def test_repetition_guard_and_large_models(tmp_path, monkeypatch):
+    fake = FakeModel()
+    t = Transcriber(model_size="large-v3", mode="local", repetition_penalty=1.2,
+                    no_repeat_ngram_size=4, model_factory=lambda *a: fake)
+    wav = tmp_path / "a.wav"
+    wav.write_bytes(b"x")
+    t.transcribe(wav, language="kn")
+    assert fake.calls[0]["repetition_penalty"] == 1.2 and fake.calls[0]["no_repeat_ngram_size"] == 4
+    monkeypatch.setenv("WHISPER_REPETITION_PENALTY", "1.1")
+    monkeypatch.setenv("WHISPER_NO_REPEAT_NGRAM", "3")
+    t2 = Transcriber(model_size="medium", mode="local", model_factory=lambda *a: fake)
+    assert (t2.repetition_penalty, t2.no_repeat_ngram_size) == (1.1, 3)
+    monkeypatch.delenv("WHISPER_REPETITION_PENALTY")
+    monkeypatch.delenv("WHISPER_NO_REPEAT_NGRAM")
+    t3 = Transcriber(model_size="small", mode="local", model_factory=lambda *a: fake)
+    assert (t3.repetition_penalty, t3.no_repeat_ngram_size) == (1.0, 0)   # default = no guard
+
+
+# ---- GPU config, latency, GPU-day runner ----
+def test_device_and_compute_from_env(monkeypatch):
+    for k in ("WHISPER_DEVICE", "WHISPER_COMPUTE"):
+        monkeypatch.delenv(k, raising=False)
+    t = Transcriber(model_size="tiny", mode="local", model_factory=lambda *a: None)
+    assert (t.device, t.compute_type) == ("cpu", "int8")
+    monkeypatch.setenv("WHISPER_DEVICE", "cuda")
+    monkeypatch.setenv("WHISPER_COMPUTE", "")                 # empty .env value -> default
+    t = Transcriber(model_size="tiny", mode="local", model_factory=lambda *a: None)
+    assert (t.device, t.compute_type) == ("cuda", "float16")
+    monkeypatch.setenv("WHISPER_COMPUTE", "int8_float16")
+    assert Transcriber(model_size="large-v3", mode="local").compute_type == "int8_float16"
+    monkeypatch.setenv("WHISPER_DEVICE", "tpu")
+    with pytest.raises(ValueError):
+        Transcriber(model_size="tiny", mode="local")
+
+
+def test_latency_measure_and_summary(tmp_path):
+    from backend.asr import latency as L
+    data = tmp_path / "d"
+    data.mkdir()
+    rows = []
+    for lang in ("en", "hi"):
+        for i in range(3):
+            (data / f"{lang}{i}.wav").write_bytes(b"x")
+            rows.append({"file": f"{lang}{i}.wav", "language": lang, "reference": "a b"})
+    pd.DataFrame(rows).to_csv(data / "reference.csv", index=False)
+    fake = FakeModel(text="a b")
+    t = Transcriber(model_size="tiny", mode="local", model_factory=lambda *a: fake)
+    df = L.measure(data, t, per_language=2)
+    assert len(df) == 4 and len(fake.calls) == 5              # 1 untimed warm-up + 4 timed
+    assert (df.audio_s == 2.5).all() and (df.rtf >= 0).all()
+    s = L.summarize(df)
+    assert list(s.language) == ["en", "hi"] and (s.clips == 2).all()
+
+
+def test_gpu_day_plan():
+    import importlib.util
+    from pathlib import Path
+    spec = importlib.util.spec_from_file_location("gpu_day", Path("scripts/asr_gpu_day.py"))
+    g = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(g)
+    names = [n for n, _, _ in g.steps(skip_large=False, noise_large=False)]
+    assert names == ["latency large-v3-turbo", "latency large-v3", "clean WER large-v3-turbo",
+                     "clean WER large-v3", "noise WER large-v3-turbo"]
+    assert len(g.steps(skip_large=True, noise_large=True)) == 3
+    assert g.MODELS["large-v3"] == "int8_float16"             # fits a 4 GB GPU
