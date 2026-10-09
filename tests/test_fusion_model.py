@@ -114,3 +114,9 @@ def test_evaluate_quick_and_roundtrip(tmp_path, monkeypatch):
     assert np.allclose(p1, p2, atol=1e-5) and p1.shape == (40, 4)
     pn, _ = predict(b2, X, mask, None)          # vitals-only inference path
     assert pn.shape == (40, 4)
+    # text-only path: vitals branch zeroed, so the vitals values must not matter
+    pt1, _ = predict(b2, X, mask, T, vitals=False)
+    pt2, _ = predict(b2, np.zeros_like(X), mask, T, vitals=False)
+    assert np.allclose(pt1, pt2, atol=1e-6) and not np.allclose(pt1, p2, atol=1e-3)
+    with pytest.raises(ValueError):
+        predict(b2, X, mask, None, vitals=False)

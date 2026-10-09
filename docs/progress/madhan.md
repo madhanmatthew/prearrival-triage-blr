@@ -246,6 +246,15 @@
   preemption). `coordinate()` -> DispatchDecisions with conflicts_resolved + plain-language explanation and a
   `needs_dispatcher` list. All thresholds/weights [ASSUMPTION], fixed before any benchmark. Deterministic
   (tie-breaks by report time, incident_id). Junction rule ignores approach direction (SignalState has none).
+- 2026-10-06: FastAPI app (`backend/main.py`, `services.py`, `routing.py`; `tests/test_api.py` 11 pass; 361 total). All
+  docs/07 §5 endpoints + /health; WS /ws/police, /ws/map, /ws/hospital/{id}; in-memory store. `load_services()` loads
+  what exists and lists gaps in /health (docs/07 §6 degraded modes). Fusion `predict(..., vitals=False)` added for
+  text-only risk before vitals (m_vit=0). Dispatch runs the coordinator over all pending incidents (contention),
+  ETAs via ORS REST (`OrsRouter`, [TODO-VERIFY] fields) else straight line 25 km/h x 1.4 [ASSUMPTION].
+  Real-model smoke run OK: dialogue -> text-only risk -> routed guidance -> vitals (text+vitals, NEWS2 14) ->
+  dispatch 503 (no hospitals/ambulance files). Police units requested = 0 until police agent exists.
+  Safety note: Q_BREATHING asks "difficulty breathing?"; for an unresponsive person "no" is ambiguous (could
+  mean not breathing at all) but routes to recovery position. Needs a decision (see chat).
 ## Next (in order)
 0b. Hand-review `data/first_aid_corpus/*_ifrc.md`; write `data/rag_eval/queries.csv`, then `make build-rag`, `eval-rag --sweep`, `eval-rag --min-sim <t>`.
 0a. `make train-fusion` (full run: 7 variants x nested CV, CPU, expect a long run), commit reports + log rows.
@@ -266,6 +275,7 @@
 - [ ] Then RL env wrapper with randomized demand, baselines, DQN seeds
 
 - 2026-10-06: ASR noise robustness: `backend/asr/noise.py` (SNR mixing), `eval_noise.py` (WER vs SNR, VAD on/off, optional denoise), `make eval-asr-noise`, tests pass (16). TODO (Sankalp): street-noise wavs in `data/asr_test/noise/`, ~10 noisy clips/language.
+
 - 2026-10-07: First real WER run (90 team clips, 30/lang, read from scripts; logged). Added
   `medium`/`large-v3` + repetition guard (`repetition_penalty`, `no_repeat_ngram_size`; env
   `WHISPER_REPETITION_PENALTY`/`WHISPER_NO_REPEAT_NGRAM`; 1.1 set a priori, not tuned). Pinned
@@ -287,6 +297,21 @@
   Decision D18 recorded (en+hi+kn live on local GPU; English-live fallback).
   NEXT: dialogue keyword matching per language (hi/kn spellings from the Whisper output) +
   tap buttons; ASR->triage robustness eval; recorded prompts list for native speakers.
+
+- 2026-10-08: Dialogue robust to real hi/kn ASR output + breathing-question safety fix.
+  (1) Q_BREATHING now asks "breathing normally?" (IFRC check) in en/hi/kn; reply inverted so stored
+  "yes" still = breathing problem (schema/RAG/fusion unchanged); unresponsive + "no"/"don't know" -> CPR.
+  (2) Report cues are regexes on `fold()`ed text (nukta, chandrabindu, ZWNJ dropped): Devanagari/Kannada
+  loanwords (एक्सीडेंट, ब्लीडिंग, अनकॉन्शियस, ಆಕ್ಸಿಡೆಂಟ್, ಮೂರ್ಛೆ), kn negation suffix (ಉಸಿರಾಡ್ತಿಲ್ಲ -> no),
+  explicit accident words before "fall", bare vehicle words after it. Removed over-broad cues (bare
+  ಉಸಿರಾಟ / "सांस लेने में" set breathing problem even for "breathing slowly"). Tap buttons = English
+  yes/no/don't know in every language. (3) `backend/asr/eval_triage.py`: cue extraction from script vs
+  Whisper transcript (large-v3) and vs the English script of the same scenario. All-field agreement
+  hyp vs en-script: en 1.00, hi 0.83, kn 0.83 (ASR-only: hi 0.87, kn 0.83; lexicon-only: hi 0.97,
+  kn 1.00); logged. **DEV figure**: variants written from these 90 clips; a clean number needs new
+  recordings. Remaining misses = ASR garbles (चस्पेन, तक्रा, ಕುಷಿದು). 400 tests pass.
+  NEXT: native review of hi/kn wording (incl. new Q_BREATHING); fresh held-out clips for eval_triage;
+  recorded-prompt list for native speakers.
 
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.

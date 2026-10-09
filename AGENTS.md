@@ -79,13 +79,13 @@ call "existing" or "in MVP" must be built new here.
 | RL randomized demand (docs/19 §7 jitter, OSM) | Not started | `backend/rl/demand.py` |
 | Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
 | Whisper intake + WER eval + WER-vs-SNR noise eval (faster-whisper, local) | Clean WER run on 90 real clips (large-v3: en 3.6%, hi 30.8%, kn 79.2% WER / 23.7% CER); GPU config + latency + one-command GPU session (`scripts/asr_gpu_day.py`) done, untested on GPU; noise eval pending (run on GPU laptop, `15` D18) | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
-| Dialogue state machine (6 questions) | Done, with tests; hi/kn wording needs native review | `backend/dialogue/`, `tests/test_dialogue.py` |
+| Dialogue state machine (6 questions) | Done, with tests; code-mixed hi/kn cues + "breathing normally?" fix; ASR->cue robustness eval logged (dev); hi/kn wording needs native review | `backend/dialogue/`, `backend/asr/eval_triage.py`, `tests/test_dialogue.py`, `tests/test_eval_triage.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
 | RAG pipeline + groundedness eval | v2 done, with tests (guard, dialogue routing, bge-small, keywords); IFRC 2020 corpus (18 topics); v1 + v2 test runs logged (v2: hit@4 0.96, answer 1.00, refusal 0.67) | `backend/rag/`, `scripts/extract_ifrc_corpus.py`, `data/first_aid_corpus/` |
 | Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
 | Coordinator (6 conflicts, rule-based) | Done, with tests (fake router, fixture hospitals); not yet wired to API | `backend/agents/coordinator.py`, `tests/test_coordinator.py` |
-| FastAPI app + WebSockets | Not started | `backend/main.py` |
+| FastAPI app + WebSockets | Done, with tests (fake services); real app runs, dispatch waits for `data/hospitals.csv` + `data/ambulance_bases.csv` | `backend/main.py`, `backend/services.py`, `backend/routing.py`, `tests/test_api.py` |
 | Frontend (Leaflet map, police + hospital views, bystander guidance text + browser speech `01` §10) | Not started | `frontend/` |
 | Benchmark (8 + 2 scenarios, fair baseline) | Not started | `backend/benchmarks/benchmark.py` |
 | Traffic/ETA ML models | Optional (`15` D16) | `backend/ml/eta_model.py` |

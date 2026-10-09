@@ -136,14 +136,15 @@ class FusionNet(nn.Module):
 
 
 @torch.no_grad()
-def _predict_tensors(model, Z, mask, T, m_txt=None, batch=4096):
-    """m_txt: optional float [N] text-availability mask (0 -> text branch zeroed)."""
+def _predict_tensors(model, Z, mask, T, m_txt=None, batch=4096, m_vit=None):
+    """m_txt / m_vit: optional float [N] availability masks (0 -> that branch zeroed)."""
     model.eval()
     probs, trend = [], []
     for i in range(0, len(Z), batch):
         mt = None if m_txt is None else torch.from_numpy(m_txt[i:i + batch]).float()
+        mv = None if m_vit is None else torch.from_numpy(m_vit[i:i + batch]).float()
         lg, tl = model(torch.from_numpy(Z[i:i + batch]), torch.from_numpy(mask[i:i + batch]),
-                       torch.from_numpy(T[i:i + batch]), None, mt)
+                       torch.from_numpy(T[i:i + batch]), mv, mt)
         probs.append(torch.softmax(lg, 1).numpy())
         trend.append(torch.sigmoid(tl).numpy())
     return np.concatenate(probs), np.concatenate(trend)
@@ -314,15 +315,21 @@ def train(path: Path = OUT_PATH, quick: bool = False, agreement: float | None = 
     return {"model": model, "preprocessor": pp, "lambda": lam, "epochs": n_ep, "variant": "fused"}
 
 
-def predict(bundle, X: np.ndarray, mask: np.ndarray, text: np.ndarray | None = None):
+def predict(bundle, X: np.ndarray, mask: np.ndarray, text: np.ndarray | None = None,
+            vitals: bool = True):
     """Raw windows [N,6,7] + mask + optional text [N,19] -> (severity_probs [N,4], trend_prob [N]).
 
     text=None zeroes the text branch (vitals-only inference through the fused net).
+    vitals=False zeroes the vitals branch (text-only, before any vitals arrive, docs/07 §6);
+    the trend output is then meaningless and callers should not report it.
     """
+    if not vitals and text is None:
+        raise ValueError("need at least one modality")
     Z = bundle["preprocessor"].transform(X, mask)
     T = np.zeros((len(Z), N_TEXT), np.float32) if text is None else np.asarray(text, np.float32)
     m_txt = np.full(len(Z), 0.0 if text is None else 1.0, np.float32)
-    return _predict_tensors(bundle["model"], Z, mask, T, m_txt)
+    m_vit = None if vitals else np.zeros(len(Z), np.float32)
+    return _predict_tensors(bundle["model"], Z, mask, T, m_txt, m_vit=m_vit)
 
 
 def save(bundle, version: int = 1) -> Path:

@@ -3,9 +3,11 @@
 # actually worked, do not guess).
 
 # Backend
-fastapi
-uvicorn[standard]
-websockets
+fastapi==0.142.2   # installed 2026-10-06
+uvicorn[standard]==0.54.0
+websockets==17.2
+python-multipart==0.0.32   # /incident/voice uploads
+httpx==0.28.1   # FastAPI TestClient
 pydantic>=2
 python-dotenv
 pyyaml==6.0.2   # fusion text generator config

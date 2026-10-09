@@ -22,6 +22,10 @@ Design choices [ASSUMPTION]:
     the raw answer: no -> 0, yes + heavy wording -> 1.0, yes otherwise -> 0.5.
     Q_NUM_INJURED stores answer_value "yes" if a number was understood, else "unknown".
   * Unknown num_injured defaults to 1 (a report implies at least one casualty).
+  * Q_BREATHING is asked as "breathing normally?" and the reply is inverted, so answer_value
+    "yes" still means "breathing problem" (schema, RAG routing and fusion features unchanged).
+    "No" or "don't know" for an unresponsive person therefore routes to CPR guidance.
+  * Tap buttons send "yes" / "no" / "don't know" in English for every language.
 """
 from __future__ import annotations
 
@@ -35,7 +39,6 @@ QUESTION_ORDER = ("Q_CONSCIOUS", "Q_BREATHING", "Q_BLEEDING", "Q_SPEAK", "Q_NUM_
                   "Q_MECHANISM")
 FROM_REPORT = "(from initial report)"
 UNIFORM_PROBS = [0.25, 0.25, 0.25, 0.25]  # placeholder until the text classifier exists
-COUNT_NOUNS = ("injured", "people", "persons", "victims", "hurt", "घायल", "ಗಾಯ")
 
 Phraser = Callable[[str, str, str], str]  # (q_id, language, template_text) -> wording
 
@@ -67,28 +70,28 @@ class DialogueManager:
     def start(self, initial_report: str) -> None:
         """Read the initial report: injury type and the few clear cues that skip questions."""
         self.transcript = initial_report
-        low = initial_report.lower()
-        self.injury_type = next((t for t, cues in lx.INJURY_CUES if any(c in low for c in cues)),
+        text = initial_report
+        self.injury_type = next((t for t, cues in lx.INJURY_CUES if lx.has_cue(text, cues)),
                                 "other")
-        if any(c in low for c in lx.CUES_UNCONSCIOUS):
+        if lx.has_cue(text, lx.CUES_UNCONSCIOUS):
             self.answers["Q_CONSCIOUS"] = Answer("no", FROM_REPORT)
-        if any(c in low for c in lx.CUES_BREATHING):
+        if lx.has_cue(text, lx.CUES_BREATHING):
             self.answers["Q_BREATHING"] = Answer("yes", FROM_REPORT)
-        if any(c in low for c in lx.CUES_BLEEDING) and lx.is_heavy(low):
+        if lx.has_cue(text, lx.CUES_BLEEDING) and lx.is_heavy(text):
             self.answers["Q_BLEEDING"] = Answer("yes", FROM_REPORT, bleeding_level=1.0)
-        if self.injury_type in ("road_accident", "fall") and any(
-                c in low for c in lx.HIGH_ENERGY_CUES):
+        if self.injury_type in ("road_accident", "fall") and lx.has_cue(text, lx.HIGH_ENERGY_CUES):
             self.answers["Q_MECHANISM"] = Answer("yes", FROM_REPORT)
-        cnt = self._count_in_report(low)
+        cnt = self._count_in_report(text)
         if cnt is not None:
             self.answers["Q_NUM_INJURED"] = Answer("yes", FROM_REPORT, count=cnt)
 
     @staticmethod
-    def _count_in_report(low: str) -> Optional[int]:
-        toks = lx.tokens(low)
+    def _count_in_report(text: str) -> Optional[int]:
+        """A number directly followed by a casualty noun (prefix match: Kannada case endings)."""
+        toks = lx.tokens(text)
         for i, t in enumerate(toks[:-1]):
             n = int(t) if t.isdigit() else lx.NUMBER_WORDS.get(t)
-            if n is not None and toks[i + 1] in COUNT_NOUNS:
+            if n is not None and toks[i + 1].startswith(lx.COUNT_NOUNS):
                 return n
         return None
 
@@ -127,6 +130,8 @@ class DialogueManager:
             ans = Answer("unknown" if n is None else "yes", raw, count=n)
         else:
             ans = Answer(lx.parse_yes_no(raw), raw)
+            if q_id == "Q_BREATHING":               # asked "breathing normally?": invert
+                ans.value = {"yes": "no", "no": "yes"}.get(ans.value, "unknown")
             if q_id == "Q_BLEEDING":
                 if ans.value == "no":
                     ans.bleeding_level = 0.0

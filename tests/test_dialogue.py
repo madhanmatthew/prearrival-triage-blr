@@ -134,9 +134,82 @@ def test_incident_report_validates_and_keeps_gps_from_device():
 
 def test_hindi_and_kannada_flow():
     for lang, yes, no in (("hi", "हाँ", "नहीं"), ("kn", "ಹೌದು", "ಇಲ್ಲ")):
-        dm, asked = run("hurt", [yes, no, no, yes, "ek" if lang == "hi" else "ondu", no], lang)
+        dm, asked = run("hurt", [yes, yes, no, yes, "ek" if lang == "hi" else "ondu", no], lang)
         assert asked == list(QUESTION_ORDER)
-        assert dm.text_features()[0:4] == [1.0, 1.0, 0.0, 1.0]
+        assert dm.text_features()[0:4] == [1.0, 1.0, 0.0, 1.0]   # breathing normally -> no problem
+
+
+@pytest.mark.parametrize("reply,stored", [("yes", "no"), ("no", "yes"), ("don't know", "unknown"),
+                                          ("ಉಸಿರಾಡ್ತಿಲ್ಲ", "yes"), ("नहीं ले रहा", "yes")])
+def test_breathing_asked_as_normal_and_inverted(reply, stored):
+    """'Breathing normally?' -> stored value keeps 'yes = breathing problem' (RAG/fusion unchanged).
+    Unresponsive + 'no' must therefore not look like 'no problem' (would route to recovery)."""
+    assert "normally" in lx.QUESTIONS["Q_BREATHING"]["en"]
+    dm = DialogueManager(language="kn" if reply.startswith("ಉ") else "en")
+    dm.start("man collapsed, unresponsive")
+    assert dm.next_question()[0] == "Q_BREATHING"
+    assert dm.answer(reply).value == stored
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("ಉಸಿರಾಡ್ತಿಲ್ಲ", "no"), ("agtilla", "no"), ("ಎಲ್ಲಾ", "unknown"), ("ಹೂಂ", "yes"),
+    ("हाँ जी", "yes"), ("जी हां", "yes")])
+def test_parse_yes_no_indic_forms(text, expected):
+    assert lx.parse_yes_no(text) == expected
+
+
+@pytest.mark.parametrize("lang", ["en", "hi", "kn"])
+def test_tap_buttons_work_in_every_language(lang):
+    assert [lx.parse_yes_no(t) for t in ("yes", "no", "don't know")] == ["yes", "no", "unknown"]
+
+
+def test_fold_drops_inconsistent_marks():
+    assert lx.fold("ज़्यादा हाँ") == "ज्यादा हां"
+    assert lx.fold("ಬೈಕ್‌ನಿಂದ") == "ಬೈಕ್ನಿಂದ"
+    assert lx.is_heavy("ज़्यादा")
+
+
+def test_cue_patterns_compile_and_are_folded():
+    import re
+    pats = [*lx.CUES_UNCONSCIOUS, *lx.CUES_BREATHING, *lx.CUES_BLEEDING, *lx.HIGH_ENERGY_CUES,
+            *(p for _, cues in lx.INJURY_CUES for p in cues)]
+    for p in pats:
+        re.compile(p)
+        assert not set(p) & {"‌", "‍", "़", "ँ", "\x08"}, p
+
+
+# Scripts of the team test clips (data/asr_test/reference.csv) and Whisper-style spellings.
+@pytest.mark.parametrize("lang,report,injury,cues", [
+    ("hi", "सिल्क बोर्ड के पास एक्सीडेंट हुआ है, एक आदमी रोड पर पड़ा है और वो सांस नहीं ले रहा।",
+     "road_accident", {"Q_BREATHING"}),
+    ("kn", "ಸಿಲ್ಕ್ ಬೋರ್ಡ್ ಹತ್ರ ಆಕ್ಸಿಡೆಂಟ್ ಆಗಿದೆ, ಒಬ್ಬ ಮನುಷ್ಯ ರೋಡ್ ಮೇಲೆ ಬಿದ್ದಿದಾನೆ, ಉಸಿರಾಡ್ತಿಲ್ಲ.",
+     "road_accident", {"Q_BREATHING"}),
+    ("kn", "ಕಾಲೇಜ್ ಫಂಕ್ಷನ್‌ನಲ್ಲಿ ಒಬ್ಬ ಸ್ಟೂಡೆಂಟ್ ಮೂರ್ಛೆ ಹೋಗಿದಾಳೆ, ತುಂಬಾ ನಿಧಾನವಾಗಿ ಉಸಿರಾಡ್ತಿದಾಳೆ.",
+     "other", {"Q_CONSCIOUS"}),                       # "is breathing slowly" is not a no-breath cue
+    ("hi", "कॉलेज फंक्शन में एक स्टूडेंट बेहोश हो गई है और बहुत धीरे सांस ले रही है।",
+     "other", {"Q_CONSCIOUS"}),
+    ("hi", "मेरी दादी किचन में बेहोश हो गईं, नाम बुला रहे हैं पर कोई रिस्पॉन्स नहीं दे रहीं।",
+     "other", {"Q_CONSCIOUS"}),
+    ("hi", "रेडर अनकॉंशियस है", "other", {"Q_CONSCIOUS"}),
+    ("hi", "construction site पर किसी का हाथ कट गया है", "other", set()),   # not "ट्रक"
+    ("hi", "कंस्ट्रक्शन साइट पर किसी का हाथ कट गया है", "other", set()),
+    ("hi", "बेलंदूर के पास एक लेडी बाइक से गिर गई है और उसके लेग से बहुत ब्लीडिंग हो रही है।",
+     "fall", {"Q_BLEEDING"}),
+    ("kn", "ಒಬ್ಬ ಚಿಕ್ಕ ಹುಡುಗ ಸ್ಟೆಪ್ಸ್‌ನಿಂದ ಬಿದ್ಧಿದಾನೆ", "fall", set()),
+    ("en", "My friend is having a fit, his whole body is shaking", "cardiac_medical", set()),
+    ("en", "A woman fell from her bike and her leg is bleeding badly.", "fall", {"Q_BLEEDING"}),
+    ("kn", "ಸಿಗ್ನಲ್ ಹತ್ರ ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದೆ, ಇಬ್ರು ಪ್ಯಾಸೆಂಜರ್ಸ್‌ಗೆ ಗಾಯ ಆಗಿದೆ.",
+     "road_accident", {"Q_NUM_INJURED"}),
+    ("en", "he is responding fine", "other", set()),
+    ("hi", "वो रिस्पॉन्स दे रहा है", "other", set()),
+])
+def test_code_mixed_report_cues(lang, report, injury, cues):
+    dm = DialogueManager(language=lang)
+    dm.start(report)
+    assert dm.injury_type == injury
+    assert set(dm.answers) == cues
+    if "Q_NUM_INJURED" in cues:
+        assert dm.answers["Q_NUM_INJURED"].count == 2
 
 
 def test_phraser_only_rewords_never_changes_flow():
