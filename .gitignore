@@ -42,15 +42,15 @@ faiss_index/
 sumo/*.out.xml
 sumo/*tripinfo*.xml
 
-# Audio recordings (consented WER set stays local/Drive)
+# Audio recordings (ignored everywhere except the ASR test set)
 *.wav
 *.mp3
 *.m4a
 *.mp4
 *.mov
-# Exception: the ASR test clips are tracked (private repo only; consent required)
-!data/asr_test/**/*.wav
-data/asr_test/noise/
+# Exception: the full ASR test set is tracked (private repo only; consent required)
+!data/asr_test/
+!data/asr_test/**
 
 # OS / editor
 .DS_Store
