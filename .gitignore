@@ -14,6 +14,9 @@ env/
 # Data (licence-restricted: MIMIC must never be committed)
 data/raw/*
 !data/raw/.gitkeep
+# Exception: TomTom traffic collections are tracked (private repo; irreplaceable time series)
+!data/raw/traffic/
+data/raw/traffic/*.lock
 data/processed/*
 !data/processed/.gitkeep
 
@@ -27,6 +30,13 @@ logs/
 *.zip
 *.pkl
 faiss_index/
+# Exception (must stay after the patterns above): trained models are tracked, flat in
+# models/ (private repo; each file < 100 MB). models/whisper/ cache stays ignored.
+!models/*.pt
+!models/*.joblib
+!models/*.zip
+!models/*.pkl
+!models/*.json
 
 # SUMO outputs
 sumo/*.out.xml
@@ -38,6 +48,9 @@ sumo/*tripinfo*.xml
 *.m4a
 *.mp4
 *.mov
+# Exception: the ASR test clips are tracked (private repo only; consent required)
+!data/asr_test/**/*.wav
+data/asr_test/noise/
 
 # OS / editor
 .DS_Store
