@@ -1,0 +1,901 @@
+file,language,snr_db,condition,noise_source,hypothesis,word_errors,ref_words,char_errors,ref_chars
+eng rec/en_001.wav,en,clean,vad_on,recorded,There has been an accident near Silkwood. A man is lying on the road and he is not breathing.,2,20,4,93
+eng rec/en_001.wav,en,clean,vad_off,recorded,There has been an accident near Silkwood. A man is lying on the road and he is not breathing.,2,20,4,93
+eng rec/en_001.wav,en,20,vad_on,recorded,"There has been an accident near Silkwood, a man is lying on the road and he is not breathing.",2,20,4,93
+eng rec/en_001.wav,en,20,vad_off,recorded,"There has been an accident near Silkwood, a man is lying on the road and he is not breathing.",2,20,4,93
+eng rec/en_001.wav,en,10,vad_on,recorded,There has been an accident near Silkwood. A man is lying on the road and he is not breathing.,2,20,4,93
+eng rec/en_001.wav,en,10,vad_off,recorded,There has been an accident near Silkwood. A man is lying on the road and he is not breathing.,2,20,4,93
+eng rec/en_001.wav,en,5,vad_on,recorded,There has been an accident near Silk Road. A man is lying on the road and he is not breathing.,1,20,2,93
+eng rec/en_001.wav,en,5,vad_off,recorded,"There has been an accident near Silk Road, a man is lying on the road and he is not breathing.",1,20,2,93
+eng rec/en_001.wav,en,0,vad_on,recorded,There has been an accident near Silkwood. A man is lying on the road and he is not breathing.,2,20,4,93
+eng rec/en_001.wav,en,0,vad_off,recorded,There has been an accident near Silkwood. A man is lying on the road and he is not breathing.,2,20,4,93
+eng rec/en_002.wav,en,clean,vad_on,recorded,My father has chest pain and he is sweating a lot. Please send an ambulance quickly,0,16,0,82
+eng rec/en_002.wav,en,clean,vad_off,recorded,My father has chest pain and he is sweating a lot. Please send an ambulance quickly.,0,16,0,82
+eng rec/en_002.wav,en,20,vad_on,recorded,My father has chest pain and he is sweating a lot. Please send an ambulance quickly.,0,16,0,82
+eng rec/en_002.wav,en,20,vad_off,recorded,"My father has chest pain and he is sweating a lot, please send an ambulance quickly.",0,16,0,82
+eng rec/en_002.wav,en,10,vad_on,recorded,My father has chest pain and he is sweating a lot. Please send an ambulance quickly.,0,16,0,82
+eng rec/en_002.wav,en,10,vad_off,recorded,"My father has chest pain and he is sweating a lot, please send an ambulance quickly.",0,16,0,82
+eng rec/en_002.wav,en,5,vad_on,recorded,My father has chest pain and he is sweating a lot. Please send an ambulance quickly,0,16,0,82
+eng rec/en_002.wav,en,5,vad_off,recorded,"My father has chest pain and he is sweating a lot, please send an ambulance quickly.",0,16,0,82
+eng rec/en_002.wav,en,0,vad_on,recorded,My father has test phone and he is sweating a lot. Please send an ambulance quickly.,2,16,5,82
+eng rec/en_002.wav,en,0,vad_off,recorded,"My father has chest pain and he is sweating a lot, please send an ambulance quickly.",0,16,0,82
+eng rec/en_003.wav,en,clean,vad_on,recorded,A woman fell from a bike near Bellandur and her leg is bleeding badly.,1,14,3,71
+eng rec/en_003.wav,en,clean,vad_off,recorded,A woman fell from a bike near Bellandor and her leg is bleeding badly.,2,14,4,71
+eng rec/en_003.wav,en,20,vad_on,recorded,A woman fell from a bike near Bellandu and her leg is bleeding badly.,2,14,4,71
+eng rec/en_003.wav,en,20,vad_off,recorded,A woman fell from a bike near Belandu and her leg is bleeding badly.,2,14,5,71
+eng rec/en_003.wav,en,10,vad_on,recorded,A woman fell from a bike near Belandu and her leg is bleeding badly.,2,14,5,71
+eng rec/en_003.wav,en,10,vad_off,recorded,A woman fell from a bike near Belando and her leg is bleeding badly.,2,14,6,71
+eng rec/en_003.wav,en,5,vad_on,recorded,A woman fell from a bike near Berlandur and her leg is bleeding badly.,2,14,4,71
+eng rec/en_003.wav,en,5,vad_off,recorded,A woman fell from a bike near Berlandur and her leg is bleeding badly.,2,14,4,71
+eng rec/en_003.wav,en,0,vad_on,recorded,A woman fell from a bike near Berlandu and her leg was bleeding badly.,3,14,7,71
+eng rec/en_003.wav,en,0,vad_off,recorded,A woman fell from a bike near Bellandu and her leg was bleeding badly.,3,14,6,71
+eng rec/en_004.wav,en,clean,vad_on,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor,0,20,0,96
+eng rec/en_004.wav,en,clean,vad_off,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor.,0,20,0,96
+eng rec/en_004.wav,en,20,vad_on,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor,0,20,0,96
+eng rec/en_004.wav,en,20,vad_off,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor,0,20,0,96
+eng rec/en_004.wav,en,10,vad_on,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor,0,20,0,96
+eng rec/en_004.wav,en,10,vad_off,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor.,0,20,0,96
+eng rec/en_004.wav,en,5,vad_on,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor.,0,20,0,96
+eng rec/en_004.wav,en,5,vad_off,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor.,0,20,0,96
+eng rec/en_004.wav,en,0,vad_on,recorded,There is a fire in the building next to our apartment and smoke is coming out of the third floor.,0,20,0,96
+eng rec/en_004.wav,en,0,vad_off,recorded,There is a fire in the building next door apartment and smoke is coming out of the third floor.,2,20,3,96
+eng rec/en_005.wav,en,clean,vad_on,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,clean,vad_off,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,20,vad_on,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,20,vad_off,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,10,vad_on,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,10,vad_off,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,5,vad_on,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,5,vad_off,recorded,My grandmother fainted in the kitchen and she is not answering when I call her name.,0,16,0,83
+eng rec/en_005.wav,en,0,vad_on,recorded,My grandmother painted in the kitchen and she is not answering when I call her name.,1,16,1,83
+eng rec/en_005.wav,en,0,vad_off,recorded,My grandmother painted in the kitchen and she is not answering when I call her name.,1,16,1,83
+eng rec/en_006.wav,en,clean,vad_on,recorded,A small boy fell from the stairs and there is blood coming from his head.,0,15,0,72
+eng rec/en_006.wav,en,clean,vad_off,recorded,A small boy fell from the stairs and there is blood coming from his head.,0,15,0,72
+eng rec/en_006.wav,en,20,vad_on,recorded,A small boy fell from the stairs and there is blood coming from his head.,0,15,0,72
+eng rec/en_006.wav,en,20,vad_off,recorded,A small boy fell from the stairs and there is blood coming from his head.,0,15,0,72
+eng rec/en_006.wav,en,10,vad_on,recorded,A small boy fell from the stairs and there is blood coming from his head.,0,15,0,72
+eng rec/en_006.wav,en,10,vad_off,recorded,A small boy fell from the stairs and there is blood coming from his head.,0,15,0,72
+eng rec/en_006.wav,en,5,vad_on,recorded,A small boy fells on the stairs and there is blood coming from his head.,2,15,4,72
+eng rec/en_006.wav,en,5,vad_off,recorded,A small boy fells on the stairs and there is blood coming from his head.,2,15,4,72
+eng rec/en_006.wav,en,0,vad_on,recorded,A small boy fell from the scales and there is blood coming from his head.,1,15,3,72
+eng rec/en_006.wav,en,0,vad_off,recorded,A small boy fells on the scales and there is blood coming from his head.,3,15,7,72
+eng rec/en_007.wav,en,clean,vad_on,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside.,1,16,1,77
+eng rec/en_007.wav,en,clean,vad_off,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside.,1,16,1,77
+eng rec/en_007.wav,en,20,vad_on,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside,1,16,1,77
+eng rec/en_007.wav,en,20,vad_off,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside.,1,16,1,77
+eng rec/en_007.wav,en,10,vad_on,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside.,1,16,1,77
+eng rec/en_007.wav,en,10,vad_off,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside.,1,16,1,77
+eng rec/en_007.wav,en,5,vad_on,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside.,1,16,1,77
+eng rec/en_007.wav,en,5,vad_off,recorded,Two cars hit each other in the outer ring road and one driver is stuck inside.,1,16,1,77
+eng rec/en_007.wav,en,0,vad_on,recorded,"Two cars with each other in the outer ringers, on one driver is stuck inside.",5,16,9,77
+eng rec/en_007.wav,en,0,vad_off,recorded,"Two cars with each other in the outer window, on one driver are stuck inside.",6,16,14,77
+eng rec/en_008.wav,en,clean,vad_on,recorded,"My friend is having a fit, his whole body is shaking and he's not responding.",1,16,1,76
+eng rec/en_008.wav,en,clean,vad_off,recorded,My friend is having a fit. His whole body is shaking and he's not responding.,1,16,1,76
+eng rec/en_008.wav,en,20,vad_on,recorded,My friend is having a fit. His whole body is shaking and he's not responding.,1,16,1,76
+eng rec/en_008.wav,en,20,vad_off,recorded,My friend is having a fit. His whole body is shaking and he's not responding.,1,16,1,76
+eng rec/en_008.wav,en,10,vad_on,recorded,My friend is having a fit. His whole body is shaking and he's not responding,1,16,1,76
+eng rec/en_008.wav,en,10,vad_off,recorded,"My friend is having a fit, his whole body is shaking and he's not responding.",1,16,1,76
+eng rec/en_008.wav,en,5,vad_on,recorded,"My friend is having a fit, his whole body is shaking and he's not responding.",1,16,1,76
+eng rec/en_008.wav,en,5,vad_off,recorded,"My friend is having a fit, his whole body is shaking and he's not responding.",1,16,1,76
+eng rec/en_008.wav,en,0,vad_on,recorded,"My friend is having a fit, his whole body is shaking and he's not responding.",1,16,1,76
+eng rec/en_008.wav,en,0,vad_off,recorded,"My friend is having a fit, his whole body is shaking and he's not responding.",1,16,1,76
+eng rec/en_009.wav,en,clean,vad_on,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,clean,vad_off,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,20,vad_on,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,20,vad_off,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,10,vad_on,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,10,vad_off,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,5,vad_on,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,5,vad_off,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_009.wav,en,0,vad_on,recorded,A man was hit by a bus near Martali bridge and he cannot move his legs.,1,16,5,75
+eng rec/en_009.wav,en,0,vad_off,recorded,A man was hit by a bus near Martelly Bridge and he cannot move his legs.,1,16,6,75
+eng rec/en_010.wav,en,clean,vad_on,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,clean,vad_off,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,20,vad_on,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,20,vad_off,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,10,vad_on,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,10,vad_off,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,5,vad_on,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,5,vad_off,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,0,vad_on,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_010.wav,en,0,vad_off,recorded,My mother cannot breathe properly and her lips are turning blue.,0,11,0,63
+eng rec/en_011.wav,en,clean,vad_on,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop,1,15,2,82
+eng rec/en_011.wav,en,clean,vad_off,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop.,1,15,2,82
+eng rec/en_011.wav,en,20,vad_on,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop,1,15,2,82
+eng rec/en_011.wav,en,20,vad_off,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop.,1,15,2,82
+eng rec/en_011.wav,en,10,vad_on,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop.,1,15,2,82
+eng rec/en_011.wav,en,10,vad_off,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop.,1,15,2,82
+eng rec/en_011.wav,en,5,vad_on,recorded,Someone cut his hand badly at the construction site and the bleeding will not stop.,0,15,0,82
+eng rec/en_011.wav,en,5,vad_off,recorded,Someone cut his hand badly at the construction site and the bleeding will not stop.,0,15,0,82
+eng rec/en_011.wav,en,0,vad_on,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop.,1,15,2,82
+eng rec/en_011.wav,en,0,vad_off,recorded,Someone cut his hand badly at their construction site and the bleeding will not stop.,1,15,2,82
+eng rec/en_012.wav,en,clean,vad_on,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,clean,vad_off,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,20,vad_on,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,20,vad_off,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,10,vad_on,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,10,vad_off,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,5,vad_on,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,5,vad_off,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,0,vad_on,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_012.wav,en,0,vad_off,recorded,An old man collapsed at the bus stop near Kiarpuram and his eyes are closed.,2,16,3,74
+eng rec/en_013.wav,en,clean,vad_on,recorded,My wife is pregnant and she's having a strong pain. We need to go to hospital now,3,18,7,83
+eng rec/en_013.wav,en,clean,vad_off,recorded,My wife is pregnant and she's having a strong pain. We need to go to hospital now.,3,18,7,83
+eng rec/en_013.wav,en,20,vad_on,recorded,My wife is pregnant and she's having a strong pain. We need to go to hospital now,3,18,7,83
+eng rec/en_013.wav,en,20,vad_off,recorded,My wife is pregnant and she's having a strong pain. We need to go to hospital now.,3,18,7,83
+eng rec/en_013.wav,en,10,vad_on,recorded,My wife is pregnant and she's having a strong pain. We need to go to hospital now,3,18,7,83
+eng rec/en_013.wav,en,10,vad_off,recorded,My wife is pregnant and she is having a strong pain. We need to go to hospital now.,2,18,6,83
+eng rec/en_013.wav,en,5,vad_on,recorded,My wife is pregnant and she's having a strong pain. We need to go to hospital now.,3,18,7,83
+eng rec/en_013.wav,en,5,vad_off,recorded,My wife is pregnant and she is having a strong pain. We need to go to hospital now.,2,18,6,83
+eng rec/en_013.wav,en,0,vad_on,recorded,My wife is pregnant and she's having a strong pain. We need to go to hospital now.,3,18,7,83
+eng rec/en_013.wav,en,0,vad_off,recorded,"My wife is pregnant and she's having a strong pain, we need to go to hospital now.",3,18,7,83
+eng rec/en_014.wav,en,clean,vad_on,recorded,A delivery rider slipped on the wet road and his arms looks broken.,1,13,1,65
+eng rec/en_014.wav,en,clean,vad_off,recorded,A delivery rider slipped on the wet road and his arms looks broken.,1,13,1,65
+eng rec/en_014.wav,en,20,vad_on,recorded,A delivery rider slipped on the wet road and his arms looks broken.,1,13,1,65
+eng rec/en_014.wav,en,20,vad_off,recorded,A delivery rider slipped on the wet road and his arms looks broken.,1,13,1,65
+eng rec/en_014.wav,en,10,vad_on,recorded,A delivery rider slipped on the wet road and his arms looks broken.,1,13,1,65
+eng rec/en_014.wav,en,10,vad_off,recorded,A delivery rider slipped on the wet road and his arms looks broken.,1,13,1,65
+eng rec/en_014.wav,en,5,vad_on,recorded,A delivery rider slipped on the wet road and his arms looked broken.,2,13,3,65
+eng rec/en_014.wav,en,5,vad_off,recorded,A delivery rider slipped on the wet road and his arms looked broken.,2,13,3,65
+eng rec/en_014.wav,en,0,vad_on,recorded,A delivery rider slipped on the wrecked road and his arms looked broken.,3,13,8,65
+eng rec/en_014.wav,en,0,vad_off,recorded,A delivery rider slipped on the wrecked road and his arms looked broken.,3,13,8,65
+eng rec/en_015.wav,en,clean,vad_on,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy,0,16,0,75
+eng rec/en_015.wav,en,clean,vad_off,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_015.wav,en,20,vad_on,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_015.wav,en,20,vad_off,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_015.wav,en,10,vad_on,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_015.wav,en,10,vad_off,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_015.wav,en,5,vad_on,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_015.wav,en,5,vad_off,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_015.wav,en,0,vad_on,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy,0,16,0,75
+eng rec/en_015.wav,en,0,vad_off,recorded,There is a gas leak smell in our house and my brother is feeling very dizzy.,0,16,0,75
+eng rec/en_016.wav,en,clean,vad_on,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,clean,vad_off,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,20,vad_on,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,20,vad_off,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,10,vad_on,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,10,vad_off,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,5,vad_on,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,5,vad_off,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,0,vad_on,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_016.wav,en,0,vad_off,recorded,A child swallowed something and now he is coughing and cannot speak.,0,12,0,67
+eng rec/en_017.wav,en,clean,vad_on,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,clean,vad_off,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,20,vad_on,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,20,vad_off,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,10,vad_on,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,10,vad_off,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,5,vad_on,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,5,vad_off,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,0,vad_on,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_017.wav,en,0,vad_off,recorded,My uncle has sudden weakness on one side of his body and his speech is not clear.,0,17,0,80
+eng rec/en_018.wav,en,clean,vad_on,recorded,A worker fell from the balcony of the second floor and he is lying on the ground.,2,17,9,84
+eng rec/en_018.wav,en,clean,vad_off,recorded,A worker fell from the balcony of the second floor and he is lying on the ground.,2,17,9,84
+eng rec/en_018.wav,en,20,vad_on,recorded,A worker fell from the balcony of the second floor and he is lying on the ground.,2,17,9,84
+eng rec/en_018.wav,en,20,vad_off,recorded,A worker fell from the balcony of the second floor and he is lying on the ground.,2,17,9,84
+eng rec/en_018.wav,en,10,vad_on,recorded,A worker fell from the balcony of the second floor and he is lying on the ground.,2,17,9,84
+eng rec/en_018.wav,en,10,vad_off,recorded,A worker fell from the balcony of the second floor and he is lying on the ground.,2,17,9,84
+eng rec/en_018.wav,en,5,vad_on,recorded,A worker fell from the balcony of the second floor and he is lying on the ground.,2,17,9,84
+eng rec/en_018.wav,en,5,vad_off,recorded,A walker fell from the balcony of the second floor and he is lying on the ground.,3,17,11,84
+eng rec/en_018.wav,en,0,vad_on,recorded,A walker fell from the balcony of the second floor and he is lying on the ground.,3,17,11,84
+eng rec/en_018.wav,en,0,vad_off,recorded,A walker fell from the balcony of the second floor and he is lying on the ground.,3,17,11,84
+eng rec/en_019.wav,en,clean,vad_on,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_019.wav,en,clean,vad_off,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_019.wav,en,20,vad_on,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_019.wav,en,20,vad_off,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_019.wav,en,10,vad_on,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_019.wav,en,10,vad_off,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_019.wav,en,5,vad_on,recorded,An auto rigs are turned over near the signal and two passengers are injured.,2,13,5,75
+eng rec/en_019.wav,en,5,vad_off,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_019.wav,en,0,vad_on,recorded,An other rickshaw turned over near the signal and two passengers are injured.,1,13,5,75
+eng rec/en_019.wav,en,0,vad_off,recorded,An auto rickshaw turned over near the signal and two passengers are injured.,0,13,0,75
+eng rec/en_020.wav,en,clean,vad_on,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,clean,vad_off,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,20,vad_on,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,20,vad_off,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,10,vad_on,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,10,vad_off,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,5,vad_on,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,5,vad_off,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,0,vad_on,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_020.wav,en,0,vad_off,recorded,My neighbor was stung by many bees and her face is swelling up fast.,1,14,1,68
+eng rec/en_021.wav,en,clean,vad_on,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,clean,vad_off,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,20,vad_on,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,20,vad_off,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,10,vad_on,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,10,vad_off,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,5,vad_on,recorded,A man jumped into the lake to save our dog and now he is not coming out of the water.,1,20,3,82
+eng rec/en_021.wav,en,5,vad_off,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,0,vad_on,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_021.wav,en,0,vad_off,recorded,A man jumped into the lake to save a dog and now he is not coming out of the water.,0,20,0,82
+eng rec/en_022.wav,en,clean,vad_on,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,clean,vad_off,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,20,vad_on,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,20,vad_off,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,10,vad_on,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,10,vad_off,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,5,vad_on,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,5,vad_off,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,0,vad_on,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_022.wav,en,0,vad_off,recorded,My sister got a bad burn on her arm from hot oil while cooking.,0,14,0,62
+eng rec/en_023.wav,en,clean,vad_on,recorded,There is a big crowd at the junction because a lorry hit a scooter. The rider is unconscious.,0,18,0,91
+eng rec/en_023.wav,en,clean,vad_off,recorded,There is a big crowd at the junction because a lorry hit a scooter. The rider is unconscious.,0,18,0,91
+eng rec/en_023.wav,en,20,vad_on,recorded,There is a big crowd at the junction because a lorry hit a scooter. The rider is unconscious.,0,18,0,91
+eng rec/en_023.wav,en,20,vad_off,recorded,"There is a big crowd at the junction because a lorry hit a scooter, the rider is unconscious.",0,18,0,91
+eng rec/en_023.wav,en,10,vad_on,recorded,"There is a big crowd at the junction because a lorry hit the scooter, the rider is unconscious.",1,18,3,91
+eng rec/en_023.wav,en,10,vad_off,recorded,"There is a big crowd at the junction because a lorry hit the scooter, the rider is unconscious.",1,18,3,91
+eng rec/en_023.wav,en,5,vad_on,recorded,There is a big crowd at the junction because a lorry hit the scooter. The rider is unconscious.,1,18,3,91
+eng rec/en_023.wav,en,5,vad_off,recorded,"There is a big crowd at the junction because a lorry hit the scooter, the rider is unconscious.",1,18,3,91
+eng rec/en_023.wav,en,0,vad_on,recorded,There is a big crowd at the junction because a lorry hit the scooter. The riders unconscious.,3,18,5,91
+eng rec/en_023.wav,en,0,vad_off,recorded,"There is a big crowd at the junction because a lorry hit the scooter, the rider is unconscious.",1,18,3,91
+eng rec/en_024.wav,en,clean,vad_on,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,clean,vad_off,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,20,vad_on,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,20,vad_off,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,10,vad_on,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,10,vad_off,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,5,vad_on,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,5,vad_off,recorded,"My father is diabetic and he is very confused and sweating, he is not making sense.",0,16,0,81
+eng rec/en_024.wav,en,0,vad_on,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_024.wav,en,0,vad_off,recorded,My father is diabetic and he is very confused and sweating. He is not making sense.,0,16,0,81
+eng rec/en_025.wav,en,clean,vad_on,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,clean,vad_off,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,20,vad_on,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,20,vad_off,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,10,vad_on,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,10,vad_off,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,5,vad_on,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,5,vad_off,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,0,vad_on,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_025.wav,en,0,vad_off,recorded,A student fainted during the college function and she is breathing very slowly.,0,13,0,78
+eng rec/en_026.wav,en,clean,vad_on,recorded,"An electric wire fell on the road and a man touched it. No, he is not moving.",1,17,1,75
+eng rec/en_026.wav,en,clean,vad_off,recorded,An electric wire fell on the road and a man touched it. Now he is not moving.,0,17,0,75
+eng rec/en_026.wav,en,20,vad_on,recorded,An electric wire fell on the road and a man touched it. Now he is not moving.,0,17,0,75
+eng rec/en_026.wav,en,20,vad_off,recorded,An electric wire fell on the road and a man touched it. Now he is not moving.,0,17,0,75
+eng rec/en_026.wav,en,10,vad_on,recorded,"An electric wire fell on the road and a man touched it, now he is not moving.",0,17,0,75
+eng rec/en_026.wav,en,10,vad_off,recorded,An electric wire fell on the road and a man touched it. Now he is not moving.,0,17,0,75
+eng rec/en_026.wav,en,5,vad_on,recorded,"An electric wire fell on the road and a man touched it, now he is not moving.",0,17,0,75
+eng rec/en_026.wav,en,5,vad_off,recorded,"An electric wire fell on the road and a man touched it, now he is not moving.",0,17,0,75
+eng rec/en_026.wav,en,0,vad_on,recorded,"An electric wire fell on the road and a man touched it, now he is not moving.",0,17,0,75
+eng rec/en_026.wav,en,0,vad_off,recorded,"An electric wire fell on the road and a man touched it, now he is not moving.",0,17,0,75
+eng rec/en_027.wav,en,clean,vad_on,recorded,My grandfather slipped in the bathroom and he says he cannot feel his hip.,0,14,0,73
+eng rec/en_027.wav,en,clean,vad_off,recorded,My grandfather slipped in the bathroom and he says he cannot feel his hip.,0,14,0,73
+eng rec/en_027.wav,en,20,vad_on,recorded,My grandfather slipped in the bathroom and he says he cannot feel his hip.,0,14,0,73
+eng rec/en_027.wav,en,20,vad_off,recorded,My grandfather slept in the bathroom and he says he cannot feel his hip.,1,14,4,73
+eng rec/en_027.wav,en,10,vad_on,recorded,My grandfather slipped in the bathroom and he says he cannot feel his hip.,0,14,0,73
+eng rec/en_027.wav,en,10,vad_off,recorded,My grandfather slept in the bathroom and he says he cannot feel his hip.,1,14,4,73
+eng rec/en_027.wav,en,5,vad_on,recorded,My grandfather slipped in the bathroom and he says he cannot feel his hip.,0,14,0,73
+eng rec/en_027.wav,en,5,vad_off,recorded,My grandfather slept in the bathroom and he says he cannot feel his hip.,1,14,4,73
+eng rec/en_027.wav,en,0,vad_on,recorded,My grandfather slipped in the bathroom and he says he cannot feel his lip.,1,14,1,73
+eng rec/en_027.wav,en,0,vad_off,recorded,My grandfather slipped in the bathroom and he says he cannot feel his lip.,1,14,1,73
+eng rec/en_028.wav,en,clean,vad_on,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,clean,vad_off,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,20,vad_on,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,20,vad_off,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,10,vad_on,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,10,vad_off,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,5,vad_on,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,5,vad_off,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,0,vad_on,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_028.wav,en,0,vad_off,recorded,A pedestrian was hit by a car while crossing the road and there is blood near his mouth.,0,18,0,87
+eng rec/en_029.wav,en,clean,vad_on,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,clean,vad_off,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,20,vad_on,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,20,vad_off,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,10,vad_on,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,10,vad_off,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,5,vad_on,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,5,vad_off,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,0,vad_on,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_029.wav,en,0,vad_off,recorded,Someone was stabbed outside the shop and he is holding his stomach and bleeding.,0,14,0,79
+eng rec/en_030.wav,en,clean,vad_on,recorded,My baby has very high fever and she is not waking up properly,0,13,0,61
+eng rec/en_030.wav,en,clean,vad_off,recorded,My baby has very high fever and she is not waking up properly.,0,13,0,61
+eng rec/en_030.wav,en,20,vad_on,recorded,My baby has very high fever and she is not waking up properly,0,13,0,61
+eng rec/en_030.wav,en,20,vad_off,recorded,My baby has very high fever and she is not waking up properly.,0,13,0,61
+eng rec/en_030.wav,en,10,vad_on,recorded,My baby has very high fever and she is not waking up properly,0,13,0,61
+eng rec/en_030.wav,en,10,vad_off,recorded,My baby has very high fever and she is not waking up properly.,0,13,0,61
+eng rec/en_030.wav,en,5,vad_on,recorded,My baby has very high fever and she is not waking up properly,0,13,0,61
+eng rec/en_030.wav,en,5,vad_off,recorded,My baby has very high fever and she is not waking up properly.,0,13,0,61
+eng rec/en_030.wav,en,0,vad_on,recorded,My baby has very high fever and she is not waking up properly.,0,13,0,61
+eng rec/en_030.wav,en,0,vad_off,recorded,My baby has very high fever and she is not waking up properly.,0,13,0,61
+hin rec/hi_001.m4a,hi,clean,vad_on,recorded,"सिल्क बोड के पास अक्सिडेंट हुआ है, एक आदमी रोड पर पड़ा है और वो सास नहीं ले रहा है",4,19,8,81
+hin rec/hi_001.m4a,hi,clean,vad_off,recorded,सिल्क बोड के पास अक्सिडेंट हुआ है एक आदमी रोड पर पड़ा है और वह सास नहीं ले रहा है,5,19,9,81
+hin rec/hi_001.m4a,hi,20,vad_on,recorded,"सिल्क बोर्ड के पास अक्सिडेंट हुआ है, एक आदमी रोड पर पड़ा है और वो सास नहीं ले रहा है",3,19,6,81
+hin rec/hi_001.m4a,hi,20,vad_off,recorded,सिल्क बोर्ड के पास अक्सिडेंट हुआ है एक आदमी रोड पर पड़ा है और वह सास नहीं ले रहा है,4,19,7,81
+hin rec/hi_001.m4a,hi,10,vad_on,recorded,सिल्फ बोर्ड के पास अक्सिजन्ट हुआ है एक आदमी रोल पर पड़ा है और वह सास नहीं ले रहा है,6,19,12,81
+hin rec/hi_001.m4a,hi,10,vad_off,recorded,सिल्फ बोर्ड के पास अक्सिजन्ट हुआ है एक आदमी रोल पर पड़ा है और वह सास नहीं ले रहा है,6,19,12,81
+hin rec/hi_001.m4a,hi,5,vad_on,recorded,सिल्क बोर्ड के पास अक्सिजन्ट हुआ है एक आदमी रोड पर पड़ा है और वह सास नहीं ले रहा है,4,19,10,81
+hin rec/hi_001.m4a,hi,5,vad_off,recorded,सिल्क बर्ग के पास अक्सिजन्ट हुआ है एक आदमी रोड पर पड़ा है और वह सास नहीं ले रहा है,5,19,12,81
+hin rec/hi_001.m4a,hi,0,vad_on,recorded,सिल्ट बोर के पास अक्सिजन्ट हुआ है एक अगली रोड पर पड़ा है और वो सास में ही ले रहा है,8,19,20,81
+hin rec/hi_001.m4a,hi,0,vad_off,recorded,फिल्ग बोर्ट के पास अक्सिजन्ट हुआ है एक आदमी रोड पर पड़ा है और वो सास महीं ले रहा है,6,19,13,81
+hin rec/hi_002.m4a,hi,clean,vad_on,recorded,मेरे पपा को चस्पन हो रहा है और बहुत पसीन आ रहा है प्लीज जल्दी अंबुलेंस बेजो,7,18,11,83
+hin rec/hi_002.m4a,hi,clean,vad_off,recorded,मेरे पपा को चस्पन हो रहा है और बहुत पसीन आ रहा है प्लीज जल्दी अंबुलेंस बेजो,7,18,11,83
+hin rec/hi_002.m4a,hi,20,vad_on,recorded,मेरे पपा को चश्पन हो रहा है और बहुत पसीन आ रहा है प्लीज जल्दी अंबुलेंस बेजो,7,18,12,83
+hin rec/hi_002.m4a,hi,20,vad_off,recorded,मेरे पपा को चश्पन हो रहा है और बहुत पसीन आ रहा है प्लीज जल्दी अंबुलेंस बेजो,7,18,12,83
+hin rec/hi_002.m4a,hi,10,vad_on,recorded,मेरे पपा को चस्पन हो रहा है और बहुत पसीन आ रहा है जल्दी अंबुलांस बिजो,7,18,19,83
+hin rec/hi_002.m4a,hi,10,vad_off,recorded,मेरे पपा को चस्तन हो रहा है और बहुत पसीन आ रहा है प्लीज जंदी अम्बुलांस बिजो,8,18,14,83
+hin rec/hi_002.m4a,hi,5,vad_on,recorded,मेरे पपा को चश्पन हो रहा है और बहुत कसीन आ रहा है जल्दी अंबिलेंस बेजो,7,18,20,83
+hin rec/hi_002.m4a,hi,5,vad_off,recorded,मेरे पापा को चश्पन हो रहा है और बहुत पसीन आ रहा है प्लीस जंदी अम्बलाइस बेजो,7,18,15,83
+hin rec/hi_002.m4a,hi,0,vad_on,recorded,"नहीं पापा को चुछ को नहारा है, बहुत भसी नहारा है, जहीं जहीं आपनाई सुछ",13,18,47,83
+hin rec/hi_002.m4a,hi,0,vad_off,recorded,और बड़ा को जसकता हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ हुआ है,19,18,62,83
+hin rec/hi_003.m4a,hi,clean,vad_on,recorded,बेलंदूर के पास एक लैडी बाइक से गिर गई है और उसके लेग से बहुत ब्लीडिंग हो रही है,1,19,1,79
+hin rec/hi_003.m4a,hi,clean,vad_off,recorded,बेलंदूर के पास एक लैडी बैक से गिर गई है और उसके लेग से बहुत ब्लीडिंग हो रही है,2,19,3,79
+hin rec/hi_003.m4a,hi,20,vad_on,recorded,बेलंदूर के पास एक लैडी बाइक से गिर गई है और उसके लेट से बहुत भीडिंग हो रही है,3,19,5,79
+hin rec/hi_003.m4a,hi,20,vad_off,recorded,बेलंदूर के पास एक लैडी बैक से गिर गही है और उसके लेग से बहुत धीडिंग हो रही है,4,19,8,79
+hin rec/hi_003.m4a,hi,10,vad_on,recorded,बेंदूर के पास एक लेडी बैट से गिर गही है और उसके लेज से बहुत भीडिंग हो रही है,5,19,10,79
+hin rec/hi_003.m4a,hi,10,vad_off,recorded,बेवंदूर के पास एक लेडी बैट से गिर गही है और उसके लेज से बहुत भीडिंग हो रही है,5,19,10,79
+hin rec/hi_003.m4a,hi,5,vad_on,recorded,बेलंदुर के पास एक लैडी बैट से गिर गई है और उसके लख से बहुत भीडिंग हो रही है,5,19,10,79
+hin rec/hi_003.m4a,hi,5,vad_off,recorded,बेलंदुर के पास एक लैडी बैट से गिर गई है और उसके लख से बहुत भीडिंग हो रही है,5,19,10,79
+hin rec/hi_003.m4a,hi,0,vad_on,recorded,बन्दिर कास्यों के लोगी बहुत सुझ जूरी आर इसके लोगी जूरी नुरी नुरी नुरी नुरी,19,19,53,79
+hin rec/hi_003.m4a,hi,0,vad_off,recorded,बन्दिर के पास्यकोंगी बहुत सजड़ में आर इसको में सब्सक्राइब यूराइब,18,19,49,79
+hin rec/hi_004.m4a,hi,clean,vad_on,recorded,हमारे अपार्टमेंट के बगल वाली बिल्डिंग में आग लगी है तर्ड फ्लोर से दुआ निकल रही है,3,17,4,82
+hin rec/hi_004.m4a,hi,clean,vad_off,recorded,हमारे अपार्टमेंट के बगल वाली बिल्डिंग में आग लगी है तर्ड फ्लोर से दुआ निकल रही है,3,17,4,82
+hin rec/hi_004.m4a,hi,20,vad_on,recorded,"हमारे अपार्टमेंट के बगल वाली बेडिंग में आग लगी है, तर्ड फ्लो से दुआ निकल रही है",5,17,8,82
+hin rec/hi_004.m4a,hi,20,vad_off,recorded,हमारे अपार्टमेंट के बगल वाली बेडिंग में आग लगी है तर्ड फ्लो से दुआ निकल रही है,5,17,8,82
+hin rec/hi_004.m4a,hi,10,vad_on,recorded,"हमारे अपार्टनिंग के बगल वाली बेडिंग में आग लगी है, वर्ड फ्लो से धुवा निकल रही है",6,17,11,82
+hin rec/hi_004.m4a,hi,10,vad_off,recorded,"हमारे अपार्टनिंग के बगल वाली बेडिंग में आप लगी है, क्याल फ्लोव से दुवा निकल रही है",7,17,17,82
+hin rec/hi_004.m4a,hi,5,vad_on,recorded,"हुमारे अपातिन के बगल वाली बेडी में आग लगी है, क्योफ लेस से धुवा निकल रहू है",7,17,24,82
+hin rec/hi_004.m4a,hi,5,vad_off,recorded,हुमारे अपातिन के बगल वाली बेडी में आग लगी है क्योफ लोस से दुवा निकल रही है,7,17,24,82
+hin rec/hi_004.m4a,hi,0,vad_on,recorded,"हुनारे अपात्म को जगलवानी कंडिय में आग लोगी है, क्रोट रोसे हुआने के लोगी है",13,17,37,82
+hin rec/hi_004.m4a,hi,0,vad_off,recorded,"उनारे अपाप्रेंट को गडल वानी बुदिय में आप लोगी है, काउप रोसे हमानी के लोगी है",14,17,38,82
+hin rec/hi_005.m4a,hi,clean,vad_on,recorded,"मेरी दादी कीचन में बेवश हो गई है, नाम बुला रही है पर कोई रेस्पॉंस नहीं दे रही है",9,17,14,78
+hin rec/hi_005.m4a,hi,clean,vad_off,recorded,"मेरी दादी कीचन में बेवश हो गई है, नाम बुला रही है पर कोई रेस्पोंस नहीं दे रही है",9,17,15,78
+hin rec/hi_005.m4a,hi,20,vad_on,recorded,"मेरी दादी कीचन में बेवोश हो गई है, नाम बुला रही है पर कोई रेस्पोंस नहीं दे रही है",9,17,14,78
+hin rec/hi_005.m4a,hi,20,vad_off,recorded,"मेरी दादी कीचन में ब्योश हो गई है, नाम बुला रही है पर कोई रेस्पोंस नहीं दे रही है",9,17,15,78
+hin rec/hi_005.m4a,hi,10,vad_on,recorded,"मेरी डाजिक कीचन में दियोश हो गई है, नाम बुलार हो है पर कोई रस्पोंस नहीं देर हो है",12,17,25,78
+hin rec/hi_005.m4a,hi,10,vad_off,recorded,"मेरी डाजिक कीचन में दियोश हो गई है, नाम बुलार हो है पर कोई रस्पोंस नहीं देर हो है",12,17,25,78
+hin rec/hi_005.m4a,hi,5,vad_on,recorded,मेरी दादि की चल्म देवस हो गयी नाम बुना रही है पर कोई रेस्पोंस ने दे रही है,12,17,26,78
+hin rec/hi_005.m4a,hi,5,vad_off,recorded,मेरी दाजित की चल्म देयों सबी नाम भुना रही है पर कोई रेस्पोंस नहीं दे रही है,12,17,29,78
+hin rec/hi_005.m4a,hi,0,vad_on,recorded,"मेरी दादी कीचन में ब्योंस हो गए है, नाम भुला रहे हैं पर कोई रिस्पांस ने दे रहे है।",9,17,20,78
+hin rec/hi_005.m4a,hi,0,vad_off,recorded,"मेरी दाजी कीचन में ब्योंस हो गए है, नाम भुला रहे हैं पर कोई रिस्पांस ने दे रहे है",10,17,21,78
+hin rec/hi_006.m4a,hi,clean,vad_on,recorded,एक चोटा बचा सीडियों से गिर गया है और उसके सिर से ब्लीडिंग वो रहा है,5,16,7,70
+hin rec/hi_006.m4a,hi,clean,vad_off,recorded,एक चोटा बचा सीडियों से गिर गया है और उसके सिर से ब्लीडिंग हो रहा है,4,16,6,70
+hin rec/hi_006.m4a,hi,20,vad_on,recorded,एक चोटा बचा सीडियों से गिर गया है और उसके सिर्ख से बलीडिंग हो रहा है,6,16,9,70
+hin rec/hi_006.m4a,hi,20,vad_off,recorded,एक चोटा बचा सीडियों से गिर गया है और उसके सिर से ब्लीडिंग हो रहा है,4,16,6,70
+hin rec/hi_006.m4a,hi,10,vad_on,recorded,एक चोटा बच्छा सीडियों से गिर गया है और उसके सिर से बलीडिंग हो रहा है,5,16,6,70
+hin rec/hi_006.m4a,hi,10,vad_off,recorded,एक चोटा बच्छा सीडियों से गिर गया है और उसके सिर से ब्लीडिंग हो रहा है,4,16,5,70
+hin rec/hi_006.m4a,hi,5,vad_on,recorded,एक चोटा बच्छा सीडियों से घिल गया है और इसके सिर से मिली वह रहा है,8,16,16,70
+hin rec/hi_006.m4a,hi,5,vad_off,recorded,एक चोटा बच्छा सीडियों से घिल गया है और इसके सिर से मिली वह रहा है,8,16,16,70
+hin rec/hi_006.m4a,hi,0,vad_on,recorded,एक चोटा बचा सुडियों से गिर गया है और उसके सिर से ब्लीडिंग हो रहा है,4,16,7,70
+hin rec/hi_006.m4a,hi,0,vad_off,recorded,एक चोटा बच्छा सुडियों से गिर गया है और उसके सिर से ब्लीडिव हो रहा है,5,16,8,70
+hin rec/hi_007.m4a,hi,clean,vad_on,recorded,"आउटर इंग रोड पर कार आपस में टक्रा गई है, एक ड्रेवर अंदर फसा हुआ है",7,16,12,68
+hin rec/hi_007.m4a,hi,clean,vad_off,recorded,अउटरिंग रोड पर कार आपस में टक्रा गई है एक ड्रेवर अंदर फसा हुआ है,8,16,13,68
+hin rec/hi_007.m4a,hi,20,vad_on,recorded,आउटरिंग ब्रोड पर कार अपस में टक्रा गई है एक ड्रैवर अंदर फसा हुआ है,10,16,15,68
+hin rec/hi_007.m4a,hi,20,vad_off,recorded,आउटर रिंग ब्रोड पर कार अपस में टक्रा गई है एक ड्रैवर अंदर फसा हुआ है,8,16,13,68
+hin rec/hi_007.m4a,hi,10,vad_on,recorded,आउटर रिंग डोड पर कार आपस में तक्रा गई है एक ड्रेवर अंदर फसा हुआ है,7,16,12,68
+hin rec/hi_007.m4a,hi,10,vad_off,recorded,आउटर रिंग डोड पर कार अपस में तक्रा गई है एक ड्रेवर अंदर फसा हुआ है,8,16,13,68
+hin rec/hi_007.m4a,hi,5,vad_on,recorded,"आउतेरिंग ड्रोल पर कार आपस में तक्रा जही है, एक ड्रैवर अंदर फसा हुआ है",9,16,20,68
+hin rec/hi_007.m4a,hi,5,vad_off,recorded,आउतेरिंग ड्रोल पर कार अपस में तक्रा गई है एक ड्रैवर अंदर फसा हुआ है,10,16,18,68
+hin rec/hi_007.m4a,hi,0,vad_on,recorded,आउटर इंग रोड पर कार आपस में टक्रा गई है एक ड्रेवर अंदर ससा हुआ है,7,16,13,68
+hin rec/hi_007.m4a,hi,0,vad_off,recorded,आउटरिंग रोड पर कार अपस में टक्रा गई है एक ड्रेवर अंदर ससा हुआ है,9,16,14,68
+hin rec/hi_008.m4a,hi,clean,vad_on,recorded,"मेरी फ्रेंड को पीट सा रहा है, पूरी बोडी काप रही है और वो रेस्पॉंड भी नहीं कर रहा है",10,18,19,80
+hin rec/hi_008.m4a,hi,clean,vad_off,recorded,"मेरी फ्रेंड को पीट्स आ रहा है, पूरी बोडी काप रही है और वो रेस्पॉंड भी नहीं कर रहा है",9,18,16,80
+hin rec/hi_008.m4a,hi,20,vad_on,recorded,"मेरी फ्रेंड को पीट्स आ रहा है, पूरी बोडी काप रही है और वो रेस्पॉंड भी नहीं कर रहा है",9,18,16,80
+hin rec/hi_008.m4a,hi,20,vad_off,recorded,मेरी फ्रेंड को पीट्स आ रहा है पूरी बोडी काप रही है और वो रेस्पॉंड भी नहीं कर रहा है,9,18,16,80
+hin rec/hi_008.m4a,hi,10,vad_on,recorded,"मेरी फ्रेंड को पिंच सा रहा है, पूरी बोडी काप रही है और वो एसकॉंडी में कर रहा है",10,18,24,80
+hin rec/hi_008.m4a,hi,10,vad_off,recorded,"मेरी फ्रेंग को पिल्च आ रहा है, पूरी बोड़ी काप रही है और वो रेस्पॉंड भी में कर रहा है",11,18,21,80
+hin rec/hi_008.m4a,hi,5,vad_on,recorded,"मेरी फ्रेंग को भीचा रहा है, स्कूली पोली खाप रहे हैं और वो रिस्पॉंड भी मैं कर रहा है",15,18,32,80
+hin rec/hi_008.m4a,hi,5,vad_off,recorded,"मेरी फ्रेंग को भीचा रहा है, स्पूरी बोली खाप रहे है और वो रेस्पॉंड भी नहीं कर रहा है",13,18,27,80
+hin rec/hi_008.m4a,hi,0,vad_on,recorded,"मेरी फ्रैंड को फिल्ट सा रहा है, पूरी-बोरी खाप रहे है और वो रस्पॉंड भी नहीं कर रहा है",12,18,22,80
+hin rec/hi_008.m4a,hi,0,vad_off,recorded,"मेरी फ्रैंड को पिल्ट सा रहा है, पूरी बोली खात रहे है और वो रस्पॉंड भी नहीं कर रहा है",12,18,24,80
+hin rec/hi_009.m4a,hi,clean,vad_on,recorded,मारतली ब्रिच के पास एक आदमी को बस ने हिट किया है और वो लेग्स भी नहीं हिल पा रहा है,7,19,18,82
+hin rec/hi_009.m4a,hi,clean,vad_off,recorded,मारतली ब्रिज के पास एक आदमी को बस ने हिट किया है और वो लेग्स भी नहीं हिल पा रहा है,6,19,17,82
+hin rec/hi_009.m4a,hi,20,vad_on,recorded,मारतली ब्रिज के पास एक आदमी को बस ने हिट किया है और वो लेग्स भी नहीं हिल पा रहा है,6,19,17,82
+hin rec/hi_009.m4a,hi,20,vad_off,recorded,मारतली ब्रिज के पास एक आदमी को बस ने हिट किया है और वो लेग्स भी नहीं हिल पा रहा है,6,19,17,82
+hin rec/hi_009.m4a,hi,10,vad_on,recorded,मारतली ब्रिच के पास एक आदमी को बस में हुट किया है और वो लेज भी नहीं हिल पा रहा है,9,19,22,82
+hin rec/hi_009.m4a,hi,10,vad_off,recorded,मारतली ब्रिच के पास एक आदमी को बस में हुट किया है और वो लेज भी नहीं हिल पा रहा है,9,19,22,82
+hin rec/hi_009.m4a,hi,5,vad_on,recorded,मार्क आई ब्रिस के पास एक आदमे को बस में खुटती है और वो लेज्स भी नहीं पा रहा है,12,19,34,82
+hin rec/hi_009.m4a,hi,5,vad_off,recorded,मारत आई ब्रिस के पास एक आदमे को बस में खुट किया है और वो लेग्स भी नहीं हिल पा रहा है,11,19,25,82
+hin rec/hi_009.m4a,hi,0,vad_on,recorded,नारताई ब्रुस के पास एक आगी को बस में हिट्किया है और वो लेग्स भी नहीं हिल का रहा है,12,19,28,82
+hin rec/hi_009.m4a,hi,0,vad_off,recorded,नारताई ब्रुस के पास एक आगी को बस में हिट्किया है और वो लेग्स भी महिल का रहा है,12,19,29,82
+hin rec/hi_010.m4a,hi,clean,vad_on,recorded,मेरी मम्मी टीग से ब्रीधिंग नहीं कर पा रही है और उनके लिपस नीले हो रही है,7,16,12,69
+hin rec/hi_010.m4a,hi,clean,vad_off,recorded,मेरी मम्मी टीग से ब्रीधिंग नहीं कर पा रही है और उनके लिपस नीले हो रही है,7,16,12,69
+hin rec/hi_010.m4a,hi,20,vad_on,recorded,मेरी मम्मी टीक से ब्रीधिंग नहीं कर पा रही है और उनके लिपस मीले हो रही है,8,16,12,69
+hin rec/hi_010.m4a,hi,20,vad_off,recorded,मेरी मम्मी टीक से ब्रीधिंग नहीं कर पा रही है और उनके लिपस मीले हो रही है,8,16,12,69
+hin rec/hi_010.m4a,hi,10,vad_on,recorded,मेरे ममी 500 डिदी महीं कर पा रही है और उनके लिप्स मिले हो रही है,11,16,21,69
+hin rec/hi_010.m4a,hi,10,vad_off,recorded,मेरे ममी पिंच से बेदी नहीं कर पा रही है और उनके लिप्स मिले हो रही है,9,16,17,69
+hin rec/hi_010.m4a,hi,5,vad_on,recorded,मेरी नम्हीं इसे बिदिन करता रही है और इंटलिक्स मिले हो रही है,13,16,29,69
+hin rec/hi_010.m4a,hi,5,vad_off,recorded,मेरी नम्हीं पिल से दुदिन करता रही है और इंटिलिक्स मिले हो रही है,12,16,29,69
+hin rec/hi_010.m4a,hi,0,vad_on,recorded,मेरे ममी पीच्य बिजिन नहीं करता रही है और इंटलिक्स नीले हो रही है,12,16,25,69
+hin rec/hi_010.m4a,hi,0,vad_off,recorded,मेरी मम्मी पीछे बेजिन नहीं करता रही है और इंटलिक्स मीले हो रही है,11,16,22,69
+hin rec/hi_011.m4a,hi,clean,vad_on,recorded,कंस्रक्शन साइट पर किसी का हात बहुत बूरी तरह कट गया है बलीडिंग भी नहीं रुक रहे है,9,17,18,80
+hin rec/hi_011.m4a,hi,clean,vad_off,recorded,कंस्रक्शन साइट पर किसी का हात बहुत बूरी तरह कटका है बलीडिंग भी नहीं रुक रहे हैं,11,17,22,80
+hin rec/hi_011.m4a,hi,20,vad_on,recorded,construction site पर किसी का हाथ बहुत बूरी तरह कटका है bleeding भी नहीं रुक रहे है,11,17,41,80
+hin rec/hi_011.m4a,hi,20,vad_off,recorded,कंस्रक्शन साइट पर किसी का हाथ बहुत बूरी तरह कटका है विलीडिंग भी नहीं रुक रहे है,10,17,21,80
+hin rec/hi_011.m4a,hi,10,vad_on,recorded,construction site पर किसी का हाथ बहुत बूरी करा कट्का है bleeding भी नहीं रुक रहे है,12,17,43,80
+hin rec/hi_011.m4a,hi,10,vad_off,recorded,construction site पर किसी का हाथ बहुत बूरी तरह कट्का है bleeding भी नहीं रुक रहे है,11,17,41,80
+hin rec/hi_011.m4a,hi,5,vad_on,recorded,फंसक्शन साइब पर किसी का हाथ बहुत बूरी तरह कटके है लीडिंग भी महीं रुक रही है,10,17,25,80
+hin rec/hi_011.m4a,hi,5,vad_off,recorded,पर किसी का हाथ बहुत बूरी तरह कट गया है वीलिडिंग भी नहीं रुक रहे है,9,17,34,80
+hin rec/hi_011.m4a,hi,0,vad_on,recorded,"किसी का हाथ बहुत बूरी तरह आकते हैं, वील्डिंग भी नहीं दुक रहे हैं",12,17,45,80
+hin rec/hi_011.m4a,hi,0,vad_off,recorded,फंसर्चन साइड पर किसी का हाथ बहुत बूरी तरह करते है विल्दिंग भी नहीं रुक रही है,10,17,29,80
+hin rec/hi_012.m4a,hi,clean,vad_on,recorded,क्यार पुरम बश्टक के पास एक अंकल गिर पड़े है और उनके आके बंध है,8,16,15,68
+hin rec/hi_012.m4a,hi,clean,vad_off,recorded,क्यार पुरम बश्टक के पास एक अंकल गीर पड़े है और उनके आके बंध है,9,16,16,68
+hin rec/hi_012.m4a,hi,20,vad_on,recorded,क्यार पुरम बश्टक के पास एक अंकल गिर पड़े है और उनके आंके बंध है,8,16,14,68
+hin rec/hi_012.m4a,hi,20,vad_off,recorded,क्यार पुरम बश्टक के पास एक अंकल गिर पड़े है और उनके आंके बंध है,8,16,14,68
+hin rec/hi_012.m4a,hi,10,vad_on,recorded,किया पुरम मस्टक के पास एक अंकल गिर पड़े है और उनके आंके बंध है,8,16,14,68
+hin rec/hi_012.m4a,hi,10,vad_off,recorded,क्यार पुरमबस्तक के पास एक अंकल गिर पड़े है और उनके आंके बंध है,9,16,15,68
+hin rec/hi_012.m4a,hi,5,vad_on,recorded,तियार क्रम मस्टक के पास एक अंकल गीर पड़े है और उनके आखे बंध है,10,16,18,68
+hin rec/hi_012.m4a,hi,5,vad_off,recorded,क्यार प्रम मस्तक के पास एक अंकल भीर पड़े है और उनके आखे बंध है,10,16,18,68
+hin rec/hi_012.m4a,hi,0,vad_on,recorded,कि आपकर मस्तर के पास एक अंकल ही पड़ी है और उनके आंके बंद है,10,16,21,68
+hin rec/hi_012.m4a,hi,0,vad_off,recorded,कि आपकर मस्तर के पास एक अंकल गिर पड़ी है और इनके आंके बंद है,9,16,19,68
+hin rec/hi_013.m4a,hi,clean,vad_on,recorded,मेरी वाइफ प्रगनेंट है और उसे बहुत पेन हो रहा है हमें जल्दी ऑस्पिटल जाना है,3,16,8,75
+hin rec/hi_013.m4a,hi,clean,vad_off,recorded,मेरी वाइफ प्रगनेंट है और उसे बहुत पेन हो रहा है हमें जल्दी ऑस्पिटल जाना है,3,16,8,75
+hin rec/hi_013.m4a,hi,20,vad_on,recorded,मेरी वाइफ प्रगनेंट है और उसे बहुत पेयन हो रहा है हमें जल्दी ऑस्पिटल जाना है,4,16,9,75
+hin rec/hi_013.m4a,hi,20,vad_off,recorded,मेरी वाइफ प्रगनेंट है और उसे बहुत पेयन हो रहा है हमें जल्दी ऑस्पिटल जाना है,4,16,9,75
+hin rec/hi_013.m4a,hi,10,vad_on,recorded,"मेरी वाइफ प्रगनंट है और उसे बहुत खूयन हो रहा है, हमें जल्दी ऑस्पितल जाना है",4,16,13,75
+hin rec/hi_013.m4a,hi,10,vad_off,recorded,मेरी वाइफ प्रगनेंट है और उसे बहुत प्वेन हो रहा है हमें जल्दी ऑस्पितल जाना है,4,16,11,75
+hin rec/hi_013.m4a,hi,5,vad_on,recorded,"मेरी वाइफ प्रग्यम को, और उसे बहुत पेन हो रहा है, हमें जल्दी आस्कितल जाना है",4,16,15,75
+hin rec/hi_013.m4a,hi,5,vad_off,recorded,"मेरी वाइस फ्रग्मेंट है, और उसे बहुत पेन हो रहा है, हमें जल्दी ऑस्कितल जाना है",4,16,12,75
+hin rec/hi_013.m4a,hi,0,vad_on,recorded,"और उसे बहुत पेन हो रहा है, हमें जल्दी वास्तिकल जाना है",6,16,32,75
+hin rec/hi_013.m4a,hi,0,vad_off,recorded,और उसे बहुत पेन हो रहा है हमें जल्दी वास्तिकल जाना है,6,16,32,75
+hin rec/hi_014.m4a,hi,clean,vad_on,recorded,"एक Delivery Boy गिली रोड पर स्लिप हो गया है, उसके हाथ फ्रैक्चर लग रहा है",5,15,16,67
+hin rec/hi_014.m4a,hi,clean,vad_off,recorded,एक डिलेवरी बॉय गिली रोट पर स्लिप हो गया है उसके हाथ फ्रैक्चर लग रहा है,5,15,7,67
+hin rec/hi_014.m4a,hi,20,vad_on,recorded,एक delivery boy गिली रोड पर slip हो गया है उसके हाथ fracture लग रहा है,7,15,29,67
+hin rec/hi_014.m4a,hi,20,vad_off,recorded,एक delivery boy गिली रोड पर slip हो गया है उसके हाथ fracture लग रहा है,7,15,29,67
+hin rec/hi_014.m4a,hi,10,vad_on,recorded,एक delivery boy गिली रोड पर slip हो गया है उसके हाथ fracture लग रहा है,7,15,29,67
+hin rec/hi_014.m4a,hi,10,vad_off,recorded,एक डिलेवरी बॉय गिली रोट पर स्लिप हो गया है इसके हाथ फ्रैक्शर लग रहा है,6,15,9,67
+hin rec/hi_014.m4a,hi,5,vad_on,recorded,एक बिलेवरी बॉय गिली रोट पर स्लिप हो गया है उसके हाद फ्रैक्शन लग रहा है,7,15,11,67
+hin rec/hi_014.m4a,hi,5,vad_off,recorded,"एक बिलेवरी बॉय गिली रोट पर स्लिप हो गया है, उसके हाद फ्रैक्चर लग रहा है",6,15,9,67
+hin rec/hi_014.m4a,hi,0,vad_on,recorded,"इसको बिलार बहुत दुली लेख है, स्लीप होगा है इसको हाद फ्रांचर लग रहा है",12,15,29,67
+hin rec/hi_014.m4a,hi,0,vad_off,recorded,इसके हाद फ्रैक्चर लग रहा है,11,15,43,67
+hin rec/hi_015.m4a,hi,clean,vad_on,recorded,गर में ग्यास लीक की समल आ रही है और मेरे बाई को भूत चक्कर आ रहा है,7,18,12,68
+hin rec/hi_015.m4a,hi,clean,vad_off,recorded,गर में ग्यासलीक की समेल आ रही है और मेरे बाई को भूत चक्कर आ रहा है,8,18,12,68
+hin rec/hi_015.m4a,hi,20,vad_on,recorded,गर में ग्यास लीग की समल आ रही है और मेरे पाई को होद चक्कर आ रहा है,8,18,13,68
+hin rec/hi_015.m4a,hi,20,vad_off,recorded,गर में ग्यास लीग की समल आ रही है और मेरे पाई को होद चक्कर आ रहा है,8,18,13,68
+hin rec/hi_015.m4a,hi,10,vad_on,recorded,गर में ग्यास लीज की समल आ रही है और मेरे बाई को भूत चक्कर आ रहा है,8,18,13,68
+hin rec/hi_015.m4a,hi,10,vad_off,recorded,गर में ग्यास लीक की समल आ रही है और मेरे बाई को भूत चक्कर आ रहा है,7,18,12,68
+hin rec/hi_015.m4a,hi,5,vad_on,recorded,गर में ग्यास लीग की समल आ रही है और मेरे पाई को होज चक्कर आ रहा है,8,18,13,68
+hin rec/hi_015.m4a,hi,5,vad_off,recorded,गर में ग्यास लीग की समल आ रही है और मेरे पाई को होज चक्कर आ रहा है,8,18,13,68
+hin rec/hi_015.m4a,hi,0,vad_on,recorded,गर में ग्यास लीक की समल आ रही है और मेरे पाई को होद चक्कर आ रहा है,7,18,12,68
+hin rec/hi_015.m4a,hi,0,vad_off,recorded,गर्म ग्यास लीग की समल आ रही है और मेरे पाई को बहुत चक्कर आ रहा है,8,18,13,68
+hin rec/hi_016.m4a,hi,clean,vad_on,recorded,एक बच्चे ने कुछ निगल लिया है और वो कास रहा है और कुछ बोल भी नहीं पा रहा है,5,17,14,65
+hin rec/hi_016.m4a,hi,clean,vad_off,recorded,एक बच्चे ने कुछ निगल लिया है और वो कास रहा है और कुछ बोल भी नहीं पा रहा है,5,17,14,65
+hin rec/hi_016.m4a,hi,20,vad_on,recorded,एक बच्चे में कुछ निगल लिया है और वो कास रहा है और कुछ बोल भी नहीं पा रहा है,6,17,16,65
+hin rec/hi_016.m4a,hi,20,vad_off,recorded,एक बच्चे में कुछ निगल लिया है और वो कास रहा है और कुछ बोल भी नहीं पा रहा है,6,17,16,65
+hin rec/hi_016.m4a,hi,10,vad_on,recorded,एक बच्चे में कुछ निगल लिया है और वो कास रहा है और कुछ बोल भी नहीं पा रहा है,6,17,16,65
+hin rec/hi_016.m4a,hi,10,vad_off,recorded,एक बच्चे ने कुछ निगल लिया है और हो कास रहा है और कुछ बोल भी नहीं पा रहा है,6,17,15,65
+hin rec/hi_016.m4a,hi,5,vad_on,recorded,एक बच्चे में कुछ निगल लिया है और हो कास रहा है और कुछ बोल भी नहीं पा रहा है,7,17,17,65
+hin rec/hi_016.m4a,hi,5,vad_off,recorded,एक बच्चे ने कुछ निगन लिया है और हो कास रहा है और कुछ बोल भी नहीं पा रहा है,7,17,16,65
+hin rec/hi_016.m4a,hi,0,vad_on,recorded,"एक बच्चे में कुछ भीदल होने गया, और हम खास रहा हैं, और किछ बोल भी नहीं पा रहा हैं.",11,17,29,65
+hin rec/hi_016.m4a,hi,0,vad_off,recorded,एक बच्चे में कुछ पीदल भी आने है और उन खास रहा है और किस मोल भी नहीं पा रहा है,11,17,27,65
+hin rec/hi_017.m4a,hi,clean,vad_on,recorded,मेरे चाचा की बॉडि के एक सेट अचानक वीक हो गया है और उनके बात भी क्लियर नहीं आ रहा है,7,18,15,75
+hin rec/hi_017.m4a,hi,clean,vad_off,recorded,मेरे चाचा की बॉडि के एक सेट अचानक वीक हो गया है और उनके बात भी क्लियर नहीं आ रहा है,7,18,15,75
+hin rec/hi_017.m4a,hi,20,vad_on,recorded,मेरे चाचा की बॉडि के एक सेट अचानक वीक हो गया है और उनके बात भी क्लियर नहीं आ रहा है,7,18,15,75
+hin rec/hi_017.m4a,hi,20,vad_off,recorded,मेरे चाचा की बॉडि के एक सेट अचानक वीक हो गया है और उनके बात भी क्लियर नहीं आ रहा है,7,18,15,75
+hin rec/hi_017.m4a,hi,10,vad_on,recorded,मेरे चाचा की बॉडि के एक से अचानक वीक हो गया है और उनके बात भी क्लियर नहीं आ रहा है,7,18,15,75
+hin rec/hi_017.m4a,hi,10,vad_off,recorded,मेरे चाचा की बॉडि के एक सर्थ अचनक वीक हो गया है और उनके बात भी क्लियर नहीं आ रहा है,8,18,16,75
+hin rec/hi_017.m4a,hi,5,vad_on,recorded,मेरे चाचा की बॉडि के एक सर्थ अचानक वीक हो गया है और इंके बात भी क्लियर नहीं आ रहा है,7,18,17,75
+hin rec/hi_017.m4a,hi,5,vad_off,recorded,मेरे चाचा की बॉडी के एक सब अचनक लीक हो गया है और उनके बात भी क्लियर नहीं आ रहा है,8,18,16,75
+hin rec/hi_017.m4a,hi,0,vad_on,recorded,मेरे चाचा की बॉडि के एक से अचानक लीक हो गया है और इनके बात भी क्लियर नहीं आ रहा है,8,18,17,75
+hin rec/hi_017.m4a,hi,0,vad_off,recorded,मेरे चाचा की बॉडी के एक सेट अचानक लीक हो गया है और इंके बात भी क्लियर नहीं आ रहा है,7,18,17,75
+hin rec/hi_018.m4a,hi,clean,vad_on,recorded,एक लेबर second floor की scaffolding से गिर गया है और नीचे ground पर पड़ा है,4,16,30,76
+hin rec/hi_018.m4a,hi,clean,vad_off,recorded,एक लेबर सेकेंड फ्लोर की स्केफ वोल्डिंग से गिर गया है और नीचे ग्राउड पर पड़ा है।,4,16,5,76
+hin rec/hi_018.m4a,hi,20,vad_on,recorded,एक लेबर सेकंड फ्लोर की इसके फॉल्डिंग से गिर गया है और नीचे ग्राउंड पर पड़ा है,2,16,5,76
+hin rec/hi_018.m4a,hi,20,vad_off,recorded,एक लेबर सेकंड फ्लोर की इसके फॉल्डिंग से गिर गया है और नीचे ग्राउंड पर पड़ा है,2,16,5,76
+hin rec/hi_018.m4a,hi,10,vad_on,recorded,एक लेबर सेकुंड फ्लोर की इसके फोल्डिंग से गिर गया है और नीचे ग्राउन पर पड़ा है,4,16,7,76
+hin rec/hi_018.m4a,hi,10,vad_off,recorded,एक लेबर सेकुंड फ्लोर कीस के फोल्डिंग से गिर गया है और नीचे ग्राउन पर पड़ा है,5,16,7,76
+hin rec/hi_018.m4a,hi,5,vad_on,recorded,टेट लेबर सकंड फ्लॉर की इसके फोल्डिंग से गिर गया है और मीचे ग्राउन पर पड़ा है,7,16,12,76
+hin rec/hi_018.m4a,hi,5,vad_off,recorded,टेट लेबर सकंड फ्लॉर की इसके फोल्डिंग से गिर गया है और मीच से ग्राउन पर पड़ा है,8,16,14,76
+hin rec/hi_018.m4a,hi,0,vad_on,recorded,प्रेट में बख सकंड लोग की इसके फॉल्डिंचा गुर गया है और नीचे ग्राउन पर पड़ा है,9,16,25,76
+hin rec/hi_018.m4a,hi,0,vad_off,recorded,एक लिए बद सेकंड क्लाव की इसके फोर्डिंग से गिर गया है और नीचे ग्राउन पर पड़ा है,6,16,14,76
+hin rec/hi_019.m4a,hi,clean,vad_on,recorded,सिगनल के पास एक आटो पलट गया है और दो पैसेंजर को चोट लगी है,2,15,2,59
+hin rec/hi_019.m4a,hi,clean,vad_off,recorded,सिगनल के पास एक आटो पलट गया है और दो पैसेंजर को चोट लगी है,2,15,2,59
+hin rec/hi_019.m4a,hi,20,vad_on,recorded,सिगनल के पास एक आटो पलट गया है और दो पैसेंजर को चोट लगी है,2,15,2,59
+hin rec/hi_019.m4a,hi,20,vad_off,recorded,सिगनल के पास एक आटो पलट गया है और दो पैसेंजर को चोट लगी है,2,15,2,59
+hin rec/hi_019.m4a,hi,10,vad_on,recorded,सिगनल के पास एकाटो पलट गया है और दो पैसेंजर को चोट लगी है,3,15,3,59
+hin rec/hi_019.m4a,hi,10,vad_off,recorded,सिगनल के पास एक आटो पलट गया है और दो पैसेंजर को छोट लगी है,3,15,3,59
+hin rec/hi_019.m4a,hi,5,vad_on,recorded,सिजन के पास एकाटो पलट गया है और दो पैसंजर को चोट लगी है,4,15,6,59
+hin rec/hi_019.m4a,hi,5,vad_off,recorded,सब्सक्राइब के पास एक आटो पलट गया है और दो पैसंजर को चोट लगी है,3,15,10,59
+hin rec/hi_019.m4a,hi,0,vad_on,recorded,सभीयों के पास एकातों अलब गया है और दो प्यासंजर को चोप लगी है,6,15,16,59
+hin rec/hi_019.m4a,hi,0,vad_off,recorded,सब्सक्राइब के पास एकातो अलग वया है और दो पसंजर को छोट लगी है,7,15,17,59
+hin rec/hi_020.m4a,hi,clean,vad_on,recorded,मेरी पडोस को बहुत सारी मधुमक्याने काटा है उसके फेस बहुत तेजी से सूज रहा है,5,17,9,81
+hin rec/hi_020.m4a,hi,clean,vad_off,recorded,मेरी पडोस को बहुत सारी मधुमक्कियने काटा है उसके फेस बहुत तेजी से सूझ रहा है,6,17,9,81
+hin rec/hi_020.m4a,hi,20,vad_on,recorded,मेरी पडोस को बहुत सारी मधुमक्याने काटा है उसके फेस बहुत तेजी से सूज रहा है,5,17,9,81
+hin rec/hi_020.m4a,hi,20,vad_off,recorded,मेरी पडोस को बहुत सारी मधुमक्याने काटा है उसके फेस बहुत तेजी से सूज रहा है,5,17,9,81
+hin rec/hi_020.m4a,hi,10,vad_on,recorded,मेरी पडोस को बहुत सारी मधुमक्कियों में काटा है उसके फेस बहुत तेजी से सूज रहा है,5,17,7,81
+hin rec/hi_020.m4a,hi,10,vad_off,recorded,मेरी पडोस को बहुत सारी मधुमक्कियों में काटा है उसके फेस बहुत तेजी से सूज रहा है,5,17,7,81
+hin rec/hi_020.m4a,hi,5,vad_on,recorded,मेरी पडोस को बहुत सारी मदूमक्यानी काटा है उसके फेस बहुत तेजी से सूज रहा है,5,17,12,81
+hin rec/hi_020.m4a,hi,5,vad_off,recorded,मेरी पडोस को बहुत सारी मधुमक्यानी काटा है उसके फेस बहुत तेजी से सूज रहा है,5,17,10,81
+hin rec/hi_020.m4a,hi,0,vad_on,recorded,मेरी पड़ोस को बहुत सारी मुरिमक्यानी काता है इसके फेस बहुत तेजी से सिज रहा है,7,17,15,81
+hin rec/hi_020.m4a,hi,0,vad_off,recorded,पूरी पदोस को बहुत सारी मुरिमक्याने काता है इसके फेस बहुत तेजी से सिर्ज रहा है,8,17,20,81
+hin rec/hi_021.m4a,hi,clean,vad_on,recorded,"एक आदमी डॉक को बचाने के लिए लेक में ढूबा था, अब वो पानी से बाहर नहीं आ रहा है",3,19,6,73
+hin rec/hi_021.m4a,hi,clean,vad_off,recorded,"एक आदमी डाक को बचाने के लिए लेक में ढूबा था, अब वो पानी से बाहर नहीं आ रहा है।",3,19,7,73
+hin rec/hi_021.m4a,hi,20,vad_on,recorded,"एक आदमी डाग को बचने के लिए लेक में ढूबा था, अब वो पानी से बाहर नहीं आ रहा है",4,19,7,73
+hin rec/hi_021.m4a,hi,20,vad_off,recorded,"एक आदमी डाग को बचाने के लिए लेक में डुबा था, अब वो पानी से बाहर नहीं आ रहा है",3,19,7,73
+hin rec/hi_021.m4a,hi,10,vad_on,recorded,"एक आदमी दाफ को बचने के लिए लेक में धुबा था, अब वो पानी से बाहर नहीं आ रहा है",4,19,10,73
+hin rec/hi_021.m4a,hi,10,vad_off,recorded,एक आदमी दाप को बचने के लिए लेक में धुबाता अब वो पानी से बाहर नहीं आ रहा है,5,19,12,73
+hin rec/hi_021.m4a,hi,5,vad_on,recorded,"एक अदमी डाफ को बचने के लिए लेख में धुवा था, अब हो पानी से बाहर नहीं आ रहा है",7,19,12,73
+hin rec/hi_021.m4a,hi,5,vad_off,recorded,एक अदमी डाव को बचाने के लिए प्लेत में धुबा था अब पानी से बाहर नहीं आ रहा है,6,19,15,73
+hin rec/hi_021.m4a,hi,0,vad_on,recorded,"पेठादी मैं को बचाने के मिया यह दुगाता, अमों पानी से मार नहीं आरा है",13,19,32,73
+hin rec/hi_021.m4a,hi,0,vad_off,recorded,"पेफार्मी लाट को बचले कि में तेयों दूबाता, अमों पानी से बाहर नहीं आ रहा है।",12,19,31,73
+hin rec/hi_022.m4a,hi,clean,vad_on,recorded,खाना बनते टाइम मेरी सिस्टर का हाथ गरम तेल से बूरी तरह जल गया है,3,14,5,61
+hin rec/hi_022.m4a,hi,clean,vad_off,recorded,खाना बनते टाइम मेरी सिस्टर का हाथ गरम तेल से बूरी तरह जल गया है,3,14,5,61
+hin rec/hi_022.m4a,hi,20,vad_on,recorded,खाना बनते टाइम मेरी सिस्टर का हाथ गरम तेल से बूरी तरह जल गया है,3,14,5,61
+hin rec/hi_022.m4a,hi,20,vad_off,recorded,खाना बनते टाइम मेरी सिस्टर का हाथ गरम तेल से बूरी तरह जल गया है,3,14,5,61
+hin rec/hi_022.m4a,hi,10,vad_on,recorded,खाना बनेते टाइम मेरी सिस्टर का हाथ गरम तेल से बूरी तरह जल गया है,3,14,5,61
+hin rec/hi_022.m4a,hi,10,vad_off,recorded,खाना बनेते टाइम मेरी सिस्टर का हाथ गरम तेल से बूरी तरह जल गया है,3,14,5,61
+hin rec/hi_022.m4a,hi,5,vad_on,recorded,खोना बनाते पां तुरी सिस्टेव कहाद गरम केल से फूर तरा जल्दय है,11,14,21,61
+hin rec/hi_022.m4a,hi,5,vad_off,recorded,खोना बनाते पंग इन सिस्टेर का हाद गरम केल से उनकरा जल्ड़ा है,10,14,25,61
+hin rec/hi_022.m4a,hi,0,vad_on,recorded,खाना बनाते टांग मेरी सिस्टर का हाथ गरम पेल से पूरी तरह जलता है,5,14,10,61
+hin rec/hi_022.m4a,hi,0,vad_off,recorded,खाना बनाते का मेरी सिस्टर का हाथ गरम पेल से पूरी तरह जल गया है,4,14,9,61
+hin rec/hi_023.m4a,hi,clean,vad_on,recorded,"जंक्शन पर बहुत क्रोड है, एक लौरी ने स्कूटर को हिट किया, रेडर अनकॉंशियस है",4,15,7,74
+hin rec/hi_023.m4a,hi,clean,vad_off,recorded,जंक्शन पर बहुत क्रोड है एक लौरी ने स्कूटर को हिट किया रेडर अनकॉंशियस है,4,15,7,74
+hin rec/hi_023.m4a,hi,20,vad_on,recorded,जिंशन पर बहुत क्रोड है एक लौरी में स्कूटर को हिट किया रेडर अनकॉंशियस है,6,15,12,74
+hin rec/hi_023.m4a,hi,20,vad_off,recorded,जिंशन पर बहुत क्रोड है एक लौरी में स्कूटर को हिट किया रेडर अनकॉंशियस है,6,15,12,74
+hin rec/hi_023.m4a,hi,10,vad_on,recorded,जिंशन पर बहुत क्राउड है एक लौरी में स्कूटर को हिट किया रेडर अंकॉंशियस है,5,15,11,74
+hin rec/hi_023.m4a,hi,10,vad_off,recorded,"जिंशन पर बहुत क्रोड है, एक लौरी में स्कूटर को हिट किया, रेडर अंकॉंसियस है",6,15,14,74
+hin rec/hi_023.m4a,hi,5,vad_on,recorded,"जुंशन पर बहुत प्रोल्ड है, एक लॉरी में स्कूटर को हिट किया, रेडर अनकॉंसियस है",5,15,14,74
+hin rec/hi_023.m4a,hi,5,vad_off,recorded,जुंशन पर बहुत प्रोड है एक लौरी में स्कूटर को हिट किया रेडर अनकॉंसियस है,6,15,14,74
+hin rec/hi_023.m4a,hi,0,vad_on,recorded,जिन्संटर बहुत प्रावड है एक लोडी में स्कूटर को पिख किया रेडर अनकॉंसियस है,8,15,19,74
+hin rec/hi_023.m4a,hi,0,vad_off,recorded,"जुल्सन पर बहुत प्रोड है, एक लॉरी में स्कूपर को हिट किया, रेडर अंकॉंसियस है",6,15,15,74
+hin rec/hi_024.m4a,hi,clean,vad_on,recorded,मेरे पापा को शुगर है वो बहुत कन्फियूज दे और पसीना आ रहा है टीक से बात भी नहीं कर पा रहा है,7,20,16,83
+hin rec/hi_024.m4a,hi,clean,vad_off,recorded,मेरे पापा को शुगर है वो बहुत कन्फ्यूज्ट है और पसीना आ रहा है टीक से बात भी नहीं कर पा रहा है,7,20,14,83
+hin rec/hi_024.m4a,hi,20,vad_on,recorded,मेरे पापा को शुगर है वो बहुत कन्फियूस्ट है और पसीन आ रहा है तीक से बात भी नहीं कर पा रहा है,8,20,17,83
+hin rec/hi_024.m4a,hi,20,vad_off,recorded,मेरे पापा को शुगर है वो बहुत कंफ्यूस्ट है और पसीना आ रहा है तीक से बात भी नहीं कर पा रहा है,7,20,17,83
+hin rec/hi_024.m4a,hi,10,vad_on,recorded,मेरे पापा को सुगर है वो बहुत कन्फूस्ट है और पसिना आ रहा है तीक से बात भी नहीं कर पा रहा है,9,20,19,83
+hin rec/hi_024.m4a,hi,10,vad_off,recorded,मेरे पापा को शुगर है वो बहुत कन्फ्यूस्ट है और पसिना आ रहा है तीक से बात भी नहीं कर पा रहा है,8,20,16,83
+hin rec/hi_024.m4a,hi,5,vad_on,recorded,मेरे पापा को शुवर है वो बहुत कन्फूस्ट है और पसिन आ रहा है तीक से बात भी नहीं कर पा रहा है,9,20,20,83
+hin rec/hi_024.m4a,hi,5,vad_off,recorded,मेरे पापा को शुवर है वो बहुत कन्फूस्ट है और पसिन आ रहा है तीक से बात भी नहीं कर पा रहा है,9,20,20,83
+hin rec/hi_024.m4a,hi,0,vad_on,recorded,"मेरे पापा को सुगर है, वो बहुत कंफीस्ट है और पसिन आ रहा है, पीक से बात भी नहीं कर पा रहा है",9,20,22,83
+hin rec/hi_024.m4a,hi,0,vad_off,recorded,"मेरे पापा को सुगर है, वो बहुत कंफ्यूस्ट है और पसिन आ रहा है पीक से बात भी नहीं कर पा रहा है",9,20,20,83
+hin rec/hi_025.m4a,hi,clean,vad_on,recorded,College function में एक student बेहोश हो गया है और बहुत दीरे से सांस ले रहा है,7,16,30,71
+hin rec/hi_025.m4a,hi,clean,vad_off,recorded,कॉलेज फंक्चन में एक स्टुविंट बेहोश हो गया है और बहुत दीरे से सांस ले रहा है,6,16,11,71
+hin rec/hi_025.m4a,hi,20,vad_on,recorded,College function में एक student बेहोश हो गया है और बहुत दीरे से सांस ले रहा है,7,16,30,71
+hin rec/hi_025.m4a,hi,20,vad_off,recorded,College function में एक student बेहोश हो गया है और बहुत दीरे से सांस ले रहा है,7,16,30,71
+hin rec/hi_025.m4a,hi,10,vad_on,recorded,कॉलेज फंक्चन में एक स्ट्रेंट बेहोश हो गया है और बहुत दीरे से शांस ले रहा है,7,16,10,71
+hin rec/hi_025.m4a,hi,10,vad_off,recorded,कॉलेज फंक्चन में एक स्ट्रूइंट बेहोश हो गया है और बहुत दीरे से शांस ले रहा है,7,16,12,71
+hin rec/hi_025.m4a,hi,5,vad_on,recorded,कॉलेज फंक्शन में एक फ्रिम्ट लेहोस हो गया है और बहुत दीरे से सांस ले रहा है,6,16,15,71
+hin rec/hi_025.m4a,hi,5,vad_off,recorded,कॉलेज फंक्चन में एक फ्रिम्ट लेहोस हो गया है और बहुत दीरे से सांस ले रहा है,7,16,16,71
+hin rec/hi_025.m4a,hi,0,vad_on,recorded,कॉलेज फंक्चन में इस फिर्म बहुत शोगर है और बहुत दीर से सांस ले रहा है,9,16,21,71
+hin rec/hi_025.m4a,hi,0,vad_off,recorded,कॉलेज फुंक्चन में इस फूर्म बहुत शोगा है और बहुत दीरे से सांस ले रहा है,9,16,22,71
+hin rec/hi_026.m4a,hi,clean,vad_on,recorded,रोड पर करेंट का वायर गिरा था एक आदमी ने चू लिया अब हो हिलनी रहा है,6,17,9,65
+hin rec/hi_026.m4a,hi,clean,vad_off,recorded,रोड पर करेंट का वायर गिरा था एक आदमी ने चू लिया अब हो हिलनी रहा है,6,17,9,65
+hin rec/hi_026.m4a,hi,20,vad_on,recorded,रोड पर करेंट का वायर गिरा था एक आद्मी ने चूल लिया अब हो हिल नहीं रहा है,5,17,8,65
+hin rec/hi_026.m4a,hi,20,vad_off,recorded,रोड पर करेंट का वायर गिरा था एक आद्मी ने चूल लिया अब हो हिल नहीं रहा है,5,17,8,65
+hin rec/hi_026.m4a,hi,10,vad_on,recorded,रोड पर क्रेंट का वायर गिराता एक आदमी ने चूलिया अब वो फिन मेरा है,8,17,14,65
+hin rec/hi_026.m4a,hi,10,vad_off,recorded,रोड पर क्रेंट का वायर गिराता एक आदमी ने चूलिया अब हो फिन मेरा है,9,17,15,65
+hin rec/hi_026.m4a,hi,5,vad_on,recorded,"रोड पर क्रेंक का वायर गिरा था, एक आदमी ने चूलिया, अब हो हिलनी रहा है",7,17,12,65
+hin rec/hi_026.m4a,hi,5,vad_off,recorded,"रोग पर क्रेंक का वायर जिरा था, एक आदमी ने चूलिया, अब हो हिलनी रहा है",9,17,14,65
+hin rec/hi_026.m4a,hi,0,vad_on,recorded,रोटर प्रेंक को वहर गिराता उसारी में चुलिया अबो भी मेरा है,17,17,34,65
+hin rec/hi_026.m4a,hi,0,vad_off,recorded,"रोतर प्रेंग को वहर जिराता, इसादीनी चुलिया, अबो ही मिरा है",17,17,33,65
+hin rec/hi_027.m4a,hi,clean,vad_on,recorded,"मेरे दादा जी बातुर में स्लिप हो गया, बोल रहा है हिप में कुछ फील नहीं हो रहा",6,17,9,74
+hin rec/hi_027.m4a,hi,clean,vad_off,recorded,"मेरे दादा जी बातुर में स्लिप हो गया, बोल रहा है हिप में कुछ फील नहीं हो रहा",6,17,9,74
+hin rec/hi_027.m4a,hi,20,vad_on,recorded,मेरे दादा जी बातर में स्लिप हो गया बोल रहा है हिप में कुछ फील नहीं हो रहा,6,17,8,74
+hin rec/hi_027.m4a,hi,20,vad_off,recorded,मेरे दादा जी बातुर में स्लिप हो गया बोल रहा है हिप में कुछ फील नहीं हो रहा,6,17,9,74
+hin rec/hi_027.m4a,hi,10,vad_on,recorded,मेरे दादा जी बातर में स्लिप हो गया बोल रहा है कि इतने कुछ फील नहीं हो रहा,8,17,14,74
+hin rec/hi_027.m4a,hi,10,vad_off,recorded,मेरे दादा जी बातर में स्लिप हो गया बोल रहा है कि तने कुछ फील नहीं हो रहा,8,17,13,74
+hin rec/hi_027.m4a,hi,5,vad_on,recorded,मेरे दादा जी बातर में सिल्प हो गया बोल रहे है कितने कुछ फील नहीं हो रहा,8,17,14,74
+hin rec/hi_027.m4a,hi,5,vad_off,recorded,मेरे दागा जी बातर में स्लुप हो गया बोल रहे है कितने कुछ फील नहीं हो रहा,8,17,14,74
+hin rec/hi_027.m4a,hi,0,vad_on,recorded,मेरे दादा जी बातर में स्लिक हो गया बोल रहे हैं कितने कुछ फील नहीं हो रहा,7,17,12,74
+hin rec/hi_027.m4a,hi,0,vad_off,recorded,फिरो दादा जी बातर में स्लिप हो गया बोल रहे हैं किकने कुछ फील नहीं हो रहा,7,17,14,74
+hin rec/hi_028.m4a,hi,clean,vad_on,recorded,"रोड क्रॉस करते टाइम एक आदमी को कार ने हिट किया, उनके मुह से बहुत ज़ाधा बलेड आ रहा है",8,17,20,71
+hin rec/hi_028.m4a,hi,clean,vad_off,recorded,"रोड क्रॉस करते टाइम एक आदमी को कार ने हिट किया, उनके मुह से बहुत ज़्यादा बलेड आ रहा है",8,17,22,71
+hin rec/hi_028.m4a,hi,20,vad_on,recorded,रोड क्रॉस करके टाइम एक आदमी को कार ने हिट किया उनके मुह से बहुत ज़्यादा बलेड आ रहा है,9,17,23,71
+hin rec/hi_028.m4a,hi,20,vad_off,recorded,रोड क्रॉस करके टाइम एक आदमी को कार ने हिट किया उनके मुह से बहुत ज़्यादा बलेड आ रहा है,9,17,23,71
+hin rec/hi_028.m4a,hi,10,vad_on,recorded,"रोर क्रॉस करते टाइम एक आर्मी को कार नहीं हिप किया, उनके मूँ से बहुत ज़ादा बलेड आ रहा है",12,17,29,71
+hin rec/hi_028.m4a,hi,10,vad_off,recorded,रोर क्रॉस करते टाइम एक आर्मी को फार ने हिप किया उनके मूँ से बहुत ज़ादा बलेड आ रहा है,12,17,27,71
+hin rec/hi_028.m4a,hi,5,vad_on,recorded,"रोर क्रॉस करते पांग एक आदमी को फार में हिट किया, उनके मूह से बहुत जगा बलड आ रहा है",12,17,26,71
+hin rec/hi_028.m4a,hi,5,vad_off,recorded,"रोर क्रॉस करते पांग एक आदमी को फार में हिट किया, उनके मुह से बहुत जगा बलड आ रहा है",12,17,25,71
+hin rec/hi_028.m4a,hi,0,vad_on,recorded,"रोड क्रॉस करते पाम एक आवी को तार में हित्या, इनके नहीं से बहुत जगा बलग आ रहा है",13,17,34,71
+hin rec/hi_028.m4a,hi,0,vad_off,recorded,"रोड क्रॉस करते पांग एक आवी को कार्म हित्या, इनके में से बहुत जगा बलग आ रहा है",12,17,33,71
+hin rec/hi_029.m4a,hi,clean,vad_on,recorded,"शौप के बार किसी को चाकू मार दिया है, वो पेट पकड़ के बैटा है और ब्लीडिंग ओ रहा है",5,20,6,81
+hin rec/hi_029.m4a,hi,clean,vad_off,recorded,"शौप के बार किसी को चाकू मार दिया है, वो पेट पकड़ के बैटा है और ब्लीडिंग ओ रहा है",5,20,6,81
+hin rec/hi_029.m4a,hi,20,vad_on,recorded,शौप के बार किसी को चाकू मार दिया है वो पेट पकड़ के बैटा है और ब्लीडिंग ओ रहा है,5,20,6,81
+hin rec/hi_029.m4a,hi,20,vad_off,recorded,शौप के बार किसी को चाकू मार दिया है वो पेट पकड़ के बैटा है और ब्लीडिंग ओ रहा है,5,20,6,81
+hin rec/hi_029.m4a,hi,10,vad_on,recorded,शॉप के बार किसी को चाकू मार दिया है वो पेट पकड़ के बैटा है और लीडिंग हो रहा है,4,20,5,81
+hin rec/hi_029.m4a,hi,10,vad_off,recorded,शाप के बार किसी को चाकू मार दिया है वो पेट पकड़ के बैटा है और भीडिंग ओ रहा है,6,20,9,81
+hin rec/hi_029.m4a,hi,5,vad_on,recorded,साथ के बाद किसी को चाकू मार दिया है वो पेट पकर के बैटा है और ब्लीडी ओ रहा है,7,20,14,81
+hin rec/hi_029.m4a,hi,5,vad_off,recorded,साब के बाद किसी को चाकू मार दिया है वो पेट पकड़ के बैता है और भीडी ओ रहा है,6,20,15,81
+hin rec/hi_029.m4a,hi,0,vad_on,recorded,साथ के बाद किसी को चाकु मार दिया है वो प्रेश पतल के बेटा है और जूड़ी को रहा है,9,20,23,81
+hin rec/hi_029.m4a,hi,0,vad_off,recorded,साथ के बाद किसी को चाकु मार दिया है वो प्रोष पतल के बोटा है और जूड़ी गो रहा है,9,20,24,81
+hin rec/hi_030.m4a,hi,clean,vad_on,recorded,मेरी बेबी को बहुत हाई फिवर है और वो टीक से उठनी रही है,5,14,8,54
+hin rec/hi_030.m4a,hi,clean,vad_off,recorded,मेरी बेबी को बहुत हाई फिवर है और वो टीक से उठनी रही है,5,14,8,54
+hin rec/hi_030.m4a,hi,20,vad_on,recorded,मेरी बेबी को बहुत हाई फ्यूवर है और वो टीक से उठनी रही है,5,14,10,54
+hin rec/hi_030.m4a,hi,20,vad_off,recorded,मेरी बेबी को बहुत हाई फ्यूवर है और वो टीक से उठनी रही है,5,14,10,54
+hin rec/hi_030.m4a,hi,10,vad_on,recorded,मेरी बेबी को बहुत हाइफिवर है और वो पीछे उठनी रही है,7,14,13,54
+hin rec/hi_030.m4a,hi,10,vad_off,recorded,मेरी बेबी को बहुत हाइफिवर है और वो पीक से उठनी रही है,6,14,10,54
+hin rec/hi_030.m4a,hi,5,vad_on,recorded,मेरी बेभी को बहुत है कि वारे और वो फीच से उपनी रंज है,8,14,20,54
+hin rec/hi_030.m4a,hi,5,vad_off,recorded,"मेरी बेदी को बहुत है कि वारे, और वो फीच से उत्मी रंजया",8,14,21,54
+hin rec/hi_030.m4a,hi,0,vad_on,recorded,मेरी बेबी को बहुत है किया रहे और वो पीच्छ उठनी रहे है,8,14,20,54
+hin rec/hi_030.m4a,hi,0,vad_off,recorded,मेरी बेबी को बहुत है किया रहे और वो पींचे उठनी रहे है,8,14,19,54
+kan rec/kn_001.m4a,kn,clean,vad_on,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರಾ ಏಕ್ಸಿಡೆನ್ಟ ಆಗಿದೇ ಅಬ್ಬ ಮನಿಶ ರೋಡ್ ಮೇಲೆ ಬಿದ್ಧಿದಾನೆ ಉಸಿರಡ್ತಿಲ್ಲಾ.,9,11,21,81
+kan rec/kn_001.m4a,kn,clean,vad_off,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರ ಏಕ್ಸಿಡೆನ್ಟ ಆಗಿದೆ ಅಬ್ಬಾ ಮನಿಶ ರೋಡ್ ಮೇಲೆ ಬಿದ್ಧಿದಾನೆ ಉಸಿರಾಡ್ತಿಲ್ಲ.,7,11,18,81
+kan rec/kn_001.m4a,kn,20,vad_on,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರ ಏಕ್ಸಿಡೆನ್ಟ ಆಗಿದೆ ಅಬ್ಬ ಮನಿಶ ರೋಡ್ ಮೇಲೆ ಬಿದ್ಧಿದಾನೆ ಉಸಿರಡ್ತಿಲ್ಲಾ.,8,11,19,81
+kan rec/kn_001.m4a,kn,20,vad_off,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರ ಏಕ್ಸಿಡೆನ್ಟ ಆಗಿದೆ ಅಬ್ಬ ಮನಿಶ ರೋಡ್ ಮೇಲೆ ಬಿದ್ಧಿದಾನೆ ಉಸಿರಡ್ತಿಲ್ಲಾ.,8,11,19,81
+kan rec/kn_001.m4a,kn,10,vad_on,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರಾ ಏಕ್ಸಿಡೆನ್ಟ ಆಗಿದೆ ಅಭಾ ಮನಿಶ ರೋಡ್ ಮೇಲೆ ಪಿದಿದಾನೆ ಉಸ್ರಾಡ್ತಿಲ್ಲಾ,8,11,25,81
+kan rec/kn_001.m4a,kn,10,vad_off,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರಾ ಏಕ್ಸಿಡೆನ್ಟ ಆಗಿದೆ ಅಭಾ ಮನಿಶ ರೋಡ್ ಮೇಲೆ ಪಿದಿದಾನೆ ಉಸ್ರಾಡ್ತಿಲ್ಲಾ,8,11,25,81
+kan rec/kn_001.m4a,kn,5,vad_on,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರೆ ಏಕ್ಸಿಡನ್ಟ ಆಗಿವೆ ಅಭಾ ಮನಿಶಾರ್ವಡ್ ಮೇಲೆ ಪಿದಿದಾನೆ ಉಸ್ರಾಡ್ಕಿಲಾ,10,11,31,81
+kan rec/kn_001.m4a,kn,5,vad_off,recorded,ಸಿಲ್ಕ ಬೋಡ ಅತ್ತಿರೆ ಏಕ್ಸಿರೇನ್ಟ ಆಗಿವೆ ಅಭಾ ಮನಿಶ ರೊಡ್ ಮೇಲೆ ಪಿದಿದಾನೆ ಉಸ್ರಾಡ್ಕಿಲ್ಲಾ,10,11,30,81
+kan rec/kn_001.m4a,kn,0,vad_on,recorded,ಸಿಲ್ಕ ಬೋರ್ರಾತ್ತಿರ ಅಕ್ಸಿರನ್ಟಾಗೆ ಅಭಬ ಮನಿಶ್ಯ ರೊಡ್ನೆ ಪಜಿದಾನು. ಪಸಿರಾತ್ತಿಲ್ಲಾ.,11,11,34,81
+kan rec/kn_001.m4a,kn,0,vad_off,recorded,ಸಿಲ್ಗು ಬಾತಯರ ಅಕ್ಷರನ್ದಾಗೆ ಅಬಾಮನು ಶರವರ್ನೆ ಬಿಡಾನೆ ಉಸಿರಾಗ್ದಾನು ಕೊಸಿರಾಗ್ದಿಲ್ನು ಇದಿದಾನು ಕೊಸಿರಾಗ್ದಿಲ್ನು ಕೊಸಿರಾಗ್ದಿಲ್ನು ಕೊಸಿರಾಗ್ದಿಲ್ನು ಕೊಸ,13,11,91,81
+kan rec/kn_002.m4a,kn,clean,vad_on,recorded,"ನಾಮ ಅಪ್ಪಾಂಗೆ ಚಸ್ಟ್ಪೇನ ಆಗಿದೆ, ತುಂಬ ಬೇವರ್ತಿದಾರೆ, ಪ್ಲಿಸ್ ಬೇಗ ಎಂಬಲೇನ್ಸ್ ಕಳ್ಸಿ.",9,11,16,79
+kan rec/kn_002.m4a,kn,clean,vad_off,recorded,ನಮ ಅಪ್ಪಾಂಗೆ ಚಸ್ಟ್ಪೇನ ಆಗಿದೆ ತುಂಬ ಬೇವರ್ತಿದಾರೆ ಪ್ಲಿಸ್ ಬೇಗ ಎಂಬಲೇನ್ಸ್ ಕಳ್ಸಿ.,9,11,15,79
+kan rec/kn_002.m4a,kn,20,vad_on,recorded,ನಮ್ಪಾಂಗೆ ಚಸ್ಪೇನ ಆಗಿದೆ ತುಂಬ ಬೇವರ್ತಿದಾರೆ ಪ್ಲಿಜ್ ಬೇಗ ಎಂಬಲೇನ್ಸ ಕಳ್ಸಿ.,9,11,21,79
+kan rec/kn_002.m4a,kn,20,vad_off,recorded,ನಮ್ಪಾಂಗೆ ಚಸ್ಪೇನ ಆಗಿದೆ ತುಂಬ ಬೇವರ್ತಿದಾರೆ ಪ್ಲಿಜ್ ಬೇಗ ಎಂಬಲೇನ್ಸ ಕಳ್ಸಿ.,9,11,21,79
+kan rec/kn_002.m4a,kn,10,vad_on,recorded,nama panget e spena gede tumba bevorti da re plis biega ambulans col si,14,11,73,79
+kan rec/kn_002.m4a,kn,10,vad_off,recorded,ನಾದ ನಮ್ಪಂಗೆ ತುಮ್ಯರತದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದ�,11,11,103,79
+kan rec/kn_002.m4a,kn,5,vad_on,recorded,ನಮ್ರಾಂಗೆ ತುಂದಿದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದದ,11,11,107,79
+kan rec/kn_002.m4a,kn,5,vad_off,recorded,ನಮ್ಪಾಂಗೆ ತುಂದಿ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನಮ್ಪಾಂಗೆ ನ�,16,11,100,79
+kan rec/kn_002.m4a,kn,0,vad_on,recorded,"ನಮ್ಪಂಗೆ ತುದಿನಾಗೆ ತುಮ್ಭವಟದದಾರೀ, ಯಸ್ಬಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ ಯಸ್ಲಾಗೆ �",16,11,98,79
+kan rec/kn_002.m4a,kn,0,vad_off,recorded,"Nama panggit yos pena nalilid, tumba bero te daro Please bega ambulance policy",13,11,73,79
+kan rec/kn_003.m4a,kn,clean,vad_on,recorded,"ಬೆಳಂದುರ ಅತ್ರ ಒಬರು ಲೇಡಿ ಬಾಯಿಕ್ ನಿನ ಬಿದ್ಧಿದಾರೆ, ಕಾಲ್ಲಿನ್ದ ತುಂಬ ಬಲಿಡಿಂಗ ಆಕ್ತಿದೆ.",10,11,21,78
+kan rec/kn_003.m4a,kn,clean,vad_off,recorded,ಬೆಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯಿಕ್ ನಿನ ಬಿದ್ಧಿದಾರೆ ಕಾಲ್ಲಿನ್ದ ತುಂಬ ಬ್ಲಿಡಿಂಗ ಆಕ್ತಿದೆ.,10,11,21,78
+kan rec/kn_003.m4a,kn,20,vad_on,recorded,"ಬೆಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯಿಕ್ ನಿನ ಬಿದ್ಧಿದಾರೆ, ಕಾಲ್ಲಿನ್ದ ತುಂಬ ಬಲಿಡಿಂಗ ಆಕ್ತಿದೆ.",10,11,22,78
+kan rec/kn_003.m4a,kn,20,vad_off,recorded,"ಬೆಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯಿಕ್ ನಿನ ಬಿದ್ಧಿದಾರೆ, ಕಾಲ್ಲಿನ್ದ ತುಂಬ ಬಲಿಡಿಂಗ ಆಕ್ತಿದೆ.",10,11,22,78
+kan rec/kn_003.m4a,kn,10,vad_on,recorded,"ಬಿಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯಕ್ನಿನ ಬಿದ್ಧಿದಾರೆ, ಕಾಲ್ಲಿನ್ನ ತುಂಬ ಬಲಿಡಿಂಗ ಆಕ್ತಿದೆ.",10,11,24,78
+kan rec/kn_003.m4a,kn,10,vad_off,recorded,ಬಿಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯಕ್ನಿನ ಬಿದ್ಧಿದಾರೆ ಕಾಲ್ಲಿನ್ನ ತುಂಬ ಬಲಿಡಿಂಗ ಆಕ್ತಿದೆ.,10,11,24,78
+kan rec/kn_003.m4a,kn,5,vad_on,recorded,"ಬೆಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯತ್ಗಿನ್ನ ಬಿದ್ಧಿದಾರೆ, ಕಾಲ್ಲಿನ್ನ ತುಂಬ ಬಿಡಿಂಗಾಕ್ತದೆ.",10,11,30,78
+kan rec/kn_003.m4a,kn,5,vad_off,recorded,"ಬಿಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯತ್ಗಿನ್ನ ಬಿದ್ಧಿದಾರೆ, ಕಾಲ್ಲಿನ್ನ ತುಂಬ ಬಿಡಿಂಗಾಕ್ತಿದೆ.",10,11,30,78
+kan rec/kn_003.m4a,kn,0,vad_on,recorded,"ಬಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯಕ್ನಿನ ಬಿದ್ಧಿದಾರೆ, ಕಾಲ್ಲಿನ್ನ ತುಂಬ ಬಿಲಿಣಿಗಾಕ್ಸಿಗೆ.",10,11,30,78
+kan rec/kn_003.m4a,kn,0,vad_off,recorded,ಬಳಂದುರ ಅತ್ರಾ ಒಬರು ಲೇಡಿ ಬಾಯಕ್ನಿನ ಬಿದ್ಧಿದಾರೆ ಕಾಲ್ಲಿನ್ನ ತುಂಬ ಬಿಲಿಣಿಗಾಕ್ಸಿಗೆ.,10,11,30,78
+kan rec/kn_004.m4a,kn,clean,vad_on,recorded,ನಮ್ಮ ಅಪಾಟ್ಮೆಟ್ಮಿನ್ ಪಕ್ಕದ ಬಿಲ್ಡಿಂಗಿಗೆ ಬೇಂಕಿ ಬಿದ್ಧಿದೆ ದರ್ಟ್ ಫ್ಲೋರ್ ನಿಂದ ಹೊಗೆ ಬರ್ಥದೆ,9,13,16,82
+kan rec/kn_004.m4a,kn,clean,vad_off,recorded,"ನಮ್ಮ ಅಪಾಟ್ಮೆಂಟ್ ಪಕ್ಕತ ಬಿಲ್ಡಿಂಗೆ ಬೇಂಕಿ ಬಿದ್ಧಿದೆ, ದರ್ಟ್ ಫ್ಲೋರ್ ನಿಂದ ಹೊಗೆ ಬರ್ಥಿದೆ.",10,13,13,82
+kan rec/kn_004.m4a,kn,20,vad_on,recorded,ನಮ್ಮ ಅಪಾಟ್ಮೆಟ್ಮಿನ್ ಪಕ್ಕದ ಬಿಲ್ಡಿಂಗೆ ಬೇಂಗೆ ಬಿದಿದೆ ತರ್ಟ ಫ್ಲೋರ ನಿಂದ ಹೊಗೆ ಬರ್ತದೆ,10,13,21,82
+kan rec/kn_004.m4a,kn,20,vad_off,recorded,ನಮ್ಮಾ ಅಪಾಟ್ಮೆಟ್ಮಿನ್ಟ ಬಿಲ್ಡಿಂಗ ಇಗೆ ಬೇಂಕಿ ಬಿದ್ಧಿದೆ ತರ್ಟ ಫ್ಲೋರ್ನಿಂದ ಹೊಗೆ ಬರ್ಥದೆ,12,13,21,82
+kan rec/kn_004.m4a,kn,10,vad_on,recorded,ನಮ್ಮ ಅಪಾಟ್ಮೆಟ್ಮಿನ್ ಪಕ್ಕದ ಬಿಲ್ಡಿಂಗೆ ಬೇಂಗೆ ಬಿದ್ವದೆ ತಾರ್ಟ ಫೋರ್ನಿಂದ ಹೊಗೆ ಬರ್ತದೆ,11,13,24,82
+kan rec/kn_004.m4a,kn,10,vad_off,recorded,ನಮ್ಮ ಅಪಾಟ್ಮೆಟ್ಮಿನ್ ಪಕ್ಕದ ಬಿಲ್ಡಿಂಗೆ ಬೇಂಗೆ ಬಿದ್ಧಿದೆ ತರ್ಟ್ ಫ್ಲೋರ್ ನಿಂದು ಹೊಗೆ ಬರ್ತಿದೆ,9,13,18,82
+kan rec/kn_004.m4a,kn,5,vad_on,recorded,ನಮ್ಮ ಅಪಾಟ್ಮೆನ್ ಫಕ್ಕದ ಬಿಡಿಂಗೆ ಬಿಂಗೆ ಬಿದಿದೇ ತಾರ್ಸಾರ್ನಿಂದ ಹೋಗೆ ಬರ್ಥದೇ,13,13,32,82
+kan rec/kn_004.m4a,kn,5,vad_off,recorded,ನಮಾ ಅಪಾಟ್ಮೆ ಪಕತ ಬಿಡಿಂಗೀಗೆ ಬೇಂಗೆ ಬಿದಿದೆ ಜರ್ಸೋರ್ನುಂಗೆ ಹೊಗೆ ಬರ್ತದೆಗೆ ನಮಾ ಆಪಾಟ್ಮೆ ಪಕತ ಬಿಡಿಂಗೆ ಬೇಂಗೆ ಬೇಂಗೆ ಬೇಂಗೆ ಬೇಂಗೆ ಬೇಂಗೆ ಬೇಂಗೆ ಬೇಂಗೆ ಬೇ,21,13,98,82
+kan rec/kn_004.m4a,kn,0,vad_on,recorded,ನಮ್ಮ ಅಪಾಟ್ಮೆಟ್ಮಿನ್ ಪಕ್ಕರ ಬಿಡಿಂಗೆ ದೇಂಗೆ ದೇಂಗೆ ತೊರ್ಸುರ್ನಿನು ಹೋಗೆ ಬರ್ಸಲೆಗೆ.,13,13,41,82
+kan rec/kn_004.m4a,kn,0,vad_off,recorded,ನಮಾ ಅಪಾಟ್ಮೆಟ್ಮಿನ್ ಪಕ್ಕರ ಬಿಡಿಂಗೆ ದೇಂಗೆ ದೇಂಗೆ ತೊರ್ಸುರ್ನಿನು ಹೋಗೆ ಬರ್ಚದೆಗೆ ಅಜಿಂಗೆ ನಮಾ ಆಪಾಟ್ಮನ್ ಪಕ್ಕರ ಬಿಡಿಂಗೆ ದೇಂಗೆ ದೇಂಗೆ ದೇಂಗೆ ದೇಂಗೆ ದೇಂಗೆ �,19,13,90,82
+kan rec/kn_005.m4a,kn,clean,vad_on,recorded,ನಮ್ಮ ಆಜಿ ಕಿಚೆನ್ಲಿ ಮೂರ್ಚೆ ಹೋಗಿ ದಾರೆ ಇಸಿರು ಕರ್ದು ರಿಸ್ಪನ್ಸ ಮಾಡ್ತಿಲಾ,10,10,22,72
+kan rec/kn_005.m4a,kn,clean,vad_off,recorded,ನಮ್ಮ ಆಜಿ ಕಿಚೆನ್ನಲ್ಲಿ ಮೂರ್ಚೆ ಹೋಗಿದಾರೆ ಎಸರು ಕರ್ದು ರಿಸ್ಪನ್ಸ ಮಾಡ್ತಿಲಾ,9,10,18,72
+kan rec/kn_005.m4a,kn,20,vad_on,recorded,ನಮ್ಮ ಆಜಿ ಕಿಚೆನ್ಲಿ ಮೂರ್ಚೆ ಹೋಗಿ ದಾರೇ ಎಸಿರು ಕರ್ದು ರಿಸ್ಪನ್ಸ ಮಾಡ್ತಿಲಾ,10,10,23,72
+kan rec/kn_005.m4a,kn,20,vad_off,recorded,ನಮ್ಮ ಆಜಿ ಕಿಚೆನ್ಲಿ ಮೂರ್ಚೆ ಹೋಗಿ ದಾರೇ ಎಸಿರು ಕರ್ದು ರಿಸ್ಪನ್ಸ ಮಾಡ್ತಿಲಾ,10,10,23,72
+kan rec/kn_005.m4a,kn,10,vad_on,recorded,ನಮ್ಮಾ ಆಜಿ ಕಿಚೆ ನಲಿ ಮೂರ್ಚಯ ಹಗಿದಾರೇ. ಇಶರು ಕರ್ದು ರಿಸ್ಪನ್ಸ ಮಾರ್ತಿಲಾ.,10,10,25,72
+kan rec/kn_005.m4a,kn,10,vad_off,recorded,ನಮ್ಮಾ ಆಜಿ ಕಿಚೆ ನಲಿ ಮೂರ್ಚಯ ಹಗಿದಾರೇ. ಇಶರು ಕರ್ದು ರಿಸ್ಪನ್ಸ ಮಾರ್ತಿಲಾ.,10,10,25,72
+kan rec/kn_005.m4a,kn,5,vad_on,recorded,ನಮ್ಮ ಅಜಿ ಕಿಚೆ ನಲಿ ಮೂರ್ಯ ಹವಗಿದಾರೇ ಇಕ್ಷರ ಕಾದು ರಿಸ್ಪನ್ಸ ಮಾತಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿ,21,10,98,72
+kan rec/kn_005.m4a,kn,5,vad_off,recorded,ನಮ್ಮ ಅಜಿ ಕಿಚೆ ನಲಿ ಮೂರ್ಯ ಹವಗಿದಾರೇ ಇಕ್ಷರ ಕಾದು ರಿಸ್ಪನ್ಸ ಮಾತಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿಲಾ ಮಾಡಿ,21,10,98,72
+kan rec/kn_005.m4a,kn,0,vad_on,recorded,ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನಮ್ಲಾದೆ ನ,18,10,102,72
+kan rec/kn_005.m4a,kn,0,vad_off,recorded,"Намма аддикитиналим мутиа обидараций, сирка до респонс маркин.",10,10,67,72
+kan rec/kn_006.m4a,kn,clean,vad_on,recorded,"ಒಬಾ ಚಿಕ್ಕಾ ಉಡುಗಾ ಸ್ಟೆಪ್ಸ್ನಿ ಇಂದ ಬಿದ್ಧಿದಾನೆ, ತಲೆ ಇಂದ ಬಲಿಡಿಂಗ ಆಕ್ಥಿದೆ.",10,9,17,67
+kan rec/kn_006.m4a,kn,clean,vad_off,recorded,"ಒಬಾ ಚಿಕ್ಕಾ ಓಡುಗ ಸ್ಟೇಪ್ಸ್ನೀಂದ ಬಿದ್ಧಿದಾನೆ, ತಲೆ ಇಂದ ಬಿಲಿಡಿಂಗ ಆಕ್ತಿದೆ.",9,9,15,67
+kan rec/kn_006.m4a,kn,20,vad_on,recorded,"ಅಬಾ ಚಿಕ್ಕಾ ಉಡುಗಾ ಸ್ಟೆಪ್ಸನಿ ಇಂದ ಬಿದ್ಧಿದಾನೆ, ತಲೆ ಇಂದ ಬಲಿಡಿಂಗ ಆಥ್ತಿದೆ.",10,9,18,67
+kan rec/kn_006.m4a,kn,20,vad_off,recorded,"ಒಬಾ ಚಿಕ್ಕಾ ಉಡುಗಾ ಸ್ಟೆಪ್ಸನಿ ಇಂದ ಬಿದ್ಧಿದಾನೆ, ತಲೆ ಇಂದ ಬಲಿಡಿಂಗ ಆಕ್ತಿದೆ.",10,9,17,67
+kan rec/kn_006.m4a,kn,10,vad_on,recorded,"ಒಬಾ ಚಿಕ್ಕಾ ಉಡುಗಾ ಸ್ಟೆಪ್ಸ್ನಿಂದ ಬಿದ್ಧಿದಾನೆ, ತಲ್ಲೆ ಇಂದ ಬಲಿಡಿಂಗ ಆಥ್ತಲೆ.",9,9,18,67
+kan rec/kn_006.m4a,kn,10,vad_off,recorded,"ಒಬಾ ಚಿಕ್ಕಾ ಉಡುಗಾ ಸ್ಟೆಪ್ಸ್ನಿ ಇಂದ ಬಿದ್ಧಿದಾನೆ, ತಲ್ಲೆ ಇಂದ ಬಲಿಡಿಂಗ ಆಥ್ತದಿ.",10,9,20,67
+kan rec/kn_006.m4a,kn,5,vad_on,recorded,ಅಬಾ ಚಿಕ್ಕಾ ಒಡುಗ ಟೆಕ್ನಿನ್ಲ ಬಿದ್ದಾನೆ ತಲೆ ಇನ್ಲ ಬಿಲಿಡಿಂ ಆತ್ತಲೆ.,9,9,29,67
+kan rec/kn_006.m4a,kn,5,vad_off,recorded,ಒಬಾ ಚಿಕ್ಕಾ ಒಡುಗಾ ಟೆಕ್ನಿನ್ಲ ಬಿದ್ದಾನು ತಲೆ ಇನ್ಲ ಬಿಳಿಂಗಾತ್ಕಿಲೆ.,9,9,33,67
+kan rec/kn_006.m4a,kn,0,vad_on,recorded,"ಅಬಾಚುಕ್ಕಾ ಒಡಗಾ ಟೆಶ್ನಿನ್ನ ಬಿದಲಾನೆ, ತಲಯಿನ್ನ ಬಿದಲಾನೆ ತಲಯಿನ್ನ ಬಿದಲಿನ್ನ ಅಕ್ತಲೇ.",9,9,47,67
+kan rec/kn_006.m4a,kn,0,vad_off,recorded,"ಅಬಾಚುಕ್ರವಡುಗ ಟೆಶ್ನಿನ್ನ ಬಿದಲಾನೆ, ತಲ್ನಿನ್ನ ಬಿದಲಾನೆ ತಲ್ನಿನ್ನ ಬಿದಲಿನ್ನ ಅಕ್ತಲೇ ಮಿದಲ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್ನಿನ್�",9,9,102,67
+kan rec/kn_007.m4a,kn,clean,vad_on,recorded,ಆವ್ಟುರ್ರಿಂಗ್ ರೋಡ್ನಲ್ಲಿ ಎರ್ಡು ಕಾರು ಡಿಕ್ಕಿ ಹೊಡ್ದಿದವೆ. ಒಬ್ಬ ಡ್ರೈವುವರ್ ವಳಗೆ ಸಿಖಾಕೊಂಡಿದಾನೆ.,10,12,15,81
+kan rec/kn_007.m4a,kn,clean,vad_off,recorded,ಅವ್ಟೆರ್ರಿಂಗ್ರೋಡನಲ್ಲಿ ಎರುಡು ಕಾರು ಡಿಕ್ಕಿ ಹೊಡ್ದಿದವೆ ಒಬ್ಬ ಡ್ರೈವುವರ್ ವಳಗೆ ಸಿಖಾಕೊಂಡಿದಾನೆ.,10,12,17,81
+kan rec/kn_007.m4a,kn,20,vad_on,recorded,"ಅವುಟ್ರಿಂಗ್ ರೋಡ್ನಲ್ಲಿ ಎರ್ಡು ಕಾರು ಡಿಕ್ಕಿ ಒಡಿದವೆ, ಒಬ್ಬ ಡ್ರೈವೋರ್ ವಳಗೆ ಸಿಕಾಕೊಂಡಿದಾನೆ.",10,12,16,81
+kan rec/kn_007.m4a,kn,20,vad_off,recorded,"ಪೋಟ್ರಿಂಗ್ ರೊಡ್ನಲ್ಲಿ ಎರ್ಡು ಕಾರು ಡಿಕ್ಕಿ ಒಡದಿದವೆ, ಒಬ್ಬ ಡ್ರೈವುವರ್ ವಳಗೆ ಸಿಕಾ ಕೊಂಡಿದಾನೆ.",11,12,18,81
+kan rec/kn_007.m4a,kn,10,vad_on,recorded,ಹೋಟ್ರ ರಿಂಗ್ ರೋಡ್ನಲ್ಲಿ ಎಳ್ಡು ಕಾರ್ ಡಿಕ್ಕಿ ಒಡಿದದದೆ. ಒಬ್ಬ ಡ್ರೈವಾರ್ ವಳಗೆ ಸಿಕಾಕೊಂಡಿದದದದೆ.,8,12,19,81
+kan rec/kn_007.m4a,kn,10,vad_off,recorded,ಹೋಟ್ರ ರಿಂಗ್ ರೋಡ್ನಲ್ಲಿ ಎಳ್ಡು ಕಾರ್ ಡಿಕ್ಕಿ ಒಡಿದದದೆ. ಒಬ್ಬ ಡ್ರೈವರ್ ವಳಗೆ ಸಿಕ್ಕ ಕೊಂಡಿದದದದೆ.,8,12,17,81
+kan rec/kn_007.m4a,kn,5,vad_on,recorded,ಅವ್ಟೆರ್ರಿಂರೊಡ್ನಲ್ಲಿ ಎರ್ಡು ಕಾರಿ ಡಿಕ್ಕಿ ಒಡಿಗಳೆ. ಒಬ್ಬ ಡ್ರೈವೋರ್ ವಳಯ ಸಿಕಾಕೊಂಡಿಗಾನೆ.,10,12,25,81
+kan rec/kn_007.m4a,kn,5,vad_off,recorded,"ಅವ್ಟೆರ್ರಿಂರೊಡ್ನಲ್ಲಿ ಎರ್ಡು ಕಾರಿ ಡಿಕ್ಕಿ ಒಡಿಗಳೆ, ಒಬ್ಬ ಡ್ರೈವೋರ್ ವಳಯ ಸಿಖಾಕೊಂಡಿಗಾನೆ.",10,12,26,81
+kan rec/kn_007.m4a,kn,0,vad_on,recorded,ಅವುಟ್ರಿಂಗ್ ರೋಡ್ನಲ್ಲಿ ಎಲ್ಡು ಕಾರ್ ಡಿಕ್ಕಿ ಹೊಡದಿದಾವು. ಒಬ್ಬ ಡ್ರೈವರ್ ವಳಯೆ ಸಿಕಾಕೊಂಡು ಜಾನೆ.,9,12,19,81
+kan rec/kn_007.m4a,kn,0,vad_off,recorded,ಅವ್ಟೆರ್ ರಿಂಗ್ ರೋಡ್ ನಲ್ಲಿ ಎಲ್ಡು ಕಾರ್ ಡಿಕ್ಕಿ ಒಡಿದಾವು. ಒಬ್ಬ ಡ್ರೈವಾರ್ ವಳಯು ಸಿಕಾಕೊಂಡು ಜಾನೆ.,7,12,20,81
+kan rec/kn_008.m4a,kn,clean,vad_on,recorded,"ನಂ ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸ್ ಬಂದಿದೆ, ಇಡಿ ಬಾಡಿಂ ನಳುತ್ಥದೆ, ಅವನು ರಿಸ್ಪಾಂಸ್ ಮಾಡ್ತಿಕ್ಲಾ.",10,11,19,74
+kan rec/kn_008.m4a,kn,clean,vad_off,recorded,"ನಂ ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸ್ ಬಂದಿದೆ, ಇಡಿ ಬಾಡಿಂ ನಳುತ್ಥದೆ, ಅವನು ರಿಸ್ಪಾಂಸ್ ಮಾಡ್ತಿಕ್ಲಾ.",10,11,19,74
+kan rec/kn_008.m4a,kn,20,vad_on,recorded,"ನನು ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸ್ ಬಂದಿದೆ, ಇಡಿ ಬಾಡಿನ್ ನಳುತ್ಥದೆ, ಅವುನು ರಿಸ್ಪಾಂಸ್ ಮಾಡ್ಥಿಕ್ಲಾ.",11,11,21,74
+kan rec/kn_008.m4a,kn,20,vad_off,recorded,"ನನ್ ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸ್ ಬಂದಿದೆ, ಇಡಿ ಬಾಡಿನ್ ನಳುತ್ಥದೆ, ಅವುನು ರಿಸ್ಪಾಂಸ್ ಮಾಡ್ತಿಕ್ಲಾ.",10,11,19,74
+kan rec/kn_008.m4a,kn,10,vad_on,recorded,"ನಂ ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸ್ ಬಂದಿದೆ, ಇಡಿ ಬಾಡಿನ್ ನಳುತ್ಥುದೆ, ಅವುನು ರಿಸ್ಪಾಂಜ್ ಮಾಡಿತಿಕ್ಲಾ.",11,11,23,74
+kan rec/kn_008.m4a,kn,10,vad_off,recorded,ನಂ ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸ್ ಬಂದಿದೆ. ಇಡಿ ಬಾಡಿಂ ನಳುತ್ಥದೆ. ಅವುನು ರಿಸ್ಪಾಂಸ್ ಮಾಡ್ಥಿಕ್ಲಾ.,11,11,21,74
+kan rec/kn_008.m4a,kn,5,vad_on,recorded,ನಂ ಫ್ರೆಂಡಿಗೆ ಫೇಟ್ಸಬಂದಿದೆ. ಇಡಿ ಬಾಡಿಂ ನಳುತ್ಥದೆ. ಅವುನು ರಿಸ್ಪಾಂಜ್ ಮಾಡ್ತುಕ್ಲಾ.,11,11,24,74
+kan rec/kn_008.m4a,kn,5,vad_off,recorded,"ನಂ ಫ್ರೆಣ್ಡಿಗೆ ಫ್ಯುಟ್ಸಬಂದಿದೆ, ಇಡಿ ಬಾಡಿಂ ನಳುತ್ದುದೆ, ಅವುನು ರಿಸ್ಪನ್ಸ್ ಮಾದ್ತುಕ್ಲಾ.",11,11,27,74
+kan rec/kn_008.m4a,kn,0,vad_on,recorded,ನನು ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸು ಬಂದಿದೆ. ಇಡಿ ಬಾಡಿಂ ನಳುತ್ಥದೆ. ಅವುನು ರಿಸ್ಪಾಂಜ್ ಮಾಡಿದ್ದಿಲ್ಲಾ.,11,11,23,74
+kan rec/kn_008.m4a,kn,0,vad_off,recorded,ನಂ ಫ್ರೆಂಡಿಗೆ ಫೀಟ್ಸು ಬಂದಿದೆ. ಇಡಿ ಬಾಡಿಂ ನಳುತ್ಥದೆ. ಅವುನು ರಿಸ್ಪಾಂಜ್ ಮಾಡಿದ್ತಿಕ್ಲಾ.,11,11,24,74
+kan rec/kn_009.m4a,kn,clean,vad_on,recorded,ಮಾರ್ತಳಿಬಿಚಟ್ರಾ ಅಪನೀಗೆ ಬಸ ಹಿಟ್ಮಾಡಿದೇ ಅವನೀಗೆ ಕಾಲು ಅಲಾಡ್ಸಿಕೆ ಆಗ್ತಾಯಲ್ವಾ,10,11,32,83
+kan rec/kn_009.m4a,kn,clean,vad_off,recorded,ಮಾರ್ತಳಿಬ್ರಿಚತ್ರಾ ಅಪನೀಗೆ ಬಸ ಹಿಟ್ಮಾಡಿದೇ ಅವನೀಗೆ ಕಾಲು ಅಲ್ಲಾಡ್ಸೆಕೆ ಆಗ್ತಾಯಲ್ವಾ,10,11,27,83
+kan rec/kn_009.m4a,kn,20,vad_on,recorded,ಮಾರ್ತಳಿ ಬಿಚಟ್ರಾ ಅಪನೀಗೆ ಬಸ ಹಿಟ್ಮಾಡಿದೇ ಅವನೀಗೆ ಕಾಲು ಅಲಾಡ್ಸಿಕೆ ಆಠ್ತಯಲ್ಲಾ,10,11,30,83
+kan rec/kn_009.m4a,kn,20,vad_off,recorded,ಮಾರ್ತಳಿ ಬಿಚಟ್ರಾ ಅಪನೀಗೆ ಬಸ ಹಿಟ್ಮಾಡಿದೇ ಅವನೀಗೆ ಕಾಲು ಅಲಾಡ್ಸಿಕೆ ಆಠ್ತಯಲ್ಲಾ,10,11,30,83
+kan rec/kn_009.m4a,kn,10,vad_on,recorded,ಮಾರ್ತಳಿ ಬಿಜದ್ರಾ ಉಪನೀಗೆ ಬಸಿಟ್ಮಡಿಗೆ ಅವನಿಗೆ ಕಾಲು ಅಲ್ಲಾದ್ಲಾದ್ಲಾದ್ಲಿಗೆ,9,11,37,83
+kan rec/kn_009.m4a,kn,10,vad_off,recorded,ಮಾರ್ತಳಿ ಬಿಜಟ್ರಾ ಅಪನೀಗೆ ಬಸಿಕ್ಮಡಿಗೆ ಅವನಿಗೆ ಕಾಲು ಅಲ್ಲಾದಿಗೆ ಅಲ್ಲಾದಿಗೆ,9,11,37,83
+kan rec/kn_009.m4a,kn,5,vad_on,recorded,ಮಾರ್ತಡಿಗು ಬಿಚಟರಾ ಅಪನಿಗೆ ಬಸಿಟ ಮಾಡದೇ ಅಂಯೆ ಕಾಲು ಅಲ್ಲಾ್ಲಾ್ಲಾ್ಲಾ್,10,11,44,83
+kan rec/kn_009.m4a,kn,5,vad_off,recorded,ಮಾರ್ತಡು ಬಿಚಟ್ರಾ ಅಪನಿಗೆ ಬಸಿಟ್ ಮಾಡಿದೇ ಅಂಯೆ ಕಾಲು ಅಲ್ಲಾಸುಕೆ ಆಜ್ತಯಲ್ಲಾ,10,11,34,83
+kan rec/kn_009.m4a,kn,0,vad_on,recorded,ಮಾರ್ತಳುಗಿ ಚಟ್ರಾ ಉಪನೀಗೆ ಬಸಿಕ್ಮಡುಗೆ ಅವನೀಗೆ ಕಾಲು ಅಲ್ಲಾಂದೆ ಆಗ್ತೆಲ್ಯಾ,10,11,38,83
+kan rec/kn_009.m4a,kn,0,vad_off,recorded,ಮಾರ್ತಲುಗಿ ಚಟ್ರಾ ಉಪನೀಗೆ ಬಸಿಕ್ಮಳೆ ಅವನ್ಯಿದ ಕಾಲು ಅಲ್ಲಾ ಚಿಕೆ ಆಗ್ತಾಲ್ಲಿಗೆ.,11,11,43,83
+kan rec/kn_010.m4a,kn,clean,vad_on,recorded,ನಮ್ಮ ಅಂಗೆ ಸರಿಯಾಗಿ ಉಸ್ರಡಕ್ಕೆ ಆಕ್ತಾಯಿಲ್ಲ. ಲಿಪ್ಸ್ ಬಲುವಾಗಿದೇ.,6,8,19,58
+kan rec/kn_010.m4a,kn,clean,vad_off,recorded,ನಮ್ಮ ಅಂಗೆ ಸರಿಯಾಗಿ ಉಸ್ರಡಕ್ಕೆ ಆಕ್ತಾಯಿಲ್ಲಾ ಲಿಪ್ಸ್ ಬಳುವಾಗಿದೆ,6,8,20,58
+kan rec/kn_010.m4a,kn,20,vad_on,recorded,"ನಮ್ಮಮಾಂಗೆ ಸರಿಯಾಗಿ ಉಸ್ರಡಾಕೆ ಆಕ್ತಾಯಿಲ್ಲ, ಲಿಪ್ಸ್ ಬಲುವಾಗಿದೇ.",6,8,18,58
+kan rec/kn_010.m4a,kn,20,vad_off,recorded,ನಮ್ಮ ಅಂಗೆ ಸರಿಯಾಗಿ ಉಸ್ರಡಾಕೆ ಆಟ್ತಾಯಿಲ್ಲ. ಲಿಪ್ಸ ಬಲುವಾಗಿದೇ.,7,8,19,58
+kan rec/kn_010.m4a,kn,10,vad_on,recorded,ನಮ್ಮ ಮಾಂಗೆ ಸರಿಯಾಗಿ ಉಸ್ರಡಾಕೆ ಆಕ್ತಾಯಲ್ಲ. ಲಿಟ್ಸ್ ಬಲುವಾಗಿದೇ.,7,8,19,58
+kan rec/kn_010.m4a,kn,10,vad_off,recorded,ನಮ್ಮ ಮಾಂಗೆ ಸರಿಯಾಗಿ ಉಸ್ರಡಾಕೆ ಆಟ್ತಾಯಿಲ್ಲ. ಲಿಪ್ಸ ಬಳುವಾಗಿದೇ.,7,8,20,58
+kan rec/kn_010.m4a,kn,5,vad_on,recorded,ನಮ್ಮಾಂಗೆ ಸರಿಯಾಗೆ ಉಸ್ರಡೆಕೆ ಆದ್ತಾಇಲ್ಲ. ಲುಕ್ಸ ಬ್ಲುವಾದಿದೆ.,8,8,21,58
+kan rec/kn_010.m4a,kn,5,vad_off,recorded,"ನಮ್ಮ ಹಂಗೆ ಸರಿಯಾಗೆ ಇಸ್ರಡೆಕೆ ಆಥ್ತಾಯಿಲ್ಲ, ಲುಕ್ ಬ್ಲುವದಿದೆ.",8,8,23,58
+kan rec/kn_010.m4a,kn,0,vad_on,recorded,"ನಮ್ಮ ಮಂದು ಸರಿಯಾಗು ಉಷ್ರದಾಕೆ ಆಗ್ತಯಲ್ಲಾ, ಲಿಟ್ ಬ್ಲುವಾಗುದೇ.",8,8,24,58
+kan rec/kn_010.m4a,kn,0,vad_off,recorded,ನಮ್ಮಮ ಮಂದು ಸರಿಯಾಗು ಇಷ್ರದಾಕ್ತಯಾಗ್ತಯಾಗ್ತಯಾಗ್ತಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯಾಗ್ಯ,8,8,104,58
+kan rec/kn_011.m4a,kn,clean,vad_on,recorded,ಕಂಸ್ಟ್ರಕ್ಸುನಲ್ಸಾಇಟ್ನಲ್ಲೆ ಒಬ್ರ ಕೈ ತುಮ್ಬ ಕಟ್ಟಾಗಿದೆ ಬ್ಲೇಡಿಂಗ್ ನಿಲ್ತನೆ ಇಲ್ಲ.,9,12,19,73
+kan rec/kn_011.m4a,kn,clean,vad_off,recorded,ಕಂಸ್ಟ್ರೆಕ್ಸಿನಲ್ಲಿ ಒಬ್ರ ಕಯಿ ತುಮ್ಬ ಕಟ್ಟಾಗಿದೆ ಬ್ಲೇಡಿಂಗ್ ನಿಲ್ತನೆ ಇಲ್ಲ.,10,12,22,73
+kan rec/kn_011.m4a,kn,20,vad_on,recorded,ಕಂಸ್ಟ್ರಕ್ಸುನ್ಲ ಸಾಇಟ್ನಲೆ ಒಬ್ರ ಕೈ ತುಮ್ಬ ಕಟ್ಟಾಗಿದೆ ಬಿಡಿಂಗ್ ನಿಲ್ತನೆ ಇಲ್ಲಾ.,10,12,23,73
+kan rec/kn_011.m4a,kn,20,vad_off,recorded,ಕಂಸ್ಟ್ರೆಕ್ಸಿನಲ್ಲಿ ಒಬ್ರ ಕಯಿ ತುಮ್ಬ ಕಟ್ಟಾಗಿದೇ ಬ್ಲೇಡಿಂಗ್ ನಿಲ್ತನೆ ಇಲ್ಲಾ.,11,12,24,73
+kan rec/kn_011.m4a,kn,10,vad_on,recorded,"ಕಂಸ್ಟ್ರಕ್ಸುನ್ಸಾಇಟ್ನಲೆ ಅಬ್ರಗ್ ಕೈ ತುಮ್ಬ ಕಟ್ಟಾಗಿದೆ, ಬಿಡಿಂಗ್ ಇಲ್ತನೆ ಇಲ್ಲಾ.",11,12,28,73
+kan rec/kn_011.m4a,kn,10,vad_off,recorded,ಕನ್ಟೆಕ್ಸಿನ್ಲಿ ಅಬ್ರಗ್ ಕೈ ತುಮ್ಬ ಕಟ್ಟಾಗಿದೇ ಬ್ಲೇಡಿಂಗ್ ಇಲ್ತನೆ ಇಲ್ಲಾ.,11,12,29,73
+kan rec/kn_011.m4a,kn,5,vad_on,recorded,"ಕನ್ಟೆಕ್ಸಿನ್ಸಾಇಟ್ನಳೆ ಅಬ್ರಗ್ ಕೈ ತುಮ್ಬ ಕಟ್ಟಾಜುಲೆ, ಬೇಡಿಂಗ್ ಇಲ್ತನೆ ಇಲ್ಲಾ.",11,12,34,73
+kan rec/kn_011.m4a,kn,5,vad_off,recorded,"ಪನ್ಟೆಕ್ಸಿನ್ ಸಾಇಟ್ ನಳೆ ಅಬ್ರಗ್ ಕೈ ತುಮ್ಬ ಕಟ್ಟಾಜುಲೆ, ಬೇಡಿಂಗ್ ಇಲ್ತನೆ ಇಲ್ಲಾ.",11,12,33,73
+kan rec/kn_011.m4a,kn,0,vad_on,recorded,"ಕಂಸ್ಟ್ರಕ್ಸುನ್ ಸಾಇಟ್ನಳೆ ಅಬ್ರಗ್ ಕೈ ತುಮ್ಬ ಕಟ್ಟಾಗಿಲೆ, ಬೇಡಿಂ ಇಲ್ತನೆ ಇಲ್ಲ.",10,12,30,73
+kan rec/kn_011.m4a,kn,0,vad_off,recorded,ಕಂಸ್ಟ್ರಕ್ಸುನ್ ಸಾಇಟ್ ನಳೆ ಒಬ್ರ ಕಯಿ ತುಮ್ಬ ಕಟ್ಟಾಗಿಲೆ ಬೆಡುಂ ಇಲ್ಕನೆ ಇಲ್ಲಾ.,11,12,31,73
+kan rec/kn_012.m4a,kn,clean,vad_on,recorded,"ಕೆಯಾರ್ ಪುರಂ ಬಸ್ಟಾ ಪತ್ರಾ ಅಬ್ರು ವಯಸ್ ಅದವರು ಕುಸಿದು ಬಿದ್ಧಿದಾರೆ, ಕಣ್ಡು ಮುತ್ಚಿದೆ.",10,12,15,77
+kan rec/kn_012.m4a,kn,clean,vad_off,recorded,ಕೇಯಾರ್ಪುರಂ ಬಸ್ಟಾ ಪತ್ರಾ ಅಬ್ರು ವಯಸ್ದವರು ಕುಸಿದು ಬಿದ್ಧಿದಾರೆ ಕಣ್ಡು ಮುತ್ಚಿದಾರೆ,11,12,19,77
+kan rec/kn_012.m4a,kn,20,vad_on,recorded,"ಕೆಯಾರ್ ಪುರಂ ಬಸ್ಟಾ ಪತ್ರಾ ಅಬ್ರು ವಯಸ್ ಅದವರು ಕುಸಿದು ಬಿದ್ಧಿದಾರೆ, ಕನ್ಣು ಮುಚ್ಚಿದೆ.",9,12,14,77
+kan rec/kn_012.m4a,kn,20,vad_off,recorded,"ಕೇಯಾರ್ ಪುರಂ ಬಸ್ಟಾ ಪತ್ರ ಅಬ್ರು ವಯಸ್ ಆದವರು ಕುಸಿದು ಬಿದ್ಧಿದಾರೆ, ಕನ್ಣು ಮುಚ್ಚಿದೆ.",9,12,14,77
+kan rec/kn_012.m4a,kn,10,vad_on,recorded,"ಕೆಯಾರ್ ಪುರಂ ಬಸ್ಟಾ ಪತ್ರಾ ಒಬ್ರು ವಯಸ್ ಆದವರು ಕುಶಿದು ಬಿಡ್ಜಿದಾರೆ, ಕನ್ಣು ಮುಚ್ಚಿಲೆ.",11,12,16,77
+kan rec/kn_012.m4a,kn,10,vad_off,recorded,ಕೆಯಾರ್ ಪುರಂ ಬಸ್ಟಾ ಪತ್ರ ಒಬ್ರು ವಯಸ್ ಅದವರು ಕುಶಿದು ಬಿಳ್ಜಿದಾರು ಕನ್ಣು ಮುಚ್ಚಿದು.,11,12,16,77
+kan rec/kn_012.m4a,kn,5,vad_on,recorded,ಕೆಯಾರ್ಪುರಂ ಬಸ್ಟಾ ಪತ್ರಾ ಅಬ್ರು ವಾಯಸ್ ಅದವರು ಪಿಶಿದದಿಗಿದಾರು. ಕಂಡು ಮುಚಿದಾರು.,12,12,32,77
+kan rec/kn_012.m4a,kn,5,vad_off,recorded,ಕಯಾರ್ ಪುರಂ ಬಸ್ಟಾ ಪತ್ರಾ ಅಬ್ರು ವಯಸ್ ಆದವರು ಪಿಶಿದದಿಗ್ಗದಾರು. ಪಂಡು ಮುಚ್ಚದಾರು.,11,12,31,77
+kan rec/kn_012.m4a,kn,0,vad_on,recorded,ಕಿಹಾರ್ಪುರಂ ಬಸ್ಟಾ ಪತ್ರಾ ಅಬ್ರು ವಯಸ್ ಆಡವರು ಕಿಶಿದು ಬಿಲ್ಗಿದಾರು. ಪನ್ಣು ಮುತ್ಚಿದಾರು.,12,12,26,77
+kan rec/kn_012.m4a,kn,0,vad_off,recorded,"ಕಾರ್ಪುರಂ ಬಸ್ಟಾ ಪಡ್ರಾ ಅಬ್ರು ವಯಸ್ ಆದೊರಿ ತುಷಿದಿಗದಾರು, ಕನ್ನು ಮ್ಚಿದಾರು.",12,12,34,77
+kan rec/kn_013.m4a,kn,clean,vad_on,recorded,ನನ್ವಾಇಫ ಪ್ರೆಗ್ನೆಂಡ ಅವಳಿಗೆ ತುಮ್ಬಾ ಪೇನಾತಿದೆ ಇಗಲ್ಯ ಹಸ್ಪಿಟಲ್ ಹೋಗ್ಬೆಕು.,10,11,21,73
+kan rec/kn_013.m4a,kn,clean,vad_off,recorded,ನನುವಾಇಫ್ ಪ್ರೆಗ್ನೆಂಡ್ ಅವಳಿಗೆ ತುಮ್ಬಾ ಪೇನಾತಿದೆ ಇಗಲ್ಯ ಹಸ್ಪಿಟಲ್ ಹೋಕ್ಬೆಕು,10,11,21,73
+kan rec/kn_013.m4a,kn,20,vad_on,recorded,ನನ್ವಾಇಫ ಪ್ರೆಗನ್ಟ ಅವ್ಲಿಗೆ ತುಮ್ಬಾ ಪೇನಾತಿದೆ ಇಗಳೆ ಹಸ್ಪಿಟಲ್ ಹೋಗ್ಬೆಕು.,11,11,25,73
+kan rec/kn_013.m4a,kn,20,vad_off,recorded,ನನ್ವಾಇಫ ಪ್ರೆಗ್ನಟ ಅವಲಿಗೆ ತುಮ್ಬಾ ಪೇನಾತಿದೆ ಇಗಳೆ ಹಸ್ಪಿಟಲ್ ಹೋಗ್ಬೆಕು,11,11,23,73
+kan rec/kn_013.m4a,kn,10,vad_on,recorded,ನನುವಾಇಫ ಪ್ರೆಗನ್ಟ ಅವಲಿಗೆ ತುಮ್ಬಾ ಪೇನ ಆಥಿದೆ ಇಜಾಲೆ ಹಸ್ಪಿಟಲ ಹೋಗದೆಖು.,11,11,29,73
+kan rec/kn_013.m4a,kn,10,vad_off,recorded,ನನುವಾಇಫ ಪ್ರೆಡನ್ಟ ಅವಲಗೆ ತುಮ್ಬಾ ಪೇನ ಆಥಿದೆ ಇಜಾಲೆ ಹೋಸ್ಪಿಟಲ ಹೊಗ್ದೆಖು.,11,11,31,73
+kan rec/kn_013.m4a,kn,5,vad_on,recorded,ನನು ವಾಇಷ್ ಪ್ರೆಗನ್ಟ ಅವಲಿಗೆ ತೂಬಾ ಪೇನಾತಿಯೆ ಇಗಳೆ ಹೊಸ್ಪಿಟಲ ಹೋದೆಕು.,11,11,29,73
+kan rec/kn_013.m4a,kn,5,vad_off,recorded,ನನು ವಾಇಷ್ ಪ್ರೆಗನ್ಟ ಅವಲಿಗೆ ತೂಬಾ ಪೇನಾತಿಯೆ ಇಗಳೆ ಹೋಸ್ಪಿಟಲ ಹೊಕ್ಬಿಕು,11,11,28,73
+kan rec/kn_013.m4a,kn,0,vad_on,recorded,ನನ್ವಾ ಇಸ್ಪಿಟೆ ತುಮ್ಬಾ ಪೇನಾ ತೀದಲ್ಯಾ ಹಸ್ಪಿಟರ್ ಹೊಗ್ಡಿಕು.,11,11,40,73
+kan rec/kn_013.m4a,kn,0,vad_off,recorded,ನನ್ವಾಷ್ ಪ್ರೆಗ್ ಅವ್ಲಿದೆ ತುಮ್ಬಾ ಪೇನಾತಯೆ ಜಿದಲೆ ಘಸ್ಪಿಟಲ ಹೋಗ್ಡಿಕೊತ,11,11,34,73
+kan rec/kn_014.m4a,kn,clean,vad_on,recorded,ಅಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆ ರೋಡ್ನಲಿ ಸ್ಲಿಪ್ಪಾಗಿ ಬಿದ್ಧಿದನೆ ಕೈ ಫಾಕ್ಚರಾದಂಗಿದೆ.,11,12,21,79
+kan rec/kn_014.m4a,kn,clean,vad_off,recorded,ಒಬಡಿಲುವರಿ ಬಾಯು ಒದ್ಧೆ ರೋಡ್ನಳಿ ಸ್ಲಿಪ್ಪಾಗಿ ಬಿದ್ಧಿದನೆ ಕೈ ಫಾಕ್ಚರ್ ಆದಂಗಿದೆ,10,12,19,79
+kan rec/kn_014.m4a,kn,20,vad_on,recorded,"ಅಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆ ರೋಡ್ ನಲು ಸ್ಲಿಪ್ಪಾಗಿ ಬಿದ್ಧಿದನೆ, ಕೈ ಫಾಕ್ಚರಾದನಿದೆ.",10,12,23,79
+kan rec/kn_014.m4a,kn,20,vad_off,recorded,"ಅಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆ ರೋಡ್ ನಳಿ ಸ್ಲಿಪ್ಪಾಗಿ ಬಿದಿದನೆ, ಕೈ ಫಾಕ್ಚರ ಆದನಿದೆ.",10,12,22,79
+kan rec/kn_014.m4a,kn,10,vad_on,recorded,ಅಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆ ರೋಡ್ನಳು ಸ್ಲಿಪಾಗಿ ಬಿದ್ಧಾನೆ ಕಿಂ ಫಾಕ್ಚರ ಆದಂದುದೆ.,12,12,27,79
+kan rec/kn_014.m4a,kn,10,vad_off,recorded,"ಅಬ ಡಿಲುವರಿ ಬಾಯು ಒದ್ಧೆ ರೋಡ್ನಳು ಸ್ಲಿಪಾಗಿ ಬಿದ್ಧಾನೆ, ಕಿಂ ಖಾಚ್ಚರ ಆದಂಗಿದೆ.",11,12,27,79
+kan rec/kn_014.m4a,kn,5,vad_on,recorded,ಅಬ್ಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆ ರೋಡ್ ನಳಿಸ್ತಿಪ್ಪಾಗಿ ಬಿಗಿದನೆ ಕೈ ಫಾಕ್ಚರಾದಂಗಿದೆ.,10,12,23,79
+kan rec/kn_014.m4a,kn,5,vad_off,recorded,ಅಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆ ರೋರ ನಳಿ ಸ್ಲಿಪ್ಪಾಗಿ ಬಿಗಿದನೆ ಕೈ ಫಾಕ್ಚರ ಆದಂಗಿದೆ.,10,12,23,79
+kan rec/kn_014.m4a,kn,0,vad_on,recorded,ಅಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆರೋ ನೇವಸ್ಟಿಪಾಗಿ ಬಿಗಿದಾನೆ ತೈಂ ಕಾಕ್ಚಿರಾದಿಂದೆ.,12,12,36,79
+kan rec/kn_014.m4a,kn,0,vad_off,recorded,ಅಬ ಡಿಲುವರಿ ಬಾಯ ಒದ್ಧೆ ರೋ ನವಸ್ಕಿಟ್ಪಾಗಿ ಬಿಗದನೆ ತೇಂ ಕಿಂ ಕಾಕ್ಚಿರಾದೆ ಮಿದೆ.,12,12,38,79
+kan rec/kn_015.m4a,kn,clean,vad_on,recorded,"ಮನೆಲ್ಲಿ ಗಾಸ್ಲಿಕ್ಸ್ ಮೇಳ್ಬರ್ಥದೆ, ನಂ ತಮ್ಮಂಗೆ ತುಂಬತಲೆ ಸುತ್ತಿದೆ.",9,10,22,67
+kan rec/kn_015.m4a,kn,clean,vad_off,recorded,ಮನೆಲ್ಲಿ ಗಾಸ್ಲಿಕ್ಸ್ ಮೇಳ್ಲುಬರ್ಥದೆ ನಂ ತಮ್ಮಂಗೆ ತುಂಬತಲೆ ಸುತ್ತಿದೆ.,9,10,23,67
+kan rec/kn_015.m4a,kn,20,vad_on,recorded,ಮನೆಲೇ ಗಾಸ್ ಲಿಕ್ ಸ್ ಮೇಳು ಬರ್ಥದೆ ನಂ ತಮ್ಬಂಗೆ ತುಂಬಾ ತಲೇ ಶುತ್ತಿದೆ.,10,10,20,67
+kan rec/kn_015.m4a,kn,20,vad_off,recorded,ಮನೆಲೇ ಗಾಸ್ ಲಿಕ್ ಸ್ ಮೇಳು ಬರ್ಥದೆ ನಂ ತಮ್ಬಂಗೆ ತುಂಬಾ ತಲೇ ಶುತ್ತಿದೆ.,10,10,20,67
+kan rec/kn_015.m4a,kn,10,vad_on,recorded,"ಮನೆಲೇ ಗಾಸ್ಲಿಕ್ ಸ್ಮೆಲ್ಬರ್ಥದೆ, ನಂ ತಮ್ಬಂಗೆ ತುಮ್ಬತಲೇ ಶುಪ್ಥದೆ.",10,10,25,67
+kan rec/kn_015.m4a,kn,10,vad_off,recorded,ಮನೆಲೇ ಗಾಸ್ಲಿಕ್ ಮೇಳವರ್ಥದೆ ನಂ ತಮ್ಬಂಗೆ ತುಮ್ಬತಲೇ ಶುಪ್ಥದೆ.,10,10,31,67
+kan rec/kn_015.m4a,kn,5,vad_on,recorded,ಮನೆಲೇ ಗಾಸ್ಲಿಕ್ ಸ್ಮೆಲ್ಬರ್ಸಿದೆ ಯಂ ತಮ್ಬಾತಲೇ ಶುತ್ತಿದೆ.,10,10,26,67
+kan rec/kn_015.m4a,kn,5,vad_off,recorded,ಮನಲೆ ಗಾಸ್ಲಿಗ್ ಸ್ಮೆಲ್ಬರತ್ಚದೆ ಯಂ ತಮ್ಬಾತಲೆ ಶುತ್ಕಿದೆ.,10,10,29,67
+kan rec/kn_015.m4a,kn,0,vad_on,recorded,ಮನೆಲೇ ಗಾಸ್ಲಿಗ್ ಸ್ಮೆಲ್ವರ್ಸಡು ಏಂ ತಮ್ದಂಗು ತುಂಬಾ ತಲೇ ಶಕ್ಚುರು.,9,10,29,67
+kan rec/kn_015.m4a,kn,0,vad_off,recorded,ಮನೆಲಿ ಗಾಸ್ಲಿಗ್ ಮೇಲವರ್ಸದೆ ತಂಬಾ ತಲ್ಯವರ್ಸಟುಡಿ.,10,10,39,67
+kan rec/kn_016.m4a,kn,clean,vad_on,recorded,ವನ್ ಮಗು ಎನು ನುಂಬಿಟಿದೆ ಇಗಾ ಕೆಮ್ತಿದೆ ಮಾತಡಕೆ ಆರ್ತಯಿಲ್ಲ.,7,8,20,60
+kan rec/kn_016.m4a,kn,clean,vad_off,recorded,ವನ್ಮಗು ಎನೊ ನುಂಬಿಟಿದೆ ಇಗಾ ಕೆಮ್ತಿದೆ ಮಾತಡಕೆ ಆಕ್ತಾಯಿಲ್ಲ.,8,8,22,60
+kan rec/kn_016.m4a,kn,20,vad_on,recorded,"ವನ್ ಮಗು ಎನು ನುಂ ಬಿಟಿದೆ, ಇಗಾ ಕೆಮ್ತಿದೆ, ಮಾತಡಕೆ ಆರ್ತಯಿಲ್ಲ.",8,8,20,60
+kan rec/kn_016.m4a,kn,20,vad_off,recorded,ವನ್ ಮಗು ಎನು ನುಂಬಿಟಿದೆ ಇಗಾ ಕ್ಯೆಮ್ತಿದೆ ಮಾತಡಕೆ ಆರ್ತಾಯಲ್ಲ.,7,8,22,60
+kan rec/kn_016.m4a,kn,10,vad_on,recorded,ವನ್ ಮಗು ಎನು ನುಂ ಬಿಟೆಯು ಇಗಾ ಕೆಮ್ತಿದೆ ಮಾತಡಕೆ ಆಟ್ತೆಯಲ್ಲ.,8,8,24,60
+kan rec/kn_016.m4a,kn,10,vad_off,recorded,ವನ್ ಮಗು ಎನು ನುಂಬಿಟಿದು ಇಗಾ ಕೆಮ್ತಿದೆ ಮಾತಡಕೆ ಆಕ್ತಾಯಿಲ್ಲ.,7,8,22,60
+kan rec/kn_016.m4a,kn,5,vad_on,recorded,ವನ್ ಮಗು ಯೇನು ನುಂ ಬಿಟೆಯೇ ಹಿಗಾ ಕೆಮ್ ತಿಲೆ ಮಾತಡಕೆ ಆಥ್ತಯಿಲ್ಲ.,9,8,26,60
+kan rec/kn_016.m4a,kn,5,vad_off,recorded,ವನ್ ಮಗುಯೆನು ನುಂ ಬಿಟಿಯೆ ಹಿಗಾ ಕೇಮ್ತಿದೆ ಮಾತಡಕೆ ಆಠ್ತಾಇಲ್ಲಾ,8,8,26,60
+kan rec/kn_016.m4a,kn,0,vad_on,recorded,ವನ್ಮಗು ಯೇನು ನುಂದಿಪಿಯು ತಿಗಾ ಕೆಂತುದೆ ಮಾತರಥೆ ಆಸ್ಟೆಜಿಯುಾ.,8,8,37,60
+kan rec/kn_016.m4a,kn,0,vad_off,recorded,ಪನ್ಮಗು ಯೇನು ನುಂದಿತಿಯು ತಿಗಾ ಕ್ಯಂತಿದೆ ಮಾತರಟೆ ಆಸ್ಟೆಯು.,8,8,35,60
+kan rec/kn_017.m4a,kn,clean,vad_on,recorded,"ನಮ್ ಚಿಕಪ್ಪಂಗೆ ಸಡನ್ನಾಗಿ ಬಾಡಿ ಒನ್ ಸೈಡ್ ವಿಕಾಗಿದೆ, ಮಾತು ಕ್ಲಿಯರಾಗಿಯಿಲ್ಲ.",8,12,14,70
+kan rec/kn_017.m4a,kn,clean,vad_off,recorded,ನಮ್ ಚಿಕಪ್ಪಂಗೆ ಸಡನ್ನಾಗಿ ಬಾಡಿ ಒಂಸೇಡ್ ವಿಕಾಗಿದೆ ಮಾತ್ತು ಕ್ಲಿಯರಾಗಿಯಿಲ್ಲ.,10,12,18,70
+kan rec/kn_017.m4a,kn,20,vad_on,recorded,"ನಮ್ ಚಿಕಪ್ಪಂಗೆ ಸಡನಾಗಿ ಬಾಡಿ ಒನ್ ಸಾಯಡ್ ವಿಕಾಗಿದೆ, ಮಾತು ಕ್ಲಿಯರಾಗಿ ಇಲ್ಲಾ.",9,12,19,70
+kan rec/kn_017.m4a,kn,20,vad_off,recorded,"ನಮ್ ಚಿಕಪ್ಪಂಗೆ ಸಡನ್ನಾಗಿ ಬಾಡಿ ಒನ್ ಸಾಯಡ್ ವಿಕಾಗಿದೆ, ಮಾತು ಕ್ಲಿಯರ್ ಆಗಿಯಿಲ್ಲಾ.",8,12,15,70
+kan rec/kn_017.m4a,kn,10,vad_on,recorded,"ನಮ್ ಚಿಕಪ್ರಂಗೆ ಸಡನ್ನಾಗಿ ಬಾಡಿ ಒಂಸೈಡ್ ವಿಕಾಗಿದೆ, ಮಾತು ಕ್ಲಿಯರಾಗಿಯಿಲ್ಲಾ.",9,12,17,70
+kan rec/kn_017.m4a,kn,10,vad_off,recorded,"ನಮ್ ಚುಕಪ್ರಂಗೆ ಸಡನ್ನಾಗಿ ಬಾಡಿ ಒನ್ ಸೈಡ್ ವಿಕಾಗಿದೆ, ಮಾತ್ತು ಕ್ಲಿಯರಾಗಿ ಇಲ್ಲಾ.",9,12,20,70
+kan rec/kn_017.m4a,kn,5,vad_on,recorded,"ನಮ್ ಚಿಕಪಂಗೆ ಸಡನಾಗಿ ಬಾಡಿ ಒಂಸಾಯಡ್ ವಿಕಾಗಿಲೆ, ಮಾತು ಕ್ಲಿಯರಾಗಿಲ್ಲಾ.",9,12,21,70
+kan rec/kn_017.m4a,kn,5,vad_off,recorded,ನಮ್ ಚಿಕಪ್ರಂಗೆ ಸಡನಾಗಿ ಬಾಡಿ ಒಂಸಾಇಡ್ ವಿಕಾಗಿಲು ಮಾತ್ಟು ಕ್ಲಿಯರಾಗಿಲ್ಲಾ.,10,12,23,70
+kan rec/kn_017.m4a,kn,0,vad_on,recorded,ನಮ್ ಚಿಕಪಂಗೆ ಸಡನಾಗಿ ಬಾಡಿ ಒಂಸಾಡ್ ವಿಟಾಗಿದು. ಮಾತಿಕ್ ಲುಯರಾಗಿದು.,10,12,27,70
+kan rec/kn_017.m4a,kn,0,vad_off,recorded,ನಮ್ ಚಿಕಪ್ ಆಂಗೆ ಸಡನ್ ಆಗಿ ಬಾಡಿ ವಿತಾಗಿ ಮಾತು ಕ್ಲುಯರಾಗಿಗಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದ�,8,12,89,70
+kan rec/kn_018.m4a,kn,clean,vad_on,recorded,"ಅಬಾ ಲೇಬರ, ಸೆಕಂಡ್ ಫ್ಲೋರ, ಸ್ಕಾಯ್ ಫೊಡ್ ಇನ್ದ ಬಿದ್ಧಿದಾನೆ, ಕೆಳಗೆ ಗ್ರಾಉಣ್ ನಲ್ಲಿ ಮಲ್ಗಿದಾನೆ.",10,11,23,86
+kan rec/kn_018.m4a,kn,clean,vad_off,recorded,ಅಬ್ಬ ಲೇವರ್ ಸೆಕೆಡ್ ಫ್ಲೋರ್ ಸ್ಕಾಯ್ ಪೂಡ್ ಇನ್ದ ಬಿದ್ಧಿದಾನೆ ಕೆಳಗೆ ಗ್ರಾಂಡ್ನಲ್ಲಿ ಮಲ್ಗಿದಾನೆ,10,11,19,86
+kan rec/kn_018.m4a,kn,20,vad_on,recorded,"ಅಬ ಲೇಬರ, ಸೆಕಂಡ್ ಫ್ಲೋರ, ಸ್ಕಾಯ್ ಫೊಡ್ ಇನ್ದ ಬಿದ್ಧಿದಾನೆ, ಕೆಳಗೆ ಗ್ರಾಉಣ್ ನಲ್ಲಿ ಮಲ್ಗಿದಾನೆ.",10,11,23,86
+kan rec/kn_018.m4a,kn,20,vad_off,recorded,ಅಬಾ ಲೇಬರ ಸೆಕ್ನ್ಡ ಫ್ಲೋರ ಸ್ಕಾಯ ಫೊಡ ಇಂದ ಬಿದ್ಧಿದಾನೆ ಕೆಳಗೆ ಗ್ರಾಉನ್ನಲ್ಲಿ ಮಲ್ಗಿದಾನೆ.,11,11,26,86
+kan rec/kn_018.m4a,kn,10,vad_on,recorded,"ಅಬ ಲೇಬರ ಸೆಕ್ಂಡ ಫ್ಲೋರ ಸ್ಕಾಯ ಫೋಡ ಇನ್ದ ಬಿದ್ಧಿದಾನೆ, ಕಳಾಗೆ ಗ್ರಾಉಣ್ನಲ್ಲಿ ಮಲ್ಗಿದಾನೆ.",11,11,26,86
+kan rec/kn_018.m4a,kn,10,vad_off,recorded,ಅಬ್ಬ ಲೇವರ್ ಸೆಕಂಡ್ ಪ್ಲೋರ್ ಸ್ಕಾಯ್ ಫೊಡ್ ಇನ್ದ ಬಿದ್ಧಿದಾನು ಕೆಳಗೆ ಗ್ರಾಉಣ್ ನಲ್ಲಿ ಮಲ್ಲಿದಾನು.,10,11,24,86
+kan rec/kn_018.m4a,kn,5,vad_on,recorded,"ಅಬಾ ಲೇವರ್ ಸೈಕಂಡ್ ಫ್ಲೋರ್ ಇನ್ ಬಿಗದಾನೆ, ಜಳಾಯು ಗ್ರಉನ್ ಮಲ್ಲಿ ಮಲ್ಲಿಗಾನು.",10,11,42,86
+kan rec/kn_018.m4a,kn,5,vad_off,recorded,ಅಬಾ ಲೆವಡ ಸೇಕ್ನ್ಟ ಫ್ಲೋರ ಸ್ಕಾಪೊಡಿ ಇನ್ನ ಬಿಗದಾನು ತಯಳಾಗೆ ಗ್ರಾಂದ ಮಲ್ಲಿಮಲ್ಲಿಗದಾನು.,11,11,43,86
+kan rec/kn_018.m4a,kn,0,vad_on,recorded,"ಅಬಾ ಲೇವರ್ ಸೈಕಂಡ್ ಪ್ಲೋದ ಇನ್ನ ಬಿಗದಾನೆ, ಕಳಾಗೆ ಗ್ರಾಉಡ್ ಮಲ್ಲು ಮಲ್ಗರಾನು.",11,11,41,86
+kan rec/kn_018.m4a,kn,0,vad_off,recorded,ಅಬೆ ಲೇವರ್ ಸೈಕ್ನ್ ಪ್ಲೋರ್ ಸ್ಕಾಯ್ ಕೊಡಿದಾನು ಕಳಾಗೆ ಗ್ರಾಂಡ್ ಮಲ್ಲಿದಾನು.,11,11,40,86
+kan rec/kn_019.m4a,kn,clean,vad_on,recorded,"ಸಿಗ್ನಲ ಅತ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದೆ, ಇಬ್ರು ಪೈಸೇಂಜರ ಗಾಯಾಗಿದೆ.",6,11,15,65
+kan rec/kn_019.m4a,kn,clean,vad_off,recorded,ಸಿಗ್ನಲತ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿಯಾಗಿದೆ ಇಬ್ರು ಪೈಸೇಂಜರ್ ಗಾಯಾಗಿದೆ,8,11,17,65
+kan rec/kn_019.m4a,kn,20,vad_on,recorded,"ಸಿಗ್ನಲ ಅತ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದೆ, ಇಬ್ರು ಪಾಯಾಗಿದೆ.",6,11,21,65
+kan rec/kn_019.m4a,kn,20,vad_off,recorded,"ಸಿಗ್ನಲ ಅಥ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದೆ, ಇಬ್ರು ಪಾಯಾಗಿದೆ.",6,11,22,65
+kan rec/kn_019.m4a,kn,10,vad_on,recorded,ಸಿಗ್ನರ ಅತ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದೇ ಇಬ್ರು ಪಾಯಾಗಿದೇ,7,11,24,65
+kan rec/kn_019.m4a,kn,10,vad_off,recorded,ಸಿಗ್ನರ ಅತ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದೇ ಇಬ್ರು ಪಾಸೇಂಜರ ಗಾಯ ಆಗಿದೇ,6,11,15,65
+kan rec/kn_019.m4a,kn,5,vad_on,recorded,"ಸಿಗ್ಯವತ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದು, ಇದ್ರು ಪಾಸೇಂಜರ್ ಗಾಯಾಗಿದು",8,11,19,65
+kan rec/kn_019.m4a,kn,5,vad_off,recorded,"ಸಿಗ್ಯವತ್ರು ಒಂದು ಆಟೋ ಪಲ್ಟಿ ಆಗಿದು, ಇದ್ರು ಪಾಯಾಗಿದು",8,11,27,65
+kan rec/kn_019.m4a,kn,0,vad_on,recorded,ಸಿಗ್ನೆದರು ಒಂಡು ಆಟೋ ಪಲ್ತಿ ಆಗಳು ಇದ್ರು ಪಾಸೇಂಜರ ಘಾಯ ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆಗಳು ಆ,27,11,105,65
+kan rec/kn_019.m4a,kn,0,vad_off,recorded,ಸಿಗ್ನವತ್ರು ಒಂಡು ಆಟೋ ಪಲ್ತಿ ಆಗಳು ಇದ್ರು ಪಾಸೇಂಜರ್ ಘಾಯ ಆಗಳು,10,11,23,65
+kan rec/kn_020.m4a,kn,clean,vad_on,recorded,ಪಕ್ಕತ್ಮನೆವರಿಗೆ ತುಂಬಾ ಜೇನು ನೋಣಾ ಕಚ್ಚಿದೆ ಅವರಾ ಫೇಸ್ ಬೇಗಾ ಬೇಗಾ ಉತ್ಕೊಳ್ತಿದೆ,7,9,10,66
+kan rec/kn_020.m4a,kn,clean,vad_off,recorded,ಪಕ್ಕತ್ಮನೆವರಿಗೆ ತುಂಬಾ ಜೇನು ನೊಣಾ ಕಚ್ಚಿದೆ ಅವರಾ ಫೇಸ್ ಬೇಗಾ ಬೇಗಾ ಉತ್ಕೋಳ್ತಿದೆ,7,9,10,66
+kan rec/kn_020.m4a,kn,20,vad_on,recorded,ಪಕ್ಕತ ಮನೆವರಿಗೆ ತುಮ್ಬಾ ಜೇನು ನೊಣಾ ಕಚ್ಚಿದೆ ಅವರಾ ಫೇಸ ಬೇಗಾ ಬೇಗಾ ಉಂತ್ಕೋಲ್ತಿದೆ,10,9,16,66
+kan rec/kn_020.m4a,kn,20,vad_off,recorded,ಪಕ್ಕತ ಮನೆವರಿಗೆ ತುಮ್ಬಾ ಜೇನು ನೋನಾ ಕಚ್ಚಿದೇ ಅವರಾ ಫೇಸ್ ಬೇಗಾ ಬೇಗಾ ಉಂದ್ ಕೊಳ್ತಿದೇ,11,9,17,66
+kan rec/kn_020.m4a,kn,10,vad_on,recorded,ಪಕ್ಕತ ಮನೆವರಿಗೆ ತುಮ್ಬಾ ಜೇನು ನೋಣಾ ಕಚ್ಚಿದೆ ಅವರಾ ಫೇಸ ಬೇಗಾ ಬೇಗಾ ಉಂತ್ಕೊಲ್ತಿದೆ,10,9,16,66
+kan rec/kn_020.m4a,kn,10,vad_off,recorded,ಪಕ್ಕತ ಮನೆವರಿಗೆ ತುಂಬಾ ಜೇನು ನೋಣಾ ಕಚ್ಚಿದೆ ಅವರಾ ಫೇಸ್ ಬೇಗಾ ಬೇಗಾ ಉತ್ಕೊಳ್ತಿದೆ,8,9,11,66
+kan rec/kn_020.m4a,kn,5,vad_on,recorded,ಪಕ್ಕತ ಮನೆವರಿಗೆ ತುಮ್ಬಾ ಜೇನ್ ನೋನಾ ಪಚ್ಚಲೆ ಅವರಾ ಫೇಸ್ ಬೇಗಾ ಬೇಗಾ ಉಂದ್ ಕೊಳ್ತಲೆ,11,9,21,66
+kan rec/kn_020.m4a,kn,5,vad_off,recorded,ಪಕ್ತ ಮನೆವರಿಗೆ ತುಮ್ಬಾ ಜೇನ್ ನೊನಾ ಪಚಿದೆ ಅವರಾ ಫೇಸ್ ಬೇಗಾ ಬೇಗಾ ಉಂದ್ ಕೋಲ್ತಿದೆ.,11,9,21,66
+kan rec/kn_020.m4a,kn,0,vad_on,recorded,ಪಟ್ಕತ ಮೈವರಿಗೆ ಚುಂಬಾ ಜೇನ್ಮನಾ ಕಟ್ತಗೆ ಅವರಾಸೇದ ಬೇಗಾ ಬೇಗಾ ಉದ್ಕೊಲ್ತಗೆ.,9,9,25,66
+kan rec/kn_020.m4a,kn,0,vad_off,recorded,ಪತ್ಕದ ಮನೆವರಿಗೆ ಚುಂಬಾ ಜೇನ್ಮನಾ ಕಟ್ಸಿಗೆ ಅವರಾಸೇಷ ಬೇಗಾ ಬೇಗಾ ಉದ್ಕೊಲ್ಟಿಗೆ.,9,9,21,66
+kan rec/kn_021.m4a,kn,clean,vad_on,recorded,ಅಬ್ ಮನುಸ್ಯನ್ ನಾಯಿ ಸೇವ ಮಾಡೋಕೆ ಕೆರೆಗೆ ಹಾರಿದ ಇಗಾ ನಿರಿಂದ ಹೊರಾಗೆ ಬರತಿಲಾ.,9,11,16,69
+kan rec/kn_021.m4a,kn,clean,vad_off,recorded,ಅಬ್ಬ ಮನುಸ್ಯಾನ್ನಾಯಿ ಸೇವಮಾಡೊಕೆ ಕೆರೆಗೆ ಹಾರಿದಾ ಇಗಾದ ನಿರಿಂದಾ ಹೋರಾಗೆ ಬರ್ತಿಲಾ,10,11,20,69
+kan rec/kn_021.m4a,kn,20,vad_on,recorded,ಅಬ್ ಮನುಶನ್ ನಾಯಿ ಸೇವ ಮಾಡೋಕೆ ಕೆರೆಗೆ ಹಾರಿದ ಇಗಾದ ನಿರಿಂದ ಹೊರಾಗೆ ಬರತಿಲಾ.,9,11,17,69
+kan rec/kn_021.m4a,kn,20,vad_off,recorded,"ಅಬ್ಬ ಮೊನುಶನ್ ನಾಯಿ ಸೇವ ಮಾಡೋಕೆ ಕೆರೆಗೆ ಹಾರಿದಾ, ಇಗಾದ ನಿರಿಂದಾ ಹೊರಾಗೆ ಬರತಿಲಾ.",9,11,18,69
+kan rec/kn_021.m4a,kn,10,vad_on,recorded,"ಅಬು ಮನೀಸ್ಯ ನಾಇ ಶೇವ ಮಾಡೋಗೆ ಕೆರೆಗೆ ಹಾರಿದಾ, ಇಗಾ ನಿರಿಂದಾವರಾಗೆ ಬರತಿಲಾ.",10,11,23,69
+kan rec/kn_021.m4a,kn,10,vad_off,recorded,ಅಬ್ಬ ಮುನೀಸ್ಯನ್ ನಾಯಿ ಶೇವ ಮಾಡೋಕೆ ಕೆರೆಗೆ ಹಾರಿದಾ ಇಗಾ ನಿರಿಂದಾವರಾಗೆ ಬರತಿಲಾ,9,11,21,69
+kan rec/kn_021.m4a,kn,5,vad_on,recorded,ಅಬು ಮನಿಸ್ನ ನಾಇಶೆ ಮಾಡುಕೆ ಕೆರೆಗೆ ಹಾರಿಗಾ ಯಿರಿಂದಾವರಾಗೆ ಬರ್ಚಲಾ.,10,11,31,69
+kan rec/kn_021.m4a,kn,5,vad_off,recorded,ಅಬ್ಬ ಮುನೀಶ ನಾಯ ಸೇವ ಮಾಡೋಕೆ ಕೆರೆಗೆ ಹಾರಿಗಾ ತಿಗಾ ನಿರಿಂದಾವರಾಗೆ ಬರ್ಚಿಲಾ.,9,11,22,69
+kan rec/kn_021.m4a,kn,0,vad_on,recorded,"ಅಬು ಮನಿಸ್ಮ ನಾಯ ಮಾಡೆತೇ ತರೆಯ ಹರಗದ ಪಿಗಾ, ನಿರಂದಾವರದಿಗಾ.",11,11,42,69
+kan rec/kn_021.m4a,kn,0,vad_off,recorded,ಅಬು ಮನಿಸ್ ನಾಇಶೆ ಮಾಡೆತೆ ತರೆಯ ಹರಗದ ಪಿಗಾ ನಿರಂಗಾವರಾಗು ಬರ್ತಿಗಾ.,11,11,38,69
+kan rec/kn_022.m4a,kn,clean,vad_on,recorded,ಅಡಿಗೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ಕನ ಕೈ ಬಿಸಿ ಎಣ್ನೆ ಇಂದ ತುಂಬಾ ಸುಟ್ಟಿ ಹೋಗಿದೆ.,7,9,11,56
+kan rec/kn_022.m4a,kn,clean,vad_off,recorded,ಅಡಿಗೆ ಮಾಡುವಾಗ ನಮ್ಮ ಅಕ್ಕನ ಕೈ ಬಿಸಿ ಎಣ್ನೆ ಇಂದ ತುಂಬ ಸೂಟ್ಟಿ ಹೋಗಿದೆ,7,9,12,56
+kan rec/kn_022.m4a,kn,20,vad_on,recorded,ಅಡಿಕೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ಕನ ಕೈ ಬಿಸಿ ಎಣ್ನೆ ಇಂದ ತುಂಬಾ ಸುಟ್ಟಿ ಹೋಗಿದೆ.,7,9,12,56
+kan rec/kn_022.m4a,kn,20,vad_off,recorded,ಅಡಿಕೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ಕನ ಕೈ ಬಿಸಿ ಎಣ್ನೆ ಇಂದ ತುಂಬ ಸುರ್ಟಿ ಹೋಗಿದೆ,8,9,14,56
+kan rec/kn_022.m4a,kn,10,vad_on,recorded,ಅಡಿಗೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ಕನ ಕೈ ಹಿಸಿ ಎಂನೆಯಿದು ತುಂಬಾ ಶುರ್ತಿ ಒಳಿದು.,7,9,17,56
+kan rec/kn_022.m4a,kn,10,vad_off,recorded,ಅಡಿಗೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ಕನ ಕೈ ಹಿಸಿ ಎಣ್ನೆಯಿಲು ತುಂಬಾ ಶುತ್ಪು ಹೋಗಿದು.,7,9,16,56
+kan rec/kn_022.m4a,kn,5,vad_on,recorded,ಅಡಿಗೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ಕಾನ ಕೈ ಬಿಸಿ ಎಣ್ನೆ ಇಂದು ತುಂಬಾ ಸುಟ್ಟಿ ಹೋಗಿದೆ.,8,9,13,56
+kan rec/kn_022.m4a,kn,5,vad_off,recorded,ಅಡಿಗೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ಕಾನ ಕೈ ಬಿಸಿ ಎಣ್ನೆ ಇಂದ ತುಂಬಾ ಸುಟ್ಟಿ ಹೋಗಿದೆ,8,9,12,56
+kan rec/kn_022.m4a,kn,0,vad_on,recorded,ಅಡಿಗೆ ಮಾಡು ಆಗಾನ ಅಮ್ಮ ಅಕ್ತಾನ ಕಯ್ ಇಸಿ ಎಂನೆ ನಿಟ್ ತುಮ್ಬಾ ಸಿಟ್ಟು ಒಗಳಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದಿದ�,12,9,88,56
+kan rec/kn_022.m4a,kn,0,vad_off,recorded,ಅಡಿಗೆ ಮಾಡುವಾಗಾ ನಮ್ಮ ಅಕ್ತಾನ ಕಲ್ ಬಿಸಿಯನ್ನೆ ನಿಕ್ ತುಂಬಾ ಸುಟ್ಟು ಒಗಳಿ.,9,9,21,56
+kan rec/kn_023.m4a,kn,clean,vad_on,recorded,"ಜಂಕ್ಷನಲಿ ತುಂಬಾ ಕ್ರವಡಿದೆ, ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟ್ಮಾಡಿದೆ, ರೈಡರ ಅನ್ಕಾಂಶಿಯಸ್ ಆಗಿದಾನೆ.",12,14,19,86
+kan rec/kn_023.m4a,kn,clean,vad_off,recorded,ಜಂಕ್ಷನಲ್ಲಿ ತುಂಬ ಕ್ರವಡಿದೆ ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟ್ಮಾಡಿದೆ ರೈಡರ ಅನ್ಕಾಂಶಿಯಸ್ ಆಗಿದಾನೆ,13,14,18,86
+kan rec/kn_023.m4a,kn,20,vad_on,recorded,"ಜಂಕ್ಷನ್ಲಿ ತುಂಬ ಕ್ರವಡಿದೆ, ಲಾರಿಸ್ ಕೂಟಿಕೆ ಹಿಟ್ಮಾಡಿದೆ, ರೈಡರ ಅನ್ಕಾಂಶಿಯಸ್ ಆಗಿದಾನೆ.",13,14,20,86
+kan rec/kn_023.m4a,kn,20,vad_off,recorded,"ಜಂಕ್ಷನ್ಲಿ ತುಮ್ಬ ಕ್ರವಡಿದೆ, ಲಾರಿಸ್ ಕೂಟಿಕೆ ಹಿಟ್ಮಾಡಿದೆ, ರೈಡರ ಅನ್ಕಾಂಶಿಯಸ್ ಆಗಿದಾನೆ",13,14,22,86
+kan rec/kn_023.m4a,kn,10,vad_on,recorded,"ಜಂಕ್ಷನ್ಲಿ ತುಮ್ಬ ಕ್ರವಡಿಗೆ, ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟ್ಮಾಡಿಗೆ, ರೈಡರ ಅನ್ಕಾಂಶಿಯಸ್ ಆಗಿದಾನೆ.",13,14,23,86
+kan rec/kn_023.m4a,kn,10,vad_off,recorded,ಜಂಕ್ಷನ್ಲಿ ತುಮ್ಬ ಕ್ರೋಡಿಗೆ ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟ್ಮಾಡಿಗೆ ರೇಡರ ಅನ್ಕಾಂಶಿಯಸ್ ಆಗಿದಾನೆ,13,14,24,86
+kan rec/kn_023.m4a,kn,5,vad_on,recorded,"ಜಂಶನ್ಲಿ ತುಮ್ಬಾ ಕ್ರವಡಿಗೆ, ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟ್ಮಾಡಿಗೆ, ರೈಡರ ಅಂಕಾಂಸ್ ಆಗಿದಾನೆ.",13,14,30,86
+kan rec/kn_023.m4a,kn,5,vad_off,recorded,"ಜಂ್ಸನಲಿ ತುಮ್ಬ ಕ್ರವಡಿಗೆ, ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟ್ಮಾಡಿಗೆ, ರೈಡರ ಅಂಕಾಂಶ್ ಆಗಿದಾನೆ.",13,14,31,86
+kan rec/kn_023.m4a,kn,0,vad_on,recorded,"ಜಂಸಲ್ಲಿ ತುಮ್ಬಾ ಕ್ರೋಡಿಗೆ, ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟ್ಮಾಡಿಗೆ, ರೈಡರ ಅನ್ಕಾಂಶ್ ಆಗದಾನೆ.",14,14,29,86
+kan rec/kn_023.m4a,kn,0,vad_off,recorded,"ಜಂಸಲ್ಲಿ ತುಮ್ಬಾ ಕ್ರವಡಿಗೆ, ಲಾರಿಸ್ ಕೂಟಿಗೆ ಹಿಟಿಮಾಡಿಗೆ, ರೇಡಾರ ಅನ್ಕಾಂಸ್ ಆಗಿದಾನೆ.",13,14,31,86
+kan rec/kn_024.m4a,kn,clean,vad_on,recorded,"ನಮ್ಮ ಅಪ್ಪಂಗೆ ಶುಗರಿದೇ ತುಂಬ ಕಂಫುಸಾಗಿದಾರೆ, ಪೇವರ್ಥಿದಾರೆ, ಶರಿಯಾಗಿ ಮಾತಾಡತಿಲ್ಲ.",9,10,19,77
+kan rec/kn_024.m4a,kn,clean,vad_off,recorded,ನಮ್ಮ ಅಪ್ಪಂಗೆ ಶುಗರಿದೇ ತುಂಬ ಕಂಫ್ಯೂಸ್ ಆಗಿದಾರೆ ಪೇವರ್ಥಿದಾರೆ ಸರಿಯಾಗಿ ಮಾತಾಡ್ತಿಲ್ಲ.,6,10,11,77
+kan rec/kn_024.m4a,kn,20,vad_on,recorded,"ನಮ್ಮ ಅಪ್ಪಂಗೆ ಶುಗರಿದೇ ತುಂಬ ಕಂಚುಸಾಗಿದಾರೆ, ಎವರ್ಥಿದಾರೆ, ಸರಿಯಾಗಿ ಮಾತಾಡ್ತಿರ್ಲ.",8,10,19,77
+kan rec/kn_024.m4a,kn,20,vad_off,recorded,"ನಮ್ಮ ಅಪ್ಪಂಗೆ ಶುಗರಿದೇ ತುಂಬ ಕಂಚುಸಾಗಿದಾರೆ, ಎವರ್ಥಿದಾರೆ, ಸರಿಯಾಗಿ ಮಾತಾಡ್ತಿರ್ಲ.",8,10,19,77
+kan rec/kn_024.m4a,kn,10,vad_on,recorded,"ನಮ್ಮ ಅಪ್ಪಂಗು ಸುಗರಿದೆ, ತುಂಬ ಕಂದ್ಯುಜಾಗಿದಾರು, ಎವರ್ತಿದಾರು, ಶರಿಯಾಗಿ ಮಾತಾಡ್ತಿರ್ಲಾ.",10,10,22,77
+kan rec/kn_024.m4a,kn,10,vad_off,recorded,"ನಮು ಅಪ್ಪಂಗು ಸುಗರಿದೆ, ತುಂಬ ಕಂದ್ಯುಜಾಗಿದಾರು, ಹೇವರ್ಥಿದಾರು, ಶರಿಯಾಗಿ ಮಾತಾಡ್ತಿರಿಲ್ಲ.",10,10,23,77
+kan rec/kn_024.m4a,kn,5,vad_on,recorded,"ನಮ್ಮ ಅಪ್ಪಂಗು ಸುಗರಿದೆ, ತುಂಬ ಕಂಕುಸಾಗಿದಾರೆ, ತೇವರ್ಥದಾರೆ, ಶರಿಯಾಗಿ ಮಾತಾರ್ತಿಲ್ಲ.",10,10,22,77
+kan rec/kn_024.m4a,kn,5,vad_off,recorded,"ನಮ್ಮ ಅಪ್ಪಂಗು ಸುಗರಿದೆ, ತುಂಬ ಕಂಕುಸಾಗಿದಾರೆ, ಪೇವರ್ಥಿದಾರೆ, ಶರಿಯಾಗಿ ಮಾತಾರ್ತಿಲ್ಲ.",10,10,21,77
+kan rec/kn_024.m4a,kn,0,vad_on,recorded,"ನಮಾಕ್ತಂಗು ಸುದರಿದೆ, ತುಂಬ ಕಂಚುಸಾಗಿದಾರು, ಪೇವರ್ಟಿದಾರು, ಶರಿಯಾಗಿ ಮಾತಾರಿದಿದೆ.",10,10,33,77
+kan rec/kn_024.m4a,kn,0,vad_off,recorded,"ನಮಾಕ್ತಂಗು ಸುದರುಜೆ ತುಂಬ ಕಂಚು ಸಾಗಿದಾರು, ಹೇವರ್ಚಿದಾರು, ಶಳಯಾಗಿ ಮಾತಾರ್ಚಿಡು.",10,10,35,77
+kan rec/kn_025.m4a,kn,clean,vad_on,recorded,"ಕಾಲೆಜ್ ಫಂಕ್ಷನಲ್ಲಿ ಒಬಳು ಸ್ಟೂಡೆನ್ಟ ಮೂರ್ಚೆ ಹೋಗಿದ್ದಾಳೆ, ತುಂಬ ನಿದಾನವಾಗಿ ಉಸಿರಾಟ್ದಾಳೆ.",10,10,17,81
+kan rec/kn_025.m4a,kn,clean,vad_off,recorded,ಕಾಲೆಜ್ ಫಂಕ್ಷನಲ್ಲಿ ಒಬ್ಳು ಸ್ಟೂಡೇನ್ಟ ಮೂರ್ಚೆ ಹೋಗಿದ್ಧಾಳೆ ತುಂಬ ನಿದಾನವಾಗೆ ಉಸಿರಾಡ್ಥಿದಾಳೆ,10,10,17,81
+kan rec/kn_025.m4a,kn,20,vad_on,recorded,"ಕಾಲೆಜ್ ಫಂಕ್ಷನರ್ಲಿ ಒಬಳು ಸ್ಟೂಡೆನ್ಟ ಮೂರ್ಚೆ ಹೋಗಿದ್ದಾಳೆ, ತುಂಬಾ ನಿದಾನ ಆಗೆ ಉಸಿರಾಟ್ದಾಳೆ.",10,10,20,81
+kan rec/kn_025.m4a,kn,20,vad_off,recorded,"ಕಾಲೆಜ್ ಫಂಕ್ಷನರ್ಲಿ ಒಬ್ಲು ಸ್ಟೂಡೆನ್ಟ ಮೂರ್ಚೆ ಹೋಗಿದ್ದಾಳೆ, ತುಂಬಾ ನಿದಾನ ಆಗೆ ಉಸಿರಾಟ್ದಾಳೆ.",10,10,20,81
+kan rec/kn_025.m4a,kn,10,vad_on,recorded,"ಕಾಲೆಜ್ ಪಂಗ್ಸನರ್ಲಿ ಒಬ್ಲು ಸ್ಟೂಡೆನ್ಟ ಮೂತ್ಚ ಹೋಗಿದ್ದಾಳೆ, ತುಂಬಾ ನಿದಾನಾವಾಗಿ ಉಸಿರಾಟ್ದಾಳೆ.",9,10,23,81
+kan rec/kn_025.m4a,kn,10,vad_off,recorded,"ಕಾಲೆಸ್ ಫಂಕ್ಷನರ್ಲಿ ಒಬ್ಲು ಸ್ಟೂಡೆನ್ತ ಮೂರ್ಚ ಹೋಗಿದ್ದಾಳೆ, ತುಂಬಾ ನಿದಾನಾವಾಗಿ ಉಸಿರಾಟ್ದಾಳೆ.",9,10,20,81
+kan rec/kn_025.m4a,kn,5,vad_on,recorded,"ಕಾಲೆಜ್ ಫಂಕ್ಶನ್ಯರ್ಲಿ ಒಬ್ಗು ಸ್ಟೂಡೆನ್ ಮೂತ್ಚೆ ಹೋಗಿ ದಾಳೆ, ತುಂಗಾ ನಿದಾನಾವಾಗಿ ಉಸ್ಯರಾಕ್ಚೆ ದಾಳೆ.",11,10,21,81
+kan rec/kn_025.m4a,kn,5,vad_off,recorded,"ಕಾಲೆಜ್ ಫಂಕ್ಶನಿರ್ಲೀ ಒಗಳು ಸ್ಟೂಡೇನ್ ಮೂತ್ಚೆ ಹೋಗಿದ್ದಾಲೆ, ತುಂಬಾ ನಿದಾನಾವಾಗಿ ಉಸ್ಯರಾಕ್ಚಿದಾಲೆ.",9,10,25,81
+kan rec/kn_025.m4a,kn,0,vad_on,recorded,ಕಾಲೆಜ್ ಪಂಕ್ಷನಳಿ ಅಬ್ರು ಸ್ಟೂಡೆನ್ ಮೂರ್ಚೆ ಹೋಗಿದ್ದಾಲು. ತುಂಗಾ ಇರಾನ ಆಗೆ ಉಸ್ಯರಾಕ್ತದಾಲು.,10,10,31,81
+kan rec/kn_025.m4a,kn,0,vad_off,recorded,ಕಾಲೆಸ್ ಫಂಕ್ಷಣಳಿ ಒಬ್ಲು ಸ್ಟೂಡೆನ್ಟ ಮೂರ್ಚೆ ಹೋಗಿದ್ದಾಲು. ತುಂಗಾ ಮಿರಾನಾವಿ ಉಸಿರಾಕ್ತಿದಾಲು.,10,10,27,81
+kan rec/kn_026.m4a,kn,clean,vad_on,recorded,ರೋಡ್ ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಒಬ್ಬ ಅಧನ ಟಚ್ ಮಾಡಿದ ಇಗ ಅಲ್ಲಾಡಿತಿಲ್ಲ.,5,11,9,70
+kan rec/kn_026.m4a,kn,clean,vad_off,recorded,ರೋಡ್ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಒಬ್ಬ ಅಧನ ಟಚ್ ಮಾಡಿದ ಇಗ ಅಲ್ಲಾಡಿತಿಲ.,7,11,12,70
+kan rec/kn_026.m4a,kn,20,vad_on,recorded,ರೋಡ್ ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಹೊಬ್ಬ ಅದನ ಟೆಚ್ ಮಾಡಿದ ಇಗಾ ಅಲ್ಲಾಡಿತಿಲ್ಲ.,7,11,12,70
+kan rec/kn_026.m4a,kn,20,vad_off,recorded,ರೋಡ್ ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಹೊಬ್ಬ ಅದನ ಟಚ್ ಮಾಡಿದ ಇಗಾ ಅಲ್ಲಾಡಿತಿಲ್ಲ.,6,11,11,70
+kan rec/kn_026.m4a,kn,10,vad_on,recorded,ರೋಡ್ ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಹೊಬ್ಬ ಅದನ ಟೆಚ್ ಮಾಡಿದ ಇಗಾ ಅಲ್ಲಾಡಿತ್ತಿಲ.,7,11,15,70
+kan rec/kn_026.m4a,kn,10,vad_off,recorded,ರೋಡ್ ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಹೊಬ್ಬ ಅದನ ಟಚ್ ಮಾಡಿದ ಇಗಾ ಅಲ್ಲಾಡಿಕಿಲ್ಲ.,6,11,12,70
+kan rec/kn_026.m4a,kn,5,vad_on,recorded,ರೋಡ್ ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಹೊಬ್ಬ ಅದನ ಟಕ್ಸ್ ಮಾಡಿದ ಇಗ ಅಲ್ಲಾಡಿತಿಲ್ಲ.,7,11,13,70
+kan rec/kn_026.m4a,kn,5,vad_off,recorded,ರೋಡ್ ನಲ್ಲಿ ಕರೆಂಟ್ ವಾಯರ್ ಬಿದಿತ್ತು ಹೊಬ್ಬ ಅಧನ್ನ ಟಚ್ ಮಾಡಿದ ಇಗಾ ಅಲ್ಲಾಡಿತಿಲೆ,6,11,12,70
+kan rec/kn_026.m4a,kn,0,vad_on,recorded,"ಕ್ರೋದ ನಲಿ ಕರಂಜ್ಗ ವಾಯರ ಗಿಡಿತ, ಅಭಾ ಆದೆನೆ ಪಟ್ಮಾರಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲಾಗದ ಇಜಾಲ್ಲ",17,11,98,70
+kan rec/kn_026.m4a,kn,0,vad_off,recorded,"ಕ್ರೊಡನಾಲಿ ಕರಂಜ್ವಾಯರಗದಿತ ಅವ್ದ ಆದೇನಾಗದಾ, ಇಗಳಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ್ಲಾಲ",11,11,103,70
+kan rec/kn_027.m4a,kn,clean,vad_on,recorded,ನಮ್ ತಾಥ ಬಾದುರೊಂ ಮಿನ ಸ್ಲಿಪ್ಪಗಿ ಬಿದ್ರು. ಇಪ್ನಲ್ಲಿ ಎನು ಫಿಲಾಕ್ತಿಲ್ಲ ಆಂತಿದಾರೆ.,12,14,25,79
+kan rec/kn_027.m4a,kn,clean,vad_off,recorded,ನಮ್ತಾಥ ಬಾತುರೊಂಯ್ಮಿನ ಶ್ಲಿಪ್ಪಗಿ ಬಿದ್ರು ಹೇಪ್ಣಲ್ಲಿ ಏನು ಫಿಲ್ಆಕ್ತಿಲ್ಲ ಆಂತಿದರೆ.,13,14,24,79
+kan rec/kn_027.m4a,kn,20,vad_on,recorded,"ನಮ್ತಾಥ ಬಾದರುಂ ಮಿನ ಶಿಪಗಿ ಬಿದ್ರು, ಇಪ್ನಲಿ ಎನು ಫಿಲಾಕ್ತಿಲ್ಲಾ ಆಂತಿದಾರೆಗಿ.",13,14,35,79
+kan rec/kn_027.m4a,kn,20,vad_off,recorded,"ನಮ್ತಾಥ ಬಾದರು ಮಿನು ಸ್ಲಿಪಗಿ ಬಿದ್ರು, ಇಪ್ನಲಿ ಎನು ಫಿಲಾಕ್ತಿಲ್ಲಾ ಆಂತಿದಾರೆ.",13,14,30,79
+kan rec/kn_027.m4a,kn,10,vad_on,recorded,ಮನ್ತಾಥ ಬಾದರೊಂ ಮಿನು ಸ್ಟಿಪ್ಪಾಗಿ ಬಿಗ್ದರು. ಇತ್ನಲ್ಲಿ ಎನು ಫಿಲ್ಆಕ್ತಿಲ್ಲ ಆಂತಿದಾರೆ.,14,14,30,79
+kan rec/kn_027.m4a,kn,10,vad_off,recorded,ನಂತಾಥ ಬಾದ್ರು ಮಿನು ಸ್ಟಿಪ್ಪಗಿ ಬಿದ್ರು. ಇತ್ನಲಿ ಯೇನು ಫಿಲಾಕ್ತಿಲ್ಲ ಆಂತಿದಾರೆ.,13,14,32,79
+kan rec/kn_027.m4a,kn,5,vad_on,recorded,ನುಂತಾ ಬಾದ್ರೊಂ ಮಿನು ಸ್ಟೀತ್ಪಾಗಿ ಬಿಗ್ದರು. ಇತ್ನಲಿ ಯೇನು ಫಿಲಾಕ್ತಿಲ್ಲ ಆಂಚಿದಾರು.,14,14,38,79
+kan rec/kn_027.m4a,kn,5,vad_off,recorded,ನುಂ ತಾ ಬಾತ್ರೊಂ ಮಿನು ಸ್ಟೀತ್ಪಾಗಿ ಬಿದ್ರು. ಇತ್ನಲಿ ಎನು ಫಿಲಾಕ್ತಿಲ್ಲ ಆಂಚಿದಾರೆ.,13,14,32,79
+kan rec/kn_027.m4a,kn,0,vad_on,recorded,"ನಮ್ತಾಥ ಬಾತರು ಮಿನು ಸ್ಟಪಾಗಿ ಬಿದ್ದರು, ಇಪ್ಣಲಿ ಯೇನು ಫಿಲ ಆಕ್ತಿಲ್ಲ ಆಂತದಾರೆ.",14,14,32,79
+kan rec/kn_027.m4a,kn,0,vad_off,recorded,ನಮ್ತಾಥ ಬಾತರು ಮಿನು ಸ್ಟಪಾಗಿ ಬಿದ್ಧರು. ಇತ್ನಲಿ ಯೇನು ಫಿಲಾಕ್ತಿಲ್ಲ ಆಂತದಾರೆ.,14,14,34,79
+kan rec/kn_028.m4a,kn,clean,vad_on,recorded,ರೋಡ್ ಕ್ರೋಸ್ ಮಡುವಾಗ ಒಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಾಡಿದೆ ಬಾಯಾತ್ತಿರ ಬ್ಲಡ್ಡಿದೆ,7,11,9,65
+kan rec/kn_028.m4a,kn,clean,vad_off,recorded,ರೋಡ್ ಕ್ರೋಸ್ ಮಡುವಾಗ ಒಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಾಡಿದೆ ಬಾಯಹತ್ತಿರ ಬ್ಲಡ್ಡಿದೆ,7,11,9,65
+kan rec/kn_028.m4a,kn,20,vad_on,recorded,"ರೋಡ್ ಕ್ರಸ್ ಮಾಡುವಾಗ ಒಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಾಡಿದೆ, ಬಾಯಾತ್ತಿರ ಬ್ಲಡ್ಡಿದೆ.",6,11,8,65
+kan rec/kn_028.m4a,kn,20,vad_off,recorded,ರೋಡ್ ಕ್ರಸ್ ಮಾಡುವಾಗಾ ಅಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಾಡಿದೇ ಬಾಯ ಹತ್ತಿರ ಬ್ಲಡ್ಡಿದೇ,8,11,11,65
+kan rec/kn_028.m4a,kn,10,vad_on,recorded,ರೋಡ್ ಕ್ರಸ್ ಮಾಡುವಾಗ ಒಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಾಡಿಗೆ. ಬಾಯಾತ್ತಿರ ಬ್ಲಡ್ಡಿದೆ.,7,11,9,65
+kan rec/kn_028.m4a,kn,10,vad_off,recorded,ರೋಡ್ ಕ್ರೋಸ್ ಮಾಡುವಾಗ ಒಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಾಡಿಗೆ. ಬಾಯ ಹತ್ತಿರ ಬ್ಲಡ್ಡಿದೆ.,7,11,8,65
+kan rec/kn_028.m4a,kn,5,vad_on,recorded,ರೋಡ್ ಕ್ರಸ್ ಮಾಡುವಾಗ ಒಬ್ನಿಗೆ ತಾರ್ ವಿಟ್ ಮಾಡಿಗೆ. ಬಾಯಾತ್ತಿರ ಬ್ಲಡ್ಡಿದೆ.,9,11,11,65
+kan rec/kn_028.m4a,kn,5,vad_off,recorded,ರೋಡ್ ಕ್ರಸ್ ಮಾಡುವಾಗ ಒಬ್ನಿಗೆ ಕಾರ್ ವಿಟ್ ಮಾಡಿಗೆ ಬಾಯ ಹತ್ತಿರ ಬ್ಲಡ್ಡಿಗೆ,8,11,10,65
+kan rec/kn_028.m4a,kn,0,vad_on,recorded,ರೋಡ್ ಕ್ರೋಸ್ ಮಡುವಾಗ ಒಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಡಿಗೆ. ಬಾಯಾತ್ಕಿರದ ಬ್ಲಡ್ ಇದೆ.,6,11,11,65
+kan rec/kn_028.m4a,kn,0,vad_off,recorded,ರೋಡ್ ಕ್ರೋಸ್ ಮಾಡುವಾಗಾ ಅಬ್ನಿಗೆ ಕಾರ್ ಹಿಟ್ ಮಾಡಿಗೆ ಬಾಯಾತ್ಕಿರದ ಬ್ಲಡ್ಡಿಗೆ,8,11,14,65
+kan rec/kn_029.m4a,kn,clean,vad_on,recorded,ಸಾ ಪ್ರಗೆ ಒಬ್ನಿಗೆ ಚಾಕುಹಾಕಿದಾರೆ ಹಟ್ಟೆ ಹಿಡ್ಕೊಣ ಬಿದ್ಧಿದಾನೆ ಬ್ರಿಡಿಂಗ್ ಆಕ್ತಿದೆ.,9,9,18,72
+kan rec/kn_029.m4a,kn,clean,vad_off,recorded,ಸಾ ಪರಗೆ ಒಬ್ನಿಗೆ ಚಾಕು ಹಾಕಿದ್ದಾರೆ ಹಟ್ಟೆ ಹಿಡ್ಕೊಣ ಬಿದ್ಧಿದಾನೆ ಬ್ಲಿಡಿಂಗ್ ಆಕ್ತಿದೆ.,9,9,18,72
+kan rec/kn_029.m4a,kn,20,vad_on,recorded,"ಸಾ ಫರಗೆ ಒಬ್ನಿಗೆ ಚಾಕು ಹಾಕಿದಾರೆ, ಉಟ್ಟೆ ಹಿಡ್ಕೊಣ ಬಿದ್ಧಿದಾನೆ, ಬಿಡಿಂಗ ಆಕ್ತಿದೆ.",8,9,20,72
+kan rec/kn_029.m4a,kn,20,vad_off,recorded,ಸಾ ಫರಗೆ ಒಬ್ನಿಗೆ ಚಾಕು ಹಾಕಿದಾರೆ ಹಟ್ಟೆ ಹಿಡ್ಕೊಣ ಬಿದ್ಧಿದಾನೆ ಬಿಡಿಂಗ ಆಕ್ತಿದೆ.,8,9,19,72
+kan rec/kn_029.m4a,kn,10,vad_on,recorded,"ಸಾ ಪರಗೆ ಒಬ್ನಿಗೆ ಚಾಕು ಹಾಕು ದರು, ಪಟ್ಟೆ ಹಿಡ್ಕೊಣ್ ಬಿದ್ಧಿದಾನು, ಬಿಡಿಂಗ್ ಆಕ್ತಿದೆ.",10,9,25,72
+kan rec/kn_029.m4a,kn,10,vad_off,recorded,ಸಾ ಪರಗೆ ಒಬ್ನಿಗೆ ಚಾಕು ಹಾಕಿದಾರು ಪಟ್ಟೆ ಹಿಡ್ಕೊಣ್ ಬಿದ್ಧಿದಾನು ಬಿಡಿಂಗ್ ಆಕ್ತಿದು,9,9,23,72
+kan rec/kn_029.m4a,kn,5,vad_on,recorded,"ಸಾ ಪರಗೆ ಒಬ್ನಿಗೆ ಚಾಕು ಆತಿದಾವು, ಪರಟ್ಟೆ ಹಿಡ್ಕೊಂ ಜಿದಿದಾನೆ, ಮೀಡಿಂ ಆತಿದೆ.",9,9,24,72
+kan rec/kn_029.m4a,kn,5,vad_off,recorded,"ಸಾ ಪರಗೆ ಒಬ್ನಿಗೆ ಚಾಕು ಆತಿದಾವು, ಪರಟ್ಟೆ ಹಿಡ್ಕೊಂ ಜಿತಿದಾಯೆ, ಮೀಡಿಂಗ ಆತಿದೆ.",9,9,24,72
+kan rec/kn_029.m4a,kn,0,vad_on,recorded,"ಸಾಫರಗೆ ಅಬ್ನಿಗೆ ಚಾಕುಹಾಕಿದಾರೆ, ಪಟ್ತೇ ಹಡ್ಕೊಂ ಜಿಧಿದಾನೆ, ಲಿಡಿಂ ನಾಕ್ಚಿದೆ.",9,9,27,72
+kan rec/kn_029.m4a,kn,0,vad_off,recorded,ಸಾ ಪ್ರಗೆ ಅಬ್ನಿಗೆ ಚಾಕುಹಾಕಿದಾರೆ ಫಟ್ಟೆ ಹಿಡ್ಕೊನ ಜಿಧಿದಾಮೆ ಲಿಡಿಂ ನಾಕ್ಚಿದೆ,9,9,25,72
+kan rec/kn_030.m4a,kn,clean,vad_on,recorded,"ನಮ್ ಮಗುಗೆ ತುಂಬಾ ಹಾಯ ಫಿವರಿದೇ, ಸರಿಯಾಗಿ ಎದೇಳತಿಲ್ಲ.",5,8,14,50
+kan rec/kn_030.m4a,kn,clean,vad_off,recorded,ನಮ್ಮಗುಗೆ ತೂಬಾ ಹೈವರಿದೇ ಶರಿಯಾಗಿ ಎದೇಳ್ತಿಲ್ಲ.,8,8,17,50
+kan rec/kn_030.m4a,kn,20,vad_on,recorded,"ನಮ್ ಮಗುಗೆ ತುಂಬಾ ಹಾಯ ಫಿವರಿದೇ, ಸರಿಯಾಗಿ ಎದೇಳತಿಲ್ಲ.",5,8,14,50
+kan rec/kn_030.m4a,kn,20,vad_off,recorded,ನಮ್ ಮಗುಗೆ ತುಂಬಾ ಹಾಯ ಫಿವರಿದೇ ಶರಿಯಾಗಿ ಏದೇಳತಿಲ್ಲಾ.,6,8,17,50
+kan rec/kn_030.m4a,kn,10,vad_on,recorded,ನಮ್ ಮಗುಗೆ ತುಂಬಾ ಹೈವರಿಗೆ ಸರಿಯಾಗಿ ಎದೇಳತಿಲ್ಲ.,5,8,14,50
+kan rec/kn_030.m4a,kn,10,vad_off,recorded,ನಮ್ ಮಗುಗೆ ತುಂಬ ಹಾಯ ಫಿವರಿಗೆ ಸರಿಯಾಗಿ ಎದೇಳತಿಲ್ಲಾ.,6,8,16,50
+kan rec/kn_030.m4a,kn,5,vad_on,recorded,ನಮ್ ಮಗುಗೆ ತುಂಬಾ ಹೈವರಗೆ ಶರಿಯಾಗಿ ಎದೇಳತಿಲ್ವಾ.,6,8,17,50
+kan rec/kn_030.m4a,kn,5,vad_off,recorded,ನಮ್ ಮಗುವಿ ಖುಂಬಾ ಹೈವರುಗೆ ಸರಿಯಾಗಿ ಎದೇಳತಿಲ್ವಾ.,6,8,19,50
+kan rec/kn_030.m4a,kn,0,vad_on,recorded,ನಮ್ ಮಗುವಿ ತುಂಬ ಹೈಫಿವರಗೆ ಸರಿಯಾಗೆ ದೇವತಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ,7,8,110,50
+kan rec/kn_030.m4a,kn,0,vad_off,recorded,ನಮ್ ಮಗುವಿ ತುಂಬ ಹೈಫಿವರಗೆ ಸರಿಯಾಗೆ ದೇವತಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ್ಟಲ,7,8,110,50

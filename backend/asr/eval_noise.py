@@ -112,6 +112,7 @@ def main() -> None:
     guard = dict(repetition_penalty=a.repetition_penalty, no_repeat_ngram_size=a.no_repeat_ngram)
     ts = {"vad_on": Transcriber(model_size=a.model, vad_filter=True, **guard),
           "vad_off": Transcriber(model_size=a.model, vad_filter=False, **guard)}
+    ts["vad_off"]._model = ts["vad_on"].model   # vad_filter is per-call: one copy fits a 4 GB GPU
     utt = evaluate(a.data, a.snr, noises, src, ts, a.denoise, limit=3 if a.quick else None)
     rates = summarize(utt)
     print(rates.round(4).to_string(index=False))
