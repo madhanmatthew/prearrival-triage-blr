@@ -1,62 +1,21 @@
-# Python
+# Only true junk is ignored. Everything else (datasets, models, audio, video, outputs) is tracked.
+
+# Python caches / environments (recreate with: python -m venv .venv && pip install -r requirements.txt)
 __pycache__/
 *.py[cod]
 .venv/
 venv/
 env/
-*.egg-info/
 .pytest_cache/
 .ipynb_checkpoints/
+*.egg-info/
 
-# Secrets
+# Secrets: keep OUT of git, copy this one file by USB / password manager
 .env
 
-# Data (licence-restricted: MIMIC must never be committed)
-data/raw/*
-!data/raw/.gitkeep
-# Exception: TomTom traffic collections are tracked (private repo; irreplaceable time series)
-!data/raw/traffic/
-data/raw/traffic/*.lock
-data/processed/*
-!data/processed/.gitkeep
+# Re-downloadable Whisper cache (can be several GB)
+models/whisper/
 
-# Model artifacts (shared via Drive, not git)
-models/*
-!models/.gitkeep
-checkpoints/
-logs/
-*.pt
-*.joblib
-*.zip
-*.pkl
-faiss_index/
-# Exception (must stay after the patterns above): trained models are tracked, flat in
-# models/ (private repo; each file < 100 MB). models/whisper/ cache stays ignored.
-!models/*.pt
-!models/*.joblib
-!models/*.zip
-!models/*.pkl
-!models/*.json
-
-# SUMO outputs
-sumo/*.out.xml
-sumo/*tripinfo*.xml
-
-# Audio recordings (ignored everywhere except the ASR test set)
-*.wav
-*.mp3
-*.m4a
-*.mp4
-*.mov
-# Exception: the full ASR test set is tracked (private repo only; consent required)
-!data/asr_test/
-!data/asr_test/**
-
-# OS / editor
+# OS
 .DS_Store
 Thumbs.db
-.vscode/
-.idea/
-
-# Smoke-test outputs (not results)
-reports/*_quick.csv
