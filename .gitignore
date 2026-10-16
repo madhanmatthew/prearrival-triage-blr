@@ -1,6 +1,7 @@
+@'
 # Only true junk is ignored. Everything else (datasets, models, audio, video, outputs) is tracked.
 
-# Python caches / environments (recreate with: python -m venv .venv && pip install -r requirements.txt)
+# Python caches / environments
 __pycache__/
 *.py[cod]
 .venv/
@@ -10,12 +11,14 @@ env/
 .ipynb_checkpoints/
 *.egg-info/
 
-# Secrets: keep OUT of git, copy this one file by USB / password manager
+# Secrets
 .env
 
-# Re-downloadable Whisper cache (can be several GB)
+# Re-downloadable model caches (files over 100 MB are rejected by GitHub)
+models/hf/
 models/whisper/
 
 # OS
 .DS_Store
 Thumbs.db
+'@ | Set-Content .gitignore -Encoding utf8
