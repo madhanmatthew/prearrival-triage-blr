@@ -1,0 +1,3 @@
+policy,demand,episodes,completed,amb_transit_s_mean,amb_transit_s_std,amb_wait_s_mean,amb_wait_s_std,mean_general_wait_s_mean,mean_general_wait_s_std,throughput_veh_mean,throughput_veh_std,max_cross_queue_veh_mean,max_cross_queue_veh_std
+fixed_time,medium,2,2,996.0,14.142135623730951,42.5,4.949747468305833,1.1305782672487643,0.05117557602539706,1590.0,48.08326112068523,20.0,2.8284271247461903
+always_green,medium,2,2,914.0,43.840620433565945,0.0,0.0,1.0394311087796213,0.012696568192215398,1454.0,154.14927829866735,23.5,4.949747468305833
