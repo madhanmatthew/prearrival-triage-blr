@@ -313,6 +313,14 @@
   NEXT: native review of hi/kn wording (incl. new Q_BREATHING); fresh held-out clips for eval_triage;
   recorded-prompt list for native speakers.
 
+- 2026-10-17: GPU session run on Harish's RTX 3050 (4 GB), `scripts/asr_gpu_day.py`, rp1.1, 90 clips.
+  Latency (median s/clip, RTF): turbo fp16 en .9 s/.09, hi 1.3 s/.14, kn 1.4 s/.17; large-v3 int8_fp16
+  en 1.3 s/.14, hi 3.0 s/.30, kn 4.1 s/.51. Live intake on local GPU is feasible (turbo). Clean WER/CER:
+  turbo en .036/.017 hi .332/.165 kn .823/.246; large-v3 en .036/.016 hi .305/.159 kn .804/.239.
+  Noise WER (turbo, VAD off): en .036 clean -> .039 @10 dB -> .043 @5 dB; hi .340 -> .419 -> .470;
+  kn .848 -> .857 -> .988. Kannada WER stays high (spelling variants; CER is the fairer metric).
+  Full rows in experiments/log.csv, reports/asr_*_cuda*.csv. Not yet done: native review, fresh clips.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
