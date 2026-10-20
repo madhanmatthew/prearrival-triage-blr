@@ -21,6 +21,7 @@ from fastapi import FastAPI, File, Form, HTTPException, UploadFile, WebSocket, W
 from pydantic import BaseModel
 
 from backend.agents.coordinator import IncidentCase, coordinate
+from backend.agents.police_agent import size_alert
 from backend.dialogue.state_machine import DialogueManager
 from backend.ml.news2 import score_reading
 from backend.rag.pipeline import LLM_DOWN_MSG
@@ -300,11 +301,13 @@ def create_app(services: Optional[Services] = None,
             rec = svc.hospital_agent.predict(
                 i.incident_id, i.risk, i.report.injury_type, etas,
                 bleeding_heavy=bool(bleeding and (bleeding.bleeding_level or 0) >= 1.0))
+            police = size_alert(i.incident_id, i.gps, i.risk.severity_class, i.report.injury_type,
+                                i.report.num_injured)
             cases.append(IncidentCase(
                 incident_id=i.incident_id, risk=i.risk, injury_type=i.report.injury_type,
                 reported_at=i.created_at, recommendation=rec,
                 ambulance_etas_min={a: router.eta_min(svc.ambulances[a], scene)[0] for a in free},
-                police_units_required=0,
+                police_units_required=police.units_required,
                 bleeding_heavy=bool(bleeding and (bleeding.bleeding_level or 0) >= 1.0)))
         committed = sum(i.decision.police_units for i in store.values() if i.decision)
         result = coordinate(cases, now=now, router=router, available_ambulances=free,
@@ -314,6 +317,13 @@ def create_app(services: Optional[Services] = None,
             store[d.incident_id].decision = d
             busy_ambulances.add(d.ambulance_id)
             await hub.send("map", "DispatchDecision", d)
+            inc = store[d.incident_id]
+            route = router.route(d.incident_id, d.hospital_id)
+            alert = size_alert(d.incident_id, inc.gps, inc.risk.severity_class,
+                               inc.report.injury_type, inc.report.num_injured,
+                               route.polyline if route else ())
+            await hub.send("police", "PoliceAlert",
+                           alert.model_copy(update={"units_required": d.police_units}))
             await hub.send(f"hospital/{d.hospital_id}", "FusedRisk", store[d.incident_id].risk)
         for iid, r in result.resolutions.items():
             store[iid].dispatch_notes = r.needs_dispatcher

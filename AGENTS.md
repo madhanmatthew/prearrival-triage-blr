@@ -77,7 +77,7 @@ call "existing" or "in MVP" must be built new here.
 | RL env wrapper + fixed-time / always-green baselines (schematic corridor) | Done, with tests; full baseline run logged | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
 | RL DQN train/eval (schematic corridor, 3 demand levels) | Done, 3 seeds logged; `reports/rl_comparison.csv` | `backend/rl/train.py` |
 | RL randomized demand (docs/19 §7 jitter, OSM) | Not started | `backend/rl/demand.py` |
-| Police alert sizing (rule-based) | Not started | `backend/agents/police_agent.py` |
+| Police alert sizing (rule-based) | Done, with tests; wired into dispatch (units required + PoliceAlert on `/ws/police`); constants are assumptions | `backend/agents/police_agent.py`, `tests/test_police_agent.py` |
 | Whisper intake + WER eval + WER-vs-SNR noise eval (faster-whisper, local) | Clean WER run on 90 real clips (large-v3: en 3.6%, hi 30.8%, kn 79.2% WER / 23.7% CER); GPU session run on RTX 3050 (turbo ~1 s/clip, large-v3 1-4 s/clip), noise WER-vs-SNR logged (`15` D18) | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; code-mixed hi/kn cues + "breathing normally?" fix; ASR->cue robustness eval logged (dev); hi/kn wording needs native review | `backend/dialogue/`, `backend/asr/eval_triage.py`, `tests/test_dialogue.py`, `tests/test_eval_triage.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |

@@ -321,6 +321,13 @@
   kn .848 -> .857 -> .988. Kannada WER stays high (spelling variants; CER is the fairer metric).
   Full rows in experiments/log.csv, reports/asr_*_cuda*.csv. Not yet done: native review, fresh clips.
 
+- 2026-10-21: Police alert sizing (`backend/agents/police_agent.py`, rule-based, constants [ASSUMPTION]):
+  units from severity + injured count + road accident, perimeter from severity/injury type, caps 6 units
+  / 400 m, medical-only = escort without cordon. Wired in `backend/main.py`: units requested feed the
+  coordinator; after dispatch a `PoliceAlert` (allocated units, route polyline) goes to `/ws/police`.
+  11 new tests; full suite 410 passed. Also: `scripts/download_vitaldb.py` (open VitalDB, 1-min vitals)
+  for the short-window vitals work; MIMIC-IV-ED credentialing submitted 2026-10-20.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
