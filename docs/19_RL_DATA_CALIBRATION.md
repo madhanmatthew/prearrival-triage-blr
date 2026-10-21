@@ -29,6 +29,11 @@ per time slot."*
 
 ## 1. Real network from OpenStreetMap
 
+> **Changed by `15` D21 (2026-10-21):** built by `python -m scripts.build_osm_corridor`. The 4
+> controlled signals are the junctions on the Silk Board → Iblur stretch (`sumo/osm/tls_map.json`),
+> because the ORR is grade-separated from Bellandur to KR Puram. Overpass was overloaded on the day;
+> the extract came from the overpass.kumi.systems mirror.
+
 - Extract the ORR bounding box covering Silk Board → Bellandur → Marathahalli → KR Puram
   (OSM Overpass export or `osmWebWizard.py`). Save the raw `.osm` to `data/raw/osm/`
   (OSM is ODbL: record in `PROVENANCE.md`, attribution required).

@@ -410,6 +410,8 @@
   mix and daily profile only. CMP 2020 PDF link 404. NEXT (needs TomTom data): OSM corridor, demand fitted to the
   2025/2024 peaks, Silk Board signal program from the 2024 timings, TomTom times as the speed check.
 
+- 2026-10-21: OSM corridor (D21). TomTom typical eastbound completed with the key on this laptop (672 rows, 0 rejected; reverse direction still missing). `scripts/build_calibration_targets.py` -> `data/traffic/calibration_targets.csv` (weekday slots low 02-04 / medium 12-14 / peak 17-19 IST; SB->KRP typical 1533 / 2312 / 2937 s). OSM extract via overpass.kumi.systems (1,540 ways, main roads, bbox 12.905-13.010 N, 77.610-77.712 E). netconvert keeps OSM signal tags (219 TLS); `--tls.discard-simple` had dropped them. ORR route found leg by leg (plain shortest path cut through Koramangala): 17.3 km incl. 0.9 km before Silk Board; legs 6.65 / 5.17 / 6.00 km vs TomTom 6.27 / 4.62 / 5.92. Finding: no ORR signals from Bellandur to KR Puram (underpass / flyover / unsignalised). RL junctions = the 4 junction signals in the first 6 km (D21, `sumo/osm/tls_map.json`, main/cross by approach direction). NEXT: OSM env wrapper (2-phase states), demand fitting to the slot targets, calibration table.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

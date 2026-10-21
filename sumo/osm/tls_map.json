@@ -1,0 +1,183 @@
+{
+ "_note": "docs/15 D21: the 4 RL-controlled junctions; names from OSM cross streets [TODO-VERIFY on a map]. Other signals on the route keep their OSM program.",
+ "junctions": {
+  "silkboard": {
+   "tls_id": "joinedS_494271080_cluster_10282796509_10855370147_2971089260_3805003790_#1more_cluster_10282796511_1723795924_306594280",
+   "route_offset_m": 1015.0,
+   "lat": 12.917324,
+   "lon": 77.623161,
+   "in_edge": "380980308#1",
+   "n_links": 31,
+   "main_links": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    13,
+    14,
+    15,
+    16,
+    17,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+   ],
+   "cross_links": [
+    9,
+    10,
+    11,
+    12,
+    18,
+    19,
+    20,
+    21
+   ],
+   "cross_streets": [
+    "Srinagar - Kanyakumari Highway"
+   ],
+   "cross_in_edges": [
+    "1303068639#1",
+    "160331538#0"
+   ],
+   "states": {
+    "main_green": "gggggggggrrrrgggggrrrrggggggggg",
+    "main_yellow": "yyyyyyyyyrrrryyyyyrrrryyyyyyyyy",
+    "cross_green": "rrrrrrrrrggggrrrrrggggrrrrrrrrr",
+    "cross_yellow": "rrrrrrrrryyyyrrrrryyyyrrrrrrrrr"
+   }
+  },
+  "hsr_19th_main": {
+   "tls_id": "joinedS_650141450_cluster_11640787718_11640787721_11640787722_12988102361_#4more",
+   "route_offset_m": 3635.3,
+   "lat": 12.921972,
+   "lon": 77.644799,
+   "in_edge": "377125912#1",
+   "n_links": 18,
+   "main_links": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "cross_links": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "cross_streets": [
+    "19th Main Road"
+   ],
+   "cross_in_edges": [
+    "-1105437335"
+   ],
+   "states": {
+    "main_green": "ggggggggrrrrrggggg",
+    "main_yellow": "yyyyyyyyrrrrryyyyy",
+    "cross_green": "rrrrrrrrgggggrrrrr",
+    "cross_yellow": "rrrrrrrryyyyyrrrrr"
+   }
+  },
+  "sarjapur_rd_iblur": {
+   "tls_id": "joinedS_2387127870_cluster_12698220783_1608973482_650140477_9857144283",
+   "route_offset_m": 4398.9,
+   "lat": 12.924266,
+   "lon": 77.65176,
+   "in_edge": "232401975#0",
+   "n_links": 23,
+   "main_links": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    19,
+    20,
+    21,
+    22
+   ],
+   "cross_links": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "cross_streets": [
+    "27th Main Road"
+   ],
+   "cross_in_edges": [
+    "-1090371683",
+    "-1205136151",
+    "1182179245#1",
+    "1531594654"
+   ],
+   "states": {
+    "main_green": "rrrrrrrrrgggggrrrrrgggg",
+    "main_yellow": "rrrrrrrrryyyyyrrrrryyyy",
+    "cross_green": "gggggggggrrrrrgggggrrrr",
+    "cross_yellow": "yyyyyyyyyrrrrryyyyyrrrr"
+   }
+  },
+  "orr_5_9km": {
+   "tls_id": "cluster_266371138_5372340500",
+   "route_offset_m": 5924.5,
+   "lat": 12.921063,
+   "lon": 77.665959,
+   "in_edge": "1109938618",
+   "n_links": 8,
+   "main_links": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "cross_links": [
+    0,
+    1,
+    2
+   ],
+   "cross_streets": [],
+   "cross_in_edges": [
+    "556999157#0"
+   ],
+   "states": {
+    "main_green": "rrrggggg",
+    "main_yellow": "rrryyyyy",
+    "cross_green": "gggrrrrr",
+    "cross_yellow": "yyyrrrrr"
+   }
+  }
+ }
+}

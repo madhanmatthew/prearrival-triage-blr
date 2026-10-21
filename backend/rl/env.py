@@ -57,6 +57,8 @@ def _is_cross(edge_id: str) -> bool:
 
 class CorridorEnv(gym.Env):
     metadata = {"render_modes": []}
+    JUNCTIONS = JUNCTIONS
+    DEMANDS = DEMANDS
 
     def __init__(self, demand: str | list[str] = "medium", control: str = "rl",
                  delta_time: int = 5, min_green: int = 10, yellow: int = 3,
@@ -66,14 +68,15 @@ class CorridorEnv(gym.Env):
             raise ValueError(f"unknown control {control!r}")
         self.demands = [demand] if isinstance(demand, str) else list(demand)
         for d in self.demands:
-            if d not in DEMANDS:
+            if d not in self.DEMANDS:
                 raise ValueError(f"unknown demand {d!r}")
         self.control, self.dt, self.min_green = control, delta_time, min_green
         self.yellow = yellow if control == "rl" else FIXED_YELLOW_S
         self.preempt_m = preempt_m
         self.w = (w_amb, w_gen, w_cross)
-        self.action_space = gym.spaces.Discrete(2 ** len(JUNCTIONS))
-        self.observation_space = gym.spaces.Box(0.0, 1.0, (6 * len(JUNCTIONS),), np.float32)
+        self.junctions = list(self.JUNCTIONS)
+        self.action_space = gym.spaces.Discrete(2 ** len(self.junctions))
+        self.observation_space = gym.spaces.Box(0.0, 1.0, (6 * len(self.junctions),), np.float32)
         self._sumo = _locate_sumo()
         self._tmp = Path(tempfile.mkdtemp(prefix="corridor_env_"))
         self._label = f"env_{uuid.uuid4().hex[:8]}"
@@ -103,36 +106,47 @@ class CorridorEnv(gym.Env):
         self._close_sumo()
         shutil.rmtree(self._tmp, ignore_errors=True)
 
-    def reset(self, *, seed=None, options=None):
+    def _start_sumo(self, sumo_seed: int):
+        """Start SUMO for self.demand and insert the ambulance (schematic corridor)."""
         import traci
-        super().reset(seed=seed)
-        self._close_sumo()
-        self.demand = self.demands[int(self.np_random.integers(len(self.demands)))]
-        sumo_seed = int(self.np_random.integers(0, 2**31 - 1))
-        self.amb_depart = int(self.np_random.integers(*AMB_DEPART_RANGE, endpoint=True))
         cmd = [self._sumo, "-n", str(SUMO_DIR / "corridor.net.xml"),
                "-r", str(self._route_file(self.demand)), "--seed", str(sumo_seed),
                "--time-to-teleport", "-1", "--no-step-log", "true", "--no-warnings", "true"]
         traci.start(cmd, label=self._label)
         self._conn = traci.getConnection(self._label)
-        c = self._conn
-        c.vehicle.add(AMB_ID, AMB_ROUTE, typeID=AMB_ID, depart=str(self.amb_depart),
-                      departLane="best", departSpeed="max")
+        self._conn.vehicle.add(AMB_ID, AMB_ROUTE, typeID=AMB_ID, depart=str(self.amb_depart),
+                               departLane="best", departSpeed="max")
 
+    def _init_junctions(self) -> None:
+        """Main / cross lanes per junction and junction positions along the corridor (x, m)."""
+        c = self._conn
         self._lanes = {}
-        for j in JUNCTIONS:
+        for j in self.junctions:
             lanes = sorted(set(c.trafficlight.getControlledLanes(j)))
             self._lanes[j] = ([l for l in lanes if not _is_cross(l.rsplit("_", 1)[0])],
                               [l for l in lanes if _is_cross(l.rsplit("_", 1)[0])])
-        self._jx = {j: c.junction.getPosition(j)[0] for j in JUNCTIONS}
+        self._jx = {j: c.junction.getPosition(j)[0] for j in self.junctions}
 
-        self._phase = {j: MAIN_GREEN for j in JUNCTIONS}
-        self._elapsed = {j: 0 for j in JUNCTIONS}
-        self._target = {j: MAIN_GREEN for j in JUNCTIONS}
+    def _set_phase(self, j: str, phase: int) -> None:
+        tl = self._conn.trafficlight
+        tl.setPhase(j, phase)
+        tl.setPhaseDuration(j, HOLD)
+
+    def reset(self, *, seed=None, options=None):
+        super().reset(seed=seed)
+        self._close_sumo()
+        self.demand = self.demands[int(self.np_random.integers(len(self.demands)))]
+        sumo_seed = int(self.np_random.integers(0, 2**31 - 1))
+        self.amb_depart = int(self.np_random.integers(*AMB_DEPART_RANGE, endpoint=True))
+        self._start_sumo(sumo_seed)
+        self._init_junctions()
+
+        self._phase = {j: MAIN_GREEN for j in self.junctions}
+        self._elapsed = {j: 0 for j in self.junctions}
+        self._target = {j: MAIN_GREEN for j in self.junctions}
         if self.control != "fixed":
-            for j in JUNCTIONS:
-                c.trafficlight.setPhase(j, MAIN_GREEN)
-                c.trafficlight.setPhaseDuration(j, HOLD)
+            for j in self.junctions:
+                self._set_phase(j, MAIN_GREEN)
 
         self._t = 0
         self._amb_in = self._amb_out = None
@@ -153,8 +167,7 @@ class CorridorEnv(gym.Env):
         """Advance every junction's phase machine by one sim second (min-green/yellow safe)."""
         if self.control == "fixed":
             return
-        tl = self._conn.trafficlight
-        for j in JUNCTIONS:
+        for j in self.junctions:
             self._elapsed[j] += 1
             p, t = self._phase[j], self._elapsed[j]
             if p in (MAIN_GREEN, CROSS_GREEN):
@@ -168,13 +181,11 @@ class CorridorEnv(gym.Env):
                         switch = t >= FIXED_GREEN_S
                 if switch:
                     self._phase[j], self._elapsed[j] = p + 1, 0
-                    tl.setPhase(j, p + 1)
-                    tl.setPhaseDuration(j, HOLD)
+                    self._set_phase(j, p + 1)
             elif t >= self.yellow:
                 nxt = (p + 1) % 4
                 self._phase[j], self._elapsed[j] = nxt, 0
-                tl.setPhase(j, nxt)
-                tl.setPhaseDuration(j, HOLD)
+                self._set_phase(j, nxt)
 
     # ---- observation / reward ------------------------------------------------------
     def _queue(self, lanes) -> float:
@@ -183,7 +194,7 @@ class CorridorEnv(gym.Env):
     def _obs(self) -> np.ndarray:
         amb_x = self._amb_x()
         out = []
-        for j in JUNCTIONS:
+        for j in self.junctions:
             main_l, cross_l = self._lanes[j]
             main_q = min(self._queue(main_l) / QUEUE_CAP, 1.0)
             cross_q = min(self._queue(cross_l) / QUEUE_CAP, 1.0)
@@ -205,7 +216,7 @@ class CorridorEnv(gym.Env):
     def step(self, action):
         c = self._conn
         act = int(action)
-        for i, j in enumerate(JUNCTIONS):
+        for i, j in enumerate(self.junctions):
             self._target[j] = CROSS_GREEN if (act >> i) & 1 else MAIN_GREEN
         amb_wait_step = 0
         for _ in range(self.dt):
@@ -223,7 +234,7 @@ class CorridorEnv(gym.Env):
             if self._amb_x() is not None and c.vehicle.getSpeed(AMB_ID) < 0.1:
                 amb_wait_step += 1
         self._amb_wait += amb_wait_step
-        cross_q = max(self._queue(self._lanes[j][1]) for j in JUNCTIONS)
+        cross_q = max(self._queue(self._lanes[j][1]) for j in self.junctions)
         self._max_cross_q = max(self._max_cross_q, cross_q)
         wait = self._mean_wait_others()
         self._wait_hist.append(wait)

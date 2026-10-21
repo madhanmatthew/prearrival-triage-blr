@@ -40,6 +40,7 @@ stable-baselines3==2.9.0   # installed 2026-09-30 (with sumo-rl 1.4.5)
 gymnasium==1.3.0
 traci==1.27.1
 sumolib==1.27.1
+pyproj==3.8.0          # sumolib lon/lat <-> net XY for the OSM corridor (docs/19 §1)
 # sumo-rl==1.4.5 installed but unused: custom env in backend/rl/env.py (docs/09 section 4 needs ambulance-aware obs)
 # ultralytics      # YOLOv8 + ByteTrack vehicle counting (docs/19 section 4)
 

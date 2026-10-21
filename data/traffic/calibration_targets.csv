@@ -1,0 +1,13 @@
+slot,segment,length_m,typical_s,typical_speed_kmh,n_typical,point,live_speed_kmh,free_flow_kmh,n_live,peak_volume,peak_volume_source
+low,bellandur_marathahalli,4618.0,388.0,42.85,10,bellandur,38.96,39.42,24,,
+low,marathahalli_krpuram,5918.0,514.0,41.45,10,marathahalli,40.38,41.04,24,,
+low,silkboard_bellandur,6274.0,632.0,35.74,10,silkboard,42.0,42.0,24,,
+low,silkboard_krpuram,16811.0,1533.0,39.48,10,silkboard,42.0,42.0,24,,
+medium,bellandur_marathahalli,4618.0,571.7,29.08,10,bellandur,24.52,38.33,27,,
+medium,marathahalli_krpuram,5918.0,689.0,30.92,10,marathahalli,37.63,41.22,27,,
+medium,silkboard_bellandur,6271.0,1063.0,21.24,10,silkboard,40.0,41.85,27,,
+medium,silkboard_krpuram,16808.0,2312.5,26.17,10,silkboard,40.0,41.85,27,,
+peak,bellandur_marathahalli,4618.0,800.9,20.76,10,bellandur,26.57,37.79,28,,
+peak,marathahalli_krpuram,5918.0,1124.3,18.95,10,marathahalli,24.75,41.46,28,,
+peak,silkboard_bellandur,6271.0,1034.1,21.83,10,silkboard,36.11,41.86,28,10657.0,BTP2025_DH (PCU (peak hours))
+peak,silkboard_krpuram,16808.0,2936.6,20.61,10,silkboard,36.11,41.86,28,,
