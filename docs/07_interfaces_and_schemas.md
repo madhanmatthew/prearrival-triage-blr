@@ -65,7 +65,8 @@ Allowed `avpu`: `A|V|P|U` (V/P/U all score 3 in NEWS2; the model encodes `A=0`, 
   "news2_score": 7,
   "model_version": "fusion_v1_20260915",
   "deterioration_10min_prob": 0.23,
-  "deterioration_model": "vitaldb_hgb_v1_20261021 (intra-operative data)"
+  "deterioration_model": "vitaldb_hgb_v1_20261021 (intra-operative data)",
+  "deterioration_reasons": ["SBP latest 96 mmHg (raises risk)", "SBP fell 14 mmHg over 5 min (raises risk)"]
 }
 ```
 `risk_score = Σ p_i · (i/3)` (expected severity normalised to 0–1). Updated on every new
@@ -74,6 +75,8 @@ Allowed `avpu`: `A|V|P|U` (V/P/U all score 3 in NEWS2; the model encodes `A=0`, 
 SpO2 < 90 within 10 minutes, from the last 5 readings (HR, RR, SpO2, SBP, temp) treated as
 1-minute steps. `null` until a reading exists or when the model is not loaded. Trained on
 intra-operative VitalDB data: shown with that label, never as a pre-hospital accuracy claim.
+`deterioration_reasons`: top 3 SHAP features of that prediction as text (`backend/ml/vitaldb_explain.py`;
+temperature excluded from live text, see module docstring). What the model relies on, not causes.
 
 ### 2.4 HospitalRecommendation (Hospital Agent → Coordinator)
 ```json

@@ -134,6 +134,7 @@ class FusedRisk(BaseModel):
     # docs/15 D19: VitalDB short-horizon model (intra-operative data), None until vitals exist
     deterioration_10min_prob: Optional[float] = Field(default=None, ge=0, le=1)
     deterioration_model: Optional[str] = None
+    deterioration_reasons: list[str] = Field(default_factory=list)   # top SHAP reasons as text
 
     @field_validator("severity_probs")
     @classmethod

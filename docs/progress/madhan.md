@@ -391,6 +391,17 @@
   as 1-minute steps [ASSUMPTION: ambulance readings ~1/min]. Dispatcher + hospital pages show it with the
   "intra-operative model" label. Browser check: demo replay of falling vitals -> 78%.
 
+- 2026-10-21: SHAP for the deployed VitalDB HGB (`python -m backend.ml.vitaldb_explain`): TreeExplainer on each of
+  the 3 calibrated HGB fold models, averaged (log-odds before isotonic calibration; direction/ranking only).
+  Global, 5,000 sampled windows (`reports/vitaldb_shap_*.csv`, `reports/figures/vitaldb_shap_{bar,beeswarm}.png`):
+  by vital SBP 1.03 > temp 0.55 > HR 0.33 > RR 0.18 > SpO2 0.14 (mean |SHAP| summed); top features last_sbp,
+  min_sbp, change_temp, last_temp, change_hr. Low/falling SBP and rising HR raise risk (plausible). Temperature
+  ranks high mostly when MISSING (grey in beeswarm): probe not yet placed early in surgery, around induction
+  hypotension = surgical workflow artefact, stated limit; temp is excluded from the live reasons. Live: top-3
+  reasons per vitals reading in `FusedRisk.deterioration_reasons` (docs/07 §2.3), ~1 ms, shown as "Why" on
+  dispatcher + hospital pages. Example (demo replay): "SBP latest 88 mmHg (raises risk) · SBP 5-min lowest
+  88 mmHg (raises risk) · HR 5-min highest 131 bpm (raises risk)".
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

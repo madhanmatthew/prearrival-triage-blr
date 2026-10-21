@@ -36,6 +36,7 @@ function render() {
         <div class="card"><div class="k">NEWS2</div><div class="v">${r.news2_score ?? "–"}</div></div>
         <div class="card"><div class="k">Updated</div><div class="v" style="font-size:16px">${hhmm(r.timestamp)}</div></div>
       </div>
+      ${(r.deterioration_reasons || []).length ? `<p><b>Why (10-min model):</b> ${r.deterioration_reasons.map(esc).join(" · ")}</p>` : ""}
       <p style="margin-top:10px">Risk history: <span style="display:inline-flex;align-items:flex-end;height:42px">${spark}</span></p>
       <p class="muted">Class probabilities: ${r.severity_probs.map((x, i) => `${["stable", "moderate", "severe", "critical"][i]} ${pct(x)}`).join(" · ")}<br>
       Modalities: ${r.modalities_used.join(" + ")} · ${esc(r.model_version)}${r.deterioration_model ? `<br>10-min model: ${esc(r.deterioration_model)}; trained on surgical patients, not pre-hospital` : ""}</p></div>`;

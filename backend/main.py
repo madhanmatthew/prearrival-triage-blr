@@ -138,10 +138,10 @@ def _window(readings: list[VitalsReading]) -> tuple[np.ndarray, np.ndarray]:
 DETERIORATION_T = 5   # last 5 readings, treated as 1-minute steps (docs/15 D19) [ASSUMPTION]
 
 
-def deterioration_prob(svc: Services, readings: list[VitalsReading]) -> Optional[float]:
-    """P(new SBP < 90 or SpO2 < 90 within 10 min) from the last 5 readings, or None."""
+def deterioration_prob(svc: Services, readings: list[VitalsReading]) -> tuple[Optional[float], list[str]]:
+    """(P(new SBP < 90 or SpO2 < 90 within 10 min), top SHAP reasons) from the last 5 readings."""
     if svc.deterioration is None or not readings:
-        return None
+        return None, []
     from backend.ml.vitaldb_model import predict_hgb
     X = np.full((1, DETERIORATION_T, 5), np.nan, np.float32)
     mask = np.zeros((1, DETERIORATION_T), bool)
@@ -151,8 +151,14 @@ def deterioration_prob(svc: Services, readings: list[VitalsReading]) -> Optional
         X[0, t] = [np.nan if v is None else v for v in (r.hr, r.rr, r.spo2, r.sbp, r.temp)]
         mask[0, t] = not np.isnan(X[0, t]).all()
     if not mask.any():
-        return None
-    return float(predict_hgb(svc.deterioration, X, mask)[0])
+        return None, []
+    p = float(predict_hgb(svc.deterioration, X, mask)[0])
+    try:
+        from backend.ml.vitaldb_explain import reasons
+        why = reasons(svc.deterioration, X, mask)
+    except Exception:                     # explanation is optional; never block the risk update
+        why = []
+    return p, why
 
 
 def compute_risk(svc: Services, inc: Incident, now: str) -> FusedRisk:
@@ -176,11 +182,11 @@ def compute_risk(svc: Services, inc: Incident, now: str) -> FusedRisk:
         version += "; text severity = uniform placeholder"
     probs = (probs / probs.sum()).tolist()
     news2 = score_reading(inc.vitals[-1]).total if inc.vitals else None
-    det = deterioration_prob(svc, inc.vitals)
+    det, why = deterioration_prob(svc, inc.vitals)
     return FusedRisk.from_probs(probs, incident_id=inc.incident_id, patient_id=inc.patient_id,
                                 timestamp=now, trend_prob=trend, modalities_used=modalities,
                                 news2_score=news2, model_version=version,
-                                deterioration_10min_prob=det,
+                                deterioration_10min_prob=det, deterioration_reasons=why,
                                 deterioration_model=(f"{svc.deterioration_version} (intra-operative data)"
                                                      if det is not None else None))
 
