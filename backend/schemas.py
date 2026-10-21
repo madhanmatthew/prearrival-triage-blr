@@ -131,6 +131,9 @@ class FusedRisk(BaseModel):
     news2_score: Optional[int] = Field(default=None, ge=0, le=20)
     model_version: str
     stale: bool = False  # docs/07 §6: True after 3 missed vitals intervals
+    # docs/15 D19: VitalDB short-horizon model (intra-operative data), None until vitals exist
+    deterioration_10min_prob: Optional[float] = Field(default=None, ge=0, le=1)
+    deterioration_model: Optional[str] = None
 
     @field_validator("severity_probs")
     @classmethod

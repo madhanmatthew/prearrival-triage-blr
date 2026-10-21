@@ -80,9 +80,10 @@ async function renderDetail() {
   if (r) html += `<div class="cards">
       <div class="card"><div class="k">Risk score</div><div class="v">${pct(r.risk_score)}</div><div class="gauge"><div style="width:${r.risk_score * 100}%"></div></div></div>
       <div class="card"><div class="k">Deterioration (next 6 readings)</div><div class="v">${pct(r.trend_prob)}</div></div>
+      <div class="card"><div class="k">New drop in BP/SpO2 within 10 min</div><div class="v">${pct(r.deterioration_10min_prob)}</div><div class="k">${r.deterioration_model ? "intra-operative model" : "needs vitals"}</div></div>
       <div class="card"><div class="k">NEWS2</div><div class="v">${r.news2_score ?? "–"}</div></div>
       <div class="card"><div class="k">Vitals readings</div><div class="v">${inc.vitals_count}</div></div></div>
-      <p class="muted">Modalities: ${r.modalities_used.join(" + ")} · ${esc(r.model_version)}</p>`;
+      <p class="muted">Modalities: ${r.modalities_used.join(" + ")} · ${esc(r.model_version)}${r.deterioration_model ? ` · 10-min model: ${esc(r.deterioration_model)}` : ""}</p>`;
   if (d) html += `<p><b>Dispatched:</b> ${esc(d.ambulance_id)} → ${esc(d.hospital_id)} · police units ${d.police_units}${d.route_estimated ? ' <span class="badge warn">route estimated</span>' : ""}</p>
       <p class="muted">${esc(d.explanation)}</p>` +
       (d.conflicts_resolved.length ? `<p class="muted">Conflicts: ${d.conflicts_resolved.map((c) => esc(c.type + ": " + c.resolution)).join("; ")}</p>` : "");

@@ -135,6 +135,26 @@ def _window(readings: list[VitalsReading]) -> tuple[np.ndarray, np.ndarray]:
     return X, mask
 
 
+DETERIORATION_T = 5   # last 5 readings, treated as 1-minute steps (docs/15 D19) [ASSUMPTION]
+
+
+def deterioration_prob(svc: Services, readings: list[VitalsReading]) -> Optional[float]:
+    """P(new SBP < 90 or SpO2 < 90 within 10 min) from the last 5 readings, or None."""
+    if svc.deterioration is None or not readings:
+        return None
+    from backend.ml.vitaldb_model import predict_hgb
+    X = np.full((1, DETERIORATION_T, 5), np.nan, np.float32)
+    mask = np.zeros((1, DETERIORATION_T), bool)
+    recent = readings[-DETERIORATION_T:]
+    for i, r in enumerate(recent):
+        t = DETERIORATION_T - len(recent) + i
+        X[0, t] = [np.nan if v is None else v for v in (r.hr, r.rr, r.spo2, r.sbp, r.temp)]
+        mask[0, t] = not np.isnan(X[0, t]).all()
+    if not mask.any():
+        return None
+    return float(predict_hgb(svc.deterioration, X, mask)[0])
+
+
 def compute_risk(svc: Services, inc: Incident, now: str) -> FusedRisk:
     rep = inc.report
     X, mask = _window(inc.vitals)
@@ -156,9 +176,13 @@ def compute_risk(svc: Services, inc: Incident, now: str) -> FusedRisk:
         version += "; text severity = uniform placeholder"
     probs = (probs / probs.sum()).tolist()
     news2 = score_reading(inc.vitals[-1]).total if inc.vitals else None
+    det = deterioration_prob(svc, inc.vitals)
     return FusedRisk.from_probs(probs, incident_id=inc.incident_id, patient_id=inc.patient_id,
                                 timestamp=now, trend_prob=trend, modalities_used=modalities,
-                                news2_score=news2, model_version=version)
+                                news2_score=news2, model_version=version,
+                                deterioration_10min_prob=det,
+                                deterioration_model=(f"{svc.deterioration_version} (intra-operative data)"
+                                                     if det is not None else None))
 
 
 class PoliceAck(BaseModel):

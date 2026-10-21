@@ -63,11 +63,17 @@ Allowed `avpu`: `A|V|P|U` (V/P/U all score 3 in NEWS2; the model encodes `A=0`, 
   "trend_horizon_readings": 6,
   "modalities_used": ["text", "vitals"],
   "news2_score": 7,
-  "model_version": "fusion_v1_20260915"
+  "model_version": "fusion_v1_20260915",
+  "deterioration_10min_prob": 0.23,
+  "deterioration_model": "vitaldb_hgb_v1_20261021 (intra-operative data)"
 }
 ```
 `risk_score = Σ p_i · (i/3)` (expected severity normalised to 0–1). Updated on every new
 `VitalsReading` (live-update requirement).
+`deterioration_10min_prob` (`15` D19): calibrated probability of a new sustained SBP < 90 or
+SpO2 < 90 within 10 minutes, from the last 5 readings (HR, RR, SpO2, SBP, temp) treated as
+1-minute steps. `null` until a reading exists or when the model is not loaded. Trained on
+intra-operative VitalDB data: shown with that label, never as a pre-hospital accuracy claim.
 
 ### 2.4 HospitalRecommendation (Hospital Agent → Coordinator)
 ```json

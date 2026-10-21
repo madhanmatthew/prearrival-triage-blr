@@ -252,3 +252,31 @@ def test_benchmark_endpoint():
     body = client(s).post("/benchmark/run").json()
     assert {r["method"] for r in body["summary"]} == {"naive", "ai"}
     assert len(body["results"]) == 20 and "SIMULATED" in body["note"]
+
+
+class FakeDeterioration:
+    """Stands in for the HGB bundle: probability rises as SBP falls (test only)."""
+
+    def predict_proba(self, T):
+        sbp_last = np.nan_to_num(T[:, 3], nan=120.0)
+        p = np.clip((130 - sbp_last) / 60, 0, 1)
+        return np.column_stack([1 - p, p])
+
+
+def test_vitals_endpoint_returns_10min_deterioration():
+    c = client()
+    iid, _ = finish(c)
+    assert c.get(f"/incident/{iid}").json()["risk"]["deterioration_10min_prob"] is None
+    r = c.post(f"/incident/{iid}/vitals", json={"incident_id": iid, **READING}).json()
+    assert r["deterioration_10min_prob"] is None                          # model not loaded
+    s = services()
+    s.deterioration = {"model": FakeDeterioration()}
+    s.deterioration_version = "vitaldb_hgb_test"
+    c2 = client(s)
+    iid2, _ = finish(c2)
+    probs = []
+    for sbp in (120, 105, 90):
+        r = c2.post(f"/incident/{iid2}/vitals", json={"incident_id": iid2, **{**READING, "sbp": sbp}}).json()
+        probs.append(r["deterioration_10min_prob"])
+    assert probs == sorted(probs) and probs[-1] > probs[0]
+    assert "intra-operative" in r["deterioration_model"]

@@ -2,7 +2,7 @@
 
     python -m backend.ml.vitaldb_model                 # all models, logs to experiments/log.csv
     python -m backend.ml.vitaldb_model --quick         # tiny grids, 2 epochs: smoke test, not a result
-    python -m backend.ml.vitaldb_model --train-final   # fit BiGRU on all windows -> models/
+    python -m backend.ml.vitaldb_model --train-final   # fit the deployed model (HGB) -> models/
 
 Models (all share the outer folds):
   majority   predicts the training prevalence
@@ -27,8 +27,10 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import joblib
 import torch
 from sklearn.base import BaseEstimator, ClassifierMixin, clone
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.dummy import DummyClassifier
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.impute import SimpleImputer
@@ -317,15 +319,57 @@ def load_model(path: Path) -> dict:
     return {"model": model, "scaler": sc, "epochs": ck["epochs"], "data_version": ck["data_version"]}
 
 
+# ---------------------------------------------------------------------------
+# Deployed model: HGB (best PR-AUC in the nested CV), isotonic-calibrated
+# ---------------------------------------------------------------------------
+# class_weight="balanced" inflates scores, so the deployed model is wrapped in isotonic calibration
+# fitted on grouped held-out folds; the API then shows a probability, not a raw score.
+
+def train_hgb(path: Path = OUT_PATH, quick: bool = False) -> dict:
+    """Grid search (inner grouped CV) on all windows, then calibrated refit."""
+    d = load(path)
+    X, mask, y, groups = d["X"], d["mask"], d["y"], d["groups"]
+    T = tabular_features(X, mask)
+    pipe, grid = model_specs(quick)["hgb"]
+    gs = GridSearchCV(clone(pipe), grid, scoring="average_precision", n_jobs=-1,
+                      cv=StratifiedGroupKFold(N_INNER, shuffle=True, random_state=SEED))
+    gs.fit(T, y, groups=groups)
+    splits = list(StratifiedGroupKFold(N_INNER, shuffle=True, random_state=SEED + 1).split(T, y, groups))
+    cal = CalibratedClassifierCV(clone(gs.best_estimator_), method="isotonic", cv=splits).fit(T, y)
+    return {"model": cal, "params": gs.best_params_, "inner_pr_auc": float(gs.best_score_),
+            "data_version": DATA_VERSION, "kind": "hgb_isotonic", "n_windows": int(len(y))}
+
+
+def predict_hgb(bundle: dict, X: np.ndarray, mask: np.ndarray) -> np.ndarray:
+    """X [N,T,5] raw vitals (hr, rr, spo2, sbp, temp; NaN missing) -> calibrated P(new event in 10 min)."""
+    return bundle["model"].predict_proba(tabular_features(X.astype(np.float32), mask))[:, 1]
+
+
+def save_hgb(bundle: dict, version: int = 1) -> Path:
+    MODEL_DIR.mkdir(exist_ok=True)
+    path = MODEL_DIR / f"vitaldb_hgb_v{version}_{dt.date.today():%Y%m%d}.joblib"
+    joblib.dump(bundle, path)
+    return path
+
+
+def load_hgb(path: Path) -> dict:
+    return joblib.load(path)
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description="VitalDB 10-min deterioration, nested grouped CV")
     p.add_argument("--data", type=Path, default=OUT_PATH)
     p.add_argument("--quick", action="store_true", help="tiny grids, 2 epochs (smoke test, not a result)")
     p.add_argument("--models", nargs="*", help="subset, e.g. --models majority news2 logreg")
-    p.add_argument("--train-final", action="store_true", help="fit BiGRU on all windows and save")
+    p.add_argument("--train-final", action="store_true", help="fit the deployed HGB model and save")
+    p.add_argument("--final-model", choices=["hgb", "bigru"], default="hgb")
     a = p.parse_args()
     if a.train_final:
-        print(f"saved {save(train(a.data))}")
+        if a.final_model == "bigru":
+            print(f"saved {save(train(a.data))}")
+        else:
+            b = train_hgb(a.data, a.quick)
+            print(f"params {b['params']} inner PR-AUC {b['inner_pr_auc']:.4f}; saved {save_hgb(b)}")
         return
     folds = evaluate(a.data, a.quick, a.models)
     summary = summarize(folds)

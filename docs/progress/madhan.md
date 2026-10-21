@@ -381,6 +381,16 @@
   rule score; not tuned to win. Burn/cardiac: no hospital lists the specialty, so only trauma level is
   checked. `POST /benchmark/run` returns the table. Logged (component=system).
 
+- 2026-10-21: VitalDB model deployed. `python -m backend.ml.vitaldb_model --train-final` fits the CV winner
+  (HGB; inner-CV grid on all windows picked lr 0.1, 31 leaves, inner PR-AUC 0.512) wrapped in isotonic
+  calibration on grouped folds (class_weight=balanced inflates raw scores). Saved
+  `models/vitaldb_hgb_v1_20261021.joblib` (5.8 MB). Sanity check on a 20k-window sample (in-sample,
+  indicative only): mean p 0.137 vs prevalence 0.135; bins 0-.1 -> 0.036, .5-1 -> 0.707.
+  `FusedRisk` gains `deterioration_10min_prob` + `deterioration_model` (docs/07 §2.3 first); services load
+  the latest `vitaldb_hgb_v*.joblib`; `/incident/{id}/vitals` computes it from the last 5 readings treated
+  as 1-minute steps [ASSUMPTION: ambulance readings ~1/min]. Dispatcher + hospital pages show it with the
+  "intra-operative model" label. Browser check: demo replay of falling vitals -> 78%.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

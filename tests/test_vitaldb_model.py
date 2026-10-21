@@ -73,3 +73,17 @@ def test_train_save_load_predict(tmp_path, monkeypatch):
     p1 = vm.predict(b, X, mask)
     b2 = vm.load_model(vm.save(b))
     assert p1.shape == (len(y),) and np.allclose(p1, vm.predict(b2, X, mask), atol=1e-6)
+
+
+def test_hgb_train_calibrated_save_load(tmp_path, monkeypatch):
+    X, mask, y, groups = toy(600)
+    path = tmp_path / "w.npz"
+    np.savez_compressed(path, X=X, mask=mask, y=y, groups=groups)
+    monkeypatch.setattr(vm, "MODEL_DIR", tmp_path)
+    b = vm.train_hgb(path, quick=True)
+    p = vm.predict_hgb(b, X, mask)
+    assert p.shape == (len(y),) and ((p >= 0) & (p <= 1)).all()
+    assert p[y == 1].mean() > p[y == 0].mean()
+    assert abs(p.mean() - y.mean()) < 0.1                                # calibrated-ish on toy
+    b2 = vm.load_hgb(vm.save_hgb(b))
+    assert np.allclose(vm.predict_hgb(b2, X, mask), p) and b2["kind"] == "hgb_isotonic"

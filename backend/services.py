@@ -39,6 +39,8 @@ class Services:
     text_model: Any = None             # sklearn Pipeline
     fusion: Optional[dict] = None      # backend.ml.fusion_model bundle
     fusion_version: str = ""
+    deterioration: Optional[dict] = None   # backend.ml.vitaldb_model HGB bundle (D19)
+    deterioration_version: str = ""
     rag: Any = None                    # backend.rag.pipeline.FirstAidRAG
     hospital_agent: Any = None         # backend.agents.hospital_agent.HospitalAgent
     hospitals: Optional[pd.DataFrame] = None
@@ -94,6 +96,14 @@ def load_services() -> Services:
         s.rag = _try(n, "rag", lambda: rp.load(nli=False))
     else:
         n.append("rag: no index (run make build-rag), guidance falls back to 'call 108'")
+
+    p = latest("vitaldb_hgb_v*.joblib")
+    if p is None:
+        n.append("deterioration: no models/vitaldb_hgb_v*.joblib (run vitaldb_model --train-final)")
+    else:
+        from backend.ml import vitaldb_model
+        s.deterioration = _try(n, "deterioration model", lambda: vitaldb_model.load_hgb(p))
+        s.deterioration_version = p.stem
 
     if HOSPITALS_CSV.exists():
         from backend.agents.hospital_agent import MODEL_PATH, HospitalAgent, load_hospitals
