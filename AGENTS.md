@@ -77,7 +77,7 @@ call "existing" or "in MVP" must be built new here.
 | RL env wrapper + fixed-time / always-green baselines (schematic corridor) | Done, with tests; full baseline run logged | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
 | RL DQN train/eval (schematic corridor, 3 demand levels) | Done, 3 seeds logged; `reports/rl_comparison.csv` | `backend/rl/train.py` |
 | RL randomized demand (docs/19 §7 jitter, OSM) | Not started | `backend/rl/demand.py` |
-| Police alert sizing (rule-based) | Done, with tests; wired into dispatch (units required + PoliceAlert on `/ws/police`); constants are assumptions | `backend/agents/police_agent.py`, `tests/test_police_agent.py` |
+| Police alert sizing (rule-based) | Done, with tests; wired into dispatch (units required + PoliceAlert on `/ws/police`); junction posts with timing on the 4 ORR corridor junctions (corridor-only) + lifecycle (ack, GPS position updates, auto-release, close); constants are assumptions | `backend/agents/police_agent.py`, `tests/test_police_agent.py` |
 | Whisper intake + WER eval + WER-vs-SNR noise eval (faster-whisper, local) | Clean WER run on 90 real clips (large-v3: en 3.6%, hi 30.8%, kn 79.2% WER / 23.7% CER); GPU session run on RTX 3050 (turbo ~1 s/clip, large-v3 1-4 s/clip), noise WER-vs-SNR logged (`15` D18) | `backend/asr/`, `tests/test_asr.py`, `data/asr_test/` |
 | Dialogue state machine (6 questions) | Done, with tests; code-mixed hi/kn cues + "breathing normally?" fix; ASR->cue robustness eval logged (dev); hi/kn wording needs native review | `backend/dialogue/`, `backend/asr/eval_triage.py`, `tests/test_dialogue.py`, `tests/test_eval_triage.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
@@ -86,7 +86,7 @@ call "existing" or "in MVP" must be built new here.
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
 | Coordinator (6 conflicts, rule-based) | Done, with tests (fake router, fixture hospitals); not yet wired to API | `backend/agents/coordinator.py`, `tests/test_coordinator.py` |
 | FastAPI app + WebSockets | Done, with tests (fake services); real app runs, dispatch waits for `data/hospitals.csv` + `data/ambulance_bases.csv` | `backend/main.py`, `backend/services.py`, `backend/routing.py`, `tests/test_api.py` |
-| Frontend (Leaflet map, police + hospital views, bystander guidance text + browser speech `01` §10) | Not started | `frontend/` |
+| Frontend (Leaflet map, police + hospital views, bystander guidance text + browser speech `01` §10) | Done (static HTML/JS served at `/ui/`, no build step): reporter (lang, GPS, voice/text, tap answers, guidance steps + speech), dispatcher (map, risk, dispatch, route, demo vitals replay, simulated drive), police (live alerts, junction posts, ack/close), hospital (live risk); smoke-tested in browser with fixture services; native prompt recordings not yet wired | `frontend/`, `GET /incidents`, `GET /resources` |
 | Benchmark (8 + 2 scenarios, fair baseline) | Not started | `backend/benchmarks/benchmark.py` |
 | Traffic/ETA ML models | Optional (`15` D16) | `backend/ml/eta_model.py` |
 

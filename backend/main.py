@@ -18,10 +18,13 @@ from typing import Callable, Optional
 
 import numpy as np
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from backend.agents.coordinator import IncidentCase, coordinate
-from backend.agents.police_agent import size_alert
+from backend.agents.police_agent import (AlertBoard, depart_time, load_corridor_junctions,
+                                         plan_junction_posts, size_alert)
 from backend.dialogue.state_machine import DialogueManager
 from backend.ml.news2 import score_reading
 from backend.rag.pipeline import LLM_DOWN_MSG
@@ -158,6 +161,10 @@ def compute_risk(svc: Services, inc: Incident, now: str) -> FusedRisk:
                                 news2_score=news2, model_version=version)
 
 
+class PoliceAck(BaseModel):
+    junction_id: Optional[str] = None
+
+
 def _require(store: dict, incident_id: str) -> Incident:
     inc = store.get(incident_id)
     if inc is None:
@@ -189,7 +196,13 @@ def create_app(services: Optional[Services] = None,
     hub = Hub()
     counter = itertools.count(1)
     busy_ambulances: set[str] = set()
+    board = AlertBoard()
+    try:
+        junctions = load_corridor_junctions()
+    except (OSError, KeyError, ValueError):
+        junctions = {}  # no corridor file: alerts without junction posts
     app.state.services, app.state.store, app.state.hub = svc, store, hub
+    app.state.police_board = board
 
     def new_incident(dm: DialogueManager, gps: GPS) -> Incident:
         now = clock()
@@ -322,8 +335,16 @@ def create_app(services: Optional[Services] = None,
             alert = size_alert(d.incident_id, inc.gps, inc.risk.severity_class,
                                inc.report.injury_type, inc.report.num_injured,
                                route.polyline if route else ())
-            await hub.send("police", "PoliceAlert",
-                           alert.model_copy(update={"units_required": d.police_units}))
+            posts = []
+            if route is not None and d.police_units > 0:   # no units allocated -> no posts
+                to_scene = router.eta_min(svc.ambulances[d.ambulance_id],
+                                          (inc.gps.lat, inc.gps.lon))[0]
+                posts = plan_junction_posts(route.polyline, depart_time(now, to_scene),
+                                            route.eta_min, junctions)
+            alert = board.open(alert.model_copy(update={"units_required": d.police_units,
+                                                        "junction_posts": posts}),
+                               route.eta_min if route else 0.0)
+            await hub.send("police", "PoliceAlert", alert)
             await hub.send(f"hospital/{d.hospital_id}", "FusedRisk", store[d.incident_id].risk)
         for iid, r in result.resolutions.items():
             store[iid].dispatch_notes = r.needs_dispatcher
@@ -332,9 +353,74 @@ def create_app(services: Optional[Services] = None,
                                                            or "no decision"))
         return inc.decision
 
+    @app.get("/incidents")
+    def incidents():
+        """Summary list for the dispatcher console, newest first."""
+        out = []
+        for inc in sorted(store.values(), key=lambda i: i.created_at, reverse=True):
+            out.append({"incident_id": inc.incident_id, "created_at": inc.created_at,
+                        "gps": inc.gps.model_dump(), "dialogue_done": inc.report is not None,
+                        "injury_type": inc.report.injury_type if inc.report else None,
+                        "num_injured": inc.report.num_injured if inc.report else None,
+                        "severity_class": inc.risk.severity_class if inc.risk else None,
+                        "risk_score": inc.risk.risk_score if inc.risk else None,
+                        "vitals_count": len(inc.vitals),
+                        "decision": inc.decision.model_dump() if inc.decision else None,
+                        "dispatch_notes": inc.dispatch_notes})
+        return out
+
+    @app.get("/resources")
+    def resources():
+        """Static map layers: hospitals, ambulances (base positions), corridor junctions."""
+        hosp = []
+        if svc.hospitals is not None:
+            for h in svc.hospitals.itertuples():
+                hosp.append({"hospital_id": str(h.hospital_id), "name": str(getattr(h, "name", "")),
+                             "lat": float(h.lat), "lon": float(h.lon)})
+        return {"hospitals": hosp,
+                "ambulances": [{"ambulance_id": a, "lat": p[0], "lon": p[1], "busy": a in busy_ambulances}
+                               for a, p in svc.ambulances.items()],
+                "junctions": [{"junction_id": j, "lat": p[0], "lon": p[1]} for j, p in junctions.items()]}
+
     @app.get("/incident/{incident_id}")
     def incident(incident_id: str):
         return _incident_view(_require(store, incident_id))
+
+    def _alert(incident_id: str):
+        _require(store, incident_id)
+        if incident_id not in board:
+            raise HTTPException(404, f"no police alert for {incident_id} (not dispatched)")
+
+    @app.post("/incident/{incident_id}/position")
+    async def position(incident_id: str, gps: GPS):
+        _alert(incident_id)
+        alert = board.update_position(incident_id, gps.lat, gps.lon, clock())
+        await hub.send("police", "PoliceAlert", alert)
+        return alert
+
+    @app.get("/police/{incident_id}")
+    def police_alert(incident_id: str):
+        _alert(incident_id)
+        return board.get(incident_id)
+
+    @app.post("/police/{incident_id}/ack")
+    async def police_ack(incident_id: str, body: Optional[PoliceAck] = None):
+        _alert(incident_id)
+        try:
+            alert = board.acknowledge(incident_id, body.junction_id if body else None)
+        except KeyError:
+            raise HTTPException(404, f"junction {body.junction_id} is not on this alert")
+        except ValueError as e:
+            raise HTTPException(409, str(e))
+        await hub.send("police", "PoliceAlert", alert)
+        return alert
+
+    @app.post("/police/{incident_id}/close")
+    async def police_close(incident_id: str):
+        _alert(incident_id)
+        alert = board.close(incident_id)
+        await hub.send("police", "PoliceAlert", alert)
+        return alert
 
     @app.post("/benchmark/run")
     def benchmark():
@@ -351,6 +437,14 @@ def create_app(services: Optional[Services] = None,
     @app.websocket("/ws/hospital/{hospital_id}")
     async def ws_hospital(ws: WebSocket, hospital_id: str):
         await hub.serve(f"hospital/{hospital_id}", ws)
+
+    ui = Path(__file__).resolve().parents[1] / "frontend"
+    if ui.is_dir():
+        app.mount("/ui", StaticFiles(directory=ui, html=True), name="ui")
+
+        @app.get("/", include_in_schema=False)
+        def root():
+            return RedirectResponse("/ui/")
 
     return app
 

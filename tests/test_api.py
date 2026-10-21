@@ -206,3 +206,39 @@ def test_voice_intake():
     c = client(services(transcriber=FakeTranscriber(text="")))
     r = c.post("/incident/voice", files=files, data={"lat": 12.9, "lon": 77.6})
     assert r.status_code == 422 and "type the report" in r.json()["detail"]
+
+
+def test_police_alert_lifecycle_over_api():
+    c = client(services(dispatch=True))
+    iid, _ = finish(c)
+    assert c.get(f"/police/{iid}").status_code == 404                 # not dispatched yet
+    with c.websocket_connect("/ws/police") as ws:
+        d = c.post(f"/incident/{iid}/dispatch").json()
+        msg = ws.receive_json()
+    assert msg["type"] == "PoliceAlert" and msg["data"]["incident_id"] == iid
+    assert msg["data"]["units_required"] == d["police_units"]
+    alert = c.get(f"/police/{iid}").json()
+    assert alert["alert_status"] == "active" and len(alert["route_polyline"]) >= 2
+    assert c.post(f"/police/{iid}/ack").json()["alert_status"] == "acknowledged"
+    assert c.post(f"/police/{iid}/ack", json={"junction_id": "nowhere"}).status_code == 404
+    end = alert["route_polyline"][-1]
+    a = c.post(f"/incident/{iid}/position", json={"lat": end[0], "lon": end[1]}).json()
+    assert all(p["status"] == "released" for p in a["junction_posts"])
+    assert c.post(f"/police/{iid}/close").json()["alert_status"] == "closed"
+    assert c.post(f"/police/{iid}/ack").status_code == 409
+
+
+def test_incidents_resources_and_ui():
+    c = client(services(dispatch=True))
+    iid, _ = finish(c)
+    lst = c.get("/incidents").json()
+    assert lst[0]["incident_id"] == iid and lst[0]["severity_class"] is not None
+    r = c.get("/resources").json()
+    assert {h["hospital_id"] for h in r["hospitals"]} == {"H1", "H2"}
+    assert {a["ambulance_id"] for a in r["ambulances"]} == {"A1", "A2"}
+    assert {j["junction_id"] for j in r["junctions"]} >= {"silkboard", "krpuram"}
+    ui = c.get("/ui/")
+    assert ui.status_code == 200 and "Pre-arrival" in ui.text
+    for page in ("report.html", "dispatch.html", "police.html", "hospital.html", "common.js"):
+        assert c.get(f"/ui/{page}").status_code == 200
+    assert c.get("/", follow_redirects=False).status_code in (302, 307)

@@ -104,9 +104,23 @@ Allowed `avpu`: `A|V|P|U` (V/P/U all score 3 in NEWS2; the model encodes `A=0`, 
   "severity_class": 2,
   "route_polyline": [[12.91, 77.62]],
   "units_required": 3,
-  "perimeter_m": 150
+  "perimeter_m": 150,
+  "alert_status": "active",
+  "junction_posts": [
+    {"junction_id": "silkboard", "gps": {"lat": 12.9177, "lon": 77.6238},
+     "ambulance_eta": "2026-09-28T09:24:00Z", "officer_by": "2026-09-28T09:22:00Z",
+     "manual_clearing": false, "status": "pending"}
+  ]
 }
 ```
+Rule-based (`docs/03` §8). `alert_status` ∈ `active|acknowledged|closed`; post `status` ∈
+`pending|acknowledged|released`. `junction_posts` lists the ORR corridor junctions
+(`scripts/traffic_points.json`) the scene→hospital route passes, in travel order, with the
+ambulance ETA at each and the time an officer must be in place. Empty when the route does not
+use the corridor (corridor-only demo). `manual_clearing` = signal preemption was lost at that
+junction (`SignalState.junctions[].preempted == false`), so police clear it by hand. Posts are
+released as the ambulance passes (`POST /incident/{id}/position`). ETAs are estimates from the
+route duration, not predictions.
 
 ### 2.7 DispatchDecision (Coordinator → all clients)
 ```json
@@ -182,6 +196,13 @@ Standalone variants for the ablation: vitals-only (drop text branch), text-only 
 | POST | `/incident/{id}/vitals` | push a `VitalsReading` → returns updated `FusedRisk` |
 | POST | `/incident/{id}/dispatch` | run coordinator → `DispatchDecision` |
 | GET | `/incident/{id}` | full incident state |
+| GET | `/incidents` | incident summaries for the dispatcher console |
+| GET | `/resources` | map layers: hospitals, ambulances, corridor junctions |
+| GET | `/ui/` | static frontend (`frontend/`): reporter, dispatcher, police, hospital pages |
+| POST | `/incident/{id}/position` | ambulance GPS `{lat, lon}` → updated `PoliceAlert` (ETAs, released posts) |
+| GET | `/police/{id}` | current `PoliceAlert` |
+| POST | `/police/{id}/ack` | police acknowledge the alert, or one post with `{junction_id}` |
+| POST | `/police/{id}/close` | release all posts, close the alert |
 | POST | `/benchmark/run` | run the 8-scenario benchmark, return table |
 
 ### WebSocket channels

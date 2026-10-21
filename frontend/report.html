@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report an Emergency</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Report an emergency</h1>
+  <nav><a href="index.html">Home</a><a class="active" href="report.html">Report</a><a href="dispatch.html">Dispatcher</a><a href="police.html">Police</a><a href="hospital.html">Hospital</a></nav>
+  <span class="disclaimer">Research prototype, not a medical device. In a real emergency call 108.</span>
+</header>
+<main style="max-width:760px">
+  <!-- Step 1: language + location + report -->
+  <div class="panel" id="start">
+    <h2>1 · Language and location</h2>
+    <div class="row">
+      <button class="big lang" data-lang="en">English</button>
+      <button class="big lang" data-lang="hi">हिन्दी</button>
+      <button class="big lang" data-lang="kn">ಕನ್ನಡ</button>
+    </div>
+    <p class="muted" id="gpsInfo">Location: waiting for device GPS…</p>
+    <details class="muted"><summary>Demo: set location manually</summary>
+      <div class="row"><input id="lat" placeholder="lat" style="width:140px"><input id="lon" placeholder="lon" style="width:140px">
+      <button id="silk">Silk Board (demo)</button></div>
+    </details>
+    <h2 style="margin-top:16px">2 · What happened?</h2>
+    <div class="row">
+      <button class="primary big" id="rec">🎤 Hold to speak</button>
+      <span class="muted" id="recInfo"></span>
+    </div>
+    <label>…or type it</label>
+    <textarea id="text" rows="3" placeholder="e.g. bike accident on the ORR, one person bleeding a lot"></textarea>
+    <div class="row" style="margin-top:8px"><button class="primary" id="send">Send report</button></div>
+    <p class="error" id="startErr"></p>
+  </div>
+
+  <!-- Step 2: dialogue -->
+  <div class="panel" id="dialogue" hidden>
+    <h2>Questions <span class="muted" id="iid"></span></h2>
+    <p class="muted" id="transcript"></p>
+    <div class="question" id="qtext"></div>
+    <div class="row" id="taps">
+      <button class="big tap" data-a="yes">Yes</button>
+      <button class="big tap" data-a="no">No</button>
+      <button class="big tap" data-a="don't know">Don't know</button>
+    </div>
+    <div class="row" id="free" hidden style="margin-top:8px">
+      <input id="answer" placeholder="type your answer"><button class="primary" id="sendAnswer">Send</button>
+    </div>
+    <p class="error" id="dlgErr"></p>
+  </div>
+
+  <!-- Step 3: result + guidance -->
+  <div class="panel" id="result" hidden>
+    <h2>Report sent</h2>
+    <p>Severity estimate: <span id="sev"></span> <span class="muted" id="model"></span></p>
+    <p class="muted">Help is being coordinated. Stay with the person if it is safe.</p>
+  </div>
+  <div class="panel" id="guidance" hidden>
+    <h2>First-aid steps <span id="grounded"></span></h2>
+    <div id="steps"></div>
+    <div class="row" style="margin-top:8px">
+      <button id="prev">◀ Back</button><button id="repeat">🔊 Repeat</button><button class="primary" id="next">Next ▶</button>
+      <span class="muted" id="speakInfo"></span>
+    </div>
+    <p class="source" id="sources"></p>
+  </div>
+</main>
+<script src="common.js"></script>
+<script>
+let lang = "en", gps = null, incident = null, steps = [], stepIdx = 0;
+const $ = (s) => document.querySelector(s);
+const FREE_TEXT = new Set(["Q_NUM_INJURED", "Q_MECHANISM"]);
+
+// --- language ---
+document.querySelectorAll(".lang").forEach((b) => b.onclick = () => {
+  lang = b.dataset.lang;
+  document.querySelectorAll(".lang").forEach((x) => x.classList.toggle("primary", x === b));
+});
+document.querySelector('.lang[data-lang="en"]').classList.add("primary");
+
+// --- location: device GPS only (rule 5); manual entry is a labelled demo override ---
+function setGps(lat, lon, src) { gps = { lat, lon }; $("#gpsInfo").textContent = `Location (${src}): ${lat.toFixed(5)}, ${lon.toFixed(5)}`; }
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition((p) => setGps(p.coords.latitude, p.coords.longitude, "device GPS"),
+    () => { $("#gpsInfo").textContent = "Location: GPS unavailable, set it manually below (demo)."; });
+}
+$("#silk").onclick = () => setGps(12.9166, 77.6231, "demo: Silk Board");
+["#lat", "#lon"].forEach((s) => $(s).onchange = () => {
+  const a = parseFloat($("#lat").value), o = parseFloat($("#lon").value);
+  if (!isNaN(a) && !isNaN(o)) setGps(a, o, "manual demo");
+});
+
+// --- voice: record, upload to /incident/voice ---
+let rec = null, chunks = [];
+async function startRec() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    rec = new MediaRecorder(stream); chunks = [];
+    rec.ondataavailable = (e) => chunks.push(e.data);
+    rec.onstop = () => { stream.getTracks().forEach((t) => t.stop()); sendVoice(new Blob(chunks, { type: rec.mimeType })); };
+    rec.start(); $("#recInfo").textContent = "Recording… release to send";
+  } catch (e) { $("#recInfo").textContent = "Microphone unavailable, please type."; }
+}
+function stopRec() { if (rec && rec.state === "recording") rec.stop(); }
+$("#rec").addEventListener("pointerdown", startRec);
+$("#rec").addEventListener("pointerup", stopRec);
+$("#rec").addEventListener("pointerleave", stopRec);
+
+async function sendVoice(blob) {
+  if (!gps) { $("#startErr").textContent = "Location needed first."; return; }
+  $("#recInfo").textContent = "Transcribing…";
+  const fd = new FormData();
+  fd.append("audio", blob, "report.webm"); fd.append("lat", gps.lat); fd.append("lon", gps.lon); fd.append("language", lang);
+  try { const r = await api("/incident/voice", { method: "POST", body: fd }); $("#recInfo").textContent = ""; startDialogue(r); }
+  catch (e) { $("#recInfo").textContent = ""; $("#startErr").textContent = e.message; }
+}
+
+// --- text report ---
+$("#send").onclick = async () => {
+  $("#startErr").textContent = "";
+  if (!gps) { $("#startErr").textContent = "Location needed first."; return; }
+  const text = $("#text").value.trim();
+  if (!text) { $("#startErr").textContent = "Please describe what happened."; return; }
+  try { startDialogue(await api("/incident/text", { json: { text, gps, language: lang } })); }
+  catch (e) { $("#startErr").textContent = e.message; }
+};
+
+// --- dialogue ---
+function startDialogue(r) {
+  incident = r.incident_id;
+  $("#start").hidden = true; $("#dialogue").hidden = false;
+  $("#iid").textContent = incident;
+  if (r.transcript) $("#transcript").textContent = `Heard: "${r.transcript}"`;
+  showTurn(r);
+}
+function showTurn(r) {
+  if (r.done) return finish(r);
+  const q = r.question;
+  $("#qtext").textContent = q.text;
+  const free = FREE_TEXT.has(q.q_id);
+  $("#taps").hidden = free; $("#free").hidden = !free;
+  $("#answer").value = ""; if (free) $("#answer").focus();
+  speak(q.text, lang);
+}
+async function sendAnswer(a) {
+  $("#dlgErr").textContent = "";
+  try { showTurn(await api(`/incident/${incident}/answer`, { json: { answer: a } })); }
+  catch (e) { $("#dlgErr").textContent = e.message; }
+}
+document.querySelectorAll(".tap").forEach((b) => b.onclick = () => sendAnswer(b.dataset.a));
+$("#sendAnswer").onclick = () => { const a = $("#answer").value.trim(); if (a) sendAnswer(a); };
+$("#answer").addEventListener("keydown", (e) => { if (e.key === "Enter") $("#sendAnswer").click(); });
+
+async function finish(r) {
+  $("#dialogue").hidden = true; $("#result").hidden = false;
+  const inc = await api(`/incident/${incident}`);
+  $("#sev").innerHTML = inc.risk ? sevBadge(inc.risk.severity_class) : "–";
+  $("#model").textContent = inc.risk ? `(${inc.risk.model_version})` : "";
+  loadGuidance();
+}
+
+// --- guidance: corpus text only, one step at a time, spoken by the browser ---
+async function loadGuidance() {
+  $("#guidance").hidden = false;
+  const g = await api(`/incident/${incident}/guidance`);
+  steps = []; const srcs = new Map();
+  if (g.status !== "ok") { $("#steps").innerHTML = `<div class="step">${esc(g.message)}</div>`; return; }
+  let grounded = true;
+  for (const it of g.items) {
+    if (it.status !== "ok") { steps.push({ text: it.message, ids: [] }); continue; }
+    if (it.fully_grounded === false) grounded = false;
+    for (const s of it.sentences) steps.push({ text: s.text, ids: s.chunk_ids });
+    for (const r of it.retrieved) srcs.set(r.chunk_id, r);
+  }
+  if (!steps.length) steps.push({ text: g.items.map((i) => i.message).join(" "), ids: [] });
+  $("#grounded").innerHTML = grounded ? '<span class="badge ok">grounded ✓</span>' : '<span class="badge warn">partly grounded</span>';
+  $("#sources").innerHTML = "Sources: " + [...srcs.values()].map((r) => `${esc(r.chunk_id)} (${esc(r.publisher || "")})`).join("; ");
+  stepIdx = 0; showStep();
+  if (lang !== "en") $("#speakInfo").textContent = "Steps are in English (reviewed translations pending).";
+}
+function showStep() {
+  const s = steps[stepIdx];
+  $("#steps").innerHTML = `<div class="muted">Step ${stepIdx + 1} of ${steps.length}</div><div class="step">${esc(s.text)}</div>` +
+    (s.ids.length ? `<div class="source">from ${s.ids.map(esc).join(", ")}</div>` : "");
+  $("#prev").disabled = stepIdx === 0; $("#next").disabled = stepIdx >= steps.length - 1;
+  speak(s.text, "en");
+}
+$("#prev").onclick = () => { stepIdx--; showStep(); };
+$("#next").onclick = () => { stepIdx++; showStep(); };
+$("#repeat").onclick = () => speak(steps[stepIdx].text, "en");
+
+function speak(text, l) {
+  if (!("speechSynthesis" in window)) return;
+  const code = { en: "en-IN", hi: "hi-IN", kn: "kn-IN" }[l];
+  const voice = speechSynthesis.getVoices().find((v) => v.lang === code || v.lang.startsWith(l));
+  if (!voice && l !== "en") return;           // no voice for this language on the device: text only
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = code; if (voice) u.voice = voice;
+  speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>

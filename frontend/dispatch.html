@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispatcher Console</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Dispatcher console</h1>
+  <nav><a href="index.html">Home</a><a href="report.html">Report</a><a class="active" href="dispatch.html">Dispatcher</a><a href="police.html">Police</a><a href="hospital.html">Hospital</a></nav>
+  <span class="disclaimer">Decision support only · research prototype</span>
+</header>
+<main style="max-width:1400px">
+  <div class="grid-map">
+    <div>
+      <div class="panel"><h2>Incidents</h2><div id="list" class="muted">none yet</div></div>
+      <div class="panel" id="detail" hidden>
+        <h2 id="dTitle"></h2>
+        <div id="dBody"></div>
+        <div class="row" style="margin-top:10px">
+          <button class="primary" id="dispatch">Dispatch</button>
+          <button id="replay">▶ Vitals replay (demo)</button>
+          <button id="drive">🚑 Simulate drive</button>
+        </div>
+        <p class="error" id="dErr"></p>
+      </div>
+    </div>
+    <div><div id="map"></div><p class="muted">● incident · ● hospital · ● ambulance · ◆ ORR corridor junction. Route = ORS road route, or straight line when ORS is down (marked estimated).</p></div>
+  </div>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="common.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const map = baseMap("map");
+const layers = { inc: L.layerGroup().addTo(map), res: L.layerGroup().addTo(map), route: L.layerGroup().addTo(map), amb: L.layerGroup().addTo(map) };
+let selected = null, incidents = [], replayTimer = null, driveTimer = null, demoVitals = [];
+
+fetch("demo_vitals.json").then((r) => r.json()).then((d) => { demoVitals = d.readings; });
+
+async function loadResources() {
+  const r = await api("/resources");
+  layers.res.clearLayers();
+  r.hospitals.forEach((h) => L.marker([h.lat, h.lon], { icon: dot("#1f6feb") }).bindTooltip(`${h.hospital_id} ${h.name}`).addTo(layers.res));
+  r.ambulances.forEach((a) => L.marker([a.lat, a.lon], { icon: dot(a.busy ? "#888" : "#16a34a", 12) }).bindTooltip(`${a.ambulance_id}${a.busy ? " (busy)" : ""}`).addTo(layers.res));
+  r.junctions.forEach((j) => L.marker([j.lat, j.lon], { icon: L.divIcon({ className: "", html: '<span style="font-size:18px;color:#7c3aed">◆</span>', iconSize: [14, 14] }) })
+    .bindTooltip(j.junction_id).addTo(layers.res));
+}
+
+async function refresh() {
+  try { incidents = await api("/incidents"); } catch (e) { return; }
+  $("#list").innerHTML = incidents.length ? "" : "none yet";
+  layers.inc.clearLayers();
+  for (const i of incidents) {
+    const el = document.createElement("div");
+    el.className = "list-item" + (i.incident_id === selected ? " selected" : "");
+    el.innerHTML = `<div class="row" style="justify-content:space-between"><b>${esc(i.incident_id)}</b>${sevBadge(i.severity_class)}</div>
+      <div class="muted">${esc(i.injury_type || "dialogue in progress")} · ${i.num_injured ?? "?"} injured · ${hhmm(i.created_at)}
+      ${i.decision ? ` · <b>${esc(i.decision.ambulance_id)} → ${esc(i.decision.hospital_id)}</b>` : ""}</div>`;
+    el.onclick = () => select(i.incident_id);
+    $("#list").appendChild(el);
+    L.marker([i.gps.lat, i.gps.lon], { icon: dot(["#1a7f37", "#b8860b", "#d9480f", "#c62828"][i.severity_class ?? 0] || "#c62828", 18) })
+      .bindTooltip(i.incident_id).on("click", () => select(i.incident_id)).addTo(layers.inc);
+  }
+  if (selected) renderDetail();
+}
+
+function select(id) { selected = id; routeFor = null; layers.route.clearLayers(); refresh(); }
+
+async function renderDetail() {
+  const inc = await api(`/incident/${selected}`);
+  $("#detail").hidden = false;
+  $("#dTitle").innerHTML = `${esc(inc.incident_id)} ${inc.risk ? sevBadge(inc.risk.severity_class) : ""}`;
+  const r = inc.risk, rep = inc.report, d = inc.decision;
+  let html = "";
+  if (rep) html += `<p>${esc(rep.injury_type)} · ${rep.num_injured} injured · language ${esc(rep.language)}</p><p class="muted">"${esc(rep.transcript)}"</p>`;
+  else html += `<p class="muted">Dialogue in progress (${esc(inc.next_question?.text || "")})</p>`;
+  if (r) html += `<div class="cards">
+      <div class="card"><div class="k">Risk score</div><div class="v">${pct(r.risk_score)}</div><div class="gauge"><div style="width:${r.risk_score * 100}%"></div></div></div>
+      <div class="card"><div class="k">Deterioration (next 6 readings)</div><div class="v">${pct(r.trend_prob)}</div></div>
+      <div class="card"><div class="k">NEWS2</div><div class="v">${r.news2_score ?? "–"}</div></div>
+      <div class="card"><div class="k">Vitals readings</div><div class="v">${inc.vitals_count}</div></div></div>
+      <p class="muted">Modalities: ${r.modalities_used.join(" + ")} · ${esc(r.model_version)}</p>`;
+  if (d) html += `<p><b>Dispatched:</b> ${esc(d.ambulance_id)} → ${esc(d.hospital_id)} · police units ${d.police_units}${d.route_estimated ? ' <span class="badge warn">route estimated</span>' : ""}</p>
+      <p class="muted">${esc(d.explanation)}</p>` +
+      (d.conflicts_resolved.length ? `<p class="muted">Conflicts: ${d.conflicts_resolved.map((c) => esc(c.type + ": " + c.resolution)).join("; ")}</p>` : "");
+  if (inc.dispatch_notes.length) html += `<p class="error">${inc.dispatch_notes.map(esc).join("; ")}</p>`;
+  $("#dBody").innerHTML = html;
+  $("#dispatch").disabled = !rep || !!d;
+  $("#replay").disabled = !rep;
+  $("#drive").disabled = !d;
+  if (d) drawRoute();
+}
+
+let routeFor = null;
+async function drawRoute() {
+  if (routeFor === selected) return;           // draw + zoom once per selection
+  layers.route.clearLayers();
+  try {
+    const a = await api(`/police/${selected}`);
+    if (a.route_polyline.length >= 2) {
+      const line = L.polyline(a.route_polyline, { color: "#c62828", weight: 5, opacity: .8 }).addTo(layers.route);
+      map.fitBounds(line.getBounds(), { padding: [40, 40] });
+      routeFor = selected;
+    }
+  } catch (_) { /* no alert yet */ }
+}
+
+$("#dispatch").onclick = async () => {
+  $("#dErr").textContent = "";
+  try { await api(`/incident/${selected}/dispatch`, { method: "POST" }); await loadResources(); refresh(); }
+  catch (e) { $("#dErr").textContent = e.message; }
+};
+
+// Vitals replay: pushes the hand-written DEMO sequence (labelled, not patient data) every 3 s.
+$("#replay").onclick = () => {
+  clearInterval(replayTimer);
+  let k = 0; const id = selected;
+  replayTimer = setInterval(async () => {
+    if (k >= demoVitals.length) { clearInterval(replayTimer); return; }
+    const reading = { incident_id: id, patient_id: `${id}-P1`, timestamp: new Date().toISOString().slice(0, 19) + "Z", ...demoVitals[k++] };
+    try { await api(`/incident/${id}/vitals`, { json: reading }); refresh(); } catch (e) { $("#dErr").textContent = e.message; clearInterval(replayTimer); }
+  }, 3000);
+};
+
+// Simulated drive: moves the ambulance along the route and reports GPS (police posts update/release).
+$("#drive").onclick = async () => {
+  clearInterval(driveTimer);
+  const id = selected;
+  const a = await api(`/police/${id}`);
+  const pts = densify(a.route_polyline, 40);
+  let k = 0;
+  layers.amb.clearLayers();
+  const m = L.marker(pts[0], { icon: dot("#16a34a", 16) }).bindTooltip("ambulance").addTo(layers.amb);
+  driveTimer = setInterval(async () => {
+    if (k >= pts.length) { clearInterval(driveTimer); return; }
+    const p = pts[k++]; m.setLatLng(p);
+    try { await api(`/incident/${id}/position`, { json: { lat: p[0], lon: p[1] } }); } catch (_) {}
+  }, 500);
+};
+
+function densify(poly, n) {
+  if (poly.length < 2) return poly;
+  const out = [];
+  for (let i = 0; i < poly.length - 1; i++)
+    for (let t = 0; t < n / (poly.length - 1); t++) {
+      const f = t / (n / (poly.length - 1));
+      out.push([poly[i][0] + (poly[i + 1][0] - poly[i][0]) * f, poly[i][1] + (poly[i + 1][1] - poly[i][1]) * f]);
+    }
+  out.push(poly[poly.length - 1]);
+  return out;
+}
+
+openChannel("/ws/map", () => refresh());
+loadResources().catch(() => {});
+refresh();
+setInterval(refresh, 4000);
+</script>
+</body>
+</html>

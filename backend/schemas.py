@@ -220,6 +220,15 @@ class SignalState(BaseModel):
 # 2.6 PoliceAlert (Coordinator -> Police dashboard)
 # ---------------------------------------------------------------------------
 
+class JunctionPost(BaseModel):
+    junction_id: str
+    gps: GPS
+    ambulance_eta: str                 # ISO-8601 UTC
+    officer_by: str                    # ISO-8601 UTC, officer in place before the ambulance
+    manual_clearing: bool = False      # signal preemption lost here -> clear by hand
+    status: Literal["pending", "acknowledged", "released"] = "pending"
+
+
 class PoliceAlert(BaseModel):
     incident_id: str
     gps: GPS
@@ -227,6 +236,8 @@ class PoliceAlert(BaseModel):
     route_polyline: list[tuple[float, float]] = Field(default_factory=list)
     units_required: int = Field(ge=0)
     perimeter_m: float = Field(ge=0)
+    alert_status: Literal["active", "acknowledged", "closed"] = "active"
+    junction_posts: list[JunctionPost] = Field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------

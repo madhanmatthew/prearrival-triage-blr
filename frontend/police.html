@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Police Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Police dashboard</h1>
+  <nav><a href="index.html">Home</a><a href="report.html">Report</a><a href="dispatch.html">Dispatcher</a><a class="active" href="police.html">Police</a><a href="hospital.html">Hospital</a></nav>
+  <span class="disclaimer"><span class="status-dot" id="live"></span>live · rule-based alerts, demo constants</span>
+</header>
+<main style="max-width:1400px">
+  <div class="grid-map">
+    <div><div class="panel"><h2>Alerts</h2><div id="alerts" class="muted">waiting for alerts…</div></div></div>
+    <div><div id="map"></div><p class="muted">Officer times = ambulance ETA from the route duration minus a 2-minute lead (estimates, not predictions). Junction posts only on the ORR corridor.</p></div>
+  </div>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="common.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const map = baseMap("map");
+const layer = L.layerGroup().addTo(map);
+const alerts = new Map();   // incident_id -> PoliceAlert
+let focus = null;
+
+function render() {
+  const list = [...alerts.values()].sort((a, b) => (a.alert_status === "closed") - (b.alert_status === "closed") || b.severity_class - a.severity_class);
+  $("#alerts").innerHTML = list.length ? "" : "waiting for alerts…";
+  for (const a of list) {
+    const el = document.createElement("div");
+    el.className = "list-item" + (a.incident_id === focus ? " selected" : "");
+    const st = { active: "bad", acknowledged: "warn", closed: "ok" }[a.alert_status];
+    el.innerHTML = `<div class="row" style="justify-content:space-between"><b>${esc(a.incident_id)}</b>
+        <span>${sevBadge(a.severity_class)} <span class="badge ${st}">${a.alert_status}</span></span></div>
+      <div>${a.units_required} unit(s) · perimeter ${Math.round(a.perimeter_m)} m</div>
+      ${a.junction_posts.map((p) => `<div class="post ${p.status === "released" ? "released" : ""} ${p.manual_clearing ? "manual" : ""}">
+          <span><b>${esc(p.junction_id)}</b> · officer by <b>${hhmm(p.officer_by)}</b> · ambulance ${hhmm(p.ambulance_eta)}
+          ${p.manual_clearing ? '<span class="badge bad">manual clearing</span>' : ""}</span>
+          <span>${p.status === "pending" && a.alert_status !== "closed" ? `<button data-ack="${esc(p.junction_id)}">Ack</button>` : `<span class="muted">${p.status}</span>`}</span></div>`).join("")}
+      ${a.junction_posts.length ? "" : '<div class="muted">No corridor junctions on this route.</div>'}
+      <div class="row" style="margin-top:6px">
+        ${a.alert_status === "active" ? '<button class="primary" data-ack-all>Acknowledge</button>' : ""}
+        ${a.alert_status !== "closed" ? '<button data-close>Close</button>' : ""}</div>`;
+    el.onclick = (e) => {
+      const t = e.target;
+      if (t.dataset.ack) return act(a.incident_id, "ack", { junction_id: t.dataset.ack });
+      if (t.dataset.ackAll !== undefined) return act(a.incident_id, "ack");
+      if (t.dataset.close !== undefined) return act(a.incident_id, "close");
+      focus = a.incident_id; render(); draw(a, true);
+    };
+    $("#alerts").appendChild(el);
+  }
+  if (focus && alerts.has(focus)) draw(alerts.get(focus), false);
+}
+
+function draw(a, zoom) {
+  layer.clearLayers();
+  L.circle([a.gps.lat, a.gps.lon], { radius: Math.max(a.perimeter_m, 20), color: "#c62828" }).bindTooltip(`perimeter ${Math.round(a.perimeter_m)} m`).addTo(layer);
+  if (a.route_polyline.length >= 2) {
+    const line = L.polyline(a.route_polyline, { color: "#c62828", weight: 5, opacity: .7 }).addTo(layer);
+    if (zoom) map.fitBounds(line.getBounds(), { padding: [40, 40] });
+  }
+  a.junction_posts.forEach((p) => L.marker([p.gps.lat, p.gps.lon], { icon: dot(p.status === "released" ? "#888" : p.manual_clearing ? "#c62828" : "#7c3aed", 16) })
+    .bindTooltip(`${p.junction_id}: officer by ${hhmm(p.officer_by)}`).addTo(layer));
+}
+
+async function act(id, what, body) {
+  try { alerts.set(id, await api(`/police/${id}/${what}`, body ? { json: body } : { method: "POST" })); render(); }
+  catch (e) { alert(e.message); }
+}
+
+openChannel("/ws/police", (m) => {
+  if (m.type !== "PoliceAlert") return;
+  const isNew = !alerts.has(m.data.incident_id);
+  alerts.set(m.data.incident_id, m.data);
+  if (isNew) { focus = m.data.incident_id; render(); draw(m.data, true); } else render();
+}, (on) => $("#live").classList.toggle("on", on));
+
+// Pick up alerts that were sent before this page opened.
+api("/incidents").then(async (list) => {
+  for (const i of list) if (i.decision) { try { alerts.set(i.incident_id, await api(`/police/${i.incident_id}`)); } catch (_) {} }
+  render();
+}).catch(() => {});
+</script>
+</body>
+</html>

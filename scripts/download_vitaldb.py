@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -27,7 +28,7 @@ OUT = Path("data/raw/vitaldb")
 
 
 def fetch_track(tid: str, name: str) -> pd.Series:
-    for attempt in range(4):
+    for attempt in range(6):
         try:
             r = requests.get(f"{API}/{tid}", timeout=60)
             r.raise_for_status()
@@ -35,8 +36,9 @@ def fetch_track(tid: str, name: str) -> pd.Series:
             minute = (df.iloc[:, 0] // 60).astype(int)
             return df.iloc[:, 1].groupby(minute).median().rename(name)
         except Exception:  # noqa: BLE001 - retry any network/parse error
-            if attempt == 3:
+            if attempt == 5:
                 raise
+            time.sleep(2 ** attempt)
     raise RuntimeError("unreachable")
 
 
@@ -44,7 +46,10 @@ def download_case(caseid: int, trks: pd.DataFrame) -> str:
     path = OUT / f"case_{caseid}.csv.gz"
     if path.exists():
         return "skip"
-    series = [fetch_track(row.tid, TRACKS[row.tname]) for row in trks.itertuples()]
+    try:
+        series = [fetch_track(row.tid, TRACKS[row.tname]) for row in trks.itertuples()]
+    except Exception:  # noqa: BLE001 - skip this case; a re-run retries it
+        return "fail"
     df = pd.concat(series, axis=1).sort_index()
     df.index.name = "minute"
     df.to_csv(path.with_suffix(".tmp"), compression="gzip")
@@ -73,13 +78,14 @@ def main() -> None:
     print(f"{len(chosen)} cases ({len(died)} in-hospital deaths) -> {OUT}", flush=True)
 
     groups = {cid: g for cid, g in trks[trks.caseid.isin(chosen.caseid)].groupby("caseid")}
-    done = 0
+    done, failed = 0, 0
     with ThreadPoolExecutor(a.workers) as ex:
         for cid, res in zip(groups, ex.map(lambda c: download_case(c, groups[c]), groups)):
             done += 1
+            failed += res == "fail"
             if done % 25 == 0 or done == len(groups):
-                print(f"{done}/{len(groups)} cases", flush=True)
-    print("done")
+                print(f"{done}/{len(groups)} cases ({failed} failed)", flush=True)
+    print("done" if not failed else f"done with {failed} failed cases: re-run to retry them")
 
 
 if __name__ == "__main__":

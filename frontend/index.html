@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pre-arrival Triage Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Pre-arrival Triage · Bengaluru</h1>
+  <nav><a class="active" href="index.html">Home</a><a href="report.html">Report</a><a href="dispatch.html">Dispatcher</a><a href="police.html">Police</a><a href="hospital.html">Hospital</a></nav>
+  <span class="disclaimer">Research prototype, not a medical device</span>
+</header>
+<main>
+  <div class="panel">
+    <h2>Demo pages</h2>
+    <table>
+      <tr><td><a href="report.html">Report an emergency</a></td><td>Bystander: voice or text report in English, Hindi or Kannada, guided questions, first-aid steps from the IFRC corpus (with sources), read aloud.</td></tr>
+      <tr><td><a href="dispatch.html">Dispatcher console</a></td><td>Incidents on the map, fused risk, dispatch (rule-based coordinator), route, vitals replay.</td></tr>
+      <tr><td><a href="police.html">Police dashboard</a></td><td>Live police alerts: units, perimeter, timed junction posts on the ORR corridor; acknowledge and close.</td></tr>
+      <tr><td><a href="hospital.html">Hospital view</a></td><td>Live risk stream for incidents heading to one hospital.</td></tr>
+    </table>
+  </div>
+  <div class="panel" id="health"><h2>Backend status</h2><div class="muted">checking…</div></div>
+</main>
+<script src="common.js"></script>
+<script>
+api("/health").then((h) => {
+  document.querySelector("#health div").innerHTML =
+    `<p>API: <span class="badge ok">${esc(h.status)}</span> · dispatch ${h.dispatch_ready ? '<span class="badge ok">ready</span>' : '<span class="badge warn">unavailable</span>'}</p>` +
+    (h.degraded.length ? `<p class="muted">Degraded modes:</p><ul>${h.degraded.map((d) => `<li class="muted">${esc(d)}</li>`).join("")}</ul>` : "");
+}).catch((e) => { document.querySelector("#health div").innerHTML = `<span class="error">${esc(e.message)}</span>`; });
+</script>
+</body>
+</html>

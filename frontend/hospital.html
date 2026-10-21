@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital View</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Hospital view</h1>
+  <nav><a href="index.html">Home</a><a href="report.html">Report</a><a href="dispatch.html">Dispatcher</a><a href="police.html">Police</a><a class="active" href="hospital.html">Hospital</a></nav>
+  <span class="disclaimer"><span class="status-dot" id="live"></span>live · decision support, not a medical device</span>
+</header>
+<main>
+  <div class="panel">
+    <div class="row"><label style="margin:0">Hospital</label><select id="hosp" style="width:auto"></select></div>
+  </div>
+  <div id="incoming" class="muted">No incoming patients for this hospital yet.</div>
+</main>
+<script src="common.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const patients = new Map();   // incident_id -> {risk, history[]}
+let channel = null;
+
+function render() {
+  if (!patients.size) { $("#incoming").innerHTML = '<p class="muted">No incoming patients for this hospital yet.</p>'; return; }
+  $("#incoming").innerHTML = [...patients.entries()].map(([id, p]) => {
+    const r = p.risk;
+    const spark = p.history.map((x) => `<span title="${pct(x)}" style="display:inline-block;width:8px;margin-right:2px;background:#d9480f;height:${Math.max(2, x * 40)}px"></span>`).join("");
+    return `<div class="panel"><h2>${esc(id)} ${sevBadge(r.severity_class)} ${r.stale ? '<span class="badge warn">stale vitals</span>' : ""}</h2>
+      <div class="cards">
+        <div class="card"><div class="k">Risk score</div><div class="v">${pct(r.risk_score)}</div><div class="gauge"><div style="width:${r.risk_score * 100}%"></div></div></div>
+        <div class="card"><div class="k">Deterioration (next 6 readings)</div><div class="v">${pct(r.trend_prob)}</div></div>
+        <div class="card"><div class="k">NEWS2</div><div class="v">${r.news2_score ?? "–"}</div></div>
+        <div class="card"><div class="k">Updated</div><div class="v" style="font-size:16px">${hhmm(r.timestamp)}</div></div>
+      </div>
+      <p style="margin-top:10px">Risk history: <span style="display:inline-flex;align-items:flex-end;height:42px">${spark}</span></p>
+      <p class="muted">Class probabilities: ${r.severity_probs.map((x, i) => `${["stable", "moderate", "severe", "critical"][i]} ${pct(x)}`).join(" · ")}<br>
+      Modalities: ${r.modalities_used.join(" + ")} · ${esc(r.model_version)}</p></div>`;
+  }).join("");
+}
+
+function listen(hid) {
+  channel && channel.close(); patients.clear(); render();
+  // Patients already dispatched here before the page opened.
+  api("/incidents").then((list) => list.filter((i) => i.decision && i.decision.hospital_id === hid).forEach(async (i) => {
+    const inc = await api(`/incident/${i.incident_id}`);
+    if (inc.risk) { patients.set(i.incident_id, { risk: inc.risk, history: [inc.risk.risk_score] }); render(); }
+  })).catch(() => {});
+  channel = openChannel(`/ws/hospital/${encodeURIComponent(hid)}`, (m) => {
+    if (m.type !== "FusedRisk") return;
+    const p = patients.get(m.data.incident_id) || { history: [] };
+    p.risk = m.data; p.history = [...p.history, m.data.risk_score].slice(-20);
+    patients.set(m.data.incident_id, p); render();
+  }, (on) => $("#live").classList.toggle("on", on));
+}
+
+api("/resources").then((r) => {
+  if (!r.hospitals.length) { $("#hosp").innerHTML = "<option>no hospitals loaded (data/hospitals.csv)</option>"; return; }
+  $("#hosp").innerHTML = r.hospitals.map((h) => `<option value="${esc(h.hospital_id)}">${esc(h.hospital_id)} · ${esc(h.name)}</option>`).join("");
+  const want = new URLSearchParams(location.search).get("id");
+  if (want) $("#hosp").value = want;
+  listen($("#hosp").value);
+});
+$("#hosp").onchange = () => listen($("#hosp").value);
+</script>
+</body>
+</html>

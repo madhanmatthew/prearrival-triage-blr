@@ -328,6 +328,29 @@
   11 new tests; full suite 410 passed. Also: `scripts/download_vitaldb.py` (open VitalDB, 1-min vitals)
   for the short-window vitals work; MIMIC-IV-ED credentialing submitted 2026-10-20.
 
+- 2026-10-21: Police alerts v2 (rule-based, no ML): `PoliceAlert.junction_posts` (docs/07 §2.6 updated
+  first) = ORR corridor junctions within 150 m of the scene->hospital route (coords from
+  scripts/traffic_points.json), in travel order, ambulance ETA = depart (now + ETA to scene + 10 min
+  on scene) + route duration x distance share, officer in place 2 min earlier, `manual_clearing` where
+  SignalState lost preemption (not yet fed by the API: no live SignalState there). `AlertBoard`
+  lifecycle: ack alert/post, `POST /incident/{id}/position` re-times posts and releases passed ones,
+  auto-close when all passed, `POST /police/{id}/close`, `GET /police/{id}`. Posts only when units are
+  allocated. All constants [ASSUMPTION]. 422 tests pass.
+  NEXT (optional): traffic-aware post priority once TomTom Flow is collected; SignalState -> manual
+  clearing in the live API; SUMO delay model (SIM labels) only if time allows.
+
+- 2026-10-21: Frontend v1 in `frontend/` (plain HTML/JS + Leaflet 1.9.4 from unpkg, served by FastAPI at
+  `/ui/`, `/` redirects there). Pages: report (en/hi/kn, device GPS + labelled demo override, hold-to-speak
+  voice upload, yes/no/don't-know taps, guidance one step at a time with chunk ids + browser speech,
+  English only for guidance), dispatch (incident list + map, fused risk cards, dispatch, route polyline,
+  vitals replay of hand-written DEMO values in `frontend/demo_vitals.json` (not patient data), simulated
+  drive posting GPS so police posts release), police (`/ws/police`, posts, ack/close, perimeter), hospital
+  (`/ws/hospital/{id}`, risk history). New endpoints `GET /incidents`, `GET /resources` (docs/07 §5).
+  Browser smoke test with fixture services: all pages work, no console errors. With the uniform
+  placeholder text model severity is always 0, so police posts only show with the real fusion model.
+  NEXT: native-speaker prompt recordings (D18), SUMO replay panel, replace demo vitals with a held-out
+  real window.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

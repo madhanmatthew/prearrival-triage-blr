@@ -1,0 +1,11 @@
+{
+  "_note": "DEMO replay only: hand-written values showing a deteriorating patient, NOT patient data and NOT a result. Replace with a held-out MIMIC/VitalDB window for the final demo (docs/09 §6 step 5).",
+  "readings": [
+    {"hr": 104, "rr": 22, "spo2": 95, "sbp": 112, "temp": 36.9, "avpu": "A", "supplemental_o2": false},
+    {"hr": 110, "rr": 24, "spo2": 94, "sbp": 106, "temp": 36.8, "avpu": "A", "supplemental_o2": false},
+    {"hr": 118, "rr": 25, "spo2": 93, "sbp": 99,  "temp": 36.8, "avpu": "V", "supplemental_o2": true},
+    {"hr": 124, "rr": 27, "spo2": 92, "sbp": 94,  "temp": 36.7, "avpu": "V", "supplemental_o2": true},
+    {"hr": 131, "rr": 29, "spo2": 91, "sbp": 88,  "temp": 36.6, "avpu": "V", "supplemental_o2": true},
+    {"hr": 138, "rr": 31, "spo2": 90, "sbp": 84,  "temp": 36.5, "avpu": "P", "supplemental_o2": true}
+  ]
+}
