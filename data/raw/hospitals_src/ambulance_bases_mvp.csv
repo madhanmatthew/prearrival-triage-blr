@@ -1,0 +1,17 @@
+id,name,lat,lon,zone
+AMB-HB,Hebbal EMS Base,13.0358,77.5970,north
+AMB-WF,Whitefield EMS Base,12.9698,77.7499,east
+AMB-EC,Electronic City EMS Base,12.8455,77.6603,south
+AMB-RJ,Rajajinagar EMS Base,12.9902,77.5558,west
+AMB-MG,MG Road EMS Base,12.9757,77.6011,central
+AMB-BG,Bannerghatta EMS Base,12.8731,77.5980,south
+AMB-YP,Yeshwantpur EMS Base,13.0213,77.5541,northwest
+AMB-KR,Koramangala EMS Base,12.9352,77.6245,southeast
+AMB-JP,JP Nagar EMS Base,12.9063,77.5857,south
+AMB-KP,KR Puram EMS Base,13.0050,77.6950,east
+AMB-MY,Mysore Road EMS Base,12.9519,77.5204,west
+AMB-JN,Jayanagar EMS Base,12.9308,77.5838,south
+AMB-IN,Indiranagar EMS Base,12.9784,77.6408,east
+AMB-SR,Sarjapur Road EMS Base,12.9121,77.6800,southeast
+AMB-NG,Nagavara EMS Base,13.0450,77.6210,north
+AMB-MM,Marathahalli EMS Base,12.9591,77.7004,east

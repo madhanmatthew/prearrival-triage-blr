@@ -1,0 +1,18 @@
+hospital_id,name,lat,lon,trauma_level,beds_total,beds_available,icu_beds_available,specialties,open_24x7,blood_A+,blood_A-,blood_B+,blood_B-,blood_O+,blood_O-,blood_AB+,blood_AB-,osm_id,osm_name,match_note
+H01,M S Ramaiah Hospital,13.029729,77.568591,3,,4,5,trauma;neurosurgery;orthopaedics;emergency,True,20,13,13,26,2,21,6,2,relation/2187206,M S Ramaiah Hospital,
+H02,Vydehi Hospital,12.975493,77.729354,2,,14,6,trauma;neurosurgery;orthopaedics,False,22,23,22,24,15,3,26,13,relation/4497967,Vydehi Institute Of Medical Sciences And Research Centre,OSM: Vydehi Institute Of Medical Sciences And Research Centre
+H03,MS Ramaiah Memorial Hospital,13.028218,77.569775,2,,14,2,trauma;neurosurgery;emergency,True,5,28,24,19,12,25,16,13,way/148032600,Ramaiah Memorial Hospital,"OSM: Ramaiah Memorial Hospital (separate from id 1, ~200 m away)"
+H05,Sapthagiri Super Speciality Hospital,13.070577,77.502353,2,,12,1,trauma;neurosurgery;orthopaedics,False,2,17,27,1,26,25,8,19,relation/5397008,Sapthagiri Hospital,"OSM: Sapthagiri Hospital, Chikkasandra, Hesaraghatta Main Road"
+H06,New Varalakshmi Hospital,12.998838,77.555096,3,,5,5,trauma;neurosurgery;orthopaedics;emergency,True,21,10,2,30,13,27,21,24,node/11982389397,New Varalakshmi Hospital,
+H08,BGS Medical College and Hospital,12.90306,77.497498,1,,20,1,trauma;orthopaedics;emergency,True,11,14,15,1,16,4,23,21,node/1228960966,BGS Gleneagles Hospitals,"OSM: BGS Gleneagles Hospitals, Kengeri (same campus)"
+H09,Cytecare hospitals private ltd,13.118638,77.607878,1,,24,5,orthopaedics;emergency,True,11,29,12,10,28,11,2,14,node/5983331355,CyteCare,OSM: CyteCare
+H10,Sanjeevini Hospital,13.011692,77.543873,1,,21,1,neurosurgery;orthopaedics,False,14,4,21,14,10,7,17,20,way/332071569,Sanjeevani Hospital,OSM spelling: Sanjeevani Hospital [TODO-VERIFY same facility]
+H11,Dr B R Ambedkar Medical College And Hospital,13.024862,77.613958,2,,24,3,trauma;orthopaedics,False,4,25,19,21,3,9,23,25,node/1474875685,Dr. Ambedkar Medical College Hospital,OSM: Dr. Ambedkar Medical College Hospital
+H12,Spine Care And Ortho Care Hospital,12.974513,77.549388,1,,12,5,neurosurgery;orthopaedics,False,26,12,27,8,7,21,19,4,node/6944276882,Spine Care And Ortho Care Hospital,
+H13,Fortis Hospital Bannerghatta Road,12.894751,77.598582,3,,21,1,trauma;neurosurgery;orthopaedics;emergency,True,24,0,24,24,24,20,14,21,way/44091443,"Fortis Hospitals, Bannerghatta Road",
+H14,Apollo Hospital Bannerghatta,12.89632,77.598349,2,,8,5,trauma;neurosurgery;orthopaedics;emergency,True,17,14,15,17,1,4,7,3,way/44091445,Apollo Hospital,"OSM: Apollo Hospital, opp. IIM, Bannerghatta Road"
+H15,Columbia Asia Hebbal,13.050953,77.593865,1,,12,4,trauma;orthopaedics;emergency,True,20,14,26,17,2,23,17,19,way/160906231,Manipal Hospital,"now Manipal Hospital Hebbal (ex Columbia Asia), Kirloskar Business Park"
+H16,Manipal Hospital Old Airport Road,12.958707,77.64903,3,,15,3,trauma;neurosurgery;orthopaedics;emergency,True,2,17,24,9,18,0,10,13,way/133061664,"Manipal Hospital, Bengaluru Urban","OSM: Manipal Hospital, 98 Rusthom Bagh, Old Airport Road"
+H17,Sakra World Hospital,12.932218,77.685326,2,,25,1,trauma;neurosurgery;emergency,True,8,12,30,26,1,7,25,1,way/631580848,Sakra World,OSM: Sakra World
+H18,St Johns Medical College Hospital,12.929648,77.618593,3,,22,1,trauma;neurosurgery;orthopaedics;emergency,True,28,9,13,20,3,17,15,24,relation/17069662,St.John's Medical College Hospital,
+H20,Aster CMI Hospital,13.054532,77.591871,2,,25,4,trauma;neurosurgery;orthopaedics;emergency,True,12,12,12,25,9,5,10,0,way/1040899005,Aster CMI Hospital,

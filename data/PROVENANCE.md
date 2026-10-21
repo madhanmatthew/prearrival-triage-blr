@@ -5,10 +5,14 @@ One entry per dataset (docs/08 §8). Never commit restricted data; record where 
 | Dataset | Source URL | Access date | Licence / terms | Preprocessing | Real/Sim | Used by |
 |---|---|---|---|---|---|---|
 | MIMIC-IV Clinical Database Demo v2.2 | https://physionet.org/content/mimic-iv-demo/2.2/ | [TODO] | PhysioNet terms `[TODO-VERIFY]`; do not redistribute | Hourly windows + outcome labels (docs/08 §2) | REAL (ICU) | Chetan |
+| VitalDB open dataset (5,877 cases with HR, SpO2, RR, temp, SBP) | https://vitaldb.net/dataset (API https://api.vitaldb.net) | 2026-10-21 | Open dataset; licence/citation terms `[TODO-VERIFY on vitaldb.net]` | 1-min medians per track (`scripts/download_vitaldb.py`), windows + labels (docs/08 §2b) | REAL (intra-operative) | Madhan |
 | First-aid corpus | IFRC / Red Cross public guidelines `[TODO: exact URLs]` | [TODO] | [TODO] | Converted to .txt, chunked | REAL docs | Sankalp |
 | Text severity reports (EN/HI/KN) | Team-built | [TODO] | Team-owned | LLM-drafted, hand-reviewed, rubric-labelled | SIM | Sankalp |
 | Whisper WER recordings | Team-recorded, consented | [TODO] | Team-owned; not committed | Reference transcripts | REAL | Sankalp |
-| Hospitals + ambulance bases | From MVP `[TODO: original sources]` | [TODO] | [TODO] | Extended to docs/08 §7.1 columns | REAL attrs + SIM beds/blood | Ragavendra |
+| Hospital locations (17) | OpenStreetMap via overpass-turbo, `data/raw/hospitals_src/bengaluru_hospitals.geojson` (1,061 amenity=hospital points) | OSM snapshot 2026-05-09 | ODbL (© OpenStreetMap contributors; attribution required) | Joined to the curated list by hand-checked OSM id (`scripts/build_hospitals.py` MATCH); 3 of 20 dropped (no confident match) | REAL | Madhan |
+| Hospital capability flags (emergency, polytrauma, accident victims, neurosurgery, orthopaedics) | 6th-sem project, `data/raw/hospitals_src/curated_emergency_hospitals.csv` `[TODO-VERIFY: original source per flag]` | [TODO] | Team-compiled | trauma_level / specialties / open_24x7 derived by rule (`scripts/build_hospitals.py`) | REAL attrs `[TODO-VERIFY]` | Madhan |
+| Ambulance bases (16) | 6th-sem project, `data/raw/hospitals_src/ambulance_bases_mvp.csv` | [TODO] | Team-compiled | Renamed columns; `location_quality=approximated` (zone points, NOT official 108 base locations) | APPROX | Madhan |
+| Beds available, ICU beds, blood stock per hospital | Simulated, seed 42 (`scripts/build_hospitals.py`) | 2026-10-21 | — | beds 2–25, ICU 0–6, blood 0–30 units per group | SIM | Madhan |
 | Blood stock | Simulated (eRaktKosh has no open API found) `[TODO-VERIFY]` | [TODO] | — | Per hospital × 8 groups | SIM | Ragavendra |
 | SUMO ORR corridor | Real inter-junction distances, generated demand | [TODO] | — | docs/08 §6 demand spec | SIM | Madhan |
 | OSM ORR extract | https://www.openstreetmap.org (Overpass export) | [TODO] | ODbL, attribution required | netconvert -> sumo/osm/ | REAL geometry | Madhan |

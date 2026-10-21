@@ -67,6 +67,7 @@ call "existing" or "in MVP" must be built new here.
 | MIMIC windowing + outcome labels | Done, with tests (MIMIC-IV Demo) | `backend/data/mimic_windows.py`, `tests/test_mimic_windows.py` |
 | Tabular baselines (majority, NEWS2, LR, RF, GB) + nested grouped CV | Done, full run logged | `backend/ml/baselines.py`, `tests/test_baselines.py` |
 | BiGRU two-head model | Done, with tests; full nested-CV run logged | `backend/ml/seq_model.py`, `tests/test_seq_model.py` |
+| VitalDB 10-min deterioration (`15` D19, labels `08` §2b) | Done, with tests; full nested-CV run logged (203k windows, 5,643 subjects): HGB PR-AUC 0.512 / AUROC 0.833, BiGRU 0.497 / 0.826, NEWS2 0.242 / 0.660; final model not yet trained or wired to the API | `backend/data/vitaldb_windows.py`, `backend/ml/vitaldb_model.py`, `scripts/download_vitaldb.py` |
 | Fusion model + 3-way ablation + agreement sensitivity (synthetic text) | Done, full run logged (fused < text_only at 0.65/0.8); re-run for gain-vs-text table | `backend/ml/fusion_model.py`, `data/text_feature_generator.yaml`, `tests/test_fusion_model.py` |
 | XAI (SHAP trees, IG BiGRU) | Code done, with tests; IG run on saved BiGRU (figures in `reports/`); tree SHAP run pending | `backend/ml/explain.py`, `tests/test_explain.py` |
 | SUMO schematic corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs); kept as `19` fallback / compressed-spacing base | `sumo/`, `tests/test_sumo_corridor.py` |
@@ -82,7 +83,7 @@ call "existing" or "in MVP" must be built new here.
 | Dialogue state machine (6 questions) | Done, with tests; code-mixed hi/kn cues + "breathing normally?" fix; ASR->cue robustness eval logged (dev); hi/kn wording needs native review | `backend/dialogue/`, `backend/asr/eval_triage.py`, `tests/test_dialogue.py`, `tests/test_eval_triage.py` |
 | Text severity classifier (TF-IDF char n-gram + LR) | Code done, with tests (toy fixture); needs `data/text_reports/reports.csv` | `backend/ml/text_severity.py`, `tests/test_text_severity.py`, `data/text_reports/README.md` |
 | RAG pipeline + groundedness eval | v2 done, with tests (guard, dialogue routing, bge-small, keywords); IFRC 2020 corpus (18 topics); v1 + v2 test runs logged (v2: hit@4 0.96, answer 1.00, refusal 0.67) | `backend/rag/`, `scripts/extract_ifrc_corpus.py`, `data/first_aid_corpus/` |
-| Hospital table + ambulance bases | Not started | `data/hospitals.csv`, `data/ambulance_bases.csv` |
+| Hospital table + ambulance bases | Done: 17 hospitals (OSM coordinates + 6th-sem capability flags, `[TODO-VERIFY]` flag sources), 16 approximated ambulance bases; beds/ICU/blood SIMULATED; dispatch runs end to end | `data/hospitals.csv`, `data/ambulance_bases.csv`, `scripts/build_hospitals.py`, `data/raw/hospitals_src/` |
 | Hospital agent + blood factor + RF surrogate | Code done, with tests (fixture hospitals); needs `data/hospitals.csv` | `backend/agents/hospital_agent.py`, `tests/test_hospital_agent.py` |
 | Coordinator (6 conflicts, rule-based) | Done, with tests (fake router, fixture hospitals); not yet wired to API | `backend/agents/coordinator.py`, `tests/test_coordinator.py` |
 | FastAPI app + WebSockets | Done, with tests (fake services); real app runs, dispatch waits for `data/hospitals.csv` + `data/ambulance_bases.csv` | `backend/main.py`, `backend/services.py`, `backend/routing.py`, `tests/test_api.py` |
@@ -103,6 +104,7 @@ call "existing" or "in MVP" must be built new here.
 
 - Fusion training pairs are **synthetic** (MIMIC has no bystander text). Ablation result measures the pairing generator's assumptions as well as the model.
 - MIMIC is ICU data (in-hospital), not pre-hospital. Domain gap = stated limitation.
+- VitalDB is intra-operative (anaesthetised surgical patients), not pre-hospital; its 10-min label is vital-sign-defined (`15` D19).
 - MIMIC-IV Demo has 100 patients (`15` D4): small; expect high CV variance.
 - RL results are from simulation on an approximated corridor.
 - RL calibration targets (typical + live travel times) both come from TomTom; YOLO counts are the only independent check (`19` §9).

@@ -1,0 +1,21 @@
+id,name,emergency,polytrauma,accident_victims,neurosurgery,orthopaedics
+1,M S Ramaiah Hospital,True,True,True,True,True
+2,Vydehi Hospital,False,True,False,True,True
+3,MS Ramaiah Memorial Hospital,True,False,True,True,False
+4,Rajarajeswari Medical College And Hospital,False,True,True,True,True
+5,Sapthagiri Super Speciality Hospital,False,True,False,True,True
+6,New Varalakshmi Hospital,True,True,False,True,True
+7,PES University Institute Of Medical Sciences And Research,True,False,True,False,True
+8,BGS Medical College and Hospital,True,False,True,False,True
+9,Cytecare hospitals private ltd,True,False,False,False,True
+10,Sanjeevini Hospital,False,False,False,True,True
+11,Dr B R Ambedkar Medical College And Hospital,False,True,True,False,True
+12,Spine Care And Ortho Care Hospital,False,False,False,True,True
+13,Fortis Hospital Bannerghatta Road,True,True,True,True,True
+14,Apollo Hospital Bannerghatta,True,False,True,True,True
+15,Columbia Asia Hebbal,True,False,True,False,True
+16,Manipal Hospital Old Airport Road,True,True,True,True,True
+17,Sakra World Hospital,True,False,True,True,False
+18,St Johns Medical College Hospital,True,True,True,True,True
+19,Narayana Health City,True,True,True,False,True
+20,Aster CMI Hospital,True,False,True,True,True

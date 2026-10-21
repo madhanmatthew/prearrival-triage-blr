@@ -351,6 +351,25 @@
   NEXT: native-speaker prompt recordings (D18), SUMO replay panel, replace demo vitals with a held-out
   real window.
 
+- 2026-10-21: `data/hospitals.csv` (17) + `data/ambulance_bases.csv` (16) from `scripts/build_hospitals.py`.
+  Coordinates from the OSM hospital extract (ODbL), joined by hand-checked OSM id; capability flags
+  from the 6th-sem curated list (sources [TODO-VERIFY]); dropped Rajarajeswari MC, PES IMSR, Narayana
+  Health City (not in the extract). trauma_level = polytrauma + neurosurgery + (emergency or accident
+  victims). Beds/ICU/blood SIMULATED (seed 42), beds_total empty. Ambulance bases = approximated zone
+  points from the 6th-sem project, not official 108 bases. Dispatch now runs end to end (straight-line
+  ETAs without an ORS key). No burns/cardiology flags in the source, so specialty match is 0 for
+  burn/cardiac incidents (stated limit).
+
+- 2026-10-21: VitalDB short-horizon model (D19). Download: 5,877 cases (scripts/download_vitaldb.py,
+  1-min medians, ~26 MB). Windows (docs/08 §2b): 203,294 windows, 5,875 cases, 5,643 subjects,
+  positive rate 0.138. Nested grouped CV 5x3 by subjectid, PR-AUC / AUROC (mean +/- std over outer folds):
+  majority .138/.500, partial NEWS2 .242/.660, logreg .346/.749, HGB .512+/-.008/.833, BiGRU
+  .497+/-.006/.826 (CPU, 24 min). Logged in experiments/log.csv (rows carry commit d46a692, the code
+  was committed right after). BiGRU usually stopped at 14-15 of max 15 epochs: a longer cap may help
+  (not tuned on outer folds). Trees beat the BiGRU here; report as is.
+  NEXT: train final model (`--train-final`) and add P(deterioration in 10 min) to the vitals endpoint +
+  UI; SHAP on HGB; joint model when MIMIC-IV-ED access arrives.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

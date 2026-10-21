@@ -58,6 +58,23 @@ Legend: **REAL** = collected from a real source. **SIM** = simulated/generated (
 
 **GCS → AVPU mapping `[DECISION]`:** total GCS 15 → `A`; GCS 13–14 → `V`; GCS 9–12 → `P`; GCS ≤ 8 → `U`. Model input `avpu_bin = 0 if A else 1`. NEWS2 scoring: `A = 0`, `V/P/U = 3` (also 3 for new confusion; not available in MIMIC, note as limitation).
 
+## 2b. Short-horizon deterioration labels (VitalDB, `15` D19) `[DECISION]`
+
+Source: VitalDB open dataset, per case 1-minute medians of `Solar8000/HR`, `PLETH_SPO2`, `RR_CO2`,
+`BT`, `ART_SBP`, `NIBP_SBP` (`scripts/download_vitaldb.py`). Minute grid from 0 to the last minute.
+
+- **Cleaning** `[ASSUMPTION]` (plausible ranges, outside -> missing): HR 20–250, SpO2 50–100, RR 2–60,
+  temp 30–43 °C, SBP 40–300. SBP = arterial if valid (forward-fill ≤ 2 min), else non-invasive
+  (forward-fill ≤ 5 min, one cuff cycle). Other vitals forward-fill ≤ 2 min.
+- **Event minute**: SBP < 90 or SpO2 < 90, **sustained**: true for this and the previous minute.
+- **Window**: the last T = 5 minutes ending at minute t, every 5 minutes (stride 5).
+- **Eligible**: no event at t or t−1 (predict a *new* episode) and ≥ 1 valid label minute ahead.
+- **Label** `y = 1` if any event minute in (t, t+10]; else 0.
+- **Inputs per step**: HR, RR, SpO2, SBP, temp (NaN = missing), 5 deltas, minutes since the previous
+  step (time gap, 1 here; kept for the joint model with irregular ED vitals), mask.
+- **Groups**: `subjectid` (some subjects have several cases). Never split one subject across folds.
+- Not derived from NEWS2; NEWS2 (partial: no AVPU / O2 flag) is a baseline only.
+
 ## 3. NEWS2 baseline output → class
 NEWS2 scoring per `02_ambulance_vitals_agent.md` §3. Class banding used here is a **project convention**, not official NEWS2 banding: total ≥7 → 3, 5–6 → 2, 1–4 → 1, 0 → 0. Official NEWS2 clinical response tiers (low / low-medium / medium / high) differ; mention this in the report. The NEWS2 baseline only predicts *severity*; it has no native trend output.
 
