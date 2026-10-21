@@ -74,6 +74,10 @@ per time slot."*
 
 ## 4. YOLO vehicle counts from own video
 
+> **Changed by `15` D20 (2026-10-21):** published counts (`data/traffic/published_counts.csv`:
+> KRDCL 2019 DFR, April 2016 TVC; BTP ORR study, news-reported) are the primary volume source.
+> Own video below is optional (2026 spot check).
+
 - Record 10–15 min at 2–3 junction approaches (footbridge, fixed phone, daylight), at least one
   peak and one off-peak clip. Record location, time, direction. Consent/privacy: no faces or
   plates stored in outputs; raw video stays off git.
@@ -137,8 +141,9 @@ Makefile: `collect-typical` (TomTom Routing), `collect-traffic` (TomTom Flow),
 
 ## 9. Honest limits (state them)
 
-- Typical and live travel times both come from TomTom: not two independent sources. YOLO
-  counts + GEH are the only independent real-world check.
+- Typical and live travel times both come from TomTom: not two independent sources. Published
+  counts (D20: KRDCL 2016 TVC, BTP ORR figures) + GEH are the independent real-world check; they
+  are from 2016 / news reports and from arterials next to the junctions, not today's ORR lanes.
 - TomTom typical values are historic-pattern estimates; TomTom live covers only the collection
   week.
 - YOLO counts come from short clips at a few approaches; other edges are scaled estimates.

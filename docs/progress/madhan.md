@@ -402,6 +402,15 @@
   dispatcher + hospital pages. Example (demo replay): "SBP latest 88 mmHg (raises risk) · SBP 5-min lowest
   88 mmHg (raises risk) · HR 5-min highest 131 bpm (raises risk)".
 
+- 2026-10-21: Traffic volumes from published sources (D20) instead of own video. KRDCL Elevated Corridors DFR
+  Vol. I (Feb 2019) Table E-1, 7-day classified TVC April 2016: Silk Board flyover (Hosur Rd) 174,441 veh/day
+  188,377 PCU; KR Puram (Old Madras Rd) 115,997 / 127,376; Ramagondanahalli (Marathahalli-Varthur Kodi)
+  65,823 / 66,905; HAL Kalyana Mantap (Marathahalli-HAL) 106,579 / 108,999 (each checked: PCU/24 = the table's
+  PCU/hr). Hebbal row garbled in text extraction: left out. Junction turning counts (Silk Board, KR Puram
+  bridge, ORR jn.) were surveyed but their tables are not in Vol. I. BTP ORR figures only via news (403 on
+  the article; values from the search summary) -> TODO-VERIFY. CMP 2020 PDF link on OpenCity is 404.
+  NEXT (needs TomTom data): OSM corridor + demand fitting to these volumes + TomTom times.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

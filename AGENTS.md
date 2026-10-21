@@ -73,7 +73,8 @@ call "existing" or "in MVP" must be built new here.
 | SUMO schematic corridor (nodes, edges, routes, cfg) | Done, with tests (fixed-time baseline runs); kept as `19` fallback / compressed-spacing base | `sumo/`, `tests/test_sumo_corridor.py` |
 | SUMO corridor from OSM (`19` §1) | Not started | `sumo/osm/` |
 | Traffic data collection: TomTom typical (Routing, historic) + TomTom live (Flow) (`19` §2–3) | Code done, with tests; collection not started (verify coords in `scripts/traffic_points.json`, key in `.env`) | `scripts/collect_tomtom_typical.py`, `scripts/collect_tomtom.py` |
-| YOLO vehicle counts (`19` §4) | Not started | `backend/vision/count_vehicles.py` |
+| YOLO vehicle counts (`19` §4) | Optional since `15` D20 (published counts are the primary source) | `backend/vision/count_vehicles.py` |
+| Published traffic counts (`15` D20) | Collected: KRDCL 2019 DFR Table E-1 (April 2016 7-day TVC near Silk Board, KR Puram, Marathahalli) + BTP ORR figures (news-reported, TODO-VERIFY) | `data/traffic/published_counts.csv`, `data/raw/traffic_src/` |
 | Demand fitting + calibration table (`19` §5–6) | Not started | `sumo/demand/`, `reports/rl_calibration.md` |
 | RL env wrapper + fixed-time / always-green baselines (schematic corridor) | Done, with tests; full baseline run logged | `backend/rl/env.py`, `backend/rl/baselines.py`, `tests/test_rl_env.py` |
 | RL DQN train/eval (schematic corridor, 3 demand levels) | Done, 3 seeds logged; `reports/rl_comparison.csv` | `backend/rl/train.py` |
