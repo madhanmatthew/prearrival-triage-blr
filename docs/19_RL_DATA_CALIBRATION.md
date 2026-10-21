@@ -74,9 +74,10 @@ per time slot."*
 
 ## 4. YOLO vehicle counts from own video
 
-> **Changed by `15` D20 (2026-10-21):** published counts (`data/traffic/published_counts.csv`:
-> KRDCL 2019 DFR, April 2016 TVC; BTP ORR study, news-reported) are the primary volume source.
-> Own video below is optional (2026 spot check).
+> **Changed by `15` D20 (2026-10-21):** recent published figures are the primary volume source
+> (`data/traffic/published_counts.csv`: BTP ORR study Oct 2025; Silk Board peak count + signal
+> timings Jul 2024); the April 2016 KRDCL survey gives vehicle mix / daily profile only.
+> Own video below is optional (2026 mix spot check).
 
 - Record 10–15 min at 2–3 junction approaches (footbridge, fixed phone, daylight), at least one
   peak and one off-peak clip. Record location, time, direction. Consent/privacy: no faces or
@@ -142,10 +143,11 @@ Makefile: `collect-typical` (TomTom Routing), `collect-traffic` (TomTom Flow),
 ## 9. Honest limits (state them)
 
 - Typical and live travel times both come from TomTom: not two independent sources. Published
-  counts (D20: KRDCL 2016 TVC, BTP ORR figures) + GEH are the independent real-world check; they
-  are from 2016 / news reports and from arterials next to the junctions, not today's ORR lanes.
+  figures (D20: BTP 2025, Silk Board 2024) + GEH are the independent real-world check; they are
+  news-reported (original data not obtained); vehicle mix is from a 2016 survey.
 - TomTom typical values are historic-pattern estimates; TomTom live covers only the collection
   week.
 - YOLO counts come from short clips at a few approaches; other edges are scaled estimates.
-- Signal timings in OSM/netconvert are guessed, not the real Bengaluru programs.
+- Signal timings: Silk Board uses the reported 2024 peak program (285 s cycle, D20); other
+  junctions are guessed, not the real Bengaluru programs.
 - Still a simulation; results are not field measurements.

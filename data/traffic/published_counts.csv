@@ -1,6 +1,14 @@
-source_id,location,road_section,survey_dates,count_type,vehicles_motorised_per_day,vehicles_nonmotorised_per_day,pcu_per_day,pcu_per_hr_avg_24h,capacity_pcu_hr_irc,page,table,notes
-KRDCL2019,Silk Board flyover (before flyover),Electronic City - Madiwala (Hosur Road),2016-04-12..2016-04-19,7-day classified TVC,174441,730,188377,7849,5400,E-2,Table E-1,"Hosur Road at Silk Board, not the ORR carriageway; weekday-average daily; checked: 188377/24=7849"
-KRDCL2019,K R Puram,Bangalore - Hoskote (Old Madras Road),2016-04-11..2016-04-18,7-day classified TVC,115997,276,127376,5307,3000,E-2,Table E-1,"Old Madras Road at KR Puram, not the ORR carriageway"
-KRDCL2019,Ramagondanahalli bus stop,Marathahalli - Varthur Kodi,2016-04-12..2016-04-19,7-day classified TVC,65823,663,66905,2788,3000,E-2,Table E-1,"east of Marathahalli, not the ORR carriageway"
-KRDCL2019,HAL Kalyana Mantap bus stop,Marathahalli - HAL (Old Airport Road),2016-04-28..2016-05-05,7-day classified TVC,106579,865,108999,4542,3000,E-2,Table E-1,"Old Airport Road west of Marathahalli, not the ORR carriageway"
-BTP2025_DH,Iblur Junction - Bellandur Main Road Junction,ORR (Silk Board - Bellandur segment),[TODO-VERIFY date],BTP study (news-reported),,,10657,,4800,,,"news-reported via Deccan Herald; ORR V/C 2.22; peak about 2800 PCU/hr/lane vs ideal 1200-1300 [TODO-VERIFY against the article/study; figure units as reported]"
+source_id,data_date,location,road_section,metric,value,unit,role,notes
+BTP2025_DH,2025-10 (published 2025-10-25),Iblur Junction - Bellandur Main Road Junction,ORR (Silk Board - Bellandur segment),peak_volume,10657,PCU (peak hours),PRIMARY current volume,"BTP study as reported by Deccan Herald; design capacity 4800 PCU; ORR V/C 2.22; direction and exact hour not stated"
+BTP2025_DH,2025-10 (published 2025-10-25),Iblur Junction - Bellandur Main Road Junction,ORR,design_capacity,4800,PCU,capacity reference,as reported
+BTP2025_DH,2025-10 (published 2025-10-25),ORR (whole),ORR,bmtc_buses_per_day,3360,buses/day,bus share check,"quoted from WRI fellow Srinivas Alavilli (on X) in the same article; 1533 AC; secondary source"
+DH2024_SB,2024-07 (published 2024-07-18),Silk Board junction (all approaches),Silk Board junction,peak_volume,17816,vehicles/hour (09:30-10:30),PRIMARY current volume,"data reviewed by Deccan Herald (source of counts not named) [TODO-VERIFY original source]; no vehicle-type split"
+DH2024_SB,2024-07 (published 2024-07-18),Silk Board junction,approach from BTM Layout (100 Feet Rd),approach_volume,8300,vehicles/hour (09:30-10:30),turning split,"at least 8300 of the 17816, heading to Madiwala, Electronics City or HSR Layout"
+DH2024_SB,2024-07 (published 2024-07-18),Silk Board junction,signal cycle,cycle_length,285,s (at 09:30),signal timing,stated by Deccan Herald
+DH2024_SB,2024-07 (published 2024-07-18),Silk Board junction,approach from BTM Layout,green_time,150,s per cycle,signal timing,roughly; waits 180 s
+DH2024_SB,2024-07 (published 2024-07-18),Silk Board junction,approach from HSR Layout (ORR),green_time,90,s per cycle,signal timing,about
+DH2024_SB,2024-07 (published 2024-07-18),Silk Board junction,Hosur Road (each side),green_time,45,s per cycle,signal timing,as reported
+KRDCL2019,2016-04 (7-day TVC; report Feb 2019),Silk Board flyover,Electronic City - Madiwala (Hosur Road),daily_volume,174441,motorised vehicles/day,OLD: daily profile + mix only,"Table E-1 p.E-2; 188377 PCU/day; arterial next to the junction, not the ORR"
+KRDCL2019,2016-04 (7-day TVC; report Feb 2019),K R Puram,Bangalore - Hoskote (Old Madras Road),daily_volume,115997,motorised vehicles/day,OLD: daily profile + mix only,"Table E-1 p.E-2; 127376 PCU/day"
+KRDCL2019,2016-04 (7-day TVC; report Feb 2019),Ramagondanahalli,Marathahalli - Varthur Kodi,daily_volume,65823,motorised vehicles/day,OLD: daily profile + mix only,"Table E-1 p.E-2; 66905 PCU/day"
+KRDCL2019,2016-04 (7-day TVC; report Feb 2019),HAL Kalyana Mantap,Marathahalli - HAL (Old Airport Road),daily_volume,106579,motorised vehicles/day,OLD: daily profile + mix only,"Table E-1 p.E-2; 108999 PCU/day"
