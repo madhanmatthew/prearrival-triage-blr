@@ -424,7 +424,18 @@ def create_app(services: Optional[Services] = None,
 
     @app.post("/benchmark/run")
     def benchmark():
-        raise HTTPException(501, "benchmark not built yet (backend/benchmarks/benchmark.py)")
+        """8 + 2 scenarios, AI vs fair naive baseline, on the loaded hospitals/ambulances."""
+        if svc.hospitals is None or not svc.ambulances:
+            raise HTTPException(503, "benchmark needs data/hospitals.csv and data/ambulance_bases.csv")
+        from backend.benchmarks import benchmark as bm
+        try:
+            results = bm.run(bm.load_scenarios(), svc.hospitals, dict(svc.ambulances))
+        except (OSError, KeyError) as e:
+            raise HTTPException(503, f"benchmark unavailable: {e}")
+        return {"summary": bm.summarize(results).to_dict(orient="records"),
+                "results": results.to_dict(orient="records"),
+                "note": "Hospital beds/blood are SIMULATED; straight-line ETAs; same inputs for both "
+                        "methods (fair baseline, docs/15 D15). Decision logic only, not patient outcomes."}
 
     @app.websocket("/ws/police")
     async def ws_police(ws: WebSocket):

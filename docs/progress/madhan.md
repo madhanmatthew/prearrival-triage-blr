@@ -370,6 +370,17 @@
   NEXT: train final model (`--train-final`) and add P(deterioration in 10 min) to the vitals endpoint +
   UI; SHAP on HGB; joint model when MIMIC-IV-ED access arrives.
 
+- 2026-10-21: System benchmark (D15). `data/benchmark_scenarios.csv`: 8 Bengaluru incidents (4 at the
+  verified ORR junctions, 4 approximate [TODO-VERIFY on map]) + 2 blood cases (scene 40% of the way between
+  two hospitals; the nearer one has no O+, set via `hospital_overrides`). Fair baseline: same straight-line
+  ETA model, 2 min dispatch overhead, 10 min on scene, same ambulances, same scenario severity; naive =
+  nearest ambulance + nearest hospital; AI = coordinator + rule-only hospital agent (RF not trained).
+  Result: appropriate hospital (trauma_level >= severity, beds > 0, blood when needed) AI 9/10 vs naive
+  5/10; mean total 27.47 vs 25.88 min (AI +1.6 min for capable hospitals). Honest miss: S5 (Hebbal,
+  severity 3) AI picked Aster CMI (level 2) because bed availability outweighed the trauma gap in the
+  rule score; not tuned to win. Burn/cardiac: no hospital lists the specialty, so only trauma level is
+  checked. `POST /benchmark/run` returns the table. Logged (component=system).
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

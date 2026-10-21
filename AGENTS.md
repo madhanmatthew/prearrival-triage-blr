@@ -88,7 +88,7 @@ call "existing" or "in MVP" must be built new here.
 | Coordinator (6 conflicts, rule-based) | Done, with tests (fake router, fixture hospitals); not yet wired to API | `backend/agents/coordinator.py`, `tests/test_coordinator.py` |
 | FastAPI app + WebSockets | Done, with tests (fake services); real app runs, dispatch waits for `data/hospitals.csv` + `data/ambulance_bases.csv` | `backend/main.py`, `backend/services.py`, `backend/routing.py`, `tests/test_api.py` |
 | Frontend (Leaflet map, police + hospital views, bystander guidance text + browser speech `01` §10) | Done (static HTML/JS served at `/ui/`, no build step): reporter (lang, GPS, voice/text, tap answers, guidance steps + speech), dispatcher (map, risk, dispatch, route, demo vitals replay, simulated drive), police (live alerts, junction posts, ack/close), hospital (live risk); smoke-tested in browser with fixture services; native prompt recordings not yet wired | `frontend/`, `GET /incidents`, `GET /resources` |
-| Benchmark (8 + 2 scenarios, fair baseline) | Not started | `backend/benchmarks/benchmark.py` |
+| Benchmark (8 + 2 scenarios, fair baseline) | Done, with tests; run logged: appropriate hospital AI 9/10 vs naive 5/10, mean total time 27.5 vs 25.9 min (straight-line ETAs, SIMULATED beds/blood); `POST /benchmark/run` | `backend/benchmarks/benchmark.py`, `data/benchmark_scenarios.csv`, `reports/benchmark_*.csv` |
 | Traffic/ETA ML models | Optional (`15` D16) | `backend/ml/eta_model.py` |
 
 ## 5. Working conventions

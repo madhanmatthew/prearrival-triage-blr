@@ -1,0 +1,11 @@
+scenario_id,name,lat,lon,coords_quality,injury_type,severity_class,num_injured,bleeding_heavy,blood_group,expected_best_hospital_rule,hospital_overrides
+S1,Silk Board junction: two-wheeler vs bus,12.9177,77.6238,verified (scripts/traffic_points.json),road_accident,3,2,True,,trauma_level>=3; beds>0; O- stock (group unknown),{}
+S2,Bellandur ORR: car rear-end,12.9258,77.6761,verified (scripts/traffic_points.json),road_accident,2,1,False,,trauma_level>=2; beds>0; blood stock (sev>=2 road accident),{}
+S3,Marathahalli bridge: collapse at bus stop (suspected cardiac),12.9567,77.7010,verified (scripts/traffic_points.json),cardiac_medical,3,1,False,,trauma_level>=3; beds>0 (no hospital lists cardiology),{}
+S4,KR Puram: fall from scaffolding,13.0002,77.6770,verified (scripts/traffic_points.json),fall,2,1,False,,trauma_level>=2; beds>0; blood stock,{}
+S5,Hebbal flyover: multi-vehicle crash,13.0436,77.5927,approximate [TODO-VERIFY on map],road_accident,3,3,True,B+,trauma_level>=3; beds>0; B+ stock,{}
+S6,Electronic City: kitchen fire burn,12.8456,77.6603,approximate [TODO-VERIFY on map],burn,2,1,False,,trauma_level>=2; beds>0 (no hospital lists burns),{}
+S7,Mysore Road near Nayandahalli: bike skid,12.9450,77.5240,approximate [TODO-VERIFY on map],road_accident,1,1,False,,trauma_level>=1; beds>0,{}
+S8,Majestic bus stand: person fainted,12.9767,77.5713,approximate [TODO-VERIFY on map],other,1,1,False,,trauma_level>=1; beds>0,{}
+B1,Bannerghatta Road: near-equidistant Fortis/Apollo; only Apollo has O+,12.89538,77.59849,40% of the way from H13 to H14 (OSM),road_accident,2,1,True,O+,H14 (only equidistant hospital with O+ stock),"{""H13"": {""blood_O+"": 0}, ""H14"": {""blood_O+"": 12}}"
+B2,Ramaiah campus: near-equidistant H01/H03; only H03 has O+,13.02912,77.56906,40% of the way from H01 to H03 (OSM),road_accident,2,1,True,O+,H03 (only equidistant hospital with O+ stock),"{""H01"": {""blood_O+"": 0}, ""H03"": {""blood_O+"": 12}}"

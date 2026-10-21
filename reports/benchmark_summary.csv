@@ -1,0 +1,3 @@
+method,scenarios,appropriate,trauma_ok,blood_ok,mean_response_min,mean_transport_min,mean_total_min
+naive,10,5,8,7,6.57,9.3,25.88
+ai,10,9,9,10,6.57,10.9,27.47

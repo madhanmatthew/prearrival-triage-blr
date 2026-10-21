@@ -108,7 +108,7 @@ def test_errors():
     assert c.get("/incident/NOPE").status_code == 404
     assert c.post("/incident/text", json={"text": "  ", "gps": GPS_}).status_code == 422
     assert c.post("/incident/text", json={"text": "x", "gps": {"lat": 99, "lon": 0}}).status_code == 422
-    assert c.post("/benchmark/run").status_code == 501
+    assert c.post("/benchmark/run").status_code == 503          # no hospitals in test services
 
 
 def test_guidance_fallback_and_routed():
@@ -242,3 +242,13 @@ def test_incidents_resources_and_ui():
     for page in ("report.html", "dispatch.html", "police.html", "hospital.html", "common.js"):
         assert c.get(f"/ui/{page}").status_code == 200
     assert c.get("/", follow_redirects=False).status_code in (302, 307)
+
+
+def test_benchmark_endpoint():
+    assert client().post("/benchmark/run").status_code == 503             # no hospitals loaded
+    s = services(dispatch=True)
+    s.hospitals = ha.load_hospitals("data/hospitals.csv")
+    s.ambulances = {"A1": (12.93, 77.62), "A2": (13.03, 77.59)}
+    body = client(s).post("/benchmark/run").json()
+    assert {r["method"] for r in body["summary"]} == {"naive", "ai"}
+    assert len(body["results"]) == 20 and "SIMULATED" in body["note"]
