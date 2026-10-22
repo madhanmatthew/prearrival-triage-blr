@@ -112,7 +112,8 @@ def _text_probs(svc: Services, dm: DialogueManager) -> Optional[list[float]]:
         return None                                    # dialogue uses its uniform placeholder
     from backend.ml.text_severity import compose_text, predict_proba
     raw = [a.raw for a in dm.answers.values()]
-    return [float(p) for p in predict_proba(svc.text_model, compose_text(dm.transcript, raw))[0]]
+    # list input -> [1, 4]; a bare string returns a 1-D row and indexing it again crashed (2026-10-23)
+    return [float(p) for p in predict_proba(svc.text_model, [compose_text(dm.transcript, raw)])[0]]
 
 
 def _finish_dialogue(svc: Services, inc: Incident, now: str) -> None:

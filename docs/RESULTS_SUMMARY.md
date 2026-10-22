@@ -53,6 +53,16 @@ same scenario (`asr_triage`):
 Honest reading: the dev 83 % was optimistic; the clean held-out number for hi/kn is ~60 %. Tap buttons
 (yes/no/don't know) make the six answers independent of ASR quality; the gap is in free-text report parsing.
 
+## 2b. Text severity classifier (SIM data, D2)
+
+450 template-drafted bystander reports (150 per language, balanced over 4 classes), all human-reviewed
+(1 relabel, 0 text edits), fixed 20 % held-out test split (90 reports): **macro-F1 0.978** (en 1.00, hi 1.00,
+kn 0.93). Honest reading: the test set shares the templates, so this mostly measures template recovery. On the
+30 **real** held-out recordings (native speakers' own words) the predictions are inconsistent (mean confidence
+0.5; e.g. "rider not responding" → class 1 in en/hi). In the deployed pipeline the fusion network also uses the
+dialogue answers (conscious, breathing, bleeding, ...), which lifts clear cases correctly (end-to-end check:
+critical → class 3 at 0.74, moderate → 1, stable → 0). Limitation: not clinician-labelled, template-based.
+
 ## 3. First-aid guidance (RAG, IFRC 2020 corpus, 18 topics)
 
 | Version | Test queries | hit@k | answer rate (in scope) | refusal rate (out of scope) | fully grounded | Source |

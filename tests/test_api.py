@@ -290,3 +290,18 @@ def test_prompt_recordings_served():
     for key in ("q1_en", "q6_hi", "s3_kn"):
         assert c.get(f"/prompts/{key}.mp3").status_code == 200
     assert c.get("/prompts/nope.mp3").status_code == 404
+
+
+def test_dialogue_finishes_with_a_real_text_model():
+    """Regression 2026-10-23: a trained text model crashed _text_probs (1-D row indexed twice)."""
+    import pandas as pd
+    from backend.ml import text_severity as ts
+    df = pd.DataFrame({"text": ["man unconscious not breathing", "minor scratch, fine", "deep cut bleeding a lot",
+                                "twisted ankle, talking"] * 6, "label": [3, 0, 2, 1] * 6, "language": ["en"] * 24})
+    model, _ = ts.train(df, c_grid=[1.0], n_splits=2)
+    s = services()
+    s.text_model = model
+    c = client(s)
+    _, r = finish(c)
+    probs = r["report"]["text_severity_probs"]
+    assert len(probs) == 4 and abs(sum(probs) - 1) < 1e-6

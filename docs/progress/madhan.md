@@ -451,6 +451,12 @@
   `amb_progress_m` metric; fixed-time peak ambulance waits ~10 min at Silk Board + long jam before the 6.0 km jn.
   NEXT: backend/rl/demand.py (randomized demand, docs/19 §7), baselines + DQN 3 seeds on OSM (overnight).
 
+- 2026-10-23: Text severity. Review tool `scripts/review_text_reports.py` (browser, one row at a time); all 450 drafts
+  reviewed (1 relabel, 0 edits). Split assigned once (360/90). Test macro-F1 0.978 (en 1.00 hi 1.00 kn 0.93): template
+  recovery. Real held-out recordings: inconsistent (mean conf 0.5). Fixed a crash in `backend/main.py::_text_probs`
+  (single-string predict_proba indexed twice) that would have broken the demo once a text model existed; regression
+  test added. End-to-end (text model + fusion_v1_20261006): critical 3 (0.74), moderate 1, stable 0.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

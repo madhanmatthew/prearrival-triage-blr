@@ -1,451 +1,451 @@
 ﻿report_id,language,text,label,reviewed,split,notes
-en-0001,en,"There is an accident near the signal, old man slipped, got up himself, says he is fine. Please hurry.",0,0,,draft-v1 type=fall script=native
-hi-0001,hi,"हेलो, इमरजेंसी है, दौरा अभी रुका है, वो सुस्त और उलझन में है, तेज़ सांस ले रहा है। कृपया जल्दी आइए!",2,0,,draft-v1 type=cardiac_medical script=native
-hi-0002,hi,"सिग्नल के पास हादसा हुआ है, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। मैं सड़क किनारे हूँ।",1,0,,draft-v1 type=other script=native
-hi-0003,hi,"please ambulance bhejiye, aadmi achanak gir gaya, behosh hai, saans nahi aa rahi, nabz nahi mil rahi. jaldi kijiye.",3,0,,draft-v1 type=cardiac_medical script=roman
-hi-0004,hi,"गैस सिलेंडर में आग लगी, चेहरे और बाजुओं पर जलन, होश में है पर बहुत दर्द में है और सांस लेने में तकलीफ है। लोग इकट्ठा हो गए हैं।",2,0,,draft-v1 type=burn script=native
-kn-0001,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಎಚ್ಚರವಿದ್ದಾನೆ ಆದರೆ ತಲೆಗೆ ಆಳವಾದ ಗಾಯ, ತುಂಬಾ ರಕ್ತ ಸುರಿಯುತ್ತಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=road_accident script=native
-en-0002,en,"Hello, emergency, two bikes touched, nobody is hurt, just scratches on the bike. Please come fast!",0,0,,draft-v1 type=road_accident script=native
-en-0003,en,"Please send an ambulance, cooking oil burn on the forearm, blisters, in pain but talking normally. I am at the roadside.",1,0,,draft-v1 type=burn script=native
-hi-0005,hi,"जल्दी आइए, बाइक फिसल गई, चालक की कलाई में मोच है और घुटने छिल गए, वो ठीक से बात कर रहा है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=road_accident script=native
-en-0004,en,"Help, fell from the third floor, no response, blood from the ears. I am at the roadside.",3,0,,draft-v1 type=fall script=native
-kn-0002,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=fall script=native
-kn-0003,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೈಗೆ ಬಿಸಿ ಎಣ್ಣೆ ಬಿದ್ದು ಸುಟ್ಟಿದೆ, ಗುಳ್ಳೆಗಳಿವೆ, ನೋವಿದೆ ಆದರೆ ಸಾಮಾನ್ಯವಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ",1,0,,draft-v1 type=burn script=native
-kn-0004,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,0,,draft-v1 type=other script=native
-en-0005,en,"There is an accident near the signal, bike skid, rider has a sprained wrist and scraped knees, he is talking fine. Please hurry.",1,0,,draft-v1 type=road_accident script=native
-hi-0006,hi,"please ambulance bhejiye, bike slip ho gayi, uske haath me moch hai, baat kar raha hai. jaldi kijiye.",1,0,,draft-v1 type=road_accident script=roman
-en-0006,en,"Please send an ambulance, two bikes touched, nobody is hurt, just scratches on the bike",0,0,,draft-v1 type=road_accident script=native
-en-0007,en,"Help, touched a hot pan, mild redness, no pain now. Please come fast!",0,0,,draft-v1 type=burn script=native
-en-0008,en,"Help, pulled out of water, unconscious, not breathing, blue face. Please hurry.",3,0,,draft-v1 type=other script=native
-en-0009,en,"Please send an ambulance, dog bite on the leg, small wound, bleeding slightly, walking. Please come fast!",1,0,,draft-v1 type=other script=native
-en-0010,en,"Help, car hit a divider, everyone is out and walking, no injury",0,0,,draft-v1 type=road_accident script=native
-kn-0005,kn,"ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,0,,draft-v1 type=burn script=native
-kn-0006,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ವೃದ್ಧರಿಗೆ ಎದೆಯಲ್ಲಿ ಸ್ವಲ್ಪ ಕಿರಿಕಿರಿ ಇದೆ, ಕುಳಿತು ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ, ಸ್ವಲ್ಪ ಬೆವರುತ್ತಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=cardiac_medical script=native
-hi-0007,hi,"कृपया एम्बुलेंस भेजिए, रसोई में आग लगी, पैरों पर बड़ी जलन, चमड़ी उतर रही है, होश में है। लोग इकट्ठा हो गए हैं।",2,0,,draft-v1 type=burn script=native
-kn-0007,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಕೈಗೆ ಬಿಸಿ ಎಣ್ಣೆ ಬಿದ್ದು ಸುಟ್ಟಿದೆ, ಗುಳ್ಳೆಗಳಿವೆ, ನೋವಿದೆ ಆದರೆ ಸಾಮಾನ್ಯವಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=burn script=native
-en-0011,en,"Please send an ambulance, fell from the third floor, no response, blood from the ears",3,0,,draft-v1 type=fall script=native
-en-0012,en,"Hello, emergency, electric shock and burns, collapsed, no response, no pulse. Please hurry.",3,0,,draft-v1 type=burn script=native
-kn-0008,kn,"dayavittu ambulance kaluhisi, rasteyalli obba vyakthi sikkida, pragne illa, usiraadtilla, tumba raktha ide. begane banni.",3,0,,draft-v1 type=other script=roman
-hi-0008,hi,"madad kijiye, bike aapas me touch hui, kisi ko chot nahi lagi, bas scratch hai. jaldi kijiye.",0,0,,draft-v1 type=road_accident script=roman
-hi-0009,hi,"uncle ko seene me halka dard hai, baith ke baat kar rahe hain, pasina aa raha hai",1,0,,draft-v1 type=cardiac_medical script=roman
-hi-0010,hi,"jaldi aaiye, tel se haath jal gaya, chhale hain, dard hai par baat kar raha hai. jaldi kijiye.",1,0,,draft-v1 type=burn script=roman
-kn-0009,kn,"sahaya maadi, mane ge benki bittu, pragne illade horage tegedaru, idi deha sutthide, usiraadtilla",3,0,,draft-v1 type=burn script=roman
-kn-0010,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಮಗು ಬೆಂಚಿನಿಂದ ಬಿತ್ತು, ಅತ್ತಿತು, ಈಗ ಮತ್ತೆ ಆಡುತ್ತಿದೆ, ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,0,,draft-v1 type=fall script=native
-en-0013,en,"Sir please come fast, dog bite on the leg, small wound, bleeding slightly, walking. Please hurry.",1,0,,draft-v1 type=other script=native
-kn-0011,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ",1,0,,draft-v1 type=other script=native
-en-0014,en,"Please send an ambulance, cooking oil burn on the forearm, blisters, in pain but talking normally. Please hurry.",1,0,,draft-v1 type=burn script=native
-kn-0012,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಬೈಕ್ ಜಾರಿ ಬಿತ್ತು, ಸವಾರನ ಮಣಿಕಟ್ಟಿಗೆ ಉಳುಕಾಗಿದೆ, ಮೊಣಕಾಲು ತರಚಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",1,0,,draft-v1 type=road_accident script=native
-kn-0013,kn,"begane banni, eradu bike swalpa thagalitu, yarigu gaaya aagilla, swalpa tharachide ashte. jana serideare.",0,0,,draft-v1 type=road_accident script=roman
-hi-0011,hi,"please ambulance bhejiye, ghar me aag lagi, bande ko behosh nikala, poora badan jala hai, saans nahi aa rahi",3,0,,draft-v1 type=burn script=roman
-kn-0014,kn,"ಬೈಕ್ ಬಸ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರನ ಕಾಲು ಮುರಿದಂತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಆದರೆ ಎಚ್ಚರವಿದ್ದಾನೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",2,0,,draft-v1 type=road_accident script=native
-hi-0012,hi,"मदद कीजिए, लड़के को क्रिकेट की गेंद लगी, नाक से थोड़ा खून आया, अब रुक गया, वो सतर्क है",1,0,,draft-v1 type=other script=native
-en-0015,en,"Help, elderly man has chest discomfort but is sitting and talking, sweating a bit. I don't know what to do.",1,0,,draft-v1 type=cardiac_medical script=native
-kn-0015,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ರಸ್ತೆಯಲ್ಲಿ ಒಬ್ಬ ವ್ಯಕ್ತಿ ಸಿಕ್ಕಿದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ತುಂಬಾ ರಕ್ತವಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",3,0,,draft-v1 type=other script=native
-hi-0013,hi,"कृपया एम्बुलेंस भेजिए, तीसरी मंज़िल से गिरा, कोई जवाब नहीं, कान से खून आ रहा है। कृपया जल्दी आइए!",3,0,,draft-v1 type=fall script=native
-kn-0016,kn,"ಬೇಗ ಬನ್ನಿ, ಕಾರು ಡಿವೈಡರ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಎಲ್ಲರೂ ಹೊರಬಂದು ನಡೆಯುತ್ತಿದ್ದಾರೆ, ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,0,,draft-v1 type=road_accident script=native
-hi-0014,hi,"भीड़ दिखी, पता नहीं कुछ हुआ या नहीं, कोई घायल नहीं दिख रहा। लोग इकट्ठा हो गए हैं।",0,0,,draft-v1 type=other script=native
-kn-0017,kn,"dayavittu ambulance kaluhisi, bike jaari bittu, savaarana kai uLukide, matadtha idhane",1,0,,draft-v1 type=road_accident script=roman
-hi-0015,hi,"सिग्नल के पास हादसा हुआ है, आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है। जल्दी कीजिए।",2,0,,draft-v1 type=cardiac_medical script=native
-kn-0018,kn,"ಸಹಾಯ ಮಾಡಿ, ಮನೆಗೆ ಬೆಂಕಿ ಬಿತ್ತು, ವ್ಯಕ್ತಿಯನ್ನು ಪ್ರಜ್ಞೆ ಇಲ್ಲದೆ ಹೊರಗೆ ತೆಗೆದರು, ಇಡೀ ದೇಹ ಸುಟ್ಟಿದೆ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",3,0,,draft-v1 type=burn script=native
-kn-0019,kn,"ವ್ಯಕ್ತಿಗೆ ಎದೆಯಲ್ಲಿ ತೀವ್ರ ನೋವು, ತುಂಬಾ ಬೆವರುತ್ತಿದ್ದಾರೆ, ಉಸಿರಾಟ ಕಷ್ಟ, ಎಚ್ಚರವಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=cardiac_medical script=native
-kn-0020,kn,"ಸಹಾಯ ಮಾಡಿ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,0,,draft-v1 type=cardiac_medical script=native
-en-0016,en,"Touched a hot pan, mild redness, no pain now. Please hurry.",0,0,,draft-v1 type=burn script=native
-en-0017,en,"Sir please come fast, dog bite on the leg, small wound, bleeding slightly, walking. Please come fast!",1,0,,draft-v1 type=other script=native
-hi-0016,hi,"मदद कीजिए, ऑटो और कार की टक्कर हुई, सवारी के कंधे में दर्द है लेकिन होश में है। कृपया जल्दी आइए!",1,0,,draft-v1 type=road_accident script=native
-hi-0017,hi,"हेलो, इमरजेंसी है, पेट में चाकू लगा है, बहुत खून बह रहा है, होश में है पर कमज़ोर है। मुझे समझ नहीं आ रहा क्या करूँ।",2,0,,draft-v1 type=other script=native
-en-0018,en,"Girl fainted briefly, woke up, pale but responding",1,0,,draft-v1 type=cardiac_medical script=native
-en-0019,en,"Hello, emergency, man hit on the head with a rod, heavy bleeding, confused. Please come fast!",2,0,,draft-v1 type=other script=native
-kn-0021,kn,"ಬೇಗ ಬನ್ನಿ, ವ್ಯಕ್ತಿ ಒಮ್ಮೆಗೇ ಕುಸಿದು ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ನಾಡಿ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,0,,draft-v1 type=cardiac_medical script=native
-en-0020,en,"Please send an ambulance, dog bite on the leg, small wound, bleeding slightly, walking",1,0,,draft-v1 type=other script=native
-hi-0018,hi,"लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। जल्दी कीजिए।",1,0,,draft-v1 type=cardiac_medical script=native
-kn-0022,kn,"ಸಹಾಯ ಮಾಡಿ, ಮಹಿಳೆ ಮೆಟ್ಟಿಲಿನಿಂದ ಬಿದ್ದರು, ಕಾಲಿನ ಹಿಮ್ಮಡಿ ಊದಿಕೊಂಡಿದೆ, ಕಾಲೂರಲು ಆಗುತ್ತಿಲ್ಲ, ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=fall script=native
-kn-0023,kn,"begane banni, bisi enne bidhu kai sutthide, gulle ide, novide aadre maatadtha idhare. jana serideare.",1,0,,draft-v1 type=burn script=roman
-kn-0024,kn,"sahaya maadi, vrudharige edeyalli swalpa kirikiri ide, kuthu maatadtha idhare, swalpa bevarthidhare",1,0,,draft-v1 type=cardiac_medical script=roman
-en-0021,en,"Fell from the third floor, no response, blood from the ears. I don't know what to do.",3,0,,draft-v1 type=fall script=native
-en-0022,en,"Hello, emergency, car hit a divider, everyone is out and walking, no injury. Please hurry.",0,0,,draft-v1 type=road_accident script=native
-kn-0025,kn,"ಬೇಗ ಬನ್ನಿ, ಆಟೋ ಮತ್ತು ಕಾರು ಡಿಕ್ಕಿಯಾಯಿತು, ಪ್ರಯಾಣಿಕರ ಭುಜದಲ್ಲಿ ನೋವಿದೆ ಆದರೆ ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=road_accident script=native
-hi-0019,hi,"madad kijiye, bike aapas me touch hui, kisi ko chot nahi lagi, bas scratch hai",0,0,,draft-v1 type=road_accident script=roman
-kn-0026,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,0,,draft-v1 type=other script=native
-hi-0020,hi,"मदद कीजिए, बाइक फिसल गई, चालक की कलाई में मोच है और घुटने छिल गए, वो ठीक से बात कर रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",1,0,,draft-v1 type=road_accident script=native
-en-0023,en,"There is an accident near the signal, man collapsed suddenly, unconscious, not breathing, no pulse. Please come fast!",3,0,,draft-v1 type=cardiac_medical script=native
-hi-0021,hi,"jaldi aaiye, chakkar aaya tha ek minute, ab baith ke paani pi raha hai, theek hai. log jama ho gaye hain.",0,0,,draft-v1 type=cardiac_medical script=roman
-hi-0022,hi,"हेलो, इमरजेंसी है, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,0,,draft-v1 type=burn script=native
-en-0024,en,"Sir please come fast, car crash, driver unconscious, blood everywhere, not responding. I am at the roadside.",3,0,,draft-v1 type=road_accident script=native
-hi-0023,hi,"madad kijiye, bike slip ho gayi, uske haath me moch hai, baat kar raha hai. log jama ho gaye hain.",1,0,,draft-v1 type=road_accident script=roman
-hi-0024,hi,"मदद कीजिए, आदमी अचानक गिर पड़ा, बेहोश है, सांस नहीं ले रहा, नब्ज़ नहीं है। लोग इकट्ठा हो गए हैं।",3,0,,draft-v1 type=cardiac_medical script=native
-hi-0025,hi,"मदद कीजिए, पेट में चाकू लगा है, बहुत खून बह रहा है, होश में है पर कमज़ोर है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=other script=native
-kn-0027,kn,"ಸಹಾಯ ಮಾಡಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",0,0,,draft-v1 type=cardiac_medical script=native
-en-0025,en,"Please send an ambulance, girl fainted briefly, woke up, pale but responding. Please hurry.",1,0,,draft-v1 type=cardiac_medical script=native
-hi-0026,hi,"जल्दी आइए, बच्चा बेंच से गिर गया, रो रहा था, अब फिर खेल रहा है, कोई कट नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,0,,draft-v1 type=fall script=native
-en-0026,en,"Two bikes touched, nobody is hurt, just scratches on the bike. Please hurry.",0,0,,draft-v1 type=road_accident script=native
-kn-0028,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ",2,0,,draft-v1 type=fall script=native
-hi-0027,hi,"मदद कीजिए, आदमी के सिर पर रॉड मारी, बहुत खून बह रहा है, उलझन में है। मुझे समझ नहीं आ रहा क्या करूँ।",2,0,,draft-v1 type=other script=native
-en-0027,en,"Sir please come fast, worker fell from the scaffolding, unconscious, not breathing properly",3,0,,draft-v1 type=fall script=native
-en-0028,en,"There is an accident near the signal, man felt dizzy for a minute, now sitting and drinking water, normal. People are gathering around.",0,0,,draft-v1 type=cardiac_medical script=native
-en-0029,en,"Please send an ambulance, auto and car collided, passenger has pain in the shoulder but is stable. Please come fast!",1,0,,draft-v1 type=road_accident script=native
-en-0030,en,"Sir please come fast, cooking oil burn on the forearm, blisters, in pain but talking normally",1,0,,draft-v1 type=burn script=native
-hi-0028,hi,"हेलो, इमरजेंसी है, पहले झगड़ा हुआ था पर सब चले गए, कोई घायल नहीं। लोग इकट्ठा हो गए हैं।",0,0,,draft-v1 type=other script=native
-en-0031,en,"Please send an ambulance, stabbed in the stomach, bleeding a lot, awake but weak. I don't know what to do.",2,0,,draft-v1 type=other script=native
-en-0032,en,"Man collapsed suddenly, unconscious, not breathing, no pulse",3,0,,draft-v1 type=cardiac_medical script=native
-en-0033,en,"Boy hit by a cricket ball, nose bleeding a little, stopped now, he is alert. People are gathering around.",1,0,,draft-v1 type=other script=native
-hi-0029,hi,"हेलो, इमरजेंसी है, औरत सीढ़ियों से गिर गई, टखना सूज गया है, पैर नहीं रख पा रही, होश में है",1,0,,draft-v1 type=fall script=native
-kn-0029,kn,"begane banni, kaige bisi chaha chellitu, swalpa kempaagide, ega novilla. jana serideare.",0,0,,draft-v1 type=burn script=roman
-en-0034,en,"Seizure just stopped, he is drowsy, confused and breathing fast. I don't know what to do.",2,0,,draft-v1 type=cardiac_medical script=native
-en-0035,en,"Hello, emergency, man collapsed suddenly, unconscious, not breathing, no pulse",3,0,,draft-v1 type=cardiac_medical script=native
-kn-0030,kn,"ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,0,,draft-v1 type=burn script=native
-en-0036,en,"Sir please come fast, boy hit by a cricket ball, nose bleeding a little, stopped now, he is alert",1,0,,draft-v1 type=other script=native
-en-0037,en,"Please send an ambulance, bike hit a bus, rider's leg looks broken and bleeding a lot but he is awake. I am at the roadside.",2,0,,draft-v1 type=road_accident script=native
-kn-0031,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",1,0,,draft-v1 type=fall script=native
-en-0038,en,"Sir please come fast, seizure just stopped, he is drowsy, confused and breathing fast. Please hurry.",2,0,,draft-v1 type=cardiac_medical script=native
-kn-0032,kn,"magu bench inda bittu, atthu, ega matte aadtha ide, gaaya illa. begane banni.",0,0,,draft-v1 type=fall script=roman
-en-0039,en,"Sir please come fast, house fire, person pulled out unconscious, burns over the body, not breathing",3,0,,draft-v1 type=burn script=native
-kn-0033,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,0,,draft-v1 type=cardiac_medical script=native
-kn-0034,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ವ್ಯಕ್ತಿಗೆ ಎದೆಯಲ್ಲಿ ತೀವ್ರ ನೋವು, ತುಂಬಾ ಬೆವರುತ್ತಿದ್ದಾರೆ, ಉಸಿರಾಟ ಕಷ್ಟ, ಎಚ್ಚರವಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,0,,draft-v1 type=cardiac_medical script=native
-hi-0030,hi,"हेलो, इमरजेंसी है, बुज़ुर्ग फिसल गए, खुद उठ गए, कह रहे हैं ठीक हूँ। लोग इकट्ठा हो गए हैं।",0,0,,draft-v1 type=fall script=native
-kn-0035,kn,"ಸಹಾಯ ಮಾಡಿ, ಕಾರು ಡಿವೈಡರ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಎಲ್ಲರೂ ಹೊರಬಂದು ನಡೆಯುತ್ತಿದ್ದಾರೆ, ಗಾಯವಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",0,0,,draft-v1 type=road_accident script=native
-en-0040,en,"Please send an ambulance, fire in the kitchen, large burns on the legs, skin peeling, conscious. Please hurry.",2,0,,draft-v1 type=burn script=native
-kn-0036,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಗ್ಯಾಸ್ ಸಿಲಿಂಡರ್ ಬೆಂಕಿ ಹೊತ್ತಿತು, ಮುಖ ಮತ್ತು ತೋಳುಗಳಿಗೆ ಸುಟ್ಟಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ತುಂಬಾ ನೋವು, ಉಸಿರಾಡಲು ಕಷ್ಟ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=burn script=native
-hi-0031,hi,"हेलो, इमरजेंसी है, मज़दूर स्टूल से फिसला, पीठ में चोट और दर्द है, पर स्थिर है। कृपया जल्दी आइए!",1,0,,draft-v1 type=fall script=native
-hi-0032,hi,"मदद कीजिए, कार एक्सीडेंट हुआ, ड्राइवर होश में है पर सिर में गहरा कट है और खून बहुत बह रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",2,0,,draft-v1 type=road_accident script=native
-hi-0033,hi,"मज़दूर स्टूल से फिसला, पीठ में चोट और दर्द है, पर स्थिर है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=fall script=native
-en-0041,en,"Help, man felt dizzy for a minute, now sitting and drinking water, normal",0,0,,draft-v1 type=cardiac_medical script=native
-en-0042,en,"There is an accident near the signal, man collapsed suddenly, unconscious, not breathing, no pulse. I am at the roadside.",3,0,,draft-v1 type=cardiac_medical script=native
-hi-0034,hi,"जल्दी आइए, आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। लोग इकट्ठा हो गए हैं।",3,0,,draft-v1 type=other script=native
-en-0043,en,"Sir please come fast, child fell from a bench, crying, no cut, playing again. Please hurry.",0,0,,draft-v1 type=fall script=native
-kn-0037,kn,"sahaya maadi, bike jaari bittu, savaarana kai uLukide, matadtha idhane",1,0,,draft-v1 type=road_accident script=roman
-kn-0038,kn,"ಬೇಗ ಬನ್ನಿ, ನೀರಿನಿಂದ ಹೊರತೆಗೆದರು, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ಮುಖ ನೀಲಿಯಾಗಿದೆ",3,0,,draft-v1 type=other script=native
-hi-0035,hi,"औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं। कृपया जल्दी आइए!",3,0,,draft-v1 type=cardiac_medical script=native
-en-0044,en,"Fire in the kitchen, large burns on the legs, skin peeling, conscious. Please hurry.",2,0,,draft-v1 type=burn script=native
-en-0045,en,"Auto and car collided, passenger has pain in the shoulder but is stable",1,0,,draft-v1 type=road_accident script=native
-kn-0039,kn,"mahile metlinda bidru, kaalu uditu, eccharadalli idhare. begane banni.",1,0,,draft-v1 type=fall script=roman
-en-0046,en,"Hello, emergency, bike skid, rider has a sprained wrist and scraped knees, he is talking fine",1,0,,draft-v1 type=road_accident script=native
-en-0047,en,"Man fell from the first floor, awake but cannot move his legs, bleeding from the head. I don't know what to do.",2,0,,draft-v1 type=fall script=native
-hi-0036,hi,"आदमी के सिर पर रॉड मारी, बहुत खून बह रहा है, उलझन में है। लोग इकट्ठा हो गए हैं।",2,0,,draft-v1 type=other script=native
-hi-0037,hi,"सिग्नल के पास हादसा हुआ है, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=fall script=native
-hi-0038,hi,"सिग्नल के पास हादसा हुआ है, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। जल्दी कीजिए।",1,0,,draft-v1 type=other script=native
-en-0048,en,"There is an accident near the signal, car hit a divider, everyone is out and walking, no injury. I am at the roadside.",0,0,,draft-v1 type=road_accident script=native
-en-0049,en,"Hello, emergency, fire in the kitchen, large burns on the legs, skin peeling, conscious. People are gathering around.",2,0,,draft-v1 type=burn script=native
-en-0050,en,"Man hit on the head with a rod, heavy bleeding, confused. Please come fast!",2,0,,draft-v1 type=other script=native
-kn-0040,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=fall script=native
-kn-0041,kn,"ಬೇಗ ಬನ್ನಿ, ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",1,0,,draft-v1 type=burn script=native
-en-0051,en,"Please send an ambulance, man has severe chest pain, sweating a lot, breathing hard, still conscious. Please come fast!",2,0,,draft-v1 type=cardiac_medical script=native
-kn-0042,kn,"begane banni, ondu nimisha thale sutthu banthu, ega kuthu neeru kudithidhare, sahajavidhare",0,0,,draft-v1 type=cardiac_medical script=roman
-en-0052,en,"Please send an ambulance, elderly man has chest discomfort but is sitting and talking, sweating a bit. Please hurry.",1,0,,draft-v1 type=cardiac_medical script=native
-en-0053,en,"Elderly man has chest discomfort but is sitting and talking, sweating a bit",1,0,,draft-v1 type=cardiac_medical script=native
-en-0054,en,"There is an accident near the signal, worker slipped from a low stool, bruise on the back, pain but stable. Please come fast!",1,0,,draft-v1 type=fall script=native
-en-0055,en,"Help, person found on the road, unconscious, not breathing, a lot of blood. Please hurry.",3,0,,draft-v1 type=other script=native
-hi-0039,hi,"कृपया एम्बुलेंस भेजिए, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। कृपया जल्दी आइए!",1,0,,draft-v1 type=other script=native
-en-0056,en,"Help, person found on the road, unconscious, not breathing, a lot of blood. I am at the roadside.",3,0,,draft-v1 type=other script=native
-hi-0040,hi,"हेलो, इमरजेंसी है, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=fall script=native
-en-0057,en,"Help, kid got hot water on the leg, blisters, crying but alert",1,0,,draft-v1 type=burn script=native
-hi-0041,hi,"हेलो, इमरजेंसी है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही। मैं सड़क किनारे हूँ।",3,0,,draft-v1 type=burn script=native
-kn-0043,kn,"begane banni, jana gumpu kandithu, enaadru aayitho gothilla, yarigu gaaya kaanthilla",0,0,,draft-v1 type=other script=roman
-hi-0042,hi,"मदद कीजिए, तीसरी मंज़िल से गिरा, कोई जवाब नहीं, कान से खून आ रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",3,0,,draft-v1 type=fall script=native
-hi-0043,hi,"कृपया एम्बुलेंस भेजिए, औरत को गर्मी से कमज़ोरी लग रही है, ठीक से बोल रही है, दर्द नहीं। जल्दी कीजिए।",0,0,,draft-v1 type=cardiac_medical script=native
-hi-0044,hi,"bike bus se takrayi, pair toota lag raha hai, bahut khoon beh raha hai, hosh me hai. log jama ho gaye hain.",2,0,,draft-v1 type=road_accident script=roman
-kn-0044,kn,"dayavittu ambulance kaluhisi, kaige bisi chaha chellitu, swalpa kempaagide, ega novilla. begane banni.",0,0,,draft-v1 type=burn script=roman
-hi-0045,hi,"सिग्नल के पास हादसा हुआ है, कार डिवाइडर से टकराई, सब बाहर निकलकर चल रहे हैं, कोई घायल नहीं। कृपया जल्दी आइए!",0,0,,draft-v1 type=road_accident script=native
-kn-0045,kn,"ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,0,,draft-v1 type=fall script=native
-hi-0046,hi,"सिग्नल के पास हादसा हुआ है, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",2,0,,draft-v1 type=fall script=native
-en-0058,en,"Help, stabbed in the stomach, bleeding a lot, awake but weak. People are gathering around.",2,0,,draft-v1 type=other script=native
-en-0059,en,"Help, boy hit by a cricket ball, nose bleeding a little, stopped now, he is alert. I am at the roadside.",1,0,,draft-v1 type=other script=native
-kn-0046,kn,"sahaya maadi, vyakthi omme kusidhu bidda, pragne illa, usiraadtilla, naadi illa. begane banni.",3,0,,draft-v1 type=cardiac_medical script=roman
-kn-0047,kn,"dayavittu ambulance kaluhisi, mahile metlinda bidru, kaalu uditu, eccharadalli idhare. begane banni.",1,0,,draft-v1 type=fall script=roman
-en-0060,en,"Please send an ambulance, electric shock and burns, collapsed, no response, no pulse",3,0,,draft-v1 type=burn script=native
-kn-0048,kn,"ಸಹಾಯ ಮಾಡಿ, ಹುಡುಗನಿಗೆ ಕ್ರಿಕೆಟ್ ಚೆಂಡು ತಗುಲಿತು, ಮೂಗಿನಿಂದ ಸ್ವಲ್ಪ ರಕ್ತ ಬಂತು, ಈಗ ನಿಂತಿದೆ, ಎಚ್ಚರವಾಗಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",1,0,,draft-v1 type=other script=native
-hi-0047,hi,"madad kijiye, truck ne bike ko mara, banda sadak pe pada hai, hil nahi raha, saans nahi le raha",3,0,,draft-v1 type=road_accident script=roman
-en-0061,en,"There is an accident near the signal, car hit a divider, everyone is out and walking, no injury",0,0,,draft-v1 type=road_accident script=native
-kn-0049,kn,"begane banni, hotte ge chaaku irididhe, tumba raktha hogtha ide, eccharavide aadre nishakta. jana serideare.",2,0,,draft-v1 type=other script=roman
-hi-0048,hi,"हेलो, इमरजेंसी है, ट्रक ने बाइक को टक्कर मारी, सवार सड़क पर पड़ा है, हिल नहीं रहा, सांस नहीं ले रहा। लोग इकट्ठा हो गए हैं।",3,0,,draft-v1 type=road_accident script=native
-en-0062,en,"Man has severe chest pain, sweating a lot, breathing hard, still conscious. Please come fast!",2,0,,draft-v1 type=cardiac_medical script=native
-hi-0049,hi,"जल्दी आइए, बच्चा बेंच से गिर गया, रो रहा था, अब फिर खेल रहा है, कोई कट नहीं। जल्दी कीजिए।",0,0,,draft-v1 type=fall script=native
-hi-0050,hi,"कृपया एम्बुलेंस भेजिए, कार डिवाइडर से टकराई, सब बाहर निकलकर चल रहे हैं, कोई घायल नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,0,,draft-v1 type=road_accident script=native
-kn-0050,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=cardiac_medical script=native
-hi-0051,hi,"कृपया एम्बुलेंस भेजिए, दो बाइक आपस में छू गईं, किसी को चोट नहीं लगी, बस खरोंच है। लोग इकट्ठा हो गए हैं।",0,0,,draft-v1 type=road_accident script=native
-hi-0052,hi,"जल्दी आइए, गैस सिलेंडर में आग लगी, चेहरे और बाजुओं पर जलन, होश में है पर बहुत दर्द में है और सांस लेने में तकलीफ है",2,0,,draft-v1 type=burn script=native
-kn-0051,kn,"ಬೇಗ ಬನ್ನಿ, ಕೆಲಸಗಾರ ಕಟ್ಟಡದ ಮೇಲಿಂದ ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಸರಿಯಾಗಿ ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,0,,draft-v1 type=fall script=native
-en-0063,en,"Girl fainted briefly, woke up, pale but responding. Please come fast!",1,0,,draft-v1 type=cardiac_medical script=native
-kn-0052,kn,"bike bus ge dikki hodeyitu, kaalu muridide ansutte, tumba raktha hogtha ide, eccharadalli idhane. begane banni.",2,0,,draft-v1 type=road_accident script=roman
-hi-0053,hi,"chai ke chheente haath pe pade, thodi lali hai, theek hai. jaldi kijiye.",0,0,,draft-v1 type=burn script=roman
-kn-0053,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ವಿದ್ಯುತ್ ಶಾಕ್ ಹೊಡೆದು ಸುಟ್ಟಿದೆ, ಕುಸಿದು ಬಿದ್ದ, ಉತ್ತರವಿಲ್ಲ, ನಾಡಿ ಸಿಗುತ್ತಿಲ್ಲ",3,0,,draft-v1 type=burn script=native
-hi-0054,hi,"हेलो, इमरजेंसी है, बच्चे के पैर पर गर्म पानी गिरा, छाले हैं, रो रहा है पर सतर्क है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=burn script=native
-hi-0055,hi,"कृपया एम्बुलेंस भेजिए, पहले झगड़ा हुआ था पर सब चले गए, कोई घायल नहीं। मैं सड़क किनारे हूँ।",0,0,,draft-v1 type=other script=native
-en-0064,en,"Sir please come fast, car accident, driver is conscious but has a deep cut on the head bleeding heavily. People are gathering around.",2,0,,draft-v1 type=road_accident script=native
-en-0065,en,"There is an accident near the signal, stabbed in the stomach, bleeding a lot, awake but weak. I am at the roadside.",2,0,,draft-v1 type=other script=native
-en-0066,en,"Help, woman feeling weak from the heat, talking fine, no pain. Please hurry.",0,0,,draft-v1 type=cardiac_medical script=native
-kn-0054,kn,"ಬೇಗ ಬನ್ನಿ, ಗ್ಯಾಸ್ ಸಿಲಿಂಡರ್ ಬೆಂಕಿ ಹೊತ್ತಿತು, ಮುಖ ಮತ್ತು ತೋಳುಗಳಿಗೆ ಸುಟ್ಟಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ತುಂಬಾ ನೋವು, ಉಸಿರಾಡಲು ಕಷ್ಟ. ಬೇಗ ಬನ್ನಿ.",2,0,,draft-v1 type=burn script=native
-hi-0056,hi,"सिग्नल के पास हादसा हुआ है, दो बाइक आपस में छू गईं, किसी को चोट नहीं लगी, बस खरोंच है। मुझे समझ नहीं आ रहा क्या करूँ।",0,0,,draft-v1 type=road_accident script=native
-hi-0057,hi,"please ambulance bhejiye, pet me chaku laga hai, bahut khoon beh raha hai, hosh me hai par kamzor hai",2,0,,draft-v1 type=other script=roman
-en-0067,en,"Please send an ambulance, electric shock and burns, collapsed, no response, no pulse. I don't know what to do.",3,0,,draft-v1 type=burn script=native
-hi-0058,hi,"बाइक बस से टकरा गई, चालक का पैर टूटा लगता है और बहुत खून बह रहा है, पर वो होश में है। लोग इकट्ठा हो गए हैं।",2,0,,draft-v1 type=road_accident script=native
-en-0068,en,"Please send an ambulance, there was a fight earlier but everyone left, no one injured. I don't know what to do.",0,0,,draft-v1 type=other script=native
-en-0069,en,"Please send an ambulance, dog bite on the leg, small wound, bleeding slightly, walking. I am at the roadside.",1,0,,draft-v1 type=other script=native
-en-0070,en,"Hello, emergency, bike hit a bus, rider's leg looks broken and bleeding a lot but he is awake",2,0,,draft-v1 type=road_accident script=native
-kn-0055,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವಿದ್ಯುತ್ ಶಾಕ್ ಹೊಡೆದು ಸುಟ್ಟಿದೆ, ಕುಸಿದು ಬಿದ್ದ, ಉತ್ತರವಿಲ್ಲ, ನಾಡಿ ಸಿಗುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,0,,draft-v1 type=burn script=native
-en-0071,en,"Hello, emergency, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. I don't know what to do.",1,0,,draft-v1 type=fall script=native
-kn-0056,kn,"ಬೇಗ ಬನ್ನಿ, ಅಡುಗೆಮನೆಯಲ್ಲಿ ಬೆಂಕಿ, ಕಾಲುಗಳಿಗೆ ದೊಡ್ಡ ಸುಟ್ಟ ಗಾಯ, ಚರ್ಮ ಎದ್ದು ಬರುತ್ತಿದೆ, ಎಚ್ಚರವಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",2,0,,draft-v1 type=burn script=native
-hi-0059,hi,"seene me tez dard hai, bahut pasina, saans phool rahi hai, hosh me hai. log jama ho gaye hain.",2,0,,draft-v1 type=cardiac_medical script=roman
-en-0072,en,"Hello, emergency, house fire, person pulled out unconscious, burns over the body, not breathing. I am at the roadside.",3,0,,draft-v1 type=burn script=native
-kn-0057,kn,"ಸಹಾಯ ಮಾಡಿ, ವೃದ್ಧರು ಜಾರಿ ಬಿದ್ದರು, ತಾವೇ ಎದ್ದರು, ಚೆನ್ನಾಗಿದ್ದೇನೆ ಎನ್ನುತ್ತಿದ್ದಾರೆ",0,0,,draft-v1 type=fall script=native
-hi-0060,hi,"औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं",3,0,,draft-v1 type=cardiac_medical script=native
-kn-0058,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ",1,0,,draft-v1 type=fall script=native
-hi-0061,hi,"cylinder me aag lagi, chehre aur haathon pe jalan, hosh me hai par bahut dard hai. jaldi kijiye.",2,0,,draft-v1 type=burn script=roman
-kn-0059,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ಬೇಗ ಬನ್ನಿ.",2,0,,draft-v1 type=fall script=native
-kn-0060,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಹುಡುಗಿ ಸ್ವಲ್ಪ ಹೊತ್ತು ಪ್ರಜ್ಞೆ ತಪ್ಪಿದಳು, ಈಗ ಎಚ್ಚರವಾಗಿದೆ, ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾಳೆ ಆದರೆ ಉತ್ತರಿಸುತ್ತಿದ್ದಾಳೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=cardiac_medical script=native
-hi-0062,hi,"madad kijiye, aunty seedhi se gir gayi, pair sooj gaya hai, hosh me hai. log jama ho gaye hain.",1,0,,draft-v1 type=fall script=roman
-en-0073,en,"Please send an ambulance, there was a fight earlier but everyone left, no one injured",0,0,,draft-v1 type=other script=native
-hi-0063,hi,"सिग्नल के पास हादसा हुआ है, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं",0,0,,draft-v1 type=burn script=native
-en-0074,en,"Hello, emergency, there was a fight earlier but everyone left, no one injured. Please come fast!",0,0,,draft-v1 type=other script=native
-en-0075,en,"Please send an ambulance, stabbed in the stomach, bleeding a lot, awake but weak. Please come fast!",2,0,,draft-v1 type=other script=native
-hi-0064,hi,"mazdoor upar se gir gaya, behosh hai, saans theek se nahi aa rahi. log jama ho gaye hain.",3,0,,draft-v1 type=fall script=roman
-hi-0065,hi,"सिग्नल के पास हादसा हुआ है, बांह पर गर्म तेल से जल गया, छाले हैं, दर्द है पर सामान्य बात कर रहा है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=burn script=native
-en-0076,en,"Please send an ambulance, man fell from the first floor, awake but cannot move his legs, bleeding from the head. People are gathering around.",2,0,,draft-v1 type=fall script=native
-hi-0066,hi,"हेलो, इमरजेंसी है, औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",3,0,,draft-v1 type=cardiac_medical script=native
-hi-0067,hi,"madad kijiye, bheed dikhi, pata nahi kuch hua ya nahi, koi ghayal nahi dikh raha",0,0,,draft-v1 type=other script=roman
-kn-0061,kn,"begane banni, vyakthi modala mahadiyinda bidda, eccharavide aadre kaalu alugaadsakke aagtilla, thaleyinda raktha suriyuttide. jana serideare.",2,0,,draft-v1 type=fall script=roman
-hi-0068,hi,"madad kijiye, uncle ko seene me halka dard hai, baith ke baat kar rahe hain, pasina aa raha hai",1,0,,draft-v1 type=cardiac_medical script=roman
-hi-0069,hi,"please ambulance bhejiye, mazdoor upar se gir gaya, behosh hai, saans theek se nahi aa rahi",3,0,,draft-v1 type=fall script=roman
-hi-0070,hi,"sadak pe aadmi mila, behosh hai, saans nahi le raha, bahut khoon hai. log jama ho gaye hain.",3,0,,draft-v1 type=other script=roman
-en-0077,en,"Hello, emergency, man fell from the first floor, awake but cannot move his legs, bleeding from the head. I am at the roadside.",2,0,,draft-v1 type=fall script=native
-kn-0062,kn,"begane banni, edeyalli theevra novu, tumba bevarthidhare, usiraata kashta, eccharavidhare",2,0,,draft-v1 type=cardiac_medical script=roman
-en-0078,en,"Cooking oil burn on the forearm, blisters, in pain but talking normally. Please come fast!",1,0,,draft-v1 type=burn script=native
-hi-0071,hi,"please ambulance bhejiye, aunty seedhi se gir gayi, pair sooj gaya hai, hosh me hai. jaldi kijiye.",1,0,,draft-v1 type=fall script=roman
-kn-0063,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಲಾರಿ ಬೈಕ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರ ರಸ್ತೆಯಲ್ಲಿ ಬಿದ್ದಿದ್ದಾನೆ, ಅಲುಗಾಡುತ್ತಿಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಬೇಗ ಬನ್ನಿ.",3,0,,draft-v1 type=road_accident script=native
-en-0079,en,"There is an accident near the signal, small splash of hot tea on the hand, red but no blister, she is fine. I don't know what to do.",0,0,,draft-v1 type=burn script=native
-en-0080,en,"Sir please come fast, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. Please hurry.",1,0,,draft-v1 type=fall script=native
-hi-0072,hi,"घर में आग लगी, आदमी को बेहोशी में बाहर निकाला, पूरे शरीर पर जलन, सांस नहीं ले रहा। मुझे समझ नहीं आ रहा क्या करूँ।",3,0,,draft-v1 type=burn script=native
-hi-0073,hi,"मदद कीजिए, कार क्रैश हो गई, ड्राइवर बेहोश है, हर तरफ खून है, कोई जवाब नहीं दे रहा",3,0,,draft-v1 type=road_accident script=native
-hi-0074,hi,"मदद कीजिए, घर में आग लगी, आदमी को बेहोशी में बाहर निकाला, पूरे शरीर पर जलन, सांस नहीं ले रहा। मैं सड़क किनारे हूँ।",3,0,,draft-v1 type=burn script=native
-hi-0075,hi,"मदद कीजिए, मज़दूर मचान से गिर गया, बेहोश है, ठीक से सांस नहीं ले रहा। जल्दी कीजिए।",3,0,,draft-v1 type=fall script=native
-hi-0076,hi,"madad kijiye, aadmi pehli manzil se gira, hosh me hai par pair nahi hil rahe, sar se khoon beh raha hai. log jama ho gaye hain.",2,0,,draft-v1 type=fall script=roman
-hi-0077,hi,"madad kijiye, seene me tez dard hai, bahut pasina, saans phool rahi hai, hosh me hai. log jama ho gaye hain.",2,0,,draft-v1 type=cardiac_medical script=roman
-hi-0078,hi,"मदद कीजिए, बच्चे के पैर पर गर्म पानी गिरा, छाले हैं, रो रहा है पर सतर्क है। मुझे समझ नहीं आ रहा क्या करूँ।",1,0,,draft-v1 type=burn script=native
-kn-0064,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ನೀರಿನಿಂದ ಹೊರತೆಗೆದರು, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ಮುಖ ನೀಲಿಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,0,,draft-v1 type=other script=native
-kn-0065,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಮಹಿಳೆ ಕುಸಿದು ಬಿದ್ದರು, ತುಟಿ ನೀಲಿಯಾಗಿದೆ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಉಸಿರಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,0,,draft-v1 type=cardiac_medical script=native
-en-0081,en,"There is an accident near the signal, person found on the road, unconscious, not breathing, a lot of blood. I don't know what to do.",3,0,,draft-v1 type=other script=native
-en-0082,en,"Sir please come fast, old man slipped, got up himself, says he is fine. Please hurry.",0,0,,draft-v1 type=fall script=native
-hi-0079,hi,"हेलो, इमरजेंसी है, कार एक्सीडेंट हुआ, ड्राइवर होश में है पर सिर में गहरा कट है और खून बहुत बह रहा है। लोग इकट्ठा हो गए हैं।",2,0,,draft-v1 type=road_accident script=native
-kn-0066,kn,"ಬೇಗ ಬನ್ನಿ, ಅಡುಗೆಮನೆಯಲ್ಲಿ ಬೆಂಕಿ, ಕಾಲುಗಳಿಗೆ ದೊಡ್ಡ ಸುಟ್ಟ ಗಾಯ, ಚರ್ಮ ಎದ್ದು ಬರುತ್ತಿದೆ, ಎಚ್ಚರವಿದ್ದಾರೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,0,,draft-v1 type=burn script=native
-en-0083,en,"There is an accident near the signal, car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please hurry.",2,0,,draft-v1 type=road_accident script=native
-kn-0067,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಲಾರಿ ಬೈಕ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರ ರಸ್ತೆಯಲ್ಲಿ ಬಿದ್ದಿದ್ದಾನೆ, ಅಲುಗಾಡುತ್ತಿಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,0,,draft-v1 type=road_accident script=native
-hi-0080,hi,"बच्चे के पैर पर गर्म पानी गिरा, छाले हैं, रो रहा है पर सतर्क है। जल्दी कीजिए।",1,0,,draft-v1 type=burn script=native
-en-0084,en,"Hello, emergency, man felt dizzy for a minute, now sitting and drinking water, normal. People are gathering around.",0,0,,draft-v1 type=cardiac_medical script=native
-kn-0068,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,0,,draft-v1 type=burn script=native
-en-0085,en,"Hello, emergency, woman feeling weak from the heat, talking fine, no pain. Please hurry.",0,0,,draft-v1 type=cardiac_medical script=native
-kn-0069,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಹೊಟ್ಟೆಗೆ ಚಾಕು ಇರಿದಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ನಿಶ್ಶಕ್ತನಾಗಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=other script=native
-kn-0070,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಪ್ರಜ್ಞಾಹೀನ, ಎಲ್ಲೆಡೆ ರಕ್ತ, ಕರೆದರೂ ಉತ್ತರಿಸುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,0,,draft-v1 type=road_accident script=native
-hi-0081,hi,"दौरा अभी रुका है, वो सुस्त और उलझन में है, तेज़ सांस ले रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",2,0,,draft-v1 type=cardiac_medical script=native
-en-0086,en,"Help, seizure just stopped, he is drowsy, confused and breathing fast. I am at the roadside.",2,0,,draft-v1 type=cardiac_medical script=native
-en-0087,en,"Sir please come fast, car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please hurry.",2,0,,draft-v1 type=road_accident script=native
-en-0088,en,"Please send an ambulance, person found on the road, unconscious, not breathing, a lot of blood. People are gathering around.",3,0,,draft-v1 type=other script=native
-en-0089,en,"There is an accident near the signal, seizure just stopped, he is drowsy, confused and breathing fast. Please hurry.",2,0,,draft-v1 type=cardiac_medical script=native
-kn-0071,kn,"dayavittu ambulance kaluhisi, huduganige cricket chendu thagulitu, mooginiinda swalpa raktha banthu, ega nindide, eccharavide. jana serideare.",1,0,,draft-v1 type=other script=roman
-hi-0082,hi,"आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। मुझे समझ नहीं आ रहा क्या करूँ।",3,0,,draft-v1 type=other script=native
-kn-0072,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ",0,0,,draft-v1 type=other script=native
-en-0090,en,"There is an accident near the signal, car crash, driver unconscious, blood everywhere, not responding. People are gathering around.",3,0,,draft-v1 type=road_accident script=native
-kn-0073,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ವ್ಯಕ್ತಿ ಒಮ್ಮೆಗೇ ಕುಸಿದು ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ನಾಡಿ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,0,,draft-v1 type=cardiac_medical script=native
-en-0091,en,"Sir please come fast, woman fell down, lips blue, not responding, no breathing. Please come fast!",3,0,,draft-v1 type=cardiac_medical script=native
-en-0092,en,"Sir please come fast, truck hit a bike, rider is lying on the road not moving not breathing. Please come fast!",3,0,,draft-v1 type=road_accident script=native
-kn-0074,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಮೂರನೇ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಕಿವಿಯಿಂದ ರಕ್ತ ಬರುತ್ತಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,0,,draft-v1 type=fall script=native
-hi-0083,hi,"jaldi aaiye, chai ke chheente haath pe pade, thodi lali hai, theek hai. log jama ho gaye hain.",0,0,,draft-v1 type=burn script=roman
-kn-0075,kn,"ಎರಡು ಬೈಕ್‌ಗಳು ಸ್ವಲ್ಪ ತಾಗಿದವು, ಯಾರಿಗೂ ಗಾಯವಾಗಿಲ್ಲ, ಸ್ವಲ್ಪ ತರಚಿದೆ ಅಷ್ಟೇ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,0,,draft-v1 type=road_accident script=native
-kn-0076,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಬೈಕ್ ಜಾರಿ ಬಿತ್ತು, ಸವಾರನ ಮಣಿಕಟ್ಟಿಗೆ ಉಳುಕಾಗಿದೆ, ಮೊಣಕಾಲು ತರಚಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=road_accident script=native
-hi-0084,hi,"madad kijiye, chakkar aaya tha ek minute, ab baith ke paani pi raha hai, theek hai",0,0,,draft-v1 type=cardiac_medical script=roman
-kn-0077,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಬಿಸಿ ಕಾವಲಿ ಮುಟ್ಟಿದರು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಈಗ ನೋವಿಲ್ಲ",0,0,,draft-v1 type=burn script=native
-kn-0078,kn,"eradu bike swalpa thagalitu, yarigu gaaya aagilla, swalpa tharachide ashte. jana serideare.",0,0,,draft-v1 type=road_accident script=roman
-kn-0079,kn,"sahaya maadi, ondu nimisha thale sutthu banthu, ega kuthu neeru kudithidhare, sahajavidhare",0,0,,draft-v1 type=cardiac_medical script=roman
-en-0093,en,"Hello, emergency, man felt dizzy for a minute, now sitting and drinking water, normal. Please hurry.",0,0,,draft-v1 type=cardiac_medical script=native
-kn-0080,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ವೃದ್ಧರು ಜಾರಿ ಬಿದ್ದರು, ತಾವೇ ಎದ್ದರು, ಚೆನ್ನಾಗಿದ್ದೇನೆ ಎನ್ನುತ್ತಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,0,,draft-v1 type=fall script=native
-en-0094,en,"Sir please come fast, auto and car collided, passenger has pain in the shoulder but is stable",1,0,,draft-v1 type=road_accident script=native
-kn-0081,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಎರಡು ಬೈಕ್‌ಗಳು ಸ್ವಲ್ಪ ತಾಗಿದವು, ಯಾರಿಗೂ ಗಾಯವಾಗಿಲ್ಲ, ಸ್ವಲ್ಪ ತರಚಿದೆ ಅಷ್ಟೇ. ಬೇಗ ಬನ್ನಿ.",0,0,,draft-v1 type=road_accident script=native
-kn-0082,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಎರಡು ಬೈಕ್‌ಗಳು ಸ್ವಲ್ಪ ತಾಗಿದವು, ಯಾರಿಗೂ ಗಾಯವಾಗಿಲ್ಲ, ಸ್ವಲ್ಪ ತರಚಿದೆ ಅಷ್ಟೇ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,0,,draft-v1 type=road_accident script=native
-kn-0083,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,0,,draft-v1 type=cardiac_medical script=native
-hi-0085,hi,"हेलो, इमरजेंसी है, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। जल्दी कीजिए।",0,0,,draft-v1 type=cardiac_medical script=native
-hi-0086,hi,"हेलो, इमरजेंसी है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही",3,0,,draft-v1 type=burn script=native
-kn-0084,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ವಿದ್ಯುತ್ ಶಾಕ್ ಹೊಡೆದು ಸುಟ್ಟಿದೆ, ಕುಸಿದು ಬಿದ್ದ, ಉತ್ತರವಿಲ್ಲ, ನಾಡಿ ಸಿಗುತ್ತಿಲ್ಲ",3,0,,draft-v1 type=burn script=native
-kn-0085,kn,"lorry bike ge dikki hodeyitu, savaara rasteyalli bidhidhane, alugaadtilla, usiraadtilla. begane banni.",3,0,,draft-v1 type=road_accident script=roman
-en-0095,en,"Hello, emergency, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. People are gathering around.",1,0,,draft-v1 type=fall script=native
-hi-0087,hi,"मदद कीजिए, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। मैं सड़क किनारे हूँ।",1,0,,draft-v1 type=other script=native
-en-0096,en,"There is an accident near the signal, bike skid, rider has a sprained wrist and scraped knees, he is talking fine. I am at the roadside.",1,0,,draft-v1 type=road_accident script=native
-hi-0088,hi,"कृपया एम्बुलेंस भेजिए, आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है। कृपया जल्दी आइए!",2,0,,draft-v1 type=cardiac_medical script=native
-en-0097,en,"Sir please come fast, car crash, driver unconscious, blood everywhere, not responding. I don't know what to do.",3,0,,draft-v1 type=road_accident script=native
-hi-0089,hi,"सिग्नल के पास हादसा हुआ है, गैस सिलेंडर में आग लगी, चेहरे और बाजुओं पर जलन, होश में है पर बहुत दर्द में है और सांस लेने में तकलीफ है",2,0,,draft-v1 type=burn script=native
-en-0098,en,"Please send an ambulance, worker slipped from a low stool, bruise on the back, pain but stable",1,0,,draft-v1 type=fall script=native
-kn-0086,kn,"ಬೇಗ ಬನ್ನಿ, ತಲೆಗೆ ರಾಡ್‌ನಿಂದ ಹೊಡೆದಿದ್ದಾರೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,0,,draft-v1 type=other script=native
-hi-0090,hi,"jaldi aaiye, truck ne bike ko mara, banda sadak pe pada hai, hil nahi raha, saans nahi le raha. jaldi kijiye.",3,0,,draft-v1 type=road_accident script=roman
-en-0099,en,"Sir please come fast, I saw a crowd, not sure anything happened, nobody looks hurt. I don't know what to do.",0,0,,draft-v1 type=other script=native
-hi-0091,hi,"ghar me aag lagi, bande ko behosh nikala, poora badan jala hai, saans nahi aa rahi. jaldi kijiye.",3,0,,draft-v1 type=burn script=roman
-hi-0092,hi,"हेलो, इमरजेंसी है, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं। लोग इकट्ठा हो गए हैं।",0,0,,draft-v1 type=burn script=native
-kn-0087,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ತಲೆಗೆ ರಾಡ್‌ನಿಂದ ಹೊಡೆದಿದ್ದಾರೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,0,,draft-v1 type=other script=native
-en-0100,en,"Hello, emergency, woman feeling weak from the heat, talking fine, no pain. I am at the roadside.",0,0,,draft-v1 type=cardiac_medical script=native
-kn-0088,kn,"ಬೇಗ ಬನ್ನಿ, ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",1,0,,draft-v1 type=other script=native
-hi-0093,hi,"madad kijiye, bike bus se takrayi, pair toota lag raha hai, bahut khoon beh raha hai, hosh me hai",2,0,,draft-v1 type=road_accident script=roman
-kn-0089,kn,"ವ್ಯಕ್ತಿ ಒಮ್ಮೆಗೇ ಕುಸಿದು ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ನಾಡಿ ಇಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",3,0,,draft-v1 type=cardiac_medical script=native
-en-0101,en,"Sir please come fast, touched a hot pan, mild redness, no pain now. I don't know what to do.",0,0,,draft-v1 type=burn script=native
-hi-0094,hi,"कृपया एम्बुलेंस भेजिए, ट्रक ने बाइक को टक्कर मारी, सवार सड़क पर पड़ा है, हिल नहीं रहा, सांस नहीं ले रहा",3,0,,draft-v1 type=road_accident script=native
-en-0102,en,"Fire in the kitchen, large burns on the legs, skin peeling, conscious. People are gathering around.",2,0,,draft-v1 type=burn script=native
-kn-0090,kn,"dayavittu ambulance kaluhisi, bike bus ge dikki hodeyitu, kaalu muridide ansutte, tumba raktha hogtha ide, eccharadalli idhane",2,0,,draft-v1 type=road_accident script=roman
-en-0103,en,"Sir please come fast, gas cylinder flash, burns on face and arms, he is awake but in severe pain and struggling to breathe. I am at the roadside.",2,0,,draft-v1 type=burn script=native
-kn-0091,kn,"dayavittu ambulance kaluhisi, mane ge benki bittu, pragne illade horage tegedaru, idi deha sutthide, usiraadtilla. jana serideare.",3,0,,draft-v1 type=burn script=roman
-hi-0095,hi,"हेलो, इमरजेंसी है, कार डिवाइडर से टकराई, सब बाहर निकलकर चल रहे हैं, कोई घायल नहीं। मैं सड़क किनारे हूँ।",0,0,,draft-v1 type=road_accident script=native
-en-0104,en,"There is an accident near the signal, seizure just stopped, he is drowsy, confused and breathing fast. People are gathering around.",2,0,,draft-v1 type=cardiac_medical script=native
-kn-0092,kn,"ಬೇಗ ಬನ್ನಿ, ಮೂರನೇ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಕಿವಿಯಿಂದ ರಕ್ತ ಬರುತ್ತಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,0,,draft-v1 type=fall script=native
-en-0105,en,"Child fell from a bench, crying, no cut, playing again. Please hurry.",0,0,,draft-v1 type=fall script=native
-hi-0096,hi,"हेलो, इमरजेंसी है, रसोई में आग लगी, पैरों पर बड़ी जलन, चमड़ी उतर रही है, होश में है। जल्दी कीजिए।",2,0,,draft-v1 type=burn script=native
-en-0106,en,"I saw a crowd, not sure anything happened, nobody looks hurt. I don't know what to do.",0,0,,draft-v1 type=other script=native
-en-0107,en,"Hello, emergency, truck hit a bike, rider is lying on the road not moving not breathing. Please hurry.",3,0,,draft-v1 type=road_accident script=native
-hi-0097,hi,"जल्दी आइए, ऑटो और कार की टक्कर हुई, सवारी के कंधे में दर्द है लेकिन होश में है। मुझे समझ नहीं आ रहा क्या करूँ।",1,0,,draft-v1 type=road_accident script=native
-hi-0098,hi,"please ambulance bhejiye, tel se haath jal gaya, chhale hain, dard hai par baat kar raha hai",1,0,,draft-v1 type=burn script=roman
-hi-0099,hi,"सिग्नल के पास हादसा हुआ है, आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। मैं सड़क किनारे हूँ।",3,0,,draft-v1 type=other script=native
-en-0108,en,"Car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please hurry.",2,0,,draft-v1 type=road_accident script=native
-en-0109,en,"Sir please come fast, small splash of hot tea on the hand, red but no blister, she is fine. Please hurry.",0,0,,draft-v1 type=burn script=native
-kn-0093,kn,"bisi enne bidhu kai sutthide, gulle ide, novide aadre maatadtha idhare",1,0,,draft-v1 type=burn script=roman
-hi-0100,hi,"जल्दी आइए, औरत सीढ़ियों से गिर गई, टखना सूज गया है, पैर नहीं रख पा रही, होश में है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=fall script=native
-kn-0094,kn,"ಬೇಗ ಬನ್ನಿ, ಮಹಿಳೆಗೆ ಬಿಸಿಲಿನಿಂದ ಸುಸ್ತಾಗಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ, ನೋವಿಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,0,,draft-v1 type=cardiac_medical script=native
-hi-0101,hi,"jaldi aaiye, aadmi pehli manzil se gira, hosh me hai par pair nahi hil rahe, sar se khoon beh raha hai",2,0,,draft-v1 type=fall script=roman
-kn-0095,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಮಹಿಳೆ ಮೆಟ್ಟಿಲಿನಿಂದ ಬಿದ್ದರು, ಕಾಲಿನ ಹಿಮ್ಮಡಿ ಊದಿಕೊಂಡಿದೆ, ಕಾಲೂರಲು ಆಗುತ್ತಿಲ್ಲ, ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ",1,0,,draft-v1 type=fall script=native
-kn-0096,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,0,,draft-v1 type=burn script=native
-kn-0097,kn,"dayavittu ambulance kaluhisi, vyakthi modala mahadiyinda bidda, eccharavide aadre kaalu alugaadsakke aagtilla, thaleyinda raktha suriyuttide. begane banni.",2,0,,draft-v1 type=fall script=roman
-kn-0098,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಎಚ್ಚರವಿದ್ದಾನೆ ಆದರೆ ತಲೆಗೆ ಆಳವಾದ ಗಾಯ, ತುಂಬಾ ರಕ್ತ ಸುರಿಯುತ್ತಿದೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,0,,draft-v1 type=road_accident script=native
-hi-0102,hi,"जल्दी आइए, आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। मैं सड़क किनारे हूँ।",3,0,,draft-v1 type=other script=native
-hi-0103,hi,"कृपया एम्बुलेंस भेजिए, बुज़ुर्ग को सीने में हल्की बेचैनी है, बैठे हैं और बात कर रहे हैं, थोड़ा पसीना आ रहा है। कृपया जल्दी आइए!",1,0,,draft-v1 type=cardiac_medical script=native
-hi-0104,hi,"हेलो, इमरजेंसी है, औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं",3,0,,draft-v1 type=cardiac_medical script=native
-kn-0099,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಮೊದಲು ಜಗಳವಾಗಿತ್ತು ಆದರೆ ಎಲ್ಲರೂ ಹೊರಟುಹೋದರು, ಯಾರಿಗೂ ಗಾಯವಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,0,,draft-v1 type=other script=native
-en-0110,en,"Sir please come fast, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. I don't know what to do.",1,0,,draft-v1 type=fall script=native
-en-0111,en,"There is an accident near the signal, truck hit a bike, rider is lying on the road not moving not breathing. I don't know what to do.",3,0,,draft-v1 type=road_accident script=native
-kn-0100,kn,"ಬೇಗ ಬನ್ನಿ, ಮಗು ಬೆಂಚಿನಿಂದ ಬಿತ್ತು, ಅತ್ತಿತು, ಈಗ ಮತ್ತೆ ಆಡುತ್ತಿದೆ, ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,0,,draft-v1 type=fall script=native
-kn-0101,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಹುಡುಗಿ ಸ್ವಲ್ಪ ಹೊತ್ತು ಪ್ರಜ್ಞೆ ತಪ್ಪಿದಳು, ಈಗ ಎಚ್ಚರವಾಗಿದೆ, ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾಳೆ ಆದರೆ ಉತ್ತರಿಸುತ್ತಿದ್ದಾಳೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",1,0,,draft-v1 type=cardiac_medical script=native
-kn-0102,kn,"ಸಹಾಯ ಮಾಡಿ, ಮಹಿಳೆ ಕುಸಿದು ಬಿದ್ದರು, ತುಟಿ ನೀಲಿಯಾಗಿದೆ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಉಸಿರಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,0,,draft-v1 type=cardiac_medical script=native
-kn-0103,kn,"ಸಹಾಯ ಮಾಡಿ, ನೀರಿನಿಂದ ಹೊರತೆಗೆದರು, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ಮುಖ ನೀಲಿಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,0,,draft-v1 type=other script=native
-kn-0104,kn,"sahaya maadi, hotte ge chaaku irididhe, tumba raktha hogtha ide, eccharavide aadre nishakta. begane banni.",2,0,,draft-v1 type=other script=roman
-hi-0105,hi,"जल्दी आइए, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=fall script=native
-kn-0105,kn,"sahaya maadi, rasteyalli obba vyakthi sikkida, pragne illa, usiraadtilla, tumba raktha ide",3,0,,draft-v1 type=other script=roman
-kn-0106,kn,"ಬೇಗ ಬನ್ನಿ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ",2,0,,draft-v1 type=cardiac_medical script=native
-hi-0106,hi,"तीसरी मंज़िल से गिरा, कोई जवाब नहीं, कान से खून आ रहा है। मैं सड़क किनारे हूँ।",3,0,,draft-v1 type=fall script=native
-en-0112,en,"House fire, person pulled out unconscious, burns over the body, not breathing. Please hurry.",3,0,,draft-v1 type=burn script=native
-hi-0107,hi,"बुज़ुर्ग फिसल गए, खुद उठ गए, कह रहे हैं ठीक हूँ",0,0,,draft-v1 type=fall script=native
-kn-0107,kn,"kelasagaara kattadada melinda bidda, pragne illa, sariyaagi usiraadtilla",3,0,,draft-v1 type=fall script=roman
-hi-0108,hi,"सिग्नल के पास हादसा हुआ है, औरत को गर्मी से कमज़ोरी लग रही है, ठीक से बोल रही है, दर्द नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,0,,draft-v1 type=cardiac_medical script=native
-hi-0109,hi,"हेलो, इमरजेंसी है, हाथ पर गर्म चाय के छींटे पड़े, थोड़ी लाली है, छाला नहीं, वो ठीक है। कृपया जल्दी आइए!",0,0,,draft-v1 type=burn script=native
-kn-0108,kn,"sahaya maadi, gas cylinder benki hottitu, mukha mattu tholu sutthide, eccharavide aadre tumba novu. begane banni.",2,0,,draft-v1 type=burn script=roman
-kn-0109,kn,"dayavittu ambulance kaluhisi, huduganige cricket chendu thagulitu, mooginiinda swalpa raktha banthu, ega nindide, eccharavide",1,0,,draft-v1 type=other script=roman
-kn-0110,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ರಸ್ತೆಯಲ್ಲಿ ಒಬ್ಬ ವ್ಯಕ್ತಿ ಸಿಕ್ಕಿದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ತುಂಬಾ ರಕ್ತವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,0,,draft-v1 type=other script=native
-en-0113,en,"Sir please come fast, bike hit a bus, rider's leg looks broken and bleeding a lot but he is awake",2,0,,draft-v1 type=road_accident script=native
-kn-0111,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಮೊದಲು ಜಗಳವಾಗಿತ್ತು ಆದರೆ ಎಲ್ಲರೂ ಹೊರಟುಹೋದರು, ಯಾರಿಗೂ ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,0,,draft-v1 type=other script=native
-en-0114,en,"Gas cylinder flash, burns on face and arms, he is awake but in severe pain and struggling to breathe. I don't know what to do.",2,0,,draft-v1 type=burn script=native
-en-0115,en,"Help, worker slipped from a low stool, bruise on the back, pain but stable. Please hurry.",1,0,,draft-v1 type=fall script=native
-hi-0110,hi,"सिग्नल के पास हादसा हुआ है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही। मैं सड़क किनारे हूँ।",3,0,,draft-v1 type=burn script=native
-hi-0111,hi,"please ambulance bhejiye, sadak pe aadmi mila, behosh hai, saans nahi le raha, bahut khoon hai. jaldi kijiye.",3,0,,draft-v1 type=other script=roman
-en-0116,en,"Hello, emergency, fire in the kitchen, large burns on the legs, skin peeling, conscious. Please hurry.",2,0,,draft-v1 type=burn script=native
-kn-0112,kn,"ಸಹಾಯ ಮಾಡಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,0,,draft-v1 type=burn script=native
-en-0117,en,"Help, two bikes touched, nobody is hurt, just scratches on the bike. Please come fast!",0,0,,draft-v1 type=road_accident script=native
-kn-0113,kn,"ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,0,,draft-v1 type=cardiac_medical script=native
-kn-0114,kn,"sahaya maadi, kelasagaara kattadada melinda bidda, pragne illa, sariyaagi usiraadtilla. begane banni.",3,0,,draft-v1 type=fall script=roman
-hi-0112,hi,"बाइक फिसल गई, चालक की कलाई में मोच है और घुटने छिल गए, वो ठीक से बात कर रहा है। कृपया जल्दी आइए!",1,0,,draft-v1 type=road_accident script=native
-en-0118,en,"There is an accident near the signal, pulled out of water, unconscious, not breathing, blue face. I am at the roadside.",3,0,,draft-v1 type=other script=native
-en-0119,en,"There is an accident near the signal, elderly man has chest discomfort but is sitting and talking, sweating a bit. I don't know what to do.",1,0,,draft-v1 type=cardiac_medical script=native
-en-0120,en,"Help, car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please come fast!",2,0,,draft-v1 type=road_accident script=native
-en-0121,en,"Sir please come fast, pulled out of water, unconscious, not breathing, blue face. I don't know what to do.",3,0,,draft-v1 type=other script=native
-kn-0115,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವೃದ್ಧರಿಗೆ ಎದೆಯಲ್ಲಿ ಸ್ವಲ್ಪ ಕಿರಿಕಿರಿ ಇದೆ, ಕುಳಿತು ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ, ಸ್ವಲ್ಪ ಬೆವರುತ್ತಿದ್ದಾರೆ",1,0,,draft-v1 type=cardiac_medical script=native
-kn-0116,kn,"ಬೇಗ ಬನ್ನಿ, ವ್ಯಕ್ತಿ ಮೊದಲ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಎಚ್ಚರವಿದೆ ಆದರೆ ಕಾಲು ಅಲ್ಲಾಡಿಸಲು ಆಗುತ್ತಿಲ್ಲ, ತಲೆಯಿಂದ ರಕ್ತ ಸುರಿಯುತ್ತಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=fall script=native
-en-0122,en,"Auto and car collided, passenger has pain in the shoulder but is stable. I don't know what to do.",1,0,,draft-v1 type=road_accident script=native
-hi-0113,hi,"madad kijiye, ladke ko cricket ball lagi, naak se thoda khoon aaya, ab ruk gaya, alert hai",1,0,,draft-v1 type=other script=roman
-kn-0117,kn,"ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",1,0,,draft-v1 type=fall script=native
-kn-0118,kn,"ಸಹಾಯ ಮಾಡಿ, ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,0,,draft-v1 type=burn script=native
-kn-0119,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಬೈಕ್ ಬಸ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರನ ಕಾಲು ಮುರಿದಂತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಆದರೆ ಎಚ್ಚರವಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,0,,draft-v1 type=road_accident script=native
-kn-0120,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಪ್ರಜ್ಞಾಹೀನ, ಎಲ್ಲೆಡೆ ರಕ್ತ, ಕರೆದರೂ ಉತ್ತರಿಸುತ್ತಿಲ್ಲ",3,0,,draft-v1 type=road_accident script=native
-kn-0121,kn,"ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",1,0,,draft-v1 type=other script=native
-hi-0114,hi,"जल्दी आइए, लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=cardiac_medical script=native
-en-0123,en,"There is an accident near the signal, I saw a crowd, not sure anything happened, nobody looks hurt. I am at the roadside.",0,0,,draft-v1 type=other script=native
-hi-0115,hi,"लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। मुझे समझ नहीं आ रहा क्या करूँ।",1,0,,draft-v1 type=cardiac_medical script=native
-en-0124,en,"Touched a hot pan, mild redness, no pain now. I don't know what to do.",0,0,,draft-v1 type=burn script=native
-kn-0122,kn,"sahaya maadi, vrudharige edeyalli swalpa kirikiri ide, kuthu maatadtha idhare, swalpa bevarthidhare. jana serideare.",1,0,,draft-v1 type=cardiac_medical script=roman
-hi-0116,hi,"हेलो, इमरजेंसी है, मज़दूर मचान से गिर गया, बेहोश है, ठीक से सांस नहीं ले रहा",3,0,,draft-v1 type=fall script=native
-kn-0123,kn,"ಸಹಾಯ ಮಾಡಿ, ಹೊಟ್ಟೆಗೆ ಚಾಕು ಇರಿದಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ನಿಶ್ಶಕ್ತನಾಗಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",2,0,,draft-v1 type=other script=native
-hi-0117,hi,"हेलो, इमरजेंसी है, औरत सीढ़ियों से गिर गई, टखना सूज गया है, पैर नहीं रख पा रही, होश में है। मुझे समझ नहीं आ रहा क्या करूँ।",1,0,,draft-v1 type=fall script=native
-en-0125,en,"Fell from the third floor, no response, blood from the ears",3,0,,draft-v1 type=fall script=native
-en-0126,en,"Please send an ambulance, I saw a crowd, not sure anything happened, nobody looks hurt. I am at the roadside.",0,0,,draft-v1 type=other script=native
-hi-0118,hi,"आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। लोग इकट्ठा हो गए हैं।",3,0,,draft-v1 type=other script=native
-kn-0124,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಮೂರನೇ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಕಿವಿಯಿಂದ ರಕ್ತ ಬರುತ್ತಿದೆ. ಬೇಗ ಬನ್ನಿ.",3,0,,draft-v1 type=fall script=native
-en-0127,en,"Help, electric shock and burns, collapsed, no response, no pulse",3,0,,draft-v1 type=burn script=native
-en-0128,en,"Please send an ambulance, man collapsed suddenly, unconscious, not breathing, no pulse. I am at the roadside.",3,0,,draft-v1 type=cardiac_medical script=native
-hi-0119,hi,"please ambulance bhejiye, bachcha bench se gir gaya, ro raha tha, ab theek hai. jaldi kijiye.",0,0,,draft-v1 type=fall script=roman
-hi-0120,hi,"मदद कीजिए, पेट में चाकू लगा है, बहुत खून बह रहा है, होश में है पर कमज़ोर है। मुझे समझ नहीं आ रहा क्या करूँ।",2,0,,draft-v1 type=other script=native
-en-0129,en,"Worker fell from the scaffolding, unconscious, not breathing properly. Please hurry.",3,0,,draft-v1 type=fall script=native
-hi-0121,hi,"मदद कीजिए, सीढ़ी से गिरा, हाथ की हड्डी बाहर दिख रही है, बहुत खून बह रहा है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=fall script=native
-hi-0122,hi,"ऑटो और कार की टक्कर हुई, सवारी के कंधे में दर्द है लेकिन होश में है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=road_accident script=native
-kn-0125,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಆಟೋ ಮತ್ತು ಕಾರು ಡಿಕ್ಕಿಯಾಯಿತು, ಪ್ರಯಾಣಿಕರ ಭುಜದಲ್ಲಿ ನೋವಿದೆ ಆದರೆ ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",1,0,,draft-v1 type=road_accident script=native
-en-0130,en,"Sir please come fast, auto and car collided, passenger has pain in the shoulder but is stable. I am at the roadside.",1,0,,draft-v1 type=road_accident script=native
-en-0131,en,"Please send an ambulance, truck hit a bike, rider is lying on the road not moving not breathing. Please hurry.",3,0,,draft-v1 type=road_accident script=native
-kn-0126,kn,"gas cylinder benki hottitu, mukha mattu tholu sutthide, eccharavide aadre tumba novu",2,0,,draft-v1 type=burn script=roman
-hi-0123,hi,"सिग्नल के पास हादसा हुआ है, बुज़ुर्ग को सीने में हल्की बेचैनी है, बैठे हैं और बात कर रहे हैं, थोड़ा पसीना आ रहा है। जल्दी कीजिए।",1,0,,draft-v1 type=cardiac_medical script=native
-kn-0127,kn,"sahaya maadi, edeyalli theevra novu, tumba bevarthidhare, usiraata kashta, eccharavidhare. jana serideare.",2,0,,draft-v1 type=cardiac_medical script=roman
-hi-0124,hi,"हेलो, इमरजेंसी है, सीढ़ी से गिरा, हाथ की हड्डी बाहर दिख रही है, बहुत खून बह रहा है। कृपया जल्दी आइए!",2,0,,draft-v1 type=fall script=native
-hi-0125,hi,"कृपया एम्बुलेंस भेजिए, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। मुझे समझ नहीं आ रहा क्या करूँ।",0,0,,draft-v1 type=cardiac_medical script=native
-en-0132,en,"Touched a hot pan, mild redness, no pain now. People are gathering around.",0,0,,draft-v1 type=burn script=native
-kn-0128,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,0,,draft-v1 type=burn script=native
-hi-0126,hi,"ट्रक ने बाइक को टक्कर मारी, सवार सड़क पर पड़ा है, हिल नहीं रहा, सांस नहीं ले रहा। लोग इकट्ठा हो गए हैं।",3,0,,draft-v1 type=road_accident script=native
-kn-0129,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",1,0,,draft-v1 type=other script=native
-hi-0127,hi,"pet me chaku laga hai, bahut khoon beh raha hai, hosh me hai par kamzor hai. jaldi kijiye.",2,0,,draft-v1 type=other script=roman
-kn-0130,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕಾರು ಡಿವೈಡರ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಎಲ್ಲರೂ ಹೊರಬಂದು ನಡೆಯುತ್ತಿದ್ದಾರೆ, ಗಾಯವಿಲ್ಲ",0,0,,draft-v1 type=road_accident script=native
-en-0133,en,"Sir please come fast, old man slipped, got up himself, says he is fine. People are gathering around.",0,0,,draft-v1 type=fall script=native
-hi-0128,hi,"please ambulance bhejiye, ladke ko cricket ball lagi, naak se thoda khoon aaya, ab ruk gaya, alert hai. jaldi kijiye.",1,0,,draft-v1 type=other script=roman
-en-0134,en,"Help, cooking oil burn on the forearm, blisters, in pain but talking normally. Please come fast!",1,0,,draft-v1 type=burn script=native
-hi-0129,hi,"कृपया एम्बुलेंस भेजिए, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं। लोग इकट्ठा हो गए हैं।",0,0,,draft-v1 type=burn script=native
-kn-0131,kn,"ಬೇಗ ಬನ್ನಿ, ಮಹಿಳೆ ಕುಸಿದು ಬಿದ್ದರು, ತುಟಿ ನೀಲಿಯಾಗಿದೆ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಉಸಿರಿಲ್ಲ. ಬೇಗ ಬನ್ನಿ.",3,0,,draft-v1 type=cardiac_medical script=native
-kn-0132,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",0,0,,draft-v1 type=other script=native
-en-0135,en,"Worker fell from the scaffolding, unconscious, not breathing properly. Please come fast!",3,0,,draft-v1 type=fall script=native
-hi-0130,hi,"जल्दी आइए, आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है",2,0,,draft-v1 type=cardiac_medical script=native
-en-0136,en,"There is an accident near the signal, man fell from the first floor, awake but cannot move his legs, bleeding from the head. I don't know what to do.",2,0,,draft-v1 type=fall script=native
-en-0137,en,"There is an accident near the signal, fell from a ladder, bone sticking out of the arm, bleeding heavily. I don't know what to do.",2,0,,draft-v1 type=fall script=native
-en-0138,en,"Help, fell from a ladder, bone sticking out of the arm, bleeding heavily. Please come fast!",2,0,,draft-v1 type=fall script=native
-en-0139,en,"Hello, emergency, old man slipped, got up himself, says he is fine. Please come fast!",0,0,,draft-v1 type=fall script=native
-hi-0131,hi,"कृपया एम्बुलेंस भेजिए, आदमी के सिर पर रॉड मारी, बहुत खून बह रहा है, उलझन में है। लोग इकट्ठा हो गए हैं।",2,0,,draft-v1 type=other script=native
-kn-0133,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಅಡುಗೆಮನೆಯಲ್ಲಿ ಬೆಂಕಿ, ಕಾಲುಗಳಿಗೆ ದೊಡ್ಡ ಸುಟ್ಟ ಗಾಯ, ಚರ್ಮ ಎದ್ದು ಬರುತ್ತಿದೆ, ಎಚ್ಚರವಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,0,,draft-v1 type=burn script=native
-en-0140,en,"Hello, emergency, house fire, person pulled out unconscious, burns over the body, not breathing",3,0,,draft-v1 type=burn script=native
-hi-0132,hi,"हेलो, इमरजेंसी है, हाथ पर गर्म चाय के छींटे पड़े, थोड़ी लाली है, छाला नहीं, वो ठीक है। लोग इकट्ठा हो गए हैं।",0,0,,draft-v1 type=burn script=native
-en-0141,en,"Help, stabbed in the stomach, bleeding a lot, awake but weak. I am at the roadside.",2,0,,draft-v1 type=other script=native
-kn-0134,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,0,,draft-v1 type=burn script=native
-kn-0135,kn,"sahaya maadi, magu bench inda bittu, atthu, ega matte aadtha ide, gaaya illa. jana serideare.",0,0,,draft-v1 type=fall script=roman
-hi-0133,hi,"जल्दी आइए, लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। कृपया जल्दी आइए!",1,0,,draft-v1 type=cardiac_medical script=native
-hi-0134,hi,"सिग्नल के पास हादसा हुआ है, बाइक बस से टकरा गई, चालक का पैर टूटा लगता है और बहुत खून बह रहा है, पर वो होश में है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=road_accident script=native
-en-0142,en,"There is an accident near the signal, man fell from the first floor, awake but cannot move his legs, bleeding from the head. Please hurry.",2,0,,draft-v1 type=fall script=native
-kn-0136,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,0,,draft-v1 type=cardiac_medical script=native
-hi-0135,hi,"मदद कीजिए, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। कृपया जल्दी आइए!",0,0,,draft-v1 type=cardiac_medical script=native
-hi-0136,hi,"मदद कीजिए, रसोई में आग लगी, पैरों पर बड़ी जलन, चमड़ी उतर रही है, होश में है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=burn script=native
-kn-0137,kn,"dayavittu ambulance kaluhisi, jana gumpu kandithu, enaadru aayitho gothilla, yarigu gaaya kaanthilla",0,0,,draft-v1 type=other script=roman
-hi-0137,hi,"हेलो, इमरजेंसी है, बच्चा बेंच से गिर गया, रो रहा था, अब फिर खेल रहा है, कोई कट नहीं",0,0,,draft-v1 type=fall script=native
-hi-0138,hi,"मदद कीजिए, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। जल्दी कीजिए।",0,0,,draft-v1 type=cardiac_medical script=native
-en-0143,en,"There is an accident near the signal, I saw a crowd, not sure anything happened, nobody looks hurt. I don't know what to do.",0,0,,draft-v1 type=other script=native
-hi-0139,hi,"मदद कीजिए, पहले झगड़ा हुआ था पर सब चले गए, कोई घायल नहीं। मैं सड़क किनारे हूँ।",0,0,,draft-v1 type=other script=native
-kn-0138,kn,"dayavittu ambulance kaluhisi, vyakthi omme kusidhu bidda, pragne illa, usiraadtilla, naadi illa",3,0,,draft-v1 type=cardiac_medical script=roman
-en-0144,en,"Man collapsed suddenly, unconscious, not breathing, no pulse. People are gathering around.",3,0,,draft-v1 type=cardiac_medical script=native
-kn-0139,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಹುಡುಗಿ ಸ್ವಲ್ಪ ಹೊತ್ತು ಪ್ರಜ್ಞೆ ತಪ್ಪಿದಳು, ಈಗ ಎಚ್ಚರವಾಗಿದೆ, ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾಳೆ ಆದರೆ ಉತ್ತರಿಸುತ್ತಿದ್ದಾಳೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,0,,draft-v1 type=cardiac_medical script=native
-hi-0140,hi,"please ambulance bhejiye, bheed dikhi, pata nahi kuch hua ya nahi, koi ghayal nahi dikh raha. log jama ho gaye hain.",0,0,,draft-v1 type=other script=roman
-kn-0140,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ತಲೆಗೆ ರಾಡ್‌ನಿಂದ ಹೊಡೆದಿದ್ದಾರೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,0,,draft-v1 type=other script=native
-kn-0141,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,0,,draft-v1 type=fall script=native
-kn-0142,kn,"ಸಹಾಯ ಮಾಡಿ, ಕೆಲಸಗಾರ ಕಟ್ಟಡದ ಮೇಲಿಂದ ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಸರಿಯಾಗಿ ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,0,,draft-v1 type=fall script=native
-en-0145,en,"Touched a hot pan, mild redness, no pain now. Please come fast!",0,0,,draft-v1 type=burn script=native
-kn-0143,kn,"ಮನೆಗೆ ಬೆಂಕಿ ಬಿತ್ತು, ವ್ಯಕ್ತಿಯನ್ನು ಪ್ರಜ್ಞೆ ಇಲ್ಲದೆ ಹೊರಗೆ ತೆಗೆದರು, ಇಡೀ ದೇಹ ಸುಟ್ಟಿದೆ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಬೇಗ ಬನ್ನಿ.",3,0,,draft-v1 type=burn script=native
-kn-0144,kn,"sahaya maadi, lorry bike ge dikki hodeyitu, savaara rasteyalli bidhidhane, alugaadtilla, usiraadtilla",3,0,,draft-v1 type=road_accident script=roman
-en-0146,en,"There is an accident near the signal, worker fell from the scaffolding, unconscious, not breathing properly. Please come fast!",3,0,,draft-v1 type=fall script=native
-hi-0141,hi,"आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है",2,0,,draft-v1 type=cardiac_medical script=native
-kn-0145,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಬೈಕ್ ಜಾರಿ ಬಿತ್ತು, ಸವಾರನ ಮಣಿಕಟ್ಟಿಗೆ ಉಳುಕಾಗಿದೆ, ಮೊಣಕಾಲು ತರಚಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,0,,draft-v1 type=road_accident script=native
-hi-0142,hi,"madad kijiye, bachcha bench se gir gaya, ro raha tha, ab theek hai. jaldi kijiye.",0,0,,draft-v1 type=fall script=roman
-hi-0143,hi,"हेलो, इमरजेंसी है, भीड़ दिखी, पता नहीं कुछ हुआ या नहीं, कोई घायल नहीं दिख रहा। मैं सड़क किनारे हूँ।",0,0,,draft-v1 type=other script=native
-hi-0144,hi,"हेलो, इमरजेंसी है, दो बाइक आपस में छू गईं, किसी को चोट नहीं लगी, बस खरोंच है। मैं सड़क किनारे हूँ।",0,0,,draft-v1 type=road_accident script=native
-hi-0145,hi,"please ambulance bhejiye, cylinder me aag lagi, chehre aur haathon pe jalan, hosh me hai par bahut dard hai",2,0,,draft-v1 type=burn script=roman
-kn-0146,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಆಟೋ ಮತ್ತು ಕಾರು ಡಿಕ್ಕಿಯಾಯಿತು, ಪ್ರಯಾಣಿಕರ ಭುಜದಲ್ಲಿ ನೋವಿದೆ ಆದರೆ ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,0,,draft-v1 type=road_accident script=native
-hi-0146,hi,"मदद कीजिए, बांह पर गर्म तेल से जल गया, छाले हैं, दर्द है पर सामान्य बात कर रहा है। लोग इकट्ठा हो गए हैं।",1,0,,draft-v1 type=burn script=native
-hi-0147,hi,"मदद कीजिए, कार क्रैश हो गई, ड्राइवर बेहोश है, हर तरफ खून है, कोई जवाब नहीं दे रहा। जल्दी कीजिए।",3,0,,draft-v1 type=road_accident script=native
-kn-0147,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",0,0,,draft-v1 type=cardiac_medical script=native
-hi-0148,hi,"aadmi achanak gir gaya, behosh hai, saans nahi aa rahi, nabz nahi mil rahi. jaldi kijiye.",3,0,,draft-v1 type=cardiac_medical script=roman
-hi-0149,hi,"सिग्नल के पास हादसा हुआ है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही। मुझे समझ नहीं आ रहा क्या करूँ।",3,0,,draft-v1 type=burn script=native
-kn-0148,kn,"ಬೇಗ ಬನ್ನಿ, ವೃದ್ಧರು ಜಾರಿ ಬಿದ್ದರು, ತಾವೇ ಎದ್ದರು, ಚೆನ್ನಾಗಿದ್ದೇನೆ ಎನ್ನುತ್ತಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,0,,draft-v1 type=fall script=native
-kn-0149,kn,"ಸಹಾಯ ಮಾಡಿ, ಲಾರಿ ಬೈಕ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರ ರಸ್ತೆಯಲ್ಲಿ ಬಿದ್ದಿದ್ದಾನೆ, ಅಲುಗಾಡುತ್ತಿಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,0,,draft-v1 type=road_accident script=native
-en-0147,en,"There is an accident near the signal, truck hit a bike, rider is lying on the road not moving not breathing. People are gathering around.",3,0,,draft-v1 type=road_accident script=native
-en-0148,en,"There is an accident near the signal, cooking oil burn on the forearm, blisters, in pain but talking normally",1,0,,draft-v1 type=burn script=native
-en-0149,en,"Old man slipped, got up himself, says he is fine. I don't know what to do.",0,0,,draft-v1 type=fall script=native
-en-0150,en,"Hello, emergency, gas cylinder flash, burns on face and arms, he is awake but in severe pain and struggling to breathe. I don't know what to do.",2,0,,draft-v1 type=burn script=native
-kn-0150,kn,"ಬೈಕ್ ಬಸ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರನ ಕಾಲು ಮುರಿದಂತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಆದರೆ ಎಚ್ಚರವಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,0,,draft-v1 type=road_accident script=native
-hi-0150,hi,"बाइक बस से टकरा गई, चालक का पैर टूटा लगता है और बहुत खून बह रहा है, पर वो होश में है। मैं सड़क किनारे हूँ।",2,0,,draft-v1 type=road_accident script=native
+en-0001,en,"There is an accident near the signal, old man slipped, got up himself, says he is fine. Please hurry.",1,1,train,draft-v1 type=fall script=native relabel 0->1; by Madhan
+hi-0001,hi,"हेलो, इमरजेंसी है, दौरा अभी रुका है, वो सुस्त और उलझन में है, तेज़ सांस ले रहा है। कृपया जल्दी आइए!",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0002,hi,"सिग्नल के पास हादसा हुआ है, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। मैं सड़क किनारे हूँ।",1,1,train,draft-v1 type=other script=native by Madhan
+hi-0003,hi,"please ambulance bhejiye, aadmi achanak gir gaya, behosh hai, saans nahi aa rahi, nabz nahi mil rahi. jaldi kijiye.",3,1,test,draft-v1 type=cardiac_medical script=roman by Madhan
+hi-0004,hi,"गैस सिलेंडर में आग लगी, चेहरे और बाजुओं पर जलन, होश में है पर बहुत दर्द में है और सांस लेने में तकलीफ है। लोग इकट्ठा हो गए हैं।",2,1,train,draft-v1 type=burn script=native by Madhan
+kn-0001,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಎಚ್ಚರವಿದ್ದಾನೆ ಆದರೆ ತಲೆಗೆ ಆಳವಾದ ಗಾಯ, ತುಂಬಾ ರಕ್ತ ಸುರಿಯುತ್ತಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0002,en,"Hello, emergency, two bikes touched, nobody is hurt, just scratches on the bike. Please come fast!",0,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0003,en,"Please send an ambulance, cooking oil burn on the forearm, blisters, in pain but talking normally. I am at the roadside.",1,1,train,draft-v1 type=burn script=native by Madhan
+hi-0005,hi,"जल्दी आइए, बाइक फिसल गई, चालक की कलाई में मोच है और घुटने छिल गए, वो ठीक से बात कर रहा है। लोग इकट्ठा हो गए हैं।",1,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0004,en,"Help, fell from the third floor, no response, blood from the ears. I am at the roadside.",3,1,train,draft-v1 type=fall script=native by Madhan
+kn-0002,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=fall script=native by Madhan
+kn-0003,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೈಗೆ ಬಿಸಿ ಎಣ್ಣೆ ಬಿದ್ದು ಸುಟ್ಟಿದೆ, ಗುಳ್ಳೆಗಳಿವೆ, ನೋವಿದೆ ಆದರೆ ಸಾಮಾನ್ಯವಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ",1,1,train,draft-v1 type=burn script=native by Madhan
+kn-0004,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,1,train,draft-v1 type=other script=native by Madhan
+en-0005,en,"There is an accident near the signal, bike skid, rider has a sprained wrist and scraped knees, he is talking fine. Please hurry.",1,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0006,hi,"please ambulance bhejiye, bike slip ho gayi, uske haath me moch hai, baat kar raha hai. jaldi kijiye.",1,1,train,draft-v1 type=road_accident script=roman by Madhan
+en-0006,en,"Please send an ambulance, two bikes touched, nobody is hurt, just scratches on the bike",0,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0007,en,"Help, touched a hot pan, mild redness, no pain now. Please come fast!",0,1,train,draft-v1 type=burn script=native by Madhan
+en-0008,en,"Help, pulled out of water, unconscious, not breathing, blue face. Please hurry.",3,1,train,draft-v1 type=other script=native by Madhan
+en-0009,en,"Please send an ambulance, dog bite on the leg, small wound, bleeding slightly, walking. Please come fast!",1,1,test,draft-v1 type=other script=native by Madhan
+en-0010,en,"Help, car hit a divider, everyone is out and walking, no injury",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0005,kn,"ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,1,train,draft-v1 type=burn script=native by Madhan
+kn-0006,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ವೃದ್ಧರಿಗೆ ಎದೆಯಲ್ಲಿ ಸ್ವಲ್ಪ ಕಿರಿಕಿರಿ ಇದೆ, ಕುಳಿತು ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ, ಸ್ವಲ್ಪ ಬೆವರುತ್ತಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0007,hi,"कृपया एम्बुलेंस भेजिए, रसोई में आग लगी, पैरों पर बड़ी जलन, चमड़ी उतर रही है, होश में है। लोग इकट्ठा हो गए हैं।",2,1,train,draft-v1 type=burn script=native by Madhan
+kn-0007,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಕೈಗೆ ಬಿಸಿ ಎಣ್ಣೆ ಬಿದ್ದು ಸುಟ್ಟಿದೆ, ಗುಳ್ಳೆಗಳಿವೆ, ನೋವಿದೆ ಆದರೆ ಸಾಮಾನ್ಯವಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,test,draft-v1 type=burn script=native by Madhan
+en-0011,en,"Please send an ambulance, fell from the third floor, no response, blood from the ears",3,1,train,draft-v1 type=fall script=native by Madhan
+en-0012,en,"Hello, emergency, electric shock and burns, collapsed, no response, no pulse. Please hurry.",3,1,train,draft-v1 type=burn script=native by Madhan
+kn-0008,kn,"dayavittu ambulance kaluhisi, rasteyalli obba vyakthi sikkida, pragne illa, usiraadtilla, tumba raktha ide. begane banni.",3,1,train,draft-v1 type=other script=roman by Madhan
+hi-0008,hi,"madad kijiye, bike aapas me touch hui, kisi ko chot nahi lagi, bas scratch hai. jaldi kijiye.",0,1,train,draft-v1 type=road_accident script=roman by Madhan
+hi-0009,hi,"uncle ko seene me halka dard hai, baith ke baat kar rahe hain, pasina aa raha hai",1,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+hi-0010,hi,"jaldi aaiye, tel se haath jal gaya, chhale hain, dard hai par baat kar raha hai. jaldi kijiye.",1,1,train,draft-v1 type=burn script=roman by Madhan
+kn-0009,kn,"sahaya maadi, mane ge benki bittu, pragne illade horage tegedaru, idi deha sutthide, usiraadtilla",3,1,train,draft-v1 type=burn script=roman by Madhan
+kn-0010,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಮಗು ಬೆಂಚಿನಿಂದ ಬಿತ್ತು, ಅತ್ತಿತು, ಈಗ ಮತ್ತೆ ಆಡುತ್ತಿದೆ, ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,1,test,draft-v1 type=fall script=native by Madhan
+en-0013,en,"Sir please come fast, dog bite on the leg, small wound, bleeding slightly, walking. Please hurry.",1,1,train,draft-v1 type=other script=native by Madhan
+kn-0011,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ",1,1,train,draft-v1 type=other script=native by Madhan
+en-0014,en,"Please send an ambulance, cooking oil burn on the forearm, blisters, in pain but talking normally. Please hurry.",1,1,train,draft-v1 type=burn script=native by Madhan
+kn-0012,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಬೈಕ್ ಜಾರಿ ಬಿತ್ತು, ಸವಾರನ ಮಣಿಕಟ್ಟಿಗೆ ಉಳುಕಾಗಿದೆ, ಮೊಣಕಾಲು ತರಚಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",1,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0013,kn,"begane banni, eradu bike swalpa thagalitu, yarigu gaaya aagilla, swalpa tharachide ashte. jana serideare.",0,1,train,draft-v1 type=road_accident script=roman by Madhan
+hi-0011,hi,"please ambulance bhejiye, ghar me aag lagi, bande ko behosh nikala, poora badan jala hai, saans nahi aa rahi",3,1,test,draft-v1 type=burn script=roman by Madhan
+kn-0014,kn,"ಬೈಕ್ ಬಸ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರನ ಕಾಲು ಮುರಿದಂತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಆದರೆ ಎಚ್ಚರವಿದ್ದಾನೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",2,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0012,hi,"मदद कीजिए, लड़के को क्रिकेट की गेंद लगी, नाक से थोड़ा खून आया, अब रुक गया, वो सतर्क है",1,1,train,draft-v1 type=other script=native by Madhan
+en-0015,en,"Help, elderly man has chest discomfort but is sitting and talking, sweating a bit. I don't know what to do.",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0015,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ರಸ್ತೆಯಲ್ಲಿ ಒಬ್ಬ ವ್ಯಕ್ತಿ ಸಿಕ್ಕಿದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ತುಂಬಾ ರಕ್ತವಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",3,1,train,draft-v1 type=other script=native by Madhan
+hi-0013,hi,"कृपया एम्बुलेंस भेजिए, तीसरी मंज़िल से गिरा, कोई जवाब नहीं, कान से खून आ रहा है। कृपया जल्दी आइए!",3,1,train,draft-v1 type=fall script=native by Madhan
+kn-0016,kn,"ಬೇಗ ಬನ್ನಿ, ಕಾರು ಡಿವೈಡರ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಎಲ್ಲರೂ ಹೊರಬಂದು ನಡೆಯುತ್ತಿದ್ದಾರೆ, ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,1,test,draft-v1 type=road_accident script=native by Madhan
+hi-0014,hi,"भीड़ दिखी, पता नहीं कुछ हुआ या नहीं, कोई घायल नहीं दिख रहा। लोग इकट्ठा हो गए हैं।",0,1,train,draft-v1 type=other script=native by Madhan
+kn-0017,kn,"dayavittu ambulance kaluhisi, bike jaari bittu, savaarana kai uLukide, matadtha idhane",1,1,train,draft-v1 type=road_accident script=roman by Madhan
+hi-0015,hi,"सिग्नल के पास हादसा हुआ है, आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है। जल्दी कीजिए।",2,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0018,kn,"ಸಹಾಯ ಮಾಡಿ, ಮನೆಗೆ ಬೆಂಕಿ ಬಿತ್ತು, ವ್ಯಕ್ತಿಯನ್ನು ಪ್ರಜ್ಞೆ ಇಲ್ಲದೆ ಹೊರಗೆ ತೆಗೆದರು, ಇಡೀ ದೇಹ ಸುಟ್ಟಿದೆ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",3,1,test,draft-v1 type=burn script=native by Madhan
+kn-0019,kn,"ವ್ಯಕ್ತಿಗೆ ಎದೆಯಲ್ಲಿ ತೀವ್ರ ನೋವು, ತುಂಬಾ ಬೆವರುತ್ತಿದ್ದಾರೆ, ಉಸಿರಾಟ ಕಷ್ಟ, ಎಚ್ಚರವಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0020,kn,"ಸಹಾಯ ಮಾಡಿ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0016,en,"Touched a hot pan, mild redness, no pain now. Please hurry.",0,1,train,draft-v1 type=burn script=native by Madhan
+en-0017,en,"Sir please come fast, dog bite on the leg, small wound, bleeding slightly, walking. Please come fast!",1,1,train,draft-v1 type=other script=native by Madhan
+hi-0016,hi,"मदद कीजिए, ऑटो और कार की टक्कर हुई, सवारी के कंधे में दर्द है लेकिन होश में है। कृपया जल्दी आइए!",1,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0017,hi,"हेलो, इमरजेंसी है, पेट में चाकू लगा है, बहुत खून बह रहा है, होश में है पर कमज़ोर है। मुझे समझ नहीं आ रहा क्या करूँ।",2,1,test,draft-v1 type=other script=native by Madhan
+en-0018,en,"Girl fainted briefly, woke up, pale but responding",1,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+en-0019,en,"Hello, emergency, man hit on the head with a rod, heavy bleeding, confused. Please come fast!",2,1,train,draft-v1 type=other script=native by Madhan
+kn-0021,kn,"ಬೇಗ ಬನ್ನಿ, ವ್ಯಕ್ತಿ ಒಮ್ಮೆಗೇ ಕುಸಿದು ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ನಾಡಿ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+en-0020,en,"Please send an ambulance, dog bite on the leg, small wound, bleeding slightly, walking",1,1,train,draft-v1 type=other script=native by Madhan
+hi-0018,hi,"लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। जल्दी कीजिए।",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0022,kn,"ಸಹಾಯ ಮಾಡಿ, ಮಹಿಳೆ ಮೆಟ್ಟಿಲಿನಿಂದ ಬಿದ್ದರು, ಕಾಲಿನ ಹಿಮ್ಮಡಿ ಊದಿಕೊಂಡಿದೆ, ಕಾಲೂರಲು ಆಗುತ್ತಿಲ್ಲ, ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,train,draft-v1 type=fall script=native by Madhan
+kn-0023,kn,"begane banni, bisi enne bidhu kai sutthide, gulle ide, novide aadre maatadtha idhare. jana serideare.",1,1,train,draft-v1 type=burn script=roman by Madhan
+kn-0024,kn,"sahaya maadi, vrudharige edeyalli swalpa kirikiri ide, kuthu maatadtha idhare, swalpa bevarthidhare",1,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+en-0021,en,"Fell from the third floor, no response, blood from the ears. I don't know what to do.",3,1,train,draft-v1 type=fall script=native by Madhan
+en-0022,en,"Hello, emergency, car hit a divider, everyone is out and walking, no injury. Please hurry.",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0025,kn,"ಬೇಗ ಬನ್ನಿ, ಆಟೋ ಮತ್ತು ಕಾರು ಡಿಕ್ಕಿಯಾಯಿತು, ಪ್ರಯಾಣಿಕರ ಭುಜದಲ್ಲಿ ನೋವಿದೆ ಆದರೆ ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0019,hi,"madad kijiye, bike aapas me touch hui, kisi ko chot nahi lagi, bas scratch hai",0,1,train,draft-v1 type=road_accident script=roman by Madhan
+kn-0026,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,1,train,draft-v1 type=other script=native by Madhan
+hi-0020,hi,"मदद कीजिए, बाइक फिसल गई, चालक की कलाई में मोच है और घुटने छिल गए, वो ठीक से बात कर रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",1,1,test,draft-v1 type=road_accident script=native by Madhan
+en-0023,en,"There is an accident near the signal, man collapsed suddenly, unconscious, not breathing, no pulse. Please come fast!",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0021,hi,"jaldi aaiye, chakkar aaya tha ek minute, ab baith ke paani pi raha hai, theek hai. log jama ho gaye hain.",0,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+hi-0022,hi,"हेलो, इमरजेंसी है, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,1,train,draft-v1 type=burn script=native by Madhan
+en-0024,en,"Sir please come fast, car crash, driver unconscious, blood everywhere, not responding. I am at the roadside.",3,1,test,draft-v1 type=road_accident script=native by Madhan
+hi-0023,hi,"madad kijiye, bike slip ho gayi, uske haath me moch hai, baat kar raha hai. log jama ho gaye hain.",1,1,train,draft-v1 type=road_accident script=roman by Madhan
+hi-0024,hi,"मदद कीजिए, आदमी अचानक गिर पड़ा, बेहोश है, सांस नहीं ले रहा, नब्ज़ नहीं है। लोग इकट्ठा हो गए हैं।",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0025,hi,"मदद कीजिए, पेट में चाकू लगा है, बहुत खून बह रहा है, होश में है पर कमज़ोर है। मैं सड़क किनारे हूँ।",2,1,test,draft-v1 type=other script=native by Madhan
+kn-0027,kn,"ಸಹಾಯ ಮಾಡಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0025,en,"Please send an ambulance, girl fainted briefly, woke up, pale but responding. Please hurry.",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0026,hi,"जल्दी आइए, बच्चा बेंच से गिर गया, रो रहा था, अब फिर खेल रहा है, कोई कट नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,1,train,draft-v1 type=fall script=native by Madhan
+en-0026,en,"Two bikes touched, nobody is hurt, just scratches on the bike. Please hurry.",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0028,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ",2,1,train,draft-v1 type=fall script=native by Madhan
+hi-0027,hi,"मदद कीजिए, आदमी के सिर पर रॉड मारी, बहुत खून बह रहा है, उलझन में है। मुझे समझ नहीं आ रहा क्या करूँ।",2,1,train,draft-v1 type=other script=native by Madhan
+en-0027,en,"Sir please come fast, worker fell from the scaffolding, unconscious, not breathing properly",3,1,test,draft-v1 type=fall script=native by Madhan
+en-0028,en,"There is an accident near the signal, man felt dizzy for a minute, now sitting and drinking water, normal. People are gathering around.",0,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+en-0029,en,"Please send an ambulance, auto and car collided, passenger has pain in the shoulder but is stable. Please come fast!",1,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0030,en,"Sir please come fast, cooking oil burn on the forearm, blisters, in pain but talking normally",1,1,train,draft-v1 type=burn script=native by Madhan
+hi-0028,hi,"हेलो, इमरजेंसी है, पहले झगड़ा हुआ था पर सब चले गए, कोई घायल नहीं। लोग इकट्ठा हो गए हैं।",0,1,test,draft-v1 type=other script=native by Madhan
+en-0031,en,"Please send an ambulance, stabbed in the stomach, bleeding a lot, awake but weak. I don't know what to do.",2,1,train,draft-v1 type=other script=native by Madhan
+en-0032,en,"Man collapsed suddenly, unconscious, not breathing, no pulse",3,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+en-0033,en,"Boy hit by a cricket ball, nose bleeding a little, stopped now, he is alert. People are gathering around.",1,1,test,draft-v1 type=other script=native by Madhan
+hi-0029,hi,"हेलो, इमरजेंसी है, औरत सीढ़ियों से गिर गई, टखना सूज गया है, पैर नहीं रख पा रही, होश में है",1,1,train,draft-v1 type=fall script=native by Madhan
+kn-0029,kn,"begane banni, kaige bisi chaha chellitu, swalpa kempaagide, ega novilla. jana serideare.",0,1,train,draft-v1 type=burn script=roman by Madhan
+en-0034,en,"Seizure just stopped, he is drowsy, confused and breathing fast. I don't know what to do.",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0035,en,"Hello, emergency, man collapsed suddenly, unconscious, not breathing, no pulse",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0030,kn,"ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,1,train,draft-v1 type=burn script=native by Madhan
+en-0036,en,"Sir please come fast, boy hit by a cricket ball, nose bleeding a little, stopped now, he is alert",1,1,train,draft-v1 type=other script=native by Madhan
+en-0037,en,"Please send an ambulance, bike hit a bus, rider's leg looks broken and bleeding a lot but he is awake. I am at the roadside.",2,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0031,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",1,1,train,draft-v1 type=fall script=native by Madhan
+en-0038,en,"Sir please come fast, seizure just stopped, he is drowsy, confused and breathing fast. Please hurry.",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0032,kn,"magu bench inda bittu, atthu, ega matte aadtha ide, gaaya illa. begane banni.",0,1,train,draft-v1 type=fall script=roman by Madhan
+en-0039,en,"Sir please come fast, house fire, person pulled out unconscious, burns over the body, not breathing",3,1,train,draft-v1 type=burn script=native by Madhan
+kn-0033,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0034,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ವ್ಯಕ್ತಿಗೆ ಎದೆಯಲ್ಲಿ ತೀವ್ರ ನೋವು, ತುಂಬಾ ಬೆವರುತ್ತಿದ್ದಾರೆ, ಉಸಿರಾಟ ಕಷ್ಟ, ಎಚ್ಚರವಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0030,hi,"हेलो, इमरजेंसी है, बुज़ुर्ग फिसल गए, खुद उठ गए, कह रहे हैं ठीक हूँ। लोग इकट्ठा हो गए हैं।",0,1,train,draft-v1 type=fall script=native by Madhan
+kn-0035,kn,"ಸಹಾಯ ಮಾಡಿ, ಕಾರು ಡಿವೈಡರ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಎಲ್ಲರೂ ಹೊರಬಂದು ನಡೆಯುತ್ತಿದ್ದಾರೆ, ಗಾಯವಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",0,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0040,en,"Please send an ambulance, fire in the kitchen, large burns on the legs, skin peeling, conscious. Please hurry.",2,1,train,draft-v1 type=burn script=native by Madhan
+kn-0036,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಗ್ಯಾಸ್ ಸಿಲಿಂಡರ್ ಬೆಂಕಿ ಹೊತ್ತಿತು, ಮುಖ ಮತ್ತು ತೋಳುಗಳಿಗೆ ಸುಟ್ಟಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ತುಂಬಾ ನೋವು, ಉಸಿರಾಡಲು ಕಷ್ಟ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=burn script=native by Madhan
+hi-0031,hi,"हेलो, इमरजेंसी है, मज़दूर स्टूल से फिसला, पीठ में चोट और दर्द है, पर स्थिर है। कृपया जल्दी आइए!",1,1,train,draft-v1 type=fall script=native by Madhan
+hi-0032,hi,"मदद कीजिए, कार एक्सीडेंट हुआ, ड्राइवर होश में है पर सिर में गहरा कट है और खून बहुत बह रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",2,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0033,hi,"मज़दूर स्टूल से फिसला, पीठ में चोट और दर्द है, पर स्थिर है। लोग इकट्ठा हो गए हैं।",1,1,train,draft-v1 type=fall script=native by Madhan
+en-0041,en,"Help, man felt dizzy for a minute, now sitting and drinking water, normal",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0042,en,"There is an accident near the signal, man collapsed suddenly, unconscious, not breathing, no pulse. I am at the roadside.",3,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0034,hi,"जल्दी आइए, आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। लोग इकट्ठा हो गए हैं।",3,1,train,draft-v1 type=other script=native by Madhan
+en-0043,en,"Sir please come fast, child fell from a bench, crying, no cut, playing again. Please hurry.",0,1,train,draft-v1 type=fall script=native by Madhan
+kn-0037,kn,"sahaya maadi, bike jaari bittu, savaarana kai uLukide, matadtha idhane",1,1,train,draft-v1 type=road_accident script=roman by Madhan
+kn-0038,kn,"ಬೇಗ ಬನ್ನಿ, ನೀರಿನಿಂದ ಹೊರತೆಗೆದರು, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ಮುಖ ನೀಲಿಯಾಗಿದೆ",3,1,test,draft-v1 type=other script=native by Madhan
+hi-0035,hi,"औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं। कृपया जल्दी आइए!",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0044,en,"Fire in the kitchen, large burns on the legs, skin peeling, conscious. Please hurry.",2,1,train,draft-v1 type=burn script=native by Madhan
+en-0045,en,"Auto and car collided, passenger has pain in the shoulder but is stable",1,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0039,kn,"mahile metlinda bidru, kaalu uditu, eccharadalli idhare. begane banni.",1,1,test,draft-v1 type=fall script=roman by Madhan
+en-0046,en,"Hello, emergency, bike skid, rider has a sprained wrist and scraped knees, he is talking fine",1,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0047,en,"Man fell from the first floor, awake but cannot move his legs, bleeding from the head. I don't know what to do.",2,1,test,draft-v1 type=fall script=native by Madhan
+hi-0036,hi,"आदमी के सिर पर रॉड मारी, बहुत खून बह रहा है, उलझन में है। लोग इकट्ठा हो गए हैं।",2,1,train,draft-v1 type=other script=native by Madhan
+hi-0037,hi,"सिग्नल के पास हादसा हुआ है, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मैं सड़क किनारे हूँ।",2,1,train,draft-v1 type=fall script=native by Madhan
+hi-0038,hi,"सिग्नल के पास हादसा हुआ है, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। जल्दी कीजिए।",1,1,train,draft-v1 type=other script=native by Madhan
+en-0048,en,"There is an accident near the signal, car hit a divider, everyone is out and walking, no injury. I am at the roadside.",0,1,test,draft-v1 type=road_accident script=native by Madhan
+en-0049,en,"Hello, emergency, fire in the kitchen, large burns on the legs, skin peeling, conscious. People are gathering around.",2,1,train,draft-v1 type=burn script=native by Madhan
+en-0050,en,"Man hit on the head with a rod, heavy bleeding, confused. Please come fast!",2,1,train,draft-v1 type=other script=native by Madhan
+kn-0040,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,train,draft-v1 type=fall script=native by Madhan
+kn-0041,kn,"ಬೇಗ ಬನ್ನಿ, ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",1,1,train,draft-v1 type=burn script=native by Madhan
+en-0051,en,"Please send an ambulance, man has severe chest pain, sweating a lot, breathing hard, still conscious. Please come fast!",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0042,kn,"begane banni, ondu nimisha thale sutthu banthu, ega kuthu neeru kudithidhare, sahajavidhare",0,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+en-0052,en,"Please send an ambulance, elderly man has chest discomfort but is sitting and talking, sweating a bit. Please hurry.",1,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+en-0053,en,"Elderly man has chest discomfort but is sitting and talking, sweating a bit",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0054,en,"There is an accident near the signal, worker slipped from a low stool, bruise on the back, pain but stable. Please come fast!",1,1,train,draft-v1 type=fall script=native by Madhan
+en-0055,en,"Help, person found on the road, unconscious, not breathing, a lot of blood. Please hurry.",3,1,train,draft-v1 type=other script=native by Madhan
+hi-0039,hi,"कृपया एम्बुलेंस भेजिए, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। कृपया जल्दी आइए!",1,1,test,draft-v1 type=other script=native by Madhan
+en-0056,en,"Help, person found on the road, unconscious, not breathing, a lot of blood. I am at the roadside.",3,1,train,draft-v1 type=other script=native by Madhan
+hi-0040,hi,"हेलो, इमरजेंसी है, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मैं सड़क किनारे हूँ।",2,1,test,draft-v1 type=fall script=native by Madhan
+en-0057,en,"Help, kid got hot water on the leg, blisters, crying but alert",1,1,test,draft-v1 type=burn script=native by Madhan
+hi-0041,hi,"हेलो, इमरजेंसी है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही। मैं सड़क किनारे हूँ।",3,1,train,draft-v1 type=burn script=native by Madhan
+kn-0043,kn,"begane banni, jana gumpu kandithu, enaadru aayitho gothilla, yarigu gaaya kaanthilla",0,1,train,draft-v1 type=other script=roman by Madhan
+hi-0042,hi,"मदद कीजिए, तीसरी मंज़िल से गिरा, कोई जवाब नहीं, कान से खून आ रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",3,1,train,draft-v1 type=fall script=native by Madhan
+hi-0043,hi,"कृपया एम्बुलेंस भेजिए, औरत को गर्मी से कमज़ोरी लग रही है, ठीक से बोल रही है, दर्द नहीं। जल्दी कीजिए।",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0044,hi,"bike bus se takrayi, pair toota lag raha hai, bahut khoon beh raha hai, hosh me hai. log jama ho gaye hain.",2,1,train,draft-v1 type=road_accident script=roman by Madhan
+kn-0044,kn,"dayavittu ambulance kaluhisi, kaige bisi chaha chellitu, swalpa kempaagide, ega novilla. begane banni.",0,1,test,draft-v1 type=burn script=roman by Madhan
+hi-0045,hi,"सिग्नल के पास हादसा हुआ है, कार डिवाइडर से टकराई, सब बाहर निकलकर चल रहे हैं, कोई घायल नहीं। कृपया जल्दी आइए!",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0045,kn,"ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,1,test,draft-v1 type=fall script=native by Madhan
+hi-0046,hi,"सिग्नल के पास हादसा हुआ है, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",2,1,train,draft-v1 type=fall script=native by Madhan
+en-0058,en,"Help, stabbed in the stomach, bleeding a lot, awake but weak. People are gathering around.",2,1,train,draft-v1 type=other script=native by Madhan
+en-0059,en,"Help, boy hit by a cricket ball, nose bleeding a little, stopped now, he is alert. I am at the roadside.",1,1,train,draft-v1 type=other script=native by Madhan
+kn-0046,kn,"sahaya maadi, vyakthi omme kusidhu bidda, pragne illa, usiraadtilla, naadi illa. begane banni.",3,1,test,draft-v1 type=cardiac_medical script=roman by Madhan
+kn-0047,kn,"dayavittu ambulance kaluhisi, mahile metlinda bidru, kaalu uditu, eccharadalli idhare. begane banni.",1,1,test,draft-v1 type=fall script=roman by Madhan
+en-0060,en,"Please send an ambulance, electric shock and burns, collapsed, no response, no pulse",3,1,train,draft-v1 type=burn script=native by Madhan
+kn-0048,kn,"ಸಹಾಯ ಮಾಡಿ, ಹುಡುಗನಿಗೆ ಕ್ರಿಕೆಟ್ ಚೆಂಡು ತಗುಲಿತು, ಮೂಗಿನಿಂದ ಸ್ವಲ್ಪ ರಕ್ತ ಬಂತು, ಈಗ ನಿಂತಿದೆ, ಎಚ್ಚರವಾಗಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",1,1,train,draft-v1 type=other script=native by Madhan
+hi-0047,hi,"madad kijiye, truck ne bike ko mara, banda sadak pe pada hai, hil nahi raha, saans nahi le raha",3,1,train,draft-v1 type=road_accident script=roman by Madhan
+en-0061,en,"There is an accident near the signal, car hit a divider, everyone is out and walking, no injury",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0049,kn,"begane banni, hotte ge chaaku irididhe, tumba raktha hogtha ide, eccharavide aadre nishakta. jana serideare.",2,1,train,draft-v1 type=other script=roman by Madhan
+hi-0048,hi,"हेलो, इमरजेंसी है, ट्रक ने बाइक को टक्कर मारी, सवार सड़क पर पड़ा है, हिल नहीं रहा, सांस नहीं ले रहा। लोग इकट्ठा हो गए हैं।",3,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0062,en,"Man has severe chest pain, sweating a lot, breathing hard, still conscious. Please come fast!",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0049,hi,"जल्दी आइए, बच्चा बेंच से गिर गया, रो रहा था, अब फिर खेल रहा है, कोई कट नहीं। जल्दी कीजिए।",0,1,train,draft-v1 type=fall script=native by Madhan
+hi-0050,hi,"कृपया एम्बुलेंस भेजिए, कार डिवाइडर से टकराई, सब बाहर निकलकर चल रहे हैं, कोई घायल नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0050,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0051,hi,"कृपया एम्बुलेंस भेजिए, दो बाइक आपस में छू गईं, किसी को चोट नहीं लगी, बस खरोंच है। लोग इकट्ठा हो गए हैं।",0,1,test,draft-v1 type=road_accident script=native by Madhan
+hi-0052,hi,"जल्दी आइए, गैस सिलेंडर में आग लगी, चेहरे और बाजुओं पर जलन, होश में है पर बहुत दर्द में है और सांस लेने में तकलीफ है",2,1,train,draft-v1 type=burn script=native by Madhan
+kn-0051,kn,"ಬೇಗ ಬನ್ನಿ, ಕೆಲಸಗಾರ ಕಟ್ಟಡದ ಮೇಲಿಂದ ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಸರಿಯಾಗಿ ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,1,test,draft-v1 type=fall script=native by Madhan
+en-0063,en,"Girl fainted briefly, woke up, pale but responding. Please come fast!",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0052,kn,"bike bus ge dikki hodeyitu, kaalu muridide ansutte, tumba raktha hogtha ide, eccharadalli idhane. begane banni.",2,1,train,draft-v1 type=road_accident script=roman by Madhan
+hi-0053,hi,"chai ke chheente haath pe pade, thodi lali hai, theek hai. jaldi kijiye.",0,1,train,draft-v1 type=burn script=roman by Madhan
+kn-0053,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ವಿದ್ಯುತ್ ಶಾಕ್ ಹೊಡೆದು ಸುಟ್ಟಿದೆ, ಕುಸಿದು ಬಿದ್ದ, ಉತ್ತರವಿಲ್ಲ, ನಾಡಿ ಸಿಗುತ್ತಿಲ್ಲ",3,1,train,draft-v1 type=burn script=native by Madhan
+hi-0054,hi,"हेलो, इमरजेंसी है, बच्चे के पैर पर गर्म पानी गिरा, छाले हैं, रो रहा है पर सतर्क है। लोग इकट्ठा हो गए हैं।",1,1,train,draft-v1 type=burn script=native by Madhan
+hi-0055,hi,"कृपया एम्बुलेंस भेजिए, पहले झगड़ा हुआ था पर सब चले गए, कोई घायल नहीं। मैं सड़क किनारे हूँ।",0,1,test,draft-v1 type=other script=native by Madhan
+en-0064,en,"Sir please come fast, car accident, driver is conscious but has a deep cut on the head bleeding heavily. People are gathering around.",2,1,test,draft-v1 type=road_accident script=native by Madhan
+en-0065,en,"There is an accident near the signal, stabbed in the stomach, bleeding a lot, awake but weak. I am at the roadside.",2,1,test,draft-v1 type=other script=native by Madhan
+en-0066,en,"Help, woman feeling weak from the heat, talking fine, no pain. Please hurry.",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0054,kn,"ಬೇಗ ಬನ್ನಿ, ಗ್ಯಾಸ್ ಸಿಲಿಂಡರ್ ಬೆಂಕಿ ಹೊತ್ತಿತು, ಮುಖ ಮತ್ತು ತೋಳುಗಳಿಗೆ ಸುಟ್ಟಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ತುಂಬಾ ನೋವು, ಉಸಿರಾಡಲು ಕಷ್ಟ. ಬೇಗ ಬನ್ನಿ.",2,1,test,draft-v1 type=burn script=native by Madhan
+hi-0056,hi,"सिग्नल के पास हादसा हुआ है, दो बाइक आपस में छू गईं, किसी को चोट नहीं लगी, बस खरोंच है। मुझे समझ नहीं आ रहा क्या करूँ।",0,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0057,hi,"please ambulance bhejiye, pet me chaku laga hai, bahut khoon beh raha hai, hosh me hai par kamzor hai",2,1,train,draft-v1 type=other script=roman by Madhan
+en-0067,en,"Please send an ambulance, electric shock and burns, collapsed, no response, no pulse. I don't know what to do.",3,1,test,draft-v1 type=burn script=native by Madhan
+hi-0058,hi,"बाइक बस से टकरा गई, चालक का पैर टूटा लगता है और बहुत खून बह रहा है, पर वो होश में है। लोग इकट्ठा हो गए हैं।",2,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0068,en,"Please send an ambulance, there was a fight earlier but everyone left, no one injured. I don't know what to do.",0,1,train,draft-v1 type=other script=native by Madhan
+en-0069,en,"Please send an ambulance, dog bite on the leg, small wound, bleeding slightly, walking. I am at the roadside.",1,1,train,draft-v1 type=other script=native by Madhan
+en-0070,en,"Hello, emergency, bike hit a bus, rider's leg looks broken and bleeding a lot but he is awake",2,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0055,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವಿದ್ಯುತ್ ಶಾಕ್ ಹೊಡೆದು ಸುಟ್ಟಿದೆ, ಕುಸಿದು ಬಿದ್ದ, ಉತ್ತರವಿಲ್ಲ, ನಾಡಿ ಸಿಗುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,1,train,draft-v1 type=burn script=native by Madhan
+en-0071,en,"Hello, emergency, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. I don't know what to do.",1,1,test,draft-v1 type=fall script=native by Madhan
+kn-0056,kn,"ಬೇಗ ಬನ್ನಿ, ಅಡುಗೆಮನೆಯಲ್ಲಿ ಬೆಂಕಿ, ಕಾಲುಗಳಿಗೆ ದೊಡ್ಡ ಸುಟ್ಟ ಗಾಯ, ಚರ್ಮ ಎದ್ದು ಬರುತ್ತಿದೆ, ಎಚ್ಚರವಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",2,1,train,draft-v1 type=burn script=native by Madhan
+hi-0059,hi,"seene me tez dard hai, bahut pasina, saans phool rahi hai, hosh me hai. log jama ho gaye hain.",2,1,test,draft-v1 type=cardiac_medical script=roman by Madhan
+en-0072,en,"Hello, emergency, house fire, person pulled out unconscious, burns over the body, not breathing. I am at the roadside.",3,1,train,draft-v1 type=burn script=native by Madhan
+kn-0057,kn,"ಸಹಾಯ ಮಾಡಿ, ವೃದ್ಧರು ಜಾರಿ ಬಿದ್ದರು, ತಾವೇ ಎದ್ದರು, ಚೆನ್ನಾಗಿದ್ದೇನೆ ಎನ್ನುತ್ತಿದ್ದಾರೆ",0,1,train,draft-v1 type=fall script=native by Madhan
+hi-0060,hi,"औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0058,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ",1,1,test,draft-v1 type=fall script=native by Madhan
+hi-0061,hi,"cylinder me aag lagi, chehre aur haathon pe jalan, hosh me hai par bahut dard hai. jaldi kijiye.",2,1,train,draft-v1 type=burn script=roman by Madhan
+kn-0059,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ಬೇಗ ಬನ್ನಿ.",2,1,train,draft-v1 type=fall script=native by Madhan
+kn-0060,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಹುಡುಗಿ ಸ್ವಲ್ಪ ಹೊತ್ತು ಪ್ರಜ್ಞೆ ತಪ್ಪಿದಳು, ಈಗ ಎಚ್ಚರವಾಗಿದೆ, ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾಳೆ ಆದರೆ ಉತ್ತರಿಸುತ್ತಿದ್ದಾಳೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0062,hi,"madad kijiye, aunty seedhi se gir gayi, pair sooj gaya hai, hosh me hai. log jama ho gaye hain.",1,1,train,draft-v1 type=fall script=roman by Madhan
+en-0073,en,"Please send an ambulance, there was a fight earlier but everyone left, no one injured",0,1,train,draft-v1 type=other script=native by Madhan
+hi-0063,hi,"सिग्नल के पास हादसा हुआ है, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं",0,1,train,draft-v1 type=burn script=native by Madhan
+en-0074,en,"Hello, emergency, there was a fight earlier but everyone left, no one injured. Please come fast!",0,1,train,draft-v1 type=other script=native by Madhan
+en-0075,en,"Please send an ambulance, stabbed in the stomach, bleeding a lot, awake but weak. Please come fast!",2,1,train,draft-v1 type=other script=native by Madhan
+hi-0064,hi,"mazdoor upar se gir gaya, behosh hai, saans theek se nahi aa rahi. log jama ho gaye hain.",3,1,test,draft-v1 type=fall script=roman by Madhan
+hi-0065,hi,"सिग्नल के पास हादसा हुआ है, बांह पर गर्म तेल से जल गया, छाले हैं, दर्द है पर सामान्य बात कर रहा है। लोग इकट्ठा हो गए हैं।",1,1,train,draft-v1 type=burn script=native by Madhan
+en-0076,en,"Please send an ambulance, man fell from the first floor, awake but cannot move his legs, bleeding from the head. People are gathering around.",2,1,train,draft-v1 type=fall script=native by Madhan
+hi-0066,hi,"हेलो, इमरजेंसी है, औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0067,hi,"madad kijiye, bheed dikhi, pata nahi kuch hua ya nahi, koi ghayal nahi dikh raha",0,1,train,draft-v1 type=other script=roman by Madhan
+kn-0061,kn,"begane banni, vyakthi modala mahadiyinda bidda, eccharavide aadre kaalu alugaadsakke aagtilla, thaleyinda raktha suriyuttide. jana serideare.",2,1,train,draft-v1 type=fall script=roman by Madhan
+hi-0068,hi,"madad kijiye, uncle ko seene me halka dard hai, baith ke baat kar rahe hain, pasina aa raha hai",1,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+hi-0069,hi,"please ambulance bhejiye, mazdoor upar se gir gaya, behosh hai, saans theek se nahi aa rahi",3,1,train,draft-v1 type=fall script=roman by Madhan
+hi-0070,hi,"sadak pe aadmi mila, behosh hai, saans nahi le raha, bahut khoon hai. log jama ho gaye hain.",3,1,train,draft-v1 type=other script=roman by Madhan
+en-0077,en,"Hello, emergency, man fell from the first floor, awake but cannot move his legs, bleeding from the head. I am at the roadside.",2,1,train,draft-v1 type=fall script=native by Madhan
+kn-0062,kn,"begane banni, edeyalli theevra novu, tumba bevarthidhare, usiraata kashta, eccharavidhare",2,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+en-0078,en,"Cooking oil burn on the forearm, blisters, in pain but talking normally. Please come fast!",1,1,test,draft-v1 type=burn script=native by Madhan
+hi-0071,hi,"please ambulance bhejiye, aunty seedhi se gir gayi, pair sooj gaya hai, hosh me hai. jaldi kijiye.",1,1,test,draft-v1 type=fall script=roman by Madhan
+kn-0063,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಲಾರಿ ಬೈಕ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರ ರಸ್ತೆಯಲ್ಲಿ ಬಿದ್ದಿದ್ದಾನೆ, ಅಲುಗಾಡುತ್ತಿಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಬೇಗ ಬನ್ನಿ.",3,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0079,en,"There is an accident near the signal, small splash of hot tea on the hand, red but no blister, she is fine. I don't know what to do.",0,1,train,draft-v1 type=burn script=native by Madhan
+en-0080,en,"Sir please come fast, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. Please hurry.",1,1,train,draft-v1 type=fall script=native by Madhan
+hi-0072,hi,"घर में आग लगी, आदमी को बेहोशी में बाहर निकाला, पूरे शरीर पर जलन, सांस नहीं ले रहा। मुझे समझ नहीं आ रहा क्या करूँ।",3,1,test,draft-v1 type=burn script=native by Madhan
+hi-0073,hi,"मदद कीजिए, कार क्रैश हो गई, ड्राइवर बेहोश है, हर तरफ खून है, कोई जवाब नहीं दे रहा",3,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0074,hi,"मदद कीजिए, घर में आग लगी, आदमी को बेहोशी में बाहर निकाला, पूरे शरीर पर जलन, सांस नहीं ले रहा। मैं सड़क किनारे हूँ।",3,1,train,draft-v1 type=burn script=native by Madhan
+hi-0075,hi,"मदद कीजिए, मज़दूर मचान से गिर गया, बेहोश है, ठीक से सांस नहीं ले रहा। जल्दी कीजिए।",3,1,train,draft-v1 type=fall script=native by Madhan
+hi-0076,hi,"madad kijiye, aadmi pehli manzil se gira, hosh me hai par pair nahi hil rahe, sar se khoon beh raha hai. log jama ho gaye hain.",2,1,train,draft-v1 type=fall script=roman by Madhan
+hi-0077,hi,"madad kijiye, seene me tez dard hai, bahut pasina, saans phool rahi hai, hosh me hai. log jama ho gaye hain.",2,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+hi-0078,hi,"मदद कीजिए, बच्चे के पैर पर गर्म पानी गिरा, छाले हैं, रो रहा है पर सतर्क है। मुझे समझ नहीं आ रहा क्या करूँ।",1,1,train,draft-v1 type=burn script=native by Madhan
+kn-0064,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ನೀರಿನಿಂದ ಹೊರತೆಗೆದರು, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ಮುಖ ನೀಲಿಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,1,train,draft-v1 type=other script=native by Madhan
+kn-0065,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಮಹಿಳೆ ಕುಸಿದು ಬಿದ್ದರು, ತುಟಿ ನೀಲಿಯಾಗಿದೆ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಉಸಿರಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0081,en,"There is an accident near the signal, person found on the road, unconscious, not breathing, a lot of blood. I don't know what to do.",3,1,train,draft-v1 type=other script=native by Madhan
+en-0082,en,"Sir please come fast, old man slipped, got up himself, says he is fine. Please hurry.",0,1,train,draft-v1 type=fall script=native by Madhan
+hi-0079,hi,"हेलो, इमरजेंसी है, कार एक्सीडेंट हुआ, ड्राइवर होश में है पर सिर में गहरा कट है और खून बहुत बह रहा है। लोग इकट्ठा हो गए हैं।",2,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0066,kn,"ಬೇಗ ಬನ್ನಿ, ಅಡುಗೆಮನೆಯಲ್ಲಿ ಬೆಂಕಿ, ಕಾಲುಗಳಿಗೆ ದೊಡ್ಡ ಸುಟ್ಟ ಗಾಯ, ಚರ್ಮ ಎದ್ದು ಬರುತ್ತಿದೆ, ಎಚ್ಚರವಿದ್ದಾರೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,1,train,draft-v1 type=burn script=native by Madhan
+en-0083,en,"There is an accident near the signal, car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please hurry.",2,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0067,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಲಾರಿ ಬೈಕ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರ ರಸ್ತೆಯಲ್ಲಿ ಬಿದ್ದಿದ್ದಾನೆ, ಅಲುಗಾಡುತ್ತಿಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0080,hi,"बच्चे के पैर पर गर्म पानी गिरा, छाले हैं, रो रहा है पर सतर्क है। जल्दी कीजिए।",1,1,train,draft-v1 type=burn script=native by Madhan
+en-0084,en,"Hello, emergency, man felt dizzy for a minute, now sitting and drinking water, normal. People are gathering around.",0,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0068,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,1,test,draft-v1 type=burn script=native by Madhan
+en-0085,en,"Hello, emergency, woman feeling weak from the heat, talking fine, no pain. Please hurry.",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0069,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಹೊಟ್ಟೆಗೆ ಚಾಕು ಇರಿದಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ನಿಶ್ಶಕ್ತನಾಗಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=other script=native by Madhan
+kn-0070,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಪ್ರಜ್ಞಾಹೀನ, ಎಲ್ಲೆಡೆ ರಕ್ತ, ಕರೆದರೂ ಉತ್ತರಿಸುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,1,test,draft-v1 type=road_accident script=native by Madhan
+hi-0081,hi,"दौरा अभी रुका है, वो सुस्त और उलझन में है, तेज़ सांस ले रहा है। मुझे समझ नहीं आ रहा क्या करूँ।",2,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+en-0086,en,"Help, seizure just stopped, he is drowsy, confused and breathing fast. I am at the roadside.",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0087,en,"Sir please come fast, car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please hurry.",2,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0088,en,"Please send an ambulance, person found on the road, unconscious, not breathing, a lot of blood. People are gathering around.",3,1,train,draft-v1 type=other script=native by Madhan
+en-0089,en,"There is an accident near the signal, seizure just stopped, he is drowsy, confused and breathing fast. Please hurry.",2,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0071,kn,"dayavittu ambulance kaluhisi, huduganige cricket chendu thagulitu, mooginiinda swalpa raktha banthu, ega nindide, eccharavide. jana serideare.",1,1,train,draft-v1 type=other script=roman by Madhan
+hi-0082,hi,"आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। मुझे समझ नहीं आ रहा क्या करूँ।",3,1,train,draft-v1 type=other script=native by Madhan
+kn-0072,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ",0,1,train,draft-v1 type=other script=native by Madhan
+en-0090,en,"There is an accident near the signal, car crash, driver unconscious, blood everywhere, not responding. People are gathering around.",3,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0073,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ವ್ಯಕ್ತಿ ಒಮ್ಮೆಗೇ ಕುಸಿದು ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ನಾಡಿ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0091,en,"Sir please come fast, woman fell down, lips blue, not responding, no breathing. Please come fast!",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0092,en,"Sir please come fast, truck hit a bike, rider is lying on the road not moving not breathing. Please come fast!",3,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0074,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಮೂರನೇ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಕಿವಿಯಿಂದ ರಕ್ತ ಬರುತ್ತಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,1,train,draft-v1 type=fall script=native by Madhan
+hi-0083,hi,"jaldi aaiye, chai ke chheente haath pe pade, thodi lali hai, theek hai. log jama ho gaye hain.",0,1,test,draft-v1 type=burn script=roman by Madhan
+kn-0075,kn,"ಎರಡು ಬೈಕ್‌ಗಳು ಸ್ವಲ್ಪ ತಾಗಿದವು, ಯಾರಿಗೂ ಗಾಯವಾಗಿಲ್ಲ, ಸ್ವಲ್ಪ ತರಚಿದೆ ಅಷ್ಟೇ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0076,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಬೈಕ್ ಜಾರಿ ಬಿತ್ತು, ಸವಾರನ ಮಣಿಕಟ್ಟಿಗೆ ಉಳುಕಾಗಿದೆ, ಮೊಣಕಾಲು ತರಚಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0084,hi,"madad kijiye, chakkar aaya tha ek minute, ab baith ke paani pi raha hai, theek hai",0,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+kn-0077,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಬಿಸಿ ಕಾವಲಿ ಮುಟ್ಟಿದರು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಈಗ ನೋವಿಲ್ಲ",0,1,train,draft-v1 type=burn script=native by Madhan
+kn-0078,kn,"eradu bike swalpa thagalitu, yarigu gaaya aagilla, swalpa tharachide ashte. jana serideare.",0,1,train,draft-v1 type=road_accident script=roman by Madhan
+kn-0079,kn,"sahaya maadi, ondu nimisha thale sutthu banthu, ega kuthu neeru kudithidhare, sahajavidhare",0,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+en-0093,en,"Hello, emergency, man felt dizzy for a minute, now sitting and drinking water, normal. Please hurry.",0,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0080,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ವೃದ್ಧರು ಜಾರಿ ಬಿದ್ದರು, ತಾವೇ ಎದ್ದರು, ಚೆನ್ನಾಗಿದ್ದೇನೆ ಎನ್ನುತ್ತಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,1,train,draft-v1 type=fall script=native by Madhan
+en-0094,en,"Sir please come fast, auto and car collided, passenger has pain in the shoulder but is stable",1,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0081,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಎರಡು ಬೈಕ್‌ಗಳು ಸ್ವಲ್ಪ ತಾಗಿದವು, ಯಾರಿಗೂ ಗಾಯವಾಗಿಲ್ಲ, ಸ್ವಲ್ಪ ತರಚಿದೆ ಅಷ್ಟೇ. ಬೇಗ ಬನ್ನಿ.",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0082,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಎರಡು ಬೈಕ್‌ಗಳು ಸ್ವಲ್ಪ ತಾಗಿದವು, ಯಾರಿಗೂ ಗಾಯವಾಗಿಲ್ಲ, ಸ್ವಲ್ಪ ತರಚಿದೆ ಅಷ್ಟೇ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0083,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0085,hi,"हेलो, इमरजेंसी है, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। जल्दी कीजिए।",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0086,hi,"हेलो, इमरजेंसी है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही",3,1,train,draft-v1 type=burn script=native by Madhan
+kn-0084,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ವಿದ್ಯುತ್ ಶಾಕ್ ಹೊಡೆದು ಸುಟ್ಟಿದೆ, ಕುಸಿದು ಬಿದ್ದ, ಉತ್ತರವಿಲ್ಲ, ನಾಡಿ ಸಿಗುತ್ತಿಲ್ಲ",3,1,train,draft-v1 type=burn script=native by Madhan
+kn-0085,kn,"lorry bike ge dikki hodeyitu, savaara rasteyalli bidhidhane, alugaadtilla, usiraadtilla. begane banni.",3,1,train,draft-v1 type=road_accident script=roman by Madhan
+en-0095,en,"Hello, emergency, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. People are gathering around.",1,1,train,draft-v1 type=fall script=native by Madhan
+hi-0087,hi,"मदद कीजिए, कुत्ते ने पैर पर काटा, छोटा घाव है, थोड़ा खून है, चल रहा है। मैं सड़क किनारे हूँ।",1,1,train,draft-v1 type=other script=native by Madhan
+en-0096,en,"There is an accident near the signal, bike skid, rider has a sprained wrist and scraped knees, he is talking fine. I am at the roadside.",1,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0088,hi,"कृपया एम्बुलेंस भेजिए, आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है। कृपया जल्दी आइए!",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0097,en,"Sir please come fast, car crash, driver unconscious, blood everywhere, not responding. I don't know what to do.",3,1,test,draft-v1 type=road_accident script=native by Madhan
+hi-0089,hi,"सिग्नल के पास हादसा हुआ है, गैस सिलेंडर में आग लगी, चेहरे और बाजुओं पर जलन, होश में है पर बहुत दर्द में है और सांस लेने में तकलीफ है",2,1,test,draft-v1 type=burn script=native by Madhan
+en-0098,en,"Please send an ambulance, worker slipped from a low stool, bruise on the back, pain but stable",1,1,train,draft-v1 type=fall script=native by Madhan
+kn-0086,kn,"ಬೇಗ ಬನ್ನಿ, ತಲೆಗೆ ರಾಡ್‌ನಿಂದ ಹೊಡೆದಿದ್ದಾರೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,1,train,draft-v1 type=other script=native by Madhan
+hi-0090,hi,"jaldi aaiye, truck ne bike ko mara, banda sadak pe pada hai, hil nahi raha, saans nahi le raha. jaldi kijiye.",3,1,train,draft-v1 type=road_accident script=roman by Madhan
+en-0099,en,"Sir please come fast, I saw a crowd, not sure anything happened, nobody looks hurt. I don't know what to do.",0,1,train,draft-v1 type=other script=native by Madhan
+hi-0091,hi,"ghar me aag lagi, bande ko behosh nikala, poora badan jala hai, saans nahi aa rahi. jaldi kijiye.",3,1,train,draft-v1 type=burn script=roman by Madhan
+hi-0092,hi,"हेलो, इमरजेंसी है, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं। लोग इकट्ठा हो गए हैं।",0,1,train,draft-v1 type=burn script=native by Madhan
+kn-0087,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ತಲೆಗೆ ರಾಡ್‌ನಿಂದ ಹೊಡೆದಿದ್ದಾರೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,1,train,draft-v1 type=other script=native by Madhan
+en-0100,en,"Hello, emergency, woman feeling weak from the heat, talking fine, no pain. I am at the roadside.",0,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0088,kn,"ಬೇಗ ಬನ್ನಿ, ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",1,1,train,draft-v1 type=other script=native by Madhan
+hi-0093,hi,"madad kijiye, bike bus se takrayi, pair toota lag raha hai, bahut khoon beh raha hai, hosh me hai",2,1,train,draft-v1 type=road_accident script=roman by Madhan
+kn-0089,kn,"ವ್ಯಕ್ತಿ ಒಮ್ಮೆಗೇ ಕುಸಿದು ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ನಾಡಿ ಇಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0101,en,"Sir please come fast, touched a hot pan, mild redness, no pain now. I don't know what to do.",0,1,test,draft-v1 type=burn script=native by Madhan
+hi-0094,hi,"कृपया एम्बुलेंस भेजिए, ट्रक ने बाइक को टक्कर मारी, सवार सड़क पर पड़ा है, हिल नहीं रहा, सांस नहीं ले रहा",3,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0102,en,"Fire in the kitchen, large burns on the legs, skin peeling, conscious. People are gathering around.",2,1,train,draft-v1 type=burn script=native by Madhan
+kn-0090,kn,"dayavittu ambulance kaluhisi, bike bus ge dikki hodeyitu, kaalu muridide ansutte, tumba raktha hogtha ide, eccharadalli idhane",2,1,train,draft-v1 type=road_accident script=roman by Madhan
+en-0103,en,"Sir please come fast, gas cylinder flash, burns on face and arms, he is awake but in severe pain and struggling to breathe. I am at the roadside.",2,1,train,draft-v1 type=burn script=native by Madhan
+kn-0091,kn,"dayavittu ambulance kaluhisi, mane ge benki bittu, pragne illade horage tegedaru, idi deha sutthide, usiraadtilla. jana serideare.",3,1,train,draft-v1 type=burn script=roman by Madhan
+hi-0095,hi,"हेलो, इमरजेंसी है, कार डिवाइडर से टकराई, सब बाहर निकलकर चल रहे हैं, कोई घायल नहीं। मैं सड़क किनारे हूँ।",0,1,test,draft-v1 type=road_accident script=native by Madhan
+en-0104,en,"There is an accident near the signal, seizure just stopped, he is drowsy, confused and breathing fast. People are gathering around.",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0092,kn,"ಬೇಗ ಬನ್ನಿ, ಮೂರನೇ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಕಿವಿಯಿಂದ ರಕ್ತ ಬರುತ್ತಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,1,train,draft-v1 type=fall script=native by Madhan
+en-0105,en,"Child fell from a bench, crying, no cut, playing again. Please hurry.",0,1,train,draft-v1 type=fall script=native by Madhan
+hi-0096,hi,"हेलो, इमरजेंसी है, रसोई में आग लगी, पैरों पर बड़ी जलन, चमड़ी उतर रही है, होश में है। जल्दी कीजिए।",2,1,train,draft-v1 type=burn script=native by Madhan
+en-0106,en,"I saw a crowd, not sure anything happened, nobody looks hurt. I don't know what to do.",0,1,train,draft-v1 type=other script=native by Madhan
+en-0107,en,"Hello, emergency, truck hit a bike, rider is lying on the road not moving not breathing. Please hurry.",3,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0097,hi,"जल्दी आइए, ऑटो और कार की टक्कर हुई, सवारी के कंधे में दर्द है लेकिन होश में है। मुझे समझ नहीं आ रहा क्या करूँ।",1,1,test,draft-v1 type=road_accident script=native by Madhan
+hi-0098,hi,"please ambulance bhejiye, tel se haath jal gaya, chhale hain, dard hai par baat kar raha hai",1,1,train,draft-v1 type=burn script=roman by Madhan
+hi-0099,hi,"सिग्नल के पास हादसा हुआ है, आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। मैं सड़क किनारे हूँ।",3,1,train,draft-v1 type=other script=native by Madhan
+en-0108,en,"Car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please hurry.",2,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0109,en,"Sir please come fast, small splash of hot tea on the hand, red but no blister, she is fine. Please hurry.",0,1,train,draft-v1 type=burn script=native by Madhan
+kn-0093,kn,"bisi enne bidhu kai sutthide, gulle ide, novide aadre maatadtha idhare",1,1,train,draft-v1 type=burn script=roman by Madhan
+hi-0100,hi,"जल्दी आइए, औरत सीढ़ियों से गिर गई, टखना सूज गया है, पैर नहीं रख पा रही, होश में है। लोग इकट्ठा हो गए हैं।",1,1,train,draft-v1 type=fall script=native by Madhan
+kn-0094,kn,"ಬೇಗ ಬನ್ನಿ, ಮಹಿಳೆಗೆ ಬಿಸಿಲಿನಿಂದ ಸುಸ್ತಾಗಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ, ನೋವಿಲ್ಲ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0101,hi,"jaldi aaiye, aadmi pehli manzil se gira, hosh me hai par pair nahi hil rahe, sar se khoon beh raha hai",2,1,train,draft-v1 type=fall script=roman by Madhan
+kn-0095,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಮಹಿಳೆ ಮೆಟ್ಟಿಲಿನಿಂದ ಬಿದ್ದರು, ಕಾಲಿನ ಹಿಮ್ಮಡಿ ಊದಿಕೊಂಡಿದೆ, ಕಾಲೂರಲು ಆಗುತ್ತಿಲ್ಲ, ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ",1,1,train,draft-v1 type=fall script=native by Madhan
+kn-0096,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,1,train,draft-v1 type=burn script=native by Madhan
+kn-0097,kn,"dayavittu ambulance kaluhisi, vyakthi modala mahadiyinda bidda, eccharavide aadre kaalu alugaadsakke aagtilla, thaleyinda raktha suriyuttide. begane banni.",2,1,train,draft-v1 type=fall script=roman by Madhan
+kn-0098,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಎಚ್ಚರವಿದ್ದಾನೆ ಆದರೆ ತಲೆಗೆ ಆಳವಾದ ಗಾಯ, ತುಂಬಾ ರಕ್ತ ಸುರಿಯುತ್ತಿದೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,1,test,draft-v1 type=road_accident script=native by Madhan
+hi-0102,hi,"जल्दी आइए, आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। मैं सड़क किनारे हूँ।",3,1,test,draft-v1 type=other script=native by Madhan
+hi-0103,hi,"कृपया एम्बुलेंस भेजिए, बुज़ुर्ग को सीने में हल्की बेचैनी है, बैठे हैं और बात कर रहे हैं, थोड़ा पसीना आ रहा है। कृपया जल्दी आइए!",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0104,hi,"हेलो, इमरजेंसी है, औरत गिर गई, होंठ नीले हैं, कोई जवाब नहीं, सांस नहीं",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0099,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಮೊದಲು ಜಗಳವಾಗಿತ್ತು ಆದರೆ ಎಲ್ಲರೂ ಹೊರಟುಹೋದರು, ಯಾರಿಗೂ ಗಾಯವಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,1,train,draft-v1 type=other script=native by Madhan
+en-0110,en,"Sir please come fast, woman fell on stairs, ankle swollen and she cannot put weight, awake and talking. I don't know what to do.",1,1,train,draft-v1 type=fall script=native by Madhan
+en-0111,en,"There is an accident near the signal, truck hit a bike, rider is lying on the road not moving not breathing. I don't know what to do.",3,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0100,kn,"ಬೇಗ ಬನ್ನಿ, ಮಗು ಬೆಂಚಿನಿಂದ ಬಿತ್ತು, ಅತ್ತಿತು, ಈಗ ಮತ್ತೆ ಆಡುತ್ತಿದೆ, ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,1,train,draft-v1 type=fall script=native by Madhan
+kn-0101,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಹುಡುಗಿ ಸ್ವಲ್ಪ ಹೊತ್ತು ಪ್ರಜ್ಞೆ ತಪ್ಪಿದಳು, ಈಗ ಎಚ್ಚರವಾಗಿದೆ, ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾಳೆ ಆದರೆ ಉತ್ತರಿಸುತ್ತಿದ್ದಾಳೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0102,kn,"ಸಹಾಯ ಮಾಡಿ, ಮಹಿಳೆ ಕುಸಿದು ಬಿದ್ದರು, ತುಟಿ ನೀಲಿಯಾಗಿದೆ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಉಸಿರಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0103,kn,"ಸಹಾಯ ಮಾಡಿ, ನೀರಿನಿಂದ ಹೊರತೆಗೆದರು, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ಮುಖ ನೀಲಿಯಾಗಿದೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",3,1,train,draft-v1 type=other script=native by Madhan
+kn-0104,kn,"sahaya maadi, hotte ge chaaku irididhe, tumba raktha hogtha ide, eccharavide aadre nishakta. begane banni.",2,1,test,draft-v1 type=other script=roman by Madhan
+hi-0105,hi,"जल्दी आइए, आदमी पहली मंज़िल से गिरा, होश में है पर पैर हिला नहीं पा रहा, सिर से खून बह रहा है। मैं सड़क किनारे हूँ।",2,1,train,draft-v1 type=fall script=native by Madhan
+kn-0105,kn,"sahaya maadi, rasteyalli obba vyakthi sikkida, pragne illa, usiraadtilla, tumba raktha ide",3,1,train,draft-v1 type=other script=roman by Madhan
+kn-0106,kn,"ಬೇಗ ಬನ್ನಿ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ",2,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0106,hi,"तीसरी मंज़िल से गिरा, कोई जवाब नहीं, कान से खून आ रहा है। मैं सड़क किनारे हूँ।",3,1,train,draft-v1 type=fall script=native by Madhan
+en-0112,en,"House fire, person pulled out unconscious, burns over the body, not breathing. Please hurry.",3,1,train,draft-v1 type=burn script=native by Madhan
+hi-0107,hi,"बुज़ुर्ग फिसल गए, खुद उठ गए, कह रहे हैं ठीक हूँ",0,1,train,draft-v1 type=fall script=native by Madhan
+kn-0107,kn,"kelasagaara kattadada melinda bidda, pragne illa, sariyaagi usiraadtilla",3,1,train,draft-v1 type=fall script=roman by Madhan
+hi-0108,hi,"सिग्नल के पास हादसा हुआ है, औरत को गर्मी से कमज़ोरी लग रही है, ठीक से बोल रही है, दर्द नहीं। मुझे समझ नहीं आ रहा क्या करूँ।",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0109,hi,"हेलो, इमरजेंसी है, हाथ पर गर्म चाय के छींटे पड़े, थोड़ी लाली है, छाला नहीं, वो ठीक है। कृपया जल्दी आइए!",0,1,train,draft-v1 type=burn script=native by Madhan
+kn-0108,kn,"sahaya maadi, gas cylinder benki hottitu, mukha mattu tholu sutthide, eccharavide aadre tumba novu. begane banni.",2,1,train,draft-v1 type=burn script=roman by Madhan
+kn-0109,kn,"dayavittu ambulance kaluhisi, huduganige cricket chendu thagulitu, mooginiinda swalpa raktha banthu, ega nindide, eccharavide",1,1,test,draft-v1 type=other script=roman by Madhan
+kn-0110,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ರಸ್ತೆಯಲ್ಲಿ ಒಬ್ಬ ವ್ಯಕ್ತಿ ಸಿಕ್ಕಿದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ, ತುಂಬಾ ರಕ್ತವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,1,train,draft-v1 type=other script=native by Madhan
+en-0113,en,"Sir please come fast, bike hit a bus, rider's leg looks broken and bleeding a lot but he is awake",2,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0111,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಮೊದಲು ಜಗಳವಾಗಿತ್ತು ಆದರೆ ಎಲ್ಲರೂ ಹೊರಟುಹೋದರು, ಯಾರಿಗೂ ಗಾಯವಿಲ್ಲ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,1,train,draft-v1 type=other script=native by Madhan
+en-0114,en,"Gas cylinder flash, burns on face and arms, he is awake but in severe pain and struggling to breathe. I don't know what to do.",2,1,train,draft-v1 type=burn script=native by Madhan
+en-0115,en,"Help, worker slipped from a low stool, bruise on the back, pain but stable. Please hurry.",1,1,train,draft-v1 type=fall script=native by Madhan
+hi-0110,hi,"सिग्नल के पास हादसा हुआ है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही। मैं सड़क किनारे हूँ।",3,1,train,draft-v1 type=burn script=native by Madhan
+hi-0111,hi,"please ambulance bhejiye, sadak pe aadmi mila, behosh hai, saans nahi le raha, bahut khoon hai. jaldi kijiye.",3,1,test,draft-v1 type=other script=roman by Madhan
+en-0116,en,"Hello, emergency, fire in the kitchen, large burns on the legs, skin peeling, conscious. Please hurry.",2,1,train,draft-v1 type=burn script=native by Madhan
+kn-0112,kn,"ಸಹಾಯ ಮಾಡಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",0,1,train,draft-v1 type=burn script=native by Madhan
+en-0117,en,"Help, two bikes touched, nobody is hurt, just scratches on the bike. Please come fast!",0,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0113,kn,"ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0114,kn,"sahaya maadi, kelasagaara kattadada melinda bidda, pragne illa, sariyaagi usiraadtilla. begane banni.",3,1,train,draft-v1 type=fall script=roman by Madhan
+hi-0112,hi,"बाइक फिसल गई, चालक की कलाई में मोच है और घुटने छिल गए, वो ठीक से बात कर रहा है। कृपया जल्दी आइए!",1,1,train,draft-v1 type=road_accident script=native by Madhan
+en-0118,en,"There is an accident near the signal, pulled out of water, unconscious, not breathing, blue face. I am at the roadside.",3,1,train,draft-v1 type=other script=native by Madhan
+en-0119,en,"There is an accident near the signal, elderly man has chest discomfort but is sitting and talking, sweating a bit. I don't know what to do.",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0120,en,"Help, car accident, driver is conscious but has a deep cut on the head bleeding heavily. Please come fast!",2,1,test,draft-v1 type=road_accident script=native by Madhan
+en-0121,en,"Sir please come fast, pulled out of water, unconscious, not breathing, blue face. I don't know what to do.",3,1,test,draft-v1 type=other script=native by Madhan
+kn-0115,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವೃದ್ಧರಿಗೆ ಎದೆಯಲ್ಲಿ ಸ್ವಲ್ಪ ಕಿರಿಕಿರಿ ಇದೆ, ಕುಳಿತು ಮಾತನಾಡುತ್ತಿದ್ದಾರೆ, ಸ್ವಲ್ಪ ಬೆವರುತ್ತಿದ್ದಾರೆ",1,1,test,draft-v1 type=cardiac_medical script=native by Madhan
+kn-0116,kn,"ಬೇಗ ಬನ್ನಿ, ವ್ಯಕ್ತಿ ಮೊದಲ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಎಚ್ಚರವಿದೆ ಆದರೆ ಕಾಲು ಅಲ್ಲಾಡಿಸಲು ಆಗುತ್ತಿಲ್ಲ, ತಲೆಯಿಂದ ರಕ್ತ ಸುರಿಯುತ್ತಿದೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=fall script=native by Madhan
+en-0122,en,"Auto and car collided, passenger has pain in the shoulder but is stable. I don't know what to do.",1,1,train,draft-v1 type=road_accident script=native by Madhan
+hi-0113,hi,"madad kijiye, ladke ko cricket ball lagi, naak se thoda khoon aaya, ab ruk gaya, alert hai",1,1,train,draft-v1 type=other script=roman by Madhan
+kn-0117,kn,"ಕೆಲಸಗಾರ ಸ್ಟೂಲ್‌ನಿಂದ ಜಾರಿದ, ಬೆನ್ನಿಗೆ ಏಟಾಗಿ ನೋವಿದೆ, ಆದರೆ ಸ್ಥಿರವಾಗಿದ್ದಾನೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",1,1,test,draft-v1 type=fall script=native by Madhan
+kn-0118,kn,"ಸಹಾಯ ಮಾಡಿ, ಮಗುವಿನ ಕಾಲಿಗೆ ಬಿಸಿ ನೀರು ಬಿತ್ತು, ಗುಳ್ಳೆಗಳಿವೆ, ಅಳುತ್ತಿದೆ ಆದರೆ ಎಚ್ಚರವಿದೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,1,train,draft-v1 type=burn script=native by Madhan
+kn-0119,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಬೈಕ್ ಬಸ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರನ ಕಾಲು ಮುರಿದಂತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಆದರೆ ಎಚ್ಚರವಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,1,test,draft-v1 type=road_accident script=native by Madhan
+kn-0120,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕಾರು ಅಪಘಾತ, ಚಾಲಕ ಪ್ರಜ್ಞಾಹೀನ, ಎಲ್ಲೆಡೆ ರಕ್ತ, ಕರೆದರೂ ಉತ್ತರಿಸುತ್ತಿಲ್ಲ",3,1,train,draft-v1 type=road_accident script=native by Madhan
+kn-0121,kn,"ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",1,1,train,draft-v1 type=other script=native by Madhan
+hi-0114,hi,"जल्दी आइए, लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। लोग इकट्ठा हो गए हैं।",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0123,en,"There is an accident near the signal, I saw a crowd, not sure anything happened, nobody looks hurt. I am at the roadside.",0,1,train,draft-v1 type=other script=native by Madhan
+hi-0115,hi,"लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। मुझे समझ नहीं आ रहा क्या करूँ।",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+en-0124,en,"Touched a hot pan, mild redness, no pain now. I don't know what to do.",0,1,train,draft-v1 type=burn script=native by Madhan
+kn-0122,kn,"sahaya maadi, vrudharige edeyalli swalpa kirikiri ide, kuthu maatadtha idhare, swalpa bevarthidhare. jana serideare.",1,1,train,draft-v1 type=cardiac_medical script=roman by Madhan
+hi-0116,hi,"हेलो, इमरजेंसी है, मज़दूर मचान से गिर गया, बेहोश है, ठीक से सांस नहीं ले रहा",3,1,train,draft-v1 type=fall script=native by Madhan
+kn-0123,kn,"ಸಹಾಯ ಮಾಡಿ, ಹೊಟ್ಟೆಗೆ ಚಾಕು ಇರಿದಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಎಚ್ಚರವಿದೆ ಆದರೆ ನಿಶ್ಶಕ್ತನಾಗಿದ್ದಾನೆ. ಬೇಗ ಬನ್ನಿ.",2,1,train,draft-v1 type=other script=native by Madhan
+hi-0117,hi,"हेलो, इमरजेंसी है, औरत सीढ़ियों से गिर गई, टखना सूज गया है, पैर नहीं रख पा रही, होश में है। मुझे समझ नहीं आ रहा क्या करूँ।",1,1,test,draft-v1 type=fall script=native by Madhan
+en-0125,en,"Fell from the third floor, no response, blood from the ears",3,1,train,draft-v1 type=fall script=native by Madhan
+en-0126,en,"Please send an ambulance, I saw a crowd, not sure anything happened, nobody looks hurt. I am at the roadside.",0,1,train,draft-v1 type=other script=native by Madhan
+hi-0118,hi,"आदमी को पानी से निकाला, बेहोश है, सांस नहीं ले रहा, चेहरा नीला है। लोग इकट्ठा हो गए हैं।",3,1,train,draft-v1 type=other script=native by Madhan
+kn-0124,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಮೂರನೇ ಮಹಡಿಯಿಂದ ಬಿದ್ದ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಕಿವಿಯಿಂದ ರಕ್ತ ಬರುತ್ತಿದೆ. ಬೇಗ ಬನ್ನಿ.",3,1,train,draft-v1 type=fall script=native by Madhan
+en-0127,en,"Help, electric shock and burns, collapsed, no response, no pulse",3,1,train,draft-v1 type=burn script=native by Madhan
+en-0128,en,"Please send an ambulance, man collapsed suddenly, unconscious, not breathing, no pulse. I am at the roadside.",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan
+hi-0119,hi,"please ambulance bhejiye, bachcha bench se gir gaya, ro raha tha, ab theek hai. jaldi kijiye.",0,1,test,draft-v1 type=fall script=roman by Madhan
+hi-0120,hi,"मदद कीजिए, पेट में चाकू लगा है, बहुत खून बह रहा है, होश में है पर कमज़ोर है। मुझे समझ नहीं आ रहा क्या करूँ।",2,1,train,draft-v1 type=other script=native by Madhan by Madhan
+en-0129,en,"Worker fell from the scaffolding, unconscious, not breathing properly. Please hurry.",3,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0121,hi,"मदद कीजिए, सीढ़ी से गिरा, हाथ की हड्डी बाहर दिख रही है, बहुत खून बह रहा है। मैं सड़क किनारे हूँ।",2,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0122,hi,"ऑटो और कार की टक्कर हुई, सवारी के कंधे में दर्द है लेकिन होश में है। लोग इकट्ठा हो गए हैं।",1,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+kn-0125,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಆಟೋ ಮತ್ತು ಕಾರು ಡಿಕ್ಕಿಯಾಯಿತು, ಪ್ರಯಾಣಿಕರ ಭುಜದಲ್ಲಿ ನೋವಿದೆ ಆದರೆ ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",1,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+en-0130,en,"Sir please come fast, auto and car collided, passenger has pain in the shoulder but is stable. I am at the roadside.",1,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+en-0131,en,"Please send an ambulance, truck hit a bike, rider is lying on the road not moving not breathing. Please hurry.",3,1,test,draft-v1 type=road_accident script=native by Madhan by Madhan
+kn-0126,kn,"gas cylinder benki hottitu, mukha mattu tholu sutthide, eccharavide aadre tumba novu",2,1,train,draft-v1 type=burn script=roman by Madhan by Madhan
+hi-0123,hi,"सिग्नल के पास हादसा हुआ है, बुज़ुर्ग को सीने में हल्की बेचैनी है, बैठे हैं और बात कर रहे हैं, थोड़ा पसीना आ रहा है। जल्दी कीजिए।",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+kn-0127,kn,"sahaya maadi, edeyalli theevra novu, tumba bevarthidhare, usiraata kashta, eccharavidhare. jana serideare.",2,1,train,draft-v1 type=cardiac_medical script=roman by Madhan by Madhan
+hi-0124,hi,"हेलो, इमरजेंसी है, सीढ़ी से गिरा, हाथ की हड्डी बाहर दिख रही है, बहुत खून बह रहा है। कृपया जल्दी आइए!",2,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0125,hi,"कृपया एम्बुलेंस भेजिए, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। मुझे समझ नहीं आ रहा क्या करूँ।",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+en-0132,en,"Touched a hot pan, mild redness, no pain now. People are gathering around.",0,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0128,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+hi-0126,hi,"ट्रक ने बाइक को टक्कर मारी, सवार सड़क पर पड़ा है, हिल नहीं रहा, सांस नहीं ले रहा। लोग इकट्ठा हो गए हैं।",3,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+kn-0129,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ನಾಯಿ ಕಾಲಿಗೆ ಕಚ್ಚಿತು, ಚಿಕ್ಕ ಗಾಯ, ಸ್ವಲ್ಪ ರಕ್ತ ಬರುತ್ತಿದೆ, ನಡೆಯುತ್ತಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",1,1,test,draft-v1 type=other script=native by Madhan by Madhan
+hi-0127,hi,"pet me chaku laga hai, bahut khoon beh raha hai, hosh me hai par kamzor hai. jaldi kijiye.",2,1,train,draft-v1 type=other script=roman by Madhan by Madhan
+kn-0130,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕಾರು ಡಿವೈಡರ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಎಲ್ಲರೂ ಹೊರಬಂದು ನಡೆಯುತ್ತಿದ್ದಾರೆ, ಗಾಯವಿಲ್ಲ",0,1,test,draft-v1 type=road_accident script=native by Madhan by Madhan
+en-0133,en,"Sir please come fast, old man slipped, got up himself, says he is fine. People are gathering around.",0,1,test,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0128,hi,"please ambulance bhejiye, ladke ko cricket ball lagi, naak se thoda khoon aaya, ab ruk gaya, alert hai. jaldi kijiye.",1,1,test,draft-v1 type=other script=roman by Madhan by Madhan
+en-0134,en,"Help, cooking oil burn on the forearm, blisters, in pain but talking normally. Please come fast!",1,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+hi-0129,hi,"कृपया एम्बुलेंस भेजिए, गर्म तवे को छू लिया, हल्की लाली है, अब दर्द नहीं। लोग इकट्ठा हो गए हैं।",0,1,test,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0131,kn,"ಬೇಗ ಬನ್ನಿ, ಮಹಿಳೆ ಕುಸಿದು ಬಿದ್ದರು, ತುಟಿ ನೀಲಿಯಾಗಿದೆ, ಉತ್ತರಿಸುತ್ತಿಲ್ಲ, ಉಸಿರಿಲ್ಲ. ಬೇಗ ಬನ್ನಿ.",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+kn-0132,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಜನರ ಗುಂಪು ಕಂಡಿತು, ಏನಾದರೂ ಆಯಿತೋ ಗೊತ್ತಿಲ್ಲ, ಯಾರಿಗೂ ಗಾಯವಾದಂತೆ ಕಾಣುತ್ತಿಲ್ಲ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",0,1,train,draft-v1 type=other script=native by Madhan by Madhan
+en-0135,en,"Worker fell from the scaffolding, unconscious, not breathing properly. Please come fast!",3,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0130,hi,"जल्दी आइए, आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+en-0136,en,"There is an accident near the signal, man fell from the first floor, awake but cannot move his legs, bleeding from the head. I don't know what to do.",2,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+en-0137,en,"There is an accident near the signal, fell from a ladder, bone sticking out of the arm, bleeding heavily. I don't know what to do.",2,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+en-0138,en,"Help, fell from a ladder, bone sticking out of the arm, bleeding heavily. Please come fast!",2,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+en-0139,en,"Hello, emergency, old man slipped, got up himself, says he is fine. Please come fast!",0,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0131,hi,"कृपया एम्बुलेंस भेजिए, आदमी के सिर पर रॉड मारी, बहुत खून बह रहा है, उलझन में है। लोग इकट्ठा हो गए हैं।",2,1,test,draft-v1 type=other script=native by Madhan by Madhan
+kn-0133,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಅಡುಗೆಮನೆಯಲ್ಲಿ ಬೆಂಕಿ, ಕಾಲುಗಳಿಗೆ ದೊಡ್ಡ ಸುಟ್ಟ ಗಾಯ, ಚರ್ಮ ಎದ್ದು ಬರುತ್ತಿದೆ, ಎಚ್ಚರವಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,1,test,draft-v1 type=burn script=native by Madhan by Madhan
+en-0140,en,"Hello, emergency, house fire, person pulled out unconscious, burns over the body, not breathing",3,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+hi-0132,hi,"हेलो, इमरजेंसी है, हाथ पर गर्म चाय के छींटे पड़े, थोड़ी लाली है, छाला नहीं, वो ठीक है। लोग इकट्ठा हो गए हैं।",0,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+en-0141,en,"Help, stabbed in the stomach, bleeding a lot, awake but weak. I am at the roadside.",2,1,train,draft-v1 type=other script=native by Madhan by Madhan
+kn-0134,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಕೈಗೆ ಬಿಸಿ ಚಹಾ ಚೆಲ್ಲಿತು, ಸ್ವಲ್ಪ ಕೆಂಪಾಗಿದೆ, ಗುಳ್ಳೆ ಇಲ್ಲ, ಚೆನ್ನಾಗಿದ್ದಾರೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",0,1,test,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0135,kn,"sahaya maadi, magu bench inda bittu, atthu, ega matte aadtha ide, gaaya illa. jana serideare.",0,1,test,draft-v1 type=fall script=roman by Madhan by Madhan
+hi-0133,hi,"जल्दी आइए, लड़की थोड़ी देर के लिए बेहोश हुई, होश आ गया, पीली है पर जवाब दे रही है। कृपया जल्दी आइए!",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+hi-0134,hi,"सिग्नल के पास हादसा हुआ है, बाइक बस से टकरा गई, चालक का पैर टूटा लगता है और बहुत खून बह रहा है, पर वो होश में है। मैं सड़क किनारे हूँ।",2,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+en-0142,en,"There is an accident near the signal, man fell from the first floor, awake but cannot move his legs, bleeding from the head. Please hurry.",2,1,test,draft-v1 type=fall script=native by Madhan by Madhan
+kn-0136,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಈಗಷ್ಟೇ ಫಿಟ್ಸ್ ನಿಂತಿದೆ, ಅವನು ಮಂಪರಿನಲ್ಲಿದ್ದಾನೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ, ವೇಗವಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+hi-0135,hi,"मदद कीजिए, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। कृपया जल्दी आइए!",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+hi-0136,hi,"मदद कीजिए, रसोई में आग लगी, पैरों पर बड़ी जलन, चमड़ी उतर रही है, होश में है। मैं सड़क किनारे हूँ।",2,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0137,kn,"dayavittu ambulance kaluhisi, jana gumpu kandithu, enaadru aayitho gothilla, yarigu gaaya kaanthilla",0,1,train,draft-v1 type=other script=roman by Madhan by Madhan
+hi-0137,hi,"हेलो, इमरजेंसी है, बच्चा बेंच से गिर गया, रो रहा था, अब फिर खेल रहा है, कोई कट नहीं",0,1,test,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0138,hi,"मदद कीजिए, आदमी को एक मिनट चक्कर आया, अब बैठकर पानी पी रहा है, सामान्य है। जल्दी कीजिए।",0,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+en-0143,en,"There is an accident near the signal, I saw a crowd, not sure anything happened, nobody looks hurt. I don't know what to do.",0,1,train,draft-v1 type=other script=native by Madhan by Madhan
+hi-0139,hi,"मदद कीजिए, पहले झगड़ा हुआ था पर सब चले गए, कोई घायल नहीं। मैं सड़क किनारे हूँ।",0,1,train,draft-v1 type=other script=native by Madhan by Madhan
+kn-0138,kn,"dayavittu ambulance kaluhisi, vyakthi omme kusidhu bidda, pragne illa, usiraadtilla, naadi illa",3,1,train,draft-v1 type=cardiac_medical script=roman by Madhan by Madhan
+en-0144,en,"Man collapsed suddenly, unconscious, not breathing, no pulse. People are gathering around.",3,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+kn-0139,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಹುಡುಗಿ ಸ್ವಲ್ಪ ಹೊತ್ತು ಪ್ರಜ್ಞೆ ತಪ್ಪಿದಳು, ಈಗ ಎಚ್ಚರವಾಗಿದೆ, ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾಳೆ ಆದರೆ ಉತ್ತರಿಸುತ್ತಿದ್ದಾಳೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+hi-0140,hi,"please ambulance bhejiye, bheed dikhi, pata nahi kuch hua ya nahi, koi ghayal nahi dikh raha. log jama ho gaye hain.",0,1,train,draft-v1 type=other script=roman by Madhan by Madhan
+kn-0140,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ತಲೆಗೆ ರಾಡ್‌ನಿಂದ ಹೊಡೆದಿದ್ದಾರೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾನೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",2,1,train,draft-v1 type=other script=native by Madhan by Madhan
+kn-0141,kn,"ಸಿಗ್ನಲ್ ಹತ್ತಿರ ಅಪಘಾತವಾಗಿದೆ, ಏಣಿಯಿಂದ ಬಿದ್ದ, ಕೈಯ ಮೂಳೆ ಹೊರಗೆ ಕಾಣುತ್ತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ. ನಾನು ರಸ್ತೆ ಬದಿಯಲ್ಲಿದ್ದೇನೆ.",2,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+kn-0142,kn,"ಸಹಾಯ ಮಾಡಿ, ಕೆಲಸಗಾರ ಕಟ್ಟಡದ ಮೇಲಿಂದ ಬಿದ್ದ, ಪ್ರಜ್ಞೆ ಇಲ್ಲ, ಸರಿಯಾಗಿ ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,1,test,draft-v1 type=fall script=native by Madhan by Madhan
+en-0145,en,"Touched a hot pan, mild redness, no pain now. Please come fast!",0,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0143,kn,"ಮನೆಗೆ ಬೆಂಕಿ ಬಿತ್ತು, ವ್ಯಕ್ತಿಯನ್ನು ಪ್ರಜ್ಞೆ ಇಲ್ಲದೆ ಹೊರಗೆ ತೆಗೆದರು, ಇಡೀ ದೇಹ ಸುಟ್ಟಿದೆ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಬೇಗ ಬನ್ನಿ.",3,1,train,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0144,kn,"sahaya maadi, lorry bike ge dikki hodeyitu, savaara rasteyalli bidhidhane, alugaadtilla, usiraadtilla",3,1,train,draft-v1 type=road_accident script=roman by Madhan by Madhan
+en-0146,en,"There is an accident near the signal, worker fell from the scaffolding, unconscious, not breathing properly. Please come fast!",3,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+hi-0141,hi,"आदमी को सीने में तेज़ दर्द है, बहुत पसीना आ रहा है, सांस फूल रही है, होश में है",2,1,train,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+kn-0145,kn,"ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳುಹಿಸಿ, ಬೈಕ್ ಜಾರಿ ಬಿತ್ತು, ಸವಾರನ ಮಣಿಕಟ್ಟಿಗೆ ಉಳುಕಾಗಿದೆ, ಮೊಣಕಾಲು ತರಚಿದೆ, ಚೆನ್ನಾಗಿ ಮಾತನಾಡುತ್ತಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",1,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+hi-0142,hi,"madad kijiye, bachcha bench se gir gaya, ro raha tha, ab theek hai. jaldi kijiye.",0,1,train,draft-v1 type=fall script=roman by Madhan by Madhan
+hi-0143,hi,"हेलो, इमरजेंसी है, भीड़ दिखी, पता नहीं कुछ हुआ या नहीं, कोई घायल नहीं दिख रहा। मैं सड़क किनारे हूँ।",0,1,train,draft-v1 type=other script=native by Madhan by Madhan
+hi-0144,hi,"हेलो, इमरजेंसी है, दो बाइक आपस में छू गईं, किसी को चोट नहीं लगी, बस खरोंच है। मैं सड़क किनारे हूँ।",0,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+hi-0145,hi,"please ambulance bhejiye, cylinder me aag lagi, chehre aur haathon pe jalan, hosh me hai par bahut dard hai",2,1,train,draft-v1 type=burn script=roman by Madhan by Madhan
+kn-0146,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ಆಟೋ ಮತ್ತು ಕಾರು ಡಿಕ್ಕಿಯಾಯಿತು, ಪ್ರಯಾಣಿಕರ ಭುಜದಲ್ಲಿ ನೋವಿದೆ ಆದರೆ ಎಚ್ಚರದಲ್ಲಿದ್ದಾರೆ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",1,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+hi-0146,hi,"मदद कीजिए, बांह पर गर्म तेल से जल गया, छाले हैं, दर्द है पर सामान्य बात कर रहा है। लोग इकट्ठा हो गए हैं।",1,1,test,draft-v1 type=burn script=native by Madhan by Madhan
+hi-0147,hi,"मदद कीजिए, कार क्रैश हो गई, ड्राइवर बेहोश है, हर तरफ खून है, कोई जवाब नहीं दे रहा। जल्दी कीजिए।",3,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+kn-0147,kn,"ಹಲೋ, ತುರ್ತು ಪರಿಸ್ಥಿತಿ, ವ್ಯಕ್ತಿಗೆ ಒಂದು ನಿಮಿಷ ತಲೆ ಸುತ್ತು ಬಂತು, ಈಗ ಕುಳಿತು ನೀರು ಕುಡಿಯುತ್ತಿದ್ದಾರೆ, ಸಹಜವಾಗಿದ್ದಾರೆ. ಬೇಗ ಬನ್ನಿ.",0,1,test,draft-v1 type=cardiac_medical script=native by Madhan by Madhan
+hi-0148,hi,"aadmi achanak gir gaya, behosh hai, saans nahi aa rahi, nabz nahi mil rahi. jaldi kijiye.",3,1,train,draft-v1 type=cardiac_medical script=roman by Madhan by Madhan
+hi-0149,hi,"सिग्नल के पास हादसा हुआ है, करंट लगा और जल गया, गिर पड़ा, कोई जवाब नहीं, नब्ज़ नहीं मिल रही। मुझे समझ नहीं आ रहा क्या करूँ।",3,1,test,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0148,kn,"ಬೇಗ ಬನ್ನಿ, ವೃದ್ಧರು ಜಾರಿ ಬಿದ್ದರು, ತಾವೇ ಎದ್ದರು, ಚೆನ್ನಾಗಿದ್ದೇನೆ ಎನ್ನುತ್ತಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಬೇಗ ಬನ್ನಿ!",0,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+kn-0149,kn,"ಸಹಾಯ ಮಾಡಿ, ಲಾರಿ ಬೈಕ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರ ರಸ್ತೆಯಲ್ಲಿ ಬಿದ್ದಿದ್ದಾನೆ, ಅಲುಗಾಡುತ್ತಿಲ್ಲ, ಉಸಿರಾಡುತ್ತಿಲ್ಲ. ಏನು ಮಾಡಬೇಕೋ ಗೊತ್ತಾಗುತ್ತಿಲ್ಲ.",3,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+en-0147,en,"There is an accident near the signal, truck hit a bike, rider is lying on the road not moving not breathing. People are gathering around.",3,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+en-0148,en,"There is an accident near the signal, cooking oil burn on the forearm, blisters, in pain but talking normally",1,1,test,draft-v1 type=burn script=native by Madhan by Madhan
+en-0149,en,"Old man slipped, got up himself, says he is fine. I don't know what to do.",0,1,train,draft-v1 type=fall script=native by Madhan by Madhan
+en-0150,en,"Hello, emergency, gas cylinder flash, burns on face and arms, he is awake but in severe pain and struggling to breathe. I don't know what to do.",2,1,test,draft-v1 type=burn script=native by Madhan by Madhan
+kn-0150,kn,"ಬೈಕ್ ಬಸ್‌ಗೆ ಡಿಕ್ಕಿ ಹೊಡೆಯಿತು, ಸವಾರನ ಕಾಲು ಮುರಿದಂತಿದೆ, ತುಂಬಾ ರಕ್ತ ಹೋಗುತ್ತಿದೆ, ಆದರೆ ಎಚ್ಚರವಿದ್ದಾನೆ. ಜನ ಸೇರಿದ್ದಾರೆ.",2,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
+hi-0150,hi,"बाइक बस से टकरा गई, चालक का पैर टूटा लगता है और बहुत खून बह रहा है, पर वो होश में है। मैं सड़क किनारे हूँ।",2,1,train,draft-v1 type=road_accident script=native by Madhan by Madhan
