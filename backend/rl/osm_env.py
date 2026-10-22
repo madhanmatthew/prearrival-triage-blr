@@ -83,6 +83,7 @@ class OsmCorridorEnv(CorridorEnv):
         adds = [str(a) for a in adds if a.exists()]
         if adds:
             cmd += ["-a", ",".join(adds)]
+        cmd += self._extra_sumo_args()
         traci.start(cmd, label=self._label)
         self._conn = c = traci.getConnection(self._label)
         c.route.add(AMB_ROUTE_ID, self._route_edges)
@@ -93,6 +94,10 @@ class OsmCorridorEnv(CorridorEnv):
             c.vehicletype.setColor(AMB_ID, (255, 0, 0, 255))
         c.vehicle.add(AMB_ID, AMB_ROUTE_ID, typeID=AMB_ID, depart=str(self.amb_depart),
                       departLane="best", departSpeed="max")
+
+    def _extra_sumo_args(self) -> list[str]:
+        """Hook for subclasses (backend/rl/demand.py adds --scale for demand randomization)."""
+        return []
 
     def _init_junctions(self) -> None:
         c = self._conn

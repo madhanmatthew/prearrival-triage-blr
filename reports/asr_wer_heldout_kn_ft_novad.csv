@@ -1,0 +1,2 @@
+language,utterances,word_errors,ref_words,char_errors,ref_chars,wer,cer
+kn,10,148,255,776,1754,0.5803921568627451,0.44241733181299886
