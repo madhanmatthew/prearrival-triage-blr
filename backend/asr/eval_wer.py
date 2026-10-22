@@ -5,6 +5,8 @@ Test set layout (recorded by the team, >= 30 per language, docs/08 §1):
     data/asr_test/<file>.wav
 
     python -m backend.asr.eval_wer [--data data/asr_test] [--model small] [--quick]
+    held-out set: --reference heldout/heldout_reference.csv --out-tag _heldout  (paths in that CSV
+    are relative to --data, like reference.csv)
 
 Reports corpus-level WER and CER per language (sum of edit errors / sum of reference length,
 not a mean of per-utterance rates) to reports/asr_wer.csv, per-utterance rows to
@@ -70,8 +72,8 @@ def corpus_rates(df: pd.DataFrame) -> pd.DataFrame:
     return g.reset_index()
 
 
-def load_reference(data_dir: Path) -> pd.DataFrame:
-    ref = pd.read_csv(data_dir / "reference.csv", encoding="utf-8", dtype=str, keep_default_na=False)
+def load_reference(data_dir: Path, name: str = "reference.csv") -> pd.DataFrame:
+    ref = pd.read_csv(data_dir / name, encoding="utf-8", dtype=str, keep_default_na=False)
     missing = {"file", "language", "reference"} - set(ref.columns)
     if missing:
         raise ValueError(f"reference.csv is missing columns {sorted(missing)}")
@@ -83,8 +85,11 @@ def load_reference(data_dir: Path) -> pd.DataFrame:
     return ref
 
 
-def evaluate(data_dir: Path, transcriber: Transcriber, limit: int | None = None) -> pd.DataFrame:
-    ref = load_reference(data_dir)
+def evaluate(data_dir: Path, transcriber: Transcriber, limit: int | None = None,
+             languages: list[str] | None = None, reference: str = "reference.csv") -> pd.DataFrame:
+    ref = load_reference(data_dir, reference)
+    if languages:
+        ref = ref[ref.language.isin(languages)]
     if limit:
         ref = ref.groupby("language").head(limit)
     rows = []
@@ -104,16 +109,17 @@ def _git_commit() -> str:
         return "unknown"
 
 
-def log_results(rates: pd.DataFrame, t: Transcriber) -> None:
+def log_results(rates: pd.DataFrame, t: Transcriber, reference: str = "reference.csv") -> None:
+    dataset = "team-recorded" if reference == "reference.csv" else f"team-recorded {reference}"
     today, commit = dt.date.today().isoformat(), _git_commit()
     with LOG_PATH.open("a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         for r in rates.itertuples():
-            w.writerow([today, commit, "asr", f"faster-whisper-{t.model_size}",
+            w.writerow([today, commit, "asr", f"faster-whisper-{Path(t.model_size).name}",
                         json.dumps({"language": r.language, "beam_size": 5, "device": t.device, "compute": t.compute_type,
                                     "repetition_penalty": t.repetition_penalty,
-                                    "no_repeat_ngram_size": t.no_repeat_ngram_size}),
-                        "", "", f"{r.wer:.4f}", "team-recorded", 42,
+                                    "no_repeat_ngram_size": t.no_repeat_ngram_size, "vad": t.vad_filter}),
+                        "", "", f"{r.wer:.4f}", dataset, 42,
                         f"task=asr metric=WER cer={r.cer:.4f} utterances={r.utterances} "
                         "language forced to true language, real recordings"])
 
@@ -126,10 +132,15 @@ def main() -> None:
     p.add_argument("--no-repeat-ngram", type=int, default=None, help="default: WHISPER_NO_REPEAT_NGRAM or 0")
     p.add_argument("--out-tag", default="", help="suffix for report files, e.g. _medium")
     p.add_argument("--quick", action="store_true", help="3 utterances per language; not logged")
+    p.add_argument("--languages", nargs="*", help="subset, e.g. --languages kn (language-specific fine-tunes)")
+    p.add_argument("--reference", default="reference.csv",
+                   help="reference CSV relative to --data, e.g. heldout/heldout_reference.csv")
+    p.add_argument("--no-vad", action="store_true", help="disable the VAD filter (default: WHISPER_VAD or on)")
     a = p.parse_args()
     t = Transcriber(model_size=a.model, repetition_penalty=a.repetition_penalty,
-                    no_repeat_ngram_size=a.no_repeat_ngram)
-    utt = evaluate(a.data, t, limit=3 if a.quick else None)
+                    no_repeat_ngram_size=a.no_repeat_ngram, vad_filter=False if a.no_vad else None)
+    utt = evaluate(a.data, t, limit=3 if a.quick else None, languages=a.languages,
+                   reference=a.reference)
     rates = corpus_rates(utt)
     print(rates.round(4).to_string(index=False))
     REPORT_DIR.mkdir(exist_ok=True)
@@ -137,7 +148,7 @@ def main() -> None:
     utt.to_csv(REPORT_DIR / f"asr_wer_utterances{suffix}.csv", index=False, encoding="utf-8")
     rates.to_csv(REPORT_DIR / f"asr_wer{suffix}.csv", index=False)
     if not a.quick:
-        log_results(rates, t)
+        log_results(rates, t, a.reference)
         print(f"appended {len(rates)} rows to {LOG_PATH}")
         if (rates.utterances < 30).any():
             print("WARNING: fewer than 30 utterances for some language (docs/08 §1 asks for >= 30)")

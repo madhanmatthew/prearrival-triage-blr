@@ -479,6 +479,11 @@ def create_app(services: Optional[Services] = None,
     async def ws_hospital(ws: WebSocket, hospital_id: str):
         await hub.serve(f"hospital/{hospital_id}", ws)
 
+    # native-speaker recordings of the fixed prompts (q1-q6, s1-s4 per language, docs/15 D18)
+    prompts = Path(__file__).resolve().parents[1] / "data" / "prompts_audio"
+    if prompts.is_dir():
+        app.mount("/prompts", StaticFiles(directory=prompts), name="prompts")
+
     ui = Path(__file__).resolve().parents[1] / "frontend"
     if ui.is_dir():
         app.mount("/ui", StaticFiles(directory=ui, html=True), name="ui")

@@ -126,6 +126,13 @@ def test_reference_validation(tmp_path):
         E.load_reference(tmp_path)
 
 
+def test_load_reference_custom_name(tmp_path):
+    (tmp_path / "heldout").mkdir()
+    pd.DataFrame({"file": ["heldout/en_h01.wav"], "language": ["en"], "reference": ["help"]})         .to_csv(tmp_path / "heldout" / "heldout_reference.csv", index=False)
+    ref = E.load_reference(tmp_path, "heldout/heldout_reference.csv")
+    assert ref.file.tolist() == ["heldout/en_h01.wav"]
+
+
 # ---- noise robustness (backend/asr/noise.py, eval_noise.py) ----
 import numpy as np  # noqa: E402
 
@@ -248,3 +255,41 @@ def test_gpu_day_plan():
                      "clean WER large-v3", "noise WER large-v3-turbo"]
     assert len(g.steps(skip_large=True, noise_large=True)) == 3
     assert g.MODELS["large-v3"] == "int8_float16"             # fits a 4 GB GPU
+
+
+def test_language_router_picks_override_and_vad(monkeypatch, tmp_path):
+    from backend.asr import transcribe as tr
+    kn_dir = tmp_path / "kn_model"
+    kn_dir.mkdir()
+    (kn_dir / "model.bin").write_bytes(b"x")
+    monkeypatch.setenv("WHISPER_MODEL", "small")
+    monkeypatch.setenv("WHISPER_MODEL_KN", str(kn_dir))
+    monkeypatch.setenv("WHISPER_VAD_KN", "0")
+    monkeypatch.delenv("WHISPER_MODEL_HI", raising=False)
+    loaded = []
+
+    class FakeInfo:
+        def __init__(self, lang):
+            self.language, self.language_probability, self.duration = lang, 1.0, 1.0
+
+    class FakeModel:
+        def __init__(self, size):
+            self.size = size
+
+        def transcribe(self, path, language=None, vad_filter=True, **kw):
+            seg = type("S", (), {"text": f"{self.size}|vad={vad_filter}"})
+            return [seg], FakeInfo(language or "en")
+
+    def factory(size, device, compute):
+        loaded.append(size)
+        return FakeModel(size)
+
+    audio = tmp_path / "a.wav"
+    audio.write_bytes(b"\0")
+    r = tr.LanguageRouter.from_env(model_factory=factory)
+    assert set(r.overrides) == {"kn"} and "kn=kn_model" in r.model_size
+    assert loaded == []                                                   # lazy
+    assert r.transcribe(audio, language="kn").text == f"{kn_dir}|vad=False"
+    assert r.transcribe(audio, language="hi").text.startswith("small|vad=")
+    assert r.transcribe(audio).text.startswith("small|")                  # auto-detect -> default
+    assert loaded == [str(kn_dir), "small"]

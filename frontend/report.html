@@ -40,6 +40,7 @@
   <div class="panel" id="dialogue" hidden>
     <h2>Questions <span class="muted" id="iid"></span></h2>
     <p class="muted" id="transcript"></p>
+    <p id="s3"></p>
     <div class="question" id="qtext"></div>
     <div class="row" id="taps">
       <button class="big tap" data-a="yes">Yes</button>
@@ -56,10 +57,12 @@
   <div class="panel" id="result" hidden>
     <h2>Report sent</h2>
     <p>Severity estimate: <span id="sev"></span> <span class="muted" id="model"></span></p>
-    <p class="muted">Help is being coordinated. Stay with the person if it is safe.</p>
+    <p id="s1"></p>
+    <p id="s2" hidden></p>
   </div>
   <div class="panel" id="guidance" hidden>
     <h2>First-aid steps <span id="grounded"></span></h2>
+    <p id="s4"></p>
     <div id="steps"></div>
     <div class="row" style="margin-top:8px">
       <button id="prev">◀ Back</button><button id="repeat">🔊 Repeat</button><button class="primary" id="next">Next ▶</button>
@@ -73,6 +76,26 @@
 let lang = "en", gps = null, incident = null, steps = [], stepIdx = 0;
 const $ = (s) => document.querySelector(s);
 const FREE_TEXT = new Set(["Q_NUM_INJURED", "Q_MECHANISM"]);
+// Fixed status lines (docs/NATIVE_SPEAKER_TASKS.md Part B); hi/kn translated by native speakers.
+const STATUS = {
+  en: { s1: "Help is on the way. Stay with the person if it is safe.",
+        s2: "An ambulance has been sent.",
+        s3: "Please answer a few quick questions.",
+        s4: "Follow these first-aid steps until help arrives." },
+  hi: { s1: "मदद आ रही है। अगर सुरक्षित है, तो उस व्यक्ति के पास ही रहें।",
+        s2: "एम्बुलेंस भेज दी गई है।",
+        s3: "बस कुछ छोटे-छोटे सवालों के जवाब दे दीजिए।",
+        s4: "मदद पहुँचने तक ये first-aid के तरीके अपनाइए।" },
+  kn: { s1: "ಸಹಾಯ ಬರುತ್ತಿದೆ. ನಿಮಗೆ ಸುರಕ್ಷಿತವಾಗಿದ್ದರೆ, ಆ ವ್ಯಕ್ತಿಯ ಜೊತೆಯಲ್ಲೇ ಇರಿ.",
+        s2: "ಆಂಬ್ಯುಲೆನ್ಸ್ ಕಳಿಸಲಾಗಿದೆ.",
+        s3: "ದಯವಿಟ್ಟು ಕೆಲವು ಚಿಕ್ಕ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರ ಕೊಡಿ.",
+        s4: "ಸಹಾಯ ಬರುವವರೆಗೂ ಈ first-aid ಕ್ರಮಗಳನ್ನು ಅನುಸರಿಸಿ." },
+};
+const st = (k) => STATUS[lang][k];
+// recorded prompt file per question (data/prompts_audio/<key>_<lang>.mp3, served at /prompts/)
+const QKEY = { Q_CONSCIOUS: "q1", Q_BREATHING: "q2", Q_BLEEDING: "q3", Q_SPEAK: "q4",
+               Q_NUM_INJURED: "q5", Q_MECHANISM: "q6" };
+let firstTurn = true;
 
 // --- language ---
 document.querySelectorAll(".lang").forEach((b) => b.onclick = () => {
@@ -133,6 +156,7 @@ function startDialogue(r) {
   incident = r.incident_id;
   $("#start").hidden = true; $("#dialogue").hidden = false;
   $("#iid").textContent = incident;
+  $("#s3").textContent = st("s3");
   if (r.transcript) $("#transcript").textContent = `Heard: "${r.transcript}"`;
   showTurn(r);
 }
@@ -143,7 +167,9 @@ function showTurn(r) {
   const free = FREE_TEXT.has(q.q_id);
   $("#taps").hidden = free; $("#free").hidden = !free;
   $("#answer").value = ""; if (free) $("#answer").focus();
-  speak(q.text, lang);
+  const items = firstTurn ? [{ key: "s3", text: st("s3") }] : [];
+  firstTurn = false;
+  say([...items, { key: QKEY[q.q_id], text: q.text }]);
 }
 async function sendAnswer(a) {
   $("#dlgErr").textContent = "";
@@ -159,15 +185,32 @@ async function finish(r) {
   const inc = await api(`/incident/${incident}`);
   $("#sev").innerHTML = inc.risk ? sevBadge(inc.risk.severity_class) : "–";
   $("#model").textContent = inc.risk ? `(${inc.risk.model_version})` : "";
+  $("#s1").textContent = st("s1");
+  watchDispatch(inc);
   loadGuidance();
+}
+
+// S2 only once the dispatcher has actually dispatched (decision set), never before.
+async function watchDispatch(inc) {
+  while (!inc.decision) {
+    await new Promise((ok) => setTimeout(ok, 5000));
+    try { inc = await api(`/incident/${incident}`); } catch (e) { return; }
+  }
+  $("#s2").textContent = st("s2"); $("#s2").hidden = false;
+  say([{ key: "s2", text: st("s2") }]);
 }
 
 // --- guidance: corpus text only, one step at a time, spoken by the browser ---
 async function loadGuidance() {
   $("#guidance").hidden = false;
+  $("#s4").textContent = st("s4");
   const g = await api(`/incident/${incident}/guidance`);
   steps = []; const srcs = new Map();
-  if (g.status !== "ok") { $("#steps").innerHTML = `<div class="step">${esc(g.message)}</div>`; return; }
+  if (g.status !== "ok") {
+    $("#steps").innerHTML = `<div class="step">${esc(g.message)}</div>`;
+    say([{ key: "s1", text: st("s1") }, { text: g.message, l: "en" }]);
+    return;
+  }
   let grounded = true;
   for (const it of g.items) {
     if (it.status !== "ok") { steps.push({ text: it.message, ids: [] }); continue; }
@@ -178,29 +221,53 @@ async function loadGuidance() {
   if (!steps.length) steps.push({ text: g.items.map((i) => i.message).join(" "), ids: [] });
   $("#grounded").innerHTML = grounded ? '<span class="badge ok">grounded ✓</span>' : '<span class="badge warn">partly grounded</span>';
   $("#sources").innerHTML = "Sources: " + [...srcs.values()].map((r) => `${esc(r.chunk_id)} (${esc(r.publisher || "")})`).join("; ");
-  stepIdx = 0; showStep();
+  stepIdx = 0; showStep([{ key: "s1", text: st("s1") }, { key: "s4", text: st("s4") }]);
   if (lang !== "en") $("#speakInfo").textContent = "Steps are in English (reviewed translations pending).";
 }
-function showStep() {
+function showStep(intro = []) {
   const s = steps[stepIdx];
   $("#steps").innerHTML = `<div class="muted">Step ${stepIdx + 1} of ${steps.length}</div><div class="step">${esc(s.text)}</div>` +
     (s.ids.length ? `<div class="source">from ${s.ids.map(esc).join(", ")}</div>` : "");
   $("#prev").disabled = stepIdx === 0; $("#next").disabled = stepIdx >= steps.length - 1;
-  speak(s.text, "en");
+  say([...intro, { text: s.text, l: "en" }]);
 }
 $("#prev").onclick = () => { stepIdx--; showStep(); };
 $("#next").onclick = () => { stepIdx++; showStep(); };
-$("#repeat").onclick = () => speak(steps[stepIdx].text, "en");
+$("#repeat").onclick = () => say([{ text: steps[stepIdx].text, l: "en" }]);
 
+// --- speech: play items in order; {key} = native recording (falls back to the browser voice),
+// {text, l} = browser voice. A new say() stops whatever is still playing.
+let playing = null, gen = 0;
+function stopSpeech() {
+  gen++;
+  if (playing) { playing.pause(); playing = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+}
+async function say(items) {
+  stopSpeech(); const g = gen;
+  for (const it of items) { if (g !== gen) return; await sayOne(it); }
+}
+function sayOne(it) {
+  if (!it.key) return speak(it.text, it.l);
+  return new Promise((done) => {
+    const a = new Audio(`/prompts/${it.key}_${lang}.mp3`);
+    let fell = false;
+    const fallback = () => { if (!fell) { fell = true; speak(it.text, lang).then(done); } };
+    a.onended = done; a.onerror = fallback;
+    playing = a; a.play().catch(fallback);
+  });
+}
 function speak(text, l) {
-  if (!("speechSynthesis" in window)) return;
-  const code = { en: "en-IN", hi: "hi-IN", kn: "kn-IN" }[l];
-  const voice = speechSynthesis.getVoices().find((v) => v.lang === code || v.lang.startsWith(l));
-  if (!voice && l !== "en") return;           // no voice for this language on the device: text only
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = code; if (voice) u.voice = voice;
-  speechSynthesis.speak(u);
+  return new Promise((done) => {
+    if (!("speechSynthesis" in window)) return done();
+    const code = { en: "en-IN", hi: "hi-IN", kn: "kn-IN" }[l];
+    const voice = speechSynthesis.getVoices().find((v) => v.lang === code || v.lang.startsWith(l));
+    if (!voice && l !== "en") return done();   // no voice for this language on the device: text only
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = code; if (voice) u.voice = voice;
+    u.onend = done; u.onerror = done;
+    speechSynthesis.speak(u);
+  });
 }
 </script>
 </body>

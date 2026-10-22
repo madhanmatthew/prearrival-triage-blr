@@ -12,9 +12,9 @@ script, e.g. ब्लीडिंग, ಆಕ್ಸಿಡೆಂಟ್). [ASSUMPT
 clips (scripts + large-v3 transcripts), so `backend/asr/eval_triage.py` on those clips is a dev
 figure, not a held-out one.
 
-[ASSUMPTION] The hi / kn wording and the small lexicons below are a first draft written for
-the prototype. [TODO-VERIFY] a native speaker (Sankalp's team) must review every hi/kn string
-and extend the lexicons from the recorded test set before any accuracy claim is made.
+The hi / kn QUESTIONS wording was corrected by one native speaker per language (2026-10-22,
+docs/NATIVE_SPEAKER_TASKS.md Part A). [ASSUMPTION] the answer/cue lexicons below are still a
+first draft; [TODO-VERIFY] extend them from the held-out recordings before any accuracy claim.
 Unrecognised answers are never guessed: they become "unknown".
 """
 from __future__ import annotations
@@ -25,36 +25,36 @@ import unicodedata
 QUESTIONS: dict[str, dict[str, str]] = {
     "Q_CONSCIOUS": {
         "en": "Is the person awake and responding to you?",
-        "hi": "क्या व्यक्ति होश में है और आपकी बात का जवाब दे रहा है?",
-        "kn": "ವ್ಯಕ್ತಿ ಎಚ್ಚರವಾಗಿದ್ದಾರೆಯೇ ಮತ್ತು ನಿಮಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿದ್ದಾರೆಯೇ?",
+        "hi": "क्या व्यक्ति होश में है और जवाब दे रहा है?",
+        "kn": "ವ್ಯಕ್ತಿಗೆ ಪ್ರಜ್ಞೆ ಇದೆಯಾ ಮತ್ತು ನೀವು ಮಾತಾಡಿಸಿದಾಗ ಪ್ರತಿಕ್ರಿಯೆ ಕೊಡ್ತಿದ್ದಾರಾ?",
     },
     # Asked as "breathing normally?" (the IFRC check), NOT "difficulty breathing?": for an
     # unresponsive person "no difficulty" could mean "not breathing at all". The state machine
     # inverts the reply so the stored answer_value stays "yes = breathing problem".
     "Q_BREATHING": {
         "en": "Is the person breathing normally?",
-        "hi": "क्या व्यक्ति ठीक से सांस ले रहा है?",
-        "kn": "ವ್ಯಕ್ತಿ ಸರಿಯಾಗಿ ಉಸಿರಾಡುತ್ತಿದ್ದಾರೆಯೇ?",
+        "hi": "क्या व्यक्ति सामान्य तरीके से साँस ले रहा है?",
+        "kn": "ವ್ಯಕ್ತಿ ಸಾಮಾನ್ಯವಾಗಿ ಉಸಿರಾಡ್ತಿದ್ದಾರಾ?",
     },
     "Q_BLEEDING": {
         "en": "Is there visible bleeding? If yes, is it heavy?",
-        "hi": "क्या खून बह रहा है? अगर हाँ, तो क्या बहुत ज़्यादा?",
-        "kn": "ರಕ್ತಸ್ರಾವ ಕಾಣುತ್ತಿದೆಯೇ? ಹೌದಾದರೆ, ತುಂಬಾ ಇದೆಯೇ?",
+        "hi": "क्या खून बह रहा है? अगर हाँ, तो क्या बहुत ज़्यादा खून बह रहा है?",
+        "kn": "ರಕ್ತ ಬರ್ತಿದೆಯಾ? ಬಂದರೆ, ತುಂಬಾ ರಕ್ತ ಬರ್ತಿದೆಯಾ?",
     },
     "Q_SPEAK": {
         "en": "Can the person speak clearly?",
-        "hi": "क्या व्यक्ति साफ़ बोल पा रहा है?",
-        "kn": "ವ್ಯಕ್ತಿ ಸ್ಪಷ್ಟವಾಗಿ ಮಾತನಾಡಬಲ್ಲರೇ?",
+        "hi": "क्या वो ठीक से बोल पा रहे हैं?",
+        "kn": "ವ್ಯಕ್ತಿ ಸ್ಪಷ್ಟವಾಗಿ ಮಾತಾಡ್ತಿದ್ದಾರಾ?",
     },
     "Q_NUM_INJURED": {
         "en": "How many people are injured?",
-        "hi": "कितने लोग घायल हैं?",
+        "hi": "कितने लोग घायल हुए हैं?",
         "kn": "ಎಷ್ಟು ಜನರಿಗೆ ಗಾಯವಾಗಿದೆ?",
     },
     "Q_MECHANISM": {
-        "en": "Was it a high-speed crash, a fall from a height, or a similar strong impact?",
-        "hi": "क्या यह तेज़ रफ़्तार टक्कर, ऊँचाई से गिरना या ऐसी कोई ज़ोरदार चोट थी?",
-        "kn": "ಇದು ವೇಗದ ಅಪಘಾತ, ಎತ್ತರದಿಂದ ಬಿದ್ದದ್ದು ಅಥವಾ ಅಂತಹ ಬಲವಾದ ಹೊಡೆತವೇ?",
+        "en": "Was the person hit by a fast vehicle, or did they fall from a height?",
+        "hi": "क्या व्यक्ति को किसी तेज़ गाड़ी ने टक्कर मारी है, या वो ऊँचाई से गिरे हैं?",
+        "kn": "ವ್ಯಕ್ತಿಗೆ ವೇಗವಾಗಿ ಬಂದ ಗಾಡಿ ಡಿಕ್ಕಿ ಹೊಡೀತಾ, ಅಥವಾ ಎತ್ತರದಿಂದ ಬಿದ್ರಾ?",
     },
 }
 

@@ -1,0 +1,2 @@
+language,utterances,word_errors,ref_words,char_errors,ref_chars,wer,cer
+hi,30,131,509,257,2193,0.25736738703339884,0.11719106247150023

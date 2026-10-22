@@ -73,8 +73,8 @@ def load_services() -> Services:
     s = Services(police_units_available=int(os.getenv("POLICE_UNITS_AVAILABLE", "6")))
     n = s.notes
 
-    from backend.asr.transcribe import Transcriber
-    s.transcriber = _try(n, "asr", Transcriber)
+    from backend.asr.transcribe import LanguageRouter
+    s.transcriber = _try(n, "asr", LanguageRouter.from_env)   # per-language models via WHISPER_MODEL_<LANG>
 
     p = latest("text_severity_v*.joblib")
     if p is None:

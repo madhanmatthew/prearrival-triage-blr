@@ -1,4 +1,5 @@
 """API tests with fake/fixture services (no model downloads, no network)."""
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytest
@@ -280,3 +281,12 @@ def test_vitals_endpoint_returns_10min_deterioration():
         probs.append(r["deterioration_10min_prob"])
     assert probs == sorted(probs) and probs[-1] > probs[0]
     assert "intra-operative" in r["deterioration_model"]
+
+
+@pytest.mark.skipif(not (Path(__file__).resolve().parents[1] / "data" / "prompts_audio").is_dir(),
+                    reason="no prompt recordings")
+def test_prompt_recordings_served():
+    c = client()
+    for key in ("q1_en", "q6_hi", "s3_kn"):
+        assert c.get(f"/prompts/{key}.mp3").status_code == 200
+    assert c.get("/prompts/nope.mp3").status_code == 404

@@ -14,9 +14,11 @@ Two agreement rates per language and field:
 
 These are agreements with the rule-based extraction from a script, NOT accuracy against
 clinical labels. [ASSUMPTION] the hi/kn cue variants were written after looking at these same
-90 clips, so the numbers are dev figures; a held-out figure needs new recordings.
+90 clips, so the numbers are dev figures. The held-out set (data/asr_test/heldout/, h01-h10,
+new unscripted recordings, references human-verified) gives the clean figure: pass --heldout.
 
 Usage: python -m backend.asr.eval_triage --utterances reports/asr_wer_utterances_large-v3_rp1.1.csv
+       python -m backend.asr.eval_triage --utterances reports/asr_wer_utterances_heldout.csv            --heldout --out-tag _heldout
 """
 from __future__ import annotations
 
@@ -51,7 +53,7 @@ def extract(text: str, language: str) -> dict:
 
 
 def scenario_id(file: str) -> str:
-    m = re.search(r"_(\d+)\.\w+$", file)
+    m = re.search(r"_(h?\d+)\.\w+$", file)
     return m.group(1) if m else file
 
 
@@ -87,7 +89,9 @@ def summarize(cmp: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(out)
 
 
-def log_results(summary: pd.DataFrame, source: str) -> None:
+def log_results(summary: pd.DataFrame, source: str, heldout: bool = False) -> None:
+    split = ("HELD-OUT: new recordings, lexicon not tuned on them" if heldout
+             else "DEV: lexicon written on these clips")
     today, commit = dt.date.today().isoformat(), _git_commit()
     allf = summary[summary.field == "all_fields"]
     with LOG_PATH.open("a", newline="", encoding="utf-8") as f:
@@ -98,7 +102,7 @@ def log_results(summary: pd.DataFrame, source: str) -> None:
                         "", "", f"{r.vs_en:.4f}", "team-recorded", 42,
                         f"task=asr_triage metric=all-field agreement hyp vs en-reference; "
                         f"asr={r.asr:.4f} ref_vs_en={r.ref_vs_en:.4f} clips={r.clips} "
-                        "DEV: lexicon written on these clips"])
+                        f"{split}"])
 
 
 def main() -> None:
@@ -107,6 +111,7 @@ def main() -> None:
                    default=REPORT_DIR / "asr_wer_utterances_large-v3_rp1.1.csv")
     p.add_argument("--out-tag", default="", help="suffix for report files")
     p.add_argument("--no-log", action="store_true")
+    p.add_argument("--heldout", action="store_true", help="label the log row as held-out, not dev")
     a = p.parse_args()
     utt = pd.read_csv(a.utterances, encoding="utf-8")
     cmp = compare(utt)
@@ -116,7 +121,7 @@ def main() -> None:
     cmp.to_csv(REPORT_DIR / f"asr_triage_fields{a.out_tag}.csv", index=False, encoding="utf-8")
     summary.to_csv(REPORT_DIR / f"asr_triage_summary{a.out_tag}.csv", index=False)
     if not a.no_log:
-        log_results(summary, str(a.utterances))
+        log_results(summary, str(a.utterances), a.heldout)
         print(f"appended {summary.field.eq('all_fields').sum()} rows to {LOG_PATH}")
 
 

@@ -91,7 +91,7 @@ class Transcriber:
     """
 
     def __init__(self, model_size: Optional[str] = None, mode: Optional[str] = None,
-                 device: Optional[str] = None, compute_type: Optional[str] = None, vad_filter: bool = True,
+                 device: Optional[str] = None, compute_type: Optional[str] = None, vad_filter: Optional[bool] = None,
                  repetition_penalty: Optional[float] = None, no_repeat_ngram_size: Optional[int] = None,
                  model_factory: Optional[Callable[[str, str, str], Any]] = None):
         _load_env()
@@ -99,15 +99,21 @@ class Transcriber:
         self.mode = mode or os.environ.get("WHISPER_MODE", "local")
         if self.mode != "local":
             raise NotImplementedError("only WHISPER_MODE=local is implemented (free-tier, docs/15 §4)")
-        if self.model_size not in MODEL_SIZES:
-            raise ValueError(f"WHISPER_MODEL must be one of {MODEL_SIZES}, got {self.model_size!r}")
+        # a local CTranslate2 folder (e.g. models/whisper/ct2/whisper-kannada-medium, made by
+        # scripts/convert_hf_whisper.py) is accepted as well as the stock sizes
+        if self.model_size not in MODEL_SIZES and not (Path(self.model_size) / "model.bin").exists():
+            raise ValueError(f"WHISPER_MODEL must be one of {MODEL_SIZES} or a CTranslate2 model folder, "
+                             f"got {self.model_size!r}")
         # empty env values (e.g. `WHISPER_COMPUTE=` in .env) fall back to the defaults
         self.device = device or os.environ.get("WHISPER_DEVICE") or "cpu"
         self.compute_type = (compute_type or os.environ.get("WHISPER_COMPUTE")
                              or ("float16" if self.device == "cuda" else "int8"))
         if self.device not in ("cpu", "cuda"):
             raise ValueError(f"WHISPER_DEVICE must be cpu or cuda, got {self.device!r}")
-        self.vad_filter = vad_filter
+        # VAD trims silence; it cut the ends of Kannada sentences with the vasista22 fine-tune
+        # (2026-10-22), so it is configurable: WHISPER_VAD=0 turns it off. Default stays on.
+        self.vad_filter = (vad_filter if vad_filter is not None
+                           else os.environ.get("WHISPER_VAD", "1").strip().lower() not in ("0", "false", "no"))
         # Repetition guard (deterministic): small Whisper loops on hi/kn ("ಸಾರಿ ಸಾರಿ ...").
         # 1.0 / 0 = faster-whisper defaults (no guard).
         self.repetition_penalty = float(repetition_penalty if repetition_penalty is not None
@@ -137,3 +143,48 @@ class Transcriber:
         return TranscriptResult(text=text, language=info.language,
                                 language_probability=float(info.language_probability),
                                 duration_s=float(info.duration))
+
+
+class LanguageRouter:
+    """Per-language ASR models behind the Transcriber interface (Indic ASR trial, 2026-10-22).
+
+    `WHISPER_MODEL_<LANG>` (e.g. WHISPER_MODEL_KN=models/whisper/ct2/whisper-kannada-medium) picks a
+    model for that language; `WHISPER_VAD_<LANG>` overrides the VAD setting for it (the vasista22
+    Kannada fine-tune needs WHISPER_VAD_KN=0, its sentence endings were cut otherwise). Languages
+    without an override, and auto-detect (language=None), use the default Transcriber. Models load
+    lazily, so an override costs GPU memory only once that language is used.
+    """
+
+    def __init__(self, default: "Transcriber | None" = None,
+                 overrides: Optional[dict[str, "Transcriber"]] = None):
+        self.default = default or Transcriber()
+        self.overrides = dict(overrides or {})
+
+    @classmethod
+    def from_env(cls, model_factory: Optional[Callable[[str, str, str], Any]] = None) -> "LanguageRouter":
+        _load_env()
+        default = Transcriber(model_factory=model_factory)
+        overrides = {}
+        for lang in SUPPORTED_LANGUAGES:
+            path = (os.environ.get(f"WHISPER_MODEL_{lang.upper()}") or "").strip()
+            if not path:
+                continue
+            vad_env = os.environ.get(f"WHISPER_VAD_{lang.upper()}")
+            vad = None if vad_env is None else vad_env.strip().lower() not in ("0", "false", "no")
+            overrides[lang] = Transcriber(model_size=path, device=default.device, vad_filter=vad,
+                                          repetition_penalty=default.repetition_penalty,
+                                          no_repeat_ngram_size=default.no_repeat_ngram_size,
+                                          compute_type=os.environ.get(f"WHISPER_COMPUTE_{lang.upper()}") or None,
+                                          model_factory=model_factory)
+        return cls(default, overrides)
+
+    @property
+    def model_size(self) -> str:
+        extra = ", ".join(f"{k}={Path(v.model_size).name}" for k, v in self.overrides.items())
+        return self.default.model_size + (f" ({extra})" if extra else "")
+
+    def for_language(self, language: Optional[str]) -> "Transcriber":
+        return self.overrides.get(language, self.default) if language else self.default
+
+    def transcribe(self, audio_path: str | Path, language: Optional[str] = None) -> TranscriptResult:
+        return self.for_language(language).transcribe(audio_path, language=language)

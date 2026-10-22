@@ -20,6 +20,8 @@ def _utt():
 
 def test_scenario_id():
     assert et.scenario_id("kan rec/kn_017.m4a") == "017" == et.scenario_id("eng rec/en_017.wav")
+    # held-out clips (h01-h10) pair across languages the same way
+    assert et.scenario_id("heldout/hi_h03.wav") == "h03" == et.scenario_id("heldout/en_h03.wav")
 
 
 def test_extract_fields():
