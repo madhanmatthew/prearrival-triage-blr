@@ -1,0 +1,229 @@
+{
+ "speed_factor": 0.75,
+ "scale": {
+  "low": 0.15,
+  "medium": 1.0,
+  "peak": 1.0
+ },
+ "limits_ms": {
+  "low": {
+   "silkboard_bellandur": 15.394,
+   "bellandur_marathahalli": 16.667,
+   "marathahalli_krpuram": 16.667
+  },
+  "medium": {
+   "silkboard_bellandur": 16.667,
+   "bellandur_marathahalli": 12.53,
+   "marathahalli_krpuram": 14.684
+  },
+  "peak": {
+   "silkboard_bellandur": 16.667,
+   "bellandur_marathahalli": 9.896,
+   "marathahalli_krpuram": 9.334
+  }
+ },
+ "leg_scale": {
+  "low": {
+   "silkboard_bellandur": 1.0,
+   "bellandur_marathahalli": 0.8961,
+   "marathahalli_krpuram": 0.7824
+  },
+  "medium": {
+   "silkboard_bellandur": 0.5443,
+   "bellandur_marathahalli": 1.0,
+   "marathahalli_krpuram": 1.0
+  },
+  "peak": {
+   "silkboard_bellandur": 0.6221,
+   "bellandur_marathahalli": 1.0,
+   "marathahalli_krpuram": 1.0
+  }
+ },
+ "fit_log": {
+  "low": [
+   {
+    "iter": 0,
+    "limits_kmh": {
+     "silkboard_bellandur": 47.7,
+     "bellandur_marathahalli": 57.1,
+     "marathahalli_krpuram": 55.3
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "bellandur_marathahalli": 39.8,
+     "marathahalli_krpuram": 35.2,
+     "silkboard_bellandur": 30.7,
+     "silkboard_krpuram": 32.8
+    },
+    "max_abs_err": 0.151
+   },
+   {
+    "iter": 1,
+    "limits_kmh": {
+     "silkboard_bellandur": 55.4,
+     "bellandur_marathahalli": 60.0,
+     "marathahalli_krpuram": 60.0
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 0.8961,
+     "marathahalli_krpuram": 0.7824
+    },
+    "speed": {
+     "bellandur_marathahalli": 42.5,
+     "marathahalli_krpuram": 41.9,
+     "silkboard_bellandur": 35.2,
+     "silkboard_krpuram": 38.4
+    },
+    "max_abs_err": 0.015
+   }
+  ],
+  "medium": [
+   {
+    "iter": 0,
+    "limits_kmh": {
+     "silkboard_bellandur": 28.3,
+     "bellandur_marathahalli": 38.8,
+     "marathahalli_krpuram": 41.2
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "bellandur_marathahalli": 24.0,
+     "marathahalli_krpuram": 23.5,
+     "silkboard_bellandur": 10.0,
+     "silkboard_krpuram": 15.8
+    },
+    "max_abs_err": 0.531
+   },
+   {
+    "iter": 1,
+    "limits_kmh": {
+     "silkboard_bellandur": 45.3,
+     "bellandur_marathahalli": 47.0,
+     "marathahalli_krpuram": 54.2
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "marathahalli_krpuram": 31.7,
+     "bellandur_marathahalli": 30.3,
+     "silkboard_bellandur": 14.2,
+     "silkboard_krpuram": 23.3
+    },
+    "max_abs_err": 0.333
+   },
+   {
+    "iter": 2,
+    "limits_kmh": {
+     "silkboard_bellandur": 60.0,
+     "bellandur_marathahalli": 45.1,
+     "marathahalli_krpuram": 52.9
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 0.5443,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "bellandur_marathahalli": 27.0,
+     "marathahalli_krpuram": 30.4,
+     "silkboard_bellandur": 21.6,
+     "silkboard_krpuram": 28.1
+    },
+    "max_abs_err": 0.071
+   }
+  ],
+  "peak": [
+   {
+    "iter": 0,
+    "limits_kmh": {
+     "silkboard_bellandur": 29.1,
+     "bellandur_marathahalli": 27.7,
+     "marathahalli_krpuram": 25.3
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "bellandur_marathahalli": 15.4,
+     "marathahalli_krpuram": 13.6,
+     "silkboard_bellandur": 8.5
+    },
+    "max_abs_err": 0.61
+   },
+   {
+    "iter": 1,
+    "limits_kmh": {
+     "silkboard_bellandur": 46.6,
+     "bellandur_marathahalli": 37.4,
+     "marathahalli_krpuram": 35.2
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "bellandur_marathahalli": 21.8,
+     "marathahalli_krpuram": 19.9,
+     "silkboard_bellandur": 15.9,
+     "silkboard_krpuram": 19.2
+    },
+    "max_abs_err": 0.271
+   },
+   {
+    "iter": 2,
+    "limits_kmh": {
+     "silkboard_bellandur": 60.0,
+     "bellandur_marathahalli": 35.6,
+     "marathahalli_krpuram": 33.6
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 0.6221,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "bellandur_marathahalli": 20.2,
+     "silkboard_bellandur": 19.5,
+     "marathahalli_krpuram": 18.8,
+     "silkboard_krpuram": 21.4
+    },
+    "max_abs_err": 0.105
+   },
+   {
+    "iter": 3,
+    "limits_kmh": {
+     "silkboard_bellandur": 60.0,
+     "bellandur_marathahalli": 36.7,
+     "marathahalli_krpuram": 33.9
+    },
+    "leg_scale": {
+     "silkboard_bellandur": 0.527,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "silkboard_bellandur": 25.6,
+     "bellandur_marathahalli": 20.8,
+     "marathahalli_krpuram": 19.9,
+     "silkboard_krpuram": 21.5
+    },
+    "max_abs_err": 0.171
+   }
+  ]
+ }
+}

@@ -1,0 +1,196 @@
+{
+ "speed_factor": 0.75,
+ "scale": {
+  "low": 0.15,
+  "medium": 1.0,
+  "peak": 1.0
+ },
+ "leg_scale": {
+  "low": {
+   "silkboard_bellandur": 1.0,
+   "bellandur_marathahalli": 1.0,
+   "marathahalli_krpuram": 1.0
+  },
+  "medium": {
+   "silkboard_bellandur": 0.8537,
+   "bellandur_marathahalli": 3.613,
+   "marathahalli_krpuram": 4.2108
+  },
+  "peak": {
+   "silkboard_bellandur": 0.9222,
+   "bellandur_marathahalli": 14.3887,
+   "marathahalli_krpuram": 4.0
+  }
+ },
+ "fit_log": {
+  "low": [
+   [
+    0.75,
+    39.46431806213797
+   ]
+  ],
+  "medium": [
+   {
+    "iter": 0,
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "marathahalli_krpuram": 38.5,
+     "bellandur_marathahalli": 38.5,
+     "silkboard_bellandur": 17.5,
+     "silkboard_krpuram": 29.5
+    },
+    "max_abs_err": 0.323
+   },
+   {
+    "iter": 1,
+    "leg_scale": {
+     "silkboard_bellandur": 0.7501173183068259,
+     "bellandur_marathahalli": 1.5224333925919684,
+     "marathahalli_krpuram": 1.3891302740047045
+    },
+    "speed": {
+     "bellandur_marathahalli": 34.7,
+     "marathahalli_krpuram": 37.1,
+     "silkboard_bellandur": 27.7,
+     "silkboard_krpuram": 30.8
+    },
+    "max_abs_err": 0.306
+   },
+   {
+    "iter": 2,
+    "leg_scale": {
+     "silkboard_bellandur": 1.119408843291442,
+     "bellandur_marathahalli": 1.9883604285044107,
+     "marathahalli_krpuram": 1.8246972045655117
+    },
+    "speed": {
+     "bellandur_marathahalli": 33.1,
+     "silkboard_bellandur": 18.6,
+     "marathahalli_krpuram": 40.0,
+     "silkboard_krpuram": 29.0
+    },
+    "max_abs_err": 0.295
+   },
+   {
+    "iter": 3,
+    "leg_scale": {
+     "silkboard_bellandur": 0.9139693220871948,
+     "bellandur_marathahalli": 2.410676813799244,
+     "marathahalli_krpuram": 2.688523943325695
+    },
+    "speed": {
+     "bellandur_marathahalli": 33.4,
+     "silkboard_bellandur": 22.7,
+     "silkboard_krpuram": 28.9,
+     "marathahalli_krpuram": 41.7
+    },
+    "max_abs_err": 0.349
+   },
+   {
+    "iter": 4,
+    "leg_scale": {
+     "silkboard_bellandur": 1.011911233121142,
+     "bellandur_marathahalli": 2.9659183154730173,
+     "marathahalli_krpuram": 4.210847708783159
+    },
+    "speed": {
+     "bellandur_marathahalli": 33.2,
+     "silkboard_bellandur": 19.0,
+     "silkboard_krpuram": 26.9
+    },
+    "max_abs_err": 0.141
+   },
+   {
+    "iter": 5,
+    "leg_scale": {
+     "silkboard_bellandur": 0.8537432821328149,
+     "bellandur_marathahalli": 3.6130467572719556,
+     "marathahalli_krpuram": 4.210847708783159
+    },
+    "speed": {
+     "silkboard_bellandur": 19.6,
+     "bellandur_marathahalli": 31.7,
+     "silkboard_krpuram": 31.2
+    },
+    "max_abs_err": 0.09
+   }
+  ],
+  "peak": [
+   {
+    "iter": 0,
+    "leg_scale": {
+     "silkboard_bellandur": 1.0,
+     "bellandur_marathahalli": 1.0,
+     "marathahalli_krpuram": 1.0
+    },
+    "speed": {
+     "marathahalli_krpuram": 38.5,
+     "bellandur_marathahalli": 38.5,
+     "silkboard_bellandur": 17.5,
+     "silkboard_krpuram": 29.5
+    },
+    "max_abs_err": 1.031
+   },
+   {
+    "iter": 1,
+    "leg_scale": {
+     "silkboard_bellandur": 0.7199135658867067,
+     "bellandur_marathahalli": 2.0,
+     "marathahalli_krpuram": 2.0
+    },
+    "speed": {
+     "bellandur_marathahalli": 32.4,
+     "silkboard_bellandur": 25.5,
+     "marathahalli_krpuram": 38.9,
+     "silkboard_krpuram": 32.2
+    },
+    "max_abs_err": 1.053
+   },
+   {
+    "iter": 2,
+    "leg_scale": {
+     "silkboard_bellandur": 0.9092857147655027,
+     "bellandur_marathahalli": 3.891585361072873,
+     "marathahalli_krpuram": 4.0
+    },
+    "speed": {
+     "silkboard_bellandur": 16.9,
+     "bellandur_marathahalli": 31.5,
+     "silkboard_krpuram": 30.5
+    },
+    "max_abs_err": 0.519
+   },
+   {
+    "iter": 3,
+    "leg_scale": {
+     "silkboard_bellandur": 0.6188311767053883,
+     "bellandur_marathahalli": 7.28430132873922,
+     "marathahalli_krpuram": 4.0
+    },
+    "speed": {
+     "silkboard_bellandur": 28.5,
+     "silkboard_krpuram": 33.1,
+     "bellandur_marathahalli": 32.7
+    },
+    "max_abs_err": 0.574
+   },
+   {
+    "iter": 4,
+    "leg_scale": {
+     "silkboard_bellandur": 0.9221967179730447,
+     "bellandur_marathahalli": 14.388721891716337,
+     "marathahalli_krpuram": 4.0
+    },
+    "speed": {
+     "silkboard_bellandur": 19.7,
+     "silkboard_krpuram": 31.1
+    },
+    "max_abs_err": 0.097
+   }
+  ]
+ }
+}

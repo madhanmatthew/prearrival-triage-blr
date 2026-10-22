@@ -75,6 +75,7 @@ class CorridorEnv(gym.Env):
         self.preempt_m = preempt_m
         self.w = (w_amb, w_gen, w_cross)
         self.junctions = list(self.JUNCTIONS)
+        self.max_sim_s = getattr(self, "max_sim_s", MAX_SIM_S)
         self.action_space = gym.spaces.Discrete(2 ** len(self.junctions))
         self.observation_space = gym.spaces.Box(0.0, 1.0, (6 * len(self.junctions),), np.float32)
         self._sumo = _locate_sumo()
@@ -241,7 +242,7 @@ class CorridorEnv(gym.Env):
         r = -(self.w[0] * amb_wait_step + self.w[1] * wait
               + self.w[2] * min(cross_q / QUEUE_CAP, 1.0))
         terminated = self._amb_out is not None
-        truncated = not terminated and self._t >= MAX_SIM_S
+        truncated = not terminated and self._t >= self.max_sim_s
         info = {}
         if terminated or truncated:
             info = self.episode_metrics()

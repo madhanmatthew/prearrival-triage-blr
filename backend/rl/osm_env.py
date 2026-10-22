@@ -11,8 +11,13 @@ junctions, 24-d observation, same reward and baselines); only the plumbing diffe
     junction = junction route offset - ambulance odometer (same formula as the schematic env);
   * demand: one route file per slot in sumo/demand/<slot>.rou.xml (fitted by the calibration step,
     docs/19 §5). Missing files raise with a hint; tests pass their own small demand.
+  * the ambulance's RL episode ends `amb_tail_m` (default 1 km) after the last controlled junction
+    (~7 km): the rest of the ORR is signal-free, so the agent cannot influence it and a full 17 km
+    trip at peak (~50 min) would exceed the episode cap. `full_route=True` drives the whole corridor
+    (evaluation of full-corridor transit; set `max_sim_s` accordingly).
 [ASSUMPTION]s: ambulance vType = emergency class, speedFactor 1.3 (mirrors the schematic env's
-elevated speed factor); ambulance departs at the route start ~0.9 km before Silk Board.
+elevated speed factor); ambulance departs at the route start ~0.9 km before Silk Board; SUMO's
+emergency class does not get rescue lanes (no bluelight device), it queues like other traffic.
 """
 from __future__ import annotations
 
@@ -37,12 +42,29 @@ class OsmCorridorEnv(CorridorEnv):
     DEMANDS = ["low", "medium", "peak"]
 
     def __init__(self, demand="medium", control: str = "rl", demand_files: dict | None = None,
-                 tls_map: dict | None = None, **kw):
+                 tls_map: dict | None = None, full_route: bool = False, amb_tail_m: float = 1000.0,
+                 max_sim_s: int = 3600, **kw):
         self._tls = tls_map if tls_map is not None else load_tls_map()
         self.JUNCTIONS = list(self._tls)
+        self.max_sim_s = max_sim_s
         self._demand_files = {k: Path(v) for k, v in (demand_files or {}).items()}
-        self._route_edges = json.loads((OSM_DIR / "orr_eastbound_route.json").read_text())["edges"]
+        edges = json.loads((OSM_DIR / "orr_eastbound_route.json").read_text())["edges"]
+        self._route_edges = edges if full_route else self._truncate(edges, amb_tail_m)
         super().__init__(demand=demand, control=control, **kw)
+
+    def _truncate(self, edges: list[str], tail_m: float) -> list[str]:
+        """Route edges up to `tail_m` past the last controlled junction (edge lengths from the net)."""
+        import sumolib
+        net = sumolib.net.readNet(str(OSM_DIR / "corridor.net.xml"))
+        stop = max(j["route_offset_m"] for j in self._tls.values()) + tail_m
+        out, run = [], 0.0
+        for e in edges:
+            out.append(e)
+            run += net.getEdge(e).getLength()
+            if run >= stop:
+                break
+        self.route_length_m = run
+        return out
 
     def _demand_file(self, slot: str) -> Path:
         p = self._demand_files.get(slot, DEMAND_DIR / f"{slot}.rou.xml")
@@ -52,9 +74,15 @@ class OsmCorridorEnv(CorridorEnv):
 
     def _start_sumo(self, sumo_seed: int):
         import traci
-        cmd = [self._sumo, "-n", str(OSM_DIR / "corridor.net.xml"), "-r", str(self._demand_file(self.demand)),
+        demand = self._demand_file(self.demand)
+        cmd = [self._sumo, "-n", str(OSM_DIR / "corridor.net.xml"), "-r", str(demand),
                "--seed", str(sumo_seed), "--time-to-teleport", "300", "--no-step-log", "true",
                "--no-warnings", "true", "--ignore-route-errors", "true"]
+        adds = [OSM_DIR / "silkboard_2024.tll.xml",               # reported 2024 Silk Board program (D20)
+                demand.with_name(f"{self.demand}.vss.add.xml")]     # speed-only calibration (calibrate_osm_speed)
+        adds = [str(a) for a in adds if a.exists()]
+        if adds:
+            cmd += ["-a", ",".join(adds)]
         traci.start(cmd, label=self._label)
         self._conn = c = traci.getConnection(self._label)
         c.route.add(AMB_ROUTE_ID, self._route_edges)
@@ -79,6 +107,24 @@ class OsmCorridorEnv(CorridorEnv):
     def _set_phase(self, j: str, phase: int) -> None:
         tid = self._tls[j]["tls_id"]
         self._conn.trafficlight.setRedYellowGreenState(tid, self._tls[j]["states"][PHASE_STATE[phase]])
+
+    def step(self, action):
+        if self._amb_in is not None and self._amb_out is None:
+            self._amb_progress = self._conn.vehicle.getDistance(AMB_ID)
+        return super().step(action)
+
+    def reset(self, *, seed=None, options=None):
+        self._amb_progress = 0.0
+        return super().reset(seed=seed, options=options)
+
+    def episode_metrics(self) -> dict:
+        """Parent metrics + how far the ambulance got (fair comparison when it did not finish)."""
+        m = super().episode_metrics()
+        total = getattr(self, "route_length_m", None)
+        done = m["amb_completed"]
+        m["amb_progress_m"] = float(total if (done and total) else self._amb_progress)
+        m["amb_route_m"] = float(total) if total else float("nan")
+        return m
 
     def _amb_x(self):
         """Ambulance odometer (m along its route) while it is driving, else None."""

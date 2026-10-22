@@ -15,16 +15,32 @@ pytestmark = pytest.mark.skipif(shutil.which("sumo") is None and "SUMO_HOME" not
 
 def test_tls_map_four_junctions_in_route_order():
     tm = load_tls_map()
-    assert list(tm) == bo.NAMES
+    assert len(tm) == bo.N_CONTROLLED and list(tm)[0] == "silkboard"
     offs = [j["route_offset_m"] for j in tm.values()]
     assert offs == sorted(offs) and offs[-1] < 7000                     # all on the Silk Board -> Iblur stretch
+    assert sum(j["kind"] == "junction" for j in tm.values()) >= 3
     for j in tm.values():
-        assert not set(j["main_links"]) & set(j["cross_links"]) and j["cross_links"]
+        assert not set(j["main_links"]) & set(j["cross_links"])
+        assert j["cross_links"] or j["kind"] == "midblock"
         for st in j["states"].values():
             assert len(st) == j["n_links"]
         assert all(j["states"]["main_green"][k] == "g" for k in j["main_links"])
         assert all(j["states"]["main_green"][k] == "r" for k in j["cross_links"])
         assert all(j["states"]["cross_yellow"][k] == "y" for k in j["cross_links"])
+
+
+def test_select_controlled_prefers_junctions():
+    sig = [{"kind": k, "route_offset_m": o} for k, o in
+           (("junction", 1000), ("midblock", 2000), ("junction", 3600), ("midblock", 5900), ("junction", 6000))]
+    got = [s["route_offset_m"] for s in bo.select_controlled(sig)]
+    assert got == [1000, 2000, 3600, 6000]
+
+
+def test_route_stays_on_main_carriageway():
+    import sumolib
+    net = sumolib.net.readNet(str(OSM_DIR / "corridor.net.xml"))
+    edges = json.loads((OSM_DIR / "orr_eastbound_route.json").read_text())["edges"]
+    assert all(net.getEdge(e).getLaneNumber() >= 2 for e in edges)
 
 
 def test_states_helper():
@@ -50,7 +66,8 @@ def test_episode_runs_and_ambulance_arrives(tmp_path, control):
     try:
         obs, _ = env.reset(seed=3)
         assert obs.shape == (24,) and env.action_space.n == 16
-        assert all(len(env._lanes[j][0]) and len(env._lanes[j][1]) for j in env.junctions)
+        assert all(len(env._lanes[j][0]) for j in env.junctions)
+        assert all(len(env._lanes[j][1]) for j, t in env._tls.items() if t["kind"] == "junction")
         done, info = False, {}
         while not done:
             obs, r, term, trunc, info = env.step(0)
@@ -66,5 +83,18 @@ def test_missing_demand_file_has_hint(tmp_path):
     try:
         with pytest.raises(FileNotFoundError, match="fit demand"):
             env.reset(seed=0)
+    finally:
+        env.close()
+
+
+def test_metrics_include_progress(tmp_path):
+    env = OsmCorridorEnv("medium", control="fixed", demand_files={"medium": tiny_demand(tmp_path / "d.rou.xml")})
+    try:
+        env.reset(seed=1)
+        done, info = False, {}
+        while not done:
+            _, _, term, trunc, info = env.step(0)
+            done = term or trunc
+        assert info["amb_progress_m"] == pytest.approx(env.route_length_m) and info["amb_route_m"] > 5000
     finally:
         env.close()

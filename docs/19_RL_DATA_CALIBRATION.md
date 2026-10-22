@@ -99,6 +99,12 @@ per time slot."*
 
 ## 5. Fit demand with routeSampler
 
+> **Outcome 2026-10-22:** demand-only fitting failed at peak on the OSM net (see
+> `reports/rl_calibration_demand_v2_failed.md`). Final = speed-only calibration
+> (`scripts/calibrate_osm_speed.py`, `reports/rl_calibration.md`): moderate fixed demand, per-leg per-slot lane
+> limits (variable speed signs, <= 60 km/h), lower local demand only on the signal-limited Silk Board leg, Silk
+> Board on the reported 2024 program. 12/12 rows within 15 % of TomTom typical. State: speeds imposed, not emergent.
+
 - Build detector/edge count targets from YOLO counts (scaled per hour by the TomTom
   time-of-day profile where no direct counts exist; state this).
 - `randomTrips.py` → candidate routes; `routeSampler.py --edgedata-files <counts> --routes

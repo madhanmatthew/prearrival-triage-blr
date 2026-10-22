@@ -412,6 +412,45 @@
 
 - 2026-10-21: OSM corridor (D21). TomTom typical eastbound completed with the key on this laptop (672 rows, 0 rejected; reverse direction still missing). `scripts/build_calibration_targets.py` -> `data/traffic/calibration_targets.csv` (weekday slots low 02-04 / medium 12-14 / peak 17-19 IST; SB->KRP typical 1533 / 2312 / 2937 s). OSM extract via overpass.kumi.systems (1,540 ways, main roads, bbox 12.905-13.010 N, 77.610-77.712 E). netconvert keeps OSM signal tags (219 TLS); `--tls.discard-simple` had dropped them. ORR route found leg by leg (plain shortest path cut through Koramangala): 17.3 km incl. 0.9 km before Silk Board; legs 6.65 / 5.17 / 6.00 km vs TomTom 6.27 / 4.62 / 5.92. Finding: no ORR signals from Bellandur to KR Puram (underpass / flyover / unsignalised). RL junctions = the 4 junction signals in the first 6 km (D21, `sumo/osm/tls_map.json`, main/cross by approach direction). NEXT: OSM env wrapper (2-phase states), demand fitting to the slot targets, calibration table.
 
+- 2026-10-22: Indic ASR trial (90 dev clips, forced language, rp 1.1, VAD OFF for every row below, large-v3 int8_float16,
+  fine-tunes float16, GPU). Kannada: vasista22/whisper-kannada-medium WER .478 / CER .154 vs large-v3 .801 / .242.
+  Hindi: vasista22/whisper-hindi-medium .257 / .117 vs large-v3 .308 / .157. Both Apache-2.0, converted with
+  `scripts/convert_hf_whisper.py` to models/whisper/ct2/ (gitignored). VAD cut sentence endings with the kn fine-tune
+  (WER .624 / CER .357 with VAD on): VAD now configurable (WHISPER_VAD, WHISPER_VAD_<LANG>, eval_wer --no-vad).
+  `LanguageRouter` (backend/asr/transcribe.py) picks WHISPER_MODEL_<LANG> per language; services use it. Local .env
+  set to kn/hi fine-tunes + large-v3-turbo default. Caveat: dev clips only; the held-out clips (docs/NATIVE_SPEAKER_TASKS.md
+  Part C) will give the clean number. Candidate not yet tried: ARTPARK-IISc/whisper-small-vaani-kannada.
+- 2026-10-22: OSM demand calibration v1 FAILED (stopped during validation). Speed factor fit OK (0.806 -> night corridor
+  39.2 vs TomTom 39.5 km/h) but corridor speed stayed 34-36 km/h for scale 1.5-3.0 (targets 26.2 medium, 20.6 peak).
+  Diagnosis: eastbound through traffic enters only ~0.9 km before Silk Board and queues at the Silk Board signal
+  (218 halted on the approach edge, mean depart delay 218 s, only 233 through vehicles finished in 1.5 h); the route
+  uses a 1-lane 'Sarjapur Road' edge at J3 instead of the ORR carriageway; westbound gridlocks at the Mahadevapura
+  flyover merge (1 vehicle finished). So downstream legs run nearly empty (45-47 km/h). NEXT: network cleanup at those
+  junctions + demand entering along the corridor (per-leg on-ramps), then re-fit.
+
+- 2026-10-22: Network cleanup (1-day timebox). Route finder now uses a weighted Dijkstra preferring the ORR main
+  carriageway (>= 2 lanes, ORR-named; others x4 cost): eb/wb routes all >= 3 lanes, legs 6.70/5.17/6.00 km eb.
+  The old J3 (Sarjapur Rd signal) sits on a 1-lane at-grade side road; the ORR main carriageway is grade-separated
+  there -> D21 revised: controlled = Silk Board (1.0 km), ped crossing (2.0 km), 19th Main jn (3.6 km), jn at 6.0 km.
+  Demand v2: through share 0.4 + per-leg local flows (on-ramps) both directions + per-leg multipliers fitted per slot.
+  Result v2 (reports/rl_calibration_demand_v2_failed.md): speed factor 0.75 (night 39.5 vs 39.5 km/h); medium fit
+  reached 9 % on the fit seed with multipliers 0.85/3.6/4.2, but Marathahalli->KR Puram probes did not finish in
+  validation; peak needed 14.4x local demand on Bellandur->Marathahalli and gridlocked (full corridor +51 %).
+  -> Fallback as agreed: SPEED-ONLY calibration (`scripts/calibrate_osm_speed.py`): moderate fixed demand, per-leg
+  per-slot lane speed limits (variable speed signs) fitted to TomTom typical leg speeds; RL env loads
+  sumo/demand/<slot>.vss.add.xml. Stated limit: slot speeds imposed, not emergent from demand.
+
+- 2026-10-22: Speed-only calibration, final (run 3). Silk Board on the reported 2024 program
+  (`sumo/osm/silkboard_2024.tll.xml`, built by build_osm_corridor from link geometry: route-direction 147+3 s,
+  opposite 87+3 s, Hosur 42+3 s). Lane limits capped at 60 km/h; signal-limited legs get lower local demand
+  (Silk Board leg x0.54 medium, x0.62 peak). Validation 5 seeds: all 12 rows within 15 % of TomTom typical, worst
+  -10.3 % (peak Silk Board leg); full corridor low +0.3 %, medium +4.4 %, peak +3.5 %. Live (point speed) errors up
+  to -46 %: indicative only. experiments/log.csv: the LAST three `osm_speed_*` rows (2026-10-22) are final; earlier
+  `osm_speed_*` rows (run 1 without the Silk Board program; run 2 with uncapped limits, 2 legs missed) and the
+  `osm_demand_*` rows are superseded. RL env: episodes end 1 km past the last controlled signal (7.7 km), cap 3600 s,
+  `amb_progress_m` metric; fixed-time peak ambulance waits ~10 min at Silk Board + long jam before the 6.0 km jn.
+  NEXT: backend/rl/demand.py (randomized demand, docs/19 §7), baselines + DQN 3 seeds on OSM (overnight).
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

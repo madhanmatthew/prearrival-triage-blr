@@ -29,7 +29,6 @@ TLS_MAP = OUT_DIR / "tls_map.json"
 POINTS = Path("scripts/traffic_points.json")
 LEG_LENGTH_M = {"silkboard_bellandur": 6274, "bellandur_marathahalli": 4618, "marathahalli_krpuram": 5918}
 APPROACH_M = 900          # route starts this far before the Silk Board stop line (approx.)
-NAMES = ["silkboard", "hsr_19th_main", "sarjapur_rd_iblur", "orr_5_9km"]   # travel order [TODO-VERIFY names]
 NETCONVERT_ARGS = ["--geometry.remove", "--roundabouts.guess", "--ramps.guess", "--junctions.join",
                    "--tls.join", "--output.street-names", "--remove-edges.isolated",
                    "--keep-edges.by-vclass", "passenger", "--seed", "42"]
@@ -52,19 +51,65 @@ def _orr(e) -> bool:
     return "Outer Ring" in e.getName() or "Underpass" in e.getName()
 
 
-def find_route(net, points: dict) -> list:
-    """Leg by leg through the corridor points; best = closest to TomTom length, mostly ORR."""
+NON_MAIN_PENALTY = 4.0    # cost x this on edges that are not the ORR main carriageway (side/service roads)
+
+
+def _edge_cost(e) -> float:
+    main = _orr(e) and e.getLaneNumber() >= 2
+    return e.getLength() * (1.0 if main else NON_MAIN_PENALTY)
+
+
+def main_carriageway_path(net, a, b, max_cost: float = 60000.0):
+    """Dijkstra from edge a to edge b preferring the ORR main carriageway (>= 2 lanes, ORR-named).
+    A plain length-shortest path took a 1-lane at-grade side road at the Sarjapur Road junction,
+    where the real ORR is grade-separated (2026-10-22)."""
+    import heapq
+    best = {a.getID(): 0.0}
+    prev = {}
+    heap = [(0.0, a.getID(), a)]
+    while heap:
+        c, eid, e = heapq.heappop(heap)
+        if e is b:
+            path = [e]
+            while path[-1].getID() in prev:
+                path.append(prev[path[-1].getID()])
+            return list(reversed(path))
+        if c > best.get(eid, float("inf")) or c > max_cost:
+            continue
+        for nxt in e.getOutgoing():
+            if not nxt.allows("passenger"):
+                continue
+            nc = c + _edge_cost(nxt)
+            if nc < best.get(nxt.getID(), float("inf")):
+                best[nxt.getID()] = nc
+                prev[nxt.getID()] = e
+                heapq.heappush(heap, (nc, nxt.getID(), nxt))
+    return None
+
+
+EASTBOUND = ("silkboard", "bellandur", "marathahalli", "krpuram")
+WESTBOUND = tuple(reversed(EASTBOUND))
+
+
+def _leg_target(a: str, b: str) -> float:
+    return LEG_LENGTH_M.get(f"{a}_{b}") or LEG_LENGTH_M[f"{b}_{a}"]     # TomTom eastbound lengths
+
+
+def find_legs(net, points: dict, order: tuple = EASTBOUND) -> list[list]:
+    """One edge path per leg through the corridor points; best = closest to the TomTom leg
+    length and mostly ORR-named (a plain shortest path cuts through Koramangala)."""
     def near(name, r=200):
         p = points[name]
         x, y = net.convertLonLat2XY(p["lon"], p["lat"])
         return [e for e, _ in net.getNeighboringEdges(x, y, r)
                 if e.allows("passenger") and (_orr(e) or e.getName() == "")]
-    route = []
-    for a, b in (("silkboard", "bellandur"), ("bellandur", "marathahalli"), ("marathahalli", "krpuram")):
-        target, best = LEG_LENGTH_M[f"{a}_{b}"], None
-        for ea in near(a):
+    legs, last = [], None
+    for a, b in zip(order, order[1:]):
+        target, best = _leg_target(a, b), None
+        starts = [last] if last is not None else near(a)
+        for ea in starts:
             for eb in near(b):
-                path, _ = net.getShortestPath(ea, eb)
+                path = main_carriageway_path(net, ea, eb)
                 if not path:
                     continue
                 length = sum(e.getLength() for e in path)
@@ -74,13 +119,21 @@ def find_route(net, points: dict) -> list:
                     best = (score, path)
         if best is None:
             raise RuntimeError(f"no ORR path {a} -> {b}")
-        path = best[1]
+        legs.append(best[1])
+        last = best[1][-1]
+    return legs
+
+
+def find_route(net, points: dict, order: tuple = EASTBOUND, lead_in_m: float = APPROACH_M) -> list:
+    """Legs joined into one continuous route, extended `lead_in_m` upstream along the ORR (so the
+    Silk Board signal is on the eastbound route)."""
+    route = []
+    for path in find_legs(net, points, order):
         if route and route[-1] == path[0]:
             path = path[1:]
         route += path
-    # extend upstream along the ORR so the Silk Board signal is on the route
     head, back = route[0], 0.0
-    while back < APPROACH_M:
+    while back < lead_in_m:
         inc = [e for e in head.getIncoming() if e.allows("passenger") and _orr(e) and e not in route]
         if not inc:
             break
@@ -107,8 +160,9 @@ def _parallel(a: float, b: float, tol: float = 35.0) -> bool:
 
 
 def junctions_on_route(net, route: list) -> list[dict]:
-    """Junction-type signals (with a cross-street approach) in travel order. An approach is MAIN
-    when it runs parallel (either direction) to the route's approach edge, else CROSS."""
+    """Signals on the route in travel order, `kind` = "junction" (has a cross-street approach) or
+    "midblock" (pedestrian crossing: no cross approach; its cross phase = all-red for vehicles).
+    An approach is MAIN when it runs parallel (either direction) to the route's approach edge."""
     tls = {t.getID(): t for t in net.getTrafficLights()}
     out, run, seen = [], 0.0, set()
     route_ids = {e.getID() for e in route}
@@ -124,18 +178,46 @@ def junctions_on_route(net, route: list) -> list[dict]:
             cross_in = {cc[0].getEdge().getID() for cc in conns
                         if cc[0].getEdge().getID() not in route_ids
                         and not _parallel(_bearing(cc[0].getEdge()), ref)}
-            if not cross_in:
-                continue                             # mid-block / pedestrian signal
             main_idx = sorted({cc[2] for cc in conns if cc[0].getEdge().getID() not in cross_in})
+            # main links coming from the route's own direction (vs the opposite ORR direction)
+            same_dir = sorted({cc[2] for cc in conns if cc[0].getEdge().getID() not in cross_in and (
+                cc[0].getEdge().getID() in route_ids or abs(((_bearing(cc[0].getEdge()) - ref + 180) % 360) - 180) <= 35)})
             cross_idx = sorted({cc[2] for cc in conns if cc[0].getEdge().getID() in cross_in})
             n = max(cc[2] for cc in conns) + 1
             lon, lat = net.convertXY2LonLat(*e.getToNode().getCoord())
             cross_names = sorted({net.getEdge(x).getName() for x in cross_in if net.getEdge(x).getName()})
-            out.append({"tls_id": tid, "route_offset_m": round(run, 1), "lat": round(lat, 6),
+            out.append({"tls_id": tid, "kind": "junction" if cross_in else "midblock",
+                        "route_offset_m": round(run, 1), "lat": round(lat, 6),
                         "lon": round(lon, 6), "in_edge": e.getID(), "n_links": n,
-                        "main_links": main_idx, "cross_links": cross_idx, "cross_streets": cross_names,
+                        "main_links": main_idx, "main_same_dir_links": same_dir,
+                        "cross_links": cross_idx, "cross_streets": cross_names,
                         "cross_in_edges": sorted(cross_in)})
     return out
+
+
+N_CONTROLLED = 4      # agent spec (docs/09 §4): 4 junctions -> 16 actions, 24-d observation
+
+
+def select_controlled(signals: list[dict], n: int = N_CONTROLLED) -> list[dict]:
+    """All junction signals first, then mid-block signals in travel order until n; travel order."""
+    juncs = [s for s in signals if s["kind"] == "junction"]
+    mids = [s for s in signals if s["kind"] == "midblock"]
+    if len(juncs) + len(mids) < n:
+        raise RuntimeError(f"need {n} signals on the route, found {len(juncs) + len(mids)}")
+    chosen = juncs[:n] + mids[:max(0, n - len(juncs))]
+    return sorted(chosen, key=lambda s: s["route_offset_m"])
+
+
+def name_of(j: dict, i: int) -> str:
+    """Stable readable name: first signal = silkboard; junctions by cross street; mid-block by km."""
+    import re
+    if i == 0:
+        return "silkboard"
+    km = f"{j['route_offset_m'] / 1000:.1f}".replace(".", "_")
+    if j["kind"] == "midblock":
+        return f"ped_crossing_{km}km"
+    street = re.sub(r"[^a-z0-9]+", "_", (j["cross_streets"] or ["junction"])[0].lower()).strip("_")
+    return f"{street}_{km}km" if street != "junction" else f"junction_{km}km"
 
 
 def states(j: dict) -> dict[str, str]:
@@ -155,6 +237,28 @@ def states(j: dict) -> dict[str, str]:
             "cross_green": mk(cross), "cross_yellow": mk(set(), cross)}
 
 
+SILKBOARD_2024 = (("route_dir", 147), ("route_dir_yellow", 3), ("opposite", 87), ("opposite_yellow", 3),
+                  ("cross", 42), ("cross_yellow", 3))   # 285 s cycle, Deccan Herald 18 Jul 2024 (D20)
+SILKBOARD_PROGRAM = OUT_DIR / "silkboard_2024.tll.xml"
+
+
+def silkboard_program(j: dict) -> str:
+    """Fixed-time program for Silk Board from the reported 2024 peak timings (D20): BTM/ORR-west
+    (the route's approach) ~150 s, HSR/ORR-east ~90 s, Hosur Road ~45 s, cycle 285 s; 3 s yellow
+    taken out of each green. Which OSM approach is which is inferred from geometry [TODO-VERIFY]."""
+    groups = {"route_dir": set(j["main_same_dir_links"]),
+              "opposite": set(j["main_links"]) - set(j["main_same_dir_links"]),
+              "cross": set(j["cross_links"])}
+    phases = []
+    for name, dur in SILKBOARD_2024:
+        g = groups[name.replace("_yellow", "")]
+        ch = "y" if name.endswith("_yellow") else "G"
+        state = "".join(ch if k in g else "r" for k in range(j["n_links"]))
+        phases.append(f'    <phase duration="{dur}" state="{state}"/>')
+    head = f'<additional>\n  <tlLogic id="{j["tls_id"]}" type="static" programID="silkboard_2024" offset="0">\n'
+    return head + "\n".join(phases) + "\n  </tlLogic>\n</additional>\n"
+
+
 def build() -> dict:
     import sumolib
     _sumo_env()
@@ -162,16 +266,15 @@ def build() -> dict:
     net = sumolib.net.readNet(str(NET), withPrograms=True)
     points = json.loads(POINTS.read_text(encoding="utf-8"))["junctions"]
     route = find_route(net, points)
-    found = junctions_on_route(net, route)
-    if len(found) < len(NAMES):
-        raise RuntimeError(f"expected {len(NAMES)} signalised junctions on the route, found {len(found)}")
-    found = found[:len(NAMES)]
-    tls_map = {"_note": "docs/15 D21: the 4 RL-controlled junctions; names from OSM cross streets "
-                        "[TODO-VERIFY on a map]. Other signals on the route keep their OSM program.",
-               "junctions": {name: {**j, "states": states(j)} for name, j in zip(NAMES, found)}}
+    found = select_controlled(junctions_on_route(net, route))
+    tls_map = {"_note": "docs/15 D21 (rev. 2026-10-22): the 4 RL-controlled signals on the ORR main "
+                        "carriageway = every junction signal + mid-block crossings in travel order to make 4; "
+                        "names from OSM cross streets [TODO-VERIFY on a map]. Other signals keep their OSM program.",
+               "junctions": {name_of(j, i): {**j, "states": states(j)} for i, j in enumerate(found)}}
     length = sum(e.getLength() for e in route)
     ROUTE.write_text(json.dumps({"edges": [e.getID() for e in route], "length_m": round(length, 1)}))
     TLS_MAP.write_text(json.dumps(tls_map, indent=1))
+    SILKBOARD_PROGRAM.write_text(silkboard_program(tls_map["junctions"]["silkboard"]))
     return {"route_length_m": length, "junctions": tls_map["junctions"]}
 
 

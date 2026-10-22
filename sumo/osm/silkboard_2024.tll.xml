@@ -1,0 +1,10 @@
+<additional>
+  <tlLogic id="joinedS_494271080_cluster_10282796509_10855370147_2971089260_3805003790_#1more_cluster_10282796511_1723795924_306594280" type="static" programID="silkboard_2024" offset="0">
+    <phase duration="147" state="GGGGGGGGGrrrrrrrrrrrrrGGGGGrrrr"/>
+    <phase duration="3" state="yyyyyyyyyrrrrrrrrrrrrryyyyyrrrr"/>
+    <phase duration="87" state="rrrrrrrrrrrrrGGGGGrrrrrrrrrGGGG"/>
+    <phase duration="3" state="rrrrrrrrrrrrryyyyyrrrrrrrrryyyy"/>
+    <phase duration="42" state="rrrrrrrrrGGGGrrrrrGGGGrrrrrrrrr"/>
+    <phase duration="3" state="rrrrrrrrryyyyrrrrryyyyrrrrrrrrr"/>
+  </tlLogic>
+</additional>
