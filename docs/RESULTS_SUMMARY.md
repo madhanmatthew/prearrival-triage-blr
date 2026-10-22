@@ -78,6 +78,12 @@ Every sentence shown comes from retrieved corpus text (rule 6); 0 medication sen
 Source: `vitals` rows 2026-09-30. Labels from real outcomes, never NEWS2 (rule 1). Limits: 100 patients,
 ICU not pre-hospital.
 
+**Explainability** (D13; models fit on all windows, explanations not performance; `reports/xai_shap_*.csv`,
+`reports/figures/xai_shap_*.png`, IG figures for the BiGRU in `reports/figures/`): SHAP top features — severity:
+RF avpu_bin, supplemental_o2, temp, spo2, sbp; GB avpu_bin, sbp, supplemental_o2, temp, hr. Trend: RF sbp, hr, spo2,
+rr, sbp_delta; GB sbp, hr, supplemental_o2, rr, sbp_delta. Consciousness/oxygen dominate severity, blood pressure
+and heart rate dominate deterioration — clinically plausible.
+
 ### 4b. VitalDB — new deterioration within 10 min (intra-operative, 1-min vitals; D19)
 
 203,294 windows, 5,643 subjects, positive rate 13.8 %; nested CV 5×3 grouped by subject.
