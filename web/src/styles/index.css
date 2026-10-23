@@ -1,0 +1,120 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/600.css";
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Design tokens. RGB triplets so Tailwind can apply alpha (bg-s2/60 etc).
+   Three surface elevations: s1 (panels) < s2 (cards) < s3 (raised / hover).
+   One brand accent. Severity palette is reserved for the 4 risk classes.
+   --------------------------------------------------------------------------- */
+:root,
+[data-theme="dark"] {
+  --c-base: 9 12 19;
+  --c-s1: 15 19 29;
+  --c-s2: 21 26 39;
+  --c-s3: 30 36 52;
+  --c-line: 255 255 255;       /* used with low alpha */
+  --c-fg: 232 236 244;
+  --c-mute: 148 158 178;
+  --c-faint: 132 142 164;
+  --c-brand: 124 156 255;
+  --c-onbrand: 8 12 28;
+  --c-sev0: 52 211 153;
+  --c-sev1: 251 191 36;
+  --c-sev2: 251 124 60;
+  --c-sev3: 251 88 114;
+  --c-sim: 167 139 250;
+  --line-a: .08;
+  --glass: 12 16 26;
+  --map-filter: none;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --c-base: 243 245 249;
+  --c-s1: 255 255 255;
+  --c-s2: 248 249 252;
+  --c-s3: 238 241 247;
+  --c-line: 15 23 42;
+  --c-fg: 15 23 42;
+  --c-mute: 82 92 112;
+  --c-faint: 92 102 122;
+  --c-brand: 52 86 220;
+  --c-onbrand: 255 255 255;
+  --c-sev0: 3 105 76;
+  --c-sev1: 146 84 0;
+  --c-sev2: 176 60 4;
+  --c-sev3: 190 18 52;
+  --c-sim: 94 54 200;
+  --line-a: .12;
+  --glass: 255 255 255;
+  color-scheme: light;
+}
+
+html, body, #root { height: 100%; }
+body {
+  @apply bg-base text-fg font-sans antialiased;
+  font-feature-settings: "cv11", "ss01";
+  -webkit-tap-highlight-color: transparent;
+}
+.num { font-family: "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.tnum { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid rgb(var(--c-brand)); outline-offset: 2px; border-radius: 8px; }
+::selection { background: rgb(var(--c-brand) / .35); }
+* { scrollbar-width: thin; scrollbar-color: rgb(var(--c-line) / .18) transparent; }
+
+@layer components {
+  .surface { @apply bg-s1 border border-line/[.08] rounded-2xl shadow-card; border-color: rgb(var(--c-line) / var(--line-a)); }
+  .card { @apply bg-s2 rounded-xl; border: 1px solid rgb(var(--c-line) / var(--line-a)); }
+  .hairline { border-color: rgb(var(--c-line) / var(--line-a)); }
+  /* Glass is only for panels floating over the map */
+  .glass {
+    background: rgb(var(--glass) / .72);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border: 1px solid rgb(var(--c-line) / .14);
+    @apply rounded-2xl shadow-float;
+  }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[.09em] text-mute; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-3.5 h-9 text-[13px] font-medium
+           transition-[background,transform,box-shadow] duration-150 active:scale-[.98] disabled:opacity-40 disabled:pointer-events-none;
+    background: rgb(var(--c-s3)); border: 1px solid rgb(var(--c-line) / var(--line-a));
+  }
+  .btn:hover { background: rgb(var(--c-s3) / .7); border-color: rgb(var(--c-line) / .22); }
+  .btn-brand { color: rgb(var(--c-onbrand)); background: rgb(var(--c-brand)); border-color: transparent; }
+  .btn-brand:hover { background: rgb(var(--c-brand) / .88); }
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full px-2 h-6 text-[11px] font-medium; background: rgb(var(--c-line) / .07); }
+  .skeleton { @apply relative overflow-hidden rounded-lg; background: rgb(var(--c-line) / .07); }
+  .skeleton::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgb(var(--c-line) / .1), transparent); animation: shimmer 1.6s infinite; }
+}
+
+/* Map: dark tiles are CARTO dark_all; light uses CARTO light_all. Leaflet chrome restyled to our tokens. */
+.leaflet-container { background: rgb(var(--c-base)); font-family: Inter, sans-serif; outline: none; }
+.leaflet-control-attribution { background: rgb(var(--glass) / .6) !important; color: rgb(var(--c-mute)) !important; backdrop-filter: blur(8px); font-size: 10px; border-radius: 8px 0 0 0; }
+.leaflet-control-attribution a { color: rgb(var(--c-mute)) !important; }
+.leaflet-bar a { background: rgb(var(--glass) / .8) !important; color: rgb(var(--c-fg)) !important; border-color: rgb(var(--c-line) / .14) !important; backdrop-filter: blur(10px); }
+.leaflet-bar { border: none !important; box-shadow: 0 6px 20px rgb(0 0 0 / .35) !important; border-radius: 12px !important; overflow: hidden; }
+.leaflet-tooltip { background: rgb(var(--glass) / .9); color: rgb(var(--c-fg)); border: 1px solid rgb(var(--c-line) / .16); border-radius: 10px; box-shadow: 0 8px 24px rgb(0 0 0 / .4); font-size: 12px; padding: 4px 8px; }
+.leaflet-tooltip-top:before { border-top-color: rgb(var(--glass) / .9); }
+.marker-pulse::before { content: ""; position: absolute; inset: 0; border-radius: 999px; background: currentColor; animation: pulseRing 1.8s cubic-bezier(.2,.6,.3,1) infinite; }
+.corridor-glow { filter: drop-shadow(0 0 6px rgb(52 211 153 / .9)); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
+
+.amb-glide { transition: transform .12s linear; }
+.leaflet-zoom-anim .amb-glide { transition: none; }
+
+/* plain OSM fallback tiles in dark theme */
+.osm-dark { filter: invert(1) hue-rotate(180deg) brightness(.85) contrast(.9); }

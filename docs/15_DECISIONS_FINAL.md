@@ -85,3 +85,6 @@ Each owner must be able to explain their component's code and results in the viv
 | 6 | Fusion + ablation · coordinator (6 conflicts) · FastAPI | Chetan: ablation |
 | 7 | Frontend, benchmark (8+2), demo scenario | Ragavendra: benchmark |
 | 8 | XAI figures, model card, report, slides | Everyone |
+
+## Frontend: React/Vite replaces plain HTML as the demo UI
+The demo UI is a React + Vite + TypeScript app in `web/` (served at `/app/`); `frontend/` stays as a fallback at `/ui/`. No backend schema or endpoint changed. Free-tier only; no paid services. Replay (mock) mode is tagged on screen; Evaluation reads only `reports/*.csv` and `experiments/log.csv`.

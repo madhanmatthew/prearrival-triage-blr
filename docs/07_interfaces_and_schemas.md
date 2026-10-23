@@ -204,6 +204,7 @@ Standalone variants for the ablation: vitals-only (drop text branch), text-only 
 | GET | `/incident/{id}/guidance` | RAG first-aid guidance + source chunks + groundedness flag |
 | POST | `/incident/{id}/vitals` | push a `VitalsReading` → returns updated `FusedRisk` |
 | POST | `/incident/{id}/dispatch` | run coordinator → `DispatchDecision` |
+| GET | `/incident/{id}/hospitals` | ranked `HospitalRecommendation` (score breakdown per hospital); 409 until dispatch has run |
 | GET | `/incident/{id}` | full incident state |
 | GET | `/incidents` | incident summaries for the dispatcher console |
 | GET | `/resources` | map layers: hospitals, ambulances, corridor junctions |

@@ -4,7 +4,7 @@
 PY ?= python
 SEED ?= 1
 
-.PHONY: help test run-api data-mimic train-baselines train-seq train-fusion train-text \
+.PHONY: help test run-api data-mimic train-baselines train-seq train-fusion eval-ed train-text \
         explain build-rag eval-rag eval-asr eval-asr-noise asr-latency asr-gpu-day sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval benchmark demo
 
 help:
@@ -25,6 +25,8 @@ train-seq:
 	$(PY) -m backend.ml.seq_model
 train-fusion:
 	$(PY) -m backend.ml.fusion_model
+eval-ed:
+	$(PY) -m backend.ml.ed_external_eval $(ARGS)
 explain:
 	$(PY) -m backend.ml.explain $(ARGS)
 
@@ -76,3 +78,15 @@ benchmark:
 	@echo "[TODO] 8 + 2 scenarios with a fair naive baseline (docs/15 D15)"
 demo:
 	@echo "[TODO] start API + frontend + demo scenario (docs/09 §6)"
+
+frontend-install:  ## React UI deps
+	cd web && npm install
+
+frontend-dev:  ## React UI dev server (proxies to :8000)
+	cd web && npm run dev
+
+frontend-build:  ## build React UI -> web/dist (served at /app/)
+	cd web && npm run build
+
+frontend-test:
+	cd web && npm test

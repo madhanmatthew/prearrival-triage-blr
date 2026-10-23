@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import datetime as dt
 import itertools
+import logging
 import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -20,6 +21,7 @@ import numpy as np
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException as StarletteHTTPException
 from pydantic import BaseModel
 
 from backend.agents.coordinator import IncidentCase, coordinate
@@ -28,9 +30,11 @@ from backend.agents.police_agent import (AlertBoard, depart_time, load_corridor_
 from backend.dialogue.state_machine import DialogueManager
 from backend.ml.news2 import score_reading
 from backend.rag.pipeline import LLM_DOWN_MSG
-from backend.schemas import (GPS, DispatchDecision, FusedRisk, IncidentReport, Language,
-                             VitalsReading, WSMessage)
+from backend.schemas import (GPS, DispatchDecision, FusedRisk, HospitalRecommendation,
+                             IncidentReport, Language, VitalsReading, WSMessage)
 from backend.services import Services, load_services
+
+log = logging.getLogger("uvicorn.error")     # shows in the uvicorn console
 
 WINDOW_T = 6  # docs/07 §4.1
 
@@ -67,6 +71,7 @@ class Incident:
     vitals: list[VitalsReading] = field(default_factory=list)
     risk: Optional[FusedRisk] = None
     decision: Optional[DispatchDecision] = None
+    recommendation: Optional[HospitalRecommendation] = None   # ranked hospitals shown to the dispatcher
     dispatch_notes: list[str] = field(default_factory=list)
 
     @property
@@ -275,6 +280,7 @@ def create_app(services: Optional[Services] = None,
         try:
             dm, result = intake(path, svc.transcriber, language=language)
         except ValueError as e:                     # unsupported language / no speech
+            log.warning("voice intake rejected (%s, %d bytes): %s", language, path.stat().st_size, e)
             raise HTTPException(422, f"{e}; please type the report")
         finally:
             path.unlink(missing_ok=True)
@@ -345,6 +351,7 @@ def create_app(services: Optional[Services] = None,
             rec = svc.hospital_agent.predict(
                 i.incident_id, i.risk, i.report.injury_type, etas,
                 bleeding_heavy=bool(bleeding and (bleeding.bleeding_level or 0) >= 1.0))
+            i.recommendation = rec
             police = size_alert(i.incident_id, i.gps, i.risk.severity_class, i.report.injury_type,
                                 i.report.num_injured)
             cases.append(IncidentCase(
@@ -383,6 +390,14 @@ def create_app(services: Optional[Services] = None,
             raise HTTPException(409, "not dispatched: " + ("; ".join(inc.dispatch_notes)
                                                            or "no decision"))
         return inc.decision
+
+    @app.get("/incident/{incident_id}/hospitals")
+    def incident_hospitals(incident_id: str):
+        """Ranked hospitals with score breakdown (HospitalRecommendation); exists after dispatch ran."""
+        inc = _require(store, incident_id)
+        if inc.recommendation is None:
+            raise HTTPException(409, "no hospital ranking yet: run dispatch first")
+        return inc.recommendation
 
     @app.get("/incidents")
     def incidents():
@@ -485,13 +500,30 @@ def create_app(services: Optional[Services] = None,
     if prompts.is_dir():
         app.mount("/prompts", StaticFiles(directory=prompts), name="prompts")
 
-    ui = Path(__file__).resolve().parents[1] / "frontend"
+    root_dir = Path(__file__).resolve().parents[1]
+    ui = root_dir / "frontend"
     if ui.is_dir():
         app.mount("/ui", StaticFiles(directory=ui, html=True), name="ui")
 
+    # React UI (web/, `make frontend-build`); the plain HTML pages at /ui/ stay as a fallback
+    app_dist = root_dir / "web" / "dist"
+    has_app = (app_dist / "index.html").is_file()
+    if has_app:
+        class SPAFiles(StaticFiles):
+            async def get_response(self, path, scope):
+                try:
+                    return await super().get_response(path, scope)
+                except StarletteHTTPException as e:
+                    if e.status_code == 404:
+                        return await super().get_response("index.html", scope)
+                    raise
+
+        app.mount("/app", SPAFiles(directory=app_dist, html=True), name="app")
+
+    if has_app or ui.is_dir():
         @app.get("/", include_in_schema=False)
         def root():
-            return RedirectResponse("/ui/")
+            return RedirectResponse("/app/" if has_app else "/ui/")
 
     return app
 

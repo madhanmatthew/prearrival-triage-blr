@@ -255,3 +255,41 @@ def test_load_queries_validation(tmp_path):
     pd.DataFrame([{"query_id": "1", "query": "a", "expected_file": "", "split": "train"}]).to_csv(p, index=False)
     with pytest.raises(ValueError, match="split"):
         ev.load_queries(p)
+
+
+def test_key_steps_replace_routed_sentences_and_stay_traceable(corpus, store):
+    (corpus / "key_steps.yaml").write_text(
+        "bleeding.md:\n  - Keep pressing\n  - Press firmly\n", encoding="utf-8")
+    steps = rp.load_key_steps(corpus)
+    assert steps == {"bleeding.md": ["Keep pressing until help arrives.",
+                                     "Press firmly on the wound with a clean cloth."]}   # yaml order
+    rag = rp.FirstAidRAG(store, min_similarity=0.99, key_steps=steps)
+    g = rag.guide("bleeding", topic_file="bleeding.md")
+    assert g.status == "ok" and g.mode == "key_steps" and g.fully_grounded
+    assert [s.text for s in g.sentences] == steps["bleeding.md"]
+    assert all(s.chunk_ids and s.chunk_ids[0].startswith("bleeding.md#") for s in g.sentences)
+    assert {r["file"] for r in g.retrieved} == {"bleeding.md"}
+    assert rag.guide("burn water", topic_file="burns.md").mode == "extractive"   # no list: unchanged
+    assert rag.guide("press wound bleeding").mode == "extractive"                  # free text: unchanged
+
+
+def test_key_steps_reject_missing_or_ambiguous_prefix(corpus):
+    (corpus / "key_steps.yaml").write_text("bleeding.md:\n  - Stitch the wound\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="matches 0"):
+        rp.load_key_steps(corpus)
+    (corpus / "key_steps.yaml").write_text('bleeding.md:\n  - ""\n', encoding="utf-8")
+    with pytest.raises(ValueError, match="matches 3"):          # empty prefix: every TOY sentence
+        rp.load_key_steps(corpus)
+    assert rp.load_key_steps(corpus, name="absent.yaml") == {}
+
+
+def test_real_key_steps_resolve_inside_single_chunks():
+    """Every reviewed step is one corpus sentence that sits whole inside a chunk of its file."""
+    steps = rp.load_key_steps()
+    assert steps and all(1 <= len(v) <= 4 for v in steps.values())
+    chunks = rp.split_corpus(rp.load_corpus())
+    for f, sents in steps.items():
+        mine = [c for c in chunks if c.metadata["file"] == f]
+        for s in sents:
+            assert rp.sentence_support(s, mine, None), (f, s)
+            assert not rp.is_medication(s)

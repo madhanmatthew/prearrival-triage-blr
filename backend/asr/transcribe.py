@@ -19,6 +19,7 @@ Research prototype, not a medical device.
 """
 from __future__ import annotations
 
+import gc
 import os
 import sys
 from dataclasses import dataclass
@@ -187,4 +188,12 @@ class LanguageRouter:
         return self.overrides.get(language, self.default) if language else self.default
 
     def transcribe(self, audio_path: str | Path, language: Optional[str] = None) -> TranscriptResult:
-        return self.for_language(language).transcribe(audio_path, language=language)
+        target = self.for_language(language)
+        # A 4 GB GPU holds one model (turbo + hi + kn mediums ran out of memory, 2026-10-23):
+        # on cuda, unload the other models before switching language (reload costs a few seconds).
+        if target.device == "cuda":
+            for t in (self.default, *self.overrides.values()):
+                if t is not target:
+                    t._model = None
+            gc.collect()
+        return target.transcribe(audio_path, language=language)

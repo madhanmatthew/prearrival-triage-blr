@@ -293,3 +293,40 @@ def test_language_router_picks_override_and_vad(monkeypatch, tmp_path):
     assert r.transcribe(audio, language="hi").text.startswith("small|vad=")
     assert r.transcribe(audio).text.startswith("small|")                  # auto-detect -> default
     assert loaded == [str(kn_dir), "small"]
+
+
+def test_language_router_keeps_one_model_on_cuda(monkeypatch, tmp_path):
+    # 4 GB GPU: turbo + hi + kn mediums ran out of memory together (2026-10-23)
+    from backend.asr import transcribe as tr
+    dirs = {}
+    for lang in ("hi", "kn"):
+        d = tmp_path / f"{lang}_model"
+        d.mkdir()
+        (d / "model.bin").write_bytes(b"x")
+        dirs[lang] = d
+        monkeypatch.setenv(f"WHISPER_MODEL_{lang.upper()}", str(d))
+    monkeypatch.setenv("WHISPER_MODEL", "small")
+    monkeypatch.setenv("WHISPER_DEVICE", "cuda")
+    live = set()
+
+    class FakeModel:
+        def __init__(self, size):
+            self.size = size
+            live.add(size)
+
+        def __del__(self):
+            live.discard(self.size)
+
+        def transcribe(self, path, language=None, **kw):
+            seg = type("S", (), {"text": self.size})
+            return [seg], SimpleNamespace(language=language or "en", language_probability=1.0, duration=1.0)
+
+    monkeypatch.setattr(tr, "_add_pip_cuda_dlls", lambda: None)
+    r = tr.LanguageRouter.from_env(model_factory=lambda size, device, compute: FakeModel(size))
+    audio = tmp_path / "a.wav"
+    audio.write_bytes(b"\0")
+    for lang in ("en", "hi", "kn", "en"):
+        r.transcribe(audio, language=lang)
+        loaded = [t for t in (r.default, *r.overrides.values()) if t._model is not None]
+        assert len(loaded) == 1 and loaded[0] is r.for_language(lang)
+    assert live == {"small"}

@@ -146,7 +146,7 @@ Fused does not beat text-only at higher agreement — report as found.
 General traffic mean wait: fixed 1.13–1.21 s, DQN 0.10–0.14 s; max cross-street queue fixed 15.6–26.1 vs DQN
 7.5–16.8 vehicles (`traffic_rl` rows; `reports/rl_comparison.csv`). DQN also beats always-green by 4–7 %.
 
-### 6b. Real OSM corridor (calibrated slots) — baselines done, DQN in progress
+### 6b. Real OSM corridor (calibrated slots) — baselines + DQN (3 seeds) done
 
 Ambulance over the 7.7 km controlled stretch (Silk Board → 1 km past the 6.0 km junction), 6 paired episodes
 per slot, all completed (`reports/rl_osm_baselines_episodes.csv`):
@@ -203,4 +203,4 @@ dispatcher, police, hospital pages) with native-speaker prompt audio; per-langua
 * Held-out hi/kn triage ~60 % (dev 83 % was optimistic); Kannada ASR still weak (WER 58 % held-out).
 * RL is simulation; corridor speeds imposed per slot (speed-only calibration); TomTom is one provider.
 * Hospital beds/blood simulated; ambulance bases approximate; benchmark ETAs straight-line.
-* Pending at time of writing: OSM RL results (6b); MIMIC-IV-ED access (PhysioNet approval).
+* Pending at time of writing: full MIMIC-IV-ED access (PhysioNet approval; the ED Demo check is done).

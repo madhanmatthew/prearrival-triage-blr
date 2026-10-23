@@ -187,6 +187,20 @@ def test_dispatch_end_to_end_and_ws():
     assert r3.status_code == 409 and "no free ambulance" in r3.json()["detail"]
 
 
+def test_hospital_ranking_endpoint():
+    c = client(services(dispatch=True))
+    iid, _ = finish(c)
+    assert c.get(f"/incident/{iid}/hospitals").status_code == 409     # before dispatch
+    d = c.post(f"/incident/{iid}/dispatch").json()
+    r = c.get(f"/incident/{iid}/hospitals")
+    assert r.status_code == 200
+    rec = r.json()
+    scores = [h["total_score"] for h in rec["ranked"]]
+    assert rec["incident_id"] == iid and scores == sorted(scores, reverse=True)
+    assert d["hospital_id"] in {h["hospital_id"] for h in rec["ranked"]}
+    assert c.get("/incident/nope/hospitals").status_code == 404
+
+
 def test_hospital_ws_gets_risk_updates():
     c = client(services(dispatch=True))
     iid, _ = finish(c)

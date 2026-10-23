@@ -184,7 +184,7 @@ selection (OpenRouteService API reuse), blood-stock lookup.
   document loading/chunking, retrieval, LCEL grounded-generation chain),
   sentence-transformers embeddings + FAISS/Chroma vector store
 - **RL:** SUMO (traffic simulator), `sumo-rl`, `stable-baselines3` (DQN/PPO)
-- **Frontend:** Leaflet/OpenStreetMap, HTML/JS
+- **Frontend:** React + Vite + TypeScript, Tailwind, Leaflet/OpenStreetMap (CARTO tiles), Recharts (`web/`); plain HTML/JS fallback in `frontend/`
 - **Routing:** OpenRouteService API
 - **Data:** MIMIC-III Demo / Kaggle Human Vital Signs Dataset (vitals), real
   Bengaluru traffic/accident open data, eRaktKosh-style blood-stock data

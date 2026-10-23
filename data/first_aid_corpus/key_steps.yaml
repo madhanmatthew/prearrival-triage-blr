@@ -1,0 +1,46 @@
+# Key steps per topic for the dialogue-routed guidance (reporter page): at most 4 short actions,
+# in the order a bystander should do them. Each entry is the START of a sentence in that topic
+# file; the loader (backend/rag/pipeline.py::load_key_steps) replaces it with the full verbatim
+# corpus sentence and fails if it is missing or ambiguous, so the text stays IFRC text (rule 6).
+# Chosen 2026-10-23 (Claude Code draft) [TODO-VERIFY: team review before the viva].
+# Free-text questions (no topic) and the RAG eval still use the retrieved sentences.
+
+cpr_adult_ifrc.md:
+  - "Immediately ask bystanders to access emergency medical services"
+  - "Begin chest compressions without delay"
+  - "If one is available, ask a bystander to bring an automated external defibrillator"
+  - "Ensure that there is no interruption in compressions"
+
+recovery_position_ifrc.md:
+  - "Move them onto their side and tilt their head back"
+  - "Access emergency medical services (EMS)."
+  - "Monitor the person for any changes in their breathing"
+  - "If the person is breathing abnormally (gasping"
+
+breathing_difficulty_ifrc.md:
+  - "Help the person into a comfortable (usually seated) position and reassure them."
+  - "They may experience relief by sitting leaning forward"
+  - "Loosen any tight clothing."
+
+severe_bleeding_ifrc.md:
+  - "Apply direct pressure to control the bleeding as quickly as possible."
+  - "Access emergency medical services."
+  - "If blood soaks through the dressing"
+  - "Help the person to lie down on their back and keep them warm"
+
+fractures_ifrc.md:
+  - "Keep the injury still to reduce pain."
+  - "Support the injury in a comfortable position"
+  - "Access emergency medical services (EMS), if the person has a lot of pain"
+
+burns_ifrc.md:
+  - "Cool the burn with clean running water for at least 10 minutes"
+  - "Access emergency medical services (EMS) if the burn is large"
+  - "If necessary, cover the burn with a wet cloth"
+  - "Do not apply ice"
+
+chest_pain_ifrc.md:
+  - "Access EMS immediately if you suspect a heart attack."
+  - "Ask a bystander to bring a defibrillator if possible."
+  - "Reassure the person and monitor their breathing and responsiveness."
+  - "If the person becomes Unresponsive with abnormal breathing, start CPR."

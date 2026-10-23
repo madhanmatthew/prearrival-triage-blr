@@ -27,7 +27,7 @@
     </details>
     <h2 style="margin-top:16px">2 · What happened?</h2>
     <div class="row">
-      <button class="primary big" id="rec">🎤 Hold to speak</button>
+      <button class="primary big" id="rec">🎤 Tap to speak</button>
       <span class="muted" id="recInfo"></span>
     </div>
     <label>…or type it</label>
@@ -105,11 +105,39 @@ document.querySelectorAll(".lang").forEach((b) => b.onclick = () => {
 document.querySelector('.lang[data-lang="en"]').classList.add("primary");
 
 // --- location: device GPS only (rule 5); manual entry is a labelled demo override ---
-function setGps(lat, lon, src) { gps = { lat, lon }; $("#gpsInfo").textContent = `Location (${src}): ${lat.toFixed(5)}, ${lon.toFixed(5)}`; }
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition((p) => setGps(p.coords.latitude, p.coords.longitude, "device GPS"),
-    () => { $("#gpsInfo").textContent = "Location: GPS unavailable, set it manually below (demo)."; });
+function setGps(lat, lon, src) {
+  gps = { lat, lon }; $("#gpsInfo").textContent = `Location (${src}): ${lat.toFixed(5)}, ${lon.toFixed(5)}`;
+  if (pendingVoice) { const b = pendingVoice; pendingVoice = null; sendVoice(b); }   // recording made before location was set
 }
+const GPS_ERR = { 1: "permission denied (allow location for this site, and Windows Settings → Privacy → Location)",
+                  2: "position unavailable", 3: "timed out" };
+function locate() {
+  if (!window.isSecureContext) { gpsFailed("needs http://localhost:8000 (browsers block GPS and mic on other http addresses)"); return; }
+  if (!navigator.geolocation) { gpsFailed("not supported by this browser"); return; }
+  $("#gpsInfo").textContent = "Location: waiting for device GPS…";
+  // Laptops have no GPS chip: the browser falls back to a Wi-Fi/IP estimate that can be km off,
+  // so show the reported accuracy and flag coarse fixes instead of calling them "GPS".
+  navigator.geolocation.getCurrentPosition((p) => {
+    const acc = Math.round(p.coords.accuracy);
+    const coarse = acc > 200;
+    setGps(p.coords.latitude, p.coords.longitude,
+           coarse ? `approximate, ±${acc >= 1000 ? (acc / 1000).toFixed(1) + " km" : acc + " m"}, Wi-Fi/IP estimate, not GPS`
+                  : `device GPS, ±${acc} m`);
+    if (coarse) {
+      $("#gpsInfo").innerHTML += ` <span class="error">If this is wrong, use the demo override below.</span>`;
+      document.querySelector("details").open = true;
+    }
+  },
+    (e) => gpsFailed(GPS_ERR[e.code] || e.message), { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+}
+function gpsFailed(why) {
+  if (gps) return;
+  $("#gpsInfo").innerHTML = `Location: GPS failed (${why}). <button id="gpsRetry">Retry GPS</button> or set it manually below (demo).`;
+  $("#gpsRetry").onclick = locate;
+  document.querySelector("details").open = true;
+}
+let pendingVoice = null;
+locate();
 $("#silk").onclick = () => setGps(12.9166, 77.6231, "demo: Silk Board");
 ["#lat", "#lon"].forEach((s) => $(s).onchange = () => {
   const a = parseFloat($("#lat").value), o = parseFloat($("#lon").value);
@@ -117,23 +145,43 @@ $("#silk").onclick = () => setGps(12.9166, 77.6231, "demo: Silk Board");
 });
 
 // --- voice: record, upload to /incident/voice ---
-let rec = null, chunks = [];
+// Tap to start, tap again to send. (Hold-to-speak lost recordings: releasing during the first
+// microphone permission prompt stopped nothing, and the recorder then never stopped.)
+let rec = null, chunks = [], recStart = 0, recTimer = null, starting = false;
+const MIC_ERR = { NotAllowedError: "microphone permission denied (allow it in the address bar)",
+                  NotFoundError: "no microphone found", NotReadableError: "microphone in use by another app" };
 async function startRec() {
+  if (!window.isSecureContext) { $("#recInfo").textContent = "Microphone needs http://localhost:8000, please type."; return; }
+  starting = true; $("#startErr").textContent = "";
   try {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } });
     rec = new MediaRecorder(stream); chunks = [];
-    rec.ondataavailable = (e) => chunks.push(e.data);
-    rec.onstop = () => { stream.getTracks().forEach((t) => t.stop()); sendVoice(new Blob(chunks, { type: rec.mimeType })); };
-    rec.start(); $("#recInfo").textContent = "Recording… release to send";
-  } catch (e) { $("#recInfo").textContent = "Microphone unavailable, please type."; }
+    rec.ondataavailable = (e) => { if (e.data.size) chunks.push(e.data); };
+    rec.onstop = () => {
+      stream.getTracks().forEach((t) => t.stop()); clearInterval(recTimer);
+      $("#rec").textContent = "🎤 Tap to speak";
+      const secs = (Date.now() - recStart) / 1000;
+      if (secs < 1 || !chunks.length) { $("#recInfo").textContent = "Too short, tap and speak for a few seconds."; return; }
+      sendVoice(new Blob(chunks, { type: rec.mimeType }));
+    };
+    rec.start(250); recStart = Date.now();
+    $("#rec").textContent = "⏹ Tap to send";
+    recTimer = setInterval(() => { $("#recInfo").textContent = `Recording… ${Math.floor((Date.now() - recStart) / 1000)} s`; }, 250);
+  } catch (e) { $("#recInfo").textContent = `Microphone unavailable: ${MIC_ERR[e.name] || e.message}. Please type.`; }
+  finally { starting = false; }
 }
-function stopRec() { if (rec && rec.state === "recording") rec.stop(); }
-$("#rec").addEventListener("pointerdown", startRec);
-$("#rec").addEventListener("pointerup", stopRec);
-$("#rec").addEventListener("pointerleave", stopRec);
+$("#rec").textContent = "🎤 Tap to speak";
+$("#rec").onclick = () => {
+  if (starting) return;
+  if (rec && rec.state === "recording") rec.stop(); else startRec();
+};
 
 async function sendVoice(blob) {
-  if (!gps) { $("#startErr").textContent = "Location needed first."; return; }
+  if (!gps) {
+    pendingVoice = blob;
+    $("#recInfo").textContent = "Recording kept. Set the location (GPS or demo button below) and it is sent automatically.";
+    document.querySelector("details").open = true; return;
+  }
   $("#recInfo").textContent = "Transcribing…";
   const fd = new FormData();
   fd.append("audio", blob, "report.webm"); fd.append("lat", gps.lat); fd.append("lon", gps.lon); fd.append("language", lang);
@@ -212,22 +260,38 @@ async function loadGuidance() {
     return;
   }
   let grounded = true;
+  topics = [];
   for (const it of g.items) {
-    if (it.status !== "ok") { steps.push({ text: it.message, ids: [] }); continue; }
+    const topic = TOPIC[it.problem] || it.problem.replace(/_/g, " ");
+    topics.push({ name: topic, start: steps.length });
+    if (it.status !== "ok") { steps.push({ text: it.message, ids: [], topic }); continue; }
     if (it.fully_grounded === false) grounded = false;
-    for (const s of it.sentences) steps.push({ text: s.text, ids: s.chunk_ids });
+    for (const s of it.sentences) steps.push({ text: s.text, ids: s.chunk_ids, topic });
     for (const r of it.retrieved) srcs.set(r.chunk_id, r);
   }
-  if (!steps.length) steps.push({ text: g.items.map((i) => i.message).join(" "), ids: [] });
+  if (!steps.length) steps.push({ text: g.items.map((i) => i.message).join(" "), ids: [], topic: "" });
   $("#grounded").innerHTML = grounded ? '<span class="badge ok">grounded ✓</span>' : '<span class="badge warn">partly grounded</span>';
   $("#sources").innerHTML = "Sources: " + [...srcs.values()].map((r) => `${esc(r.chunk_id)} (${esc(r.publisher || "")})`).join("; ");
   stepIdx = 0; showStep([{ key: "s1", text: st("s1") }, { key: "s4", text: st("s4") }]);
   if (lang !== "en") $("#speakInfo").textContent = "Steps are in English (reviewed translations pending).";
 }
+// Topic per guidance item (problem ids from backend/rag/pipeline.py::queries_from_report), in the
+// order the backend gives them: airway/breathing first, then bleeding, then the injury type.
+const TOPIC = { cpr: "Not breathing normally: CPR", unresponsive_breathing: "Unresponsive, breathing: recovery position",
+                breathing: "Breathing difficulty", bleeding: "Severe bleeding", road_accident: "Road accident",
+                fall: "Fall / possible broken bone", burn: "Burn", cardiac_medical: "Chest pain", other: "General", report: "From your report" };
+let topics = [];
 function showStep(intro = []) {
   const s = steps[stepIdx];
-  $("#steps").innerHTML = `<div class="muted">Step ${stepIdx + 1} of ${steps.length}</div><div class="step">${esc(s.text)}</div>` +
+  const t = topics.filter((x) => x.start <= stepIdx).pop() || { start: 0 };
+  const end = (topics[topics.indexOf(t) + 1] || { start: steps.length }).start;
+  const nav = topics.length > 1 ? `<div class="row" style="margin-bottom:6px">${topics.map((x, i) =>
+    `<button class="topic${x === t ? " primary" : ""}" data-i="${i}">${i + 1}. ${esc(x.name)}</button>`).join("")}</div>` : "";
+  $("#steps").innerHTML = nav +
+    `<div class="muted">${esc(s.topic || "")}${s.topic ? " · " : ""}step ${stepIdx - t.start + 1} of ${end - t.start}</div>` +
+    `<div class="step">${esc(s.text)}</div>` +
     (s.ids.length ? `<div class="source">from ${s.ids.map(esc).join(", ")}</div>` : "");
+  document.querySelectorAll(".topic").forEach((b) => b.onclick = () => { stepIdx = topics[+b.dataset.i].start; showStep(); });
   $("#prev").disabled = stepIdx === 0; $("#next").disabled = stepIdx >= steps.length - 1;
   say([...intro, { text: s.text, l: "en" }]);
 }

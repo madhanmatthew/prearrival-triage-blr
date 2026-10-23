@@ -56,6 +56,7 @@ from langchain_core.runnables import RunnableLambda
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 CORPUS_DIR = Path("data/first_aid_corpus")
+KEY_STEPS_FILE = "key_steps.yaml"   # short reviewed step list per topic (dialogue-routed guidance)
 INDEX_DIR = Path("models/rag/faiss_index")
 EMBED_MODEL = os.getenv("RAG_EMBED_MODEL", "BAAI/bge-small-en-v1.5")  # dev hit@4 1.000 vs MiniLM 0.956
 QUERY_PROMPTS = {  # instruction prefixes some retrieval models expect on queries (model cards)
@@ -228,6 +229,30 @@ def _norm(s: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", s.lower())).strip()
 
 
+def load_key_steps(corpus_dir: Path = CORPUS_DIR, name: str = KEY_STEPS_FILE) -> dict[str, list[str]]:
+    """{topic file: [full corpus sentences]} from `key_steps.yaml` (sentence prefixes per file).
+
+    Each prefix must start exactly one distinct sentence of that file, so the steps stay verbatim
+    corpus text (rule 6). No yaml file -> {} (routed guidance keeps the retrieved sentences).
+    """
+    import yaml
+    path = corpus_dir / name
+    if not path.exists():
+        return {}
+    spec = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    out = {}
+    for fname, prefixes in spec.items():
+        sents = list(dict.fromkeys(split_sentences(parse_corpus_file(corpus_dir / fname).page_content)))
+        steps = []
+        for pre in prefixes:
+            hits = [x for x in sents if _norm(x).startswith(_norm(pre))]
+            if len(hits) != 1:
+                raise ValueError(f"{name}: {fname}: prefix {pre!r} matches {len(hits)} sentences, need 1")
+            steps.append(hits[0])
+        out[fname] = steps
+    return out
+
+
 def is_medication(sentence: str) -> bool:
     return bool(MEDICATION_RE.search(sentence))
 
@@ -328,7 +353,7 @@ class GuidanceSentence:
 class Guidance:
     query: str
     status: str                      # ok | not_covered | llm_unavailable
-    mode: str                        # extractive | llm
+    mode: str                        # extractive | llm | key_steps (routed topic, reviewed list)
     message: str                     # text shown to the reporter
     sentences: list[GuidanceSentence] = field(default_factory=list)
     retrieved: list[dict] = field(default_factory=list)   # chunk_id, file, publisher, url, score
@@ -358,6 +383,7 @@ class FirstAidRAG:
     max_sentences: int = MAX_SENTENCES
     drop_ungrounded: bool = True
     embed_model: str = EMBED_MODEL                # recorded in logs
+    key_steps: dict = field(default_factory=dict)  # {topic file: [sentences]}, see load_key_steps
 
     @property
     def mode(self) -> str:
@@ -374,6 +400,25 @@ class FirstAidRAG:
                  | StrOutputParser())
         return chain.invoke({"context": format_docs(chunks), "question": query})
 
+    def _key_steps(self, g: Guidance, query: str, topic_file: str) -> Guidance:
+        """Routed topic with a reviewed step list: those sentences only, each traced to its chunk."""
+        hits = self.store.similarity_search_with_score(query, k=1000, filter={"file": topic_file},
+                                                       fetch_k=1000)
+        chunks = [d for d, _ in hits]
+        kept = [GuidanceSentence(t, sentence_support(t, chunks, None)) for t in self.key_steps[topic_file]]
+        kept = [k for k in kept if k.chunk_ids]          # a step split across chunks is not shown
+        used = {c for k in kept for c in k.chunk_ids}
+        g.mode = "key_steps"
+        g.retrieved = [{"chunk_id": d.metadata["chunk_id"], "file": d.metadata["file"],
+                        "publisher": d.metadata.get("publisher"), "url": d.metadata.get("url"),
+                        "score": round(float(sc), 4)} for d, sc in hits if d.metadata["chunk_id"] in used]
+        if not kept:
+            return g
+        g.sentences, g.status = kept, "ok"
+        g.groundedness, g.fully_grounded = 1.0, True
+        g.message = " ".join(k.text for k in kept) + " Call 108 if you have not already."
+        return g
+
     def guide(self, query: str, topic_file: Optional[str] = None) -> Guidance:
         """Guidance for a free-text query. With `topic_file` (dialogue routing) retrieval is
         restricted to that file and the similarity threshold is not applied."""
@@ -383,6 +428,8 @@ class FirstAidRAG:
             g.refusal_reason = query_refusal_reason(query)
             if g.refusal_reason:
                 return g
+        elif topic_file in self.key_steps:
+            return self._key_steps(g, query, topic_file)
         hits = self.retrieve(query, topic_file)
         g.retrieved = [{"chunk_id": d.metadata["chunk_id"], "file": d.metadata["file"],
                         "publisher": d.metadata.get("publisher"), "url": d.metadata.get("url"),
@@ -493,6 +540,7 @@ def load(index_dir: Path = INDEX_DIR, embeddings=None, nli: bool = True, **kw) -
         meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
         embeddings = default_embeddings(meta.get("embed_model", EMBED_MODEL))
     store = load_index(embeddings, index_dir)
+    kw.setdefault("key_steps", load_key_steps())
     return FirstAidRAG(store=store, generator=generator_from_env(),
                        entail=NLIJudge() if nli else None,
                        embed_model=getattr(embeddings, "model_name", EMBED_MODEL), **kw)

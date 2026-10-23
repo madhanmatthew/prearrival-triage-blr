@@ -457,7 +457,51 @@
   (single-string predict_proba indexed twice) that would have broken the demo once a text model existed; regression
   test added. End-to-end (text model + fusion_v1_20261006): critical 3 (0.74), moderate 1, stable 0.
 
+- 2026-10-23: MIMIC-IV-ED Demo external check (code only, data not downloaded yet). Full MIMIC-IV-ED
+  credentialing still pending. `backend/data/mimic_ed_windows.py` (hourly ED vitals from triage + vitalsign,
+  same 7 features; [ASSUMPTION] no GCS/O2 in ED tables -> alert + room air; outcomes admitted / ESI 1-2 /
+  ICU within 24 h) and `backend/ml/ed_external_eval.py` (`make eval-ed`): frozen ICU BiGRU on the first-6 h
+  window per ED stay vs NEWS2, AUROC with patient-grouped bootstrap CI. Domain-transfer check on ~100
+  patients, not a validation. Tests: `tests/test_ed_external_eval.py` (synthetic tables).
+  Run done (data downloaded, SHA256 OK): 212 stays / 57 patients, NEWS2 complete 79 %. AUROC frozen BiGRU vs
+  NEWS2 on the NEWS2-complete stays: admitted 0.56 vs 0.70, ESI 1-2 0.60 vs 0.58, ICU 24 h 0.65 vs 0.67; CIs
+  overlap except admitted (NEWS2 better). Read: ICU-trained model does not transfer to ED; stated limit.
+
+- 2026-10-23: Voice intake on the RTX 3050. A 422 on `POST /incident/voice` = Whisper heard no speech
+  (silent/too-short recording) or a non-supported language; the reason is now logged in the uvicorn console
+  (`voice intake rejected (...)`). Found while testing: turbo + hi + kn mediums do not fit in 4 GB together
+  (CUDA out of memory -> 500 on the third language). `LanguageRouter` now keeps one model on the GPU and
+  unloads the others when the language changes (~5-6 s reload on a switch; en/hi/kn/en WebM all 200, ~2.2 GB).
+  Regression test `test_language_router_keeps_one_model_on_cuda`.
+
+- 2026-10-23: Reporter page mic + GPS (`frontend/report.html`). Recordings were lost: hold-to-speak missed the
+  release during the first mic permission prompt, and a recording made before the location was set was dropped
+  ("Location needed first"). Now: tap to start / tap to send with a seconds counter, < 1 s rejected with a hint,
+  recording kept and sent automatically once the location is set; GPS has a 10 s timeout, shows the reason
+  (permission / unavailable / timeout / not localhost) with a Retry button and opens the demo override.
+  Checked in the browser pane with a recorded prompt as mic input: transcribed exactly, dialogue started.
+
+- 2026-10-23: Guidance display. Report "bleeding + accident" showed breathing steps first: by design
+  (`queries_from_report`: unresponsive / "not breathing normally" -> airway/CPR or recovery position before bleeding),
+  but the page showed all topics as one flat "Step 1 of 12", so bleeding steps were hidden at 7-12. Now each step
+  carries its topic label ("Severe bleeding · step 1 of 6") and numbered topic buttons jump to each topic. Backend
+  checked: bleeding-only report -> only severe_bleeding_ifrc.md chunks; road_accident free retrieval -> not covered (hidden).
+
+- 2026-10-23: Short first-aid steps. Routed guidance (from the dialogue) showed 6 score-ordered sentences per topic,
+  incl. explanations/headers ("This is called the recovery position", "If the person is breathing normally:"), and
+  missed key actions (burns: no "cool with running water"; fractures/chest pain: symptom descriptions). Two automatic
+  filters (imperative sentences from retrieved chunks / whole file) each dropped a critical step for some topic, so:
+  `data/first_aid_corpus/key_steps.yaml` = <= 4 key steps per topic as sentence prefixes, resolved by
+  `load_key_steps` to the exact corpus sentence (fails if missing/ambiguous) and traced to chunk ids (mode
+  `key_steps`). Free-text guidance and the RAG eval are unchanged. [TODO-VERIFY] team review of the chosen steps.
+  Tests: 3 new in `tests/test_rag.py` (incl. every real step verbatim inside one chunk).
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as
   `make test`). Install make (`choco install make`) before targets with real recipes are needed.
+## Frontend rebuild (React/Vite, `web/`)
+- Six screens: landing, report, command, hospital, police, evaluation. Live mode (REST + WS) and deterministic replay mode (offline). Served at `/app/` after `cd web && npm install && npm run build`.
+- Verified in my sandbox: 15 vitest tests, strict tsc, production build, axe-core (no violations), desktop + mobile screenshots. Live mode NOT yet tested against the real backend. Lighthouse not run.
+- Added `GET /incident/{id}/hospitals` (ranked HospitalRecommendation, docs/07 §5, test in tests/test_api.py, not yet run). Remaining schema gaps (UI shows empty states in live mode): vitals history, Integrated Gradients attributions, SignalState, ambulance GPS, retrieved chunk text.
+- hi/kn strings other than the fixed prompts are [TODO-VERIFY] for native review.
