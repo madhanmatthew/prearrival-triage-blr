@@ -161,9 +161,22 @@ General traffic mean wait: fixed 0.9 / 2.1 / 2.0 s, always-green 0.5 / 1.0 / 1.2
 3.8 / 17.3 / 17.5, always-green 2.0 / 7.8 / 8.7 vehicles. At low traffic always-green is slower because outside
 preemption it runs a generic 41 s cycle instead of the real programs — report as found.
 
-DQN: 3 seeds, 9 h wall-clock budget each (randomized demand ±20 %, 10 % lane-incident episodes), evaluated on
-the same paired episodes → `reports/rl_osm_dqn_s*_episodes.csv`, `reports/rl_osm_comparison.csv` (filled in
-2026-10-23). Training length is set by the deadline, not convergence: say so.
+**DQN** (3 seeds; randomized demand ±20 %, 10 % lane-incident episodes; training stopped after ~8 h by the
+deadline and a laptop sleep: 65k / 60k / 65k steps; same 6 paired episodes per slot;
+`reports/rl_osm_comparison.csv`, `traffic_rl` rows `osm_*` 2026-10-23). Transit in s (episodes finished / 6):
+
+| Slot | Fixed-time | Always-green | DQN seed 1 | DQN seed 2 | DQN seed 3 |
+|---|---|---|---|---|---|
+| Low | 520 (6) | 625 (6) | 2552 (6) | 630 (6) | **466 (6)** |
+| Medium | 1463 (6) | 1081 (6) | 2392 (4) | **892 (6)** | — (0) |
+| Peak | 1515 (6) | 1244 (6) | 938 (1) | **1007 (6)** | 1687 (2) |
+
+Honest reading: **seed 2** beats both baselines at medium and peak (−39 % / −34 % vs fixed-time, −17 % / −19 % vs
+always-green) with lower general wait (1.7 s vs 2.0–2.1 s) and smaller cross queues (11–12 vs 17 vehicles), but is
+slower at low traffic (+21 %). **Seeds 1 and 3 are unstable**: in some slots they starve the cross streets until the
+network gridlocks (ambulance does not finish; general wait 10–31 s). With ~60k steps the policy has not converged on
+the real network; on the schematic corridor (100k steps) all 3 seeds were consistent (§6a). No checkpoint selection
+was done on these test episodes. Report all three seeds; in the demo say "best of 3 seeds".
 
 ## 7. Hospital selection + dispatch (system benchmark, D15)
 

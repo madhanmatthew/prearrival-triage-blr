@@ -43,7 +43,7 @@ class OsmCorridorEnv(CorridorEnv):
 
     def __init__(self, demand="medium", control: str = "rl", demand_files: dict | None = None,
                  tls_map: dict | None = None, full_route: bool = False, amb_tail_m: float = 1000.0,
-                 max_sim_s: int = 3600, **kw):
+                 max_sim_s: int = 3600, gui: bool = False, gui_delay_ms: int = 0, **kw):
         self._tls = tls_map if tls_map is not None else load_tls_map()
         self.JUNCTIONS = list(self._tls)
         self.max_sim_s = max_sim_s
@@ -51,6 +51,11 @@ class OsmCorridorEnv(CorridorEnv):
         edges = json.loads((OSM_DIR / "orr_eastbound_route.json").read_text())["edges"]
         self._route_edges = edges if full_route else self._truncate(edges, amb_tail_m)
         super().__init__(demand=demand, control=control, **kw)
+        self._gui_delay_ms = gui_delay_ms
+        if gui:                                   # demo viewing (scripts/demo_sumo.py)
+            import sumolib
+            self._sumo = sumolib.checkBinary("sumo-gui")
+        self._gui = gui
 
     def _truncate(self, edges: list[str], tail_m: float) -> list[str]:
         """Route edges up to `tail_m` past the last controlled junction (edge lengths from the net)."""
@@ -97,6 +102,8 @@ class OsmCorridorEnv(CorridorEnv):
 
     def _extra_sumo_args(self) -> list[str]:
         """Hook for subclasses (backend/rl/demand.py adds --scale for demand randomization)."""
+        if getattr(self, "_gui", False):
+            return ["--start", "--quit-on-end", "--delay", str(self._gui_delay_ms)]
         return []
 
     def _init_junctions(self) -> None:
