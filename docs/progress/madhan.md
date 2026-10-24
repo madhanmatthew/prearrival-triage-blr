@@ -496,6 +496,15 @@
   `key_steps`). Free-text guidance and the RAG eval are unchanged. [TODO-VERIFY] team review of the chosen steps.
   Tests: 3 new in `tests/test_rag.py` (incl. every real step verbatim inside one chunk).
 
+- 2026-10-24: Real road routes. ORS key added; `routing.py` field names verified against the live API (29-point
+  Silk Board -> St John's route, 1.82 km / 3.5 min; avoid_polygons accepted). React replay mode never called the
+  backend, so its routes were drawn skeletons: `scripts/build_demo_routes.py` (`make demo-routes`) fetches ORS geometry
+  per replay scene -> `web/src/data/demo_routes.json`, used by `web/src/mocks/scenario.ts` (fallback: drawn path).
+  161/181 from ORS; the ORS daily quota then ran out ("Quota exceeded", resets 00:00 UTC), so the last 20 (corridor
+  demo C0 + scenario B2) came from the public OSRM demo server (`--provider osrm`, same OSM roads, no key). Replay
+  geometry only; live dispatch stays ORS. All 11 scenarios now on road geometry (vitest), C0 checked in the browser.
+  Note: bulk fetching uses the same daily ORS quota as live dispatch; do not re-run it on demo day.
+
 ## Blockers
 - Rotate the old ORS key from the 6th-sem repo before using ORS here.
 - `make` is not installed on this machine; tests run with `python -m pytest -q` (same as

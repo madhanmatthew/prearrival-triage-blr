@@ -5,7 +5,7 @@ PY ?= python
 SEED ?= 1
 
 .PHONY: help test run-api data-mimic train-baselines train-seq train-fusion eval-ed train-text \
-        explain build-rag eval-rag eval-asr eval-asr-noise asr-latency asr-gpu-day sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval benchmark demo
+        explain build-rag eval-rag eval-asr eval-asr-noise asr-latency asr-gpu-day sumo-build sumo-routes sumo-run rl-baseline rl-train rl-eval demo-routes benchmark demo
 
 help:
 	@grep -E '^[a-z-]+:' Makefile | cut -d: -f1
@@ -74,6 +74,8 @@ rl-eval:
 	$(PY) -m backend.rl.train --eval-only --seed $(or $(SEED),1) --model $(MODEL)
 
 # ---- Component 4 + integration (Ragavendra) ----
+demo-routes:
+	$(PY) scripts/build_demo_routes.py $(ARGS)
 benchmark:
 	@echo "[TODO] 8 + 2 scenarios with a fair naive baseline (docs/15 D15)"
 demo:

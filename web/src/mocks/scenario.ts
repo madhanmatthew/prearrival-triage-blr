@@ -18,6 +18,7 @@ import { AMBULANCE_BASES, HOSPITALS, JUNCTIONS, JUNCTION_ORDER, repo, type Hospi
 import { clamp } from "@/lib/format";
 import { cumulative, haversineM, pointAt, projectOnPolyline, densify } from "@/lib/geo";
 import { news2 } from "@/lib/news2";
+import DEMO_ROUTES from "@/data/demo_routes.json";
 
 /* ----------------------------- timeline (demo seconds) ----------------------------- */
 export const T = { intake: 0, triage: 6, dispatch: 12, toScene: 16, onScene: 30, transport: 36, end: 136, readEvery: 5, firstRead: 30 } as const;
@@ -95,6 +96,12 @@ function bloodScore(h: HospitalRow, group: string | null): [number, "matched" | 
 const etaMin = (a: LatLon, b: LatLon) => (haversineM(a, b) * 1.35) / 1000 / 30 * 60; // straight-line x1.35 at 30 km/h
 
 /* ----------------------------------- plan builder ----------------------------------- */
+// key format matches scripts/build_demo_routes.py::key ("lat,lon|lat,lon", 5 decimals)
+const routeKey = (pts: LatLon[]) => pts.map(([a, b]) => `${a.toFixed(5)},${b.toFixed(5)}`).join("|");
+export function roadRoute(pts: LatLon[]): LatLon[] | null {
+  const r = (DEMO_ROUTES as unknown as Record<string, LatLon[]>)[routeKey(pts)];
+  return r && r.length > 1 ? r : null;
+}
 const planCache = new Map<string, Plan>();
 export function buildPlan(def: ScenarioDef): Plan {
   const hit = planCache.get(def.id); if (hit) return hit;
@@ -144,6 +151,7 @@ export function buildPlan(def: ScenarioDef): Plan {
   const ambBase: LatLon = [amb.lat, amb.lon];
 
   // route (scene -> hospital). Corridor demo goes through the 4 verified junction coordinates.
+  // Real ORS road geometry from scripts/build_demo_routes.py when present; else a drawn skeleton.
   const dest: LatLon = [chosen.row.lat, chosen.row.lon];
   let skeleton: LatLon[];
   if (def.forceCorridor) skeleton = [scene, JUNCTIONS.bellandur, JUNCTIONS.marathahalli, JUNCTIONS.krpuram, dest];
@@ -151,9 +159,11 @@ export function buildPlan(def: ScenarioDef): Plan {
     const mid: LatLon = [(scene[0] + dest[0]) / 2 + (dest[1] - scene[1]) * 0.08, (scene[1] + dest[1]) / 2 - (dest[0] - scene[0]) * 0.08];
     skeleton = [scene, mid, dest];
   }
-  const route = densify(skeleton, 60);
+  const road = roadRoute(def.forceCorridor ? skeleton : [scene, dest]);
+  const route = densify(road ?? skeleton, 60);
   const cum = cumulative(route);
-  const toScene = densify([ambBase, [(ambBase[0] + scene[0]) / 2 + (scene[1] - ambBase[1]) * 0.06, (ambBase[1] + scene[1]) / 2], scene], 60);
+  const toScene = densify(roadRoute([ambBase, scene])
+    ?? [ambBase, [(ambBase[0] + scene[0]) / 2 + (scene[1] - ambBase[1]) * 0.06, (ambBase[1] + scene[1]) / 2], scene], 60);
   const junctionAt: Partial<Record<JunctionId, number>> = {};
   for (const j of JUNCTION_ORDER) {
     const jp = JUNCTIONS[j];
