@@ -24,3 +24,10 @@ Thumbs.db
 # Credentialed PhysioNet data: the data use agreement forbids sharing it
 data/raw/mimic-iv/
 data/raw/mimic-iv-ed/
+
+# Re-creatable / local-only (not part of the submission)
+models/*_ckpt/
+data/raw/vitaldb/
+*_quick.csv
+.claude/
+CLAUDE.md

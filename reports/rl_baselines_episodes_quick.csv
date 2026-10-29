@@ -1,5 +1,0 @@
-policy,seed,demand,amb_depart_s,amb_completed,amb_transit_s,amb_wait_s,mean_general_wait_s,throughput_veh,max_cross_queue_veh,episode_s
-fixed_time,42,medium,510,True,986.0,46,1.1667648640874502,1624,22.0,1500
-fixed_time,43,medium,461,True,1006.0,39,1.0943916704100782,1556,18.0,1470
-always_green,42,medium,510,True,945.0,0,1.0484089382461341,1563,20.0,1460
-always_green,43,medium,461,True,883.0,0,1.0304532793131083,1345,27.0,1345

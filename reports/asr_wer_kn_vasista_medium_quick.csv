@@ -1,2 +1,0 @@
-language,utterances,word_errors,ref_words,char_errors,ref_chars,wer,cer
-kn,3,21,33,93,238,0.6363636363636364,0.3907563025210084
