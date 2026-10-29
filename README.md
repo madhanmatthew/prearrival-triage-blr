@@ -20,8 +20,8 @@ architecture.
 ## Components
 
 | # | Component | Methods |
-|---|---|---|---|
-| 1 | **Reporting** | Whisper ASR (per-language fine-tunes for kn/hi), bounded 6-question dialogue state machine, extractive RAG over the IFRC 2020 first-aid corpus (FAISS + bge-small), text severity classifier | 
+|---|---|---|
+| 1 | **Reporting** | Whisper ASR (per-language fine-tunes for kn/hi), bounded 6-question dialogue state machine, extractive RAG over the IFRC 2020 first-aid corpus (FAISS + bge-small), text severity classifier |
 | 2 | **Vitals** | NEWS2, tabular baselines (LR/RF/GB), two-head BiGRU (MIMIC-IV Demo), 10-min deterioration model (VitalDB, calibrated HGB), vitals + text fusion, SHAP / Integrated Gradients explanations |
 | 3 | **Traffic** | SUMO model of the ORR corridor from OpenStreetMap, calibrated to TomTom travel times; DQN signal control (Stable-Baselines3) vs fixed-time and always-green; police alerting |
 | 4 | **Hospital + integration** | Capability-aware hospital ranking (trauma level, beds, specialty, blood stock), rule-based coordinator, FastAPI + WebSocket backend, React dashboard |
