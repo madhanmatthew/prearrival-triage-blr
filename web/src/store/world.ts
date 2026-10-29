@@ -16,6 +16,7 @@ interface LiveState {
   police: Record<string, PoliceAlert>; ws: WsState; error: string | null; localVitals: Record<string, VitalsReading[]>; loaded: boolean;
   ambulancePos: Record<string, { pos: LatLon; heading: number; trail: LatLon[] }>;
   ranking: Record<string, import("@/api/types").HospitalRecommendation>;
+  riskHistory: Record<string, { t: number; score: number }[]>;   // per incident, built client-side (API has no history)
 }
 interface Session {
   source: Source; backend: Backend; theme: "dark" | "light";
@@ -30,7 +31,7 @@ const initialTheme = (): "dark" | "light" => { try { return (localStorage.getIte
 export const useSession = create<Session>((set, get) => ({
   source: "mock", backend: "checking", theme: initialTheme(),
   mock: { scenarioId: CORRIDOR_DEMO_ID, t: 0, playing: false, speed: 1 },
-  live: { resources: null, incidents: [], selectedId: null, view: null, police: {}, ws: "idle", error: null, localVitals: {}, loaded: false, ambulancePos: {}, ranking: {} },
+  live: { resources: null, incidents: [], selectedId: null, view: null, police: {}, ws: "idle", error: null, localVitals: {}, loaded: false, ambulancePos: {}, ranking: {}, riskHistory: {} },
   setSource: (source) => set({ source }),
   setBackend: (backend) => set({ backend }),
   toggleTheme: () => { const theme = get().theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = theme; try { localStorage.setItem("theme", theme); } catch { /* private mode */ } set({ theme }); },
@@ -97,7 +98,7 @@ export function worldFromLive(l: LiveState): World {
   return {
     source: "live", label: "Live", loading: !l.loaded,
     incident: v ? { id: v.incident_id, gps: v.gps, injury: v.report?.injury_type ?? null, injured: v.report?.num_injured ?? null, language: v.report?.language ?? null, transcript: v.report?.transcript ?? null } : null,
-    phase: "live", t: 0, duration: 0, risk, riskHistory: [], vitals: local.slice(-6), vitalsAll: local, vitalsCount: v?.vitals_count ?? 0, ig: null,
+    phase: "live", t: 0, duration: 0, risk, riskHistory: id ? l.riskHistory[id] ?? [] : [], vitals: local.slice(-6), vitalsAll: local, vitalsCount: v?.vitals_count ?? 0, ig: null,
     textProbs: v?.report?.text_severity_probs ?? null, ranking: liveRanking, decision, rules, signals: null, rlEvents: [], police,
     ambulance: decision ? { id: decision.ambulance_id, position: amb?.pos ?? (dispatched ? [dispatched.lat, dispatched.lon] : v!.gps && [v!.gps.lat, v!.gps.lon]) as LatLon, heading: amb?.heading ?? 0, trail: amb?.trail ?? [], etaS: null, speedKmh: null } : null,
     route: police?.route_polyline ?? [],
@@ -109,6 +110,13 @@ export function worldFromLive(l: LiveState): World {
       "Ambulance GPS: only reflected in PoliceAlert posts.",
     ],
   };
+}
+
+/** Append a risk update to its incident's history; repeats of the same timestamp (polling) are ignored. */
+export function appendRiskHistory(h: LiveState["riskHistory"], r: FusedRisk): LiveState["riskHistory"] {
+  const t = Date.parse(r.timestamp) / 1000; const prev = h[r.incident_id] ?? [];
+  if (!Number.isFinite(t) || prev.some((p) => p.t === t)) return h;
+  return { ...h, [r.incident_id]: [...prev, { t, score: r.risk_score }].sort((a, b) => a.t - b.t).slice(-60) };
 }
 
 /** The one hook every screen uses. Mock and live produce the same World shape. */

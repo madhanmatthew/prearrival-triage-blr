@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Activity, BedDouble, Check, Clock, Droplets, HeartPulse, Stethoscope, X as XIcon, Siren } from "lucide-react";
+import { Activity, BedDouble, Check, Clock, Droplets, HeartPulse, Stethoscope, Timer, X as XIcon, Siren } from "lucide-react";
 import clsx from "clsx";
-import { useWorld, useSession } from "@/store/world";
+import { useWorld, useSession, type World } from "@/store/world";
 import { HOSPITALS } from "@/mocks/data";
 import { ReplayBar } from "@/components/ReplayBar";
 import { AnimatedNumber, EmptyState, Panel, RiskGauge, SeverityBadge, SimTag, Skeleton, Sparkline } from "@/components/ui";
@@ -13,6 +13,29 @@ import { bloodNeeded, listScenarios } from "@/mocks/scenario";
 import type { InjuryType } from "@/api/types";
 
 const SPECIALTY: Record<string, string[]> = { road_accident: ["trauma", "orthopaedics", "neurosurgery"], fall: ["trauma", "orthopaedics", "neurosurgery"], burn: ["burns", "plastic_surgery"], cardiac_medical: ["cardiology", "general_medicine"] };
+
+/** 10-min deterioration (VitalDB HGB) + its top-3 SHAP reasons, as sent in FusedRisk. */
+function Deterioration({ world }: { world: World }) {
+  const p = world.risk?.deterioration_10min_prob ?? null; const reasons = world.risk?.deterioration_reasons ?? [];
+  const tone = p == null ? "text-mute" : p >= 0.5 ? "text-sev3" : p >= 0.2 ? "text-sev2" : "text-sev0";
+  return (
+    <div>
+      <div className="mb-1.5 flex items-center justify-between"><span className="eyebrow flex items-center gap-1"><Timer className="h-3 w-3" />Deterioration in 10 min</span>{world.source === "mock" && <SimTag>Scripted values</SimTag>}</div>
+      <div className="card px-3 py-2.5">
+        {p == null ? <p className="text-[12.5px] text-mute">No estimate yet (needs vitals readings and the VitalDB model loaded).</p> : (<>
+          <div className="flex items-baseline justify-between gap-3">
+            <AnimatedNumber value={p * 100} suffix="%" className={clsx("text-[22px] font-semibold", tone)} />
+            <span className="text-right text-[11px] text-faint">new SBP &lt; 90 or SpO₂ &lt; 90</span>
+          </div>
+          <div className="mt-2 text-[11px] font-semibold text-mute">Why (SHAP, top {reasons.length || 3})</div>
+          {reasons.length ? <ul className="mt-1 flex flex-wrap gap-1.5">{reasons.map((r) => <li key={r} className="chip">{r}</li>)}</ul>
+            : <p className="mt-1 text-[12px] text-mute">No reasons returned for this reading.</p>}
+          <p className="mt-2 text-[10.5px] leading-snug text-faint">Gradient-boosted trees trained on intra-operative data (VitalDB), not pre-hospital data. Decision support only.</p>
+        </>)}
+      </div>
+    </div>
+  );
+}
 
 export default function Hospital() {
   const world = useWorld(); const { id } = useParams(); const nav = useNavigate();
@@ -67,6 +90,7 @@ export default function Hospital() {
                 </div>
               </div>
               <div className="space-y-4">
+                <Deterioration world={world} />
                 <div><div className="mb-1.5 flex items-center justify-between"><span className="eyebrow flex items-center gap-1"><HeartPulse className="h-3 w-3" />Vitals trend</span>{world.source === "mock" && <SimTag />}</div><VitalsStrip vitals={world.vitals} compact /></div>
                 <div>
                   <div className="eyebrow mb-1.5">Readiness checklist <SimTag>Sim data</SimTag></div>

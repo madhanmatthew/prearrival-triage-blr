@@ -63,7 +63,11 @@ const out = {
   scenarios: readCsv("data/benchmark_scenarios.csv") ?? [],
   corpus,
   junctions: readJson("scripts/traffic_points.json")?.junctions ?? null,
-  demoVitals: readJson("frontend/demo_vitals.json")?.readings ?? null,
+  // Demo vitals replays: real VitalDB windows (scripts/build_demo_vitals.py) first, then the hand-written one.
+  demoVitalsSets: [
+    ...(readJson("frontend/demo_vitals_vitaldb.json")?.sets ?? []).map((s) => ({ id: s.id, name: s.name, source: "VitalDB, real intra-operative", outcome: s.outcome, readings: s.readings })),
+    ...((h) => (h ? [{ id: "handwritten", name: "Hand-written example", source: "hand-written, not patient data", outcome: null, readings: h }] : []))(readJson("frontend/demo_vitals.json")?.readings),
+  ],
 };
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(path.join(outDir, "repo.json"), JSON.stringify(out));

@@ -85,15 +85,13 @@ MED_QUERY_RE = re.compile(r"painkiller|pain killer|injection|ointment|syrup|whic
                           r"what (tablet|medicine|drug)", re.IGNORECASE)
 NON_MEDICAL_RE = re.compile(r"how long will|\beta\b|weather|traffic|which hospital|nearest hospital|"
                             r"free beds?|hospital beds?|route to|address of", re.IGNORECASE)
-# IFRC 2020 topics deliberately NOT extracted into the corpus (scope = docs/01 §6.4 + road
-# accident / collapse). Taken from the IFRC table of contents, not from eval results.
+# Topics NOT in the corpus: IFRC 2020 topics not extracted (v3 added bites, stings, snakebite,
+# poisoning, allergy, diabetic, faint, fever, abdominal pain, childbirth, heat, dehydration,
+# hypothermia, asthma, knocked-out tooth) + electric shock and nosebleed, which have no IFRC 2020
+# chapter. Taken from the IFRC table of contents, not from eval results.
 EXCLUDED_TOPIC_RE = re.compile(
-    r"snake|\bbite\b|\bbitten\b|\bbit (him|her|me|my|the|his|a)\b|\bstings?\b|\bstung\b|insect|"
-    r"jellyfish|poison|kerosene|bleach|allerg|anaphyla|diabet|sugar (is )?(low|high)|low sugar|"
-    r"\blabou?r\b|giving birth|deliver(y|ing) (a |the )?baby|fever|heat ?stroke|sunstroke|"
-    r"hypothermia|frostbite|dehydrat|electric shock|electrocut|drown|overdose|asthma|croup|"
-    r"nosebleed|(tooth|teeth) (knocked|fell) out|knocked out (a |his |her )?tooth|eye injury|"
-    r"in (his|her|the|my) eyes?\b",
+    r"jellyfish|frostbite|electric shock|electrocut|current (hit|struck|passed)|drown|overdose|croup|"
+    r"nose ?bleed|bleeding from (the |his |her |my )?nose|eye injury|in (his|her|the|my) eyes?\b",
     re.IGNORECASE)
 
 

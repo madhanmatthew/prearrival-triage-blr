@@ -21,7 +21,16 @@
    close and only one has matching blood.
 
 ## Done
-- (nothing yet)
+- 2026-10-27 (Madhan + Claude Code): Hospital page (`web/src/pages/Hospital.tsx`) now shows the
+  10-min deterioration probability with its top-3 SHAP reasons; live-mode risk-score history is
+  built client-side per incident (`appendRiskHistory`, `web/src/store/world.test.ts`). Checked in
+  the browser with the demo vitals (7 points: text-only risk + 6 readings).
+- 2026-10-27: "Demo vitals" now has a picker: 2 REAL VitalDB windows (10 one-minute readings each,
+  picked by data rules, not by the model: case 1 deteriorating, real event ~7 min later; case 2
+  stable) + the old hand-written example. `make demo-vitals` -> `frontend/demo_vitals_vitaldb.json`
+  (`scripts/build_demo_vitals.py`, `tests/test_build_demo_vitals.py`); `npm run build` picks it up.
+  Live check: case 1 -> 10-min risk 26 %, SHAP "SBP 5-min lowest 102", "HR fell 8 bpm". NEWS2 shows
+  "–" for VitalDB replays (no AVPU/O2). The deployed model saw these cases in training: illustration only.
 
 ## Blockers
 - None.

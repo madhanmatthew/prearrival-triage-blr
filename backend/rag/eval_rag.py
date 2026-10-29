@@ -106,7 +106,7 @@ def evaluate(rag: rp.FirstAidRAG, df: pd.DataFrame) -> tuple[pd.DataFrame, dict]
 
 def _log(rag: rp.FirstAidRAG, summary: dict, n_queries: int) -> None:
     params = {"mode": rag.mode, "k": rag.k, "min_similarity": rag.min_similarity,
-              "embed": rag.embed_model, "version": "v2", "nli": rp.NLI_MODEL if rag.entail else None,
+              "embed": rag.embed_model, "version": "v3", "nli": rp.NLI_MODEL if rag.entail else None,
               "entail_threshold": rp.ENTAIL_THRESHOLD}
     notes = (f"task=rag_groundedness split=test queries={n_queries} "
              + " ".join(f"{k}={v:.3f}" if isinstance(v, float) else f"{k}={v}"

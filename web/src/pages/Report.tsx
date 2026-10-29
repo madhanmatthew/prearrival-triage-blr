@@ -47,6 +47,39 @@ function useRecorder() {
   return { analyser, start, stop };
 }
 
+/* ------------------------------- speech: items play in order; a new say() stops the previous one -------------------------------
+   {key} = native recording /prompts/<key>_<lang>.mp3 (browser voice if missing), {text, l} = browser voice only */
+type SayItem = { key?: string; text: string; l?: Language };
+const VOICE_LANG: Record<Language, string> = { en: "en-IN", hi: "hi-IN", kn: "kn-IN" };
+function useSpeech() {
+  const gen = useRef(0); const playing = useRef<HTMLAudioElement | null>(null);
+  const stopSpeech = useCallback(() => {
+    gen.current++; playing.current?.pause(); playing.current = null;
+    if ("speechSynthesis" in window) speechSynthesis.cancel();
+  }, []);
+  const voice = (text: string, l: Language) => new Promise<void>((done) => {
+    if (!("speechSynthesis" in window) || !text) return done();
+    const v = speechSynthesis.getVoices().find((x) => x.lang === VOICE_LANG[l] || x.lang.startsWith(l));
+    if (!v && l !== "en") return done();   // no voice for this language on the device: text only
+    const u = new SpeechSynthesisUtterance(text); u.lang = VOICE_LANG[l]; if (v) u.voice = v;
+    u.onend = () => done(); u.onerror = () => done(); speechSynthesis.speak(u);
+  });
+  const one = (it: SayItem, lang: Language) => {
+    if (!it.key) return voice(it.text, it.l ?? lang);
+    return new Promise<void>((done) => {
+      const a = new Audio(`/prompts/${it.key}_${lang}.mp3`); let fell = false;
+      const fallback = () => { if (!fell) { fell = true; void voice(it.text, lang).then(done); } };
+      a.onended = () => done(); a.onerror = fallback; playing.current = a; a.play().catch(fallback);
+    });
+  };
+  const say = useCallback(async (items: SayItem[], lang: Language) => {
+    stopSpeech(); const g = gen.current;
+    for (const it of items) { if (g !== gen.current) return; await one(it, lang); }
+  }, [stopSpeech]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => stopSpeech, [stopSpeech]);
+  return { say, stopSpeech };
+}
+
 export default function Report() {
   const source = useSession((s) => s.source);
   const [lang, setLang] = useState<Language>("en");
@@ -63,7 +96,7 @@ export default function Report() {
   const [transcript, setTranscript] = useState("");
   const { analyser, start, stop } = useRecorder();
   const t = UI[lang]; const font = LANGS.find((l) => l.code === lang)!.font;
-  const audio = useRef<HTMLAudioElement | null>(null);
+  const { say, stopSpeech } = useSpeech();
 
   const locate = useCallback(() => {
     setGpsInfo({ kind: "locating" });
@@ -103,13 +136,23 @@ export default function Report() {
     if (stage === "recording") { const b = await stop(); void submit("voice", b); return; }
     try { await start(); setStage("recording"); } catch { setErr(t.micDenied); setTyping(true); }
   };
-  const playQuestion = () => {
-    if (!q) return; audio.current?.pause();
-    const a = new Audio(`/prompts/${QKEY[q.q_id]}_${lang}.mp3`); audio.current = a;
-    a.onerror = () => { if ("speechSynthesis" in window) { const u = new SpeechSynthesisUtterance(q.text); u.lang = lang === "en" ? "en-IN" : lang === "hi" ? "hi-IN" : "kn-IN"; speechSynthesis.cancel(); speechSynthesis.speak(u); } };
-    void a.play().catch(() => a.onerror?.(new Event("error")));
+  const playQuestion = (intro = false) => {
+    if (!q) return;
+    void say([...(intro ? [{ key: "s3", text: STATUS[lang].s3 }] : []), { key: QKEY[q.q_id], text: q.text }], lang);
   };
-  const reset = () => { setStage("idle"); setText(""); setQ(null); setIncident(null); setGuid([]); setAsked(0); setTyping(false); setErr(null); };
+  // guidance steps are English corpus text (hi/kn reviewed translations pending), so they use the English voice
+  const playGuidance = () => {
+    const items: SayItem[] = [{ key: "s2", text: STATUS[lang].s2 }, { key: "s1", text: STATUS[lang].s1 }];
+    for (const it of guid) {
+      if (it.status !== "ok") { items.push({ text: it.refusal_reason === "medication" ? t.noMeds : t.notCovered }, { text: t.wait }); continue; }
+      items.push({ key: "s4", text: STATUS[lang].s4 }, ...it.sentences.map((s) => ({ text: s.text, l: "en" as Language })));
+    }
+    void say(items, lang);
+  };
+  // speak each question, and the guidance, automatically as it appears
+  useEffect(() => { if (stage === "dialogue" && q) playQuestion(asked === 0); }, [q, stage]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (stage === "guidance" && guid.length) playGuidance(); }, [guid, stage]); // eslint-disable-line react-hooks/exhaustive-deps
+  const reset = () => { stopSpeech(); setStage("idle"); setTranscript(""); setText(""); setQ(null); setIncident(null); setGuid([]); setAsked(0); setTyping(false); setErr(null); };
 
   const gpsChip = {
     locating: { icon: <RefreshCw className="h-3 w-3 animate-spin" />, label: t.locating, tone: "" }, gps: { icon: <LocateFixed className="h-3 w-3 text-sev0" />, label: `${t.gps} · ±${gpsInfo.acc} m`, tone: "" },
@@ -135,6 +178,13 @@ export default function Report() {
           {(gpsInfo.kind === "fail" || gpsInfo.kind === "approx") && <button className="text-[12px] font-medium text-brand underline-offset-2 hover:underline" onClick={useDemo}>{t.demoLoc}</button>}
           {gpsInfo.kind === "fail" && <button className="text-[12px] text-mute hover:text-fg" onClick={locate}>↻</button>}
         </div>
+
+        {(stage === "dialogue" || stage === "guidance") && transcript.trim() && (
+          <div className="mt-5 rounded-2xl border hairline bg-s2 p-4">
+            <div className="eyebrow">{t.reported}</div>
+            <p className="mt-1 text-[15px] leading-snug">“{transcript}”</p>
+          </div>
+        )}
 
         <AnimatePresence mode="wait">
           {(stage === "idle" || stage === "recording" || stage === "processing") && (
@@ -169,7 +219,7 @@ export default function Report() {
               <div className="flex items-center gap-1.5" role="progressbar" aria-valuemin={1} aria-valuemax={6} aria-valuenow={Math.min(asked + 1, 6)} aria-label={t.qOf.replace("{n}", String(Math.min(asked + 1, 6)))}>
                 {Array.from({ length: 6 }, (_, i) => <span key={i} className={clsx("h-1.5 flex-1 rounded-full transition-colors", i < asked ? "bg-brand" : i === asked ? "bg-brand/60" : "bg-s3")} />)}
               </div>
-              <div className="mt-2 flex items-center justify-between"><span className="eyebrow">{t.qOf.replace("{n}", String(Math.min(asked + 1, 6)))}</span><button className="btn !h-8 !px-2.5 !text-[12px]" onClick={playQuestion}><Volume2 className="h-3.5 w-3.5" />{t.playQ}</button></div>
+              <div className="mt-2 flex items-center justify-between"><span className="eyebrow">{t.qOf.replace("{n}", String(Math.min(asked + 1, 6)))}</span><button className="btn !h-8 !px-2.5 !text-[12px]" onClick={() => playQuestion()}><Volume2 className="h-3.5 w-3.5" />{t.playQ}</button></div>
               <p className="mt-3 text-[22px] font-medium leading-snug">{q.text}</p>
               {q.q_id === "Q_NUM_INJURED" ? (
                 <div className="mt-5"><div className="mb-2 text-[12px] text-mute">{t.number}</div><div className="grid grid-cols-5 gap-2">{["1", "2", "3", "4", "5+"].map((n) => <button key={n} className="btn !h-14 !text-[20px] num" onClick={() => answer(n === "5+" ? "5" : n)}>{n}</button>)}</div></div>
@@ -188,6 +238,7 @@ export default function Report() {
             <motion.div key="guidance" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mt-5 space-y-3">
               <div className="rounded-2xl border border-sev0/30 bg-sev0/10 p-4"><div className="flex items-center gap-2 text-[14px] font-semibold text-sev0"><Ambulance className="h-4 w-4" />{STATUS[lang].s2}</div><p className="mt-1 text-[14px]">{STATUS[lang].s1}</p>
                 {source === "mock" && <Link to="/command" className="mt-2 inline-block text-[12px] font-medium text-brand hover:underline">See this on the Command Center →</Link>}</div>
+              {guid.length > 0 && <button className="btn w-full" onClick={playGuidance}><Volume2 className="h-3.5 w-3.5" />{t.listen}</button>}
               <GuidanceCards items={guid} lang={lang} mock={source === "mock"} />
               <button className="btn w-full" onClick={reset}><RefreshCw className="h-3.5 w-3.5" />{t.again}</button>
             </motion.div>

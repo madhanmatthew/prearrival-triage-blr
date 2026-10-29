@@ -44,15 +44,15 @@ q042,"after losing a lot of blood he is pale, cold and sweaty",shock_ifrc.md,dev
 q043,"she looks pale, clammy and very weak after the accident",shock_ifrc.md,dev,
 q044,"he is having a fit, shaking all over on the ground",seizure_ifrc.md,dev,"v1 test, seen 2026-10-06"
 q045,"my daughter is having a seizure, should I put something in her mouth",seizure_ifrc.md,dev,"v1 test, seen 2026-10-06"
-q046,a snake bit my brother on the leg,,dev,not in corpus (snakebites)
-q047,street dog bit a child,,dev,"v1 test, seen 2026-10-06; not in corpus (mammal bites)"
-q048,bee stung him and his face is swelling,,dev,"v1 test, seen 2026-10-06; not in corpus (insect stings / allergy)"
-q049,child drank kerosene by mistake,,dev,not in corpus (poisoning)
-q050,she is having an allergic reaction to peanuts,,dev,"v1 test, seen 2026-10-06; not in corpus (anaphylaxis)"
-q051,"my diabetic father is shaking and sweating, sugar low",,dev,"v1 test, seen 2026-10-06; not in corpus (diabetic emergency)"
-q052,the woman is in labour on the roadside,,dev,not in corpus (childbirth)
-q053,he has been in the sun all day and is very hot and dizzy,,dev,"v1 test, seen 2026-10-06; not in corpus (hyperthermia)"
-q054,child has high fever,,dev,"v1 test, seen 2026-10-06; not in corpus (fever)"
+q046,a snake bit my brother on the leg,snake_bites_ifrc.md,dev,"not in corpus (snakebites); v3: topic added to corpus, now in scope"
+q047,street dog bit a child,mammal_bites_ifrc.md,dev,"v1 test, seen 2026-10-06; not in corpus (mammal bites); v3: topic added to corpus, now in scope"
+q048,bee stung him and his face is swelling,allergic_reaction_ifrc.md,dev,"v1 test, seen 2026-10-06; not in corpus (insect stings / allergy); v3: topic added to corpus, now in scope"
+q049,child drank kerosene by mistake,poisoning_ifrc.md,dev,"not in corpus (poisoning); v3: topic added to corpus, now in scope"
+q050,she is having an allergic reaction to peanuts,allergic_reaction_ifrc.md,dev,"v1 test, seen 2026-10-06; not in corpus (anaphylaxis); v3: topic added to corpus, now in scope"
+q051,"my diabetic father is shaking and sweating, sugar low",diabetic_emergency_ifrc.md,dev,"v1 test, seen 2026-10-06; not in corpus (diabetic emergency); v3: topic added to corpus, now in scope"
+q052,the woman is in labour on the roadside,emergency_childbirth_ifrc.md,dev,"not in corpus (childbirth); v3: topic added to corpus, now in scope"
+q053,he has been in the sun all day and is very hot and dizzy,hyperthermia_ifrc.md,dev,"v1 test, seen 2026-10-06; not in corpus (hyperthermia); v3: topic added to corpus, now in scope"
+q054,child has high fever,fever_ifrc.md,dev,"v1 test, seen 2026-10-06; not in corpus (fever); v3: topic added to corpus, now in scope"
 q055,what tablet should I give for the pain,,dev,medication question
 q056,how many mg of aspirin should he take,,dev,"v1 test, seen 2026-10-06; medication question"
 q057,can I give him painkiller injection,,dev,"v1 test, seen 2026-10-06; medication question"
@@ -88,9 +88,9 @@ q086,my mother suddenly can't lift her left arm and her mouth is crooked,stroke_
 q087,"after the crash he is cold, pale and breathing very fast",shock_ifrc.md,test,v2 test
 q088,man on the footpath is jerking violently and foaming at the mouth,seizure_ifrc.md,test,v2 test
 q089,child had a convulsion and is now sleepy,seizure_ifrc.md,test,v2 test
-q090,a cobra bit the farmer,,test,v2 test; excluded topic (snakebite)
-q091,my son drank some floor cleaner,,test,"v2 test; excluded topic (poisoning), no guard keyword"
-q092,"she is in labour pains, baby coming",,test,v2 test; excluded topic (childbirth)
+q090,a cobra bit the farmer,snake_bites_ifrc.md,test,"v2 test; excluded topic (snakebite); v3: topic added to corpus, now in scope"
+q091,my son drank some floor cleaner,poisoning_ifrc.md,test,"v2 test; excluded topic (poisoning), no guard keyword; v3: topic added to corpus, now in scope"
+q092,"she is in labour pains, baby coming",emergency_childbirth_ifrc.md,test,"v2 test; excluded topic (childbirth); v3: topic added to corpus, now in scope"
 q093,grandmother has a bad headache since morning,,test,"v2 test; not in corpus (headache), no guard keyword"
 q094,he has had hiccups for an hour,,test,"v2 test; not in corpus (hiccups), no guard keyword"
 q095,my kid has pain in his ear,,test,"v2 test; not in corpus (earache), no guard keyword"
@@ -100,3 +100,39 @@ q098,how much ointment should I apply on the wound,,test,v2 test; medication
 q099,what is the police helpline number,,test,"v2 test; non-medical, no guard keyword"
 q100,how do I reach Manipal hospital from Indiranagar,,test,"v2 test; non-medical, no guard keyword"
 q101,is the ORR road blocked right now,,test,"v2 test; non-medical, no guard keyword"
+q102,"my friend has asthma and is wheezing badly, can't catch his breath",asthma_attack_ifrc.md,test,v3 test
+q103,"girl is coughing and her chest feels tight, she is an asthma patient",asthma_attack_ifrc.md,test,v3 test
+q104,"construction worker collapsed in the afternoon sun, his skin is hot and dry",hyperthermia_ifrc.md,test,v3 test
+q105,he was playing cricket in the heat and now feels dizzy with cramps,hyperthermia_ifrc.md,test,v3 test
+q106,"old man has not drunk water all day, mouth is dry and he is very weak",dehydration_ifrc.md,test,v3 test
+q107,baby has loose motions since morning and is crying without tears,dehydration_ifrc.md,test,v3 test
+q108,she fell into the cold water tank and is shivering badly,hypothermia_ifrc.md,test,v3 test
+q109,homeless man is ice cold and confused after the rainy night,hypothermia_ifrc.md,test,v3 test
+q110,she says she is about to faint after standing in the queue,feeling_faint_ifrc.md,test,v3 test
+q111,he feels light-headed and pale after giving blood,feeling_faint_ifrc.md,test,v3 test
+q112,a stray dog bit my son on the leg,mammal_bites_ifrc.md,test,v3 test
+q113,monkey scratched and bit her hand at the temple,mammal_bites_ifrc.md,test,v3 test
+q114,a wasp stung her on the arm and the stinger is still there,insect_stings_ifrc.md,test,v3 test
+q115,"scorpion stung his foot, it is very painful",insect_stings_ifrc.md,test,v3 test
+q116,"a snake bit him in the field, what should we do",snake_bites_ifrc.md,test,v3 test
+q117,"bitten by a viper near the farm, leg is swelling",snake_bites_ifrc.md,test,v3 test
+q118,toddler swallowed some pesticide from the shed,poisoning_ifrc.md,test,v3 test
+q119,my child drank some bleach by mistake,poisoning_ifrc.md,test,v3 test
+q120,his lips and tongue are swelling after eating prawns and he is wheezing,allergic_reaction_ifrc.md,test,v3 test
+q121,she has itchy red rash all over after eating peanuts,allergic_reaction_ifrc.md,test,v3 test
+q122,"diabetic man is sweaty, shaky and confused, maybe his sugar is low",diabetic_emergency_ifrc.md,test,v3 test
+q123,my grandmother has diabetes and is acting drunk and drowsy,diabetic_emergency_ifrc.md,test,v3 test
+q124,child is very hot and has a temperature of 39 degrees,fever_ifrc.md,test,v3 test
+q125,he has been burning with high temperature since last night,fever_ifrc.md,test,v3 test
+q126,severe stomach pain on the lower right side since morning,abdominal_pain_ifrc.md,test,v3 test
+q127,she has bad belly cramps and keeps vomiting,abdominal_pain_ifrc.md,test,v3 test
+q128,"pregnant woman's water broke in the auto, the baby is coming now",emergency_childbirth_ifrc.md,test,v3 test
+q129,woman is giving birth at home and the ambulance is late,emergency_childbirth_ifrc.md,test,v3 test
+q130,his front tooth got knocked out in the fight,dental_avulsion_ifrc.md,test,v3 test
+q131,"kid fell from the swing and her tooth came out, what to do with the tooth",dental_avulsion_ifrc.md,test,v3 test
+q132,he touched a live wire and got an electric shock,,test,v3 test; out of scope
+q133,electrician was electrocuted on the pole,,test,v3 test; out of scope
+q134,my son has a nosebleed that won't stop,,test,v3 test; out of scope
+q135,blood is coming from her nose after the sun,,test,v3 test; out of scope
+q136,"child was pulled out of the lake after drowning, he is breathing",,test,v3 test; out of scope
+q137,baby has a barking cough at night,,test,v3 test; out of scope

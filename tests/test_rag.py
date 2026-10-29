@@ -209,9 +209,12 @@ def test_routed_guide_stays_in_file_and_skips_threshold(store):
     ("can I give him a painkiller injection", "medication"),
     ("how long will the ambulance take", "non_medical"),
     ("which hospital has free beds", "non_medical"),
-    ("a snake bit my brother", "excluded_topic"),
-    ("my diabetic father is sweating", "excluded_topic"),
-    ("child has high fever", "excluded_topic"),
+    ("a snake bit my brother", None),                     # v3: snake_bites in corpus
+    ("my diabetic father is sweating", None),
+    ("child has high fever", None),
+    ("he got an electric shock from the wire", "excluded_topic"),   # no IFRC 2020 chapter
+    ("my son has a nosebleed", "excluded_topic"),
+    ("the boy is drowning in the lake", "excluded_topic"),
     ("his leg is bleeding a bit after the fall", None),
     ("pregnant woman fell and hurt her ankle", None),
     ("he is having a fit and clenching his teeth", None),

@@ -1,6 +1,6 @@
 import { api } from "./client";
 import { openChannel, type Channel } from "./ws";
-import { useSession } from "@/store/world";
+import { appendRiskHistory, useSession } from "@/store/world";
 import type { PoliceAlert, VitalsReading } from "./types";
 import { densify } from "@/lib/geo";
 import { repo } from "@/mocks/data";
@@ -29,7 +29,8 @@ export function startLive() {
       if (selectedId && view?.decision && !police[selectedId]) { try { police[selectedId] = await api.police(selectedId); } catch { /* not dispatched yet */ } }
       const ranking = { ...live().ranking };
       if (selectedId && view?.decision && !ranking[selectedId]) { try { ranking[selectedId] = await api.hospitals(selectedId); } catch { /* older backend */ } }
-      patchLive({ incidents, selectedId, view, police, ranking, error: null, loaded: true });
+      const riskHistory = view?.risk ? appendRiskHistory(live().riskHistory, view.risk) : live().riskHistory;
+      patchLive({ incidents, selectedId, view, police, ranking, riskHistory, error: null, loaded: true });
     } catch (e) { patchLive({ error: (e as Error).message, loaded: true }); }
   };
   api.resources().then((resources) => patchLive({ resources })).catch(() => undefined);
@@ -50,12 +51,15 @@ export async function dispatchSelected() {
   const id = useSession.getState().live.selectedId; if (!id) return;
   await api.dispatch(id);
 }
-export async function replayVitals(onTick?: (k: number, n: number) => void): Promise<void> {
-  const id = useSession.getState().live.selectedId; const rows = repo.demoVitals as Partial<VitalsReading>[] | null; if (!id || !rows) throw new Error("demo_vitals.json not found");
+export async function replayVitals(setId: string, onTick?: (k: number, n: number) => void): Promise<void> {
+  const id = useSession.getState().live.selectedId; const set = repo.demoVitalsSets?.find((s) => s.id === setId);
+  if (!id || !set) throw new Error("demo vitals not found (run npm run sync-data)");
+  const rows = set.readings as Partial<VitalsReading>[];
   for (let k = 0; k < rows.length; k++) {
     const reading = { incident_id: id, patient_id: `${id}-P1`, timestamp: new Date().toISOString().slice(0, 19) + "Z", hr: null, rr: null, spo2: null, sbp: null, temp: null, avpu: null, supplemental_o2: null, ...rows[k] } as VitalsReading;
-    await api.vitals(id, reading);
-    const s = useSession.getState(); s.patchLive({ localVitals: { ...s.live.localVitals, [id]: [...(s.live.localVitals[id] ?? []), reading] } });
+    const risk = await api.vitals(id, reading);
+    const s = useSession.getState();
+    s.patchLive({ localVitals: { ...s.live.localVitals, [id]: [...(s.live.localVitals[id] ?? []), reading] }, riskHistory: appendRiskHistory(s.live.riskHistory, risk) });
     onTick?.(k + 1, rows.length);
     await new Promise((r) => setTimeout(r, 1800));
   }

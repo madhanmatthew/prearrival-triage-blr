@@ -1,0 +1,203 @@
+{
+ "_note": "REAL intra-operative vitals from the VitalDB open dataset (1-min medians), one reading per minute, picked by data rules in scripts/build_demo_vitals.py. Anaesthetised surgical patients, not pre-hospital; the deployed model saw these cases in training, so replays are an illustration, not a test result. AVPU/O2 not recorded in VitalDB.",
+ "sets": [
+  {
+   "id": "vitaldb_deteriorating",
+   "name": "VitalDB case 1: deteriorating",
+   "caseid": 1,
+   "end_minute": 69,
+   "outcome": "Real outcome: sustained low reading from +7 min (SBP 87 mmHg, SpO2 96 %).",
+   "readings": [
+    {
+     "hr": 62,
+     "rr": 10,
+     "spo2": 97,
+     "sbp": 120,
+     "temp": 35.5,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 67,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 120,
+     "temp": 35.5,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 66,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 119,
+     "temp": 35.5,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 66,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 117,
+     "temp": 35.5,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 67,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 116,
+     "temp": 35.5,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 68,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 116,
+     "temp": 35.6,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 66,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 114,
+     "temp": 35.6,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 64,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 111,
+     "temp": 35.6,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 63,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 108,
+     "temp": 35.6,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 60,
+     "rr": 10,
+     "spo2": 96,
+     "sbp": 102,
+     "temp": 35.6,
+     "avpu": null,
+     "supplemental_o2": null
+    }
+   ]
+  },
+  {
+   "id": "vitaldb_stable",
+   "name": "VitalDB case 2: stable",
+   "caseid": 2,
+   "end_minute": 69,
+   "outcome": "Real outcome: no SBP or SpO2 below 90 in the next 30 min.",
+   "readings": [
+    {
+     "hr": 89,
+     "rr": 12,
+     "spo2": 100,
+     "sbp": 104,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 90,
+     "rr": 12,
+     "spo2": 100,
+     "sbp": 104,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 96,
+     "rr": 12,
+     "spo2": 100,
+     "sbp": 104,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 100,
+     "rr": 14,
+     "spo2": 100,
+     "sbp": 125,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 89,
+     "rr": 14,
+     "spo2": 100,
+     "sbp": 125,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 88,
+     "rr": 14,
+     "spo2": 100,
+     "sbp": 125,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 93,
+     "rr": 14,
+     "spo2": 100,
+     "sbp": 102,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 95,
+     "rr": 14,
+     "spo2": 100,
+     "sbp": 102,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 98,
+     "rr": 14,
+     "spo2": 100,
+     "sbp": 121,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    },
+    {
+     "hr": 100,
+     "rr": 14,
+     "spo2": 100,
+     "sbp": 121,
+     "temp": 35.2,
+     "avpu": null,
+     "supplemental_o2": null
+    }
+   ]
+  }
+ ]
+}

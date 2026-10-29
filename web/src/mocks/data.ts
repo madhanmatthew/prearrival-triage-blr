@@ -5,8 +5,9 @@ import type { LatLon } from "@/api/types";
 type Row = Record<string, string>;
 interface Repo {
   repoFound: boolean; reports: Record<string, Row[] | null>; log: Row[]; hospitals: Row[]; ambulances: Row[]; scenarios: Row[];
-  junctions: Record<string, { lat: number; lon: number }> | null; demoVitals: Record<string, unknown>[] | null; generatedAt: string;
+  junctions: Record<string, { lat: number; lon: number }> | null; demoVitalsSets: DemoVitalsSet[]; generatedAt: string;
 }
+export interface DemoVitalsSet { id: string; name: string; source: string; outcome: string | null; readings: Record<string, unknown>[] }
 export const repo = raw as unknown as Repo;
 
 export interface HospitalRow {
