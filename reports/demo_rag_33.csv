@@ -1,0 +1,100 @@
+lang,topic_file,query,top1_file,top1,hit4,status,refusal_reason,score,fully_grounded,n_steps
+en,abdominal_pain_ifrc.md,severe stomach pain on the lower right side since morning,abdominal_pain_ifrc.md,True,True,ok,,0.7796,True,6
+en,allergic_reaction_ifrc.md,she is having an allergic reaction to peanuts,allergic_reaction_ifrc.md,True,True,ok,,0.7149,True,6
+en,amputation_ifrc.md,his finger got cut off in the machine,amputation_ifrc.md,True,True,ok,,0.6454,True,6
+en,asthma_attack_ifrc.md,"my friend has asthma and is wheezing badly, can't catch his breath",asthma_attack_ifrc.md,True,True,ok,,0.7301,True,6
+en,breathing_difficulty_ifrc.md,she is struggling to breathe after the accident,breathing_difficulty_ifrc.md,True,True,ok,,0.7069,True,6
+en,burns_ifrc.md,she got burned by hot oil while cooking,burns_ifrc.md,True,True,ok,,0.6933,True,6
+en,chest_abdomen_injury_ifrc.md,"steering wheel hit his chest, there is a wound on the chest",chest_abdomen_injury_ifrc.md,True,True,ok,,0.6769,True,6
+en,chest_pain_ifrc.md,my uncle has severe chest pain going to his left arm,chest_pain_ifrc.md,True,True,ok,,0.7229,True,6
+en,choking_ifrc.md,my father is choking on food and can't speak,choking_ifrc.md,True,True,ok,,0.6957,True,6
+en,cpr_adult_ifrc.md,"old man collapsed on the road, no breathing, he is not waking up",cpr_adult_ifrc.md,True,True,ok,,0.6004,True,6
+en,cpr_child_ifrc.md,baby is limp and not breathing,cpr_child_ifrc.md,True,True,ok,,0.7206,True,6
+en,cpr_defibrillator_ifrc.md,"there is a defibrillator in the mall, the man is not breathing",cpr_defibrillator_ifrc.md,True,True,ok,,0.637,True,6
+en,cuts_grazes_ifrc.md,"scraped skin on the elbow, how to clean the graze",cuts_grazes_ifrc.md,True,True,ok,,0.7227,True,6
+en,dehydration_ifrc.md,"old man has not drunk water all day, mouth is dry and he is very weak",dehydration_ifrc.md,True,True,ok,,0.7038,True,6
+en,dental_avulsion_ifrc.md,"kid fell from the swing and her tooth came out, what to do with the tooth",dental_avulsion_ifrc.md,True,True,ok,,0.7171,True,6
+en,diabetic_emergency_ifrc.md,"my diabetic father is shaking and sweating, sugar low",diabetic_emergency_ifrc.md,True,True,ok,,0.7995,True,6
+en,emergency_childbirth_ifrc.md,the woman is in labour on the roadside,emergency_childbirth_ifrc.md,True,True,ok,,0.6345,True,6
+en,feeling_faint_ifrc.md,she says she is about to faint after standing in the queue,feeling_faint_ifrc.md,True,True,ok,,0.6563,True,6
+en,fever_ifrc.md,child has high fever,fever_ifrc.md,True,True,ok,,0.8296,True,6
+en,fractures_ifrc.md,"i think her ankle is broken, it is swollen and she can't walk",fractures_ifrc.md,True,True,ok,,0.7107,True,6
+en,head_injury_ifrc.md,she hit her head on the road and is confused and vomiting,head_injury_ifrc.md,True,True,ok,,0.6588,True,6
+en,hyperthermia_ifrc.md,he has been in the sun all day and is very hot and dizzy,hyperthermia_ifrc.md,True,True,ok,,0.6808,True,6
+en,hypothermia_ifrc.md,she fell into the cold water tank and is shivering badly,hypothermia_ifrc.md,True,True,ok,,0.633,True,6
+en,insect_stings_ifrc.md,a wasp stung her on the arm and the stinger is still there,insect_stings_ifrc.md,True,True,ok,,0.6581,True,6
+en,mammal_bites_ifrc.md,street dog bit a child,mammal_bites_ifrc.md,True,True,ok,,0.6583,True,6
+en,poisoning_ifrc.md,child drank kerosene by mistake,poisoning_ifrc.md,True,True,ok,,0.6858,True,6
+en,recovery_position_ifrc.md,he is unconscious but breathing after the crash,recovery_position_ifrc.md,True,True,ok,,0.6955,True,6
+en,seizure_ifrc.md,"my daughter is having a seizure, should I put something in her mouth",seizure_ifrc.md,True,True,ok,,0.7242,True,6
+en,severe_bleeding_ifrc.md,my friend fell off his bike and his leg is bleeding very badly,severe_bleeding_ifrc.md,True,True,ok,,0.7012,True,6
+en,shock_ifrc.md,"she looks pale, clammy and very weak after the accident",shock_ifrc.md,True,True,ok,,0.6551,True,6
+en,snake_bites_ifrc.md,a snake bit my brother on the leg,snake_bites_ifrc.md,True,True,ok,,0.692,True,6
+en,spinal_injury_ifrc.md,he fell from the building and can't feel his legs,spinal_injury_ifrc.md,True,True,ok,,0.6264,True,6
+en,stroke_ifrc.md,her face is drooping on one side and speech is slurred,stroke_ifrc.md,True,True,ok,,0.6822,True,6
+hi,abdominal_pain_ifrc.md,सुबह से पेट के निचले दाहिने हिस्से में बहुत तेज़ दर्द है,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5441,,0
+hi,allergic_reaction_ifrc.md,"उसे मूंगफली से एलर्जी हो गई है, चेहरा सूज रहा है",fractures_ifrc.md,False,False,not_covered,below_threshold,0.5052,,0
+hi,amputation_ifrc.md,मशीन में उसकी उंगली कट गई,chest_pain_ifrc.md,False,False,not_covered,below_threshold,0.5226,,0
+hi,asthma_attack_ifrc.md,"मेरे दोस्त को अस्थमा है, घरघराहट हो रही है और वो सांस नहीं ले पा रहा",stroke_ifrc.md,False,False,ok,,0.5543,True,5
+hi,breathing_difficulty_ifrc.md,एक्सीडेंट के बाद उसे सांस लेने में बहुत दिक्कत हो रही है,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5437,,0
+hi,burns_ifrc.md,खाना बनाते समय गरम तेल से वो जल गई,fractures_ifrc.md,False,False,not_covered,below_threshold,0.5086,,0
+hi,chest_abdomen_injury_ifrc.md,"स्टीयरिंग व्हील सीने से टकराया, सीने पर घाव है",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5042,,0
+hi,chest_pain_ifrc.md,मेरे चाचा के सीने में बहुत तेज़ दर्द है जो बाएं हाथ तक जा रहा है,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5244,,0
+hi,choking_ifrc.md,मेरे पिता खाना खाते समय अटक गए हैं और बोल नहीं पा रहे,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5286,,0
+hi,cpr_adult_ifrc.md,"वो सांस नहीं ले रहा और जवाब नहीं दे रहा, मैं क्या करूं",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5471,,0
+hi,cpr_child_ifrc.md,बच्चा बेजान पड़ा है और सांस नहीं ले रहा,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5433,,0
+hi,cpr_defibrillator_ifrc.md,"मॉल में डिफिब्रिलेटर रखा है, आदमी सांस नहीं ले रहा",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5376,,0
+hi,cuts_grazes_ifrc.md,स्कूटर से गिरने पर घुटने पर छोटी खरोंच आई है,fractures_ifrc.md,False,False,not_covered,below_threshold,0.535,,0
+hi,dehydration_ifrc.md,"बुज़ुर्ग ने पूरे दिन पानी नहीं पिया, मुंह सूखा है और बहुत कमज़ोरी है",fractures_ifrc.md,False,False,not_covered,below_threshold,0.5141,,0
+hi,dental_avulsion_ifrc.md,"बच्ची झूले से गिरी और उसका दांत निकल गया, दांत का क्या करें",stroke_ifrc.md,False,False,not_covered,below_threshold,0.531,,0
+hi,diabetic_emergency_ifrc.md,"मेरे डायबिटीज़ वाले पिता कांप रहे हैं और पसीना आ रहा है, शुगर कम लग रही है",stroke_ifrc.md,False,False,ok,,0.5518,True,5
+hi,emergency_childbirth_ifrc.md,औरत को सड़क किनारे प्रसव पीड़ा हो रही है,stroke_ifrc.md,False,True,not_covered,below_threshold,0.5434,,0
+hi,feeling_faint_ifrc.md,"लाइन में खड़े-खड़े उसे चक्कर आ रहा है, वो बेहोश होने वाली है",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5383,,0
+hi,fever_ifrc.md,बच्चे को बहुत तेज़ बुखार है,stroke_ifrc.md,False,False,not_covered,below_threshold,0.4944,,0
+hi,fractures_ifrc.md,"मुझे लगता है उसका टखना टूट गया है, सूजा हुआ है और वो चल नहीं पा रही",stroke_ifrc.md,False,True,not_covered,below_threshold,0.5394,,0
+hi,head_injury_ifrc.md,"सड़क पर उसके सिर में चोट लगी है, वो उलझन में है और उल्टी कर रही है",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5334,,0
+hi,hyperthermia_ifrc.md,"वो पूरे दिन धूप में रहा, बहुत गरम है और चक्कर आ रहे हैं",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5283,,0
+hi,hypothermia_ifrc.md,वो ठंडे पानी की टंकी में गिर गई और बहुत कांप रही है,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5165,,0
+hi,insect_stings_ifrc.md,ततैया ने उसके हाथ पर काट लिया और डंक अभी भी अंदर है,fractures_ifrc.md,False,False,not_covered,below_threshold,0.5075,,0
+hi,mammal_bites_ifrc.md,आवारा कुत्ते ने बच्चे को काट लिया,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5087,,0
+hi,poisoning_ifrc.md,बच्चे ने गलती से मिट्टी का तेल पी लिया,stroke_ifrc.md,False,False,not_covered,below_threshold,0.501,,0
+hi,recovery_position_ifrc.md,वो बेहोश है लेकिन सांस ले रहा है,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5048,,0
+hi,seizure_ifrc.md,"उसे दौरा पड़ा है, ज़मीन पर पूरा शरीर कांप रहा है",stroke_ifrc.md,False,False,not_covered,below_threshold,0.4972,,0
+hi,severe_bleeding_ifrc.md,उसके पैर से बहुत खून बह रहा है,fractures_ifrc.md,False,False,not_covered,below_threshold,0.5027,,0
+hi,shock_ifrc.md,"वो पीली, ठंडी और पसीने से भीगी हुई है और बहुत कमज़ोर लग रही है",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5278,,0
+hi,snake_bites_ifrc.md,मेरे भाई को सांप ने पैर पर काट लिया,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5157,,0
+hi,spinal_injury_ifrc.md,वो इमारत से गिरा और उसे पैरों में कुछ महसूस नहीं हो रहा,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5447,,0
+hi,stroke_ifrc.md,उसका चेहरा एक तरफ से टेढ़ा हो गया है और बोलने में दिक्कत है,stroke_ifrc.md,True,True,not_covered,below_threshold,0.5097,,0
+kn,abdominal_pain_ifrc.md,ಬೆಳಗ್ಗೆಯಿಂದ ಹೊಟ್ಟೆಯ ಕೆಳಗಿನ ಬಲಭಾಗದಲ್ಲಿ ತುಂಬಾ ನೋವು ಇದೆ,stroke_ifrc.md,False,False,ok,,0.5959,True,6
+kn,allergic_reaction_ifrc.md,"ಅವರಿಗೆ ಕಡಲೆಕಾಯಿಯಿಂದ ಅಲರ್ಜಿ ಆಗಿದೆ, ಮುಖ ಊದಿಕೊಳ್ತಿದೆ",stroke_ifrc.md,False,False,ok,,0.5656,True,6
+kn,amputation_ifrc.md,ಮೆಷಿನ್‌ನಲ್ಲಿ ಅವರ ಬೆರಳು ತುಂಡಾಗಿದೆ,stroke_ifrc.md,False,False,ok,,0.5929,True,6
+kn,asthma_attack_ifrc.md,"ನನ್ನ ಸ್ನೇಹಿತನಿಗೆ ಅಸ್ತಮಾ ಇದೆ, ಉಬ್ಬಸ ಬರ್ತಿದೆ, ಉಸಿರು ಸಿಗ್ತಿಲ್ಲ",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5093,,0
+kn,breathing_difficulty_ifrc.md,ಅಪಘಾತದ ನಂತರ ಅವರಿಗೆ ಉಸಿರಾಡೋಕೆ ತುಂಬಾ ಕಷ್ಟ ಆಗ್ತಿದೆ,stroke_ifrc.md,False,False,ok,,0.5959,True,6
+kn,burns_ifrc.md,ಅಡುಗೆ ಮಾಡುವಾಗ ಬಿಸಿ ಎಣ್ಣೆಯಿಂದ ಅವರಿಗೆ ಸುಟ್ಟಿದೆ,stroke_ifrc.md,False,False,ok,,0.5948,True,6
+kn,chest_abdomen_injury_ifrc.md,"ಸ್ಟೀರಿಂಗ್ ವೀಲ್ ಎದೆಗೆ ಬಡಿದಿದೆ, ಎದೆಯ ಮೇಲೆ ಗಾಯ ಇದೆ",stroke_ifrc.md,False,False,ok,,0.5759,True,6
+kn,chest_pain_ifrc.md,"ನನ್ನ ಚಿಕ್ಕಪ್ಪನಿಗೆ ಎದೆಯಲ್ಲಿ ತುಂಬಾ ನೋವು, ಎಡಗೈಗೆ ಹರಡ್ತಿದೆ",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5082,,0
+kn,choking_ifrc.md,"ನನ್ನ ತಂದೆಗೆ ಊಟ ಗಂಟಲಲ್ಲಿ ಸಿಕ್ಕಿಕೊಂಡಿದೆ, ಮಾತಾಡೋಕೆ ಆಗ್ತಿಲ್ಲ",stroke_ifrc.md,False,True,not_covered,below_threshold,0.5082,,0
+kn,cpr_adult_ifrc.md,"ಅವರು ಉಸಿರಾಡ್ತಿಲ್ಲ, ಮಾತಾಡಿಸಿದ್ರೂ ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲ, ಏನು ಮಾಡಲಿ",stroke_ifrc.md,False,False,ok,,0.573,True,6
+kn,cpr_child_ifrc.md,"ಮಗು ಜೋತು ಬಿದ್ದಿದೆ, ಉಸಿರಾಡ್ತಿಲ್ಲ",poisoning_ifrc.md,False,False,not_covered,below_threshold,0.5495,,0
+kn,cpr_defibrillator_ifrc.md,"ಮಾಲ್‌ನಲ್ಲಿ ಡಿಫಿಬ್ರಿಲೇಟರ್ ಇದೆ, ವ್ಯಕ್ತಿ ಉಸಿರಾಡ್ತಿಲ್ಲ",stroke_ifrc.md,False,False,ok,,0.5693,True,6
+kn,cuts_grazes_ifrc.md,ಸ್ಕೂಟರ್‌ನಿಂದ ಬಿದ್ದು ಮೊಣಕಾಲಿಗೆ ಸಣ್ಣ ತರಚಿದ ಗಾಯ ಆಗಿದೆ,stroke_ifrc.md,False,False,ok,,0.5959,True,6
+kn,dehydration_ifrc.md,"ವೃದ್ಧರು ಇಡೀ ದಿನ ನೀರು ಕುಡಿದಿಲ್ಲ, ಬಾಯಿ ಒಣಗಿದೆ, ತುಂಬಾ ಸುಸ್ತಾಗಿದ್ದಾರೆ",stroke_ifrc.md,False,True,ok,,0.5745,True,6
+kn,dental_avulsion_ifrc.md,"ಹುಡುಗಿ ಜೋಕಾಲಿಯಿಂದ ಬಿದ್ದು ಹಲ್ಲು ಕಿತ್ತುಬಂದಿದೆ, ಹಲ್ಲನ್ನು ಏನು ಮಾಡಬೇಕು",stroke_ifrc.md,False,False,ok,,0.5723,True,6
+kn,diabetic_emergency_ifrc.md,"ಸಕ್ಕರೆ ಕಾಯಿಲೆ ಇರುವ ನನ್ನ ತಂದೆ ನಡುಗ್ತಿದ್ದಾರೆ, ಬೆವರ್ತಿದ್ದಾರೆ, ಶುಗರ್ ಕಡಿಮೆ ಆಗಿರಬಹುದು",stroke_ifrc.md,False,False,not_covered,below_threshold,0.5167,,0
+kn,emergency_childbirth_ifrc.md,ರಸ್ತೆ ಪಕ್ಕದಲ್ಲಿ ಮಹಿಳೆಗೆ ಹೆರಿಗೆ ನೋವು ಶುರುವಾಗಿದೆ,stroke_ifrc.md,False,False,ok,,0.5948,True,6
+kn,feeling_faint_ifrc.md,"ಸಾಲಿನಲ್ಲಿ ನಿಂತಿದ್ದಾಗ ಅವರಿಗೆ ತಲೆ ಸುತ್ತು ಬರ್ತಿದೆ, ಮೂರ್ಛೆ ಹೋಗೋ ಹಾಗಿದೆ",stroke_ifrc.md,False,False,ok,,0.5719,True,6
+kn,fever_ifrc.md,ಮಗುವಿಗೆ ತುಂಬಾ ಜ್ವರ ಇದೆ,stroke_ifrc.md,False,False,ok,,0.5929,True,6
+kn,fractures_ifrc.md,"ಅವರ ಕಣಕಾಲು ಮುರಿದಿದೆ ಅನ್ಸುತ್ತೆ, ಊದಿಕೊಂಡಿದೆ, ನಡೆಯೋಕೆ ಆಗ್ತಿಲ್ಲ",stroke_ifrc.md,False,False,ok,,0.5763,True,6
+kn,head_injury_ifrc.md,"ರಸ್ತೆಯಲ್ಲಿ ಅವರ ತಲೆಗೆ ಪೆಟ್ಟಾಗಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾರೆ, ವಾಂತಿ ಮಾಡ್ತಿದ್ದಾರೆ",stroke_ifrc.md,False,False,ok,,0.5763,True,6
+kn,hyperthermia_ifrc.md,"ಇಡೀ ದಿನ ಬಿಸಿಲಲ್ಲಿ ಇದ್ದರು, ತುಂಬಾ ಬಿಸಿ ಆಗಿದ್ದಾರೆ, ತಲೆ ಸುತ್ತು ಬರ್ತಿದೆ",stroke_ifrc.md,False,False,ok,,0.5785,True,6
+kn,hypothermia_ifrc.md,"ತಣ್ಣೀರಿನ ಟ್ಯಾಂಕ್‌ಗೆ ಬಿದ್ದಿದ್ದಾರೆ, ತುಂಬಾ ನಡುಗ್ತಿದ್ದಾರೆ",stroke_ifrc.md,False,True,ok,,0.5693,True,6
+kn,insect_stings_ifrc.md,"ಕಣಜ ಅವರ ಕೈಗೆ ಕಚ್ಚಿದೆ, ಮುಳ್ಳು ಇನ್ನೂ ಒಳಗೆ ಇದೆ",stroke_ifrc.md,False,False,ok,,0.5759,True,6
+kn,mammal_bites_ifrc.md,ಬೀದಿ ನಾಯಿ ಮಗುವಿಗೆ ಕಚ್ಚಿದೆ,stroke_ifrc.md,False,False,ok,,0.5929,True,6
+kn,poisoning_ifrc.md,ಮಗು ತಪ್ಪಿ ಸೀಮೆಎಣ್ಣೆ ಕುಡಿದಿದೆ,stroke_ifrc.md,False,False,ok,,0.5929,True,6
+kn,recovery_position_ifrc.md,ಅವರಿಗೆ ಪ್ರಜ್ಞೆ ಇಲ್ಲ ಆದರೆ ಉಸಿರಾಡ್ತಿದ್ದಾರೆ,stroke_ifrc.md,False,False,ok,,0.5926,True,6
+kn,seizure_ifrc.md,"ಅವರಿಗೆ ಫಿಟ್ಸ್ ಬಂದಿದೆ, ನೆಲದ ಮೇಲೆ ಇಡೀ ದೇಹ ನಡುಗ್ತಿದೆ",stroke_ifrc.md,False,False,ok,,0.5787,True,6
+kn,severe_bleeding_ifrc.md,ಅವರ ಕಾಲಿನಿಂದ ತುಂಬಾ ರಕ್ತ ಬರ್ತಿದೆ,stroke_ifrc.md,False,False,ok,,0.5926,True,6
+kn,shock_ifrc.md,"ಅವರು ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾರೆ, ತಣ್ಣಗಾಗಿದ್ದಾರೆ, ಬೆವರಿನಿಂದ ತೊಯ್ದಿದ್ದಾರೆ, ತುಂಬಾ ದುರ್ಬಲರಾಗಿದ್ದಾರೆ",stroke_ifrc.md,False,False,ok,,0.589,True,6
+kn,snake_bites_ifrc.md,ನನ್ನ ತಮ್ಮನ ಕಾಲಿಗೆ ಹಾವು ಕಚ್ಚಿದೆ,stroke_ifrc.md,False,False,not_covered,below_threshold,0.5076,,0
+kn,spinal_injury_ifrc.md,"ಕಟ್ಟಡದಿಂದ ಬಿದ್ದಿದ್ದಾರೆ, ಕಾಲುಗಳಲ್ಲಿ ಸ್ಪರ್ಶ ಜ್ಞಾನ ಇಲ್ಲ",stroke_ifrc.md,False,False,ok,,0.5779,True,6
+kn,stroke_ifrc.md,"ಅವರ ಮುಖ ಒಂದು ಕಡೆ ಜೋತು ಬಿದ್ದಿದೆ, ಮಾತು ಅಸ್ಪಷ್ಟವಾಗಿದೆ",stroke_ifrc.md,True,True,ok,,0.5644,True,6

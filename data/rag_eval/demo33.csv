@@ -1,0 +1,100 @@
+topic_file,lang,query,source
+abdominal_pain_ifrc.md,en,severe stomach pain on the lower right side since morning,data/rag_eval/queries.csv q126 test
+allergic_reaction_ifrc.md,en,she is having an allergic reaction to peanuts,data/rag_eval/queries.csv q050 dev
+amputation_ifrc.md,en,his finger got cut off in the machine,data/rag_eval/queries.csv q023 dev
+asthma_attack_ifrc.md,en,"my friend has asthma and is wheezing badly, can't catch his breath",data/rag_eval/queries.csv q102 test
+breathing_difficulty_ifrc.md,en,she is struggling to breathe after the accident,data/rag_eval/queries.csv q018 dev
+burns_ifrc.md,en,she got burned by hot oil while cooking,data/rag_eval/queries.csv q027 dev
+chest_abdomen_injury_ifrc.md,en,"steering wheel hit his chest, there is a wound on the chest",data/rag_eval/queries.csv q021 dev
+chest_pain_ifrc.md,en,my uncle has severe chest pain going to his left arm,data/rag_eval/queries.csv q038 dev
+choking_ifrc.md,en,my father is choking on food and can't speak,data/rag_eval/queries.csv q015 dev
+cpr_adult_ifrc.md,en,"old man collapsed on the road, no breathing, he is not waking up","data/rag_eval/queries.csv q006 dev (replaces q005: top-1 was recovery_position, cpr_adult still in top 4)"
+cpr_child_ifrc.md,en,baby is limp and not breathing,data/rag_eval/queries.csv q009 dev
+cpr_defibrillator_ifrc.md,en,"there is a defibrillator in the mall, the man is not breathing",data/rag_eval/queries.csv q011 dev
+cuts_grazes_ifrc.md,en,"scraped skin on the elbow, how to clean the graze","data/rag_eval/queries.csv written for the demo after a dry run (replaces q025: top-1 was fractures, cuts_grazes still in top 4)"
+dehydration_ifrc.md,en,"old man has not drunk water all day, mouth is dry and he is very weak",data/rag_eval/queries.csv q106 test
+dental_avulsion_ifrc.md,en,"kid fell from the swing and her tooth came out, what to do with the tooth",data/rag_eval/queries.csv q131 test
+diabetic_emergency_ifrc.md,en,"my diabetic father is shaking and sweating, sugar low",data/rag_eval/queries.csv q051 dev
+emergency_childbirth_ifrc.md,en,the woman is in labour on the roadside,data/rag_eval/queries.csv q052 dev
+feeling_faint_ifrc.md,en,she says she is about to faint after standing in the queue,data/rag_eval/queries.csv q110 test
+fever_ifrc.md,en,child has high fever,data/rag_eval/queries.csv q054 dev
+fractures_ifrc.md,en,"i think her ankle is broken, it is swollen and she can't walk",data/rag_eval/queries.csv q031 dev
+head_injury_ifrc.md,en,she hit her head on the road and is confused and vomiting,data/rag_eval/queries.csv q035 dev
+hyperthermia_ifrc.md,en,he has been in the sun all day and is very hot and dizzy,data/rag_eval/queries.csv q053 dev
+hypothermia_ifrc.md,en,she fell into the cold water tank and is shivering badly,data/rag_eval/queries.csv q108 test
+insect_stings_ifrc.md,en,a wasp stung her on the arm and the stinger is still there,data/rag_eval/queries.csv q114 test
+mammal_bites_ifrc.md,en,street dog bit a child,data/rag_eval/queries.csv q047 dev
+poisoning_ifrc.md,en,child drank kerosene by mistake,data/rag_eval/queries.csv q049 dev
+recovery_position_ifrc.md,en,he is unconscious but breathing after the crash,data/rag_eval/queries.csv q013 dev
+seizure_ifrc.md,en,"my daughter is having a seizure, should I put something in her mouth","data/rag_eval/queries.csv q045 dev (replaces q044: top-1 was feeling_faint, seizure still in top 4)"
+severe_bleeding_ifrc.md,en,my friend fell off his bike and his leg is bleeding very badly,data/rag_eval/queries.csv q001 dev
+shock_ifrc.md,en,"she looks pale, clammy and very weak after the accident",data/rag_eval/queries.csv q043 dev
+snake_bites_ifrc.md,en,a snake bit my brother on the leg,data/rag_eval/queries.csv q046 dev
+spinal_injury_ifrc.md,en,he fell from the building and can't feel his legs,data/rag_eval/queries.csv q033 dev
+stroke_ifrc.md,en,her face is drooping on one side and speech is slurred,data/rag_eval/queries.csv q040 dev
+abdominal_pain_ifrc.md,hi,सुबह से पेट के निचले दाहिने हिस्से में बहुत तेज़ दर्द है,draft translation of the en row [TODO-VERIFY native review]
+allergic_reaction_ifrc.md,hi,"उसे मूंगफली से एलर्जी हो गई है, चेहरा सूज रहा है",draft translation of the en row [TODO-VERIFY native review]
+amputation_ifrc.md,hi,मशीन में उसकी उंगली कट गई,draft translation of the en row [TODO-VERIFY native review]
+asthma_attack_ifrc.md,hi,"मेरे दोस्त को अस्थमा है, घरघराहट हो रही है और वो सांस नहीं ले पा रहा",draft translation of the en row [TODO-VERIFY native review]
+breathing_difficulty_ifrc.md,hi,एक्सीडेंट के बाद उसे सांस लेने में बहुत दिक्कत हो रही है,draft translation of the en row [TODO-VERIFY native review]
+burns_ifrc.md,hi,खाना बनाते समय गरम तेल से वो जल गई,draft translation of the en row [TODO-VERIFY native review]
+chest_abdomen_injury_ifrc.md,hi,"स्टीयरिंग व्हील सीने से टकराया, सीने पर घाव है",draft translation of the en row [TODO-VERIFY native review]
+chest_pain_ifrc.md,hi,मेरे चाचा के सीने में बहुत तेज़ दर्द है जो बाएं हाथ तक जा रहा है,draft translation of the en row [TODO-VERIFY native review]
+choking_ifrc.md,hi,मेरे पिता खाना खाते समय अटक गए हैं और बोल नहीं पा रहे,draft translation of the en row [TODO-VERIFY native review]
+cpr_adult_ifrc.md,hi,"वो सांस नहीं ले रहा और जवाब नहीं दे रहा, मैं क्या करूं",draft translation of the en row [TODO-VERIFY native review]
+cpr_child_ifrc.md,hi,बच्चा बेजान पड़ा है और सांस नहीं ले रहा,draft translation of the en row [TODO-VERIFY native review]
+cpr_defibrillator_ifrc.md,hi,"मॉल में डिफिब्रिलेटर रखा है, आदमी सांस नहीं ले रहा",draft translation of the en row [TODO-VERIFY native review]
+cuts_grazes_ifrc.md,hi,स्कूटर से गिरने पर घुटने पर छोटी खरोंच आई है,draft translation of the en row [TODO-VERIFY native review]
+dehydration_ifrc.md,hi,"बुज़ुर्ग ने पूरे दिन पानी नहीं पिया, मुंह सूखा है और बहुत कमज़ोरी है",draft translation of the en row [TODO-VERIFY native review]
+dental_avulsion_ifrc.md,hi,"बच्ची झूले से गिरी और उसका दांत निकल गया, दांत का क्या करें",draft translation of the en row [TODO-VERIFY native review]
+diabetic_emergency_ifrc.md,hi,"मेरे डायबिटीज़ वाले पिता कांप रहे हैं और पसीना आ रहा है, शुगर कम लग रही है",draft translation of the en row [TODO-VERIFY native review]
+emergency_childbirth_ifrc.md,hi,औरत को सड़क किनारे प्रसव पीड़ा हो रही है,draft translation of the en row [TODO-VERIFY native review]
+feeling_faint_ifrc.md,hi,"लाइन में खड़े-खड़े उसे चक्कर आ रहा है, वो बेहोश होने वाली है",draft translation of the en row [TODO-VERIFY native review]
+fever_ifrc.md,hi,बच्चे को बहुत तेज़ बुखार है,draft translation of the en row [TODO-VERIFY native review]
+fractures_ifrc.md,hi,"मुझे लगता है उसका टखना टूट गया है, सूजा हुआ है और वो चल नहीं पा रही",draft translation of the en row [TODO-VERIFY native review]
+head_injury_ifrc.md,hi,"सड़क पर उसके सिर में चोट लगी है, वो उलझन में है और उल्टी कर रही है",draft translation of the en row [TODO-VERIFY native review]
+hyperthermia_ifrc.md,hi,"वो पूरे दिन धूप में रहा, बहुत गरम है और चक्कर आ रहे हैं",draft translation of the en row [TODO-VERIFY native review]
+hypothermia_ifrc.md,hi,वो ठंडे पानी की टंकी में गिर गई और बहुत कांप रही है,draft translation of the en row [TODO-VERIFY native review]
+insect_stings_ifrc.md,hi,ततैया ने उसके हाथ पर काट लिया और डंक अभी भी अंदर है,draft translation of the en row [TODO-VERIFY native review]
+mammal_bites_ifrc.md,hi,आवारा कुत्ते ने बच्चे को काट लिया,draft translation of the en row [TODO-VERIFY native review]
+poisoning_ifrc.md,hi,बच्चे ने गलती से मिट्टी का तेल पी लिया,draft translation of the en row [TODO-VERIFY native review]
+recovery_position_ifrc.md,hi,वो बेहोश है लेकिन सांस ले रहा है,draft translation of the en row [TODO-VERIFY native review]
+seizure_ifrc.md,hi,"उसे दौरा पड़ा है, ज़मीन पर पूरा शरीर कांप रहा है",draft translation of the en row [TODO-VERIFY native review]
+severe_bleeding_ifrc.md,hi,उसके पैर से बहुत खून बह रहा है,draft translation of the en row [TODO-VERIFY native review]
+shock_ifrc.md,hi,"वो पीली, ठंडी और पसीने से भीगी हुई है और बहुत कमज़ोर लग रही है",draft translation of the en row [TODO-VERIFY native review]
+snake_bites_ifrc.md,hi,मेरे भाई को सांप ने पैर पर काट लिया,draft translation of the en row [TODO-VERIFY native review]
+spinal_injury_ifrc.md,hi,वो इमारत से गिरा और उसे पैरों में कुछ महसूस नहीं हो रहा,draft translation of the en row [TODO-VERIFY native review]
+stroke_ifrc.md,hi,उसका चेहरा एक तरफ से टेढ़ा हो गया है और बोलने में दिक्कत है,draft translation of the en row [TODO-VERIFY native review]
+abdominal_pain_ifrc.md,kn,ಬೆಳಗ್ಗೆಯಿಂದ ಹೊಟ್ಟೆಯ ಕೆಳಗಿನ ಬಲಭಾಗದಲ್ಲಿ ತುಂಬಾ ನೋವು ಇದೆ,draft translation of the en row [TODO-VERIFY native review]
+allergic_reaction_ifrc.md,kn,"ಅವರಿಗೆ ಕಡಲೆಕಾಯಿಯಿಂದ ಅಲರ್ಜಿ ಆಗಿದೆ, ಮುಖ ಊದಿಕೊಳ್ತಿದೆ",draft translation of the en row [TODO-VERIFY native review]
+amputation_ifrc.md,kn,ಮೆಷಿನ್‌ನಲ್ಲಿ ಅವರ ಬೆರಳು ತುಂಡಾಗಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+asthma_attack_ifrc.md,kn,"ನನ್ನ ಸ್ನೇಹಿತನಿಗೆ ಅಸ್ತಮಾ ಇದೆ, ಉಬ್ಬಸ ಬರ್ತಿದೆ, ಉಸಿರು ಸಿಗ್ತಿಲ್ಲ",draft translation of the en row [TODO-VERIFY native review]
+breathing_difficulty_ifrc.md,kn,ಅಪಘಾತದ ನಂತರ ಅವರಿಗೆ ಉಸಿರಾಡೋಕೆ ತುಂಬಾ ಕಷ್ಟ ಆಗ್ತಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+burns_ifrc.md,kn,ಅಡುಗೆ ಮಾಡುವಾಗ ಬಿಸಿ ಎಣ್ಣೆಯಿಂದ ಅವರಿಗೆ ಸುಟ್ಟಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+chest_abdomen_injury_ifrc.md,kn,"ಸ್ಟೀರಿಂಗ್ ವೀಲ್ ಎದೆಗೆ ಬಡಿದಿದೆ, ಎದೆಯ ಮೇಲೆ ಗಾಯ ಇದೆ",draft translation of the en row [TODO-VERIFY native review]
+chest_pain_ifrc.md,kn,"ನನ್ನ ಚಿಕ್ಕಪ್ಪನಿಗೆ ಎದೆಯಲ್ಲಿ ತುಂಬಾ ನೋವು, ಎಡಗೈಗೆ ಹರಡ್ತಿದೆ",draft translation of the en row [TODO-VERIFY native review]
+choking_ifrc.md,kn,"ನನ್ನ ತಂದೆಗೆ ಊಟ ಗಂಟಲಲ್ಲಿ ಸಿಕ್ಕಿಕೊಂಡಿದೆ, ಮಾತಾಡೋಕೆ ಆಗ್ತಿಲ್ಲ",draft translation of the en row [TODO-VERIFY native review]
+cpr_adult_ifrc.md,kn,"ಅವರು ಉಸಿರಾಡ್ತಿಲ್ಲ, ಮಾತಾಡಿಸಿದ್ರೂ ಪ್ರತಿಕ್ರಿಯೆ ಇಲ್ಲ, ಏನು ಮಾಡಲಿ",draft translation of the en row [TODO-VERIFY native review]
+cpr_child_ifrc.md,kn,"ಮಗು ಜೋತು ಬಿದ್ದಿದೆ, ಉಸಿರಾಡ್ತಿಲ್ಲ",draft translation of the en row [TODO-VERIFY native review]
+cpr_defibrillator_ifrc.md,kn,"ಮಾಲ್‌ನಲ್ಲಿ ಡಿಫಿಬ್ರಿಲೇಟರ್ ಇದೆ, ವ್ಯಕ್ತಿ ಉಸಿರಾಡ್ತಿಲ್ಲ",draft translation of the en row [TODO-VERIFY native review]
+cuts_grazes_ifrc.md,kn,ಸ್ಕೂಟರ್‌ನಿಂದ ಬಿದ್ದು ಮೊಣಕಾಲಿಗೆ ಸಣ್ಣ ತರಚಿದ ಗಾಯ ಆಗಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+dehydration_ifrc.md,kn,"ವೃದ್ಧರು ಇಡೀ ದಿನ ನೀರು ಕುಡಿದಿಲ್ಲ, ಬಾಯಿ ಒಣಗಿದೆ, ತುಂಬಾ ಸುಸ್ತಾಗಿದ್ದಾರೆ",draft translation of the en row [TODO-VERIFY native review]
+dental_avulsion_ifrc.md,kn,"ಹುಡುಗಿ ಜೋಕಾಲಿಯಿಂದ ಬಿದ್ದು ಹಲ್ಲು ಕಿತ್ತುಬಂದಿದೆ, ಹಲ್ಲನ್ನು ಏನು ಮಾಡಬೇಕು",draft translation of the en row [TODO-VERIFY native review]
+diabetic_emergency_ifrc.md,kn,"ಸಕ್ಕರೆ ಕಾಯಿಲೆ ಇರುವ ನನ್ನ ತಂದೆ ನಡುಗ್ತಿದ್ದಾರೆ, ಬೆವರ್ತಿದ್ದಾರೆ, ಶುಗರ್ ಕಡಿಮೆ ಆಗಿರಬಹುದು",draft translation of the en row [TODO-VERIFY native review]
+emergency_childbirth_ifrc.md,kn,ರಸ್ತೆ ಪಕ್ಕದಲ್ಲಿ ಮಹಿಳೆಗೆ ಹೆರಿಗೆ ನೋವು ಶುರುವಾಗಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+feeling_faint_ifrc.md,kn,"ಸಾಲಿನಲ್ಲಿ ನಿಂತಿದ್ದಾಗ ಅವರಿಗೆ ತಲೆ ಸುತ್ತು ಬರ್ತಿದೆ, ಮೂರ್ಛೆ ಹೋಗೋ ಹಾಗಿದೆ",draft translation of the en row [TODO-VERIFY native review]
+fever_ifrc.md,kn,ಮಗುವಿಗೆ ತುಂಬಾ ಜ್ವರ ಇದೆ,draft translation of the en row [TODO-VERIFY native review]
+fractures_ifrc.md,kn,"ಅವರ ಕಣಕಾಲು ಮುರಿದಿದೆ ಅನ್ಸುತ್ತೆ, ಊದಿಕೊಂಡಿದೆ, ನಡೆಯೋಕೆ ಆಗ್ತಿಲ್ಲ",draft translation of the en row [TODO-VERIFY native review]
+head_injury_ifrc.md,kn,"ರಸ್ತೆಯಲ್ಲಿ ಅವರ ತಲೆಗೆ ಪೆಟ್ಟಾಗಿದೆ, ಗೊಂದಲದಲ್ಲಿದ್ದಾರೆ, ವಾಂತಿ ಮಾಡ್ತಿದ್ದಾರೆ",draft translation of the en row [TODO-VERIFY native review]
+hyperthermia_ifrc.md,kn,"ಇಡೀ ದಿನ ಬಿಸಿಲಲ್ಲಿ ಇದ್ದರು, ತುಂಬಾ ಬಿಸಿ ಆಗಿದ್ದಾರೆ, ತಲೆ ಸುತ್ತು ಬರ್ತಿದೆ",draft translation of the en row [TODO-VERIFY native review]
+hypothermia_ifrc.md,kn,"ತಣ್ಣೀರಿನ ಟ್ಯಾಂಕ್‌ಗೆ ಬಿದ್ದಿದ್ದಾರೆ, ತುಂಬಾ ನಡುಗ್ತಿದ್ದಾರೆ",draft translation of the en row [TODO-VERIFY native review]
+insect_stings_ifrc.md,kn,"ಕಣಜ ಅವರ ಕೈಗೆ ಕಚ್ಚಿದೆ, ಮುಳ್ಳು ಇನ್ನೂ ಒಳಗೆ ಇದೆ",draft translation of the en row [TODO-VERIFY native review]
+mammal_bites_ifrc.md,kn,ಬೀದಿ ನಾಯಿ ಮಗುವಿಗೆ ಕಚ್ಚಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+poisoning_ifrc.md,kn,ಮಗು ತಪ್ಪಿ ಸೀಮೆಎಣ್ಣೆ ಕುಡಿದಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+recovery_position_ifrc.md,kn,ಅವರಿಗೆ ಪ್ರಜ್ಞೆ ಇಲ್ಲ ಆದರೆ ಉಸಿರಾಡ್ತಿದ್ದಾರೆ,draft translation of the en row [TODO-VERIFY native review]
+seizure_ifrc.md,kn,"ಅವರಿಗೆ ಫಿಟ್ಸ್ ಬಂದಿದೆ, ನೆಲದ ಮೇಲೆ ಇಡೀ ದೇಹ ನಡುಗ್ತಿದೆ",draft translation of the en row [TODO-VERIFY native review]
+severe_bleeding_ifrc.md,kn,ಅವರ ಕಾಲಿನಿಂದ ತುಂಬಾ ರಕ್ತ ಬರ್ತಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+shock_ifrc.md,kn,"ಅವರು ಬಿಳಿಚಿಕೊಂಡಿದ್ದಾರೆ, ತಣ್ಣಗಾಗಿದ್ದಾರೆ, ಬೆವರಿನಿಂದ ತೊಯ್ದಿದ್ದಾರೆ, ತುಂಬಾ ದುರ್ಬಲರಾಗಿದ್ದಾರೆ",draft translation of the en row [TODO-VERIFY native review]
+snake_bites_ifrc.md,kn,ನನ್ನ ತಮ್ಮನ ಕಾಲಿಗೆ ಹಾವು ಕಚ್ಚಿದೆ,draft translation of the en row [TODO-VERIFY native review]
+spinal_injury_ifrc.md,kn,"ಕಟ್ಟಡದಿಂದ ಬಿದ್ದಿದ್ದಾರೆ, ಕಾಲುಗಳಲ್ಲಿ ಸ್ಪರ್ಶ ಜ್ಞಾನ ಇಲ್ಲ",draft translation of the en row [TODO-VERIFY native review]
+stroke_ifrc.md,kn,"ಅವರ ಮುಖ ಒಂದು ಕಡೆ ಜೋತು ಬಿದ್ದಿದೆ, ಮಾತು ಅಸ್ಪಷ್ಟವಾಗಿದೆ",draft translation of the en row [TODO-VERIFY native review]
