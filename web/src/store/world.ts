@@ -92,6 +92,8 @@ export function worldFromLive(l: LiveState): World {
   const amb = id ? l.ambulancePos[id] : undefined;
   const rec = id ? l.ranking[id] : undefined;
   const liveRanking: RankView[] | null = rec ? rec.ranked.map((h) => ({ ...h, trauma: null, beds: null, bloodUnits: null, chosen: decision?.hospital_id === h.hospital_id })) : null;
+  // Live API has no ETA countdown: show the chosen hospital's route ETA (ORS, or straight-line if route_estimated).
+  const chosenEta = liveRanking?.find((h) => h.chosen)?.eta_min;
   const dispatched = decision && l.resources?.ambulances.find((a) => a.ambulance_id === decision.ambulance_id);
   const rules: RuleEntry[] | null = decision ? decision.conflicts_resolved.map((c, i) => ({ rule: i + 1, id: c.type, title: c.type.replace(/_/g, " "), fired: true, detail: c.resolution, at: 0 })) : null;
   const junctions: Record<string, LatLon> = l.resources ? Object.fromEntries(l.resources.junctions.map((j) => [j.junction_id, [j.lat, j.lon] as LatLon])) : JUNCTIONS;
@@ -100,7 +102,7 @@ export function worldFromLive(l: LiveState): World {
     incident: v ? { id: v.incident_id, gps: v.gps, injury: v.report?.injury_type ?? null, injured: v.report?.num_injured ?? null, language: v.report?.language ?? null, transcript: v.report?.transcript ?? null } : null,
     phase: "live", t: 0, duration: 0, risk, riskHistory: id ? l.riskHistory[id] ?? [] : [], vitals: local.slice(-6), vitalsAll: local, vitalsCount: v?.vitals_count ?? 0, ig: null,
     textProbs: v?.report?.text_severity_probs ?? null, ranking: liveRanking, decision, rules, signals: null, rlEvents: [], police,
-    ambulance: decision ? { id: decision.ambulance_id, position: amb?.pos ?? (dispatched ? [dispatched.lat, dispatched.lon] : v!.gps && [v!.gps.lat, v!.gps.lon]) as LatLon, heading: amb?.heading ?? 0, trail: amb?.trail ?? [], etaS: null, speedKmh: null } : null,
+    ambulance: decision ? { id: decision.ambulance_id, position: amb?.pos ?? (dispatched ? [dispatched.lat, dispatched.lon] : v!.gps && [v!.gps.lat, v!.gps.lon]) as LatLon, heading: amb?.heading ?? 0, trail: amb?.trail ?? [], etaS: chosenEta != null ? chosenEta * 60 : null, speedKmh: null } : null,
     route: police?.route_polyline ?? [],
     hospitals: (l.resources?.hospitals ?? []).map((h) => ({ id: h.hospital_id, name: h.name, lat: h.lat, lon: h.lon, chosen: decision?.hospital_id === h.hospital_id })),
     junctions,
